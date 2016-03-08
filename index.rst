@@ -1,20 +1,6 @@
 Statistical Mechanics
 =============================
 
-A comment from S. Weinberg
-
-    "Not bad."
-
-    -- `S. Weinberg <https://github.com/emptymalei/statisticalphysics/commit/b14945e38c3df659cf613d9340a5e20def8df513>`_
-
-(Just for fun, he didn't say that. And the commit was made using `git-blame-someone-else <https://github.com/jayphelps/git-blame-someone-else>`_. )
-
-
-
-
-
-
-
 
 
 
