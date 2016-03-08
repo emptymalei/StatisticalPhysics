@@ -1,0 +1,31 @@
+.. index:: nonequilibrium
+
+Week N N N Template
+====================
+
+.. index:: nonequilibrium
+
+Whatever
+-----------------------------
+
+The QED Lagrangian density is
+
+.. math::
+
+    \L=\bar\psi(i\hbar c\gamma^\mu D_\mu-mc^2)\psi-{1\over4}F_{\mu\nu}F^{\mu\nu}
+
+
+Plugging this Lagrangian into the Euler-Lagrange equation of motion for a field, we get:
+
+.. math::
+
+    (i\hbar c\gamma^\mu D_\mu-mc^2)\psi=0
+
+
+
+.. math::
+
+    \partial_\nu F^{\nu\mu}=-ec\bar\psi\gamma^\mu\psi
+
+
+

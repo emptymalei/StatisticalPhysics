@@ -1,0 +1,15 @@
+Week NNNNN + 1
+======================================
+
+Week NNNN + 1 section title
+---------------------------------------------------
+
+Lagrangian is:
+
+.. math::
+
+    \L(\psi) = \half (\nabla \psi)^2 + V(x) \psi^2(x)
+
+Subject to the normalization constrain:
+
+

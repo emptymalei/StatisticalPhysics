@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Week 5 &mdash; Statistical Mechanics Notes</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.0.0/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.38',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/rrssb.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Statistical Mechanics Notes" href="../index.html" />
+    <link rel="up" title="Equilibrium Statistical Mechanics" href="main.html" />
+    <link rel="next" title="Week 6" href="week6.html" />
+    <link rel="prev" title="Week 4" href="week4.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Statistical Physics Notes</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.38</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary/main.html">Vocabulary and Program</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="main.html">Equilibrium Statistical Mechanics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nonequilibrium/main.html">Stochastic And Non-Equilibrium Statistical Mechanics</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Week 5</a><ul>
+<li><a class="reference internal" href="#ensemble">Ensemble</a></li>
+<li><a class="reference internal" href="#equilibrium">Equilibrium</a></li>
+<li><a class="reference internal" href="#ensembles-systems">Ensembles, Systems</a></li>
+<li><a class="reference internal" href="#isolated-system-micro-canonical-ensemble">Isolated System - Micro-canonical Ensemble</a><ul>
+<li><a class="reference internal" href="#ergodic-hypothesis-revisited">Ergodic Hypothesis Revisited</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#canonical-ensemble">Canonical Ensemble</a></li>
+<li><a class="reference internal" href="#grand-canonical-ensemble">Grand Canonical Ensemble</a></li>
+<li><a class="reference internal" href="#index-4">Identical Particles</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="week4.html" title="Previous Chapter: Week 4"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm">&laquo; Week 4</span>
+    </a>
+  </li>
+  <li>
+    <a href="week6.html" title="Next Chapter: Week 6"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm">Week 6 &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/equilibrium/week5.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="week-5">
+<h1>Week 5<a class="headerlink" href="#week-5" title="Permalink to this headline">¶</a></h1>
+<p>The problem in statistical mechanics is that we can only gain partial information of the system, thus only partial results are obtained. However we know that in equilibrium, all possible states appear with an equal probability. Recall that states means points in phase space. We use hydrodynamics to represent the phase space distribution but this can not determine if the phase space points are change or not. The only thing this density show us the the aparant density doesn&#8217;t change. So it seems that we don&#8217;t need to know the exact position of a phase space point. We can rely on average values.</p>
+<p>The system is like a black box. Even we know all the quantities, we still have no idea about the exact state of the system.</p>
+<div class="section" id="ensemble">
+<span id="index-0"></span><h2>Ensemble<a class="headerlink" href="#ensemble" title="Permalink to this headline">¶</a></h2>
+<p>Gibbs&#8217; idea of ensemble is to create a lot of copies of the system with the same thermodynamics quantities.</p>
+<p>The question is where to put them? In different time or in different space?</p>
+<p>We can create a uge amount copies of the system and imagine that they are at different place. Then we have all the possible states of the system.</p>
+<p>We can also wait infinite long time and all possible states will occur, at least for some system, which is called ergodic. Ergodic means the system can visit all possible states many times during a long time. This is rather a hypothesis than a theorem.</p>
+<p>The problem is, not all systems are ergodic. For such systems, of course, we can only do the ensemble average.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Cons</strong></p>
+<ol class="arabic simple">
+<li>Not possible to prove ensemble average is the same as time average. In fact some systems don&#8217;t obey this rule.</li>
+<li>Not possible to visit all possible states on constant energy surface in finite time.</li>
+<li>Even complicated systems can exhibit almost exactly periodic behavior, one example of this is <a class="reference external" href="https://en.wikipedia.org/wiki/Fermi%E2%80%93Pasta%E2%80%93Ulam_problem">FPU experiment</a> .</li>
+<li>Even the system is ergodic, how can we make sure each state will occur with the same probability.</li>
+</ol>
+<p>Here is an example of non ergodic system:</p>
+<img alt="An example of non ergodic system" class="align-center" src="../_images/non-ergodic.png" />
+<p>This is a box of absolutely smooth with balls collide with walls perpendicularly. Then this system can stay on some discrete points with same values of momentum components.</p>
+<p>Another image from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Ergodic_hypothesis_w_reflecting_rays.jpg">Wikipedia</a> :</p>
+<a class="last reference internal image-reference" href="../_images/Ergodic_hypothesis_w_reflecting_rays.jpg"><img alt="ergodic system" class="align-center" src="../_images/Ergodic_hypothesis_w_reflecting_rays.jpg" style="width: 813.6px; height: 540.0px;" /></a>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p><strong>Pros</strong></p>
+<ol class="last arabic simple">
+<li><a class="reference external" href="https://en.wikipedia.org/wiki/Poincar%C3%A9_recurrence_theorem">Poincaré recurrence theorem</a> proves that at least some systems will come back to a state that is very close the the initial state after a long but finite time.</li>
+<li>Systems are often chaotic so it&#8217;s not really possible to have pictures like the first one in Cons.</li>
+</ol>
+</div>
+<p>We already have Liouville density evolution</p>
+<div class="math">
+<p><img src="../_images/math/c1200fb83d897aeffda7582d996c92cf41816f19.png" alt="\frac{\partial}{\partial t} \rho = \{ H, \rho \}"/></p>
+</div><p>Von Neumann equation</p>
+<div class="math">
+<p><img src="../_images/math/63f5c41cf4598028cfb1328ae39b29f4ceaaa57b.png" alt="i\hbar \frac{\partial}{\partial t} \hat\rho = [\hat H, \hat\rho ]"/></p>
+</div><p>In all, they can be written as</p>
+<div class="math">
+<p><img src="../_images/math/47f28cab95fb639ae8aeb05593d67dca7e7b3a53.png" alt="i \frac{\partial\rho}{\partial t} = \hat L \rho"/></p>
+</div><p>where <img class="math" src="../_images/math/e563bb61abaa9d058c4436b28b44bbac326fb531.png" alt="\hat L" style="vertical-align: 0px"/> is the Liouville operator.</p>
+<p>We have mentioned that ensembles have the same thermodynamic quantities. In the language of math,</p>
+<div class="math">
+<p><img src="../_images/math/d8be138ea576d7add26d30c09a343c35e967d781.png" alt="\avg{o} = \mathrm{Tr} \rho O"/></p>
+</div><p>All we care about is the left hand side. So as long as <img class="math" src="../_images/math/1008e2bc12f77b2d4ac378b63e9d5926eda05d30.png" alt="\rho" style="vertical-align: -4px"/> is not changed, we can stir the system as crazy as we can and keep the system the same.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Only one trace in phase space is true. How can we use ensemble to calculate the real observables?</p>
+<p class="last">Actually, what we calculated is not the real observable. What we calculated is the ensemble average. Since we are dealing with equilibrium, we need the time average because for equilibrium system, time average is the desired result. (Fluctuations? yes but later.) As we discussed previously, for ergodic systems, ensemble average is the same as time average.</p>
+</div>
+</div>
+<div class="section" id="equilibrium">
+<h2>Equilibrium<a class="headerlink" href="#equilibrium" title="Permalink to this headline">¶</a></h2>
+<p>What does equilibrium mean exactly?</p>
+<div class="math">
+<p><img src="../_images/math/dbe1c6338ba519209ce67fd0e4e697107fdf4818.png" alt="\frac{\partial}{\partial} \rho  = 0"/></p>
+</div><p>or equivalently,</p>
+<div class="math">
+<p><img src="../_images/math/06373a33200e4ae28780072cc1a14981a96cff5a.png" alt="\{ H, \rho \} =0"/></p>
+</div><p>Obviously, one possible solution is</p>
+<div class="math">
+<p><img src="../_images/math/c4da0117c6b1a147871380243fbead69e7124deb.png" alt="\rho \propto e^{-\beta H}"/></p>
+</div></div>
+<div class="section" id="ensembles-systems">
+<h2>Ensembles, Systems<a class="headerlink" href="#ensembles-systems" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Ensembles and systems</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="22%" />
+<col width="26%" />
+<col width="26%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Systems</th>
+<th class="head">Ensembles</th>
+<th class="head">Geometry in Phase space</th>
+<th class="head">Key Variables</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Isolated</td>
+<td>Microcanonical</td>
+<td>Shell; <img class="math" src="../_images/math/18a9f7ff0f7a79a1816f58f007f982767f532810.png" alt="\rho = c'\delta(E-H)" style="vertical-align: -4px"/></td>
+<td>Energy <img class="math" src="../_images/math/8e91116e4e15acaa974ca1fc18b3e784ee8fbfb4.png" alt="E" style="vertical-align: 0px"/></td>
+</tr>
+<tr class="row-odd"><td>Weak interacting</td>
+<td>Canonical</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>Exchange particles</td>
+<td>Grand canonical</td>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="isolated-system-micro-canonical-ensemble">
+<span id="index-1"></span><h2>Isolated System - Micro-canonical Ensemble<a class="headerlink" href="#isolated-system-micro-canonical-ensemble" title="Permalink to this headline">¶</a></h2>
+<img alt="UML of micro-canonical" class="align-center" src="../_images/microcanonical.png" />
+<div class="math">
+<p><img src="../_images/math/92d22d95e6710e3d28cea9dfea718c5a646b105c.png" alt="\rho(p;q;0) = \delta(H(p;q;0) - E)"/></p>
+</div><p>That is the system stays on the energy shell in phase space. Also we have for equilibrium system,</p>
+<div class="math">
+<p><img src="../_images/math/36d2015c68a6c0a58cd89e205a87db360eafdbfc.png" alt="H(p;q;t) = E"/></p>
+</div><div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Is it true that ensemble average is equal to the actual value of the system?</p>
+<p class="last">Not for all classical systems. (But for ALL quantum systems? Not sure.)</p>
+</div>
+<div class="section" id="ergodic-hypothesis-revisited">
+<h3>Ergodic Hypothesis Revisited<a class="headerlink" href="#ergodic-hypothesis-revisited" title="Permalink to this headline">¶</a></h3>
+<p>For ergodic systems, ensemble average is equal to time average.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">How about state of the system moving with changing speed on the shell? Then how can we say the system is ergodic and use ensemble average as time average?</p>
+</div>
+<p>Micro canonical ensembles are for isolated systems.</p>
+<div class="math">
+<p><img src="../_images/math/dbe3d67ee5709e7625c1829317ab2a394811a43b.png" alt="\rho \propto \frac{1}{\text{No. of states on the ensemble surface}} \equiv \frac{1}{\Omega (E)}"/></p>
+</div><p>To calculate the entropy</p>
+<div class="math">
+<p><img src="../_images/math/aee9f14410b7bdf44ae53a09c4ef374e93ffd122.png" alt="S = k_B \ln \Omega"/></p>
+</div></div>
+</div>
+<div class="section" id="canonical-ensemble">
+<span id="index-2"></span><h2>Canonical Ensemble<a class="headerlink" href="#canonical-ensemble" title="Permalink to this headline">¶</a></h2>
+<img alt="Canonical Ensemble" class="align-center" src="../_images/canonicalEnsemble.png" />
+<p>For a system weakly interacting with a heat bath, total energy of the system is</p>
+<div class="math">
+<p><img src="../_images/math/9f1a78c46b654304e8985039df960c13617919c6.png" alt="E_T = E_S + E_R + E _{S,R}"/></p>
+</div><p>where the interacting energy <img class="math" src="../_images/math/8e91116e4e15acaa974ca1fc18b3e784ee8fbfb4.png" alt="E" style="vertical-align: 0px"/> is very small compared to <img class="math" src="../_images/math/1ac0eb87839607ad71aa81fadf182d3236330960.png" alt="E_1\ll E_2" style="vertical-align: -4px"/>. So we can drop this interaction energy term,</p>
+<div class="math">
+<p><img src="../_images/math/8708f396e307ec955add6f71f2ebb7159876711d.png" alt="E_T = E_S + E _R"/></p>
+</div><p>A simple and intuitive derivation of the probability density is to use the theory of independent events.</p>
+<ol class="arabic simple">
+<li><img class="math" src="../_images/math/c7cb3f614b814182d06f5bab2cb2665dcb6e1096.png" alt="\rho_T d\Omega_T" style="vertical-align: -4px"/>: probability of states in phase space volume <img class="math" src="../_images/math/6ce936eb4c70254229cfd31d73ce6e5a1f9ea0d7.png" alt="d\Omega_T" style="vertical-align: -3px"/>;</li>
+<li><img class="math" src="../_images/math/a1202c60e8947f4966fb48456da6da958db47d42.png" alt="\rho_S d \Omega_S" style="vertical-align: -4px"/>: probability of states in phase space volume <img class="math" src="../_images/math/da3e17338f0a5f4c49d9ab71822e59fb88f89564.png" alt="d\Omega_S" style="vertical-align: -3px"/>;</li>
+<li><img class="math" src="../_images/math/4520c951677e3ce80a333cf2c07e3b3f25d730e9.png" alt="\rho_R d \Omega_R" style="vertical-align: -4px"/>: probability of states in phase space volume <img class="math" src="../_images/math/dea82114de320e30fb31d3d33f1bc550f257bf33.png" alt="d\Omega_R" style="vertical-align: -3px"/>;</li>
+</ol>
+<p>We assumed weak interactions between system and reservoir, so (approximately) the probability in system phase space and in reservoir phase space are independent of each other,</p>
+<div class="math">
+<p><img src="../_images/math/8ff8a966a942ae06a32a9605a8023ec213cd24c0.png" alt="\rho _ T d\Omega_T = \rho _S d\Omega_S \cdot \rho _R d \Omega_R ."/></p>
+</div><p>Since there is no particle exchange between the two systems, overall phase space volume is the system phase space volume multiplied by reservoir phase space volume,</p>
+<div class="math">
+<p><img src="../_images/math/609218fac51718d416e888c232f13243aab5e022.png" alt="d\Omega_T = d\Omega _S \cdot d\Omega_R ."/></p>
+</div><p>Obviously we can get the relation between the three probability densities.</p>
+<div class="math">
+<p><img src="../_images/math/f9970bee43fe346ef5fec7f95423fffd39a59bd7.png" alt="\rho_T = \rho_R \rho_S ."/></p>
+</div><p>Take the logarithm,</p>
+<div class="math">
+<p><img src="../_images/math/a31fe09b459ab310e9ac2370e879132acd3851de.png" alt="\ln\rho_T = \ln\rho_R + \ln\rho_S ."/></p>
+</div><p><strong>Key: :math:`rho` is a function of energy :math:`E`. AND both :math:`rho` and energy are extensive. The only possible form of :math:`ln rho` is linear.</strong></p>
+<p>Finally we reach the destination,</p>
+<div class="math">
+<p><img src="../_images/math/98b00a96ebbfdaa834c2b92cd794c36ec91c7ca5.png" alt="\ln \rho = - \alpha - \beta E"/></p>
+</div><p>i.e.,</p>
+<div class="math">
+<p><img src="../_images/math/70dabe7259f4ac5ce952f16a95e3d49f29832c0d.png" alt="\rho = e^{-\alpha} e^{-\beta E}"/></p>
+</div><p>which is called <strong>canonical distribution</strong>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This is not an rigorous derivation. Read R.K. Su&#8217;s book for a more detailed and rigorous derivation.</p>
+</div>
+</div>
+<div class="section" id="grand-canonical-ensemble">
+<span id="index-3"></span><h2>Grand Canonical Ensemble<a class="headerlink" href="#grand-canonical-ensemble" title="Permalink to this headline">¶</a></h2>
+<p>Systems with changing particle number are described by grand canonical ensemble.</p>
+<img alt="Grand Canonical Ensemble" class="align-center" src="../_images/grandCanonical.png" />
+<p>Note that the partition function of grand canonical ensemble really is</p>
+<div class="math">
+<p><img src="../_images/math/7580bc4e71aac7c9bcd930c8f07af4e494d95d28.png" alt="Z = \sum _ n \sum_N  e^{-\beta E_n - \mu N} = \sum_N \left( \sum _ n e^{- \beta E _ n}  \right)\left(e^{-\mu}\right)^N = \sum _ N Z \left(Z^f\right)^N"/></p>
+</div></div>
+<div class="section" id="index-4">
+<span id="identical-particles"></span><h2>Identical Particles<a class="headerlink" href="#index-4" title="Permalink to this headline">¶</a></h2>
+<p>If a system consists of N indentical particles, for any state <img class="math" src="../_images/math/50d113bf242b8fe85644f3e2ebb56cf923392e89.png" alt="n_i^\xi" style="vertical-align: -5px"/> particles in particle state i, we have the energy of the system on state <img class="math" src="../_images/math/0d3172e7ff416be91f0f5777b4f1dfa2c7999fac.png" alt="\xi" style="vertical-align: -4px"/> is</p>
+<div class="math">
+<p><img src="../_images/math/c434f53cc3c664433c07afab1d131896374dfb00.png" alt="E^\xi = \sum_i \epsilon_i n_i^\xi"/></p>
+</div><p>where the summation is over all possible states of particles.</p>
+<p>The value of energy is given by ensemble value</p>
+<div class="math">
+<p><img src="../_images/math/f8bd8b949eb23f0d9f85cde16747a51518dbf9ba.png" alt="\avg{E} = \frac{\sum _\xi e^{-\beta E^\xi} E^\xi}{\sum _\xi e^{-\beta E^\xi}}"/></p>
+</div><p><img class="math" src="../_images/math/0d3172e7ff416be91f0f5777b4f1dfa2c7999fac.png" alt="\xi" style="vertical-align: -4px"/> is the ensemble summation.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">How to calculate the average number of particles on a particle state i?</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#">Back to top</a>
+
+    </p>
+    <p>
+        <span>© Copyright 2014, Lei Ma.</span>|
+        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
+        <span>Created with
+            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script></span>
+    </p>
+
+    <hr>
+
+    <div class="share-container">
+        <span class="label">Share:</span>
+        <!-- buttons start here -->
+        <ul class="rrssb-buttons clearfix">
+            <li class="email">
+                <a href="mailto:?subject=Check%20out%20this%20statistical%20mechanics%20website&body=http%3A%2F%2Femptymalei.github.io%2FStatisticalPhysics">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                            <g>
+                                <path d="M20.111 26.147c-2.336 1.051-4.361 1.401-7.125 1.401c-6.462 0-12.146-4.633-12.146-12.265 c0-7.94 5.762-14.833 14.561-14.833c6.853 0 11.8 4.7 11.8 11.252c0 5.684-3.194 9.265-7.399 9.3 c-1.829 0-3.153-0.934-3.347-2.997h-0.077c-1.208 1.986-2.96 2.997-5.023 2.997c-2.532 0-4.361-1.868-4.361-5.062 c0-4.749 3.504-9.071 9.111-9.071c1.713 0 3.7 0.4 4.6 0.973l-1.169 7.203c-0.388 2.298-0.116 3.3 1 3.4 c1.673 0 3.773-2.102 3.773-6.58c0-5.061-3.27-8.994-9.303-8.994c-5.957 0-11.175 4.673-11.175 12.1 c0 6.5 4.2 10.2 10 10.201c1.986 0 4.089-0.43 5.646-1.245L20.111 26.147z M16.646 10.1 c-0.311-0.078-0.701-0.155-1.207-0.155c-2.571 0-4.595 2.53-4.595 5.529c0 1.5 0.7 2.4 1.9 2.4 c1.441 0 2.959-1.828 3.311-4.087L16.646 10.068z" />
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="text">email</span>
+                </a>
+            </li>
+            <li class="facebook">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=http://emptymalei.github.io/StatisticalPhysics
+">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 100 100" xml:space="preserve" class="style0">
+                            <path d="M99.5,17.001C99.5,8.31,91.689,0.5,83,0.5H17C8.327,0.5,0.5,8.31,0.5,17.001v65.998C0.5,91.689,8.31,99.5,17,99.5h33V62.1 H37.9V45.6H50v-6.428C50,28.11,58.359,18.1,68.59,18.1H81.9v16.5H68.562c-1.46,0-3.162,1.761-3.162,4.427V45.6h16.5v16.5H65.4v37.4 H83c8.672,0,16.5-7.83,16.5-16.501V17.001z" />
+                        </svg>
+                    </span>
+                    <span class="text">facebook</span>
+                </a>
+            </li>
+            <li class="linkedin">
+                <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://emptymalei.github.io/StatisticalPhysics
+&title=Statistical%20Mechanics%20Notes&summary=Statistical%20Mechanics%20Notes">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" xml:space="preserve" class="style0">
+                            <path d="M95 59.727V93H75.71V61.955c0-7.799-2.79-13.121-9.773-13.121c-5.33 0-8.502 3.587-9.897 7.1 c-0.509 1.241-0.64 2.967-0.64 4.704V93H36.104c0 0 0.26-52.58 0-58.028h19.295v8.225c-0.039 0.062-0.09 0.128-0.127 0.188h0.127 v-0.188c2.563-3.948 7.141-9.588 17.388-9.588C85.483 33.6 95 41.9 95 59.727z M15.919 7C9.318 7 5 11.3 5 17 c0 5.6 4.2 10 10.7 10.031h0.129c6.729 0 10.914-4.46 10.914-10.031C26.579 11.3 22.5 7 15.9 7z M6.146 93h19.289 V34.972H6.146V93z" />
+                        </svg>
+                    </span>
+                    <span class="text">linkedin</span>
+                </a>
+            </li>
+            <li class="twitter">
+                <a href="http://twitter.com/home?status=Statistical%20Mechanics%20Notes%20http://emptymalei.github.io/StatisticalPhysics
+">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="328 355 335 276" preserveAspectRatio="xMidYMid meet">
+                            <path d=" M 630  425 A 195  195 0 0 1 331  600 A 142  142 0 0 0 428  570 A 70  70 0 0 1 370  523 A 70  70 0 0 0 401  521 A 70  70 0 0 1 344  455 A 70  70 0 0 0 372  460 A 70  70 0 0 1 354  370 A 195  195 0 0 0 495  442 A 67  67 0 0 1 611  380 A 117  117 0 0 0 654  363 A 65  65 0 0 1 623  401 A 117  117 0 0 0 662  390 A 65  65 0 0 1 630  425 Z" />
+                        </svg>
+                    </span>
+                    <span class="text">twitter</span>
+                </a>
+            </li>
+            <li class="googleplus">
+                <a href="https://plus.google.com/share?url=Statistical%20Mechanics%20Notes%20http://emptymalei.github.io/StatisticalPhysics
+">
+                    <span class="icon">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="134.658px" height="131.646px" viewBox="0 0 134.658 131.646" enable-background="new 0 0 134.658 131.646" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path d="M72.689,75.044l-6.05-4.698c-1.842-1.527-4.362-3.545-4.362-7.237c0-3.708,2.521-6.064,4.707-8.246
+                                                c7.046-5.547,14.089-11.45,14.089-23.892c0-12.793-8.05-19.523-11.907-22.716h10.401l10.918-6.86H57.408
+                                                c-9.077,0-22.157,2.147-31.733,10.054c-7.217,6.226-10.739,14.813-10.739,22.542c0,13.121,10.075,26.421,27.865,26.421
+                                                c1.681,0,3.518-0.165,5.368-0.337c-0.831,2.021-1.671,3.706-1.671,6.561c0,5.211,2.678,8.406,5.038,11.435
+                                                c-7.559,0.519-21.671,1.356-32.074,7.752c-9.907,5.891-12.923,14.465-12.923,20.519c0,12.458,11.743,24.062,36.092,24.062
+                                                c28.875,0,44.159-15.976,44.159-31.791C86.792,86.988,80.078,81.269,72.689,75.044z M50.698,55.698
+                                                c-14.444,0-20.988-18.673-20.988-29.94c0-4.387,0.831-8.915,3.688-12.453C36.09,9.936,40.781,7.75,45.16,7.75
+                                                c13.925,0,21.147,18.84,21.147,30.957c0,3.032-0.333,8.405-4.194,12.287C59.411,53.69,54.893,55.698,50.698,55.698z
+                                                 M50.863,123.353c-17.961,0-29.545-8.593-29.545-20.541c0-11.943,10.74-15.984,14.435-17.321
+                                                c7.048-2.373,16.117-2.704,17.63-2.704c1.678,0,2.518,0,3.855,0.17c12.77,9.087,18.311,13.615,18.311,22.219
+                                                C75.549,115.594,66.984,123.353,50.863,123.353z" />
+                                    <polygon points="115.087,55.441 115.087,38.619 106.778,38.619 106.778,55.441 89.984,55.441 89.984,63.84 106.778,63.84
+                                                106.778,80.766 115.087,80.766 115.087,63.84 131.966,63.84 131.966,55.441        " />
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="text">google+</span>
+                </a>
+            </li>
+            <!-- <li class="youtube">
+                        <a href="#">
+                            <span class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" xml:space="preserve" class="style0"><path d="M95 32.458C95 25 89 19 81.5 19h-63.1 C11.021 19 5 25 5 32.458v36.084C5 76 11 82 18.4 82h63.1C88.979 82 95 76 95 68.542V32.458z M41 65.724V31.83 l25.702 16.947L41 65.724z" class="style1"/></svg>
+                            </span>
+                            <span class="text">youtube</span>
+                        </a>
+                    </li> -->
+            <li class="pinterest">
+                <a href="http://pinterest.com/pin/create/button/?url=http://emptymalei.github.io/StatisticalPhysics
+&media=http://emptymalei.github.io/StatisticalPhysics
+/_static/images/cc_byncsa.png&description=Statistical%20Mechanics%20Notes.">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+                            <path d="M256 0C114.615 0 0 114.6 0 256s114.613 256 256 256c141.385 0 256-114.615 256-256S397.385 0 256 0z M280.822 342.1 c-23.26-1.807-33.021-13.328-51.252-24.404c-10.03 52.589-22.282 103.009-58.57 129.3 c-11.202-79.484 16.447-139.182 29.285-202.557c-21.892-36.853 2.635-111.017 48.81-92.737 c56.813 22.474-49.2 137 22 151.308c74.311 14.9 104.645-128.929 58.571-175.712 c-66.579-67.553-193.799-1.54-178.155 95.178c3.807 23.6 28.2 30.8 9.8 63.451c-42.61-9.446-55.325-43.051-53.688-87.856 c2.634-73.337 65.892-124.682 129.343-131.783c80.242-8.982 155.6 29.5 166 104.9 C414.553 256.4 366.6 348.7 280.8 342.059z" />
+                        </svg>
+                    </span>
+                    <span class="text">pinterest</span>
+                </a>
+            </li>
+            <li class="github">
+                <a href="https://github.com/emptymalei/StatisticalPhysics">
+                    <span class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+                            <style>
+                                .style0{fill-rule:  evenodd;clip-rule:  evenodd;fill:   #181616;}
+                            </style>
+                            <path d="M49.997 0.93c-27.268 0-49.382 22.109-49.382 49.4 c0 21.8 14.1 40.3 33.8 46.858c2.47 0.5 3.37-1.072 3.37-2.381c0-1.171-0.043-4.278-0.066-8.397 c-13.736 2.982-16.636-6.622-16.636-6.622c-2.245-5.705-5.483-7.223-5.483-7.223c-4.482-3.065 0.339-3.004 0.339-3.004 c4.956 0.4 7.6 5.1 7.6 5.091c4.405 7.5 11.6 5.4 14.4 4.103c0.449-3.189 1.726-5.367 3.137-6.602 c-10.967-1.246-22.495-5.483-22.495-24.407c0-5.392 1.924-9.8 5.083-13.253c-0.508-1.248-2.203-6.27 0.484-13.069 c0 0 4.146-1.328 13.6 5.063c3.939-1.096 8.164-1.644 12.363-1.662c4.194 0 8.4 0.6 12.4 1.7 c9.427-6.392 13.566-5.063 13.566-5.063c2.695 6.8 1 11.8 0.5 13.069c3.165 3.5 5.1 7.9 5.1 13.3 c0 18.972-11.547 23.146-22.549 24.368c1.776 1.5 3.4 4.5 3.4 9.147c0 6.602-0.062 11.928-0.062 13.5 c0 1.3 0.9 2.9 3.4 2.375c19.604-6.544 33.742-25.041 33.742-46.853C99.386 23 77.3 0.9 50 0.93z" class="style0" />
+                        </svg>
+                    </span>
+                    <span class="text">github</span>
+                </a>
+            </li>
+        </ul>
+        <!-- buttons end here -->
+    </div>
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>

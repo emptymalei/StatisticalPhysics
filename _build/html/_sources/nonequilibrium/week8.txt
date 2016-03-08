@@ -1,0 +1,261 @@
+
+
+Week 8
+====================
+
+.. index:: nonequilibrium, BBGKY, Liouville Operator
+
+
+Liouville Operator And Liouville Equation
+------------------------------------------
+
+Instead of writing Poisson bracket as an bracket, we can define a Poisson bracket operator:
+
+.. math::
+   \hat{\mathscr H}^N = - \sum_{j=1}^N \left( \frac{\partial H^N}{\partial \vec q_j}\frac{\partial}{\partial \vec p_j} - \frac{\partial H^N}{\partial \vec p_j}\frac{\partial}{\partial \vec q_j} \right)
+
+More generally, we can define an Liouville operator, which is
+
+.. math::
+   \hat L^N := -i \hat{\mathscr H}^N  .
+
+Now the Liouville equation becomes
+
+.. math::
+   i \frac{\partial \rho^N}{\partial t} = \hat L^N \rho^N  .
+
+For stationary state we have
+
+.. math::
+   \hat L^N \rho^N _ {\mathrm{stationary}} = 0 .
+
+
+
+
+
+
+BBGKY Hierarchy
+------------------
+
+Now we think about the problems we are going to solve. In statistical mechanics, the most ideal method is to solve the Liouville equation directly and leave only initial condition missing for the problem. However, solving the Liouville equation is so hard for complicated problems we finally thinking about dropping some dynamics. This is no big deal as we already dropped initial condition and makes our solution probabilistic.
+
+Now the question is what to drop. For non-interacting systems, the solution comes directly from Liouville equation. It's interactions that makes our life so hard (yet make us alive). So we would like to make approximations on interactions.
+
+For non-interacting systems, :math:`\Gamma` space can actually be reduced to :math:`\mu` space which is spanned by the freedoms of only one particle. Here we need to address the fact that we are dealing with **identical particles**.
+
+Actually we are not trying to reduce to :math:`\mu` space exactly. We just want to make the dimension as less as possible. So we want to talk about some reduced quantities.
+
+First of all is the probability density of s particles. For one particle, it's
+
+.. math::
+   \rho_1(\vec X_1, t) := \int \cdots\int d\vec X_2 \cdots d \vec X_N \rho^N(\vec X_1, \cdots, \vec X_N, t)
+
+Similarly, we can define s particles probability density, [1]_
+
+.. math::
+   \rho_s(\vec X_s, \cdots, \vec X_N, t) := \int \cdots \int d \vec X_{s+1}\cdots d\vec X_N \rho^N(\vec X_1, \cdots, \vec X_N, t) .
+
+We define a new quantity, which has a weight, as
+
+.. math::
+   F_s(\vec X_1, \cdots,\vec X_s,t) := V^s \int\cdots \int \rho^N(\vec X_1, \cdots, \vec X_N, t) d\vec X_{s+1}\cdots d\vec X_N   .
+
+Obviously, :math:`s=N` gives us
+
+.. math::
+   F_Ns = V^N \rho  .
+
+
+We can write down the Hamiltonian of the system for any two-body spherically symmetric interaction,
+
+.. math::
+   H^N  =  \sum_{i=1}^N \frac{\vec p_i^2}{2m} + \sum_{i<j}^{N(N-1)/2} \phi(|\vec q_i - \vec q_j|) .
+
+Recall that Liouville equation reads
+
+.. math::
+   \frac{\partial \rho^N}{\partial t} = - \hat L^N \rho^N  .
+
+Now we have
+
+.. math::
+   \hat{\mathscr H^N} = \sum_{i=1}^N \frac{\vec p_i}{m}\frac{\partial}{\partial \vec q_i} - \sum_{i<j}\hat \Theta_{ij}
+
+where
+
+.. math::
+   \hat \Theta_{ij} := \frac{\partial \phi_{ij} }{\partial \vec q_i}\frac{\partial }{\partial \vec p_i} + \frac{\partial \phi_{ij}}{\partial \vec q_j} \frac{\partial}{\partial \vec p_j}
+
+Next write down the explicit Liouville equation for this problem and integrate over :math:`\{ \vec X_{s+1}, \cdots, \vec X_N \}`. Make approximations (large N etc), finally we have a hierarchy,
+
+.. math::
+   \frac{\partial F_s}{\partial t} +  \hat{\mathscr H^s} F_s = \frac{1}{v}\sum_{i=1}^s\int d\vec X_{s+1} \hat \Theta_{i,s+1} F_{s+1}(\vec X_1,\cdots,\vec X_{s+1}, t)
+
+where :math:`v=V/N`.
+
+
+This shows exactly why stat mech is hard. The smaller s is, the easier the solution. BUT we see that to find out :math:`s=1`, we need :math:`s=2` and the hierarchy never cut. What do we do? We cut manually.
+
+
+
+.. index:: H Theorem
+
+Why Irreversible
+-----------------
+
+The reason that a system is irreversible is because we lost information. In other words, the correlation function of time is shorter as the any system would be coupled to the reservoir. So any system would transfer information to the reservoir and the information just runs aways deep into the reservoir. With information loss the system can not be reversible. More quantum mechanically, the system loses information throught entanglement (mostly).
+
+
+The classical idea of irreversibility is through H theorem. Boltzmann defines a quantity
+
+.. math::
+   H = \int\int \rho(\vec r,\vec v, t) \ln \rho(\vec r,\vec v, t) d\tau d\omega
+
+where :math:`d\tau d\omega` is the infinitesemal volume in :math:`\mu` space, :math:`\rho(\vec r,\vec v, t)` is the probability density.
+
+Boltzmann proved that this quantity can not decrease using Boltzmann equation.
+
+This result shows the statistical mechanics view of the second law of thermodynamics, which says that adiabatic process can never decrease the entropy of a system.
+
+
+  
+
+
+
+Road Map of Statistical Mechanics
+-----------------------------------
+
+
+As we said previously, the ideal situation is that we solve Liouville equation directly and exactly. However, it's not generally possible. So we turn to some mesoscropic method for help.
+
+
+.. image:: images/mesoscopic.png
+   :alt: How Statistical Physicists Break Their Promise
+
+
+We start from microscopic equation, work on them, them trucate at some point, meaning approximation. Then use the approximated result to calculate the marcoscopic quantities.
+
+
+An example of this method is that we divide a box of gas into two parts. Then we talk about only two states which is LEFT state and RIGHT state instead of the phase space states.
+
+.. image:: images/coarseProcess.png
+   :alt: Coarsing Process
+   :align: center
+
+Now we can write down two equations by intuition,
+
+.. math::
+   \frac{d P_L}{d t} = T_{LR} P_R - T_{RL}P_L
+
+and
+
+.. math::
+   \frac{d P_R}{d t} = T_{RL} P_L - T_{LR}P_R .
+
+The first equation means that the change of probability that a particle in LEFT state is rate from RIGHT to LEFT time the probability that the particle is in RIGHT state, minus the rate from LEFT state to RIGHT state times the probability that the particle is in LEFT state. This is just simply an linear model of gaining and losing.
+
+It becomes interesting that we can discribe the system in such an easy way. Will it work? We'll see.
+
+More generally, we have
+
+.. math::
+   \frac{d}{d t} P_\xi = \sum_\mu \left( T_{\xi\mu}P_\mu - T_{\mu\xi} P_{\xi} \right) .
+
+The important thing is that these equations are linear.
+
+**Now we can start form these equations instead of the Liouville equation to solve the problem. It's called mesoscopic. The next thing is to connect these mesoscopic equations to the microscopic equations.**
+
+
+
+
+
+A Review of Boltzmann Equation & H Theorem
+--------------------------------------------
+
+
+The objectives are
+
+1. Derive Boltzmann equation from classical scattering theory of rigid balls.
+2. Derive continuity equation from Boltzmann equation.
+3. Prove H theorem.
+4. Understand H theorem.
+
+
+Boltzmann equation derivation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The idea is to find out an equation for one particle probability density :math:`f_j(\vec r, \vec v_j,t)` by considering the number of particles into this state and out of state due to collision. Since we can find all contributions to :math:`f_j` by applying scattering theory of classical particles, this equation can be written down explicitly which turns out to be an integrodifferential equation.
+
+The number of particles in a volume :math:`d\vec r d\vec v` at position :math:`\vec r` with velocity :math:`\vec v_j` is
+
+.. math::
+   f_j(\vec r, \vec v_j,t)d\vec r d\vec v_j .
+
+
+Consider the situation after a short time :math:`dt` we can write down the change of particle numbers due to collision and finally we will get Boltzmann equation.
+
+.. math::
+   \frac{\partial f_j}{\partial t} + \vec v_j\cdot \nabla _ {\vec r}f_j + \frac{\vec X _ j}{m_j} \cdot \nabla_{\vec v_j} f_j = 2\pi \sum_i \iint \left(f _ i'f _ j' - f _ i f _ j\right) g _ {ij} b \mathrm db  \mathrm d \vec v_i
+
+
+where :math:`\vec X` is the external force on the particle, prime denotes the quantity after collision, :math:`b` is the impact parameter.
+
+
+In the derivation, the most important part is to identify the number of particles into and out of this state due to collision.
+
+
+Boltzmann equation & Continuity Equation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We can derive from Boltzmann equation the Enskog's equation then simplify to continuity equation by picking up an conserved quantity as :math:`\psi_i` in Enskog's equation.
+
+Continuity equation is alway true for such an conserved system so this results is very conceivable.
+
+
+H Theorem
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+H theorem says that the quantity :math:`H` can not decrease. The requirements of course should be that in a classical, particle number conserved system.
+
+First define
+
+.. math::
+   H(t) = \iint  f(\vec r, \vec v, t) \ln  f(\vec r, \vec v, t) d\vec r d\vec v
+
+
+Use Boltzmann equation we find out that
+
+.. math::
+   \frac{d H}{dt} \leq 0
+
+
+in which equal sign is valid if&f
+
+.. math::
+   f' f_1' = f f_1 .
+
+
+
+H Theorem Discussion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+There were two objections on H theorem.
+
+1. Loschmidt: All collisions can be reversed in the view of classical mechanics;
+2. Zermelo: Poincare recursion theorem says an equilibrium system can go back to inequilibrium.
+
+
+To Loschmidt's questioning, Boltzmann pointed out that H theorem is a statistical theorem rather than mechanics theorem. Quantities in this theorem like :math:`f` are statistical average not the quantity of exactly which particle.
+
+Zermelo's objection is not valid because the recursion time is extremely long.
+
+
+
+
+Footnotes
+----------
+
+
+
+.. [1] L. E. Reichl, A Modern Course in Statistical Physics
