@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Important Questions of Statistical Mechanics &mdash; Statistical Mechanics Notes</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1415',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/rrssb.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Statistical Mechanics Notes" href="../index.html" />
+    <link rel="up" title="Stochastic And Non-Equilibrium Statistical Mechanics" href="main.html" />
+    <link rel="next" title="Master Equation" href="master-eqn.html" />
+    <link rel="prev" title="\(\Gamma\) Space and \(\mu\) Space" href="gamma-space-mu-space.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Statistical Physics</a>
+        <span class="navbar-text navbar-version pull-left"><b>3.1315</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Parts <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary/main.html">Vocabulary and Program</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../thermodynamics/main.html">Thermodynamics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../equilibrium/main.html">Equilibrium Statistical Mechanics</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="main.html">Stochastic And Non-Equilibrium Statistical Mechanics</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Important Questions of Statistical Mechanics</a><ul>
+<li><a class="reference internal" href="#liouville-operator-and-liouville-equation">Liouville Operator And Liouville Equation</a></li>
+<li><a class="reference internal" href="#bbgky-hierarchy">BBGKY Hierarchy</a></li>
+<li><a class="reference internal" href="#why-irreversible">Why Irreversible</a></li>
+<li><a class="reference internal" href="#road-map-of-statistical-mechanics">Road Map of Statistical Mechanics</a></li>
+<li><a class="reference internal" href="#a-review-of-boltzmann-equation-h-theorem">A Review of Boltzmann Equation &amp; H Theorem</a><ul>
+<li><a class="reference internal" href="#boltzmann-equation-derivation">Boltzmann equation derivation</a></li>
+<li><a class="reference internal" href="#boltzmann-equation-continuity-equation">Boltzmann equation &amp; Continuity Equation</a></li>
+<li><a class="reference internal" href="#h-theorem">H Theorem</a></li>
+<li><a class="reference internal" href="#h-theorem-discussion">H Theorem Discussion</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#footnotes">Footnotes</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="gamma-space-mu-space.html" title="Previous Chapter: \(\Gamma\) Space and \(\mu\) Space"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; \(\Gamma\) Sp...</span>
+    </a>
+  </li>
+  <li>
+    <a href="master-eqn.html" title="Next Chapter: Master Equation"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Master Equation &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/nonequilibrium/important-questions.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="important-questions-of-statistical-mechanics">
+<h1>Important Questions of Statistical Mechanics<a class="headerlink" href="#important-questions-of-statistical-mechanics" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="liouville-operator-and-liouville-equation">
+<span id="index-0"></span><h2>Liouville Operator And Liouville Equation<a class="headerlink" href="#liouville-operator-and-liouville-equation" title="Permalink to this headline">¶</a></h2>
+<p>Instead of writing Poisson bracket as an bracket, we can define a Poisson bracket operator:</p>
+<div class="math">
+\[\hat{\mathscr H}^N = - \sum_{j=1}^N \left( \frac{\partial H^N}{\partial \vec q_j}\frac{\partial}{\partial \vec p_j} - \frac{\partial H^N}{\partial \vec p_j}\frac{\partial}{\partial \vec q_j} \right)\]</div>
+<p>More generally, we can define an Liouville operator, which is</p>
+<div class="math">
+\[\hat L^N := -i \hat{\mathscr H}^N  .\]</div>
+<p>Now the Liouville equation becomes</p>
+<div class="math">
+\[i \frac{\partial \rho^N}{\partial t} = \hat L^N \rho^N  .\]</div>
+<p>For stationary state we have</p>
+<div class="math">
+\[\hat L^N \rho^N _ {\mathrm{stationary}} = 0 .\]</div>
+</div>
+<div class="section" id="bbgky-hierarchy">
+<h2>BBGKY Hierarchy<a class="headerlink" href="#bbgky-hierarchy" title="Permalink to this headline">¶</a></h2>
+<p>Now we think about the problems we are going to solve. In statistical mechanics, the most ideal method is to solve the Liouville equation directly and leave only initial condition missing for the problem. However, solving the Liouville equation is so hard for complicated problems we finally thinking about dropping some dynamics. This is no big deal as we already dropped initial condition and makes our solution probabilistic.</p>
+<p>Now the question is what to drop. For non-interacting systems, the solution comes directly from Liouville equation. It&#8217;s interactions that makes our life so hard (yet make us alive). So we would like to make approximations on interactions.</p>
+<p>For non-interacting systems, <span class="math">\(\Gamma\)</span> space can actually be reduced to <span class="math">\(\mu\)</span> space which is spanned by the freedoms of only one particle. Here we need to address the fact that we are dealing with <strong>identical particles</strong>.</p>
+<p>Actually we are not trying to reduce to <span class="math">\(\mu\)</span> space exactly. We just want to make the dimension as less as possible. So we want to talk about some reduced quantities.</p>
+<p>First of all is the probability density of s particles. For one particle, it&#8217;s</p>
+<div class="math">
+\[\rho_1(\vec X_1, t) := \int \cdots\int d\vec X_2 \cdots d \vec X_N \rho^N(\vec X_1, \cdots, \vec X_N, t)\]</div>
+<p>Similarly, we can define s particles probability density, <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
+<div class="math">
+\[\rho_s(\vec X_s, \cdots, \vec X_N, t) := \int \cdots \int d \vec X_{s+1}\cdots d\vec X_N \rho^N(\vec X_1, \cdots, \vec X_N, t) .\]</div>
+<p>We define a new quantity, which has a weight, as</p>
+<div class="math">
+\[F_s(\vec X_1, \cdots,\vec X_s,t) := V^s \int\cdots \int \rho^N(\vec X_1, \cdots, \vec X_N, t) d\vec X_{s+1}\cdots d\vec X_N   .\]</div>
+<p>Obviously, <span class="math">\(s=N\)</span> gives us</p>
+<div class="math">
+\[F_Ns = V^N \rho  .\]</div>
+<p>We can write down the Hamiltonian of the system for any two-body spherically symmetric interaction,</p>
+<div class="math">
+\[\begin{split}H^N  =  \sum_{i=1}^N \frac{\vec p_i^2}{2m} + \sum_{i&lt;j}^{N(N-1)/2} \phi(|\vec q_i - \vec q_j|) .\end{split}\]</div>
+<p>Recall that Liouville equation reads</p>
+<div class="math">
+\[\frac{\partial \rho^N}{\partial t} = - \hat L^N \rho^N  .\]</div>
+<p>Now we have</p>
+<div class="math">
+\[\begin{split}\hat{\mathscr H^N} = \sum_{i=1}^N \frac{\vec p_i}{m}\frac{\partial}{\partial \vec q_i} - \sum_{i&lt;j}\hat \Theta_{ij}\end{split}\]</div>
+<p>where</p>
+<div class="math">
+\[\hat \Theta_{ij} := \frac{\partial \phi_{ij} }{\partial \vec q_i}\frac{\partial }{\partial \vec p_i} + \frac{\partial \phi_{ij}}{\partial \vec q_j} \frac{\partial}{\partial \vec p_j}\]</div>
+<p>Next write down the explicit Liouville equation for this problem and integrate over <span class="math">\(\{ \vec X_{s+1}, \cdots, \vec X_N \}\)</span>. Make approximations (large N etc), finally we have a hierarchy,</p>
+<div class="math">
+\[\frac{\partial F_s}{\partial t} +  \hat{\mathscr H^s} F_s = \frac{1}{v}\sum_{i=1}^s\int d\vec X_{s+1} \hat \Theta_{i,s+1} F_{s+1}(\vec X_1,\cdots,\vec X_{s+1}, t)\]</div>
+<p>where <span class="math">\(v=V/N\)</span>.</p>
+<p>This shows exactly why stat mech is hard. The smaller s is, the easier the solution. BUT we see that to find out <span class="math">\(s=1\)</span>, we need <span class="math">\(s=2\)</span> and the hierarchy never cut. What do we do? We cut manually.</p>
+</div>
+<div class="section" id="why-irreversible">
+<span id="index-1"></span><h2>Why Irreversible<a class="headerlink" href="#why-irreversible" title="Permalink to this headline">¶</a></h2>
+<p>The reason that a system is irreversible is because we lost information. In other words, the correlation function of time is shorter as the any system would be coupled to the reservoir. So any system would transfer information to the reservoir and the information just runs aways deep into the reservoir. With information loss the system can not be reversible. More quantum mechanically, the system loses information throught entanglement (mostly).</p>
+<p>The classical idea of irreversibility is through H theorem. Boltzmann defines a quantity</p>
+<div class="math">
+\[H = \int\int \rho(\vec r,\vec v, t) \ln \rho(\vec r,\vec v, t) d\tau d\omega\]</div>
+<p>where <span class="math">\(d\tau d\omega\)</span> is the infinitesemal volume in <span class="math">\(\mu\)</span> space, <span class="math">\(\rho(\vec r,\vec v, t)\)</span> is the probability density.</p>
+<p>Boltzmann proved that this quantity can not decrease using Boltzmann equation.</p>
+<p>This result shows the statistical mechanics view of the second law of thermodynamics, which says that adiabatic process can never decrease the entropy of a system.</p>
+</div>
+<div class="section" id="road-map-of-statistical-mechanics">
+<h2>Road Map of Statistical Mechanics<a class="headerlink" href="#road-map-of-statistical-mechanics" title="Permalink to this headline">¶</a></h2>
+<p>As we said previously, the ideal situation is that we solve Liouville equation directly and exactly. However, it&#8217;s not generally possible. So we turn to some mesoscropic method for help.</p>
+<img alt="How Statistical Physicists Break Their Promise" src="../_images/mesoscopic.png" />
+<p>We start from microscopic equation, work on them, them trucate at some point, meaning approximation. Then use the approximated result to calculate the marcoscopic quantities.</p>
+<p>An example of this method is that we divide a box of gas into two parts. Then we talk about only two states which is LEFT state and RIGHT state instead of the phase space states.</p>
+<img alt="Coarsing Process" class="align-center" src="../_images/coarseProcess.png" />
+<p>Now we can write down two equations by intuition,</p>
+<div class="math">
+\[\frac{d P_L}{d t} = T_{LR} P_R - T_{RL}P_L\]</div>
+<p>and</p>
+<div class="math">
+\[\frac{d P_R}{d t} = T_{RL} P_L - T_{LR}P_R .\]</div>
+<p>The first equation means that the change of probability that a particle in LEFT state is rate from RIGHT to LEFT time the probability that the particle is in RIGHT state, minus the rate from LEFT state to RIGHT state times the probability that the particle is in LEFT state. This is just simply an linear model of gaining and losing.</p>
+<p>It becomes interesting that we can discribe the system in such an easy way. Will it work? We&#8217;ll see.</p>
+<p>More generally, we have</p>
+<div class="math">
+\[\frac{d}{d t} P_\xi = \sum_\mu \left( T_{\xi\mu}P_\mu - T_{\mu\xi} P_{\xi} \right) .\]</div>
+<p>The important thing is that these equations are linear.</p>
+<p><strong>Now we can start form these equations instead of the Liouville equation to solve the problem. It&#8217;s called mesoscopic. The next thing is to connect these mesoscopic equations to the microscopic equations.</strong></p>
+</div>
+<div class="section" id="a-review-of-boltzmann-equation-h-theorem">
+<h2>A Review of Boltzmann Equation &amp; H Theorem<a class="headerlink" href="#a-review-of-boltzmann-equation-h-theorem" title="Permalink to this headline">¶</a></h2>
+<p>The objectives are</p>
+<ol class="arabic simple">
+<li>Derive Boltzmann equation from classical scattering theory of rigid balls.</li>
+<li>Derive continuity equation from Boltzmann equation.</li>
+<li>Prove H theorem.</li>
+<li>Understand H theorem.</li>
+</ol>
+<div class="section" id="boltzmann-equation-derivation">
+<h3>Boltzmann equation derivation<a class="headerlink" href="#boltzmann-equation-derivation" title="Permalink to this headline">¶</a></h3>
+<p>The idea is to find out an equation for one particle probability density <span class="math">\(f_j(\vec r, \vec v_j,t)\)</span> by considering the number of particles into this state and out of state due to collision. Since we can find all contributions to <span class="math">\(f_j\)</span> by applying scattering theory of classical particles, this equation can be written down explicitly which turns out to be an integrodifferential equation.</p>
+<p>The number of particles in a volume <span class="math">\(d\vec r d\vec v\)</span> at position <span class="math">\(\vec r\)</span> with velocity <span class="math">\(\vec v_j\)</span> is</p>
+<div class="math">
+\[f_j(\vec r, \vec v_j,t)d\vec r d\vec v_j .\]</div>
+<p>Consider the situation after a short time <span class="math">\(dt\)</span> we can write down the change of particle numbers due to collision and finally we will get Boltzmann equation.</p>
+<div class="math">
+\[\frac{\partial f_j}{\partial t} + \vec v_j\cdot \nabla _ {\vec r}f_j + \frac{\vec X _ j}{m_j} \cdot \nabla_{\vec v_j} f_j = 2\pi \sum_i \iint \left(f _ i'f _ j' - f _ i f _ j\right) g _ {ij} b \mathrm db  \mathrm d \vec v_i\]</div>
+<p>where <span class="math">\(\vec X\)</span> is the external force on the particle, prime denotes the quantity after collision, <span class="math">\(b\)</span> is the impact parameter.</p>
+<p>In the derivation, the most important part is to identify the number of particles into and out of this state due to collision.</p>
+</div>
+<div class="section" id="boltzmann-equation-continuity-equation">
+<h3>Boltzmann equation &amp; Continuity Equation<a class="headerlink" href="#boltzmann-equation-continuity-equation" title="Permalink to this headline">¶</a></h3>
+<p>We can derive from Boltzmann equation the Enskog&#8217;s equation then simplify to continuity equation by picking up an conserved quantity as <span class="math">\(\psi_i\)</span> in Enskog&#8217;s equation.</p>
+<p>Continuity equation is alway true for such an conserved system so this results is very conceivable.</p>
+</div>
+<div class="section" id="h-theorem">
+<h3>H Theorem<a class="headerlink" href="#h-theorem" title="Permalink to this headline">¶</a></h3>
+<p>H theorem says that the quantity <span class="math">\(H\)</span> can not decrease. The requirements of course should be that in a classical, particle number conserved system.</p>
+<p>First define</p>
+<div class="math">
+\[H(t) = \iint  f(\vec r, \vec v, t) \ln  f(\vec r, \vec v, t) d\vec r d\vec v\]</div>
+<p>Use Boltzmann equation we find out that</p>
+<div class="math">
+\[\frac{d H}{dt} \leq 0\]</div>
+<p>in which equal sign is valid if&amp;f</p>
+<div class="math">
+\[f' f_1' = f f_1 .\]</div>
+</div>
+<div class="section" id="h-theorem-discussion">
+<h3>H Theorem Discussion<a class="headerlink" href="#h-theorem-discussion" title="Permalink to this headline">¶</a></h3>
+<p>There were two objections on H theorem.</p>
+<ol class="arabic simple">
+<li>Loschmidt: All collisions can be reversed in the view of classical mechanics;</li>
+<li>Zermelo: Poincare recursion theorem says an equilibrium system can go back to inequilibrium.</li>
+</ol>
+<p>To Loschmidt&#8217;s questioning, Boltzmann pointed out that H theorem is a statistical theorem rather than mechanics theorem. Quantities in this theorem like <span class="math">\(f\)</span> are statistical average not the quantity of exactly which particle.</p>
+<p>Zermelo&#8217;s objection is not valid because the recursion time is extremely long.</p>
+</div>
+</div>
+<div class="section" id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><ol class="first last upperalpha simple" start="12">
+<li><ol class="first upperalpha" start="5">
+<li>Reichl, A Modern Course in Statistical Physics</li>
+</ol>
+</li>
+</ol>
+</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#">Back to top</a>
+
+    </p>
+    <p>
+        <span>© Copyright 2014, Lei Ma.</span>|
+        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
+        <span>Created with
+            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script></span>
+    </p>
+
+    <hr>
+
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>

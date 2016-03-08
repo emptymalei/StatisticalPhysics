@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Solving Master Equations &mdash; Statistical Mechanics Notes</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1415',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/rrssb.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Statistical Mechanics Notes" href="../index.html" />
+    <link rel="up" title="Stochastic And Non-Equilibrium Statistical Mechanics" href="main.html" />
+    <link rel="next" title="Master Equation Examples" href="master-eqn-examples.html" />
+    <link rel="prev" title="Master Equation" href="master-eqn.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Statistical Physics</a>
+        <span class="navbar-text navbar-version pull-left"><b>3.1315</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Parts <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary/main.html">Vocabulary and Program</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../thermodynamics/main.html">Thermodynamics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../equilibrium/main.html">Equilibrium Statistical Mechanics</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="main.html">Stochastic And Non-Equilibrium Statistical Mechanics</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Solving Master Equations</a><ul>
+<li><a class="reference internal" href="#index-0">Solving Master Equations</a></li>
+<li><a class="reference internal" href="#solving-master-equations-fourier-transform">Solving Master Equations: Fourier Transform</a></li>
+<li><a class="reference internal" href="#finite-chain-with-nearest-neighbor-interactions">Finite Chain with Nearest Neighbor Interactions</a><ul>
+<li><a class="reference internal" href="#matrix-form">Matrix Form</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#infinite-chain-with-nearest-neighbor-interactions">Infinite Chain with Nearest Neighbor Interactions</a></li>
+<li><a class="reference internal" href="#d-lattice">2D Lattice</a></li>
+<li><a class="reference internal" href="#continuum-limit">Continuum Limit</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="master-eqn.html" title="Previous Chapter: Master Equation"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Master Equation</span>
+    </a>
+  </li>
+  <li>
+    <a href="master-eqn-examples.html" title="Next Chapter: Master Equation Examples"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Master Equati... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/nonequilibrium/solving-master-eqn.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="solving-master-equations">
+<h1>Solving Master Equations<a class="headerlink" href="#solving-master-equations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="index-0">
+<span id="id1"></span><h2>Solving Master Equations<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h2>
+<p>Master equation, again, is</p>
+<div class="math">
+\[\frac{d P_m}{dt} = \sum_n R_{mn} P_n - \sum_n R_{nm} P_m\]</div>
+<p>which can be written as a more simple form,</p>
+<div class="math">
+\[\frac{d P_m}{dt} + \sum_n A_{mn}P_n = 0 .\]</div>
+<p>To figure out the elements of this new matrix <span class="math">\(A\)</span>, we need to understand how to combine the RHS of master equation.</p>
+<div class="math">
+\[\begin{split}\partial_t \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} = \begin{pmatrix} 0  &amp; R_{12} &amp; \cdots &amp; R_{1N} \\ R_{21}  &amp; 0 &amp; \cdots &amp; R_{2N} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ R_{N1} &amp; R_{N2} &amp; \cdots &amp; 0   \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix}   - \sum_{n}R_{nm} \begin{pmatrix}  1 &amp; 0 &amp; \cdots &amp; 0 \\  0 &amp; 1 &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp;  0  \\ 0 &amp; 0 &amp; \cdots &amp; 1  \end{pmatrix}  \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix}\end{split}\]</div>
+<p>Since <span class="math">\(A_{mm} = \sum_n R_{nm}\)</span> is just a real number, we can combine the two matrices on the RHS, which is</p>
+<div class="math">
+\[\begin{split}\partial_t \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} + \begin{pmatrix} A_{11}  &amp; -R_{12} &amp; \cdots &amp; -R_{1N} \\ -R_{21}  &amp; A_{22} &amp; \cdots &amp; -R_{2N} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ -R_{N1} &amp; -R_{N2} &amp; \cdots &amp; A_{NN}   \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} = 0  .\end{split}\]</div>
+<p>We can define the <span class="math">\(\mathbf A\)</span> matrix now.</p>
+<div class="math">
+\[\begin{split}A_{mn} = \begin{cases} -R_{mn} &amp;\quad  n \neq m \\ \sum_{n} R_{nm} &amp; \quad n=m  \end{cases}\end{split}\]</div>
+<p><span class="math">\(\mathbf A\)</span> matrix is defined in this way so that we have the master equation becomes</p>
+<div class="math">
+\[\partial_t \mathbf P + \mathbf A \mathbf P = 0 .\]</div>
+<p>So solve such a matrix equation, we need to diagonalize <span class="math">\(\mathbf A\)</span>, so that we have a simple solution</p>
+<div class="math">
+\[\mathbf P_{\text{diag}} = e^{- \mathbf A_{\text{diag}} t} .\]</div>
+<p>The most general way is to diagonalize it using an invertible matrix <span class="math">\(\mathbf S\)</span>, i.e.,</p>
+<div class="math">
+\[\partial_t \bf S^{-1} P + S^{-1}AS S^{-1} P = 0\]</div>
+<p>in which we&#8217;ll define <span class="math">\(\mathbf A_{\text{diag}} = \bf S^{-1} P S\)</span> and <span class="math">\(\mathbf P_{\text{diag}} = \bf S^{-1} P\)</span>. For simplicity, we won&#8217;t write down the indices from now on.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Is there a mechanism that ensures the <span class="math">\(\mathbf A\)</span> is <span class="highlit">invertible</span> ? If <span class="math">\(\mathbf A\)</span> is <span class="highlit">defective</span> , none of these can be done. Do all physical systems have invertible <span class="math">\(\mathbf A\)</span>?</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Notice that the form of master equation after this transform is similar to the dynamics of quantum mechanics which is</p>
+<div class="math">
+\[i\hbar \frac{\partial }{\partial t} \ket{\psi} = \hat H \ket{\psi}.\]</div>
+<p>Another thing is that this form is also similar to Liouville equation,</p>
+<div class="last math">
+\[i\partial_t \rho^N = \hat L^N \rho^N .\]</div>
+</div>
+</div>
+<div class="section" id="solving-master-equations-fourier-transform">
+<h2>Solving Master Equations: Fourier Transform<a class="headerlink" href="#solving-master-equations-fourier-transform" title="Permalink to this headline">¶</a></h2>
+<p>Fourier transform is a quick and efficient way of diagonalizing <span class="math">\(\mathbf A\)</span> matrix.</p>
+<p>We consider the case that coarsed system has translational symmetry, then we know the value of elements in <span class="math">\(\mathbf A\)</span> matrix only dependends on <span class="math">\(l:= n-m\)</span>. In ohter words,</p>
+<div class="math">
+\[\partial_t P_m  + \sum_n A_{mn} P_n  = 0.\]</div>
+<p>For translational symmetric system, we can work out discrete Fourier transform to find the normal modes. Define the kth mode as</p>
+<div class="math">
+\[P^k = P_m e^{ikm} .\]</div>
+<p>Multiply by <span class="math">\(e^{ikm}\)</span> on master equstion and sum over m, we get</p>
+<div class="math">
+\[\sum_m \partial_t P_m e^{ikm} + \sum_m \sum_n e^{ikm}A_{m-n} P_n = 0.\]</div>
+<p>With the definition of kth mode above there, the master equation can be written as</p>
+<div class="math">
+\[\partial_t P^k + \sum_n\sum_m e^{ik(m-n)}A_{m-n} e^{ikn}P_n = 0\]</div>
+<p>which &#8220;accidently&#8221; diagonalizes the matrix <span class="math">\(\mathbf A\)</span>. So define the kth mode of <span class="math">\(\mathbf A\)</span> as <span class="math">\(A^k = \sum_{l=m-n} e^{ik(m-n)}A_{m-n}\)</span> then</p>
+<div class="math">
+\[\partial_t P^k + \sum_{l=m-n}e^{ik(m-n)}A_{m-n} \sum_n e^{ikn}P_n = 0\]</div>
+<p>is reduced to</p>
+<div class="math">
+\[\partial_t P^k + A^k P^k = 0 \qquad\text{No summation over k!.}\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Note that summation over n and m is equivalent to summation over n and m-n.</p>
+</div>
+<p>Finally we have the solution of normal modes,</p>
+<div class="math">
+\[P^k(t) = P^k(0) e^{-A^k t} .\]</div>
+<p>To find out the final solution, inverse Fourier transform on kth mode,</p>
+<div class="math">
+\[P_m(t) = \frac{1}{N} \sum_k P^k(t) e^{-ikm} .\]</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>Note that due to the Born van Karman BC we chose,</p>
+<div class="math">
+\[e^{ikm} = e^{ik(m+N)}\]</div>
+<p>which leads to</p>
+<div class="math">
+\[k=\frac{2\pi}{N} .\]</div>
+<p>Discrete transform will become integral if we are dealing with continous systems, which will be achieved by using the following transformation,</p>
+<div class="math">
+\[\frac{1}{N}\sum_k  \rightarrow \frac{1}{2\pi} \int dk\]</div>
+<p class="last">We write down this identity like transformation because the discrete result has the form <span class="math">\(\frac{1}{N}\sum_k\)</span>.</p>
+</div>
+</div>
+<div class="section" id="finite-chain-with-nearest-neighbor-interactions">
+<h2>Finite Chain with Nearest Neighbor Interactions<a class="headerlink" href="#finite-chain-with-nearest-neighbor-interactions" title="Permalink to this headline">¶</a></h2>
+<p>In this simple case, the transfer is</p>
+<div class="math">
+\[R_{mn} = F(\delta_{m,n-1}+ \delta_{m,n+1}) .\]</div>
+<p>So master equation becomes</p>
+<div class="math">
+\[\partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There is no need to use the definition of <span class="math">\(\mathbf A\)</span> matrix in this simple case.</p>
+</div>
+<p>Discrete Fourier transform,</p>
+<div class="math">
+\[\partial_t P^k  = F(e^{ikm} P_{m+1} + e^{ikm} P_{m-1} -2 P^k) .\]</div>
+<p>Combine terms,</p>
+<div class="math">
+\[\partial_t P^k = 4F\sin^2\frac{k}{2} .\]</div>
+<p>The solution for kth mode should be</p>
+<div class="math">
+\[P^k(t) = P^k(0) e^{-4F \sin^2\frac{k}{2} t} .\]</div>
+<p>Inverse Fourier transform gives us the result of</p>
+<div class="math">
+\[P_m(t)  = \frac{1}{N} \sum_ {k} P^k(t) e^{-i km} .\]</div>
+<p>The last thing is to find out the value of <span class="math">\(k\)</span>. Apply Born-Von Karman boundary condition, we find that <span class="math">\(k\)</span> is quantized,</p>
+<div class="math">
+\[k = \frac{2\pi}{N} n, \qquad n=0,1,2, \cdots, N-1 .\]</div>
+<div class="section" id="matrix-form">
+<h3>Matrix Form<a class="headerlink" href="#matrix-form" title="Permalink to this headline">¶</a></h3>
+<p>To make it clear, we&#8217;ll redo this problem in matrix form.</p>
+<p>First of all, write down master equation for this problem again,</p>
+<div class="math">
+\[\partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .\]</div>
+<p>In the form of matrix, we have</p>
+<div class="math">
+\[\begin{split}\partial_t \begin{pmatrix} P_1 \\ P_2 \\ P_3 \\ P_4 \\ P_5 \\ P_6 \end{pmatrix} + F \begin{pmatrix}  2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ P_3 \\ P_4 \\ P_5 \\ P_6 \end{pmatrix} = 0\end{split}\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>An easy way to get the matrix is to write down the <span class="math">\(\mathbf R\)</span> matrix which has 0 diagonal elements, construct <span class="math">\(\mathbf A\)</span> matrix by adding minus sign to all elements and put the sum of the original elements at the diagonal in the corresponding line. Pay attention to the signs.</p>
+<p class="last">Another propertity worth talking about is the <span class="highlit">additive of the matrices</span>. <span class="highlit">A more complicated system can be decomposed into several simple systems.</span></p>
+</div>
+<p>The technique used to solve this problem is to diagonalize the 6 times 6 matrix because we can then just write down the solutions.</p>
+<p>The way to do this is exactly what have did in the previous part, that is defining new quantities. Then we have in matrix form</p>
+<div class="math">
+\[\begin{split}\partial_t \begin{pmatrix} P^{k_1} \\ P^{k_2}\\ P^{k_3}\\ P^{k_4}\\ P^{k_5}\\ P^{k_6} \end{pmatrix} + 4F \begin{pmatrix} \sin^2\frac{k_1}{2} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp;  \sin^2\frac{k_2}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp;  \sin^2\frac{k_3}{2} &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \sin^2\frac{k_4}{2} &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp;  \sin^2\frac{k_5}{2} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;  \sin^2\frac{k_6}{2}   \end{pmatrix} \begin{pmatrix} P^{k_1} \\ P^{k_2}\\ P^{k_3}\\ P^{k_4}\\ P^{k_5}\\ P^{k_6} \end{pmatrix} = 0\end{split}\]</div>
+<p>By writing in this form, we imediately know why diagonalizing is the thing we eager to do. The solutions are just</p>
+<div class="math">
+\[P^k(t) = P^k(0) e^{-4F\sin^2(k/2) t} .\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Recall that the elements in the diagonailized <span class="math">\(\mathbf A_{\text{diag}}\)</span> matrix are just the eigenvalues of <span class="math">\(\mathbf A\)</span> matrix with corresponding eigenvectors. So in other words, the way to solve this kind of descrete master equations is to solve the eigen problem of <span class="math">\(\mathbf A\)</span> matrix and then find the eigen modes and finally inverse transform back to <span class="math">\(P_m(t)\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="infinite-chain-with-nearest-neighbor-interactions">
+<h2>Infinite Chain with Nearest Neighbor Interactions<a class="headerlink" href="#infinite-chain-with-nearest-neighbor-interactions" title="Permalink to this headline">¶</a></h2>
+<p>We have exactly the same equations as in finite chain. The difference lies in the boundary condition where <span class="math">\(N\rightarrow \infty\)</span> and</p>
+<div class="math">
+\[\frac{1}{N}\sum_k \rightarrow \frac{1}{2\pi}\int dk .\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>The way to check this result is to check the sum of unit probability.</p>
+<div class="last math">
+\[\frac{1}{N}\sum_{k=1}^{N} 1 = 1 \Leftrightarrow \frac{1}{2\pi}\int_{-\pi}^{\pi} 1 dk = 1\]</div>
+</div>
+<p>So the solutions are</p>
+<div class="math">
+\[\begin{split}P_m(t) &amp;= \frac{1}{2\pi} \int _{-\pi}^{\pi} P^k(0) e^{-2F(1-\cos{k})t} e^{-ikm} dk \\ &amp;=  P^k(0)  e^{-2Ft} \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{2Ft\cos{k}} e^{-ikm} dk \\
+&amp; = P^k(0)  e^{-2Ft} \mathrm{I_m}(2Ft)\end{split}\]</div>
+<div class="admonition important" id="index-1">
+<p class="first admonition-title">Important</p>
+<p><strong>Vocabulary</strong>: <span class="highlit">Modified Bessel function</span> is defined as</p>
+<div class="math">
+\[\mathrm{I_m} (z) = \frac{1}{2\pi}\int_{-\pi}^{\pi} e^{-ikm} e^{z\cos{k}} dk  .\]</div>
+<p>Since the argument has imaginary part, this is also called Bessel function of imaginary argument.</p>
+<p>Check out more properties about this function in vocabulary part.</p>
+<div class="last figure align-center" id="id2">
+<a class="reference internal image-reference" href="../_images/besselIFunctions1stKind.png"><img alt="../_images/besselIFunctions1stKind.png" src="../_images/besselIFunctions1stKind.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text"><a class="reference external" href="https://en.wikipedia.org/wiki/File:BesselI_Functions_(1st_Kind,_n%3D0,1,2,3).svg">https://en.wikipedia.org/wiki/File:BesselI_Functions_(1st_Kind,_n%3D0,1,2,3).svg</a></span></p>
+</div>
+</div>
+</div>
+<div class="section" id="d-lattice">
+<h2>2D Lattice<a class="headerlink" href="#d-lattice" title="Permalink to this headline">¶</a></h2>
+<p>A 2D lattice image is shown below <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Equilateral_Triangle_Lattice.svg">with image cridet of Jim Belk (public domain)</a>.</p>
+<div class="figure align-center" id="id3">
+<img alt="equilateral Triangle Lattice" src="../_images/equilateralTriangleLattice.png" />
+<p class="caption"><span class="caption-text">An equilateral triangle lattice</span></p>
+</div>
+<p>Note that we have translational symmetry in both x and y direction. So the solution is simply the product of solutions to two directioins,</p>
+<div class="math">
+\[P_m(t) = e^{-2(F_x+F_y)t} \mathrm{I_m}(2F_xt) \mathrm{I_m}(2F_y t)\]</div>
+</div>
+<div class="section" id="continuum-limit">
+<h2>Continuum Limit<a class="headerlink" href="#continuum-limit" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we have a continuum system,</p>
+<div class="math">
+\[\begin{split}\partial_t P_m &amp;= F(P_{m-1} + P_{m+1}) - 2FP_m \\
+&amp; = F(P_{m+1}-P_m -(P_m-P_{m-1})) \\
+&amp; = F \epsilon^2 \frac{ (P_{m+1}-P_m)/\epsilon -(P_m-P_{m-1})/\epsilon )  }{\epsilon}\end{split}\]</div>
+<p>We can identify the form of derivatives but RHS becomes zero if <span class="math">\(F\)</span> is a constant when we take the limit <span class="math">\(\epsilon \rightarrow 0\)</span>.</p>
+<p>It does make sense that <span class="math">\(F\)</span> actually increases when the distance between two sites becomes smaller. And the way to reconcile the zero problem is to assume that</p>
+<div class="math">
+\[F = \frac{D}{\epsilon^2} .\]</div>
+<p>Then we have the diffusion equation.</p>
+<div class="math">
+\[\frac{\partial P(x,t)}{\partial t} = D\frac{\partial^2 P(x,t)}{\partial x^2}\]</div>
+<p>.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#">Back to top</a>
+
+    </p>
+    <p>
+        <span>© Copyright 2014, Lei Ma.</span>|
+        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
+        <span>Created with
+            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script></span>
+    </p>
+
+    <hr>
+
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>

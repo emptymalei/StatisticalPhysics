@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Quantum Master Equation &mdash; Statistical Mechanics Notes</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1415',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/rrssb.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Statistical Mechanics Notes" href="../index.html" />
+    <link rel="up" title="Stochastic And Non-Equilibrium Statistical Mechanics" href="main.html" />
+    <link rel="next" title="Brownian Motion" href="brownian-motion.html" />
+    <link rel="prev" title="Effect of Defects" href="effect-of-defects.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Statistical Physics</a>
+        <span class="navbar-text navbar-version pull-left"><b>3.1315</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Parts <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary/main.html">Vocabulary and Program</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../thermodynamics/main.html">Thermodynamics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../equilibrium/main.html">Equilibrium Statistical Mechanics</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="main.html">Stochastic And Non-Equilibrium Statistical Mechanics</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Quantum Master Equation</a><ul>
+<li><a class="reference internal" href="#id1">Quantum Master Equation</a><ul>
+<li><a class="reference internal" href="#pauli-s-mistake">Pauli&#8217;s Mistake</a></li>
+<li><a class="reference internal" href="#van-hove-s-derivation">van Hove&#8217;s Derivation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#van-hove">van Hove</a></li>
+<li><a class="reference internal" href="#zwawzig-and-nakajiwa">Zwawzig and Nakajiwa</a></li>
+<li><a class="reference internal" href="#about-off-diagonal-elements">About Off-diagonal Elements</a></li>
+<li><a class="reference internal" href="#simplify-quantum-master-equation">Simplify Quantum Master Equation</a></li>
+<li><a class="reference internal" href="#markovian-kenkre-approach">Markovian - Kenkre Approach</a></li>
+<li><a class="reference internal" href="#markovian-another-approach">Markovian - Another Approach</a></li>
+<li><a class="reference internal" href="#footnotes">Footnotes</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="effect-of-defects.html" title="Previous Chapter: Effect of Defects"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Effect of Def...</span>
+    </a>
+  </li>
+  <li>
+    <a href="brownian-motion.html" title="Next Chapter: Brownian Motion"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Brownian Motion &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/nonequilibrium/quantum-master-eqn.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="quantum-master-equation">
+<h1>Quantum Master Equation<a class="headerlink" href="#quantum-master-equation" title="Permalink to this headline">¶</a></h1>
+<p>The game of quantum master equations is presented in this lecture notes.</p>
+<div class="section" id="id1">
+<h2>Quantum Master Equation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">In quantum mechanics, probability is not complete. We need density matrix.</p>
+</div>
+<p>Quantum mechanics observables are averaging over all density matrix elements,</p>
+<div class="math">
+\[\langle O \rangle = \sum_{m,n} O_{nm}\rho_{mn}.\]</div>
+<p>For diagonalized density matrix, this averaging becomes the ordinary probability averaging.</p>
+<p>However, even if we start with a diagonalized density matrix, the averaging procedure won&#8217;t stay on the classical averaging procedure as time goes on. Off diagonal elements can be created out of the diagonal elements.</p>
+<p>In that sense, it&#8217;s not even possible to use the classical master equation to solve most quantum problems. We need the quantum master equation.</p>
+<p>The first principle of quantum mechanics is</p>
+<div class="math">
+\[i\hbar \frac{d}{dt}\hat \rho = [\hat H,\hat \rho] = \hat L \hat \rho.\]</div>
+<p>Then the question is, as the first idea, how to derive an equation for the probability.</p>
+<div class="section" id="pauli-s-mistake">
+<h3>Pauli&#8217;s Mistake<a class="headerlink" href="#pauli-s-mistake" title="Permalink to this headline">¶</a></h3>
+<p>Pauli derived the first quantum master equation which is not quite right.</p>
+<p>The solution to a quantum system is</p>
+<div class="math">
+\[\hat \rho(t) = e^{-iL(t-t_0)} \hat \rho(t_0) .\]</div>
+<p>In Heisenberg picture,</p>
+<div class="math">
+\[\hat \rho(t+\tau) = e^{-i\tau \hat H} \hat \rho(t) e^{i\tau \hat H} .\]</div>
+<p>The diagonal elements of density matrix are</p>
+<div class="math">
+\[\rho_{mm}(t+\tau) = \bra{m}e^{-i\tau \hat H} \hat \rho(t) e^{i\tau \hat H} \ket{m}.\]</div>
+<p>The left hand side is the probability, <span class="math">\(P_m\)</span>. Right had side becomes</p>
+<div class="math">
+\[\text{RHS} = \sum_{n,l}\bra{m}e^{-i\tau \hat H} \ket{n} \bra{n}\hat \rho(t) \ket{l}\bra{l} e^{i\tau \hat H} \ket{m}.\]</div>
+<p>Here is where Pauli&#8217;s idea comes in. He assumed that the system is dirty enought to have repeatedly recurance of diagonalized density matrix. Then he use diagonalized density matrix to calculate the probability,</p>
+<div class="math">
+\[\begin{split}P_m(t+\tau) &amp;= \sum_{n}\bra{m}e^{-i\tau \hat H} \ket{n} \bra{n}\hat \rho(t) \ket{n}\bra{n} e^{i\tau \hat H} \ket{m} \\
+&amp; = \sum_{n} P_n \left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2 .\end{split}\]</div>
+<p>The term <span class="math">\(\left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2\)</span> RHS is the probability of a state n to be at state m after a short time <span class="math">\(\tau\)</span>. We&#8217;ll define this as <span class="math">\(Q_{mn}(\tau)\)</span>.</p>
+<p>So in short the probability is</p>
+<div class="math">
+\[P_m(t+\tau) = \sum_n Q_{mn}(\tau)P_n(t).\]</div>
+<p>Then we can repeat the Chapman method to derive a master eqution.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">However, the Pauli assumption is basically the Fermi golden rule which requires a infinite amount of time. This is obviously not valid for an master equation system.</p>
+</div>
+<p>Then it comes the van Hove derivation.</p>
+</div>
+<div class="section" id="van-hove-s-derivation">
+<h3>van Hove&#8217;s Derivation<a class="headerlink" href="#van-hove-s-derivation" title="Permalink to this headline">¶</a></h3>
+<p>van Hove argued that Pauli&#8217;s result is nonsense. He started with</p>
+<div class="math">
+\[\begin{split}P_m(t+\tau) &amp;= \sum_n Q_{mn}(\tau) P_n(t) \\
+P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
+<p>The key point is that <span class="math">\(Q_{mn}(\tau) = Q_{mn}(-\tau)\)</span>,</p>
+<div class="math">
+\[\begin{split}Q_{mn}(\tau) &amp; = \left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2 \\
+&amp; = \left\vert \bra{m} e^{i\tau \hat H} \ket{n}  \right\vert^2 \\
+&amp; = Q_{mn}(-\tau) .\end{split}\]</div>
+<p>Without any calculations, we just know imediately that</p>
+<div class="math">
+\[P_m(t+\tau) = P_m(t-\tau) ,\]</div>
+<p>in other words, there&#8217;s no evolution of probability density.</p>
+</div>
+</div>
+<div class="section" id="van-hove">
+<h2>van Hove<a class="headerlink" href="#van-hove" title="Permalink to this headline">¶</a></h2>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>van Hove made a great progress by bringing up the following questions.</p>
+<ol class="last arabic simple">
+<li>What systems can be described by master equations?</li>
+<li>What&#8217;s the time scale for quantum master equation to be valid?</li>
+<li>How to derive a quantum master equation?</li>
+</ol>
+</div>
+<p>Suppose we have a quantum system with Hamiltonian,</p>
+<div class="math">
+\[\hat H = \hat H_0 + \lambda(t)\hat W .\]</div>
+<p>van Hove&#8217;s idea was that quantum master equations can describe systems with diagonal singularity conditions.</p>
+<p>Then he said, the time scale of the system should be long enough, the perturbation should be as small as the condition <span class="math">\(\lambda^2 t \approx \text{constant}\)</span>.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This looks weird to me because I can not see why this is good for an approximation.</p>
+</div>
+<p>So we can write down the diagonal elements</p>
+<div class="math">
+\[\begin{split}P_m &amp; = \bra{m}\hat \rho \ket{m} \\
+&amp; = \sum_{m,n} \bra{m} e^{i\hat H t/\hbar} \ket{n}\bra{n} \hat \rho(0) \ket{l}\bra{l} e^{-iHt/\hbar} \ket{m} \\
+&amp; = \sum_{m,n} \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 \rho_{nl}(0) .\end{split}\]</div>
+<p>van Hove applied random phase condition for only initial condition, <span class="math">\(\rho_{nl}(0)\)</span> is diagonalized at initial <span class="math">\(t=0\)</span>.</p>
+<p>Then we have</p>
+<div class="math">
+\[\rho_{nl} (0) = \rho_{nn} \delta_{nl} = P_n(0) \delta_{nl} .\]</div>
+<p>Put this result back to the probability,</p>
+<div class="math">
+\[P_m = \sum_n \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 P_n(0) .\]</div>
+<p>Then use the whole Dyson series then selectively make some terms zero and use the assumptions to derive a master equation.</p>
+</div>
+<div class="section" id="zwawzig-and-nakajiwa">
+<h2>Zwawzig and Nakajiwa<a class="headerlink" href="#zwawzig-and-nakajiwa" title="Permalink to this headline">¶</a></h2>
+<p>They invented the projection technique.</p>
+<p>First of all define a diagonalizing operator <span class="math">\(\hat D\)</span> which just keeps the diagonal elements and simply drops the off diagonal elements. We see that <span class="math">\(1-\hat D\)</span> will element all diagonal elements.</p>
+<p>We can define the diagonalized density matrix as <span class="math">\(\hat \rho_d = \hat D \hat \rho\)</span> and off-diagonalized density matrix as <span class="math">\(\hat \rho_{od} = (1-\hat D)\hat \rho\)</span>. As an application,</p>
+<div class="math">
+\[\hat \rho = \hat \rho_d + \hat \rho_{od} .\]</div>
+<p>Starting from the von Neumann equation,</p>
+<div class="math">
+\[i\hbar \partial_t \hat \rho = \left[\hat H, \hat \rho \right] .\]</div>
+<p>By using the Liouville operator,</p>
+<div class="math">
+\[\partial_t \hat \rho = -i \hat L \hat \rho .\]</div>
+<p>Apply <span class="math">\(\hat D\)</span> and <span class="math">\(1-\hat D\)</span> to the von Neumann equation,</p>
+<div class="math">
+\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho \\
+\partial_t \hat \rho _{od} &amp; = -i (1 - \hat D)  \hat L \hat \rho .\end{split}\]</div>
+<p>Use the relation that <span class="math">\(\hat \rho = \hat \rho_d + \hat \rho_{od}\)</span>, we have</p>
+<div class="math">
+\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho_d - i \hat D  \hat L \hat \rho _ {od} \\
+\partial_t \hat \rho _{od} &amp; = - i (1 - \hat D)  \hat L \hat \rho _ d - i (1 - \hat D)  \hat L \hat \rho_{od}  .\end{split}\]</div>
+<p>Solve the second equation using Green function technique,</p>
+<div class="math">
+\[\hat \rho_{od} = e^{-i(1-\hat D)\hat L t} + \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(-i(1-\hat D)\hat L \hat \rho_d(t')) .\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Recall that the solution for</p>
+<div class="math">
+\[\dot y + \alpha y = f\]</div>
+<p>is</p>
+<div class="last math">
+\[y = e^{-\alpha t} y(0) + \int_0^t dt' e^{-\alpha (t-t')} f(t') .\]</div>
+</div>
+<p>Insert this solution to the equation of <span class="math">\(\hat \rho_d\)</span>,</p>
+<div class="math">
+\[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.\]</div>
+<p>What happened to the blue term? It disapears when we apply the initial random phase condition.</p>
+<p>When it happens we get our closed master equation for <span class="math">\(\hat \rho_d\)</span>, which is an equation for the probability.</p>
+</div>
+<div class="section" id="about-off-diagonal-elements">
+<h2>About Off-diagonal Elements<a class="headerlink" href="#about-off-diagonal-elements" title="Permalink to this headline">¶</a></h2>
+<p>Though we need to set <span class="math">\(\rho_{od}(0)=0\)</span> to have a closed master equation, that doens&#8217;t mean we have to make only localized initial condition on only one state.</p>
+<blockquote>
+<div><p>&#8220;We can always use phasers.&#8221;</p>
+<p class="attribution">&mdash;V. M. Kenkre</p>
+</div></blockquote>
+<p>Suppose we have a system with five possible states, the off-diagonal elements don&#8217;t exist initially if the system is in only one state.</p>
+<img alt="../_images/quantum1state.png" class="align-center" src="../_images/quantum1state.png" />
+<p>The density matrix will contain off-diagonal elements if we have two states initially.</p>
+<img alt="../_images/quantum2states.png" class="align-center" src="../_images/quantum2states.png" />
+<p>However, we can always choose a combination of the states to use as the basis, so that the density matrix becomes diagonalized.</p>
+</div>
+<div class="section" id="simplify-quantum-master-equation">
+<h2>Simplify Quantum Master Equation<a class="headerlink" href="#simplify-quantum-master-equation" title="Permalink to this headline">¶</a></h2>
+<p>We derived some sort of quantum master equation using projection method. Here we will simplify it.</p>
+<p>Let&#8217;s stare at the results for a minute.</p>
+<div class="math">
+\[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.\]</div>
+<p>By definition, <span class="math">\(\rho_d=\hat D\rho\)</span>. So what is <span class="math">\(\hat D \hat L \rho_d\)</span>?</p>
+<div class="math">
+\[\begin{split}\hat D \hat L \rho_d &amp; = \hat D\hat L \hat D \hat \rho \\
+&amp; = \hat D \left[ {\color{magenta}  \begin{pmatrix}\rho_{11} &amp; 0 &amp; 0 &amp; \cdots \\ 0 &amp; \rho_{22} &amp; 0 &amp; \cdots \\ 0 &amp; 0 &amp; \rho_{33} &amp; \cdots  \\ \vdots &amp; \vdots &amp; \vdots &amp;  \ddots  \end{pmatrix} \begin{pmatrix} H_{11} &amp; H_{12} &amp; H_{13} &amp; \cdots \\ H_{21} &amp; H_{22} &amp; H_{23} &amp; \cdots  \\ H_{31} &amp; H_{32} &amp; H_{33} &amp; \cdots \\ \vdots &amp; \vdots \vdots &amp; &amp; \ddots \end{pmatrix}    } -  {\color{green} \begin{pmatrix} H_{11} &amp; H_{12} &amp; H_{13} &amp; \cdots \\ H_{21} &amp; H_{22} &amp; H_{23} &amp; \cdots  \\ H_{31} &amp; H_{32} &amp; H_{33} &amp; \cdots \\ \vdots &amp; \vdots \vdots &amp; &amp; \ddots   \end{pmatrix} \begin{pmatrix} \rho_{11} &amp; 0 &amp; 0 &amp; \cdots \\ 0 &amp; \rho_{22} &amp; 0 &amp; \cdots \\  0 &amp; 0 &amp; \rho_{33} &amp; \cdots \\ \vdots &amp; \vdots &amp; \ddots &amp; \cdots \end{pmatrix} } \right]\end{split}\]</div>
+<p>We can easily see that the diagonal elements are equal for the two terms (magenta and green) in the braket so all the diagonal elements go away. Now when the <span class="math">\(\hat D\)</span> outside of the bracket applied, the whole term is zero.</p>
+<p>We are so lucky to eliminate the term <span class="math">\(-i\hat D\hat L\hat \rho_d\)</span>.</p>
+<p>We do perturbation theory most of the time. Consider the case that Hamiltonian of the system is <span class="math">\(\hat H = \hat H_0 + \lambda \hat W\)</span>. We can split the Liouville operator into two parts, :math:<a href="#id2"><span class="problematic" id="id3">`</span></a>hat L = hat L_0 + lambda hat L_W <a href="#id4"><span class="problematic" id="id5">`</span></a>.</p>
+<p>Our master equation becomes</p>
+<div class="math">
+\[\begin{split}\partial_t \hat \rho_d &amp; =  -  \int_0^t dt' \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D) (\hat L_0 + \lambda \hat L_W  )(t-t')}(1-\hat D)\hat L \hat \rho_d \\
+&amp; =  -  \int_0^t dt' \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D)  (\hat L_0 + \lambda \hat L_W ) (t-t')} (\hat L_0 + \lambda \hat L_W ) \hat \rho_d \\
+&amp; =  -  \int_0^t dt' \mathscr K(t-t') \hat \rho_d .\end{split}\]</div>
+<p>in which <span class="math">\(- i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) = 0\)</span> (initial condition), <span class="math">\(\hat D \hat L \rho_d = 0\)</span> (just proved).</p>
+<p>We have the definition</p>
+<div class="math">
+\[\begin{split}\mathscr K(t-t') &amp; = \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D)  (\hat L_0 + \lambda \hat L_W ) (t-t')} (\hat L_0 + \lambda \hat L_W ) .\end{split}\]</div>
+<p>In weak coupling interaction, <span class="math">\(\lambda \rightarrow 0\)</span>, we can put <span class="math">\(\lambda = 0\)</span> in the exponential.</p>
+<div class="math">
+\[\begin{split}\mathscr K(t-t')  &amp;=  \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D)  (\hat L_0 + \lambda \hat L_W ) (t-t')} (\hat L_0 + \lambda \hat L_W )  \\
+&amp;= \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D)  \hat L_0 (t-t')} (\hat L_0 + \lambda \hat L_W ) \\
+&amp;= \hat D \hat L_0  e^{-i(1-\hat D)  \hat L_0 (t-t')} \hat L_0  + \lambda \hat D \hat L_0  e^{-i(1-\hat D)  \hat L_0 (t-t')}   \hat L_W   \\
+\phantom{\mathscr K(t-t')} &amp; \phantom{{} = } + \lambda \hat D  \hat L_W  e^{-i(1-\hat D)  \hat L_0 (t-t')} \hat L_0  + \lambda^2 \hat D   \hat L_W  e^{-i(1-\hat D)  \hat L_0 (t-t')}  \hat L_W  \\
+&amp;=  \lambda^2 \hat D   \hat L_W  e^{-i(1-\hat D)  \hat L_0 (t-t')}  \hat L_W  \\
+&amp;=  \lambda^2 \hat D   \hat L_W  e^{-i\hat L_0 (t-t')}  \hat L_W  .\end{split}\]</div>
+<p>I dropped several terms even the first order of <span class="math">\(\lambda\)</span>. This has been done correctly because the interaction term can be very different from the zeroth order. <a class="footnote-reference" href="#id8" id="id6">[1]</a></p>
+<p>With a lot of terms being disappears, we can now start to look at the numbers which ia the density matrix elements sandwiched between states,</p>
+<div class="math">
+\[\bra{m} \partial_t \rho_d \ket{m} = -\lambda^2 \bra{m} \int_0^t dt' \hat L_W e^{-i(t-t')\hat L_0} \hat L_W \rho_d(t') \ket{m}.\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Here is an useful relation,</p>
+<div class="last math">
+\[\begin{split}e^{iA\hat L} \hat O &amp; = \hat O + i A \hat L \hat O + \frac{(iA)^2}{2} \hat L \hat L \hat O + \cdots \\
+&amp; = \hat O + iA[\hat H, \hat O] + \frac{(iA)^2}{2}  [\hat H, [\hat H,\hat O]] + \cdots \\
+&amp; = e^{iA\hat H}\hat O e^{-iA\hat H}\end{split}\]</div>
+</div>
+<p>Notice that <span class="math">\(\hat L_W \hat \rho_d = \frac{1}{\hbar}[W, \rho_d]\)</span>. Define <span class="math">\(\hat{\mathscr M} = e^{-i(t-t')\hat H_0}[\hat V,\hat \rho_d]e^{i(t-t')\hat H_0}\)</span>.</p>
+<div class="math">
+\[\begin{split}\bra{m} \partial_t \rho_d \ket{m} &amp;= -\lambda^2 \bra{m} \int_0^t dt' [\hat W, e^{-i(t-t')\hat L_0}[\hat W, \rho_d(t')]] \ket{m}  \\
+&amp; = -\lambda^2 \bra{m} \int_0^t [\hat W, ] dt' \ket{m}  \\
+&amp; = -\lambda^2 \left( \bra{m} \int_0^t dt' \hat W\hat{\mathscr M} \ket{m} - \bra{m} \int_0^t \hat{\mathscr M}\hat W\ket{m} dt' \right) \\
+&amp; = -\lambda^2 \int_0^t dt' \left( \bra{m} \hat W\hat{\mathscr M} \ket{m} - \bra{m} \hat{\mathscr M}\hat W\ket{m}  \right) \\
+&amp; = -\lambda^2 \int_0^t dt' \sum_n (W_{mn}\mathscr M_{nm} - \mathscr M_{mn}W_{nm}).\end{split}\]</div>
+<p>We know that <span class="math">\(\rho_d = P_{m}\)</span>. So the master equation becomes</p>
+<div class="math">
+\[\partial_t P_m(t) = -\lambda^2 \int_0^t dt' \sum_n (W_{mn}\mathscr M_{nm} - \mathscr M_{mn}W_{nm}).\]</div>
+<p>The eigen function of the system is</p>
+<div class="math">
+\[\hat H_0 \ket{m} = \epsilon_m \ket{m} .\]</div>
+<p>With this result we can calculate the matrix elements,</p>
+<div class="math">
+\[\begin{split}\mathscr M_{mn} &amp;= \bra{m} e^{-i(t-t')\hat H_0}[\hat W,\hat \rho_d]e^{i(t-t')\hat H_0} \ket{n} \\
+&amp; = e^{-i(t-t')\epsilon_m} \bra{m} [\hat W, \hat \rho_d] \ket{n} e^{i(t-t')\epsilon_n} \\
+&amp; = \sum_\mu e^{-i(t-t')\epsilon_m} (\bra{m} \hat W \ket{\mu} \bra{\mu} \hat \rho_d \ket{n} - \bra{m} \hat \rho_d \ket{\mu}\bra{\mu} \hat W \ket{n} )e^{i(t-t')\epsilon_n} \\
+&amp; = \sum_\mu  e^{-i(t-t')\epsilon_m} (W_{m\mu}\rho_{\mu n} - \rho_{m\mu}W_{\mu n}) e^{i(t-t')\epsilon_n} \\
+&amp; = e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} .\end{split}\]</div>
+<p>Finally we have our quantum master equation,</p>
+<div class="math">
+\[\begin{split}\partial_t P_m &amp;= -\lambda^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')\epsilon_n} ( W_{nm}P_{m} - P_{n}W_{n m} ) e^{i(t-t')\epsilon_m}) - (e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} )W_{nm}  \right] \\
+&amp; =  -\lambda^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')(\epsilon_n - \epsilon_m )  }  W_{nm} (P_{m} - P_{n}) - (e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} )W_{nm}  \right] \\
+&amp; = -2 \lambda^2 \int_0^t dt' \sum_n \left\vert W_{mn} \right\vert^2 \left[ P_n- P_m \right] \cos((\epsilon_m-\epsilon_n)(t-t'))\end{split}\]</div>
+<p>which is actually the <span class="highlit">Fermi&#8217;s golden rule</span>.</p>
+<p>Define <span class="math">\(\Omega_{mn}(t-t')=\Omega_{nm}(t-t') = 2\lambda^2 \left\vert W_{mn} \right\vert^2\cos((t-t')(\epsilon_m-\epsilon_n))\)</span>, we can write the master equation into a really simple form,</p>
+<div class="math">
+\[\partial_t P_m = \int_0^t dt' \sum_n \left( \Omega_{mn}(t-t') P_n - \Omega_{nm}(t-t') P_m \right).\]</div>
+</div>
+<div class="section" id="markovian-kenkre-approach">
+<h2>Markovian - Kenkre Approach<a class="headerlink" href="#markovian-kenkre-approach" title="Permalink to this headline">¶</a></h2>
+<p>We can simplify the equation more using Markovian approximation,</p>
+<div class="math">
+\[\Omega_{mn}(t) = \delta(t) \left[\int_0^t d\tau \Omega_{mn}(\tau) \right].\]</div>
+<p>We can see that the Laplace transform of this is really simple,</p>
+<div class="math">
+\[\tilde \Omega_{mn}(\epsilon) =  \Omega_{mn}(0).\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Laplace transform of integral and delta function are</p>
+<div class="math">
+\[\begin{split}\mathscr L (\delta(t-a)) &amp;= e^{-a\epsilon}, \qquad \text{for } a&gt;0. \\
+\mathscr L (\int_0^t f(t') dt') &amp; = \frac{1}{\epsilon} \mathscr L_\epsilon (f(t)).\end{split}\]</div>
+<p>So we have the Laplace transform of <span class="math">\(\Omega_{mn}(t) = \delta(t) \int_0^t d\tau \Omega_{mn}(\tau)\)</span> on both sides,</p>
+<div class="last math">
+\[\begin{split}\tilde \Omega_{mn}(\epsilon) &amp; = \int_0^\infty dt e^{-\epsilon t}  \delta(t) \int_0^t d\tau \Omega_{mn}(\tau) \\
+&amp; = \int_0^\infty \frac{1}{-\epsilon}  \delta(t) \int_0^t d\tau \Omega_{mn}(\tau) d e^{-\epsilon t} \\
+&amp; = \frac{1}{\epsilon} \int_0^\infty   e^{-\epsilon t} d\left(\delta(t) \int_0^t d\tau \Omega_{mn}(\tau) \right)  \\
+&amp; = \frac{1}{\epsilon} \int_0^\infty   e^{-\epsilon t} \int_0^t d\tau \Omega_{mn}(\tau)   d\left(\delta(t) \right) + \frac{1}{\epsilon} \int_0^\infty   e^{-\epsilon t}  \delta(t)  d\left( \int_0^t d\tau \Omega_{mn}(\tau) \right)  \\
+&amp; = \frac{1}{\epsilon} \int_0^\infty   e^{-\epsilon t}  \delta(t) \Omega_{mn}(t)  dt  \\
+&amp; = \frac{1}{\epsilon}   \Omega_{mn}(0)\end{split}\]</div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Derive the Fermi&#8217;s golden rule from this.</p>
+</div>
+<p>Finally we can reach Fermi&#8217;s golden rule.</p>
+</div>
+<div class="section" id="markovian-another-approach">
+<h2>Markovian - Another Approach<a class="headerlink" href="#markovian-another-approach" title="Permalink to this headline">¶</a></h2>
+<p><strong>I&#8217;ll put all the :math:`hbar`s back into the equations in this subsection.</strong></p>
+<p>I read the Markovian idea on quantiki <a class="footnote-reference" href="#id9" id="id7">[2]</a> . Here is my derivation of Fermi&#8217;s golden rule from quantum master equation using this approach.</p>
+<p>First of all, we can use interaction picture. Master equation here can be rewritten using interaction picture.</p>
+<div class="math">
+\[\begin{split}\partial_t P_m &amp; =  -\lambda^2/\hbar^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')(\epsilon_n - \epsilon_m ) /\hbar }  W_{nm} (P_{m} - P_{n}) - (e^{-i(t-t')\epsilon_m/\hbar} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n/\hbar} )W_{nm}  \right] \\
+&amp; = -\lambda^2/\hbar^2 \int_0^t dt' \sum_n \left[ ( e^{it\epsilon_m/\hbar}W_{mn} e^{-i t \epsilon_n/\hbar } e^{it'\epsilon_n/\hbar} W_{nm} e^{-it'\epsilon_m/\hbar} (P_{m} - P_{n}) - (e^{it\epsilon_m/\hbar}  W_{mn} e^{-it\epsilon_n/\hbar} (P_{n} - P_{m}) e^{it'\epsilon_n/\hbar} )W_{nm} e^{-it'\epsilon_m/\hbar} \right] \\
+&amp; = -\lambda^2/\hbar^2 \sum_n \left[  \int_0^t dt' W_{mn}^I W_{nm}^I(P_m-P_n) - \int_0^t dt' W_{mn}^I W_{nm}^I(P_n-P_m)  \right]\end{split}\]</div>
+<p>Markovian means there is no dependence on the past, in other words, <strong>the two point correlation in time</strong> is non-zero only when the two time are equal in the correlation function, <span class="math">\(\mathrm{Corr}(t_1,t_2)=0\)</span> for all <span class="math">\(t_1\not= t_2\)</span>. In our master equation case,</p>
+<div class="math">
+\[\begin{split}&amp;\int_0^t dt' W_{mn}^I(t) W_{nm}^I(t')(P_m(t')-P_n(t')) \\
+&amp; = \int_0^t dt' W_{mn}^I(t-t') W_{nm}^I(0)(P_m(t)-P_n(t)) \\
+&amp; = (P_m(t)-P_n(t)) \lim_{t\rightarrow \infty}\int_0^t dt' W_{mn}^I(t-t') W_{nm}^I(0) .\end{split}\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">This is corresponding to the Kenkre definition of Markovian.</p>
+</div>
+<p>So our master equation becomes</p>
+<div class="math">
+\[\begin{split}\partial_t P_m(t) &amp;= -\frac{\lambda^2}{\hbar ^2} \sum_n(P_m - P_n) \left[ \lim_{t\rightarrow \infty} \left( \int_0^t dt' e^{i(t-t')\epsilon_m/\hbar} W_{mn} e^{-i(t-t')\epsilon_n/\hbar} W_{nm} + \int_0^t dt' e^{-i(t-t')\epsilon_m/\hbar} W_{mn} e^{i(t-t')\epsilon_n/\hbar} W_{nm} \right) \right] \\
+&amp; = -\frac{\lambda^2}{\hbar^2} \sum_n (P_m - P_n) \left[ \lim_{t\rightarrow \infty} \left( \frac{\left| W_{mn}\right|^2 }{i\omega_{nm}} \left( e^{-it\omega_{mn}}  - e^{it\omega_{mn}}  \right) \right)   \right] \\
+&amp; = -\frac{\lambda^2}{\hbar^2} \sum_n (P_m - P_n) \left[ 2\left| W_{mn}\right|^2  \lim_{t\rightarrow \infty}   \left( \frac{i\sin(\omega_{mn}t)}{i\omega_{nm}}   \right)   \right] \\
+&amp; =  \sum_n (P_m - P_n) \left[  \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar^2}  \lim_{t\rightarrow \infty}   \left( \frac{\sin(\omega_{mn}t)}{\pi\omega_{nm}}   \right)   \right]\end{split}\]</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p>We have the following expression,</p>
+<div class="last math">
+\[\lim_{\epsilon\rightarrow 0} \frac{\sin(x/\epsilon)}{\pi x} = \delta(x) .\]</div>
+</div>
+<p>Using this expression of delta, we derived the Fermi&#8217;s golden rule.</p>
+<div class="math">
+\[\begin{split}\partial_t P_m &amp; =  \sum_n (P_m - P_n)   \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar^2}  \delta(\omega_mn)  \\
+&amp; =  \sum_n (P_m - P_n)   \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar^2}  \delta((\epsilon_m - \epsilon_n)/\hbar) \\
+&amp; =  \sum_n (P_m - P_n)   \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar}  \delta(\epsilon_m - \epsilon_n)\end{split}\]</div>
+<p>Comparing this result with the classical master equation, we can find out the transition rate,</p>
+<div class="math">
+\[\Omega_{mn} = \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar}  \delta(\epsilon_m - \epsilon_n)\]</div>
+<p>which is exactly the Fermi&#8217;s golden rule.</p>
+</div>
+<div class="section" id="footnotes">
+<h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id6">[1]</a></td><td>Refer to <em>Quantum Noise</em> by Gardiner and Zoller, Chapter 5, Section 1.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id9" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id7">[2]</a></td><td><a class="reference external" href="http://www.quantiki.org/wiki/">Quantiki</a> is a website of quantum information etc. The item about master equation is <a class="reference external" href="http://www.quantiki.org/wiki/Master_equation">here</a> .</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#">Back to top</a>
+
+    </p>
+    <p>
+        <span>© Copyright 2014, Lei Ma.</span>|
+        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
+        <span>Created with
+            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script></span>
+    </p>
+
+    <hr>
+
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>

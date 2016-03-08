@@ -23,6 +23,7 @@ div.header {
 margin-bottom: 20px;
 }
 
+
 /* Top Nav color */
 
 div.topnav {
@@ -38,6 +39,7 @@ padding: 10px 15px 10px 50px !important;
 border: solid 2px lightgrey !important;
 border-radius: 4px !important;
 background: none !important;
+color: black !important;
 }
 
 div.important {
@@ -45,6 +47,7 @@ border: solid 2px #4183c4 !important;
 border-radius: 4px !important;
 padding: 10px 15px 10px 50px !important;
 background: none !important;
+color: black !important;
 }
 
 div.warning {
@@ -52,12 +55,15 @@ padding: 10px 15px 10px 50px !important;
 border: solid 2px orange !important;
 border-radius: 4px !important;
 background: none !important;
+color: black !important;
 }
 
 div.hint {
 padding: 10px 15px 10px 50px !important;
 border: solid 2px #37D612 !important;
 border-radius: 4px !important;
+background: none !important;
+color: black !important;
 }
 
 div.admonition-laws {
@@ -65,12 +71,20 @@ padding: 10px 15px 10px 50px !important;
 border: solid 2px #28344C !important;
 border-radius: 4px !important;
 background: none !important;
+color: black !important;
 }
 
 div.math {
 text-align:center;
 }
 
+div.discussion {
+padding: 10px 15px 10px 50px !important;
+border: solid 2px #F5BD76 !important;
+border-radius: 4px !important;
+background: none !important;
+color: black !important;
+}
 
 #sourcelink {
 margin-top: 19.5px;
@@ -87,7 +101,7 @@ text-decoration:none;
 }
 
 
-
+/*
 .dropdown-menu {
 min-width: 300px !important;
 list-style:none;
@@ -111,8 +125,11 @@ background:lightgrey;
 list-style:none;
 margin-left:-40px !important;
 }
+*/
+
 
 /*Title of the page in menu*/
+/*
 .dropdown-menu>ul>li>a {
 border-bottom:1px solid grey;
 }
@@ -173,6 +190,18 @@ color: #333333;
 white-space: nowrap;
 text-decoration:none;
 }
+*/
+
+
+.figure>p.caption {
+color: grey;
+border-left: 5px solid grey;
+border-right: 5px solid grey;
+background: #E2DFDF;
+padding: 10px;
+margin: 10px;
+}
+
 
 .caption {
 color: grey;
@@ -185,12 +214,38 @@ margin: 10px;
 
 
 
+/* For disqus thread*/
+
+#disqus_thread {
+max-width:1170px;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+}
+
+#sourcelink {
+padding-top:15px;padding-bottom:15px;
+float:left;
+color:#777777;
+}
+#sourcelink>a {
+color:#777777;
+text-decoration:none;
+}
+
+.dropdown-menu {
+min-width: 260px !important;
+}
+
+
 
 /*For sub menu*/
-
+/*
 .dropdown-submenu{position:relative;}
 .dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
 .dropdown-submenu:hover>.dropdown-menu{display:block;}
 .dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
 .dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
 .dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+*/

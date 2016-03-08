@@ -1,20 +1,26 @@
 Statistical Mechanics
 =============================
 
+A comment from S. Weinberg
+
+    "Not bad."
+
+    -- `S. Weinberg <https://github.com/emptymalei/statisticalphysics/commit/b14945e38c3df659cf613d9340a5e20def8df513>`_
+
+(Just for fun, he didn't say that. And the commit was made using `git-blame-someone-else <https://github.com/jayphelps/git-blame-someone-else>`_. )
 
 
-A note recording project for stat mech course.
 
 
-**Progress**: 15/15
 
-.. raw:: html
 
-   <div class="progress">
-   <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-   <span class="sr-only">76% Complete</span>
-   </div>
-   </div>
+
+
+
+
+Lecture notes for stat mech.
+
+
 
 
 Acknowledgement
@@ -28,7 +34,7 @@ Professor Kenkre's lectures are as fantastic as an excellent thrilling movie wit
 .. image:: _static/images/aComment.png
    :align: center
 
-which is too hard to translate. It basically means that the subplot permeats through thousands of pages before people realize it's importance. Professor's Kenkre's lectures do have such power that a tiny hint could develop to an important idea as the lectures go on.
+which is too hard to translate. It basically means that the subplot permeats through thousands of pages before people realize it's importance. Professor Kenkre's lectures do have such power that a tiny hint could develop into an important result as the lectures go on.
 
 I am also very grateful to the TA of this course, `Anastasia <http://www.unm.edu/~aierides/505/>`_, who helped me a lot with my homework and lecture notes.
 
@@ -37,7 +43,7 @@ I am also very grateful to the TA of this course, `Anastasia <http://www.unm.edu
 
 
 Introduction
-============
+========================
 
 Statistical Physics is the central topic of physics. It taught us great lessons about nature and it is definitely going to teach us more. Some ideas (Verlinde's scenario) even put thermodynamics and statistical physics as the fundamental of all theories thus the thought that everything is emergent has been announced.
 
@@ -63,6 +69,18 @@ Vocabulary
     :maxdepth: 3
 
     vocabulary/main.rst
+
+
+
+Thermodynamics
+======================
+
+
+.. toctree::
+    :maxdepth: 3
+
+
+    thermodynamics/main.rst
 
 
 Equilibrium System
@@ -115,17 +133,17 @@ Nonequilibrium System
 
 -----
 
-This open source project is hosted on GitHub: `Statistical Physics <https://github.com/emptymalei/StatisticalPhysics>`_ .
+This open source project is hosted on GitHub: `Statistical Physics <https://github.com/emptymalei/statisticalphysics>`_ .
 
 
-Read online: `Statistical Physics Notes <http://emptymalei.github.io/StatisticalPhysics>`_ .
+Read online: `Statistical Physics Notes <http://statisticalphysics.openmetric.org>`_ .
 
-Download the `Latest PDF Version <https://github.com/emptymalei/StatisticalPhysics/raw/master/_build/latex/statistical-physics.pdf>`_ .
-
-
+Download the `Latest PDF Version <https://media.readthedocs.org/pdf/statisticalphysics/latest/statisticalphysics.pdf>`_ .
 
 
-Many thanks to open source project `Sphinx <http://sphinx-doc.org>`_ for it saves me a lot of time.
+
+
+Many thanks to open source project `Sphinx <http://sphinx-doc.org>`_ for it saves me a lot of time on making this website.
 
 ------
 

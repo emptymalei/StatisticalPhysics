@@ -25,33 +25,63 @@ Behavior of Functions
 -----------------------
 
 
+
+.. note::
+   To see the true nature of graphs, make quantities dimensionless. This is also true for theoretical derivations. Dimensionless equations can reveal more.
+
+
+
+
 0. Boltzmann factor
 
 The most important and weirdest function in statmech
 
-.. image:: ../_static/voc/boltzfactor.png
-   :width: 80%
+.. figure:: ../_static/voc/boltzfactor.png
+   :align: center
+
+   The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n. 
+
+   Professor Kenkre: sleeping lion!
+
+
 
 
 1. Tanh(x)
 
 .. image:: ../_static/voc/tanh.jpg
-   :width: 80%
+   :align: center
 
 2. :math:`1-exp(-x)`
 
 .. image:: ../_static/voc/exp1.jpg
-   :width: 80%
+   :align: center
 
 3. :math:`cosh(1/x)-1/x`
 
 .. image:: ../_static/voc/cosh1.jpg
-   :width: 80%
+   :align: center
 
 4. :math:`1/(1+1/x)`
 
 .. image:: ../_static/voc/fraction1.jpg
-   :width: 80%
+   :align: center
+
+
+
+.. note::
+
+   An example of this :math:`1/(1+1/x)` is the modified gas model.
+
+   .. math::
+      P (V - b) = N k T
+
+   We can find out :math:`1/V`, which is
+
+   .. math::
+      \frac{1}{V} = \frac{1}{b+\frac{N k T}{P}}
+
+   Now we can plot out :math:`\frac{1}{V} ~ P` and it shows a behavior just like :math:`1/(1+1/x)`.
+
 
 
 
@@ -282,7 +312,9 @@ The Laws of Four
 
 
 
-.. index:: Thermodynamics Potentials
+.. index:: Thermodynamic Potentials
+
+.. _thermodynamical-potentials:
 
 Thermodynamic Potentials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

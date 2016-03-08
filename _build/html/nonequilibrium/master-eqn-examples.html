@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Master Equation Examples &mdash; Statistical Mechanics Notes</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.1415',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/rrssb.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="top" title="Statistical Mechanics Notes" href="../index.html" />
+    <link rel="up" title="Stochastic And Non-Equilibrium Statistical Mechanics" href="main.html" />
+    <link rel="next" title="Smoluchowski Equation" href="smoluchowski-eqn.html" />
+    <link rel="prev" title="Solving Master Equations" href="solving-master-eqn.html" />
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+ 
+  </head>
+  <body role="document">
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Statistical Physics</a>
+        <span class="navbar-text navbar-version pull-left"><b>3.1315</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Parts <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary/main.html">Vocabulary and Program</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../thermodynamics/main.html">Thermodynamics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../equilibrium/main.html">Equilibrium Statistical Mechanics</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="main.html">Stochastic And Non-Equilibrium Statistical Mechanics</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Master Equation Examples</a><ul>
+<li><a class="reference internal" href="#irrersibility">Irrersibility</a></li>
+<li><a class="reference internal" href="#master-equation">Master Equation</a></li>
+<li><a class="reference internal" href="#continuum-limit">Continuum Limit</a></li>
+<li><a class="reference internal" href="#landau-teller-master-equation">Landau-Teller Master Equation</a><ul>
+<li><a class="reference internal" href="#continuous-grid-or-energy">Continuous Grid or Energy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#d-discrete-master-equation">1-D Discrete Master Equation</a></li>
+<li><a class="reference internal" href="#id1">Continuum Limit</a></li>
+<li><a class="reference internal" href="#propagator">Propagator</a></li>
+<li><a class="reference internal" href="#bias-in-master-equation">Bias in Master Equation</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="solving-master-eqn.html" title="Previous Chapter: Solving Master Equations"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Solving Maste...</span>
+    </a>
+  </li>
+  <li>
+    <a href="smoluchowski-eqn.html" title="Next Chapter: Smoluchowski Equation"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Smoluchowski ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/nonequilibrium/master-eqn-examples.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="master-equation-examples">
+<h1>Master Equation Examples<a class="headerlink" href="#master-equation-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="irrersibility">
+<span id="index-0"></span><h2>Irrersibility<a class="headerlink" href="#irrersibility" title="Permalink to this headline">¶</a></h2>
+<p>Fourier series are complete,</p>
+<div class="math">
+\[F(x) = \sum_{n=0}^{n=\infty} a_n \cos(\omega_n t) .\]</div>
+<p>Any equations can be expanded using Fourier series including the decay behavior we have seen in previous lectures.</p>
+<p>However the problem is, for finite system, the expansion is not really complete. The series composed by all these finite components might not be decay and recurrence could happen. But the time needed for recurrence is so long that we never see it.</p>
+</div>
+<div class="section" id="master-equation">
+<h2>Master Equation<a class="headerlink" href="#master-equation" title="Permalink to this headline">¶</a></h2>
+<p>Solution to descrete master equation with nearest neighbour interaction is</p>
+<div class="math">
+\[P_m(t) = P_m(0)I_m(2Ft)e^{-2Ft}\]</div>
+<p>where <span class="math">\(I_m(2Ft)e^{-2Ft}\)</span> is the <span class="highlit">propagator</span>.</p>
+<p>Sometimes we want to know where the particle goes after a while. In this case, we should find out <span class="highlit">second moment</span>, <span class="math">\(\langle m^2 \rangle\)</span>.</p>
+<p>To find out second moment, take the second derivative of <span class="math">\(P^k(t)\)</span>,</p>
+<div class="math">
+\[\begin{split}P^k &amp;=\sum_m P_m e^{imk} \\
+\frac{\partial^2}{\partial k^2} P^k &amp;= \sum_m P_m (i m)^2 e^{imk} .\end{split}\]</div>
+<p>Set <span class="math">\(k=0\)</span>, we have</p>
+<div class="math">
+\[\langle m^2 \rangle := \sum_m m^2 P_m =\frac{\partial^2}{\partial k^2} .\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">So we don&#8217;t need to calculate <span class="math">\(P_m(t)\)</span> which takes a lot of time to calculate.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>No mater what kind of interaction the system has,</p>
+<div class="math">
+\[P^k(t) = P^k(0) e^{-\cdots}\]</div>
+<p class="last">is alway true.</p>
+</div>
+</div>
+<div class="section" id="continuum-limit">
+<h2>Continuum Limit<a class="headerlink" href="#continuum-limit" title="Permalink to this headline">¶</a></h2>
+<p>In continuum limit, our master equation becomes</p>
+<div class="math">
+\[\frac{\partial}{\partial t} P = D \frac{\partial^2 P}{\partial x^2}\]</div>
+<p>which is infact a diffusion equation.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<ul class="last simple">
+<li>Propagators of this equation is gaussian like.</li>
+<li>Propagators of discrete master equation is a decay, <span class="math">\(I_m(2Ft)e^{-2Ft}\)</span>.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">In principle, we can take some limit of the master equation propagator and make it the diffusion propagator.</p>
+</div>
+<p>Second moment of diffusion equaiton is the Einstein brownian motion result</p>
+<div class="math">
+\[\langle x^2 \rangle = 2 D t .\]</div>
+<p>where</p>
+<div class="math">
+\[\begin{split}\langle x^2\rangle &amp;:= \int_{-\infty}^{+\infty} P(x,t) x^2 dx \\
+\langle m^2 \rangle &amp;:= \sum_{-\infty}^{+\infty} P_m(t) m^2  .\end{split}\]</div>
+</div>
+<div class="section" id="landau-teller-master-equation">
+<h2>Landau-Teller Master Equation<a class="headerlink" href="#landau-teller-master-equation" title="Permalink to this headline">¶</a></h2>
+<p>Consider a system in a heat bath, we can expand the system to second order and the system becomes a HO or HOs. Fermi golden rule tells us that HO can only have nearest energy transition.</p>
+<div class="section" id="continuous-grid-or-energy">
+<h3>Continuous Grid or Energy<a class="headerlink" href="#continuous-grid-or-energy" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Different energy states in a system should have</p>
+<div class="math">
+\[\frac{f_1}{f_1'} = e^{-\frac{\epsilon_1 - \epsilon_1'}{kT}} .\]</div>
+<p>And <span class="math">\(f_1\neq f_1'\)</span> most of the time. For the case of HO</p>
+<div class="last math">
+\[\frac{f_1}{f_1'} = e^{-\frac{\hbar \omega}{kT}} .\]</div>
+</div>
+<p>Here in such a system</p>
+<div class="math">
+\[\begin{split}\frac{d}{dt}P_m =&amp; k \left[(m+1)(P_{m+1} - e^{-\beta \hbar \omega} P_m)\right. \\
+&amp; \left. +m(e^{-\beta \hbar\omega} P_{m-1} - P_m)  \right] .\end{split}\]</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Transition</p>
+<div class="math">
+\[\begin{split}\frac{d}{dt}P_m =&amp; (R_{m,m+1}P_{m+1} -  R_{m,m-1}P_{m-1}) \\
+&amp; - (R_{m+1,m}P_m + R_{m-1,m}P_m)\end{split}\]</div>
+<p class="last">is called <span class="highlit">Landau-Teller master equation</span>. It&#8217;s good for non-translational-invariant system.</p>
+</div>
+</div>
+</div>
+<div class="section" id="d-discrete-master-equation">
+<h2>1-D Discrete Master Equation<a class="headerlink" href="#d-discrete-master-equation" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\frac{d}{dt}P_m= F(P_{m+1} + P_{m-1} -2 P_m)\]</div>
+<p>with solution</p>
+<div class="math">
+\[P_m(t) = \sum_n \Pi_{m-n}(t) P_n(0)\]</div>
+<p>in which <span class="math">\(\Pi_{m-n}(t) = e^{-2Ft}I_m(2Ft)\)</span> is the propagator.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>If the sytem has no translational invariance,</p>
+<div class="math">
+\[P_m(t) = \sum_n \Pi_{m,n}(t) P_m(0)\]</div>
+<p class="last">propagator becomes <span class="math">\(\Pi_{m,n}(t)\)</span> depends on both m and n.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Continuum Limit<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="math">
+\[\frac{\partial}{\partial t}P(x,t) = D\frac{\partial^2}{\partial x^2} P(x,t)\]</div>
+<div class="math">
+\[\Pi(x,t) = \cdots e^{-\frac{x^2}{\cdots}}/\sqrt{\cdots t}\]</div>
+<p>Fourier transform</p>
+<div class="math">
+\[\frac{\partial P_F(k,t)}{\partial t} = - D k^2 P_F(k,t)\]</div>
+<p>Solution</p>
+<div class="math">
+\[P_F(k,t) = P_F(k,0) e^{-Dk^2t}\]</div>
+<p>Inverse</p>
+<div class="math">
+\[P(x,t) = \int \Pi(x-x',t) P(x',0) dx'\]</div>
+</div>
+<div class="section" id="propagator">
+<span id="index-1"></span><h2>Propagator<a class="headerlink" href="#propagator" title="Permalink to this headline">¶</a></h2>
+<p>To solve master equation, we usually find out the propagator <span class="math">\(\Pi(x-x',t)\)</span>. For simple discrete master equation, we have the propagator with the form <span class="math">\(I_m(2Ft)e^{-2Ft}\)</span>.</p>
+<div class="figure" id="id3">
+<a class="reference internal image-reference" href="../_images/distInit.png"><img alt="initial distribution" src="../_images/distInit.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">Some initial distribution</span></p>
+</div>
+<p>For continuous master equation which is the diffusion equation, given the initial distribution, it evolves according to</p>
+<div class="math">
+\[\frac{\partial}{\partial t} P(x,t) = \zeta \frac{\partial}{\partial x} P(x,t) + D \frac{\partial^2}{\partial x^2} P(x,t) .\]</div>
+<p>Then after infinite time, we have the final distribution.</p>
+<div class="figure" id="id4">
+<a class="reference internal image-reference" href="../_images/distFinal.png"><img alt="final distribution" src="../_images/distFinal.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-text">Some final distribution</span></p>
+</div>
+<p><strong>As long as the system has translational or rotational invariance, we can use Fourier transform to reduce the higher order derivatives to solve the equation.</strong></p>
+<p>For <span class="math">\(\zeta =0\)</span>, there is only diffusion, so we have translational invariance. Fourier transform for continuous equation is</p>
+<div class="math">
+\[\begin{split}\frac{\partial}{\partial x} e^{ikx}=ike^{ikx} &amp;\implies \frac{\partial}{\partial x} \to ik \\
+\frac{\partial^2}{\partial x^2} e^{ikx} = -k^2 e^{ikx} &amp; \implies \frac{\partial^2}{\partial x^2} \to -k^2\end{split}\]</div>
+<p>So we can write down the transformed equation right away (for <span class="math">\(\zeta=0\)</span> case).</p>
+<div class="math">
+\[\frac{\partial}{\partial t}P^k = -D k^2 P^k\]</div>
+<p>and the solution to this equation is</p>
+<div class="math">
+\[P^k(t) = P^k(0) e^{-D k^2 t} .\]</div>
+<p>To find out the propagator, we complete the square,</p>
+<div class="math">
+\[\begin{split}P(x,t) &amp; = \int P(k,0) e^{-Dk^2t+ikx} dk \\
+&amp; = \int P(k,0) e^{-\frac{x^2}{4Dt}} e^{-Dt(k-\frac{ix}{2Dt})^2 }dk \\
+&amp; = e^{-\frac{x^2}{4Dt}}  \int P(k,0) e^{-Dt(k-\frac{ix}{2Dt})^2 }dk\end{split}\]</div>
+<p>The propagator is finally</p>
+<div class="math">
+\[\Pi(x,t) = \frac{e^{-\frac{x^2}{4Dt}}}{\sqrt{4\pi Dt}}\]</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Somehow I can&#8217;t derive it.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">There might be sigularity in the propagator. One example of it is logorithm sigularity in 2D.</p>
+</div>
+</div>
+<div class="section" id="bias-in-master-equation">
+<h2>Bias in Master Equation<a class="headerlink" href="#bias-in-master-equation" title="Permalink to this headline">¶</a></h2>
+<p>When <span class="math">\(\zeta\neq 0\)</span>, the first term on RHS is a decay or viscous term.</p>
+<div class="math">
+\[\frac{\partial}{\partial t}P(x,t) = \zeta \frac{\partial}{\partial x}P(x,t) + D\frac{\partial^2}{\partial x^2}P(x,t)\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>To check the properties of <span class="math">\(\zeta\)</span>, set <span class="math">\(D=0\)</span>.</p>
+<div class="math">
+\[\frac{\partial}{\partial t} P = \zeta \frac{\partial}{\partial x} P \Rightarrow P\propto e^{k_w(\omega + \zeta t)}\]</div>
+<p>So we know that when <span class="math">\(k_w &gt; 0\)</span>,</p>
+<ol class="last arabic simple">
+<li><span class="math">\(\zeta &gt; 0\)</span> : exponential grow;</li>
+<li><span class="math">\(\zeta &lt; 0\)</span> : decay</li>
+</ol>
+</div>
+<p>We can Fourier transform then complete the square to solve this kind of problem.</p>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>This formalism is very much like the <span class="highlit">Gauge Transformation</span>. We define a new derivative</p>
+<div class="math">
+\[\frac{\partial}{\partial x} \to \frac{\partial}{\partial x} + \Gamma(x)\]</div>
+<p>Then we put this new derivative into diffusion equation,</p>
+<div class="math">
+\[\begin{split}&amp; \frac{\partial}{\partial t} P(x,t) = D\frac{\partial^2}{\partial x^2} P(x,t) \\
+\to &amp; \frac{\partial}{\partial t} P(x,t) = D \left(\frac{\partial^2}{\partial x^2} P(x,t) + 2\Gamma\frac{\partial}{\partial x}P(x,t) \right) + D\left( P\left( 2\Gamma^2 + \frac{\partial}{\partial x} \Gamma \right) \right)\end{split}\]</div>
+<p>Now we define <span class="math">\(\zeta := 2\Gamma\)</span>, and let <span class="math">\(2\Gamma^2 + \frac{\partial}{\partial x} \Gamma\)</span>. <a href="#id5"><span class="problematic" id="id6"><span id="id2"></span>[1]_</span></a>  The diffusion equation under this kind of transformation becomes the one we need.</p>
+<p><span class="highlit">Does it imply that the diffusion equation and gauge transformation are related?</span></p>
+<p class="last">We might find some symmetry using this method.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#">Back to top</a>
+
+    </p>
+    <p>
+        <span>© Copyright 2014, Lei Ma.</span>|
+        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
+        <span>Created with
+            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script></span>
+    </p>
+
+    <hr>
+
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+
+  </body>
+</html>
