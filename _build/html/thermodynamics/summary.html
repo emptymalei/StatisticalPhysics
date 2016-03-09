@@ -154,6 +154,7 @@
 <li><a class="reference internal" href="#">Summary</a><ul>
 <li><a class="reference internal" href="#thermodynamic-potentials">Thermodynamic Potentials</a></li>
 <li><a class="reference internal" href="#gas">Gas</a></li>
+<li><a class="reference internal" href="#refs-notes">Refs &amp; Notes</a></li>
 </ul>
 </li>
 </ul>
@@ -227,12 +228,45 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <li>chemical coupling: <span class="math">\(d(\mu_i N_i)\)</span>.</li>
 </ul>
 <p>Legendre transform, in an easy understanding, is about turning on and off switches of the three different couplings. Turning off the mechanical coupling of (differential) internal energy <span class="math">\(dU(S,V,\{N_i\})\)</span> leads to (differential) enthalpy <span class="math">\(dH(S,p,\{N_i\})\)</span>. Indeed, enthalpy is the same as internal energy when we are talking about constant pressure.</p>
+<p>This has always been confusing to use so many differential potentials. The trick of math is to discuss in the theory of differential forms.</p>
+<div class="note admonition">
+<p class="first admonition-title">What Are Forms</p>
+<p>In simple words, 1-forms are linear mapping of functions to numbers.</p>
+<p>For illustration purpose, we take the simple case that</p>
+<div class="math">
+\[\bar d Q = p dV + dU.\]</div>
+<p>We know that <span class="math">\(dU\)</span> is a 1-form and it can be the basis of 1-forms, so is <span class="math">\(dV\)</span>. Also notice that we could difine a map from a point <span class="math">\((U,V)\)</span> to a real number, which explains the pressure <span class="math">\(p(U,V)\)</span>. As a result, <span class="math">\(\bar dQ\)</span> is also a 1-form. Rewrite the equation using the language of forms,</p>
+<div class="math">
+\[\underset{^\sim}{\omega} = p \underset{^\sim}{dV} + \underset{^\sim}{dU},\]</div>
+<p>where the under tilde denotes 1-form. However, <span class="math">\(\underset{^\sim}{\omega}\)</span> is not exact, which means that we do not find a function <span class="math">\(Q(U,V)\)</span> on the manifold so that <span class="math">\(\mathbf{d d }Q = 0\)</span>. Following Bernard Schutz in his Geometrical Methods in Mathematical Physics, an exact <span class="math">\(\underset{^\sim}{\omega}\)</span> means that</p>
+<div class="math">
+\[\mathbf{d}\underset{^\sim}{\omega}=0=\mathbf{dd}Q = \mathbf{d}p\wedge \underset{^\sim}{dU}=\left( \frac{\partial p}{\partial U} \right)_V \underset{^\sim}{dU}\wedge \underset{^\sim}{dV},\]</div>
+<p>where we have used the condition that <span class="math">\(\underset{^\sim}{dU}\)</span> is exact, i.e., <span class="math">\(\mathbf{d}\underset{^\sim}{dU}=0\)</span>. In order for it to be valid at all point, we have to require <span class="math">\(\left( \frac{\partial p}{\partial U} \right)_V=0\)</span> at all points on the manifold.</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Frobenius_theorem_(differential_topology)">Frobenius&#8217; theorem</a> tells us that we will find functions on the manifold so that <span class="math">\(\underset{^\sim}{\omega}=T(U,V)\mathbf{d}S\)</span>, which gives us</p>
+<div class="math">
+\[T(U,V)\mathbf{d}S = p \underset{^\sim}{dV} + \underset{^\sim}{dU},\]</div>
+<p>if we have <span class="math">\(\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}=0\)</span>, which is easily proven to be true here since we have repeated basis if we write it down.</p>
+<p>Or if we are back to functions,</p>
+<div class="math" id="equation-thermodynamics-not-the-second-law">
+<span class="eqno">(1)</span>\[T(U,V)\mathbf{d}S = p \mathbf{d}V + \mathbf{d}U.\]</div>
+<p>A list of references for differential geometry and thermodynamics:</p>
+<ol class="last arabic simple">
+<li>Bernard Schutz, Geometrical Methods in Mathematical Physics.</li>
+</ol>
+</div>
+<p>With the help of differential forms, we could derive the Maxwell identities more easily by rewriting the functions to be functions of other variables. The punch line is the exterior derivative of equation <a href="#equation-thermodynamics-not-the-second-law">(1)</a>,</p>
+<div class="math">
+\[\mathbf{d} T \wedge \mathbf{d} S = \mathbf{d} p \wedge \mathbf{d} V.\]</div>
+<p>Maxwell identities are obtained by writing functions as functions of <span class="math">\((S,V)\)</span> or <span class="math">\(T,V\)</span> etc.</p>
 </div>
 <div class="section" id="gas">
 <h2>Gas<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Van der Waals gas <span class="math">\(\left( p + \frac{a}{V^2} \right) (V - b) = R T\)</span>.</li>
 </ul>
+</div>
+<div class="section" id="refs-notes">
+<h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
