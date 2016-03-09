@@ -155,6 +155,12 @@ In general, on a n-dimension manifold, we could have non-zero :math:`\mathbf{d}\
 Regarding the geometrical meaning of 1-forms, which are surfaces of equi-function values, just like equipotential lines, we think of a system that has a global entropy and temperature with such equi-entropy surfaces. One of the aspects of the second law thus is to state that for a system that has no heat exchange :math:`\underset{^\sim}{\omega}=0`, it is restricted on a curtain part of the phase space, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy, by Caratheodory's theorem.
 
 
+Related Papers
+------------------
+
+1. Samuel L. Braunstein and Carlton M. Caves, `Statistical distance and the geometry of quantum states <http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.72.3439>`_, Phys. Rev. Lett. 72, 3439.
+
+
 .. [BSchutz] Bernard Schutz, *Geometrical Methods in Mathematical Physics*.
 
 
@@ -234,6 +240,7 @@ The Laws of Four
       \left(\frac{\partial T}{\partial V}\right)_S \mathbf d V \wedge \mathbf d S = \left( \frac{\partial p}{\partial S}\right)_S \mathbf d S \wedge \mathbf d V
 
    Clean up this equation we will get one of the Maxwell relations. Use Legendre transformation we can find out all the Maxwell relations.
+
 
 
 
