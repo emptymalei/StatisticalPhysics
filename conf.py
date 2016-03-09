@@ -190,6 +190,7 @@ master_doc = 'index'
 project = u'Statistical Physics Notes'
 copyright = u'2016, Lei Ma'
 
+
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
@@ -235,6 +236,8 @@ pygments_style = 'sphinx'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
+
+numfig = True
 
 
 # -- Options for HTML output ---------------------------------------------------

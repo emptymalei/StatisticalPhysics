@@ -39,7 +39,7 @@ The most important and weirdest function in statmech
 .. figure:: ../_static/voc/boltzfactor.png
    :align: center
 
-   The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n. 
+   The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n.
 
    Professor Kenkre: sleeping lion!
 
@@ -165,7 +165,7 @@ Functions that will saturate
 
 
 
-
+.. _legendre-transform:
 
 Legendre Transform
 -------------------------
@@ -353,7 +353,7 @@ This graph needs some illustration.
 .. hint::
    **Question**: Why is internal energy :math:`U` a function of three extensive quantities, :math:`V`, :math:`S`, :math:`N`?
 
-   There are three aspects to be considered. 
+   There are three aspects to be considered.
 
 
 

@@ -34,20 +34,62 @@
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="Statistical Mechanics Notes" href="#" />
     <link rel="next" title="Vocabulary and Program" href="vocabulary/main.html" />
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-44466929-2']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
+ </script>
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+   MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+     cancel: ["Extension","cancel"]
+     });
+  });
+  </script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+     }
+   });
 </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+           all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+   });
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   tex2jax: {
+     processEscapes: true
+   }
+ });
+</script>
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: {
+     Macros: {
+      overlr: ['\\overset\\leftrightarrow{\#1}',1],
+      overl: ['\\overset\leftarrow{\#1}',1],
+      overr: ['\\overset\rightarrow{\#1}',1],
+      bra: ['\\left\\langle \#1\\right|',1],
+      ket: ['\\left| \#1\\right\\rangle',1],
+      braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+      avg: ['\\left< \#1 \\right>',1],
+      slashed: ['\\cancel{\#1}',1],
+      bold: ['\\boldsymbol{\#1}',1],
+      d: ['\\mathrm d',0]
+     }
+   }
+ });
+ </script>
+ <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -159,12 +201,6 @@
       
   <div class="section" id="statistical-mechanics">
 <h1>Statistical Mechanics<a class="headerlink" href="#statistical-mechanics" title="Permalink to this headline">¶</a></h1>
-<p>A comment from S. Weinberg</p>
-<blockquote>
-<div><p>&#8220;Not bad.&#8221;</p>
-<p class="attribution">&mdash;<a class="reference external" href="https://github.com/emptymalei/statisticalphysics/commit/b14945e38c3df659cf613d9340a5e20def8df513">S. Weinberg</a></p>
-</div></blockquote>
-<p>(Just for fun, he didn&#8217;t say that. And the commit was made using <a class="reference external" href="https://github.com/jayphelps/git-blame-someone-else">git-blame-someone-else</a>. )</p>
 <p>Lecture notes for stat mech.</p>
 </div>
 <div class="section" id="acknowledgement">
@@ -224,6 +260,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="thermodynamics/main.html">Thermodynamics</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="thermodynamics/summary.html">Summary</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="thermodynamics/summary.html#thermodynamic-potentials">Thermodynamic Potentials</a></li>
 <li class="toctree-l3"><a class="reference internal" href="thermodynamics/summary.html#gas">Gas</a></li>
 </ul>
 </li>

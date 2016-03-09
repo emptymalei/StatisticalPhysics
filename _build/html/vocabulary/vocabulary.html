@@ -36,20 +36,62 @@
     <link rel="up" title="Vocabulary and Program" href="main.html" />
     <link rel="next" title="Green Function" href="green.html" />
     <link rel="prev" title="Vocabulary and Program" href="main.html" />
-<script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-44466929-2']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script');
-        ga.type = 'text/javascript';
-        ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ga, s);
-    })();
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
+ </script>
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+   MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+     cancel: ["Extension","cancel"]
+     });
+  });
+  </script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+     }
+   });
 </script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+           all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+   });
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   tex2jax: {
+     processEscapes: true
+   }
+ });
+</script>
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: {
+     Macros: {
+      overlr: ['\\overset\\leftrightarrow{\#1}',1],
+      overl: ['\\overset\leftarrow{\#1}',1],
+      overr: ['\\overset\rightarrow{\#1}',1],
+      bra: ['\\left\\langle \#1\\right|',1],
+      ket: ['\\left| \#1\\right\\rangle',1],
+      braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+      avg: ['\\left< \#1 \\right>',1],
+      slashed: ['\\cancel{\#1}',1],
+      bold: ['\\boldsymbol{\#1}',1],
+      d: ['\\mathrm d',0]
+     }
+   }
+ });
+ </script>
+ <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -192,9 +234,9 @@
 <li>Boltzmann factor</li>
 </ol>
 <p>The most important and weirdest function in statmech</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id7">
 <img alt="../_images/boltzfactor1.png" src="../_images/boltzfactor1.png" />
-<p class="caption"><span class="caption-text">The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n.</span></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n.</span></p>
 <div class="legend">
 Professor Kenkre: sleeping lion!</div>
 </div>
@@ -279,7 +321,7 @@ Professor Kenkre: sleeping lion!</div>
 \cosh(\frac{1}{x}) - \frac{1}{x}\]</div>
 </div>
 <div class="section" id="legendre-transform">
-<h2>Legendre Transform<a class="headerlink" href="#legendre-transform" title="Permalink to this headline">¶</a></h2>
+<span id="id5"></span><h2>Legendre Transform<a class="headerlink" href="#legendre-transform" title="Permalink to this headline">¶</a></h2>
 <p>The geometrical of physical meaning of Legendre transformation in thermodynamics can be illustrated by the following graph.</p>
 <a class="reference internal image-reference" href="../_images/LegendreTransform.png"><img alt="Legendre Transform made clear" src="../_images/LegendreTransform.png" style="width: 80%;" /></a>
 <p>For example, we know that entropy <span class="math">\(S\)</span> is actually a function of temperature <span class="math">\(T\)</span>. For simplicity, we assume that they are monotonically related like in the graph above. When we are talking about the quantity <span class="math">\(T \mathrm d S\)</span> we actually mean the area shaded with blue grid lines. Meanwhile the area shaded with orange line means <span class="math">\(S \mathrm d T\)</span>.</p>
