@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -97,6 +98,23 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44466929-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
  
   </head>
   <body role="document">
@@ -154,6 +172,9 @@
 <li><a class="reference internal" href="#">Summary</a><ul>
 <li><a class="reference internal" href="#thermodynamic-potentials">Thermodynamic Potentials</a></li>
 <li><a class="reference internal" href="#differential-forms">Differential Forms</a></li>
+<li><a class="reference internal" href="#the-laws-of-four">The Laws of Four</a></li>
+<li><a class="reference internal" href="#the-entropy">The Entropy</a></li>
+<li><a class="reference internal" href="#irreversiblity">Irreversiblity</a></li>
 <li><a class="reference internal" href="#gas">Gas</a></li>
 <li><a class="reference internal" href="#refs-notes">Refs &amp; Notes</a></li>
 </ul>
@@ -203,12 +224,23 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 content">
       
   <div class="section" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<p>Thermodynamics is about the desciption of large systems which is mostly about the following keypoints. (<em>A Modern Course in Statistical Physics</em> by L. E. Reichl)</p>
+<ol class="arabic simple">
+<li>Thermodynamic variables; extensive, intensive, neither;</li>
+<li>Equations of state;</li>
+<li>Four fundamental laws of thermodynamics;</li>
+<li>Thermodynamics potentials</li>
+<li>Phase transitions</li>
+<li>Response</li>
+<li>Stability</li>
+</ol>
+<p>Anyway, thermodynamics is a kind of theory that deals with black boxes. We manipulate any variables we like and look at the changes. Then we summarize and get a set of laws.</p>
 <div class="section" id="thermodynamic-potentials">
-<h2>Thermodynamic Potentials<a class="headerlink" href="#thermodynamic-potentials" title="Permalink to this headline">¶</a></h2>
+<span id="thermodynamical-potentials"></span><span id="index-0"></span><h2>Thermodynamic Potentials<a class="headerlink" href="#thermodynamic-potentials" title="Permalink to this headline">¶</a></h2>
 <p>The first thermodynamics potential we can think of is the (differential) internal energy, which, by definition is a function of entropy <span class="math">\(S\)</span>, volume <span class="math">\(V\)</span> and number of particles <span class="math">\(N_i\)</span>,</p>
 <div class="math">
 \[d U(S,V,\{N_i\}) = T dS - p dV + \mu_i d N_i,\]</div>
@@ -229,6 +261,34 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <li>chemical coupling: <span class="math">\(d(\mu_i N_i)\)</span>.</li>
 </ul>
 <p>Legendre transform, in an easy understanding, is about turning on and off switches of the three different couplings. Turning off the mechanical coupling of (differential) internal energy <span class="math">\(dU(S,V,\{N_i\})\)</span> leads to (differential) enthalpy <span class="math">\(dH(S,p,\{N_i\})\)</span>. Indeed, enthalpy is the same as internal energy when we are talking about constant pressure.</p>
+<p>Let&#8217;s sum up.</p>
+<ol class="arabic simple">
+<li>Internal Energy</li>
+<li>Enthalpy</li>
+<li>Helmholtz Free Energy</li>
+<li>Gibbs Free Energy</li>
+<li>Grand Potential</li>
+</ol>
+<p>The relations between them? All potentials are Legendre transformation of each other. To sum up, let&#8217;s gliffy.</p>
+<a class="reference internal image-reference" href="../_images/thermodynamicPotentials1.png"><img alt="Thermodynamic Potentials" src="../_images/thermodynamicPotentials1.png" style="width: 1160.0px; height: 602.4px;" /></a>
+<p>(The gliffy source file is <a class="reference external" href="images/thermodynamicPotentials.gliffy">here</a> . Feel free to download and create your own version.)</p>
+<p>This graph needs some illustration.</p>
+<ol class="arabic simple">
+<li>Legendre transformation: <span class="math">\(ST-U(S)\)</span> transform a funcion <span class="math">\(U(S)\)</span> with variable <span class="math">\(S\)</span> to another function <span class="math">\(H(T)\)</span>. However, in thermodynamics use the different sign can be more convinient. In other words, <span class="math">\(U(S)\)</span> and <span class="math">\(-H(T)\)</span> are dual to each other.</li>
+<li>Starting from this graph, we can find out the differentials of thermodynamic potentials. Next take the partial derivatives of thermodynamic potential with respect to their own variables. By comparing the partial derivatives and the definitions of them, we find out expressions of their vairables. Finally different expressions for the same variable are equal, which are the Maxwell relations.</li>
+<li>As we have seen in 2, all the thermodynamic quantities can be obstained by taking the derivatives of thermodynamic potentials.</li>
+</ol>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p><strong>Question:</strong> Mathematically we can construct the sixth potential namely the one that should appear at the right bottom of the graph. Why don&#8217;t people talk about it?</p>
+<p>We can surely define a new potential called <span class="math">\(Null(T,X,\{\mu_i\})\)</span>. However, the value of this function is zero. So we can have the derivitive of this potential is also zero. This is the Gibbs Duhem equation.</p>
+<p class="last">The answer I want to hear is that this is something <span class="math">\(\mathrm d\mathrm d f = 0\)</span> where f is exact.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p><strong>Question</strong>: Why is internal energy <span class="math">\(U\)</span> a function of three extensive quantities, <span class="math">\(V\)</span>, <span class="math">\(S\)</span>, <span class="math">\(N\)</span>?</p>
+<p class="last">There are three aspects to be considered.</p>
+</div>
 </div>
 <div class="section" id="differential-forms">
 <h2>Differential Forms<a class="headerlink" href="#differential-forms" title="Permalink to this headline">¶</a></h2>
@@ -274,6 +334,88 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <tr><td class="label"><a class="fn-backref" href="#id1">[BSchutz]</a></td><td>Bernard Schutz, <em>Geometrical Methods in Mathematical Physics</em>.</td></tr>
 </tbody>
 </table>
+</div>
+<div class="section" id="the-laws-of-four">
+<span id="index-1"></span><h2>The Laws of Four<a class="headerlink" href="#the-laws-of-four" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-laws admonition">
+<p class="first admonition-title">Zeroth Law of Thermodynamics</p>
+<p><strong>Zeroth</strong> Law: A first peek at temperature</p>
+<p>Two bodies, each in thermodynamic equilibrium with a third system, are in thermodynamic equilibirum with each other.</p>
+<p class="last">This gives us the idea that there is a universal quantity which depends only on the state of the system no matter what they are made of.</p>
+</div>
+<div class="admonition-laws admonition">
+<p class="first admonition-title">First Law of Thermodynamics</p>
+<p><strong>First</strong> Law: Conservation of energy</p>
+<p>Energy can be transfered or transformed, but can not be destroyed.</p>
+<p>In math,</p>
+<div class="math">
+\[\mathrm d U  = W + Q\]</div>
+<p>where <span class="math">\(W\)</span> is the energy done to the system, <span class="math">\(Q\)</span> is the heat given to the system. A better way to write this is to make up a one-form <span class="math">\(\underset{^\sim}{\omega}\)</span>,</p>
+<div class="math">
+\[\underset{^\sim}{\omega} \equiv \mathbf d U  - \underset{^\sim}{W},\]</div>
+<p>where in gas thermodynamics <span class="math">\(\underset{^\sim}{W}=-p\mathbf{d}V\)</span>.</p>
+<p class="last">Using Legendre transformation, we know that this one form have many different formalism.</p>
+</div>
+<div class="admonition-laws admonition">
+<p class="first admonition-title">Second Law of Thermodynamics</p>
+<p><strong>Second</strong> Law: Entropy change; Heat flow direction; Efficieny of heat engine</p>
+<p>There are three different versions of this second law. Instead of statements, I would like to use two inequalities to demonstrate this law.</p>
+<div class="math">
+\[\eta = \frac{\Delta W}{\Delta Q} \le 1\]</div>
+<p>For isolated systems,</p>
+<div class="math">
+\[\mathrm d S \ge 0\]</div>
+<p>Combine second law with first law, for reversible systems, <span class="math">\(Q = T \mathrm d S\)</span>, or <span class="math">\(\underset{^\sim}{\omega}=T\mathbf{d}S\)</span>, then for ideal gas</p>
+<div class="math">
+\[\mathbf  d S = \mathbf d U + p \mathbf d V\]</div>
+<p>Take the exterior derivative of the whole one-form, and notice that <span class="math">\(U\)</span> is exact,</p>
+<div class="math">
+\[\left(\frac{\partial T}{\partial V}\right)_S \mathbf d V \wedge \mathbf d S = \left( \frac{\partial p}{\partial S}\right)_S \mathbf d S \wedge \mathbf d V\]</div>
+<p>Clean up this equation we will get one of the Maxwell relations. Use Legendre transformation we can find out all the Maxwell relations.</p>
+<span class="target" id="index-2"></span><div class="hint last admonition" id="index-3">
+<p class="first admonition-title">Second Definition of Temperature</p>
+<p class="last">Second definition of temperature comes out of the second law. By thinking of two reversible Carnot heat engines, we find a funtion depends only a parameter which stands for the temperature like thing of the systems. This defines the <strong>thermodynamic temeprature</strong>.</p>
+</div>
+</div>
+<div class="admonition-laws admonition">
+<p class="first admonition-title">Third Law of Thermodynamics</p>
+<p><strong>Third</strong> Law: Abosoulte zero; Not an extrapolation; Quantum view</p>
+<p>The difference in entropy between states connected by a reserible process goes to zero in the limit <span class="math">\(T\rightarrow 0 K\)</span>.</p>
+<p class="last">Due to the asymptotic behavior, one can not get to absolute zero in a finite process.</p>
+</div>
+</div>
+<div class="section" id="the-entropy">
+<span id="index-4"></span><h2>The Entropy<a class="headerlink" href="#the-entropy" title="Permalink to this headline">¶</a></h2>
+<p>When talking about entropy, we need to understand the properties of cycles. The most important one is that</p>
+<div class="math">
+\[\sum_{i=1}^n \frac{Q_i}{T_i} \leq 0\]</div>
+<p>where the equality holds only if the cycle is reversible for the set of processes. In another sense, if we have infinitesimal processes, the equation would have become</p>
+<div class="math">
+\[\oint \frac{\mathrm d Q}{T} = 0 .\]</div>
+<p>The is an elegent result. It is intuitive that we can build correspondence between one path between two state to any other paths since this is a circle. That being said, the following integral</p>
+<div class="math">
+\[\int_A^B \frac{\mathrm d Q}{T},\]</div>
+<p>is independent of path on state plane. We imediately define <span class="math">\(\int_A^B \frac{\mathrm d Q}{T}\)</span> as a new quantity because we really like invariant quantities in physics, i.e.,</p>
+<div class="math">
+\[S(B) - S(A) = \int_A^B \frac{\mathrm d Q}{T},\]</div>
+<p>which we call entropy (difference). It is very important to realize that entropy is such a quantity that only dependents on the initial and final state and is independent of path. Many significant results can be derived using only the fact that entropy is a function of state.</p>
+<ol class="arabic simple">
+<li>Adiabatic processes on the plane of state never go across each other. Adiabatic lines are isoentropic lines since <span class="math">\(\mathrm dS = \frac{\mathrm dQ}{T}\)</span> as <span class="math">\(\mathrm dQ = 0\)</span> gives us <span class="math">\(\mathrm dS = 0\)</span>. The idea is that at the crossing points of adiabatic lines we would get a branch for entropy which means two entropy for one state.</li>
+<li>No more than one crossing point of two isothermal lines is possible. To prove it we need to show that entropy is a monotomic equation of <span class="math">\(V\)</span>.</li>
+<li>We can extract heat from one source that has the same temperature and transform into work if the isoentropic lines can cross each other which is not true as entropy is quantity of state. Construct a system with a isothermal line intersects two crossing isoentropic lines.</li>
+<li>We can extract heat from low temperature source to high temperature source without causing any other results if we don&#8217;t have entropy as a quantity of state.</li>
+</ol>
+</div>
+<div class="section" id="irreversiblity">
+<h2>Irreversiblity<a class="headerlink" href="#irreversiblity" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>some discussion here. <span class="xref std std-ref">irreversiblity</span></li>
+</ol>
+<p>This problem can be understood by thinking of the statistics. Suppose we have a box and N gas molecules inside. We divide it into two parts, left part and right part. At first all the particles are in the L part. As time passing by the molecules will go to the R part.</p>
+<p>The question we would ask is what the probablity would be if all the particles comes back to the L part. By calculation we can show that the ratio <span class="math">\(R\)</span> of number of particles on L part and R part,</p>
+<div class="math">
+\[R = \frac{N_L}{N-N_R},\]</div>
+<p>will have a high probability to be 0.5, just as fascinating as central limit theorem.</p>
 </div>
 <div class="section" id="gas">
 <h2>Gas<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h2>
