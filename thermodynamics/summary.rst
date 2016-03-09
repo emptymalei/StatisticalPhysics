@@ -82,6 +82,12 @@ With the help of differential forms, we could derive the Maxwell identities more
 Maxwell identities are obtained by writing functions as functions of :math:`(S,V)` or :math:`T,V` etc.
 
 
+The questions is, how could this formalism help us understanding more of the laws of thermodynamics. As an example, we examine second law using differential forms. For a more general composite system which has more dimensions or basis, we write down a one form that is related to heat production,
+
+.. math::
+   \underset{^\sim}{\omega_N} = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right).
+
+
 
 
 Gas
