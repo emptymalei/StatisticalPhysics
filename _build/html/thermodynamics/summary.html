@@ -245,7 +245,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Frobenius_theorem_(differential_topology)">Frobenius&#8217; theorem</a> tells us that we will find functions on the manifold so that <span class="math">\(\underset{^\sim}{\omega}=T(U,V)\mathbf{d}S\)</span>, which gives us</p>
 <div class="math">
 \[T(U,V)\mathbf{d}S = p \underset{^\sim}{dV} + \underset{^\sim}{dU},\]</div>
-<p>if we have <span class="math">\(\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}=0\)</span>, which is easily proven to be true here since we have repeated basis if we write it down.</p>
+<p>if we have <span class="math">\(\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}=0\)</span>, which is easily proven to be true here since we have repeated basis if we write it down (no n+1 forms on n-dimension manifold).</p>
 <p>Or if we are back to functions,</p>
 <div class="math" id="equation-thermodynamics-not-the-second-law">
 <span class="eqno">(1)</span>\[T(U,V)\mathbf{d}S = p \mathbf{d}V + \mathbf{d}U.\]</div>
@@ -258,6 +258,17 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <div class="math">
 \[\mathbf{d} T \wedge \mathbf{d} S = \mathbf{d} p \wedge \mathbf{d} V.\]</div>
 <p>Maxwell identities are obtained by writing functions as functions of <span class="math">\((S,V)\)</span> or <span class="math">\(T,V\)</span> etc.</p>
+<p>The questions is, how could this formalism help us understanding more of the laws of thermodynamics. As an example, we examine second law using differential forms. For a more general composite system which has more dimensions or basis, we write down a one form that is related to heat production,</p>
+<div class="math">
+\[\underset{^\sim}{\omega}_n = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right).\]</div>
+<p>In general, on a n-dimension manifold, we could have non-zero <span class="math">\(\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}\)</span> since we have up to non-zero n-forms. The meaning is that we do not find global temperature and entropy on the whole manifold <a class="reference internal" href="#bschutz" id="id1">[BSchutz]</a> or no globally integrable function of heat exchange <span class="math">\(\underset{^\sim}{\omega}_n\)</span>.</p>
+<p>Regarding the geometrical meaning of 1-forms, which are surfaces of equi-function values, just like equipotential lines, we think of a system that has a global entropy and temperature with such equi-entropy surfaces. One of the aspects of the second law thus is to state that for a system that has no heat exchange <span class="math">\(\underset{^\sim}{\omega}=0\)</span>, it is restricted on a curtain part of the phase space, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy, by Caratheodory&#8217;s theorem.</p>
+<table class="docutils citation" frame="void" id="bschutz" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[BSchutz]</a></td><td>Bernard Schutz, <em>Geometrical Methods in Mathematical Physics</em>.</td></tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="gas">
 <h2>Gas<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h2>
