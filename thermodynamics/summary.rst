@@ -31,13 +31,17 @@ Physically, there are at three different kinds of couplings here, which are
 
 Legendre transform, in an easy understanding, is about turning on and off switches of the three different couplings. Turning off the mechanical coupling of (differential) internal energy :math:`dU(S,V,\{N_i\})` leads to (differential) enthalpy :math:`dH(S,p,\{N_i\})`. Indeed, enthalpy is the same as internal energy when we are talking about constant pressure.
 
+
+Differential Forms
+=============================
+
 This has always been confusing to use so many differential potentials. The trick of math is to discuss in the theory of differential forms.
 
 .. admonition:: What Are Forms
    :class: note
 
    In simple words, 1-forms are linear mapping of functions to numbers.
-   
+
    For illustration purpose, we take the simple case that
 
    .. math::
@@ -72,9 +76,10 @@ This has always been confusing to use so many differential potentials. The trick
    A list of references for differential geometry and thermodynamics:
 
    1. Bernard Schutz, Geometrical Methods in Mathematical Physics.
+   2. Hannay, J. H. (2006). Carnot and the fields formulation of elementary thermodynamics. American Journal of Physics, 74(2), 134. doi:10.1119/1.2121755
 
 
-With the help of differential forms, we could derive the Maxwell identities more easily by rewriting the functions to be functions of other variables. The punch line is the exterior derivative of equation :eq:`thermodynamics-not-the-second-law`, 
+With the help of differential forms, we could derive the Maxwell identities more easily by rewriting the functions to be functions of other variables. The punch line is the exterior derivative of equation :eq:`thermodynamics-not-the-second-law`,
 
 .. math::
    \mathbf{d} T \wedge \mathbf{d} S = \mathbf{d} p \wedge \mathbf{d} V.
@@ -87,7 +92,7 @@ The questions is, how could this formalism help us understanding more of the law
 .. math::
    \underset{^\sim}{\omega}_n = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right).
 
-In general, on a n-dimension manifold, we could have non-zero :math:`\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}` since we have up to non-zero n-forms. The meaning is that we do not find global temperature and entropy on the whole manifold [BSchutz]_ or no globally integrable function of heat exchange :math:`\underset{^\sim}{\omega}_n`. 
+In general, on a n-dimension manifold, we could have non-zero :math:`\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}` since we have up to non-zero n-forms. The meaning is that we do not find global temperature and entropy on the whole manifold [BSchutz]_ or no globally integrable function of heat exchange :math:`\underset{^\sim}{\omega}_n`.
 
 Regarding the geometrical meaning of 1-forms, which are surfaces of equi-function values, just like equipotential lines, we think of a system that has a global entropy and temperature with such equi-entropy surfaces. One of the aspects of the second law thus is to state that for a system that has no heat exchange :math:`\underset{^\sim}{\omega}=0`, it is restricted on a curtain part of the phase space, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy, by Caratheodory's theorem.
 
