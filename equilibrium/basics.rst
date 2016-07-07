@@ -43,7 +43,7 @@ Boltzmann factor gives us the (not normalized) probability of the system staying
 
 
 .. note::
-   Why do Boltzmann factor appear a lot in equilibrium statistical mechanics? Equilibrium of the system means when we add infinitesimal amount of energy to the whole thing including system and reservoir, a characteristic quantity :math:`C(E) = C_S C_R` won't change. That is the system and the reservoir will have the same changing rate of the characteristic quantity when energy is changed, i.e.,
+   Why does Boltzmann factor appear a lot in equilibrium statistical mechanics? Equilibrium of the system means when we add infinitesimal amount of energy to the whole thing including system and reservoir, a characteristic quantity :math:`C(E) = C_S C_R` won't change. That is the system and the reservoir will have the same changing rate of the characteristic quantity when energy is changed, i.e.,
 
    .. math::
       \frac{\partial \ln C_S}{\partial E_S} = - \frac{\partial \ln C_R}{\partial E_R} .
