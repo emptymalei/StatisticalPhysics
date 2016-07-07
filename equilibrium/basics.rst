@@ -69,7 +69,7 @@ Partition Function
 For a given Hamiltonian H, the (classical) partition function Z is
 
 .. math::
-   Z = \int d q \int d x e^{-\beta H}
+   Z = \int d p \int d x e^{-\beta H}
 
 A simple example is the Harmonic Oscillator,
 
