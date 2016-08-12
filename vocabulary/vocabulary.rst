@@ -34,53 +34,54 @@ Behavior of Functions
 
 0. Boltzmann factor
 
-The most important and weirdest function in statmech
+   The most important and weirdest function in statmech
 
-.. figure:: ../_static/voc/boltzfactor.png
-   :align: center
+   .. figure:: ../_static/voc/boltzfactor.png
+      :align: center
 
-   The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n.
+      The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n.
 
-   Professor Kenkre: sleeping lion!
+      Professor Kenkre: sleeping lion!
 
 
 
 
 1. Tanh(x)
 
-.. image:: ../_static/voc/tanh.jpg
-   :align: center
+   .. image:: ../_static/voc/tanh.jpg
+      :align: center
 
 2. :math:`1-exp(-x)`
 
-.. image:: ../_static/voc/exp1.jpg
-   :align: center
+   .. image:: ../_static/voc/exp1.jpg
+      :align: center
 
 3. :math:`cosh(1/x)-1/x`
 
-.. image:: ../_static/voc/cosh1.jpg
-   :align: center
+   .. image:: ../_static/voc/cosh1.jpg
+      :align: center
 
 4. :math:`1/(1+1/x)`
 
-.. image:: ../_static/voc/fraction1.jpg
-   :align: center
+   .. image:: ../_static/voc/fraction1.jpg
+      :align: center
 
 
 
-.. note::
+   .. admonition:: Examples in Physics
+      :class: note
 
-   An example of this :math:`1/(1+1/x)` is the modified gas model.
+      An example of this :math:`1/(1+1/x)` is the modified gas model.
 
-   .. math::
-      P (V - b) = N k T
+      .. math::
+         P (V - b) = N k T
 
-   We can find out :math:`1/V`, which is
+      We can find out :math:`1/V`, which is
 
-   .. math::
-      \frac{1}{V} = \frac{1}{b+\frac{N k T}{P}}
+      .. math::
+         \frac{1}{V} = \frac{1}{b+\frac{N k T}{P}}
 
-   Now we can plot out :math:`\frac{1}{V} ~ P` and it shows a behavior just like :math:`1/(1+1/x)`.
+      Now we can plot out :math:`\frac{1}{V} ~ P` and it shows a behavior just like :math:`1/(1+1/x)`.
 
 
 
@@ -175,9 +176,11 @@ Legendre Transform
 The geometrical of physical meaning of Legendre transformation in thermodynamics can be illustrated by the following graph.
 
 
-.. image:: images/LegendreTransform.png
+.. figure:: images/LegendreTransform.png
+   :align: center
    :alt: Legendre Transform made clear
-   :width: 80%
+
+   Legendre transform
 
 For example, we know that entropy :math:`S` is actually a function of temperature :math:`T`. For simplicity, we assume that they are monotonically related like in the graph above. When we are talking about the quantity :math:`T \mathrm d S` we actually mean the area shaded with blue grid lines. Meanwhile the area shaded with orange line means :math:`S \mathrm d T`.
 

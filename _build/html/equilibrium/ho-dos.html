@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -38,7 +38,7 @@
     <link rel="next" title="Observables and Debye Model" href="debye-model.html" />
     <link rel="prev" title="Basics of Statistical Mechanics" href="basics.html" />
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
  <script type="text/x-mathjax-config">
    MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
  </script>
@@ -178,6 +178,7 @@
 </li>
 <li><a class="reference internal" href="#partition-function-and-dos">Partition Function and DoS</a></li>
 <li><a class="reference internal" href="#phase-space-of-quantum-partition-function">Phase Space of Quantum Partition Function</a></li>
+<li><a class="reference internal" href="#id1">Phase Space of Quantum Partition Function</a></li>
 </ul>
 </li>
 </ul>
@@ -250,8 +251,8 @@
 </div>
 <div class="section" id="density-of-states">
 <h2>Density of States<a class="headerlink" href="#density-of-states" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="note admonition">
+<p class="first admonition-title">Free Energy and Partition Function</p>
 <p>Free energy</p>
 <div class="math">
 \[A = U - T S\]</div>
@@ -320,8 +321,8 @@
 \[g(E) = \frac{1}{k} \frac{m L}{2\pi \hbar^2}\]</div>
 </li>
 </ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="note admonition">
+<p class="first admonition-title">Dimension is Crucial</p>
 <p>These results are so different. For 1D system, the higher energy of the system is, the small DoS is. 2D DoS doesn&#8217;t depend on energy. 3D is proportional to the square root of energy.</p>
 <p class="last">DoS is very important in quantum systems because quantization can make strange DoS. In classical systems without quantization, DoS is always some kind of constant.</p>
 </div>
@@ -340,7 +341,11 @@
 \[A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p>This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won&#8217;t have twice of the free energy. It&#8217;s called Gibbs mixing paradox.</p>
+<p class="last">This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won&#8217;t have twice of the free energy. It&#8217;s called Gibbs mixing paradox.</p>
+</div>
+</div>
+<div class="section" id="phase-space-of-quantum-partition-function">
+<h2>Phase Space of Quantum Partition Function<a class="headerlink" href="#phase-space-of-quantum-partition-function" title="Permalink to this headline">¶</a></h2>
 <p>This is a physical idea of how do we get the quantum partition function from Classical Mechanics.</p>
 <p>Classically, the partition function</p>
 <div class="math">
@@ -358,14 +363,13 @@
 <p class="first admonition-title">Note</p>
 <p class="last"><span class="math">\(h^3\)</span> is the smallest phase space volume in quantum mechanics.</p>
 </div>
-<div class="last admonition warning">
+<div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Here we used phase space of <span class="math">\({q_i;p_i}\)</span> which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.</p>
 </div>
 </div>
-</div>
-<div class="section" id="phase-space-of-quantum-partition-function">
-<h2>Phase Space of Quantum Partition Function<a class="headerlink" href="#phase-space-of-quantum-partition-function" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h2>Phase Space of Quantum Partition Function<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>This is a physical idea of how do we get the quantum partition function from Classical Mechanics.</p>
 <p>Classically, the partition function</p>
 <div class="math">
@@ -423,9 +427,9 @@
 
     </p>
     <p>
-        <span>© Copyright 2014, Lei Ma.</span>|
-        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
-        <span>Created with
+        <span>© Copyright  2016, Lei Ma. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
         data-gittip-widget="button"
         src="//gttp.co/v1.js"></script></span>
@@ -440,6 +444,19 @@
     </script>
 
 </div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
 
 
   </body>

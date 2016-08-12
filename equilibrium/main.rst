@@ -11,4 +11,5 @@ Equilibrium Statistical Mechanics
     ho-dos.rst
     debye-model.rst
     phase-transitions.rst
+    most-probable-distribution.rst
     ensembles.rst

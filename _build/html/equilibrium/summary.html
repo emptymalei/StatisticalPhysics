@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -38,7 +38,7 @@
     <link rel="next" title="Basics of Statistical Mechanics" href="basics.html" />
     <link rel="prev" title="Equilibrium Statistical Mechanics" href="main.html" />
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
  <script type="text/x-mathjax-config">
    MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
  </script>
@@ -245,7 +245,7 @@
 <li><p class="first">Kinematics: Equation of state; <a class="reference external" href="../vocabulary/vocabulary.html#thermodynamic-potentials">Thermodynamic potential</a></p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/thermodynamicPotentials.png"><img alt="../_images/thermodynamicPotentials.png" src="../_images/thermodynamicPotentials.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">The relationship between different thermodynamic potentials. There are three different couplings and five different potentials. For more details please read vocabulary <a class="reference internal" href="../thermodynamics/summary.html#thermodynamical-potentials"><span>Thermodynamic Potentials</span></a> .</span></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">The relationship between different thermodynamic potentials. There are three different couplings and five different potentials. For more details please read vocabulary <a class="reference internal" href="../thermodynamics/summary.html#thermodynamical-potentials"><span>Thermodynamic Potentials</span></a> .</span></p>
 </div>
 </li>
 <li><p class="first">First principles: <a class="reference external" href="../vocabulary/vocabulary.html#the-laws-of-four">The laws of four</a></p>
@@ -263,7 +263,7 @@
 </ol>
 <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/BoltzmannVSGibbs.png"><img alt="../_images/BoltzmannVSGibbs.png" src="../_images/BoltzmannVSGibbs.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">A UML modeling of the two theories. Refer to <a class="reference external" href="week6.html#most-probable-distribution">Important box in week 6</a></span></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A UML modeling of the two theories. Refer to <a class="reference external" href="week6.html#most-probable-distribution">Important box in week 6</a></span></p>
 </div>
 <div class="section" id="boltzmann-statistics">
 <h3>Boltzmann Statistics<a class="headerlink" href="#boltzmann-statistics" title="Permalink to this headline">¶</a></h3>
@@ -329,15 +329,15 @@
 </div>
 <div class="section" id="gibbs-mixing-paradox">
 <h3>Gibbs Mixing Paradox<a class="headerlink" href="#gibbs-mixing-paradox" title="Permalink to this headline">¶</a></h3>
-<p><span class="xref std std-ref">gibbs-mixing-paradox</span> is important for the coming in of quantum statistical mechanics.</p>
+<p><a class="reference internal" href="debye-model.html#gibbs-mixing-paradox"><span>Gibbs Mixing Paradox</span></a> is important for the coming in of quantum statistical mechanics.</p>
 </div>
 <div class="section" id="mean-field-theory">
 <h3>Mean Field Theory<a class="headerlink" href="#mean-field-theory" title="Permalink to this headline">¶</a></h3>
-<p><span class="xref std std-ref">mean-field-theory</span> is the idea of treating interaction between particles as interactions between particles and a mean field.</p>
+<p><a class="reference internal" href="phase-transitions.html#mean-field-theory"><span>Mean Field Thoery</span></a> is the idea of treating interaction between particles as interactions between particles and a mean field.</p>
 </div>
 <div class="section" id="van-der-waals-gas">
 <h3>Van der Waals Gas<a class="headerlink" href="#van-der-waals-gas" title="Permalink to this headline">¶</a></h3>
-<p><span class="xref std std-ref">van-der-waals-gas</span> can be derived using Mayer expansion and Leonard-Jones potential.</p>
+<p><a class="reference internal" href="phase-transitions.html#van-der-waals-gas"><span>Van der Waals Gas</span></a> can be derived using Mayer expansion and Leonard-Jones potential.</p>
 </div>
 </div>
 </div>
@@ -375,9 +375,9 @@
 
     </p>
     <p>
-        <span>© Copyright 2014, Lei Ma.</span>|
-        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
-        <span>Created with
+        <span>© Copyright  2016, Lei Ma. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
         data-gittip-widget="button"
         src="//gttp.co/v1.js"></script></span>
@@ -392,6 +392,19 @@
     </script>
 
 </div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
 
 
   </body>

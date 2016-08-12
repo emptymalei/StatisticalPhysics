@@ -60,13 +60,16 @@ Let's sum up.
 
 The relations between them? All potentials are Legendre transformation of each other. To sum up, let's gliffy.
 
-.. image:: images/thermodynamicPotentials.png
+.. _thermodynamicPotentials:
+
+.. figure:: images/thermodynamicPotentials.png
    :alt: Thermodynamic Potentials
+   :align: center
    :scale: 80%
 
-(The gliffy source file is `here <images/thermodynamicPotentials.gliffy>`_ . Feel free to download and create your own version.)
+   (The gliffy source file is `here <images/thermodynamicPotentials.gliffy>`_ . Feel free to download and create your own version.)
 
-This graph needs some illustration.
+:numref:`thermodynamicPotentials` needs some illustration.
 
 1. Legendre transformation: :math:`ST-U(S)` transform a funcion :math:`U(S)` with variable :math:`S` to another function :math:`H(T)`. However, in thermodynamics use the different sign can be more convinient. In other words, :math:`U(S)` and :math:`-H(T)` are dual to each other.
 2. Starting from this graph, we can find out the differentials of thermodynamic potentials. Next take the partial derivatives of thermodynamic potential with respect to their own variables. By comparing the partial derivatives and the definitions of them, we find out expressions of their vairables. Finally different expressions for the same variable are equal, which are the Maxwell relations.
@@ -74,7 +77,9 @@ This graph needs some illustration.
 
 
 
-.. hint::
+.. admonition:: The Sixth Potential?
+   :class: toggle
+
    **Question:** Mathematically we can construct the sixth potential namely the one that should appear at the right bottom of the graph. Why don't people talk about it?
 
    We can surely define a new potential called :math:`Null(T,X,\{\mu_i\})`. However, the value of this function is zero. So we can have the derivitive of this potential is also zero. This is the Gibbs Duhem equation.
@@ -96,7 +101,7 @@ Differential Forms
 This has always been confusing to use so many differential potentials. The trick of math is to discuss in the theory of differential forms.
 
 .. admonition:: What Are Forms
-   :class: note
+   :class: toggle
 
    In simple words, 1-forms are linear mapping of functions to numbers.
 

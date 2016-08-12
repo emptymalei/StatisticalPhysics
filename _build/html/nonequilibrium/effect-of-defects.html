@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -38,7 +38,7 @@
     <link rel="next" title="Quantum Master Equation" href="quantum-master-eqn.html" />
     <link rel="prev" title="Smoluchowski Equation" href="smoluchowski-eqn.html" />
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
  <script type="text/x-mathjax-config">
    MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
  </script>
@@ -434,7 +434,7 @@
 <h2>Photosynthesis<a class="headerlink" href="#photosynthesis" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id1">
 <img alt="chloroplast" src="../_images/chloroplast.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Captions are <a class="reference external" href="https://en.wikipedia.org/wiki/Photosynthesis#mediaviewer/File:Chloroplast.svg">here on wikipedia</a>. Chloroplast ultrastructure: 1. outer membrane 2. intermembrane space 3. inner membrane (1+2+3: envelope) 4. stroma (aqueous fluid) 5. thylakoid lumen (inside of thylakoid) 6. thylakoid membrane 7. granum (stack of thylakoids) 8. thylakoid (lamella) 9. starch 10. ribosome 11. plastidial DNA 12. plastoglobule (drop of lipids)</span></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Captions are <a class="reference external" href="https://en.wikipedia.org/wiki/Photosynthesis#mediaviewer/File:Chloroplast.svg">here on wikipedia</a>. Chloroplast ultrastructure: 1. outer membrane 2. intermembrane space 3. inner membrane (1+2+3: envelope) 4. stroma (aqueous fluid) 5. thylakoid lumen (inside of thylakoid) 6. thylakoid membrane 7. granum (stack of thylakoids) 8. thylakoid (lamella) 9. starch 10. ribosome 11. plastidial DNA 12. plastoglobule (drop of lipids)</span></p>
 </div>
 <p>The obsorbed energy of photons is random walking in the chloroplast until it hit on a reaction center. Besides that, the photons can be emited after some time. So the process can be descibed with the following master equation.</p>
 <div class="math">
@@ -528,9 +528,9 @@
 
     </p>
     <p>
-        <span>© Copyright 2014, Lei Ma.</span>|
-        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
-        <span>Created with
+        <span>© Copyright  2016, Lei Ma. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
         data-gittip-widget="button"
         src="//gttp.co/v1.js"></script></span>
@@ -545,6 +545,19 @@
     </script>
 
 </div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
 
 
   </body>

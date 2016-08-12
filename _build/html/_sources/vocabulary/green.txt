@@ -87,6 +87,3 @@ Finally we integrate over :math:`\xi` to get the solution,
 
 
 This is the power of Green function.
-
-
-.

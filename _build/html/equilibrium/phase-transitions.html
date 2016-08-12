@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -35,10 +35,10 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="top" title="Statistical Mechanics Notes" href="../index.html" />
     <link rel="up" title="Equilibrium Statistical Mechanics" href="main.html" />
-    <link rel="next" title="Ensembles" href="ensembles.html" />
+    <link rel="next" title="Most Probable Distribution" href="most-probable-distribution.html" />
     <link rel="prev" title="Observables and Debye Model" href="debye-model.html" />
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
  <script type="text/x-mathjax-config">
    MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
  </script>
@@ -195,7 +195,7 @@
     </a>
   </li>
   <li>
-    <a href="ensembles.html" title="Next Chapter: Ensembles"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Ensembles &raquo;</span>
+    <a href="most-probable-distribution.html" title="Next Chapter: Most Probable Distribution"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Most Probable... &raquo;</span>
     </a>
   </li>
               
@@ -237,16 +237,16 @@
 <p>Phase transitions are properties of infinite systems.</p>
 </div>
 <div class="section" id="mean-field-thoery">
-<h2>Mean Field Thoery<a class="headerlink" href="#mean-field-thoery" title="Permalink to this headline">¶</a></h2>
+<span id="mean-field-theory"></span><h2>Mean Field Thoery<a class="headerlink" href="#mean-field-thoery" title="Permalink to this headline">¶</a></h2>
 <p>More is the same.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="note admonition">
+<p class="first admonition-title">Why is this an approximation</p>
 <p class="last">Why is this an approximation?
 Because the actual magnetic field for example is often not the average of all the magnetic dipoles.</p>
 </div>
 <p>Mean field theory often fails at the critical points that is mean field theory is not precise enough for phase transition in some low dimensional systems. This gives us a very interesting thought.</p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
+<div class="important admonition">
+<p class="first admonition-title">Why does mean field theory work</p>
 <p>Why does mean field theory work? From the view of mathematics, potential can always be expanded at some value which is exactly the mean value of the field. For an Hamiltonian,</p>
 <div class="math">
 \[H = - \sum _{\langle i,j \rangle} J^{ij} \sigma_i \sigma_j - \mu \sum_i h^i \sigma_i\]</div>
@@ -272,7 +272,7 @@ Because the actual magnetic field for example is often not the average of all th
 </div>
 </div>
 <div class="section" id="van-der-waals-gas">
-<h2>Van der Waals Gas<a class="headerlink" href="#van-der-waals-gas" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Van der Waals Gas<a class="headerlink" href="#van-der-waals-gas" title="Permalink to this headline">¶</a></h2>
 <p>Ideal gas is the simplest. Van de Waals model considers the correction in pressure and volume.</p>
 <div class="math">
 \[(P + a n^2/V^2)(V- n b) = n R T\]</div>
@@ -309,8 +309,8 @@ Because the actual magnetic field for example is often not the average of all th
 \[\partial _ t \rho + \nabla \cdot \vec j = 0\]</div>
 <p>and here <span class="math">\(\vec j\)</span> can take other definitions like <span class="math">\(\vec j = - D \partial_x \rho\)</span>.</p>
 <p>This second continuity equation can represent any conservation law provided the proper <span class="math">\(\vec j\)</span>.</p>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
+<div class="toggle admonition">
+<p class="first admonition-title">From continuity equation to Liouville theorem</p>
 <p>From continuity equation to Liouville theorem:</p>
 <p>We start from</p>
 <div class="math">
@@ -366,7 +366,7 @@ Because the actual magnetic field for example is often not the average of all th
 <h3>Extraction of observables<a class="headerlink" href="#extraction-of-observables" title="Permalink to this headline">¶</a></h3>
 <p>It&#8217;s simply done by using the ensemble average</p>
 <div class="math">
-\[\avg{O} = \int O(p_i; q_i;t) \rho(p_i;q_i;t) \sum_i dp_i dq_i dt\]</div>
+\[\langle O \rangle = \int O(p_i; q_i;t) \rho(p_i;q_i;t) \sum_i dp_i dq_i dt\]</div>
 <p>where <span class="math">\(i=1,2,..., 3N\)</span>.</p>
 </div>
 </div>
@@ -405,9 +405,9 @@ Because the actual magnetic field for example is often not the average of all th
 
     </p>
     <p>
-        <span>© Copyright 2014, Lei Ma.</span>|
-        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
-        <span>Created with
+        <span>© Copyright  2016, Lei Ma. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
         data-gittip-widget="button"
         src="//gttp.co/v1.js"></script></span>
@@ -422,6 +422,19 @@ Because the actual magnetic field for example is often not the average of all th
     </script>
 
 </div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
 
 
   </body>

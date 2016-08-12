@@ -12,7 +12,7 @@ Phase transitions are properties of infinite systems.
 
 
 
-.. mean-field-theory::
+.. _mean-field-theory:
 
 Mean Field Thoery
 -------------------
@@ -20,13 +20,17 @@ Mean Field Thoery
 More is the same.
 
 
-.. note::
+.. admonition:: Why is this an approximation
+   :class: note
+
    Why is this an approximation?
    Because the actual magnetic field for example is often not the average of all the magnetic dipoles.
 
 Mean field theory often fails at the critical points that is mean field theory is not precise enough for phase transition in some low dimensional systems. This gives us a very interesting thought.
 
-.. important::
+.. admonition:: Why does mean field theory work
+   :class: important
+
    Why does mean field theory work? From the view of mathematics, potential can always be expanded at some value which is exactly the mean value of the field. For an Hamiltonian,
 
    .. math::
@@ -60,7 +64,7 @@ Mean field theory often fails at the critical points that is mean field theory i
    Why is mean field theory an approximation? Because the actual spin is more or less different from the average of spin configuration. Fluctuations in the spin makes the difference.
 
 
-.. van-der-waals-gas::
+.. _van-der-waals-gas:
 
 Van der Waals Gas
 ------------------------
@@ -127,7 +131,9 @@ and here :math:`\vec j` can take other definitions like :math:`\vec j = - D \par
 This second continuity equation can represent any conservation law provided the proper :math:`\vec j`.
 
 
-.. important::
+.. admonition:: From continuity equation to Liouville theorem
+   :class: toggle
+
    From continuity equation to Liouville theorem:
 
    We start from
@@ -218,6 +224,6 @@ Extraction of observables
 It's simply done by using the ensemble average
 
 .. math::
-   \avg{O} = \int O(p_i; q_i;t) \rho(p_i;q_i;t) \sum_i dp_i dq_i dt
+   \langle O \rangle = \int O(p_i; q_i;t) \rho(p_i;q_i;t) \sum_i dp_i dq_i dt
 
 where :math:`i=1,2,..., 3N`.

@@ -46,7 +46,9 @@ Density of States
 
 
 
-.. note::
+.. admonition:: Free Energy and Partition Function
+   :class: note
+
    Free energy
 
    .. math::
@@ -152,7 +154,9 @@ Examples of DoS
       g(E) = \frac{1}{k} \frac{m L}{2\pi \hbar^2}
 
 
-.. note::
+.. admonition:: Dimension is Crucial
+   :class: note
+
    These results are so different. For 1D system, the higher energy of the system is, the small DoS is. 2D DoS doesn't depend on energy. 3D is proportional to the square root of energy.
 
    DoS is very important in quantum systems because quantization can make strange DoS. In classical systems without quantization, DoS is always some kind of constant.
@@ -186,37 +190,37 @@ It's obvious that for a N particles system without interaction between particles
 
 
 
-   Phase Space of Quantum Partition Function
-   ------------------------------------------
+Phase Space of Quantum Partition Function
+------------------------------------------
 
-   This is a physical idea of how do we get the quantum partition function from Classical Mechanics.
+This is a physical idea of how do we get the quantum partition function from Classical Mechanics.
 
-   Classically, the partition function
+Classically, the partition function
 
-   .. math::
-      Z = \int d^3 x \int d^3 p e^{-\beta p^2/2m} = V \left( \sqrt{\frac{ 2m \pi }{\beta} } \right)^3
+.. math::
+   Z = \int d^3 x \int d^3 p e^{-\beta p^2/2m} = V \left( \sqrt{\frac{ 2m \pi }{\beta} } \right)^3
 
-   We can see from this that thermal wave length is :math:`1/\sqrt{\frac{ 2m \pi }{\beta}}` classically. In quantum, partition function is a summation,
+We can see from this that thermal wave length is :math:`1/\sqrt{\frac{ 2m \pi }{\beta}}` classically. In quantum, partition function is a summation,
 
-   .. math::
-      Z = \sum_i e^{-\beta E_i}
+.. math::
+   Z = \sum_i e^{-\beta E_i}
 
-   If we are going to write this into some integration, which is something like
+If we are going to write this into some integration, which is something like
 
-   .. math::
-      Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }
+.. math::
+   Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }
 
-   which is problematic because it has a different dimension with the summation definition. So we need to put some quantity which has a dimension :math:`[p\cdot x ]^3`, and it got to be :math:`h^3`. So the integration form of partition function is
+which is problematic because it has a different dimension with the summation definition. So we need to put some quantity which has a dimension :math:`[p\cdot x ]^3`, and it got to be :math:`h^3`. So the integration form of partition function is
 
-   .. math::
-      Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }
+.. math::
+   Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }
 
-   .. note::
-      :math:`h^3` is the smallest phase space volume in quantum mechanics.
+.. note::
+   :math:`h^3` is the smallest phase space volume in quantum mechanics.
 
 
-   .. warning::
-      Here we used phase space of :math:`{q_i;p_i}` which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.
+.. warning::
+   Here we used phase space of :math:`{q_i;p_i}` which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.
 
 
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -38,7 +38,7 @@
     <link rel="next" title="Equilibrium Statistical Mechanics" href="../equilibrium/main.html" />
     <link rel="prev" title="Thermodynamics" href="main.html" />
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
  <script type="text/x-mathjax-config">
    MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
  </script>
@@ -273,16 +273,18 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <li>Grand Potential</li>
 </ol>
 <p>The relations between them? All potentials are Legendre transformation of each other. To sum up, let&#8217;s gliffy.</p>
-<a class="reference internal image-reference" href="../_images/thermodynamicPotentials1.png"><img alt="Thermodynamic Potentials" src="../_images/thermodynamicPotentials1.png" style="width: 1160.0px; height: 602.4px;" /></a>
-<p>(The gliffy source file is <a class="reference external" href="images/thermodynamicPotentials.gliffy">here</a> . Feel free to download and create your own version.)</p>
-<p>This graph needs some illustration.</p>
+<div class="figure align-center" id="id2">
+<span id="thermodynamicpotentials"></span><a class="reference internal image-reference" href="../_images/thermodynamicPotentials1.png"><img alt="Thermodynamic Potentials" src="../_images/thermodynamicPotentials1.png" style="width: 1160.0px; height: 602.4px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">(The gliffy source file is <a class="reference external" href="images/thermodynamicPotentials.gliffy">here</a> . Feel free to download and create your own version.)</span></p>
+</div>
+<p><a class="reference internal" href="#thermodynamicpotentials"><span>Fig. 3</span></a> needs some illustration.</p>
 <ol class="arabic simple">
 <li>Legendre transformation: <span class="math">\(ST-U(S)\)</span> transform a funcion <span class="math">\(U(S)\)</span> with variable <span class="math">\(S\)</span> to another function <span class="math">\(H(T)\)</span>. However, in thermodynamics use the different sign can be more convinient. In other words, <span class="math">\(U(S)\)</span> and <span class="math">\(-H(T)\)</span> are dual to each other.</li>
 <li>Starting from this graph, we can find out the differentials of thermodynamic potentials. Next take the partial derivatives of thermodynamic potential with respect to their own variables. By comparing the partial derivatives and the definitions of them, we find out expressions of their vairables. Finally different expressions for the same variable are equal, which are the Maxwell relations.</li>
 <li>As we have seen in 2, all the thermodynamic quantities can be obstained by taking the derivatives of thermodynamic potentials.</li>
 </ol>
-<div class="admonition hint">
-<p class="first admonition-title">Hint</p>
+<div class="toggle admonition">
+<p class="first admonition-title">The Sixth Potential?</p>
 <p><strong>Question:</strong> Mathematically we can construct the sixth potential namely the one that should appear at the right bottom of the graph. Why don&#8217;t people talk about it?</p>
 <p>We can surely define a new potential called <span class="math">\(Null(T,X,\{\mu_i\})\)</span>. However, the value of this function is zero. So we can have the derivitive of this potential is also zero. This is the Gibbs Duhem equation.</p>
 <p class="last">The answer I want to hear is that this is something <span class="math">\(\mathrm d\mathrm d f = 0\)</span> where f is exact.</p>
@@ -296,7 +298,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <div class="section" id="differential-forms">
 <h2>Differential Forms<a class="headerlink" href="#differential-forms" title="Permalink to this headline">¶</a></h2>
 <p>This has always been confusing to use so many differential potentials. The trick of math is to discuss in the theory of differential forms.</p>
-<div class="note admonition">
+<div class="toggle admonition">
 <p class="first admonition-title">What Are Forms</p>
 <p>In simple words, 1-forms are linear mapping of functions to numbers.</p>
 <p>For illustration purpose, we take the simple case that</p>
@@ -470,9 +472,9 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 
     </p>
     <p>
-        <span>© Copyright 2014, Lei Ma.</span>|
-        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
-        <span>Created with
+        <span>© Copyright  2016, Lei Ma. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
         data-gittip-widget="button"
         src="//gttp.co/v1.js"></script></span>
@@ -487,6 +489,19 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
     </script>
 
 </div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
 
 
   </body>

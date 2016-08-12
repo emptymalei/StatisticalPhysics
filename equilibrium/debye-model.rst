@@ -26,7 +26,7 @@ If a system of QM comes to equilibrium, that means
 
 
 
-.. gibbs-mixing-paradox::
+.. _gibbs-mixing-paradox:
 
 Gibbs Mixing Paradox
 ----------------------

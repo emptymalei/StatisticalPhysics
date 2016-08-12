@@ -74,9 +74,19 @@ background: none !important;
 color: black !important;
 }
 
+/* Adjust Math Begin */
 div.math {
 text-align:center;
 }
+
+.math {
+  text-align:center;
+}
+
+img.math {
+    width: inherit;
+}
+/* Adjust Math End */
 
 div.discussion {
 padding: 10px 15px 10px 50px !important;
@@ -237,6 +247,46 @@ text-decoration:none;
 .dropdown-menu {
 min-width: 260px !important;
 }
+
+/* Toggle Environment Begin */
+
+.toggle {
+    background: none repeat scroll 0 0 white;
+    padding: 10px 15px 10px 50px !important;
+    line-height: 24px;
+    margin-bottom: 24px;
+    color: black;
+    border: 2px solid #7b064d;
+}
+
+.toggle .admonition-title {
+    display: block;
+    clear: both;
+    cursor: pointer;
+    font-size: 110% !important;
+}
+
+.toggle .admonition-title:before {
+  content: "\00a0▼";
+}
+
+.toggle .admonition-title.open:before {
+  content: "\00a0▲";
+}
+
+.toggle .admonition-title:after {
+    content: " ▼";
+}
+
+.toggle .admonition-title.open:after {
+    content: " ▲";
+}
+
+.toggle p:last-child {
+    margin-bottom: 0;
+}
+
+/* Toggle Environment End */
 
 
 

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -38,7 +38,7 @@
     <link rel="next" title="Harmonic Oscillator and Density of States" href="ho-dos.html" />
     <link rel="prev" title="Equilibrium Statistical Mechanics Summary" href="summary.html" />
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
  <script type="text/x-mathjax-config">
    MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
  </script>
@@ -233,7 +233,7 @@
 <p>Why is statistics important? Remember we are dealing with Avogadro&#8217;s number of DoFs. If we are going to calculate the dynamics of this system by calculating the dynamics of each particles. To store one screen shot of the system with each DoF take only 8 bits, we need <span class="math">\(10^23\)</span> bytes that is <span class="math">\(10^17\)</span> GB. It is not even possible to store only one screen shot of the system. So time to change our view of these kind of systems.</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/newtonsDream.jpg"><img alt="Newton's Dream" src="../_images/newtonsDream.jpg" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Newton&#8217;s plan of mechanics. Mechanics was in the center of all physics.</span></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Newton&#8217;s plan of mechanics. Mechanics was in the center of all physics.</span></p>
 </div>
 <p>What is mechanics? It deals with dynamics in the following way:</p>
 <ul class="simple">
@@ -249,9 +249,9 @@
 <div class="math">
 \[\text{probability of a point in phase space} = \exp(-\frac{E}{k_B T})\]</div>
 <p>Boltzmann factor gives us the (not normalized) probability of the system staying on a phase space state with energy <span class="math">\(E\)</span>.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>Why do Boltzmann factor appear a lot in equilibrium statistical mechanics? Equilibrium of the system means when we add infinitesimal amount of energy to the whole thing including system and reservoir, a characteristic quantity <span class="math">\(C(E) = C_S C_R\)</span> won&#8217;t change. That is the system and the reservoir will have the same changing rate of the characteristic quantity when energy is changed, i.e.,</p>
+<div class="note admonition">
+<p class="first admonition-title">Why Boltzmann Factor</p>
+<p>Why does Boltzmann factor appear a lot in equilibrium statistical mechanics? Equilibrium of the system means when we add infinitesimal amount of energy to the whole thing including system and reservoir, a characteristic quantity <span class="math">\(C(E) = C_S C_R\)</span> won&#8217;t change. That is the system and the reservoir will have the same changing rate of the characteristic quantity when energy is changed, i.e.,</p>
 <div class="math">
 \[\frac{\partial \ln C_S}{\partial E_S} = - \frac{\partial \ln C_R}{\partial E_R} .\]</div>
 <p>We have <span class="math">\(\mathrm dE_1 = -\mathrm dE_2\)</span> in a equilibrium state. They should both be a constant, which we set to <span class="math">\(\beta\)</span>. Finally we have something like</p>
@@ -285,14 +285,15 @@
 <p>This is the power of partition function. To continue the SHO example, we find the specific heat is</p>
 <div class="math">
 \[C = k_B\]</div>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="toggle admonition">
+<p class="first admonition-title">Does This Result Depend on SHO</p>
 <p class="last">This result has nothing to do with the detail of the SHO, no matter what mass they have, no matter what potential constant <span class="math">\(q\)</span> they have, no matter what kind of initial state they have. All the characteristic quantities of SHO are irrelevant. Why? Mathematically, it&#8217;s because we have Gaussian integral here. <strong>But what is the physics behind this?</strong> Basicly this classical limit is a high temperature limit.</p>
 </div>
 </div>
 <div class="section" id="magnetization">
 <h2>Magnetization<a class="headerlink" href="#magnetization" title="Permalink to this headline">¶</a></h2>
 <p>We have such a result in an experiment of magnetization with N magnetic dipoles in 1D.</p>
+<img alt="../_images/magnetizationExp.jpg" class="align-center" src="../_images/magnetizationExp.jpg" />
 <p>How can we describe this with a theory?</p>
 <p>It&#8217;s not possible to describe the system by writing down the dynamics of each magnetic dipole. So we have to try some macroscpic view of the system. Probability theory is a great tool for this. The probability of a dipole on a energy state <span class="math">\(E_i\)</span> is</p>
 <div class="math">
@@ -300,6 +301,8 @@
 <p>So the megnetization in this simple case is</p>
 <div class="math">
 \[M = (\mu N e^{\beta \mu B} - \mu N e^{-\beta \mu B})/(\exp(\beta \mu B) + \exp(-\beta \mu B)) = \mu N \tanh (\beta \mu B)\]</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Python Code</p>
 <p>Use ipython notebook to display this result. The original notebook can be downloaded from <a class="reference external" href="http://emptymalei.github.io/StatisticalPhysics/equilibrium/display.ipynb">here</a>. (Just put the link to <a class="reference external" href="http://nbviewer.ipython.org">nbviewer</a> and everyone can view online.)</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span></span>%pylab inline
 from pylab import *
@@ -312,7 +315,7 @@ from pylab import *
 <span class="n">y</span><span class="o">=</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="code python highlight-python"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">()</span>
+<div class="code python last highlight-python"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;External Magnetic Field&#39;</span><span class="p">)</span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
@@ -320,11 +323,12 @@ from pylab import *
 <span class="n">show</span><span class="p">();</span>
 </pre></div>
 </div>
+</div>
 <img alt="../_images/display_2_0.png" class="align-center" src="../_images/display_2_0.png" />
 <p>This is exactly the thing we saw in the experiment.</p>
 <p>This can be classified as a category of problems. In this specific example we see saturation of magnetization. However this is not alway true.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="note admonition">
+<p class="first admonition-title">Examples</p>
 <p class="last">Examples can be shown here.</p>
 </div>
 </div>
@@ -388,9 +392,9 @@ from pylab import *
 
     </p>
     <p>
-        <span>© Copyright 2014, Lei Ma.</span>|
-        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
-        <span>Created with
+        <span>© Copyright  2016, Lei Ma. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
         data-gittip-widget="button"
         src="//gttp.co/v1.js"></script></span>
@@ -405,6 +409,19 @@ from pylab import *
     </script>
 
 </div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
 
 
   </body>

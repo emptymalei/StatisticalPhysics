@@ -1,6 +1,6 @@
 {% extends "!layout.html" %} {% block extrahead %}
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
  <script type="text/x-mathjax-config">
    MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
  </script>
@@ -55,7 +55,7 @@
  </script>
 
 
-{{ super() }} {% endblock %} {% set css_files = css_files + ["_static/modify.css"] %} {% set css_files = css_files + ["_static/css/rrssb.css"] %} {% set script_files = script_files + ["_static/js/rrssb.js"] %} {% block footer %}
+{{ super() }} {% endblock %} {% set css_files = css_files + ["_static/modify.css"] %} {% set css_files = css_files + ["_static/css/font-awesome.min.css"] %} {% set script_files = script_files + ["_static/js/rrssb.js"] %} {% block footer %}
 
 <div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
 <div id="disqus_thread"></div>
@@ -84,9 +84,9 @@
 
     </p>
     <p>
-        <span>© Copyright 2014, Lei Ma.</span>|
-        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
-        <span>Created with
+        <span>© Copyright  {{ copyright }}. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
         data-gittip-widget="button"
         src="//gttp.co/v1.js"></script></span>
@@ -101,5 +101,18 @@
     </script>
 
 </div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
 
 {% endblock %}

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/css/rrssb.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/font-awesome.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -38,7 +38,7 @@
     <link rel="next" title="Green Function" href="green.html" />
     <link rel="prev" title="Vocabulary and Program" href="main.html" />
 
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
  <script type="text/x-mathjax-config">
    MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
  </script>
@@ -241,34 +241,30 @@
 <p class="first admonition-title">Note</p>
 <p class="last">To see the true nature of graphs, make quantities dimensionless. This is also true for theoretical derivations. Dimensionless equations can reveal more.</p>
 </div>
-<ol class="arabic simple" start="0">
-<li>Boltzmann factor</li>
-</ol>
+<ol class="arabic" start="0">
+<li><p class="first">Boltzmann factor</p>
 <p>The most important and weirdest function in statmech</p>
 <div class="figure align-center" id="id6">
 <img alt="../_images/boltzfactor1.png" src="../_images/boltzfactor1.png" />
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n.</span></p>
 <div class="legend">
-Professor Kenkre: sleeping lion!</div>
+<p>Professor Kenkre: sleeping lion!</p>
 </div>
-<ol class="arabic simple">
-<li>Tanh(x)</li>
-</ol>
+</div>
+</li>
+<li><p class="first">Tanh(x)</p>
 <img alt="../_images/tanh.jpg" class="align-center" src="../_images/tanh.jpg" />
-<ol class="arabic simple" start="2">
-<li><span class="math">\(1-exp(-x)\)</span></li>
-</ol>
+</li>
+<li><p class="first"><span class="math">\(1-exp(-x)\)</span></p>
 <img alt="../_images/exp1.jpg" class="align-center" src="../_images/exp1.jpg" />
-<ol class="arabic simple" start="3">
-<li><span class="math">\(cosh(1/x)-1/x\)</span></li>
-</ol>
+</li>
+<li><p class="first"><span class="math">\(cosh(1/x)-1/x\)</span></p>
 <img alt="../_images/cosh1.jpg" class="align-center" src="../_images/cosh1.jpg" />
-<ol class="arabic simple" start="4">
-<li><span class="math">\(1/(1+1/x)\)</span></li>
-</ol>
+</li>
+<li><p class="first"><span class="math">\(1/(1+1/x)\)</span></p>
 <img alt="../_images/fraction1.jpg" class="align-center" src="../_images/fraction1.jpg" />
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
+<div class="note admonition">
+<p class="first admonition-title">Examples in Physics</p>
 <p>An example of this <span class="math">\(1/(1+1/x)\)</span> is the modified gas model.</p>
 <div class="math">
 \[P (V - b) = N k T\]</div>
@@ -277,6 +273,8 @@ Professor Kenkre: sleeping lion!</div>
 \[\frac{1}{V} = \frac{1}{b+\frac{N k T}{P}}\]</div>
 <p class="last">Now we can plot out <span class="math">\(\frac{1}{V} ~ P\)</span> and it shows a behavior just like <span class="math">\(1/(1+1/x)\)</span>.</p>
 </div>
+</li>
+</ol>
 </div>
 <div class="section" id="fourier-transform">
 <h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permalink to this headline">¶</a></h2>
@@ -334,7 +332,10 @@ Professor Kenkre: sleeping lion!</div>
 <div class="section" id="legendre-transform">
 <span id="id5"></span><h2>Legendre Transform<a class="headerlink" href="#legendre-transform" title="Permalink to this headline">¶</a></h2>
 <p>The geometrical of physical meaning of Legendre transformation in thermodynamics can be illustrated by the following graph.</p>
-<a class="reference internal image-reference" href="../_images/LegendreTransform.png"><img alt="Legendre Transform made clear" src="../_images/LegendreTransform.png" style="width: 80%;" /></a>
+<div class="figure align-center" id="id7">
+<img alt="Legendre Transform made clear" src="../_images/LegendreTransform.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Legendre transform</span></p>
+</div>
 <p>For example, we know that entropy <span class="math">\(S\)</span> is actually a function of temperature <span class="math">\(T\)</span>. For simplicity, we assume that they are monotonically related like in the graph above. When we are talking about the quantity <span class="math">\(T \mathrm d S\)</span> we actually mean the area shaded with blue grid lines. Meanwhile the area shaded with orange line means <span class="math">\(S \mathrm d T\)</span>.</p>
 <p>Let&#8217;s think about the change in internal energy which only the thermal part are considered here, that is,</p>
 <div class="math">
@@ -384,9 +385,9 @@ Professor Kenkre: sleeping lion!</div>
 
     </p>
     <p>
-        <span>© Copyright 2014, Lei Ma.</span>|
-        <a href="https://github.com/emptymalei/StatisticalPhysics">On GitHub</a>|
-        <span>Created with
+        <span>© Copyright  2016, Lei Ma. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
         data-gittip-widget="button"
         src="//gttp.co/v1.js"></script></span>
@@ -401,6 +402,19 @@ Professor Kenkre: sleeping lion!</div>
     </script>
 
 </div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
 
 
   </body>
