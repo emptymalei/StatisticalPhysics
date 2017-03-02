@@ -188,7 +188,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Statistical Physics Notes'
-copyright = u'2016, Lei Ma'
+copyright = u'2017, Lei Ma'
 
 
 # The version info for the project you're documenting, acts as replacement for
