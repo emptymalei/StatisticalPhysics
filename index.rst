@@ -44,7 +44,10 @@ One question worth thinking about is how we end up with probabilities.
 We wouldn't need probability theory if we carry out Newton's plan exactly. Note that the first thing we drop to come over the obstacles is to drop initial condition because it's impossible to write down the initial condition of a large system for each particle. The price of that is we have to use probability to describe the system. Later on we find out that some dynamics have to be dropped to make it calculable which then gives us other sources of probability.
 
 
-**It's kind of disappointing that stat mech is so vague. I feel unsafe.**
+**It's kind of disappointing that stat mech is so vague.**
+
+
+Sitemap can be downloaded: :download:`sitemap.xml <sitemap.xml>` or :download:`sitemap.xml.gz <sitemap.xml.gz>` .
 
 
 Vocabulary
