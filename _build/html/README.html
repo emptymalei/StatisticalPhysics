@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Statistical Mechanics Notes &mdash; Statistical Mechanics Notes</title>
+    <title>Statistical Mechanics Notes &#8212; Statistical Mechanics Notes</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -21,7 +21,8 @@
         VERSION:     '3.1415',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="_static/jquery.js"></script>
@@ -33,7 +34,8 @@
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="Statistical Mechanics Notes" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
 
 
  <script type="text/x-mathjax-config">
@@ -185,7 +187,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="_sources/README.txt"
+  <a href="_sources/README.rst.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -230,11 +232,11 @@ of the repository is available at:</p>
 <div class="section" id="build">
 <h1>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h1>
 <p>Install prerequisites:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>sudo apt-get install python-sphinx texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python</span><span class="o">-</span><span class="n">sphinx</span> <span class="n">texlive</span><span class="o">-</span><span class="n">fonts</span><span class="o">-</span><span class="n">recommended</span> <span class="n">texlive</span><span class="o">-</span><span class="n">latex</span><span class="o">-</span><span class="n">extra</span> <span class="n">texlive</span><span class="o">-</span><span class="n">fonts</span><span class="o">-</span><span class="n">extra</span> <span class="n">dvipng</span>
 </pre></div>
 </div>
 <p>To build the book, do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>make web
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">web</span>
 </pre></div>
 </div>
 <p>This builds both html and pdf versions, that you can find in the _build
@@ -243,11 +245,11 @@ directory.</p>
 <div class="section" id="how-to-push-to-github">
 <h1>How to Push to Github<a class="headerlink" href="#how-to-push-to-github" title="Permalink to this headline">¶</a></h1>
 <p>First fetch the gh-pages branch and then use this script:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>./copy-docs
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">copy</span><span class="o">-</span><span class="n">docs</span>
 </pre></div>
 </div>
 <p>and optionally push the gh-pages branch to github:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span>git push github
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">github</span>
 </pre></div>
 </div>
 </div>
@@ -285,7 +287,7 @@ directory.</p>
 
     </p>
     <p>
-        <span>© Copyright  2016, Lei Ma. </span> |
+        <span>© Copyright  2017, Lei Ma. </span> |
         <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
         <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"

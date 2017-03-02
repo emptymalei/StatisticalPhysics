@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Summary &mdash; Statistical Mechanics Notes</title>
+    <title>Summary &#8212; Statistical Mechanics Notes</title>
     
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -21,7 +21,8 @@
         VERSION:     '3.1415',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
       };
     </script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
@@ -33,8 +34,8 @@
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="top" title="Statistical Mechanics Notes" href="../index.html" />
-    <link rel="up" title="Thermodynamics" href="main.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Equilibrium Statistical Mechanics" href="../equilibrium/main.html" />
     <link rel="prev" title="Thermodynamics" href="main.html" />
 
@@ -205,7 +206,7 @@
             
               <li class="hidden-sm">
 <div id="sourcelink">
-  <a href="../_sources/thermodynamics/summary.txt"
+  <a href="../_sources/thermodynamics/summary.rst.txt"
      rel="nofollow">Source</a>
 </div></li>
             
@@ -247,7 +248,7 @@
 <p>The first thermodynamics potential we can think of is the (differential) internal energy, which, by definition is a function of entropy <span class="math">\(S\)</span>, volume <span class="math">\(V\)</span> and number of particles <span class="math">\(N_i\)</span>,</p>
 <div class="math">
 \[d U(S,V,\{N_i\}) = T dS - p dV + \mu_i d N_i,\]</div>
-<p>where repeated indices are summed over. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in <a class="reference internal" href="../vocabulary/vocabulary.html#legendre-transform"><span>Legendre Transform</span></a>.</p>
+<p>where repeated indices are summed over. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in <a class="reference internal" href="../vocabulary/vocabulary.html#legendre-transform"><span class="std std-ref">Legendre Transform</span></a>.</p>
 <p>Mathematically, three-variable function will generate seven extra functions through Legendre transform. The differential forms of them are</p>
 <div class="math">
 \[\begin{split}dA(T,V,\{N_i\}) &amp; = dU(S,V,\{N_i\}) - d(ST) = - S dT - p dV + \mu_i dN_i\\
@@ -277,7 +278,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <span id="thermodynamicpotentials"></span><a class="reference internal image-reference" href="../_images/thermodynamicPotentials1.png"><img alt="Thermodynamic Potentials" src="../_images/thermodynamicPotentials1.png" style="width: 1160.0px; height: 602.4px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">(The gliffy source file is <a class="reference external" href="images/thermodynamicPotentials.gliffy">here</a> . Feel free to download and create your own version.)</span></p>
 </div>
-<p><a class="reference internal" href="#thermodynamicpotentials"><span>Fig. 3</span></a> needs some illustration.</p>
+<p><a class="reference internal" href="#thermodynamicpotentials"><span class="std std-numref">Fig. 3</span></a> needs some illustration.</p>
 <ol class="arabic simple">
 <li>Legendre transformation: <span class="math">\(ST-U(S)\)</span> transform a funcion <span class="math">\(U(S)\)</span> with variable <span class="math">\(S\)</span> to another function <span class="math">\(H(T)\)</span>. However, in thermodynamics use the different sign can be more convinient. In other words, <span class="math">\(U(S)\)</span> and <span class="math">\(-H(T)\)</span> are dual to each other.</li>
 <li>Starting from this graph, we can find out the differentials of thermodynamic potentials. Next take the partial derivatives of thermodynamic potential with respect to their own variables. By comparing the partial derivatives and the definitions of them, we find out expressions of their vairables. Finally different expressions for the same variable are equal, which are the Maxwell relations.</li>
@@ -317,14 +318,14 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <p>if we have <span class="math">\(\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}=0\)</span>, which is easily proven to be true here since we have repeated basis if we write it down (no n+1 forms on n-dimension manifold).</p>
 <p>Or if we are back to functions,</p>
 <div class="math" id="equation-thermodynamics-not-the-second-law">
-<span class="eqno">(1)</span>\[T(U,V)\mathbf{d}S = p \mathbf{d}V + \mathbf{d}U.\]</div>
+<span class="eqno">(1)<a class="headerlink" href="#equation-thermodynamics-not-the-second-law" title="Permalink to this equation">¶</a></span>\[T(U,V)\mathbf{d}S = p \mathbf{d}V + \mathbf{d}U.\]</div>
 <p>A list of references for differential geometry and thermodynamics:</p>
 <ol class="last arabic simple">
 <li>Bernard Schutz, Geometrical Methods in Mathematical Physics.</li>
 <li>Hannay, J. H. (2006). Carnot and the fields formulation of elementary thermodynamics. American Journal of Physics, 74(2), 134. doi:10.1119/1.2121755</li>
 </ol>
 </div>
-<p>With the help of differential forms, we could derive the Maxwell identities more easily by rewriting the functions to be functions of other variables. The punch line is the exterior derivative of equation <a href="#equation-thermodynamics-not-the-second-law">(1)</a>,</p>
+<p>With the help of differential forms, we could derive the Maxwell identities more easily by rewriting the functions to be functions of other variables. The punch line is the exterior derivative of equation <a class="reference internal" href="#equation-thermodynamics-not-the-second-law">(1)</a>,</p>
 <div class="math">
 \[\mathbf{d} T \wedge \mathbf{d} S = \mathbf{d} p \wedge \mathbf{d} V.\]</div>
 <p>Maxwell identities are obtained by writing functions as functions of <span class="math">\((S,V)\)</span> or <span class="math">\(T,V\)</span> etc.</p>
@@ -472,7 +473,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 
     </p>
     <p>
-        <span>© Copyright  2016, Lei Ma. </span> |
+        <span>© Copyright  2017, Lei Ma. </span> |
         <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
         <span> Created with
             <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
