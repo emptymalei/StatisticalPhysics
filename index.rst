@@ -57,7 +57,7 @@ Vocabulary
 .. toctree::
     :maxdepth: 3
 
-    vocabulary/main.rst
+    vocabulary/index.rst
 
 
 
@@ -69,7 +69,7 @@ Thermodynamics
     :maxdepth: 3
 
 
-    thermodynamics/main.rst
+    thermodynamics/index.rst
 
 
 Equilibrium System
@@ -80,7 +80,7 @@ Equilibrium System
     :maxdepth: 3
 
 
-    equilibrium/main.rst
+    equilibrium/index.rst
 
 
 
@@ -104,7 +104,7 @@ Nonequilibrium System
 .. toctree::
     :maxdepth: 3
 
-    nonequilibrium/main.rst
+    nonequilibrium/index.rst
 
 
 

@@ -28,7 +28,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -37,7 +37,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Basics of Statistical Mechanics" href="basics.html" />
-    <link rel="prev" title="Equilibrium Statistical Mechanics" href="main.html" />
+    <link rel="prev" title="Equilibrium Statistical Mechanics" href="index.html" />
 
 
  <script type="text/x-mathjax-config">
@@ -147,16 +147,16 @@
   <ul class="dropdown-menu globaltoc"
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
-<li class="toctree-l1"><a class="reference internal" href="../vocabulary/main.html">Vocabulary and Program</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../thermodynamics/main.html">Thermodynamics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../thermodynamics/index.html">Thermodynamics</a></li>
 </ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="main.html">Equilibrium Statistical Mechanics</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Equilibrium Statistical Mechanics</a></li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../nonequilibrium/main.html">Stochastic And Non-Equilibrium Statistical Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../nonequilibrium/index.html">Stochastic And Non-Equilibrium Statistical Mechanics</a></li>
 </ul>
 </ul>
 </li>
@@ -197,7 +197,7 @@
               
                 
   <li>
-    <a href="main.html" title="Previous Chapter: Equilibrium Statistical Mechanics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Equilibrium S...</span>
+    <a href="index.html" title="Previous Chapter: Equilibrium Statistical Mechanics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Equilibrium S...</span>
     </a>
   </li>
   <li>
@@ -264,7 +264,7 @@
 </ol>
 <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/BoltzmannVSGibbs.png"><img alt="../_images/BoltzmannVSGibbs.png" src="../_images/BoltzmannVSGibbs.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A UML modeling of the two theories. Refer to <a class="reference external" href="week6.html#most-probable-distribution">Important box in week 6</a></span></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A UML modeling of the two theories. Refer to <a class="reference internal" href="most-probable-distribution.html#most-probable-distribution"><span class="std std-ref">Most Probable Distribution</span></a>.</span></p>
 </div>
 <div class="section" id="boltzmann-statistics">
 <h3>Boltzmann Statistics<a class="headerlink" href="#boltzmann-statistics" title="Permalink to this headline">¶</a></h3>
@@ -284,6 +284,19 @@
 </ol>
 </li>
 </ol>
+<div class="note admonition">
+<p class="first admonition-title">Equal A Prior Probability</p>
+<p>For systems with enormous number of particles, we observe their macroscopic properties such as energies, pressure. We have very limited information about the internal structure. The principle by Boltzmann is that all these different possible configurations of microstructure are equally distributed, a.k.a., principle of equal <em>a prior</em> probabilities.</p>
+<p>We can think about this using two spin system.</p>
+<div class="figure align-center" id="id3">
+<img alt="../_images/equal-a-prior-probability.png" src="../_images/equal-a-prior-probability.png" />
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Spin system</span></p>
+</div>
+<p>With an external magnetic field, the energy of the system is determined by</p>
+<div class="math">
+\[J s_1 s_2 + (s_1  + s_2) B,\]</div>
+<p class="last">where <span class="math">\(s_i=\pm 1\)</span>. We find that the second row of the configurations shows two different configurations that have the same energy. How do we determine the probability of these two configurations? In principle, we need more information. But we assume that the two spins are exactly the same with same properties. Then we do we need to distinguish the two configurations anyways. The is a very simple explanation of the equal <em>a prior</em> probability.</p>
+</div>
 </div>
 <div class="section" id="gibbs-ensemble-theory">
 <h3>Gibbs Ensemble Theory<a class="headerlink" href="#gibbs-ensemble-theory" title="Permalink to this headline">¶</a></h3>
