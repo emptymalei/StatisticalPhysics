@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Vocabulary &#8212; Statistical Mechanics Notes</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/modify.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/modify.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/rrssb.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Green Function" href="green.html" />
+    <link rel="prev" title="Vocabulary and Program" href="index.html" />
+
+
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
+ </script>
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+   MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+     cancel: ["Extension","cancel"]
+     });
+  });
+  </script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+     }
+   });
+</script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+           all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+   });
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   tex2jax: {
+     processEscapes: true
+   }
+ });
+</script>
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: {
+     Macros: {
+      overlr: ['\\overset\\leftrightarrow{\#1}',1],
+      overl: ['\\overset\leftarrow{\#1}',1],
+      overr: ['\\overset\rightarrow{\#1}',1],
+      bra: ['\\left\\langle \#1\\right|',1],
+      ket: ['\\left| \#1\\right\\rangle',1],
+      braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+      avg: ['\\left< \#1 \\right>',1],
+      slashed: ['\\cancel{\#1}',1],
+      bold: ['\\boldsymbol{\#1}',1],
+      d: ['\\mathrm d',0]
+     }
+   }
+ });
+ </script>
+ <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44466929-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+ 
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Statistical Physics</a>
+        <span class="navbar-text navbar-version pull-left"><b>3.1315</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Parts <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Vocabulary and Program</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../thermodynamics/index.html">Thermodynamics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../equilibrium/index.html">Equilibrium Statistical Mechanics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../nonequilibrium/index.html">Stochastic And Non-Equilibrium Statistical Mechanics</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Vocabulary</a><ul>
+<li><a class="reference internal" href="#gaussian-intergral">Gaussian Intergral</a></li>
+<li><a class="reference internal" href="#behavior-of-functions">Behavior of Functions</a></li>
+<li><a class="reference internal" href="#fourier-transform">Fourier Transform</a></li>
+<li><a class="reference internal" href="#laplace-transform">Laplace Transform</a></li>
+<li><a class="reference internal" href="#functions-that-will-saturate">Functions that will saturate</a></li>
+<li><a class="reference internal" href="#legendre-transform">Legendre Transform</a></li>
+<li><a class="reference internal" href="#refs-note">Refs &amp; Note</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="index.html" title="Previous Chapter: Vocabulary and Program"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Vocabulary an...</span>
+    </a>
+  </li>
+  <li>
+    <a href="green.html" title="Next Chapter: Green Function"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Green Function &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/vocabulary/vocabulary.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Vocabulary</a><ul>
+<li><a class="reference internal" href="#gaussian-intergral">Gaussian Intergral</a></li>
+<li><a class="reference internal" href="#behavior-of-functions">Behavior of Functions</a></li>
+<li><a class="reference internal" href="#fourier-transform">Fourier Transform</a></li>
+<li><a class="reference internal" href="#laplace-transform">Laplace Transform</a></li>
+<li><a class="reference internal" href="#functions-that-will-saturate">Functions that will saturate</a></li>
+<li><a class="reference internal" href="#legendre-transform">Legendre Transform</a></li>
+<li><a class="reference internal" href="#refs-note">Refs &amp; Note</a></li>
+</ul>
+</li>
+</ul>
+
+  <li>
+    <a href="index.html" title="Previous Chapter: Vocabulary and Program"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Vocabulary an...</span>
+    </a>
+  </li>
+  <li>
+    <a href="green.html" title="Next Chapter: Green Function"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Green Function &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../_sources/vocabulary/vocabulary.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="vocabulary">
+<span id="index-0"></span><h1>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="gaussian-intergral">
+<span id="index-1"></span><h2>Gaussian Intergral<a class="headerlink" href="#gaussian-intergral" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[\int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx = \sqrt{\frac{\pi}{a}}\]</div>
+<p>A comprehensive description of how this is done is <a class="reference external" href="http://mathworld.wolfram.com/GaussianIntegral.html">here</a>.</p>
+<p>Basicly, we just transform the problem to the <span class="math notranslate nohighlight">\(\int e^{-x} \mathrm dx\)</span> problem.</p>
+</div>
+<div class="section" id="behavior-of-functions">
+<h2>Behavior of Functions<a class="headerlink" href="#behavior-of-functions" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To see the true nature of graphs, make quantities dimensionless. This is also true for theoretical derivations. Dimensionless equations can reveal more.</p>
+</div>
+<ol class="arabic" start="0">
+<li><p class="first">Boltzmann factor</p>
+<p>The most important and weirdest function in statmech</p>
+<div class="figure align-center" id="id6">
+<img alt="../_images/boltzfactor1.png" src="../_images/boltzfactor1.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n.</span></p>
+<div class="legend">
+<p>Professor Kenkre: sleeping lion!</p>
+</div>
+</div>
+</li>
+<li><p class="first">Tanh(x)</p>
+<img alt="../_images/tanh.jpg" class="align-center" src="../_images/tanh.jpg" />
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(1-exp(-x)\)</span></p>
+<img alt="../_images/exp1.jpg" class="align-center" src="../_images/exp1.jpg" />
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(cosh(1/x)-1/x\)</span></p>
+<img alt="../_images/cosh1.jpg" class="align-center" src="../_images/cosh1.jpg" />
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(1/(1+1/x)\)</span></p>
+<img alt="../_images/fraction1.jpg" class="align-center" src="../_images/fraction1.jpg" />
+<div class="note admonition">
+<p class="first admonition-title">Examples in Physics</p>
+<p>An example of this <span class="math notranslate nohighlight">\(1/(1+1/x)\)</span> is the modified gas model.</p>
+<div class="math notranslate nohighlight">
+\[P (V - b) = N k T\]</div>
+<p>We can find out <span class="math notranslate nohighlight">\(1/V\)</span>, which is</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{V} = \frac{1}{b+\frac{N k T}{P}}\]</div>
+<p class="last">Now we can plot out <span class="math notranslate nohighlight">\(\frac{1}{V} ~ P\)</span> and it shows a behavior just like <span class="math notranslate nohighlight">\(1/(1+1/x)\)</span>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="fourier-transform">
+<h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permalink to this headline">¶</a></h2>
+<p>Fourier transform for continuous equation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial}{\partial x} e^{ikx}=ike^{ikx} &amp;\implies \frac{\partial}{\partial x} \to ik \\
+\frac{\partial^2}{\partial x^2} e^{ikx} = -k^2 e^{ikx} &amp; \implies \frac{\partial^2}{\partial x^2} \to -k^2\end{split}\]</div>
+</div>
+<div class="section" id="laplace-transform">
+<h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permalink to this headline">¶</a></h2>
+<p>Laplace transform is a transform of a function <span class="math notranslate nohighlight">\(f(t)\)</span> to a function of <span class="math notranslate nohighlight">\(s\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[L[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .\]</div>
+<p>Some useful properties:</p>
+<ol class="arabic simple">
+<li><span class="math notranslate nohighlight">\(L[\frac{d}{dt}f(t)] = s L[f(t)] - f(0)\)</span>;</li>
+<li>:math:<a href="#id1"><span class="problematic" id="id2">`</span></a>L[frac{d^2}{dt^2}f(t) = s^2 L[f(t)] - s f(0) - frac{d f(0)}{dt} <a href="#id3"><span class="problematic" id="id4">`</span></a>;</li>
+<li><span class="math notranslate nohighlight">\(L[\int_0^t g(\tau) d\tau ] = \frac{L[f(t)]}{s}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\alpha t] = \frac{1}{\alpha} L[s/\alpha]\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[e^{at}f(t)] = L[f(s-a)]\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[tf(t)] = - \frac{d}{ds} L[f(t)]\)</span>.</li>
+</ol>
+<p>Some useful results:</p>
+<ol class="arabic simple">
+<li><span class="math notranslate nohighlight">\(L[1] = \frac{1}{s}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\delta] = 1\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\delta^k] = s^k\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[t] = \frac{1}{s^2}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[e^{at}]= \frac{1}[s-a]\)</span>.</li>
+</ol>
+<p>A very nice property of Laplace transform is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L_s [e^{at}f(t)] &amp;= \int_0^\infty e^{-st} e^{-at} f(t) dt \\
+&amp; =  \int_0^\infty e^{-(s+a)t}f(t) dt \\
+&amp; = L_{s+a}[f(t)]\end{split}\]</div>
+<p>which is very useful when dealing with master equations.</p>
+<p>Two useful results are</p>
+<div class="math notranslate nohighlight">
+\[L[I_0(2Ft)] = \frac{1}{\sqrt{ \epsilon^2 - (2F)^2 }}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[L[J_0[2Ft]]  = \frac{1}{\sqrt{\epsilon^2 + (2F)^2}},\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_0(2Ft)\)</span> is the modified Bessel functions of the first kind. <span class="math notranslate nohighlight">\(J_0(2Ft)\)</span> is its companion.</p>
+<p>Using the property above, we can find out</p>
+<div class="math notranslate nohighlight">
+\[L[I_0(2Ft)e^{-2Ft}]  = \frac{1}{\sqrt{(\epsilon + 2F)^2 - (2F)^2}} .\]</div>
+</div>
+<div class="section" id="functions-that-will-saturate">
+<h2>Functions that will saturate<a class="headerlink" href="#functions-that-will-saturate" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[1-e^{-\alpha x}
+\tanh(x)
+\cosh(\frac{1}{x}) - \frac{1}{x}\]</div>
+</div>
+<div class="section" id="legendre-transform">
+<span id="id5"></span><h2>Legendre Transform<a class="headerlink" href="#legendre-transform" title="Permalink to this headline">¶</a></h2>
+<p>The geometrical of physical meaning of Legendre transformation in thermodynamics can be illustrated by the following graph.</p>
+<div class="figure align-center" id="id7">
+<img alt="Legendre Transform made clear" src="../_images/LegendreTransform.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Legendre transform</span></p>
+</div>
+<p>For example, we know that entropy <span class="math notranslate nohighlight">\(S\)</span> is actually a function of temperature <span class="math notranslate nohighlight">\(T\)</span>. For simplicity, we assume that they are monotonically related like in the graph above. When we are talking about the quantity <span class="math notranslate nohighlight">\(T \mathrm d S\)</span> we actually mean the area shaded with blue grid lines. Meanwhile the area shaded with orange line means <span class="math notranslate nohighlight">\(S \mathrm d T\)</span>.</p>
+<p>Let’s think about the change in internal energy which only the thermal part are considered here, that is,</p>
+<div class="math notranslate nohighlight">
+\[\mathrm d U = T \mathrm d S  .\]</div>
+<p>So internal energy change is equal to the the area shaded with blue lines. Now think about a three dimensional graph with a third axis of internal energy which I can’t show here. Notice that the line of internal energy is on the plane which is vertical to <span class="math notranslate nohighlight">\({T, S}\)</span> plane and contains the line black line in the graph above. The change of internal energy with an increase of <span class="math notranslate nohighlight">\(\mathrm dS\)</span> is the value that the line of internal energy goes up.</p>
+<p>Now we do such a transform that we actually remove the internal energy from <span class="math notranslate nohighlight">\(\mathrm d ( T S )\)</span>, which finally gives us Helmholtz free energy,</p>
+<div class="math notranslate nohighlight">
+\[\mathrm d A = S \mathrm d T .\]</div>
+<p>It’s obvious that after this Legendre transform, the new area is the part shaded with orange lines.</p>
+<p>Now the key point is that <span class="math notranslate nohighlight">\(S(T)\)</span> is a function of <span class="math notranslate nohighlight">\(T\)</span>. So if we know the blue area then we can find out the orange area, which means that the two function <span class="math notranslate nohighlight">\(A(T)\)</span> and <span class="math notranslate nohighlight">\(U(S)\)</span> are identical. Choosing one of them for a specific calculation is a kind of freedom and won’t change the final results.</p>
+</div>
+<div class="section" id="refs-note">
+<h2>Refs &amp; Note<a class="headerlink" href="#refs-note" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#">Back to top</a>
+
+    </p>
+    <p>
+        <span>© Copyright  2017, Lei Ma. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
+            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script></span>
+    </p>
+
+    <hr>
+
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+
+  </body>
+</html>

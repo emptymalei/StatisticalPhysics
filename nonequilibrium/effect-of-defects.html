@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Effect of Defects &#8212; Statistical Mechanics Notes</title>
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/modify.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/modify.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/rrssb.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quantum Master Equation" href="quantum-master-eqn.html" />
+    <link rel="prev" title="Smoluchowski Equation" href="smoluchowski-eqn.html" />
+
+
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
+ </script>
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+   MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+     cancel: ["Extension","cancel"]
+     });
+  });
+  </script>
+ <script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+     }
+   });
+</script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i < all.length; i += 1) {
+           all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+   });
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   tex2jax: {
+     processEscapes: true
+   }
+ });
+</script>
+ <script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+   TeX: {
+     Macros: {
+      overlr: ['\\overset\\leftrightarrow{\#1}',1],
+      overl: ['\\overset\leftarrow{\#1}',1],
+      overr: ['\\overset\rightarrow{\#1}',1],
+      bra: ['\\left\\langle \#1\\right|',1],
+      ket: ['\\left| \#1\\right\\rangle',1],
+      braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+      avg: ['\\left< \#1 \\right>',1],
+      slashed: ['\\cancel{\#1}',1],
+      bold: ['\\boldsymbol{\#1}',1],
+      d: ['\\mathrm d',0]
+     }
+   }
+ });
+ </script>
+ <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+ </script>
+
+
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44466929-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+ 
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+          Statistical Physics</a>
+        <span class="navbar-text navbar-version pull-left"><b>3.1315</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Parts <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../thermodynamics/index.html">Thermodynamics</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../equilibrium/index.html">Equilibrium Statistical Mechanics</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Stochastic And Non-Equilibrium Statistical Mechanics</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Effect of Defects</a><ul>
+<li><a class="reference internal" href="#defects">Defects</a></li>
+<li><a class="reference internal" href="#survival-probability">Survival Probability</a></li>
+<li><a class="reference internal" href="#review-of-effect-of-defect">Review of Effect of Defect</a></li>
+<li><a class="reference internal" href="#photosynthesis">Photosynthesis</a></li>
+<li><a class="reference internal" href="#multiple-defects">Multiple Defects</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="smoluchowski-eqn.html" title="Previous Chapter: Smoluchowski Equation"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Smoluchowski Equation</span>
+    </a>
+  </li>
+  <li>
+    <a href="quantum-master-eqn.html" title="Next Chapter: Quantum Master Equation"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Quantum Maste... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../_sources/nonequilibrium/effect-of-defects.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">Effect of Defects</a><ul>
+<li><a class="reference internal" href="#defects">Defects</a></li>
+<li><a class="reference internal" href="#survival-probability">Survival Probability</a></li>
+<li><a class="reference internal" href="#review-of-effect-of-defect">Review of Effect of Defect</a></li>
+<li><a class="reference internal" href="#photosynthesis">Photosynthesis</a></li>
+<li><a class="reference internal" href="#multiple-defects">Multiple Defects</a></li>
+</ul>
+</li>
+</ul>
+
+  <li>
+    <a href="smoluchowski-eqn.html" title="Previous Chapter: Smoluchowski Equation"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Smoluchowski Equation</span>
+    </a>
+  </li>
+  <li>
+    <a href="quantum-master-eqn.html" title="Next Chapter: Quantum Master Equation"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Quantum Maste... &raquo;</span>
+    </a>
+  </li>
+<div id="sourcelink">
+  <a href="../_sources/nonequilibrium/effect-of-defects.rst.txt"
+     rel="nofollow">Source</a>
+</div>
+<form action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+        </div>
+      </div>
+    <div class="col-md-9 content">
+      
+  <div class="section" id="effect-of-defects">
+<h1>Effect of Defects<a class="headerlink" href="#effect-of-defects" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="defects">
+<span id="index-0"></span><h2>Defects<a class="headerlink" href="#defects" title="Permalink to this headline">¶</a></h2>
+<img alt="../_images/effectsofDefects.png" class="align-center" src="../_images/effectsofDefects.png" />
+<p>A chain might have defects where the site captures the walker with a rate C. We would have a master equation of this kind</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}P_m = F(P_{m+1}+P_{m-1}-2P_m) - C \delta_{m,r} P_m .\]</div>
+<p>Consider an equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}y+\alpha y = f(t)\]</div>
+<ol class="arabic">
+<li><p class="first">Solution to the equation when <span class="math notranslate nohighlight">\(\alpha\)</span> is a constant is</p>
+<div class="math notranslate nohighlight">
+\[y(t)  = e^{-\alpha t} y(0) + \int_0^t dt' e^{-\alpha (t - t')} f(t')\]</div>
+</li>
+<li><p class="first"><span class="math notranslate nohighlight">\(\alpha\)</span> can be time dependent, instead of the exponential term, we have <span class="math notranslate nohighlight">\(e^{-\int_{t'}^t ds \alpha(s)}\)</span> as the Green function.</p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Review Green function and Laplace transform.</p>
+<p>General solution to first order differential equation is</p>
+<div class="math notranslate nohighlight">
+\[y(t) = G(t,t_0) y(t_0) + \int_{t_0}^{t} df' G(t,t') f(t')\]</div>
+<p class="last">If <span class="math notranslate nohighlight">\(\alpha\)</span> is constant, use Laplace transform. Otherwise use Green function.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Suppose we have a first order inhomogeneous differential equation with homogeous initial condition</p>
+<div class="math notranslate nohighlight">
+\[L[y]\equiv \dot y + \alpha(t)y = f(t), \qquad \text{for } a &lt; t, \qquad y(a) = 0\]</div>
+<p>The solution to this ODE is</p>
+<div class="math notranslate nohighlight">
+\[y = \int_a^\infty G(t\vert \xi)f (\xi) d\xi,\]</div>
+<p>in which Green function is defined as</p>
+<div class="math notranslate nohighlight">
+\[L[G(t\vert \xi)] = \delta(t - \xi), \qquad \text{for } a &lt; t, \qquad G(a\vert \xi) = 0.\]</div>
+<p>In this specific case, Green function is</p>
+<div class="last math notranslate nohighlight">
+\[G(x\vert \xi) = e^{-\int_\xi^x \alpha(t) dt} H(t - \xi) .\]</div>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>As a comparison to Green function method (which is not very helpful in 1st order ODE), general solution to first order differential equation</p>
+<div class="math notranslate nohighlight">
+\[\dot y + \alpha(t)y = f(t)\]</div>
+<p>is</p>
+<div class="math notranslate nohighlight">
+\[y(t) = \frac{\int\mu(t) f(t) dt + C}{\mu(t)}\]</div>
+<p class="last">where <span class="math notranslate nohighlight">\(\mu(t) := e^{\int \alpha(t') dt'}\)</span>.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p class="last">Green function method for second order inhomogeneous equation is <a class="reference external" href="../vocabulary/green.html">here in vacabulary</a>.</p>
+</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>Laplace transform is a transform of a function <span class="math notranslate nohighlight">\(f(t)\)</span> to a function of <span class="math notranslate nohighlight">\(s\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[L[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .\]</div>
+<p>Some useful properties:</p>
+<ol class="arabic simple">
+<li><span class="math notranslate nohighlight">\(L[\frac{d}{dt}f(t)] = s L[f(t)] - f(0)\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\frac{d^2}{dt^2}f(t) = s^2 L[f(t)] - s f(0) - \frac{d f(0)}{dt}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\int_0^t g(\tau) d\tau ] = \frac{L[f(t)]}{s}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\alpha t] = \frac{1}{\alpha} L[s/\alpha]\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[e^{at}f(t)] = L[f(s-a)]\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[tf(t)] = - \frac{d}{ds} L[f(t)]\)</span>.</li>
+</ol>
+<p>Some useful results:</p>
+<ol class="last arabic simple">
+<li><span class="math notranslate nohighlight">\(L[1] = \frac{1}{s}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\delta] = 1\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\delta^k] = s^k\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[t] = \frac{1}{s^2}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[e^{at}]= \frac{1}[s-a]\)</span>.</li>
+</ol>
+</div>
+<p>Suppose we have a time dependent source for master equation,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}P_m = F(P_{m+1} + P_{m-1} - 2P_m) + g_m(t)\]</div>
+<p>The solution to this equation is</p>
+<div class="math notranslate nohighlight">
+\[P_m(t) = \eta_m(t) + \int_0^t dt'\sum_n \Pi_{m-n}(t-t') g(t')\]</div>
+<p>Fourier transform of this solution</p>
+<div class="math notranslate nohighlight">
+\[P^k(t) = \eta^k(t) + \int_0^t dt' \Pi^k(t-t') g^k(t')\]</div>
+<p>Then Laplace transform</p>
+<div class="math notranslate nohighlight">
+\[\tilde P^k  = \tilde \eta^k + \tilde \Pi^k \tilde g^k  .\]</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><span class="highlit">Laplace transform</span></p>
+</div>
+<p>Then we have in position space</p>
+<div class="math notranslate nohighlight">
+\[\tilde P_m(\epsilon) = \tilde \eta_m(\epsilon)  + \sum_n \tilde \Pi_{m-n}(\epsilon) \tilde g_n(\epsilon)\]</div>
+<p>Now get back to our problem at the beginning.</p>
+<div class="math notranslate nohighlight">
+\[\tilde g_n = - C\delta _{n,r} \tilde P_n\]</div>
+<p>The solution becomes</p>
+<div class="math notranslate nohighlight">
+\[\tilde P_m = \tilde \eta _m - C \tilde \Pi_{m-r} \tilde P_r .\]</div>
+<p>We haven’t solved it. The RHS depends on the probabillity. Notice that if we choose m=r, then</p>
+<div class="math notranslate nohighlight">
+\[\tilde P_r  = \tilde \eta_r - C\tilde \Pi_0 \tilde P_r .\]</div>
+<p>So we can write down the rth component,</p>
+<div class="math notranslate nohighlight">
+\[\tilde P_r = \frac{\tilde \eta_r}{1+C\tilde \Pi_0}  .\]</div>
+<p>Solution to the probability is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde P_m &amp;= \eta_m - C\tilde \Pi_{m-r}  \frac{\tilde \eta_r}{1+C\tilde \Pi_0} \\
+&amp; = \eta_m - \frac{\tilde \Pi_{m-r} \eta_r}{1/C + \tilde \Pi_0}\end{split}\]</div>
+<p>The properties of this solution</p>
+<ol class="arabic simple">
+<li><span class="math notranslate nohighlight">\(C\gg 1\)</span>, <span class="math notranslate nohighlight">\(\tilde \eta_m - \frac{\tilde \Pi_{m-r} \tilde \eta_r}{\tilde \Pi_0}\)</span>.</li>
+<li><span class="math notranslate nohighlight">\(C\ll 1\)</span>, <span class="math notranslate nohighlight">\(\tilde \eta_m\)</span>.</li>
+</ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">We have to inverse using computer but why bother these transforms?</p>
+</div>
+</div>
+<div class="section" id="survival-probability">
+<h2>Survival Probability<a class="headerlink" href="#survival-probability" title="Permalink to this headline">¶</a></h2>
+<div class="math notranslate nohighlight">
+\[Q(t) = \sum_n P_m(t)\]</div>
+<p>In our example,</p>
+<div class="math notranslate nohighlight">
+\[\tilde Q(t) = \sum_m \tilde P_m = \frac{1}{\epsilon}\left( 1 - \frac{\tilde \eta_r}{1/C + \tilde \Pi_0} \right)\]</div>
+<p>Recall that Laplace transform gives us</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}Q \to \tilde Q - 1\]</div>
+<p>The survival probability can be written as</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} = - \int_0^t M(t-t') \eta(t').\]</div>
+</div>
+<div class="section" id="review-of-effect-of-defect">
+<h2>Review of Effect of Defect<a class="headerlink" href="#review-of-effect-of-defect" title="Permalink to this headline">¶</a></h2>
+<p>A brief review:</p>
+<p>Equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} P_m = \text{Without Defect} - C \delta_{m,r} P_m\]</div>
+<p>Suppose we have the propagator as <span class="math notranslate nohighlight">\(\Pi_{m-n}(t,t_0)\)</span>. Laplace transform to solve it</p>
+<div class="math notranslate nohighlight">
+\[\tilde P_m(\epsilon) = \tilde \eta_m(\epsilon) - C\tilde \Pi_{m-r}(\epsilon) \tilde P_r(\epsilon)\]</div>
+<p>By substitution of m with r, we find out</p>
+<div class="math notranslate nohighlight">
+\[\tilde P_r(\epsilon) = \frac{\tilde \eta_m(\epsilon)}{1+ \tilde \Pi_0(\epsilon)}.\]</div>
+<p>Insert this result back to the solution, we can write donw the final result.</p>
+<div class="math notranslate nohighlight">
+\[\tilde P_m(\epsilon) = \tilde \eta_m(\epsilon) - C\tilde \Pi_{m-r}(\epsilon) \tilde \eta_r(t) \frac{1}{1+C\tilde \Pi(\epsilon)}.\]</div>
+<p>Survival probability is defined as</p>
+<div class="math notranslate nohighlight">
+\[Q(t) = \sum_m P_m .\]</div>
+<p>Then we can find out its Laplace transform, which is</p>
+<div class="math notranslate nohighlight">
+\[\tilde Q(t) = \frac{1}{\epsilon} \left[ 1 - \frac{\tilde \eta_r(\epsilon)}{1/C + \tilde \Pi_0} \right]\]</div>
+<p>Looking through the table of Laplace transform, we know it’s a transform of the time derivative of survival probability,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}Q(t) = - \int_0^t dt' \mathscr M(t-t') \eta(t')\]</div>
+<p>in which</p>
+<div class="math notranslate nohighlight">
+\[\mathscr M(t-t') = \frac{1}{1/C + \tilde \Pi_0} .\]</div>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>The Laplace transform of propagator is</p>
+<div class="math notranslate nohighlight">
+\[\tilde \Pi_0 = \int_0^\infty e^{-\epsilon t} \Pi_0 dt,\]</div>
+<p class="last">which is actually decreasing when <span class="math notranslate nohighlight">\(\Pi_0\)</span> is a constant.</p>
+</div>
+<p>Take the limits to check the properties.</p>
+<ol class="arabic">
+<li><p class="first">Motion limit is given by</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{C} \ll \tilde \Pi_0 .\]</div>
+<p>The meaning of this is that the propagator decrease with time so fast that it becomes very small. In this limit, the survival probability is dominated by motion not the capture.</p>
+</li>
+<li><p class="first">Capture limit,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{C} \gg \tilde \Pi_0 .\]</div>
+<p>In this limit, the survival probability is dominated by capture rate.</p>
+</li>
+</ol>
+<div class="admonition hint">
+<p class="first admonition-title">Hint</p>
+<p>This part is excerpted from the vocabulary part.</p>
+<p>A very nice property of Laplace transform is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}L_s [e^{at}f(t)] &amp;= \int_0^\infty e^{-st} e^{-at} f(t) dt \\
+&amp; =  \int_0^\infty e^{-(s+a)t}f(t) dt \\
+&amp; = L_{s+a}[f(t)]\end{split}\]</div>
+<p>which is very useful when dealing with master equations.</p>
+<p>Two useful results are</p>
+<div class="math notranslate nohighlight">
+\[L[I_0(2Ft)] = \frac{1}{\sqrt{ \epsilon^2 - (2F)^2 }}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[L[J_0[2Ft]]  = \frac{1}{\sqrt{\epsilon^2 + (2F)^2}},\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_0(2Ft)\)</span> is the modified Bessel functions of the first kind. <span class="math notranslate nohighlight">\(J_0(2Ft)\)</span> is its companion.</p>
+<p>Using the property above, we can find out</p>
+<div class="last math notranslate nohighlight">
+\[L[I_0(2Ft)e^{-2Ft}]  = \frac{1}{\sqrt{(\epsilon + 2F)^2 - (2F)^2}} .\]</div>
+</div>
+</div>
+<div class="section" id="photosynthesis">
+<h2>Photosynthesis<a class="headerlink" href="#photosynthesis" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id1">
+<img alt="chloroplast" src="../_images/chloroplast.png" />
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">Captions are <a class="reference external" href="https://en.wikipedia.org/wiki/Photosynthesis#mediaviewer/File:Chloroplast.svg">here on wikipedia</a>. Chloroplast ultrastructure: 1. outer membrane 2. intermembrane space 3. inner membrane (1+2+3: envelope) 4. stroma (aqueous fluid) 5. thylakoid lumen (inside of thylakoid) 6. thylakoid membrane 7. granum (stack of thylakoids) 8. thylakoid (lamella) 9. starch 10. ribosome 11. plastidial DNA 12. plastoglobule (drop of lipids)</span></p>
+</div>
+<p>The obsorbed energy of photons is random walking in the chloroplast until it hit on a reaction center. Besides that, the photons can be emited after some time. So the process can be descibed with the following master equation.</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt} P_m = \text{Without reaction and emission} - C\delta_{m,r} P_m - \frac{P_m}{\tau}\]</div>
+<p>where the last term is the emission term.</p>
+<p>What experimentalists interest is the quantity called <span class="highlit">quantum yield</span>, which is defined in the following way:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{quantum yield} &amp; = \frac{\text{ Number of excitations in the trap or reaction center } }{\text{Number of total excitations}}\\
+&amp; = \frac{\text{Integration of survival probability with the reaction center}}{\text{Integration of survival probability without the raction center}} .\end{split}\]</div>
+<p>We know that without the reaction,</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}Q + \frac{Q}{\tau} = 0\]</div>
+<p>so</p>
+<div class="math notranslate nohighlight">
+\[Q(t) = Q(0) e^{-t/\tau}.\]</div>
+<p>Do the integration,</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\tau} \int_0^\infty Q(t) dt = 1 .\]</div>
+<p>The quantum yield is</p>
+<div class="math notranslate nohighlight">
+\[\text{quantum yield} = \frac{\frac{1}{\tau} \int_0^\infty dt Q(t) \vert_{\text{with traps}} }{\frac{1}{\tau} \int_0^\infty dt Q(t) \vert_{\text{without traps}} } .\]</div>
+<p>The problem becomes the derivation of the two survival probabilities. However, we don’t need the inverse Laplace transform because</p>
+<div class="math notranslate nohighlight">
+\[\int_0^\infty Q(t) dt = L_{\epsilon=0}[Q(t)] .\]</div>
+<p>Let’s define the quantities without traps to be with a prime. Notice that if we define a new quantity</p>
+<div class="math notranslate nohighlight">
+\[\bar P_m = e^{t/\tau} P_m'\]</div>
+<p>because if we plugin it into the master equation, we will get back to the case without emission. Then we the solution immediately.</p>
+<div class="math notranslate nohighlight">
+\[\bar P_m = P_m.\]</div>
+<p>So the survival probability with traps is</p>
+<div class="math notranslate nohighlight">
+\[Q' = e^{-t/\tau} Q.\]</div>
+<p>This means that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_0^\infty Q'(t) dt &amp;= \int_0^\infty e^{-t/\tau} Q(t) dt \\
+&amp; = L_{\epsilon=1/\tau} [Q(t)].\end{split}\]</div>
+<p>This result simplifies our calculation so much because we don’t need to calculate the survival probability in the case of traps. What we do is to use the Laplace transform of <span class="math notranslate nohighlight">\(Q(t)\)</span> and set different <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>In details,</p>
+<div class="math notranslate nohighlight">
+\[\tilde Q(\epsilon) = \frac{1}{\epsilon} \left( 1- \frac{\tilde \eta}{1/C + 1/\sqrt{\epsilon(\epsilon +4F)}} \right).\]</div>
+<p>So</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{1}{\tau}\int_0^\infty dt Q(t)  &amp;= L_{\epsilon=0}[Q(t)] = \tilde Q(\epsilon=0) \\
+\frac{1}{\tau}\int_0^\infty dt Q'(t)  &amp;= L_{\epsilon=1/\tau}[Q'(t)] = \tilde Q(\epsilon=\frac{1}{\tau}).\end{split}\]</div>
+<p>Then put <span class="math notranslate nohighlight">\(\tilde \eta (\epsilon) = \tilde \Pi_{m-r}(\epsilon) P_m(0)\)</span> .</p>
+</div>
+<div class="section" id="multiple-defects">
+<h2>Multiple Defects<a class="headerlink" href="#multiple-defects" title="Permalink to this headline">¶</a></h2>
+<p>We can solve for finite defects in principle. For example the two defects case should give us the following master equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{d}{dt}P_m = \cdots - C_r\delta_{m,r}P_m  - C_s \delta_{m,s} P_m.\]</div>
+<p>By using the two special cases that <span class="math notranslate nohighlight">\(m=r\)</span> and <span class="math notranslate nohighlight">\(m=s\)</span>, we get two equations about <span class="math notranslate nohighlight">\(\tilde P_r\)</span> and <span class="math notranslate nohighlight">\(\tilde P_s\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\tilde P_r &amp;= \eta_r - C_r \tilde \Pi_0 \tilde P_r - C_s \tilde \Pi_{r-s} \tilde P_r \\
+\tilde P_s = \eta_s - C_r \tilde \Pi_{s-r} \tilde P_s - C_s \tilde \Pi_0 \tilde P_s.\end{split}\]</div>
+<p>However, the problem gets very complicated as the number of defects becomes very large.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+<div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+</div>
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+        <a href="#">Back to top</a>
+
+    </p>
+    <p>
+        <span>© Copyright  2017, Lei Ma. </span> |
+        <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
+        <span> Created with
+            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script></span>
+    </p>
+
+    <hr>
+
+
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+
+  </body>
+</html>
