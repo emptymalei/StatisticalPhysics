@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Ensembles &#8212; Statistical Mechanics Notes</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -118,7 +114,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -181,7 +177,7 @@
 <li><a class="reference internal" href="#canonical-ensemble">Canonical Ensemble</a></li>
 <li><a class="reference internal" href="#grand-canonical-ensemble">Grand Canonical Ensemble</a></li>
 <li><a class="reference internal" href="#index-4">Identical Particles</a></li>
-<li><a class="reference internal" href="#three-ensembles-cont-d">Three Ensembles Cont&#8217;d</a></li>
+<li><a class="reference internal" href="#three-ensembles-cont-d">Three Ensembles Cont’d</a></li>
 <li><a class="reference internal" href="#most-probable-distribution">Most Probable Distribution</a></li>
 <li><a class="reference internal" href="#the-exact-partition-function">The Exact Partition Function</a></li>
 <li><a class="reference internal" href="#is-there-a-gap-between-fermion-and-boson">Is There A Gap Between Fermion and Boson?</a></li>
@@ -236,11 +232,11 @@
       
   <div class="section" id="ensembles">
 <h1>Ensembles<a class="headerlink" href="#ensembles" title="Permalink to this headline">¶</a></h1>
-<p>The problem in statistical mechanics is that we can only gain partial information of the system, thus only partial results are obtained. However we know that in equilibrium, all possible states appear with an equal probability. Recall that states means points in phase space. We use hydrodynamics to represent the phase space distribution but this can not determine if the phase space points are change or not. The only thing this density show us the the aparant density doesn&#8217;t change. So it seems that we don&#8217;t need to know the exact position of a phase space point. We can rely on average values.</p>
+<p>The problem in statistical mechanics is that we can only gain partial information of the system, thus only partial results are obtained. However we know that in equilibrium, all possible states appear with an equal probability. Recall that states means points in phase space. We use hydrodynamics to represent the phase space distribution but this can not determine if the phase space points are change or not. The only thing this density show us the the aparant density doesn’t change. So it seems that we don’t need to know the exact position of a phase space point. We can rely on average values.</p>
 <p>The system is like a black box. Even we know all the quantities, we still have no idea about the exact state of the system.</p>
 <div class="section" id="ensemble">
 <span id="index-0"></span><h2>Ensemble<a class="headerlink" href="#ensemble" title="Permalink to this headline">¶</a></h2>
-<p>Gibbs&#8217; idea of ensemble is to create a lot of copies of the system with the same thermodynamics quantities.</p>
+<p>Gibbs’ idea of ensemble is to create a lot of copies of the system with the same thermodynamics quantities.</p>
 <p>The question is where to put them? In different time or in different space?</p>
 <p>We can create a uge amount copies of the system and imagine that they are at different place. Then we have all the possible states of the system.</p>
 <p>We can also wait infinite long time and all possible states will occur, at least for some system, which is called ergodic. Ergodic means the system can visit all possible states many times during a long time. This is rather a hypothesis than a theorem.</p>
@@ -249,7 +245,7 @@
 <p class="first admonition-title">Note</p>
 <p><strong>Cons</strong></p>
 <ol class="arabic simple">
-<li>Not possible to prove ensemble average is the same as time average. In fact some systems don&#8217;t obey this rule.</li>
+<li>Not possible to prove ensemble average is the same as time average. In fact some systems don’t obey this rule.</li>
 <li>Not possible to visit all possible states on constant energy surface in finite time.</li>
 <li>Even complicated systems can exhibit almost exactly periodic behavior, one example of this is <a class="reference external" href="https://en.wikipedia.org/wiki/Fermi%E2%80%93Pasta%E2%80%93Ulam_problem">FPU experiment</a> .</li>
 <li>Even the system is ergodic, how can we make sure each state will occur with the same probability.</li>
@@ -265,7 +261,7 @@
 <p><strong>Pros</strong></p>
 <ol class="last arabic simple">
 <li><a class="reference external" href="https://en.wikipedia.org/wiki/Poincar%C3%A9_recurrence_theorem">Poincaré recurrence theorem</a> proves that at least some systems will come back to a state that is very close the the initial state after a long but finite time.</li>
-<li>Systems are often chaotic so it&#8217;s not really possible to have pictures like the first one in Cons.</li>
+<li>Systems are often chaotic so it’s not really possible to have pictures like the first one in Cons.</li>
 </ol>
 </div>
 <p>We already have Liouville density evolution</p>
@@ -401,7 +397,7 @@
 <p>which is called <strong>canonical distribution</strong>.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">This is not an rigorous derivation. Read R.K. Su&#8217;s book for a more detailed and rigorous derivation.</p>
+<p class="last">This is not an rigorous derivation. Read R.K. Su’s book for a more detailed and rigorous derivation.</p>
 </div>
 </div>
 <div class="section" id="grand-canonical-ensemble">
@@ -428,12 +424,12 @@
 </div>
 </div>
 <div class="section" id="three-ensembles-cont-d">
-<h2>Three Ensembles Cont&#8217;d<a class="headerlink" href="#three-ensembles-cont-d" title="Permalink to this headline">¶</a></h2>
+<h2>Three Ensembles Cont’d<a class="headerlink" href="#three-ensembles-cont-d" title="Permalink to this headline">¶</a></h2>
 <p>The three ensembles are the same when particle number N is really large, <span class="math">\(N\rightarrow 0\)</span> .</p>
 <p>The reason is that</p>
 <ol class="arabic simple">
 <li>when N becomes really large, the interaction between system and reservoir becomes really negligible. The variance of Gaussian distribution is proportional to <span class="math">\(1/\sqrt{N}\)</span>.</li>
-<li><span class="math">\(dE_S+dE_R=dE\)</span> and we know <span class="math">\(dE=0\)</span> so when the energy of the system increase that of reservoir drop. Professor Kenkre have a way to prove that the energy of the system is peaked at some value. However I didn&#8217;t get it.</li>
+<li><span class="math">\(dE_S+dE_R=dE\)</span> and we know <span class="math">\(dE=0\)</span> so when the energy of the system increase that of reservoir drop. Professor Kenkre have a way to prove that the energy of the system is peaked at some value. However I didn’t get it.</li>
 </ol>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -442,7 +438,7 @@
 </div>
 <div class="section" id="most-probable-distribution">
 <h2>Most Probable Distribution<a class="headerlink" href="#most-probable-distribution" title="Permalink to this headline">¶</a></h2>
-<p>Quite different from Gibbs&#8217; ensemble theory, Boltzmann&#8217;s theory is about most probable distribution.</p>
+<p>Quite different from Gibbs’ ensemble theory, Boltzmann’s theory is about most probable distribution.</p>
 <ol class="arabic simple">
 <li>Classical distinguishable particles <span class="math">\(a_l = w_l e^{-\alpha -\beta e_l}\)</span>;</li>
 <li>Bosons <span class="math">\(a_l = w_l \frac{1}{e^{\alpha+\beta e_l} - 1}\)</span>;</li>
@@ -478,12 +474,12 @@
 <p><strong>However, at high temperature, the three micro states numbers are going to be very different. This is because thermal wavelength consider the movement of particles and high temperature means large momentum thus classical. The number of micro states comes from a discussion of occupation of states.</strong></p>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p>What&#8217;s the difference between ensemble probability density and most probable distribution? What makes the +1 or -1 in the occupation number?</p>
-<p>Most probable distribution is the method used in Boltzmann&#8217;s theory while ensemble probability density is in ensemble theory. That means in ensemble theory all copies (states) in a canonical ensemble appear with a probability density <span class="math">\(\exp(-\beta E)\)</span> and all information about the type of particles is in Hamiltonian.</p>
-<p>Being different from ensemble theory, Boltzmann&#8217;s theory deals with number of micro states which is affected by the type of particles. Suppose we have <em>N</em> particles in a system and occupying <span class="math">\(e_l\)</span> energy levels with a number of <span class="math">\(a_l\)</span> particles. Note that we have a degeneration of <span class="math">\(w_l\)</span> on each energy levels.</p>
+<p>What’s the difference between ensemble probability density and most probable distribution? What makes the +1 or -1 in the occupation number?</p>
+<p>Most probable distribution is the method used in Boltzmann’s theory while ensemble probability density is in ensemble theory. That means in ensemble theory all copies (states) in a canonical ensemble appear with a probability density <span class="math">\(\exp(-\beta E)\)</span> and all information about the type of particles is in Hamiltonian.</p>
+<p>Being different from ensemble theory, Boltzmann’s theory deals with number of micro states which is affected by the type of particles. Suppose we have <em>N</em> particles in a system and occupying <span class="math">\(e_l\)</span> energy levels with a number of <span class="math">\(a_l\)</span> particles. Note that we have a degeneration of <span class="math">\(w_l\)</span> on each energy levels.</p>
 <img alt="Boltzmann theory vs Gibbs theory" class="align-center" src="../_images/BoltzmannVSGibbs.png" />
 <p>(Gliffy source <a class="reference external" href="_images/BoltzmannVSGibbs.gliffy">here</a> .)</p>
-<p>For Boltzmann&#8217;s theory, we need to</p>
+<p>For Boltzmann’s theory, we need to</p>
 <ol class="arabic simple">
 <li>Calculate the number of micro states of the system;</li>
 <li>Calculate most probable distribution using Lagrange multipliers;</li>
@@ -492,12 +488,12 @@
 <div class="admonition-calculation-of-number-of-micro-states last admonition">
 <p class="first admonition-title">Calculation of number of micro states</p>
 <p>Calculation of the number of micro states requires some basic knowledge of different types of particles.</p>
-<p>For classical particles, we can distinguish each particle from others and no restrictions on the number of states on each energy level. Now we have <span class="math">\(w_l^{a_l}\)</span> possible states for each energy level. Since the particles are distinguishable we can have <span class="math">\(N!\)</span> possible ways of exchanging particles. But the degenerated particles won&#8217;t contribute to the exchange (for they are the same and not distinguishable) which is calculated by <span class="math">\(\Pi_l a_l!\)</span>.</p>
+<p>For classical particles, we can distinguish each particle from others and no restrictions on the number of states on each energy level. Now we have <span class="math">\(w_l^{a_l}\)</span> possible states for each energy level. Since the particles are distinguishable we can have <span class="math">\(N!\)</span> possible ways of exchanging particles. But the degenerated particles won’t contribute to the exchange (for they are the same and not distinguishable) which is calculated by <span class="math">\(\Pi_l a_l!\)</span>.</p>
 <p>Finally we have</p>
 <div class="math">
 \[\Omega _{M.B.} = \frac{N!}{\Pi_l a_l !} \Pi_l w_l^{a_l}\]</div>
 <p>as the number of possible states.</p>
-<p>With similar techniques which is explicitly explained on Wang&#8217;s book, we get the number of micro states for the other two types of particles.</p>
+<p>With similar techniques which is explicitly explained on Wang’s book, we get the number of micro states for the other two types of particles.</p>
 <div class="math">
 \[\Omega _{B.E.} = \Pi_l \frac{(a_l+w_l-1)}{a_l!(w_l -1)!}\]</div>
 <p>is the number of micro states for a Boson system with a <span class="math">\(\{a_l\}\)</span> distribution.</p>

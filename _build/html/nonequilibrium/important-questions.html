@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Important Questions of Statistical Mechanics &#8212; Statistical Mechanics Notes</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -118,7 +114,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -252,10 +248,10 @@
 <div class="section" id="bbgky-hierarchy">
 <h2>BBGKY Hierarchy<a class="headerlink" href="#bbgky-hierarchy" title="Permalink to this headline">¶</a></h2>
 <p>Now we think about the problems we are going to solve. In statistical mechanics, the most ideal method is to solve the Liouville equation directly and leave only initial condition missing for the problem. However, solving the Liouville equation is so hard for complicated problems we finally thinking about dropping some dynamics. This is no big deal as we already dropped initial condition and makes our solution probabilistic.</p>
-<p>Now the question is what to drop. For non-interacting systems, the solution comes directly from Liouville equation. It&#8217;s interactions that makes our life so hard (yet make us alive). So we would like to make approximations on interactions.</p>
+<p>Now the question is what to drop. For non-interacting systems, the solution comes directly from Liouville equation. It’s interactions that makes our life so hard (yet make us alive). So we would like to make approximations on interactions.</p>
 <p>For non-interacting systems, <span class="math">\(\Gamma\)</span> space can actually be reduced to <span class="math">\(\mu\)</span> space which is spanned by the freedoms of only one particle. Here we need to address the fact that we are dealing with <strong>identical particles</strong>.</p>
 <p>Actually we are not trying to reduce to <span class="math">\(\mu\)</span> space exactly. We just want to make the dimension as less as possible. So we want to talk about some reduced quantities.</p>
-<p>First of all is the probability density of s particles. For one particle, it&#8217;s</p>
+<p>First of all is the probability density of s particles. For one particle, it’s</p>
 <div class="math">
 \[\rho_1(\vec X_1, t) := \int \cdots\int d\vec X_2 \cdots d \vec X_N \rho^N(\vec X_1, \cdots, \vec X_N, t)\]</div>
 <p>Similarly, we can define s particles probability density, <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
@@ -297,7 +293,7 @@
 </div>
 <div class="section" id="road-map-of-statistical-mechanics">
 <h2>Road Map of Statistical Mechanics<a class="headerlink" href="#road-map-of-statistical-mechanics" title="Permalink to this headline">¶</a></h2>
-<p>As we said previously, the ideal situation is that we solve Liouville equation directly and exactly. However, it&#8217;s not generally possible. So we turn to some mesoscropic method for help.</p>
+<p>As we said previously, the ideal situation is that we solve Liouville equation directly and exactly. However, it’s not generally possible. So we turn to some mesoscropic method for help.</p>
 <img alt="How Statistical Physicists Break Their Promise" src="../_images/mesoscopic.png" />
 <p>We start from microscopic equation, work on them, them trucate at some point, meaning approximation. Then use the approximated result to calculate the marcoscopic quantities.</p>
 <p>An example of this method is that we divide a box of gas into two parts. Then we talk about only two states which is LEFT state and RIGHT state instead of the phase space states.</p>
@@ -309,12 +305,12 @@
 <div class="math">
 \[\frac{d P_R}{d t} = T_{RL} P_L - T_{LR}P_R .\]</div>
 <p>The first equation means that the change of probability that a particle in LEFT state is rate from RIGHT to LEFT time the probability that the particle is in RIGHT state, minus the rate from LEFT state to RIGHT state times the probability that the particle is in LEFT state. This is just simply an linear model of gaining and losing.</p>
-<p>It becomes interesting that we can discribe the system in such an easy way. Will it work? We&#8217;ll see.</p>
+<p>It becomes interesting that we can discribe the system in such an easy way. Will it work? We’ll see.</p>
 <p>More generally, we have</p>
 <div class="math">
 \[\frac{d}{d t} P_\xi = \sum_\mu \left( T_{\xi\mu}P_\mu - T_{\mu\xi} P_{\xi} \right) .\]</div>
 <p>The important thing is that these equations are linear.</p>
-<p><strong>Now we can start form these equations instead of the Liouville equation to solve the problem. It&#8217;s called mesoscopic. The next thing is to connect these mesoscopic equations to the microscopic equations.</strong></p>
+<p><strong>Now we can start form these equations instead of the Liouville equation to solve the problem. It’s called mesoscopic. The next thing is to connect these mesoscopic equations to the microscopic equations.</strong></p>
 </div>
 <div class="section" id="a-review-of-boltzmann-equation-h-theorem">
 <h2>A Review of Boltzmann Equation &amp; H Theorem<a class="headerlink" href="#a-review-of-boltzmann-equation-h-theorem" title="Permalink to this headline">¶</a></h2>
@@ -339,7 +335,7 @@
 </div>
 <div class="section" id="boltzmann-equation-continuity-equation">
 <h3>Boltzmann equation &amp; Continuity Equation<a class="headerlink" href="#boltzmann-equation-continuity-equation" title="Permalink to this headline">¶</a></h3>
-<p>We can derive from Boltzmann equation the Enskog&#8217;s equation then simplify to continuity equation by picking up an conserved quantity as <span class="math">\(\psi_i\)</span> in Enskog&#8217;s equation.</p>
+<p>We can derive from Boltzmann equation the Enskog’s equation then simplify to continuity equation by picking up an conserved quantity as <span class="math">\(\psi_i\)</span> in Enskog’s equation.</p>
 <p>Continuity equation is alway true for such an conserved system so this results is very conceivable.</p>
 </div>
 <div class="section" id="h-theorem">
@@ -362,8 +358,8 @@
 <li>Loschmidt: All collisions can be reversed in the view of classical mechanics;</li>
 <li>Zermelo: Poincare recursion theorem says an equilibrium system can go back to inequilibrium.</li>
 </ol>
-<p>To Loschmidt&#8217;s questioning, Boltzmann pointed out that H theorem is a statistical theorem rather than mechanics theorem. Quantities in this theorem like <span class="math">\(f\)</span> are statistical average not the quantity of exactly which particle.</p>
-<p>Zermelo&#8217;s objection is not valid because the recursion time is extremely long.</p>
+<p>To Loschmidt’s questioning, Boltzmann pointed out that H theorem is a statistical theorem rather than mechanics theorem. Quantities in this theorem like <span class="math">\(f\)</span> are statistical average not the quantity of exactly which particle.</p>
+<p>Zermelo’s objection is not valid because the recursion time is extremely long.</p>
 </div>
 </div>
 <div class="section" id="footnotes">

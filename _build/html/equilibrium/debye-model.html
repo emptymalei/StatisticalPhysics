@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Observables and Debye Model &#8212; Statistical Mechanics Notes</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -118,7 +114,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -231,7 +227,7 @@
 <p>Average of an observable is</p>
 <div class="math">
 \[O = Tr(\hat O \rho)\]</div>
-<p>where <span class="math">\(\rho\)</span> is the &#8220;probability matrix&#8221;. In QM, this is</p>
+<p>where <span class="math">\(\rho\)</span> is the “probability matrix”. In QM, this is</p>
 <div class="math">
 \[\rho = \frac{ e^{-\beta H} }{\mathrm{Tr} ( e^{-\beta H} ) }\]</div>
 <p>If a system of QM comes to equilibrium, that means</p>
@@ -255,14 +251,14 @@
 <p>The fairly simple way to make it extensive is to <strong>divide V by N</strong>. Now a new term will appear in our free energy, namely <span class="math">\(N\ln N\)</span>. Recall that in Sterling approximation, <span class="math">\(\ln N! = N\ln N -N\)</span>. So in a large system, we can create some kind of free energy definition which makes it extensive.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">We can&#8217;t just pull out some results from statistical mechanics and apply them to a small system composed of several particles. In stat mech we use a lot of approximations like Sterling approximation which is only valid when particle number is huge.</p>
+<p class="last">We can’t just pull out some results from statistical mechanics and apply them to a small system composed of several particles. In stat mech we use a lot of approximations like Sterling approximation which is only valid when particle number is huge.</p>
 </div>
 <div class="math">
 \[A = - k_B T N ( \ln(V/N!) - 3 \ln \lambda)\]</div>
 <p>which is to say</p>
 <div class="math">
 \[Z_N = \frac{Z_1^N}{N!}\]</div>
-<p>This definition &#8220;solves&#8221; the Gibbs mixing paradox. The physics of this modification requires QM.</p>
+<p>This definition “solves” the Gibbs mixing paradox. The physics of this modification requires QM.</p>
 </div>
 <div class="section" id="interacting-particles">
 <h2>Interacting Particles<a class="headerlink" href="#interacting-particles" title="Permalink to this headline">¶</a></h2>
@@ -288,7 +284,7 @@
 <li>Calculate the energy spectrum of N coupled particle system by finding out a decouple transformation;</li>
 <li>Evaluate the heat capacity integral.</li>
 </ol>
-<p>Once we find the energy spectrum, we will know the dispersion relation, which is different from Einstein&#8217;s model.</p>
+<p>Once we find the energy spectrum, we will know the dispersion relation, which is different from Einstein’s model.</p>
 <img alt="../_images/DebyeModelkSpace.png" class="align-center" src="../_images/DebyeModelkSpace.png" />
 <p>(Taken without permission from <a class="reference external" href="http://griffin.ucsc.edu/teaching/08Q1-155/download/Lecture%2006%20-%20Phonon%20Dynamics.pdf">here</a> .)</p>
 <p>What did Debye do is to use a linear approximation, <span class="math">\(w= c k\)</span> for dispersion relation.</p>
@@ -307,7 +303,7 @@
 <p>where <span class="math">\(x(\omega_m) = \Theta_D/ T\)</span> and <span class="math">\(\Theta_D = \hbar \omega_D/k_B\)</span>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">What&#8217;s amazing of Debye theory is that the low temperature behavior is independent of cut off frequency. At low temperature, <span class="math">\(x(\omega_D)\)</span> becomes infinite and it becomes an integration from 0 to infinity thus we do not need to know the cut off temperature to find out the low temperature result and it agrees with experiments well.</p>
+<p class="last">What’s amazing of Debye theory is that the low temperature behavior is independent of cut off frequency. At low temperature, <span class="math">\(x(\omega_D)\)</span> becomes infinite and it becomes an integration from 0 to infinity thus we do not need to know the cut off temperature to find out the low temperature result and it agrees with experiments well.</p>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
@@ -320,7 +316,7 @@
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">Why is the # of modes important in Debye model? The degree of freedom is finite in an system. If we don&#8217;t cut off the frequency, that means we would have infinite degree of freedom because we have made an approximation that dispersion relation is a straight line <span class="math">\(\omega = c k\)</span>. That would certainly lead to infinite heat capacity and infinite total energy.</p>
+<p class="last">Why is the # of modes important in Debye model? The degree of freedom is finite in an system. If we don’t cut off the frequency, that means we would have infinite degree of freedom because we have made an approximation that dispersion relation is a straight line <span class="math">\(\omega = c k\)</span>. That would certainly lead to infinite heat capacity and infinite total energy.</p>
 </div>
 </div>
 <div class="section" id="beyond-debye-model">

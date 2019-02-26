@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Master Equation Examples &#8212; Statistical Mechanics Notes</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -118,7 +114,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -257,7 +253,7 @@
 \[\langle m^2 \rangle := \sum_m m^2 P_m =\frac{\partial^2}{\partial k^2} .\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">So we don&#8217;t need to calculate <span class="math">\(P_m(t)\)</span> which takes a lot of time to calculate.</p>
+<p class="last">So we don’t need to calculate <span class="math">\(P_m(t)\)</span> which takes a lot of time to calculate.</p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -316,7 +312,7 @@
 <div class="math">
 \[\begin{split}\frac{d}{dt}P_m =&amp; (R_{m,m+1}P_{m+1} -  R_{m,m-1}P_{m-1}) \\
 &amp; - (R_{m+1,m}P_m + R_{m-1,m}P_m)\end{split}\]</div>
-<p class="last">is called <span class="highlit">Landau-Teller master equation</span>. It&#8217;s good for non-translational-invariant system.</p>
+<p class="last">is called <span class="highlit">Landau-Teller master equation</span>. It’s good for non-translational-invariant system.</p>
 </div>
 </div>
 </div>
@@ -388,7 +384,7 @@
 \[\Pi(x,t) = \frac{e^{-\frac{x^2}{4Dt}}}{\sqrt{4\pi Dt}}\]</div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Somehow I can&#8217;t derive it.</p>
+<p class="last">Somehow I can’t derive it.</p>
 </div>
 <div class="admonition hint">
 <p class="first admonition-title">Hint</p>
@@ -421,7 +417,7 @@
 <div class="math">
 \[\begin{split}&amp; \frac{\partial}{\partial t} P(x,t) = D\frac{\partial^2}{\partial x^2} P(x,t) \\
 \to &amp; \frac{\partial}{\partial t} P(x,t) = D \left(\frac{\partial^2}{\partial x^2} P(x,t) + 2\Gamma\frac{\partial}{\partial x}P(x,t) \right) + D\left( P\left( 2\Gamma^2 + \frac{\partial}{\partial x} \Gamma \right) \right)\end{split}\]</div>
-<p>Now we define <span class="math">\(\zeta := 2\Gamma\)</span>, and let <span class="math">\(2\Gamma^2 + \frac{\partial}{\partial x} \Gamma\)</span>. <a href="#id5"><span class="problematic" id="id6"><span id="id2"></span>[1]_</span></a>  The diffusion equation under this kind of transformation becomes the one we need.</p>
+<p>Now we define <span class="math">\(\zeta := 2\Gamma\)</span>, and let <span class="math">\(2\Gamma^2 + \frac{\partial}{\partial x} \Gamma\)</span>. <a href="#id5"><span class="problematic" id="id2">[1]_</span></a>  The diffusion equation under this kind of transformation becomes the one we need.</p>
 <p><span class="highlit">Does it imply that the diffusion equation and gauge transformation are related?</span></p>
 <p class="last">We might find some symmetry using this method.</p>
 </div>

@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Solving Master Equations &#8212; Statistical Mechanics Notes</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -118,7 +114,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -257,7 +253,7 @@
 <p>The most general way is to diagonalize it using an invertible matrix <span class="math">\(\mathbf S\)</span>, i.e.,</p>
 <div class="math">
 \[\partial_t \bf S^{-1} P + S^{-1}AS S^{-1} P = 0\]</div>
-<p>in which we&#8217;ll define <span class="math">\(\mathbf A_{\text{diag}} = \bf S^{-1} P S\)</span> and <span class="math">\(\mathbf P_{\text{diag}} = \bf S^{-1} P\)</span>. For simplicity, we won&#8217;t write down the indices from now on.</p>
+<p>in which we’ll define <span class="math">\(\mathbf A_{\text{diag}} = \bf S^{-1} P S\)</span> and <span class="math">\(\mathbf P_{\text{diag}} = \bf S^{-1} P\)</span>. For simplicity, we won’t write down the indices from now on.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Is there a mechanism that ensures the <span class="math">\(\mathbf A\)</span> is <span class="highlit">invertible</span> ? If <span class="math">\(\mathbf A\)</span> is <span class="highlit">defective</span> , none of these can be done. Do all physical systems have invertible <span class="math">\(\mathbf A\)</span>?</p>
@@ -287,7 +283,7 @@
 <p>With the definition of kth mode above there, the master equation can be written as</p>
 <div class="math">
 \[\partial_t P^k + \sum_n\sum_m e^{ik(m-n)}A_{m-n} e^{ikn}P_n = 0\]</div>
-<p>which &#8220;accidently&#8221; diagonalizes the matrix <span class="math">\(\mathbf A\)</span>. So define the kth mode of <span class="math">\(\mathbf A\)</span> as <span class="math">\(A^k = \sum_{l=m-n} e^{ik(m-n)}A_{m-n}\)</span> then</p>
+<p>which “accidently” diagonalizes the matrix <span class="math">\(\mathbf A\)</span>. So define the kth mode of <span class="math">\(\mathbf A\)</span> as <span class="math">\(A^k = \sum_{l=m-n} e^{ik(m-n)}A_{m-n}\)</span> then</p>
 <div class="math">
 \[\partial_t P^k + \sum_{l=m-n}e^{ik(m-n)}A_{m-n} \sum_n e^{ikn}P_n = 0\]</div>
 <p>is reduced to</p>
@@ -346,7 +342,7 @@
 \[k = \frac{2\pi}{N} n, \qquad n=0,1,2, \cdots, N-1 .\]</div>
 <div class="section" id="matrix-form">
 <h3>Matrix Form<a class="headerlink" href="#matrix-form" title="Permalink to this headline">¶</a></h3>
-<p>To make it clear, we&#8217;ll redo this problem in matrix form.</p>
+<p>To make it clear, we’ll redo this problem in matrix form.</p>
 <p>First of all, write down master equation for this problem again,</p>
 <div class="math">
 \[\partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .\]</div>

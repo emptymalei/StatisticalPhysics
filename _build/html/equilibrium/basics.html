@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Basics of Statistical Mechanics &#8212; Statistical Mechanics Notes</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -118,7 +114,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -231,10 +227,10 @@
 <span id="index-0"></span><h1>Basics of Statistical Mechanics<a class="headerlink" href="#basics-of-statistical-mechanics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="phase-space">
 <h2>Phase Space<a class="headerlink" href="#phase-space" title="Permalink to this headline">¶</a></h2>
-<p>Why is statistics important? Remember we are dealing with Avogadro&#8217;s number of DoFs. If we are going to calculate the dynamics of this system by calculating the dynamics of each particles. To store one screen shot of the system with each DoF take only 8 bits, we need <span class="math">\(10^23\)</span> bytes that is <span class="math">\(10^17\)</span> GB. It is not even possible to store only one screen shot of the system. So time to change our view of these kind of systems.</p>
+<p>Why is statistics important? Remember we are dealing with Avogadro’s number of DoFs. If we are going to calculate the dynamics of this system by calculating the dynamics of each particles. To store one screen shot of the system with each DoF take only 8 bits, we need <span class="math">\(10^23\)</span> bytes that is <span class="math">\(10^17\)</span> GB. It is not even possible to store only one screen shot of the system. So time to change our view of these kind of systems.</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/newtonsDream.jpg"><img alt="Newton's Dream" src="../_images/newtonsDream.jpg" style="width: 60%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Newton&#8217;s plan of mechanics. Mechanics was in the center of all physics.</span></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Newton’s plan of mechanics. Mechanics was in the center of all physics.</span></p>
 </div>
 <p>What is mechanics? It deals with dynamics in the following way:</p>
 <ul class="simple">
@@ -243,7 +239,7 @@
 <li>Extraction of observables</li>
 </ul>
 <p>As we already mentioned initial state, we need to explain how to describe a state. A vector in phase space gives us a state. Time evolution is motion of points in phase space. Finally, we can do whatever is needed to extract observables, for example just use projection of points in phase space.</p>
-<p>Problem is, when it comes to stat mech, it&#8217;s not possible to do all these DoFs one by one. We need a new concept.</p>
+<p>Problem is, when it comes to stat mech, it’s not possible to do all these DoFs one by one. We need a new concept.</p>
 </div>
 <div class="section" id="boltzmann-factor">
 <h2>Boltzmann Factor<a class="headerlink" href="#boltzmann-factor" title="Permalink to this headline">¶</a></h2>
@@ -252,7 +248,7 @@
 <p>Boltzmann factor gives us the (not normalized) probability of the system staying on a phase space state with energy <span class="math">\(E\)</span>.</p>
 <div class="note admonition">
 <p class="first admonition-title">Why Boltzmann Factor</p>
-<p>Why does Boltzmann factor appear a lot in equilibrium statistical mechanics? Equilibrium of the system means when we add infinitesimal amount of energy to the whole thing including system and reservoir, a characteristic quantity <span class="math">\(C(E) = C_S C_R\)</span> won&#8217;t change. That is the system and the reservoir will have the same changing rate of the characteristic quantity when energy is changed, i.e.,</p>
+<p>Why does Boltzmann factor appear a lot in equilibrium statistical mechanics? Equilibrium of the system means when we add infinitesimal amount of energy to the whole thing including system and reservoir, a characteristic quantity <span class="math">\(C(E) = C_S C_R\)</span> won’t change. That is the system and the reservoir will have the same changing rate of the characteristic quantity when energy is changed, i.e.,</p>
 <div class="math">
 \[\frac{\partial \ln C_S}{\partial E_S} = - \frac{\partial \ln C_R}{\partial E_R} .\]</div>
 <p>We have <span class="math">\(\mathrm dE_1 = -\mathrm dE_2\)</span> in a equilibrium state. They should both be a constant, which we set to <span class="math">\(\beta\)</span>. Finally we have something like</p>
@@ -288,7 +284,7 @@
 \[C = k_B\]</div>
 <div class="toggle admonition">
 <p class="first admonition-title">Does This Result Depend on SHO</p>
-<p class="last">This result has nothing to do with the detail of the SHO, no matter what mass they have, no matter what potential constant <span class="math">\(q\)</span> they have, no matter what kind of initial state they have. All the characteristic quantities of SHO are irrelevant. Why? Mathematically, it&#8217;s because we have Gaussian integral here. <strong>But what is the physics behind this?</strong> Basicly this classical limit is a high temperature limit.</p>
+<p class="last">This result has nothing to do with the detail of the SHO, no matter what mass they have, no matter what potential constant <span class="math">\(q\)</span> they have, no matter what kind of initial state they have. All the characteristic quantities of SHO are irrelevant. Why? Mathematically, it’s because we have Gaussian integral here. <strong>But what is the physics behind this?</strong> Basicly this classical limit is a high temperature limit.</p>
 </div>
 </div>
 <div class="section" id="magnetization">
@@ -296,7 +292,7 @@
 <p>We have such a result in an experiment of magnetization with N magnetic dipoles in 1D.</p>
 <img alt="../_images/magnetizationExp.jpg" class="align-center" src="../_images/magnetizationExp.jpg" />
 <p>How can we describe this with a theory?</p>
-<p>It&#8217;s not possible to describe the system by writing down the dynamics of each magnetic dipole. So we have to try some macroscpic view of the system. Probability theory is a great tool for this. The probability of a dipole on a energy state <span class="math">\(E_i\)</span> is</p>
+<p>It’s not possible to describe the system by writing down the dynamics of each magnetic dipole. So we have to try some macroscpic view of the system. Probability theory is a great tool for this. The probability of a dipole on a energy state <span class="math">\(E_i\)</span> is</p>
 <div class="math">
 \[P(E_i) = \frac{\exp(-\beta E_i)}{\sum_{i=1}^{n} \exp(-\beta E_i)}  .\]</div>
 <p>So the megnetization in this simple case is</p>
@@ -339,7 +335,7 @@
 <p>For the paramagnetic example, the energy of the system is</p>
 <div class="math">
 \[E = -(\mu B N e^{\beta \mu B} - \mu N e^{-\beta \mu B})/(\exp(\beta \mu B) + \exp(-\beta \mu B)) = -\mu N B \tanh (\beta \mu B)\]</div>
-<p>Obviously, no phase transition would occur. But if we introduce self interactions between dipoles and go to higher dimensions, it&#8217;s possible to find phase transitions.</p>
+<p>Obviously, no phase transition would occur. But if we introduce self interactions between dipoles and go to higher dimensions, it’s possible to find phase transitions.</p>
 </div>
 <div class="section" id="specific-heat">
 <h2>Specific Heat<a class="headerlink" href="#specific-heat" title="Permalink to this headline">¶</a></h2>

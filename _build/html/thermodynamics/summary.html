@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Summary &#8212; Statistical Mechanics Notes</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -118,7 +114,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -265,7 +261,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <li>chemical coupling: <span class="math">\(d(\mu_i N_i)\)</span>.</li>
 </ul>
 <p>Legendre transform, in an easy understanding, is about turning on and off switches of the three different couplings. Turning off the mechanical coupling of (differential) internal energy <span class="math">\(dU(S,V,\{N_i\})\)</span> leads to (differential) enthalpy <span class="math">\(dH(S,p,\{N_i\})\)</span>. Indeed, enthalpy is the same as internal energy when we are talking about constant pressure.</p>
-<p>Let&#8217;s sum up.</p>
+<p>Let’s sum up.</p>
 <ol class="arabic simple">
 <li>Internal Energy</li>
 <li>Enthalpy</li>
@@ -273,7 +269,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <li>Gibbs Free Energy</li>
 <li>Grand Potential</li>
 </ol>
-<p>The relations between them? All potentials are Legendre transformation of each other. To sum up, let&#8217;s gliffy.</p>
+<p>The relations between them? All potentials are Legendre transformation of each other. To sum up, let’s gliffy.</p>
 <div class="figure align-center" id="id2">
 <span id="thermodynamicpotentials"></span><a class="reference internal image-reference" href="../_images/thermodynamicPotentials1.png"><img alt="Thermodynamic Potentials" src="../_images/thermodynamicPotentials1.png" style="width: 1160.0px; height: 602.4px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">(The gliffy source file is <a class="reference external" href="images/thermodynamicPotentials.gliffy">here</a> . Feel free to download and create your own version.)</span></p>
@@ -286,7 +282,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 </ol>
 <div class="toggle admonition">
 <p class="first admonition-title">The Sixth Potential?</p>
-<p><strong>Question:</strong> Mathematically we can construct the sixth potential namely the one that should appear at the right bottom of the graph. Why don&#8217;t people talk about it?</p>
+<p><strong>Question:</strong> Mathematically we can construct the sixth potential namely the one that should appear at the right bottom of the graph. Why don’t people talk about it?</p>
 <p>We can surely define a new potential called <span class="math">\(Null(T,X,\{\mu_i\})\)</span>. However, the value of this function is zero. So we can have the derivitive of this potential is also zero. This is the Gibbs Duhem equation.</p>
 <p class="last">The answer I want to hear is that this is something <span class="math">\(\mathrm d\mathrm d f = 0\)</span> where f is exact.</p>
 </div>
@@ -312,7 +308,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <div class="math">
 \[\mathbf{d}\underset{^\sim}{\omega}=0=\mathbf{dd}Q = \mathbf{d}p\wedge \underset{^\sim}{dU}=\left( \frac{\partial p}{\partial U} \right)_V \underset{^\sim}{dU}\wedge \underset{^\sim}{dV},\]</div>
 <p>where we have used the condition that <span class="math">\(\underset{^\sim}{dU}\)</span> is exact, i.e., <span class="math">\(\mathbf{d}\underset{^\sim}{dU}=0\)</span>. In order for it to be valid at all point, we have to require <span class="math">\(\left( \frac{\partial p}{\partial U} \right)_V=0\)</span> at all points on the manifold.</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Frobenius_theorem_(differential_topology)">Frobenius&#8217; theorem</a> tells us that we will find functions on the manifold so that <span class="math">\(\underset{^\sim}{\omega}=T(U,V)\mathbf{d}S\)</span>, which gives us</p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Frobenius_theorem_(differential_topology)">Frobenius’ theorem</a> tells us that we will find functions on the manifold so that <span class="math">\(\underset{^\sim}{\omega}=T(U,V)\mathbf{d}S\)</span>, which gives us</p>
 <div class="math">
 \[T(U,V)\mathbf{d}S = p \underset{^\sim}{dV} + \underset{^\sim}{dU},\]</div>
 <p>if we have <span class="math">\(\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}=0\)</span>, which is easily proven to be true here since we have repeated basis if we write it down (no n+1 forms on n-dimension manifold).</p>
@@ -333,7 +329,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <div class="math">
 \[\underset{^\sim}{\omega_n} = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right).\]</div>
 <p>In general, on a n-dimension manifold, we could have non-zero <span class="math">\(\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}\)</span> since we have up to non-zero n-forms. The meaning is that we do not find global temperature and entropy on the whole manifold <a class="reference internal" href="#bschutz" id="id1">[BSchutz]</a> or no globally integrable function of heat exchange <span class="math">\(\underset{^\sim}{\omega_n}\)</span>.</p>
-<p>Regarding the geometrical meaning of 1-forms, which are surfaces of equi-function values, just like equipotential lines, we think of a system that has a global entropy and temperature with such equi-entropy surfaces. One of the aspects of the second law thus is to state that for a system that has no heat exchange <span class="math">\(\underset{^\sim}{\omega}=0\)</span>, it is restricted on a curtain part of the phase space, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy, by Caratheodory&#8217;s theorem.</p>
+<p>Regarding the geometrical meaning of 1-forms, which are surfaces of equi-function values, just like equipotential lines, we think of a system that has a global entropy and temperature with such equi-entropy surfaces. One of the aspects of the second law thus is to state that for a system that has no heat exchange <span class="math">\(\underset{^\sim}{\omega}=0\)</span>, it is restricted on a curtain part of the phase space, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy, by Caratheodory’s theorem.</p>
 <div class="section" id="related-papers">
 <h3>Related Papers<a class="headerlink" href="#related-papers" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
@@ -415,7 +411,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <li>Adiabatic processes on the plane of state never go across each other. Adiabatic lines are isoentropic lines since <span class="math">\(\mathrm dS = \frac{\mathrm dQ}{T}\)</span> as <span class="math">\(\mathrm dQ = 0\)</span> gives us <span class="math">\(\mathrm dS = 0\)</span>. The idea is that at the crossing points of adiabatic lines we would get a branch for entropy which means two entropy for one state.</li>
 <li>No more than one crossing point of two isothermal lines is possible. To prove it we need to show that entropy is a monotomic equation of <span class="math">\(V\)</span>.</li>
 <li>We can extract heat from one source that has the same temperature and transform into work if the isoentropic lines can cross each other which is not true as entropy is quantity of state. Construct a system with a isothermal line intersects two crossing isoentropic lines.</li>
-<li>We can extract heat from low temperature source to high temperature source without causing any other results if we don&#8217;t have entropy as a quantity of state.</li>
+<li>We can extract heat from low temperature source to high temperature source without causing any other results if we don’t have entropy as a quantity of state.</li>
 </ol>
 </div>
 <div class="section" id="irreversiblity">

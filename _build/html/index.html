@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Statistical Mechanics &#8212; Statistical Mechanics Notes</title>
-    
+    <title>Statistical Physics &#8212; Statistical Mechanics Notes</title>
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="_static/js/rrssb.js"></script>
     <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
@@ -117,7 +113,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -169,7 +165,7 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Statistical Mechanics</a></li>
+<li><a class="reference internal" href="#">Statistical Physics</a></li>
 <li><a class="reference internal" href="#acknowledgement">Acknowledgement</a></li>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
 <li><a class="reference internal" href="#vocabulary">Vocabulary</a></li>
@@ -219,31 +215,32 @@
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="statistical-mechanics">
-<h1>Statistical Mechanics<a class="headerlink" href="#statistical-mechanics" title="Permalink to this headline">¶</a></h1>
-<p>Lecture notes for stat mech.</p>
+  <div class="section" id="statistical-physics">
+<h1>Statistical Physics<a class="headerlink" href="#statistical-physics" title="Permalink to this headline">¶</a></h1>
+<p>This is a set of lecture notes for statistical physics.</p>
 </div>
 <div class="section" id="acknowledgement">
 <h1>Acknowledgement<a class="headerlink" href="#acknowledgement" title="Permalink to this headline">¶</a></h1>
-<p>I have finished the whole set of notes for my statistical mechanics class which is taught by V. M. Kenkre 2014 Spring.</p>
-<p>Professor Kenkre&#8217;s lectures are as fantastic as an excellent thrilling movie without which I could never finish notes like this. I am very grateful to him for this adventure to modern statistical mechanics. The words I can think of to describe these lectures are the words used on the best chinese novel, <em>Dream of the Red Chamber</em>:</p>
+<p>I have finally finished this whole set of notes for my statistical mechanics class. It was an excellent course thought by Professor V. M. Kenkre in 2014.</p>
+<p>Professor Kenkre’s lectures are fantastic. They were like inspiring and exciting thrilling movies. I am very grateful to him for this adventure of modern statistical mechanics.</p>
+<p>Professor Kenkre’s lectures have such a power that a tiny hint would develop into an important result as the adventure goes on. The only words I can think of for the lectures are the words used on the best chinese novel, <em>Dream of the Red Chamber</em>.</p>
 <img alt="_images/aComment.png" class="align-center" src="_images/aComment.png" />
-<p>which is too hard to translate. It basically means that the subplot permeats through thousands of pages before people realize it&#8217;s importance. Professor Kenkre&#8217;s lectures do have such power that a tiny hint could develop into an important result as the lectures go on.</p>
+<p>It says that the subplot permeates through thousands of pages before people realize it’s importance.</p>
 <p>I am also very grateful to the TA of this course, <a class="reference external" href="http://www.unm.edu/~aierides/505/">Anastasia</a>, who helped me a lot with my homework and lecture notes.</p>
 </div>
 <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Statistical Physics is the central topic of physics. It taught us great lessons about nature and it is definitely going to teach us more. Some ideas (Verlinde&#8217;s scenario) even put thermodynamics and statistical physics as the fundamental of all theories thus the thought that everything is emergent has been announced.</p>
-<p>Basically, statistical mechanics is the mechanics of large bodies.</p>
+<p>Statistical Physics is one of the holy grail of physics. It taught us great lessons about our universe and it is definitely going to teach us more. Some ideas (such as Verlinde’s scenario) even put thermodynamics and statistical physics as the fundamental theory of all theories which leads to the thought that everything is emergent has been announced.</p>
+<p>In simple words, statistical mechanics is the mechanics of large bodies.</p>
 <ul class="simple">
-<li>Mechanics is Newton&#8217;s plan of kinematics.</li>
-<li>Large means a lot of DoFs. Usually DoFs add up to <span class="math">\(10^{23}\)</span> which is the order of Avogadro&#8217;s number.</li>
-<li>Bodies, of course, is the subject or system we are dealing with.</li>
+<li>Classical Mechanics is Newton’s plan of kinematics.</li>
+<li>Large number of bodies means a lot of degrees of freedom (DoFs). The system is large if the DoFs add up to <span class="math">\(10^{23}\)</span>. That being said, we would study matter consisting particles of the order Avogadro’s number.</li>
+<li>Bodies, of course, is the subject or system that we are dealing with.</li>
 </ul>
-<p>One question worth thinking about is how we end up with probabilities.</p>
-<p>We wouldn&#8217;t need probability theory if we carry out Newton&#8217;s plan exactly. Note that the first thing we drop to come over the obstacles is to drop initial condition because it&#8217;s impossible to write down the initial condition of a large system for each particle. The price of that is we have to use probability to describe the system. Later on we find out that some dynamics have to be dropped to make it calculable which then gives us other sources of probability.</p>
-<p><strong>It&#8217;s kind of disappointing that stat mech is so vague.</strong></p>
-<p>Sitemap can be downloaded: <a class="reference download internal" href="_downloads/sitemap.xml" download=""><code class="xref download docutils literal"><span class="pre">sitemap.xml</span></code></a> or <a class="reference download internal" href="_downloads/sitemap.xml.gz" download=""><code class="xref download docutils literal"><span class="pre">sitemap.xml.gz</span></code></a> .</p>
+<p>One interesting question about statistical mechanics is how we end up with probabilities.</p>
+<p>We wouldn’t need probability theory if we carry out Newton’s plan exactly. Note that the first thing we compromise to come over the obstacles is to drop the initial conditions of the particles since it’s impossible to write down all the initial conditions of a large number of particles. In order to describe the system of particles, we have to use probability on the particles. We will also see that some dynamics of the particles have to be dropped to make statistical quantities calculable. This is another reason that we need probabilities.</p>
+<p><strong>It’s kind of disappointing that Newton’s plan didn’t succeed.</strong></p>
+<p>The sitemap of the website can be downloaded from: <a class="reference download internal" href="_downloads/sitemap.xml" download=""><code class="xref download docutils literal"><span class="pre">sitemap.xml</span></code></a> or <a class="reference download internal" href="_downloads/sitemap.xml.gz" download=""><code class="xref download docutils literal"><span class="pre">sitemap.xml.gz</span></code></a> .</p>
 </div>
 <div class="section" id="vocabulary">
 <h1>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this headline">¶</a></h1>
@@ -345,7 +342,7 @@
 <li class="toctree-l3"><a class="reference internal" href="equilibrium/ensembles.html#canonical-ensemble">Canonical Ensemble</a></li>
 <li class="toctree-l3"><a class="reference internal" href="equilibrium/ensembles.html#grand-canonical-ensemble">Grand Canonical Ensemble</a></li>
 <li class="toctree-l3"><a class="reference internal" href="equilibrium/ensembles.html#index-4">Identical Particles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="equilibrium/ensembles.html#three-ensembles-cont-d">Three Ensembles Cont&#8217;d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="equilibrium/ensembles.html#three-ensembles-cont-d">Three Ensembles Cont’d</a></li>
 <li class="toctree-l3"><a class="reference internal" href="equilibrium/ensembles.html#most-probable-distribution">Most Probable Distribution</a></li>
 <li class="toctree-l3"><a class="reference internal" href="equilibrium/ensembles.html#the-exact-partition-function">The Exact Partition Function</a></li>
 <li class="toctree-l3"><a class="reference internal" href="equilibrium/ensembles.html#is-there-a-gap-between-fermion-and-boson">Is There A Gap Between Fermion and Boson?</a></li>
@@ -376,7 +373,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="nonequilibrium/master-eqn.html">Master Equation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="nonequilibrium/master-eqn.html#index-0">Master Equation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="nonequilibrium/master-eqn.html#derive-master-equation">&#8220;Derive&#8221; Master Equation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nonequilibrium/master-eqn.html#derive-master-equation">“Derive” Master Equation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nonequilibrium/master-eqn.html#examples-of-master-equation">Examples of Master Equation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nonequilibrium/master-eqn.html#footnotes">Footnotes</a></li>
 </ul>

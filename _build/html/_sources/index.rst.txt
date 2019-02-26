@@ -1,10 +1,10 @@
-Statistical Mechanics
+Statistical Physics
 =============================
 
 
 
 
-Lecture notes for stat mech.
+This is a set of lecture notes for statistical physics.
 
 
 
@@ -12,15 +12,17 @@ Lecture notes for stat mech.
 Acknowledgement
 ==================
 
-I have finished the whole set of notes for my statistical mechanics class which is taught by V. M. Kenkre 2014 Spring.
+I have finally finished this whole set of notes for my statistical mechanics class. It was an excellent course thought by Professor V. M. Kenkre in 2014.
 
-Professor Kenkre's lectures are as fantastic as an excellent thrilling movie without which I could never finish notes like this. I am very grateful to him for this adventure to modern statistical mechanics. The words I can think of to describe these lectures are the words used on the best chinese novel, *Dream of the Red Chamber*:
+Professor Kenkre's lectures are fantastic. They were like inspiring and exciting thrilling movies. I am very grateful to him for this adventure of modern statistical mechanics. 
+
+Professor Kenkre's lectures have such a power that a tiny hint would develop into an important result as the adventure goes on. The only words I can think of for the lectures are the words used on the best chinese novel, *Dream of the Red Chamber*. 
 
 
 .. image:: _static/images/aComment.png
    :align: center
 
-which is too hard to translate. It basically means that the subplot permeats through thousands of pages before people realize it's importance. Professor Kenkre's lectures do have such power that a tiny hint could develop into an important result as the lectures go on.
+It says that the subplot permeates through thousands of pages before people realize it's importance.
 
 I am also very grateful to the TA of this course, `Anastasia <http://www.unm.edu/~aierides/505/>`_, who helped me a lot with my homework and lecture notes.
 
@@ -31,23 +33,23 @@ I am also very grateful to the TA of this course, `Anastasia <http://www.unm.edu
 Introduction
 ========================
 
-Statistical Physics is the central topic of physics. It taught us great lessons about nature and it is definitely going to teach us more. Some ideas (Verlinde's scenario) even put thermodynamics and statistical physics as the fundamental of all theories thus the thought that everything is emergent has been announced.
+Statistical Physics is one of the holy grail of physics. It taught us great lessons about our universe and it is definitely going to teach us more. Some ideas (such as Verlinde's scenario) even put thermodynamics and statistical physics as the fundamental theory of all theories which leads to the thought that everything is emergent has been announced.
 
-Basically, statistical mechanics is the mechanics of large bodies.
+In simple words, statistical mechanics is the mechanics of large bodies.
 
-* Mechanics is Newton's plan of kinematics.
-* Large means a lot of DoFs. Usually DoFs add up to :math:`10^{23}` which is the order of Avogadro's number.
-* Bodies, of course, is the subject or system we are dealing with.
+* Classical Mechanics is Newton's plan of kinematics.
+* Large number of bodies means a lot of degrees of freedom (DoFs). The system is large if the DoFs add up to :math:`10^{23}`. That being said, we would study matter consisting particles of the order Avogadro's number.
+* Bodies, of course, is the subject or system that we are dealing with.
 
-One question worth thinking about is how we end up with probabilities.
+One interesting question about statistical mechanics is how we end up with probabilities.
 
-We wouldn't need probability theory if we carry out Newton's plan exactly. Note that the first thing we drop to come over the obstacles is to drop initial condition because it's impossible to write down the initial condition of a large system for each particle. The price of that is we have to use probability to describe the system. Later on we find out that some dynamics have to be dropped to make it calculable which then gives us other sources of probability.
-
-
-**It's kind of disappointing that stat mech is so vague.**
+We wouldn't need probability theory if we carry out Newton's plan exactly. Note that the first thing we compromise to come over the obstacles is to drop the initial conditions of the particles since it's impossible to write down all the initial conditions of a large number of particles. In order to describe the system of particles, we have to use probability on the particles. We will also see that some dynamics of the particles have to be dropped to make statistical quantities calculable. This is another reason that we need probabilities.
 
 
-Sitemap can be downloaded: :download:`sitemap.xml <_static/sitemap.xml>` or :download:`sitemap.xml.gz <_static/sitemap.xml.gz>` .
+**It's kind of disappointing that Newton's plan didn't succeed.**
+
+
+The sitemap of the website can be downloaded from: :download:`sitemap.xml <_static/sitemap.xml>` or :download:`sitemap.xml.gz <_static/sitemap.xml.gz>` .
 
 
 Vocabulary

@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Harmonic Oscillator and Density of States &#8212; Statistical Mechanics Notes</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -118,7 +114,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -248,7 +244,7 @@
 \[C = \frac{\partial}{\partial T} \langle E\rangle = k_B (\beta \hbar \omega)^2 \frac{\exp(\beta \hbar \omega)}{ (\exp(\beta \hbar \omega) - 1)^2 }\]</div>
 <p>This specific heat behaves like this.</p>
 <img alt="../_images/shQHO.png" class="align-center" src="../_images/shQHO.png" />
-<p>Though we have infinite energy levels, the specific heat won&#8217;t blow up because the probability of a high energy level state is very small.</p>
+<p>Though we have infinite energy levels, the specific heat won’t blow up because the probability of a high energy level state is very small.</p>
 </div>
 <div class="section" id="density-of-states">
 <h2>Density of States<a class="headerlink" href="#density-of-states" title="Permalink to this headline">¶</a></h2>
@@ -264,7 +260,7 @@
 <div class="last math">
 \[S = -k_B \beta  \left(T \ln Z - \frac{\partial}{\partial \beta} \ln Z \right)\]</div>
 </div>
-<p>Specific heat is very different in 1D, 2D, 3D even for similar Hamiltonian. In the case of dipole systems, this is because for 1D, there discrete energy levels, for 2D and 3D energy levels fill up the gap. But what&#8217;s the difference between 2D and 3D? Obviously the degeneracies are different.</p>
+<p>Specific heat is very different in 1D, 2D, 3D even for similar Hamiltonian. In the case of dipole systems, this is because for 1D, there discrete energy levels, for 2D and 3D energy levels fill up the gap. But what’s the difference between 2D and 3D? Obviously the degeneracies are different.</p>
 <p>Generally,</p>
 <div class="math">
 \[Z = \int g(E) e^{-\beta E}\mathrm d E\]</div>
@@ -324,7 +320,7 @@
 </ol>
 <div class="note admonition">
 <p class="first admonition-title">Dimension is Crucial</p>
-<p>These results are so different. For 1D system, the higher energy of the system is, the small DoS is. 2D DoS doesn&#8217;t depend on energy. 3D is proportional to the square root of energy.</p>
+<p>These results are so different. For 1D system, the higher energy of the system is, the small DoS is. 2D DoS doesn’t depend on energy. 3D is proportional to the square root of energy.</p>
 <p class="last">DoS is very important in quantum systems because quantization can make strange DoS. In classical systems without quantization, DoS is always some kind of constant.</p>
 </div>
 </div>
@@ -337,12 +333,12 @@
 <p>For 1 particle in 3D box,</p>
 <div class="math">
 \[Z_1 = \frac{V}{\lambda_T^3}\]</div>
-<p>It&#8217;s obvious that for a N particles system without interaction between particles, <span class="math">\(Z_N  = (Z_1)^N\)</span>. Free energy</p>
+<p>It’s obvious that for a N particles system without interaction between particles, <span class="math">\(Z_N  = (Z_1)^N\)</span>. Free energy</p>
 <div class="math">
 \[A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)\]</div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won&#8217;t have twice of the free energy. It&#8217;s called Gibbs mixing paradox.</p>
+<p class="last">This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won’t have twice of the free energy. It’s called Gibbs mixing paradox.</p>
 </div>
 </div>
 <div class="section" id="phase-space-of-quantum-partition-function">

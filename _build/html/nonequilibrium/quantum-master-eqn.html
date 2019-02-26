@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
     <title>Quantum Master Equation &#8212; Statistical Mechanics Notes</title>
-    
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -14,7 +11,6 @@
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
@@ -28,7 +24,7 @@
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/js/rrssb.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
@@ -118,7 +114,7 @@
 
  
   </head>
-  <body role="document">
+  <body>
 
   <div id="navbar" class="navbar navbar-default ">
     <div class="container">
@@ -172,8 +168,8 @@
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Quantum Master Equation</a><ul>
 <li><a class="reference internal" href="#id1">Quantum Master Equation</a><ul>
-<li><a class="reference internal" href="#pauli-s-mistake">Pauli&#8217;s Mistake</a></li>
-<li><a class="reference internal" href="#van-hove-s-derivation">van Hove&#8217;s Derivation</a></li>
+<li><a class="reference internal" href="#pauli-s-mistake">Pauli’s Mistake</a></li>
+<li><a class="reference internal" href="#van-hove-s-derivation">van Hove’s Derivation</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#van-hove">van Hove</a></li>
@@ -245,14 +241,14 @@
 <div class="math">
 \[\langle O \rangle = \sum_{m,n} O_{nm}\rho_{mn}.\]</div>
 <p>For diagonalized density matrix, this averaging becomes the ordinary probability averaging.</p>
-<p>However, even if we start with a diagonalized density matrix, the averaging procedure won&#8217;t stay on the classical averaging procedure as time goes on. Off diagonal elements can be created out of the diagonal elements.</p>
-<p>In that sense, it&#8217;s not even possible to use the classical master equation to solve most quantum problems. We need the quantum master equation.</p>
+<p>However, even if we start with a diagonalized density matrix, the averaging procedure won’t stay on the classical averaging procedure as time goes on. Off diagonal elements can be created out of the diagonal elements.</p>
+<p>In that sense, it’s not even possible to use the classical master equation to solve most quantum problems. We need the quantum master equation.</p>
 <p>The first principle of quantum mechanics is</p>
 <div class="math">
 \[i\hbar \frac{d}{dt}\hat \rho = [\hat H,\hat \rho] = \hat L \hat \rho.\]</div>
 <p>Then the question is, as the first idea, how to derive an equation for the probability.</p>
 <div class="section" id="pauli-s-mistake">
-<h3>Pauli&#8217;s Mistake<a class="headerlink" href="#pauli-s-mistake" title="Permalink to this headline">¶</a></h3>
+<h3>Pauli’s Mistake<a class="headerlink" href="#pauli-s-mistake" title="Permalink to this headline">¶</a></h3>
 <p>Pauli derived the first quantum master equation which is not quite right.</p>
 <p>The solution to a quantum system is</p>
 <div class="math">
@@ -266,11 +262,11 @@
 <p>The left hand side is the probability, <span class="math">\(P_m\)</span>. Right had side becomes</p>
 <div class="math">
 \[\text{RHS} = \sum_{n,l}\bra{m}e^{-i\tau \hat H} \ket{n} \bra{n}\hat \rho(t) \ket{l}\bra{l} e^{i\tau \hat H} \ket{m}.\]</div>
-<p>Here is where Pauli&#8217;s idea comes in. He assumed that the system is dirty enought to have repeatedly recurance of diagonalized density matrix. Then he use diagonalized density matrix to calculate the probability,</p>
+<p>Here is where Pauli’s idea comes in. He assumed that the system is dirty enought to have repeatedly recurance of diagonalized density matrix. Then he use diagonalized density matrix to calculate the probability,</p>
 <div class="math">
 \[\begin{split}P_m(t+\tau) &amp;= \sum_{n}\bra{m}e^{-i\tau \hat H} \ket{n} \bra{n}\hat \rho(t) \ket{n}\bra{n} e^{i\tau \hat H} \ket{m} \\
 &amp; = \sum_{n} P_n \left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2 .\end{split}\]</div>
-<p>The term <span class="math">\(\left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2\)</span> RHS is the probability of a state n to be at state m after a short time <span class="math">\(\tau\)</span>. We&#8217;ll define this as <span class="math">\(Q_{mn}(\tau)\)</span>.</p>
+<p>The term <span class="math">\(\left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2\)</span> RHS is the probability of a state n to be at state m after a short time <span class="math">\(\tau\)</span>. We’ll define this as <span class="math">\(Q_{mn}(\tau)\)</span>.</p>
 <p>So in short the probability is</p>
 <div class="math">
 \[P_m(t+\tau) = \sum_n Q_{mn}(\tau)P_n(t).\]</div>
@@ -282,8 +278,8 @@
 <p>Then it comes the van Hove derivation.</p>
 </div>
 <div class="section" id="van-hove-s-derivation">
-<h3>van Hove&#8217;s Derivation<a class="headerlink" href="#van-hove-s-derivation" title="Permalink to this headline">¶</a></h3>
-<p>van Hove argued that Pauli&#8217;s result is nonsense. He started with</p>
+<h3>van Hove’s Derivation<a class="headerlink" href="#van-hove-s-derivation" title="Permalink to this headline">¶</a></h3>
+<p>van Hove argued that Pauli’s result is nonsense. He started with</p>
 <div class="math">
 \[\begin{split}P_m(t+\tau) &amp;= \sum_n Q_{mn}(\tau) P_n(t) \\
 P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
@@ -295,7 +291,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
 <p>Without any calculations, we just know imediately that</p>
 <div class="math">
 \[P_m(t+\tau) = P_m(t-\tau) ,\]</div>
-<p>in other words, there&#8217;s no evolution of probability density.</p>
+<p>in other words, there’s no evolution of probability density.</p>
 </div>
 </div>
 <div class="section" id="van-hove">
@@ -305,14 +301,14 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
 <p>van Hove made a great progress by bringing up the following questions.</p>
 <ol class="last arabic simple">
 <li>What systems can be described by master equations?</li>
-<li>What&#8217;s the time scale for quantum master equation to be valid?</li>
+<li>What’s the time scale for quantum master equation to be valid?</li>
 <li>How to derive a quantum master equation?</li>
 </ol>
 </div>
 <p>Suppose we have a quantum system with Hamiltonian,</p>
 <div class="math">
 \[\hat H = \hat H_0 + \lambda(t)\hat W .\]</div>
-<p>van Hove&#8217;s idea was that quantum master equations can describe systems with diagonal singularity conditions.</p>
+<p>van Hove’s idea was that quantum master equations can describe systems with diagonal singularity conditions.</p>
 <p>Then he said, the time scale of the system should be long enough, the perturbation should be as small as the condition <span class="math">\(\lambda^2 t \approx \text{constant}\)</span>.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
@@ -373,12 +369,12 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
 </div>
 <div class="section" id="about-off-diagonal-elements">
 <h2>About Off-diagonal Elements<a class="headerlink" href="#about-off-diagonal-elements" title="Permalink to this headline">¶</a></h2>
-<p>Though we need to set <span class="math">\(\rho_{od}(0)=0\)</span> to have a closed master equation, that doens&#8217;t mean we have to make only localized initial condition on only one state.</p>
+<p>Though we need to set <span class="math">\(\rho_{od}(0)=0\)</span> to have a closed master equation, that doens’t mean we have to make only localized initial condition on only one state.</p>
 <blockquote>
-<div><p>&#8220;We can always use phasers.&#8221;</p>
+<div><p>“We can always use phasers.”</p>
 <p class="attribution">&mdash;V. M. Kenkre</p>
 </div></blockquote>
-<p>Suppose we have a system with five possible states, the off-diagonal elements don&#8217;t exist initially if the system is in only one state.</p>
+<p>Suppose we have a system with five possible states, the off-diagonal elements don’t exist initially if the system is in only one state.</p>
 <img alt="../_images/quantum1state.png" class="align-center" src="../_images/quantum1state.png" />
 <p>The density matrix will contain off-diagonal elements if we have two states initially.</p>
 <img alt="../_images/quantum2states.png" class="align-center" src="../_images/quantum2states.png" />
@@ -387,7 +383,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
 <div class="section" id="simplify-quantum-master-equation">
 <h2>Simplify Quantum Master Equation<a class="headerlink" href="#simplify-quantum-master-equation" title="Permalink to this headline">¶</a></h2>
 <p>We derived some sort of quantum master equation using projection method. Here we will simplify it.</p>
-<p>Let&#8217;s stare at the results for a minute.</p>
+<p>Let’s stare at the results for a minute.</p>
 <div class="math">
 \[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.\]</div>
 <p>By definition, <span class="math">\(\rho_d=\hat D\rho\)</span>. So what is <span class="math">\(\hat D \hat L \rho_d\)</span>?</p>
@@ -451,7 +447,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
 \[\begin{split}\partial_t P_m &amp;= -\lambda^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')\epsilon_n} ( W_{nm}P_{m} - P_{n}W_{n m} ) e^{i(t-t')\epsilon_m}) - (e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} )W_{nm}  \right] \\
 &amp; =  -\lambda^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')(\epsilon_n - \epsilon_m )  }  W_{nm} (P_{m} - P_{n}) - (e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} )W_{nm}  \right] \\
 &amp; = -2 \lambda^2 \int_0^t dt' \sum_n \left\vert W_{mn} \right\vert^2 \left[ P_n- P_m \right] \cos((\epsilon_m-\epsilon_n)(t-t'))\end{split}\]</div>
-<p>which is actually the <span class="highlit">Fermi&#8217;s golden rule</span>.</p>
+<p>which is actually the <span class="highlit">Fermi’s golden rule</span>.</p>
 <p>Define <span class="math">\(\Omega_{mn}(t-t')=\Omega_{nm}(t-t') = 2\lambda^2 \left\vert W_{mn} \right\vert^2\cos((t-t')(\epsilon_m-\epsilon_n))\)</span>, we can write the master equation into a really simple form,</p>
 <div class="math">
 \[\partial_t P_m = \int_0^t dt' \sum_n \left( \Omega_{mn}(t-t') P_n - \Omega_{nm}(t-t') P_m \right).\]</div>
@@ -481,14 +477,14 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Derive the Fermi&#8217;s golden rule from this.</p>
+<p class="last">Derive the Fermi’s golden rule from this.</p>
 </div>
-<p>Finally we can reach Fermi&#8217;s golden rule.</p>
+<p>Finally we can reach Fermi’s golden rule.</p>
 </div>
 <div class="section" id="markovian-another-approach">
 <h2>Markovian - Another Approach<a class="headerlink" href="#markovian-another-approach" title="Permalink to this headline">¶</a></h2>
-<p><strong>I&#8217;ll put all the :math:`hbar`s back into the equations in this subsection.</strong></p>
-<p>I read the Markovian idea on quantiki <a class="footnote-reference" href="#id9" id="id7">[2]</a> . Here is my derivation of Fermi&#8217;s golden rule from quantum master equation using this approach.</p>
+<p><strong>I’ll put all the :math:`hbar`s back into the equations in this subsection.</strong></p>
+<p>I read the Markovian idea on quantiki <a class="footnote-reference" href="#id9" id="id7">[2]</a> . Here is my derivation of Fermi’s golden rule from quantum master equation using this approach.</p>
 <p>First of all, we can use interaction picture. Master equation here can be rewritten using interaction picture.</p>
 <div class="math">
 \[\begin{split}\partial_t P_m &amp; =  -\lambda^2/\hbar^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')(\epsilon_n - \epsilon_m ) /\hbar }  W_{nm} (P_{m} - P_{n}) - (e^{-i(t-t')\epsilon_m/\hbar} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n/\hbar} )W_{nm}  \right] \\
@@ -515,7 +511,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
 <div class="last math">
 \[\lim_{\epsilon\rightarrow 0} \frac{\sin(x/\epsilon)}{\pi x} = \delta(x) .\]</div>
 </div>
-<p>Using this expression of delta, we derived the Fermi&#8217;s golden rule.</p>
+<p>Using this expression of delta, we derived the Fermi’s golden rule.</p>
 <div class="math">
 \[\begin{split}\partial_t P_m &amp; =  \sum_n (P_m - P_n)   \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar^2}  \delta(\omega_mn)  \\
 &amp; =  \sum_n (P_m - P_n)   \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar^2}  \delta((\epsilon_m - \epsilon_n)/\hbar) \\
@@ -523,7 +519,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
 <p>Comparing this result with the classical master equation, we can find out the transition rate,</p>
 <div class="math">
 \[\Omega_{mn} = \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar}  \delta(\epsilon_m - \epsilon_n)\]</div>
-<p>which is exactly the Fermi&#8217;s golden rule.</p>
+<p>which is exactly the Fermi’s golden rule.</p>
 </div>
 <div class="section" id="footnotes">
 <h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
