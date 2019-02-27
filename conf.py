@@ -29,6 +29,7 @@ sys.path.append(os.path.abspath('exts'))
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 # extensions = ['sphinx.ext.pngmath', "math_dollar"]
 extensions = ['sphinx.ext.mathjax', "math_dollar"]
+# extensions = ["math_dollar"]
 
 pngmath_use_preview = True
 

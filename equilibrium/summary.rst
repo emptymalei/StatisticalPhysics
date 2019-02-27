@@ -40,7 +40,7 @@ Boltzmann Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 
-1. Two postulates: One is about state occurrence in phase space; The other is about which state will the equilibrium system stay at.
+1. Two postulates: One is about state occurrence in phase space; The other one is about which state the equilibrium system will stay at.
 2. Boltzmann factor (which is kind of derived from Gibbs micro-ensemble theory)
 3. Partition function
 
