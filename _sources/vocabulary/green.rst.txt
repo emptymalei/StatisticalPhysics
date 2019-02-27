@@ -1,14 +1,14 @@
-Green Function
-================
+Green's Function
+==================
 
-.. index:: Green Function
+.. index:: Green's Function
 
 
-Green Functions for Second Order Equations
+Green's Functions for Second Order Equations
 ------------------------------------------------------
 
 
-Second order differential equations can be written as
+Any second order differential equations can be written as
 
 .. math::
    L[y] \equiv y'' + p(x) y' + q(x) y = f(x),
@@ -19,7 +19,7 @@ for :math:`a<x<b` with boundary conditions
    B_1[y] = B_2[y] = 0.
 
 
-The solution is
+The solution should be
 
 .. math::
    y(x) = \int _a ^b G(x\vert \xi) f(\xi) d\xi
@@ -41,7 +41,7 @@ Examples
 ~~~~~~~~~~~~~~~~~
 
 
-2nd DE,
+For a 2nd order differential equation,
 
 .. math::
    y''(x) = f(x), \qquad y(0)= y(1)=0.

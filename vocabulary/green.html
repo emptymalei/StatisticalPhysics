@@ -4,7 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Green Function &#8212; Statistical Mechanics Notes</title>
+    <title>Green’s Function &#8212; Statistical Mechanics Notes</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/modify.css" />
@@ -158,8 +158,8 @@
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Green Function</a><ul>
-<li><a class="reference internal" href="#green-functions-for-second-order-equations">Green Functions for Second Order Equations</a><ul>
+<li><a class="reference internal" href="#">Green’s Function</a><ul>
+<li><a class="reference internal" href="#green-s-functions-for-second-order-equations">Green’s Functions for Second Order Equations</a><ul>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -212,8 +212,8 @@
   <div class="row">
       <div class="col-md-3">
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">Green Function</a><ul>
-<li><a class="reference internal" href="#green-functions-for-second-order-equations">Green Functions for Second Order Equations</a><ul>
+<li><a class="reference internal" href="#">Green’s Function</a><ul>
+<li><a class="reference internal" href="#green-s-functions-for-second-order-equations">Green’s Functions for Second Order Equations</a><ul>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -244,17 +244,17 @@
       </div>
     <div class="col-md-9 content">
       
-  <div class="section" id="green-function">
-<h1>Green Function<a class="headerlink" href="#green-function" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="green-functions-for-second-order-equations">
-<span id="index-0"></span><h2>Green Functions for Second Order Equations<a class="headerlink" href="#green-functions-for-second-order-equations" title="Permalink to this headline">¶</a></h2>
-<p>Second order differential equations can be written as</p>
+  <div class="section" id="green-s-function">
+<h1>Green’s Function<a class="headerlink" href="#green-s-function" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="green-s-functions-for-second-order-equations">
+<span id="index-0"></span><h2>Green’s Functions for Second Order Equations<a class="headerlink" href="#green-s-functions-for-second-order-equations" title="Permalink to this headline">¶</a></h2>
+<p>Any second order differential equations can be written as</p>
 <div class="math notranslate nohighlight">
 \[L[y] \equiv y'' + p(x) y' + q(x) y = f(x),\]</div>
 <p>for <span class="math notranslate nohighlight">\(a&lt;x&lt;b\)</span> with boundary conditions</p>
 <div class="math notranslate nohighlight">
 \[B_1[y] = B_2[y] = 0.\]</div>
-<p>The solution is</p>
+<p>The solution should be</p>
 <div class="math notranslate nohighlight">
 \[y(x) = \int _a ^b G(x\vert \xi) f(\xi) d\xi\]</div>
 <p>where Green function is defined as</p>
@@ -266,7 +266,7 @@
 <p>First order differential of Green function <span class="math notranslate nohighlight">\(G'(x\vert \xi)\)</span> has a jump condition at <span class="math notranslate nohighlight">\(x=\xi\)</span> that the jump discontinuity of height is 1.</p>
 <div class="section" id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
-<p>2nd DE,</p>
+<p>For a 2nd order differential equation,</p>
 <div class="math notranslate nohighlight">
 \[y''(x) = f(x), \qquad y(0)= y(1)=0.\]</div>
 <p>Then Green function for this problem is</p>
