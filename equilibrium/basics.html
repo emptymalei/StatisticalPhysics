@@ -29,58 +29,58 @@
     <link rel="prev" title="Equilibrium Statistical Mechanics Summary" href="summary.html" />
 
 
- <script type="text/x-mathjax-config">
-   MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["color.js"], equationNumbers: {autoNumber: "AMS"}  }});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+  MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+    cancel: ["Extension","cancel"]
+    });
+ });
  </script>
- <script type="text/x-mathjax-config">
- MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
-   MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
-     cancel: ["Extension","cancel"]
-     });
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
   });
-  </script>
- <script type="text/x-mathjax-config">
-   MathJax.Hub.Config({
-     tex2jax: {
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-     }
-   });
 </script>
 <script type="text/x-mathjax-config">
-   MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-      for(i=0; i < all.length; i += 1) {
-           all[i].SourceElement().parentNode.className += ' has-jax';
-      }
-   });
+  MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+  });
 </script>
 <script type="text/x-mathjax-config">
- MathJax.Hub.Config({
-   tex2jax: {
-     processEscapes: true
-   }
- });
+MathJax.Hub.Config({
+  tex2jax: {
+    processEscapes: true
+  }
+});
 </script>
- <script type="text/x-mathjax-config">
- MathJax.Hub.Config({
-   TeX: {
-     Macros: {
-      overlr: ['\\overset\\leftrightarrow{\#1}',1],
-      overl: ['\\overset\leftarrow{\#1}',1],
-      overr: ['\\overset\rightarrow{\#1}',1],
-      bra: ['\\left\\langle \#1\\right|',1],
-      ket: ['\\left| \#1\\right\\rangle',1],
-      braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
-      avg: ['\\left< \#1 \\right>',1],
-      slashed: ['\\cancel{\#1}',1],
-      bold: ['\\boldsymbol{\#1}',1],
-      d: ['\\mathrm d',0]
-     }
-   }
- });
- </script>
- <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
- </script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  TeX: {
+    Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     d: ['\\mathrm d',0]
+    }
+  }
+});
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+</script>
 
 
 
@@ -254,19 +254,19 @@
 <span id="index-0"></span><h1>Basics of Statistical Mechanics<a class="headerlink" href="#basics-of-statistical-mechanics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="phase-space">
 <h2>Phase Space<a class="headerlink" href="#phase-space" title="Permalink to this headline">¶</a></h2>
-<p>Why is statistics important? Remember we are dealing with Avogadro’s number of DoFs. If we are going to calculate the dynamics of this system by calculating the dynamics of each particles. To store one screen shot of the system with each DoF take only 8 bits, we need <span class="math notranslate nohighlight">\(10^23\)</span> bytes that is <span class="math notranslate nohighlight">\(10^17\)</span> GB. It is not even possible to store only one screen shot of the system. So time to change our view of these kind of systems.</p>
+<p>Why is statistics important? Remember we are dealing with DoFs on the order of Avogadro’s number. If we are going to calculate the dynamics of this system by calculating the dynamics of each particles. To store one screen shot of the system takes a huge amount of storage. Assuming each DoF take only 8 bits, we need <span class="math notranslate nohighlight">\(10^23\)</span> bytes that is <span class="math notranslate nohighlight">\(10^17\)</span> GB. It seems to be impossible to store this one snapshot of the system. It is time to steer away from this Newtonian approach.</p>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="../_images/newtonsDream.jpg"><img alt="Newton's Dream" src="../_images/newtonsDream.jpg" style="width: 60%;" /></a>
+<a class="reference internal image-reference" href="../_images/newtonian-dream.svg"><img alt="Newton's Dream" src="../_images/newtonian-dream.svg" width="60%" /></a>
 <p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Newton’s plan of mechanics. Mechanics was in the center of all physics.</span></p>
 </div>
-<p>What is mechanics? It deals with dynamics in the following way:</p>
+<p>What is mechanics? Mechanics is the thinking that deals with dynamics of object in the following way:</p>
 <ul class="simple">
-<li>Description of initial state</li>
-<li>Time evolution of the system</li>
-<li>Extraction of observables</li>
+<li>Description of initial state;</li>
+<li>Time evolution of the system;</li>
+<li>Extraction of observables.</li>
 </ul>
-<p>As we already mentioned initial state, we need to explain how to describe a state. A vector in phase space gives us a state. Time evolution is motion of points in phase space. Finally, we can do whatever is needed to extract observables, for example just use projection of points in phase space.</p>
-<p>Problem is, when it comes to stat mech, it’s not possible to do all these DoFs one by one. We need a new concept.</p>
+<p>The initial state of an object is exactly what the name indicates. In a coordinate system approach, the initial state should include the coordinates and the time derivative of the coordinates since we are interested in dynamics. In fact, the coordinates and time derivative of them form a phase space. In general, a vector in phase space is a complete description of the state of an object. Thus time evolution of the object is simply the motion of state vector in phase space. Finally, we will do whatever is needed to extract observables. For example, we could trivially use the projection of points in phase space to get the position or velocity.</p>
+<p>The problem arise when it comes to a system with a large amount of particles. As mentioned previously, it’s in general not possible to record all these DoFs. We need a completely new scheme.</p>
 </div>
 <div class="section" id="boltzmann-factor">
 <h2>Boltzmann Factor<a class="headerlink" href="#boltzmann-factor" title="Permalink to this headline">¶</a></h2>

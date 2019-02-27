@@ -11,24 +11,24 @@ Phase Space
 --------------------
 
 
-Why is statistics important? Remember we are dealing with Avogadro's number of DoFs. If we are going to calculate the dynamics of this system by calculating the dynamics of each particles. To store one screen shot of the system with each DoF take only 8 bits, we need :math:`10^23` bytes that is :math:`10^17` GB. It is not even possible to store only one screen shot of the system. So time to change our view of these kind of systems.
+Why is statistics important? Remember we are dealing with DoFs on the order of Avogadro's number. If we are going to calculate the dynamics of this system by calculating the dynamics of each particles. To store one screen shot of the system takes a huge amount of storage. Assuming each DoF take only 8 bits, we need :math:`10^23` bytes that is :math:`10^17` GB. It seems to be impossible to store this one snapshot of the system. It is time to steer away from this Newtonian approach.
 
-.. figure:: images/newtonsDream.jpg
+.. figure:: images/newtonian-dream.svg
    :alt: Newton's Dream
    :width: 60%
    :align: center
 
    Newton's plan of mechanics. Mechanics was in the center of all physics.
 
-What is mechanics? It deals with dynamics in the following way:
+What is mechanics? Mechanics is the thinking that deals with dynamics of object in the following way:
 
-* Description of initial state
-* Time evolution of the system
-* Extraction of observables
+* Description of initial state;
+* Time evolution of the system;
+* Extraction of observables.
 
-As we already mentioned initial state, we need to explain how to describe a state. A vector in phase space gives us a state. Time evolution is motion of points in phase space. Finally, we can do whatever is needed to extract observables, for example just use projection of points in phase space.
+The initial state of an object is exactly what the name indicates. In a coordinate system approach, the initial state should include the coordinates and the time derivative of the coordinates since we are interested in dynamics. In fact, the coordinates and time derivative of them form a phase space. In general, a vector in phase space is a complete description of the state of an object. Thus time evolution of the object is simply the motion of state vector in phase space. Finally, we will do whatever is needed to extract observables. For example, we could trivially use the projection of points in phase space to get the position or velocity.
 
-Problem is, when it comes to stat mech, it's not possible to do all these DoFs one by one. We need a new concept.
+The problem arise when it comes to a system with a large amount of particles. As mentioned previously, it's in general not possible to record all these DoFs. We need a completely new scheme.
 
 
 Boltzmann Factor
