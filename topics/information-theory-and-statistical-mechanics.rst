@@ -24,7 +24,7 @@ It is a quite interesting question for stat mech. In my opinion, it can be gener
 
 In Jaynes' paper, he mentioned several crucial problems.
 
-1. Do we need to find the exact location of our system? No.
+1. Do we need to find the exact location of our system? Yes. How? Max entropy principle.
 2. How to calculate another macroscopic quantity based on one observed macroscopic quantity and the conservation of probability density? Using max entropy principle.
 3. Why max entropy from the information point of view?
 4. Why is the result actually predicting measurements even the theory is purely objective?
