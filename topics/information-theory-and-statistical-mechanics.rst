@@ -22,8 +22,10 @@ The question that Jaynes asked was the following.
 It is a quite interesting question for stat mech. In my opinion, it can be generalized. To visualize this problem, we know think of this landscape of the states. Instead of using the state as the dimensions, we use the probabilities as the dimensions since they are unknown. In the end, we have a coordinate system with each dimension as the value of the probabilities :math:`\{p_i\}` and the one dimension for the value of :math:`\langle g \rangle (p_i)` which depends on :math:`\{p_i\}`. Now we constructed a landscape of :math:`\langle g \rangle (p_i)`. The question is, how do our universe arrange the landscape? Where are we in this landscape if we are at equilibrium?
 
 
-.. Given :math:`p_i = e^{ - \lambda -\mu x}` 
+In Jaynes' paper, he mentioned several crucial problems.
 
-.. .. math::
-..    & \sum_i p_i f(x_i) \\
-..    = & \sum_i 
+1. Do we need to find the exact location of our system? No.
+2. How to calculate another macroscopic quantity based on one observed macroscopic quantity and the conservation of probability density? Using max entropy principle.
+3. Why max entropy from the information point of view?
+4. Why is the result actually predicting measurements even the theory is purely objective?
+5. With the generality of the formalism, what else can we do with it to improve our statistical mechanics power?
