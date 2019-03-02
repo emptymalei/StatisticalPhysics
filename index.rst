@@ -12,7 +12,7 @@ This is a set of lecture notes for statistical physics.
 Acknowledgement
 ==================
 
-I have finally finished this whole set of notes for my statistical mechanics class. It was an excellent course thought by Professor V. M. Kenkre in 2014.
+I have finally finished this whole set of notes for my statistical mechanics class. It was an excellent course taught by Professor V. M. Kenkre in 2014.
 
 Professor Kenkre's lectures are fantastic. They were like inspiring and exciting thrilling movies. I am very grateful to him for this adventure of modern statistical mechanics. 
 
