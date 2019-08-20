@@ -15,7 +15,7 @@ import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '_themes/'))
 
 # Only for bootstrap theme. comment it when using other themes
-import sphinx_bootstrap_theme
+import sphinx_bootstrap_theme_local as sphinx_bootstrap_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -189,7 +189,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Statistical Physics Notes'
-copyright = u'2017, Lei Ma'
+copyright = u'2019, Lei Ma'
 
 
 # The version info for the project you're documenting, acts as replacement for
