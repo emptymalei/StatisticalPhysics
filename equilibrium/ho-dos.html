@@ -2,27 +2,18 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>Harmonic Oscillator and Density of States &#8212; Statistical Mechanics Notes</title>
-    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/modify.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootswatch-3.3.4/flatly/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-sphinx.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/modify.css" />
+    <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/font-awesome.min.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/javascript" src="../_static/js/rrssb.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Observables and Debye Model" href="debye-model.html" />
@@ -88,23 +79,10 @@ MathJax.Hub.Config({
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-44466929-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-
-
-
-
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
  
   </head><body>
 
@@ -218,44 +196,7 @@ MathJax.Hub.Config({
 
 <div class="container">
   <div class="row">
-      <div class="col-md-3">
-        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">Harmonic Oscillator and Density of States</a><ul>
-<li><a class="reference internal" href="#quantum-harmonic-oscillator">Quantum Harmonic Oscillator</a></li>
-<li><a class="reference internal" href="#density-of-states">Density of States</a><ul>
-<li><a class="reference internal" href="#calculation-of-dos">Calculation of DoS</a></li>
-<li><a class="reference internal" href="#examples-of-dos">Examples of DoS</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#partition-function-and-dos">Partition Function and DoS</a></li>
-<li><a class="reference internal" href="#phase-space-of-quantum-partition-function">Phase Space of Quantum Partition Function</a></li>
-<li><a class="reference internal" href="#id1">Phase Space of Quantum Partition Function</a></li>
-</ul>
-</li>
-</ul>
-
-  <li>
-    <a href="basics.html" title="Previous Chapter: Basics of Statistical Mechanics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Basics of Sta...</span>
-    </a>
-  </li>
-  <li>
-    <a href="debye-model.html" title="Next Chapter: Observables and Debye Model"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Observables a... &raquo;</span>
-    </a>
-  </li>
-<div id="sourcelink">
-  <a href="../_sources/equilibrium/ho-dos.rst.txt"
-     rel="nofollow">Source</a>
-</div>
-<form action="../search.html" method="get">
- <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
- </div>
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-        </div>
-      </div>
-    <div class="col-md-9 content">
+    <div class="body col-md-12 content" role="main">
       
   <div class="section" id="harmonic-oscillator-and-density-of-states">
 <h1>Harmonic Oscillator and Density of States<a class="headerlink" href="#harmonic-oscillator-and-density-of-states" title="Permalink to this headline">¶</a></h1>
@@ -281,7 +222,7 @@ MathJax.Hub.Config({
 <div class="section" id="density-of-states">
 <h2>Density of States<a class="headerlink" href="#density-of-states" title="Permalink to this headline">¶</a></h2>
 <div class="note admonition">
-<p class="first admonition-title">Free Energy and Partition Function</p>
+<p class="admonition-title">Free Energy and Partition Function</p>
 <p>Free energy</p>
 <div class="math notranslate nohighlight">
 \[A = U - T S\]</div>
@@ -289,7 +230,7 @@ MathJax.Hub.Config({
 <div class="math notranslate nohighlight">
 \[A = - k_B T \ln Z\]</div>
 <p>As long as we find out partition function, all thermodynamics quantities are solved, including entropy.</p>
-<div class="last math notranslate nohighlight">
+<div class="math notranslate nohighlight">
 \[S = -k_B \beta  \left(T \ln Z - \frac{\partial}{\partial \beta} \ln Z \right)\]</div>
 </div>
 <p>Specific heat is very different in 1D, 2D, 3D even for similar Hamiltonian. In the case of dipole systems, this is because for 1D, there discrete energy levels, for 2D and 3D energy levels fill up the gap. But what’s the difference between 2D and 3D? Obviously the degeneracies are different.</p>
@@ -298,10 +239,10 @@ MathJax.Hub.Config({
 \[Z = \int g(E) e^{-\beta E}\mathrm d E\]</div>
 <p>where <span class="math notranslate nohighlight">\(g(E)\)</span> is the density of states.</p>
 <div class="discussion admonition">
-<p class="first admonition-title">Discussion of Partition Function  -  Lingfei, Qian-yuan, Lei</p>
-<ol class="last arabic simple">
-<li><span class="math notranslate nohighlight">\(Z\)</span> is an average of <span class="math notranslate nohighlight">\(g(E)\)</span> under Boltzman distribution;</li>
-<li><span class="math notranslate nohighlight">\(Z\)</span> is the Laplace transform of <span class="math notranslate nohighlight">\(g(E)\)</span>.</li>
+<p class="admonition-title">Discussion of Partition Function  -  Lingfei, Qian-yuan, Lei</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(Z\)</span> is an average of <span class="math notranslate nohighlight">\(g(E)\)</span> under Boltzman distribution;</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z\)</span> is the Laplace transform of <span class="math notranslate nohighlight">\(g(E)\)</span>.</p></li>
 </ol>
 </div>
 <div class="section" id="calculation-of-dos">
@@ -322,22 +263,22 @@ MathJax.Hub.Config({
 <p>Gradient of energy gives us the spread out or dispersion.</p>
 <p>To sum up, the quantities that determines the DoS are,</p>
 <ul class="simple">
-<li><span class="math notranslate nohighlight">\(E(k)\)</span></li>
-<li><span class="math notranslate nohighlight">\(n\)</span>: dimension</li>
-<li><span class="math notranslate nohighlight">\(V\)</span>: volume of the box (important in QM because this sets the boundary conditions)</li>
+<li><p><span class="math notranslate nohighlight">\(E(k)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n\)</span>: dimension</p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span>: volume of the box (important in QM because this sets the boundary conditions)</p></li>
 </ul>
 </div>
 <div class="section" id="examples-of-dos">
 <h3>Examples of DoS<a class="headerlink" href="#examples-of-dos" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p class="first">2D free particle in a box with length <span class="math notranslate nohighlight">\(L\)</span></p>
+<li><p>2D free particle in a box with length <span class="math notranslate nohighlight">\(L\)</span></p>
 <div class="math notranslate nohighlight">
 \[\frac{d E}{d k} = \frac{d}{d k}\left( \frac{\hbar^2 k^2}{2m} \right) = \frac{\hbar^2 k}{m}\]</div>
 <p>Thus we have,</p>
 <div class="math notranslate nohighlight">
 \[g(E) = \frac{2\pi k }{\frac{\hbar^2 k}{m}} \frac{L^2}{(2\pi)^2} = (\frac{1}{2\pi} \frac{m}{\hbar^2})L^2\]</div>
 </li>
-<li><p class="first">3D free particle in a box with length <span class="math notranslate nohighlight">\(L\)</span></p>
+<li><p>3D free particle in a box with length <span class="math notranslate nohighlight">\(L\)</span></p>
 <div class="math notranslate nohighlight">
 \[\frac{d E}{d k} = \frac{\hbar^2 k^2}{2m}\]</div>
 <p>DoS</p>
@@ -345,15 +286,15 @@ MathJax.Hub.Config({
 \[g(E) = \frac{m}{\hbar^2} \frac{L^3}{2\pi^2} k\]</div>
 <p>This is <span class="math notranslate nohighlight">\(k\)</span> dependent.</p>
 </li>
-<li><p class="first">1D</p>
+<li><p>1D</p>
 <div class="math notranslate nohighlight">
 \[g(E) = \frac{1}{k} \frac{m L}{2\pi \hbar^2}\]</div>
 </li>
 </ol>
 <div class="note admonition">
-<p class="first admonition-title">Dimension is Crucial</p>
+<p class="admonition-title">Dimension is Crucial</p>
 <p>These results are so different. For 1D system, the higher energy of the system is, the small DoS is. 2D DoS doesn’t depend on energy. 3D is proportional to the square root of energy.</p>
-<p class="last">DoS is very important in quantum systems because quantization can make strange DoS. In classical systems without quantization, DoS is always some kind of constant.</p>
+<p>DoS is very important in quantum systems because quantization can make strange DoS. In classical systems without quantization, DoS is always some kind of constant.</p>
 </div>
 </div>
 </div>
@@ -369,8 +310,8 @@ MathJax.Hub.Config({
 <div class="math notranslate nohighlight">
 \[A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)\]</div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won’t have twice of the free energy. It’s called Gibbs mixing paradox.</p>
+<p class="admonition-title">Note</p>
+<p>This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won’t have twice of the free energy. It’s called Gibbs mixing paradox.</p>
 </div>
 </div>
 <div class="section" id="phase-space-of-quantum-partition-function">
@@ -389,12 +330,12 @@ MathJax.Hub.Config({
 <div class="math notranslate nohighlight">
 \[Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }\]</div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><span class="math notranslate nohighlight">\(h^3\)</span> is the smallest phase space volume in quantum mechanics.</p>
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(h^3\)</span> is the smallest phase space volume in quantum mechanics.</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Here we used phase space of <span class="math notranslate nohighlight">\({q_i;p_i}\)</span> which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.</p>
+<p class="admonition-title">Warning</p>
+<p>Here we used phase space of <span class="math notranslate nohighlight">\({q_i;p_i}\)</span> which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.</p>
 </div>
 </div>
 <div class="section" id="id1">
@@ -413,12 +354,12 @@ MathJax.Hub.Config({
 <div class="math notranslate nohighlight">
 \[Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }\]</div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><span class="math notranslate nohighlight">\(h^3\)</span> is the smallest phase space volume in quantum mechanics.</p>
+<p class="admonition-title">Note</p>
+<p><span class="math notranslate nohighlight">\(h^3\)</span> is the smallest phase space volume in quantum mechanics.</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Here we used phase space of <span class="math notranslate nohighlight">\({q_i;p_i}\)</span> which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.</p>
+<p class="admonition-title">Warning</p>
+<p>Here we used phase space of <span class="math notranslate nohighlight">\({q_i;p_i}\)</span> which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.</p>
 </div>
 </div>
 </div>
@@ -429,23 +370,6 @@ MathJax.Hub.Config({
   </div>
 </div>
 
-<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
-<div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'statmech'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-</div>
 
 <hr>
 
@@ -456,12 +380,10 @@ MathJax.Hub.Config({
 
     </p>
     <p>
-        <span>© Copyright  2017, Lei Ma. </span> |
+        <span>© Copyright  2019, Lei Ma. </span> |
         <a href="https://github.com/emptymalei/statisticalphysics"> On GitHub </a> | <span> <a href="/genindex.html">Index of Statistical Mechanics</a> </span> |
         <span> Created with
-            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>  <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
+            <a href="http://sphinx.pocoo.org/">Sphinx</a>1.2b2.</span>
     </p>
 
     <hr>
