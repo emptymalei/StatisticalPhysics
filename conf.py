@@ -244,8 +244,9 @@ latex_preamble_data = r"""
 \def\bsigmasmall{\hbox{\mibsmall\char"1B}}
 
 \def\Tr{\hbox{Tr}\,}
-\def\Arg{\hbox{Arg}}
-\def\atan{\hbox{atan}}
+\def\Arg{\hbox{Arg}\,}
+\def\atan{\hbox{atan}\,}
+\def\cosh{\hbox{cosh}\,}
 
 """
 

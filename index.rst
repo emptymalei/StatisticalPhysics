@@ -112,7 +112,7 @@ Some Topics in Statistical Mechanics
 .. toctree::
     :maxdepth: 2
 
-    topics/information-theory-and-statistical-mechanics.rst
+    topics/index.rst
 
 
 
