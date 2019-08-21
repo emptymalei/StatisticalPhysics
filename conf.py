@@ -35,16 +35,20 @@ sys.path.append(os.path.abspath('exts'))
 # html_theme_path = [alabaster.get_path()]
 # html_theme_path = ["_themes",]
 # html_theme = 'alabaster'
-# html_sidebars = {
-#     '**': [
-#         'about.html',
-#         'navigation.html',
-#         #'relations.html',
-#         'searchbox.html',
-#         #'donate.html',
-#         'chat.html',
-#     ]
-# }
+html_sidebars = {
+    '**': [
+        # 'about.html',
+        # 'navigation.html',
+        # 'globaltoc.html',
+        # 'relations.html',
+        # 'searchbox.html',
+        # 'donate.html',
+        # 'chat.html',
+        'localtoc.html',
+        # 'sourcelink.html',
+        'searchbox.html'
+    ]
+}
 
 
 
