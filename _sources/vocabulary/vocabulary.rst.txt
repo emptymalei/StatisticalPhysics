@@ -6,44 +6,36 @@ Vocabulary
 
 .. index:: Gaussian Integral
 
-
-
-
 Gaussian Intergral
 --------------------
 
 .. math::
-
    \int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx = \sqrt{\frac{\pi}{a}}
 
 A comprehensive description of how this is done is `here <http://mathworld.wolfram.com/GaussianIntegral.html>`_.
 
-Basicly, we just transform the problem to the :math:`\int e^{-x} \mathrm dx` problem.
+Basicly, we just transform the problem to the :math:`\int e^{-x} \mathrm dx` problem by integrate by part.
 
 
-Behavior of Functions
------------------------
+Visual Understanding of Functions
+----------------------------------------------
 
 
 
 .. note::
-   To see the true nature of graphs, make quantities dimensionless. This is also true for theoretical derivations. Dimensionless equations can reveal more.
+   It is much easier to understand the functions or dataset if we make the quantities dimensionless. This trick is also extremely useful for theoretical derivations. In other words, dimensionless equations can reveal more.
 
 
+0. **Boltzmann factor**
 
-
-0. Boltzmann factor
-
-   The most important and weirdest function in statmech
+   Boltzmann factor is both important and weird in statmech.
 
    .. figure:: ../_static/voc/boltzfactor.png
       :align: center
 
-      The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n.
+      The nth order derivative of this function is always 0 at x=0, for all finite n. Then the question is, how could this function even grow to non-zero values? The reason is that we are actually dealing with infinite nth order derivatives.
 
-      Professor Kenkre: sleeping lion!
-
-
+      Quoter from Professor Kenkre: sleeping lion!
 
 
 1. Tanh(x)
@@ -51,12 +43,12 @@ Behavior of Functions
    .. image:: ../_static/voc/tanh.jpg
       :align: center
 
-2. :math:`1-exp(-x)`
+2. :math:`1-\exp(-x)`
 
    .. image:: ../_static/voc/exp1.jpg
       :align: center
 
-3. :math:`cosh(1/x)-1/x`
+3. :math:`\cosh(1/x)-1/x`
 
    .. image:: ../_static/voc/cosh1.jpg
       :align: center
@@ -99,35 +91,35 @@ Fourier transform for continuous equation is
 Laplace Transform
 --------------------
 
-Laplace transform is a transform of a function :math:`f(t)` to a function of :math:`s`,
+Laplace transform is a transform of a function of :math:`t`, e.g. :math:`f(t)`, to a function of :math:`s`,
 
 .. math::
-   L[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .
+   \mathscr{L}[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .
 
 Some useful properties:
 
-1. :math:`L[\frac{d}{dt}f(t)] = s L[f(t)] - f(0)`;
-2. :math:`L[\frac{d^2}{dt^2}f(t) = s^2 L[f(t)] - s f(0) - \frac{d f(0)}{dt} `;
-3. :math:`L[\int_0^t g(\tau) d\tau ] = \frac{L[f(t)]}{s}`;
-4. :math:`L[\alpha t] = \frac{1}{\alpha} L[s/\alpha]`;
-5. :math:`L[e^{at}f(t)] = L[f(s-a)]`;
-6. :math:`L[tf(t)] = - \frac{d}{ds} L[f(t)]`.
+1. :math:`\mathscr{L}[\frac{d}{dt}f(t)] = s \mathscr{L}[f(t)] - f(0)`;
+2. :math:`\mathscr{L}[\frac{d^2}{dt^2}f(t) = s^2 \mathscr{L}[f(t)] - s f(0) - \frac{d f(0)}{dt}`;
+3. :math:`\mathscr{L}[\int_0^t g(\tau) d\tau ] = \frac{\mathscr{L}[f(t)]}{s}`;
+4. :math:`\mathscr{L}[\alpha t] = \frac{1}{\alpha} \mathscr{L}[s/\alpha]`;
+5. :math:`\mathscr{L}[e^{at}f(t)] = \mathscr{L}[f(s-a)]`;
+6. :math:`\mathscr{L}[tf(t)] = - \frac{d}{ds} \mathscr{L}[f(t)]`.
 
 
 
 Some useful results:
 
-1. :math:`L[1] = \frac{1}{s}`;
-2. :math:`L[\delta] = 1`;
-3. :math:`L[\delta^k] = s^k`;
-4. :math:`L[t] = \frac{1}{s^2}`;
-5. :math:`L[e^{at}]= \frac{1}[s-a]`.
+1. :math:`\mathscr{L}[1] = \frac{1}{s}`;
+2. :math:`\mathscr{L}[\delta] = 1`;
+3. :math:`\mathscr{L}[\delta^k] = s^k`;
+4. :math:`\mathscr{L}[t] = \frac{1}{s^2}`;
+5. :math:`\mathscr{L}[e^{at}]= \frac{1}{s-a}`.
 
 
 A very nice property of Laplace transform is
 
 .. math::
-   L_s [e^{at}f(t)] &= \int_0^\infty e^{-st} e^{-at} f(t) dt \\
+   \mathscr{L}_s [e^{at}f(t)] &= \int_0^\infty e^{-st} e^{-at} f(t) dt \\
    & =  \int_0^\infty e^{-(s+a)t}f(t) dt \\
    & = L_{s+a}[f(t)]
 
@@ -136,12 +128,12 @@ which is very useful when dealing with master equations.
 Two useful results are
 
 .. math::
-   L[I_0(2Ft)] = \frac{1}{\sqrt{ \epsilon^2 - (2F)^2 }}
+   \mathscr{L}[I_0(2Ft)] = \frac{1}{\sqrt{ \epsilon^2 - (2F)^2 }}
 
 and
 
 .. math::
-   L[J_0[2Ft]]  = \frac{1}{\sqrt{\epsilon^2 + (2F)^2}},
+   \mathscr{L}[J_0[2Ft]]  = \frac{1}{\sqrt{\epsilon^2 + (2F)^2}},
 
 where :math:`I_0(2Ft)` is the modified Bessel functions of the first kind. :math:`J_0(2Ft)` is its companion.
 
@@ -149,7 +141,7 @@ where :math:`I_0(2Ft)` is the modified Bessel functions of the first kind. :math
 Using the property above, we can find out
 
 .. math::
-   L[I_0(2Ft)e^{-2Ft}]  = \frac{1}{\sqrt{(\epsilon + 2F)^2 - (2F)^2}} .
+   \mathscr{L}[I_0(2Ft)e^{-2Ft}]  = \frac{1}{\sqrt{(\epsilon + 2F)^2 - (2F)^2}} .
 
 
 

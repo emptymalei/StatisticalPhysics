@@ -199,10 +199,8 @@ TeX: {
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../topics/information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../topics/information-theory-and-statistical-mechanics.html#line-of-reasoning">Line of Reasoning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/information-theory-and-statistical-mechanics.html#is-this-related-to-mutual-information">Is this related to mutual information?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../topics/information-theory-and-statistical-mechanics.html#classical-balls-on-chessboard">Classical Balls on Chessboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Some Topics in Statistical Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a></li>
 </ul>
 </li>
 </ul>
@@ -220,7 +218,7 @@ TeX: {
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Vocabulary</a><ul>
 <li><a class="reference internal" href="#gaussian-intergral">Gaussian Intergral</a></li>
-<li><a class="reference internal" href="#behavior-of-functions">Behavior of Functions</a></li>
+<li><a class="reference internal" href="#visual-understanding-of-functions">Visual Understanding of Functions</a></li>
 <li><a class="reference internal" href="#fourier-transform">Fourier Transform</a></li>
 <li><a class="reference internal" href="#laplace-transform">Laplace Transform</a></li>
 <li><a class="reference internal" href="#functions-that-will-saturate">Functions that will saturate</a></li>
@@ -271,7 +269,7 @@ TeX: {
         <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
 <li><a class="reference internal" href="#">Vocabulary</a><ul>
 <li><a class="reference internal" href="#gaussian-intergral">Gaussian Intergral</a></li>
-<li><a class="reference internal" href="#behavior-of-functions">Behavior of Functions</a></li>
+<li><a class="reference internal" href="#visual-understanding-of-functions">Visual Understanding of Functions</a></li>
 <li><a class="reference internal" href="#fourier-transform">Fourier Transform</a></li>
 <li><a class="reference internal" href="#laplace-transform">Laplace Transform</a></li>
 <li><a class="reference internal" href="#functions-that-will-saturate">Functions that will saturate</a></li>
@@ -311,32 +309,32 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx = \sqrt{\frac{\pi}{a}}\]</div>
 <p>A comprehensive description of how this is done is <a class="reference external" href="http://mathworld.wolfram.com/GaussianIntegral.html">here</a>.</p>
-<p>Basicly, we just transform the problem to the <span class="math notranslate nohighlight">\(\int e^{-x} \mathrm dx\)</span> problem.</p>
+<p>Basicly, we just transform the problem to the <span class="math notranslate nohighlight">\(\int e^{-x} \mathrm dx\)</span> problem by integrate by part.</p>
 </div>
-<div class="section" id="behavior-of-functions">
-<h2>Behavior of Functions<a class="headerlink" href="#behavior-of-functions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="visual-understanding-of-functions">
+<h2>Visual Understanding of Functions<a class="headerlink" href="#visual-understanding-of-functions" title="Permalink to this headline">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>To see the true nature of graphs, make quantities dimensionless. This is also true for theoretical derivations. Dimensionless equations can reveal more.</p>
+<p>It is much easier to understand the functions or dataset if we make the quantities dimensionless. This trick is also extremely useful for theoretical derivations. In other words, dimensionless equations can reveal more.</p>
 </div>
 <ol class="arabic" start="0">
-<li><p>Boltzmann factor</p>
-<p>The most important and weirdest function in statmech</p>
-<div class="figure align-center" id="id6">
+<li><p><strong>Boltzmann factor</strong></p>
+<p>Boltzmann factor is both important and weird in statmech.</p>
+<div class="figure align-center" id="id2">
 <img alt="../_images/boltzfactor1.png" src="../_images/boltzfactor1.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The nth derivative of this function is always 0 at x=0, for all finite n. Then how does it rise? The only thing I can say is that we are actually dealing with infinite n.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">The nth order derivative of this function is always 0 at x=0, for all finite n. Then the question is, how could this function even grow to non-zero values? The reason is that we are actually dealing with infinite nth order derivatives.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 <div class="legend">
-<p>Professor Kenkre: sleeping lion!</p>
+<p>Quoter from Professor Kenkre: sleeping lion!</p>
 </div>
 </div>
 </li>
 <li><p>Tanh(x)</p>
 <img alt="../_images/tanh.jpg" class="align-center" src="../_images/tanh.jpg" />
 </li>
-<li><p><span class="math notranslate nohighlight">\(1-exp(-x)\)</span></p>
+<li><p><span class="math notranslate nohighlight">\(1-\exp(-x)\)</span></p>
 <img alt="../_images/exp1.jpg" class="align-center" src="../_images/exp1.jpg" />
 </li>
-<li><p><span class="math notranslate nohighlight">\(cosh(1/x)-1/x\)</span></p>
+<li><p><span class="math notranslate nohighlight">\(\cosh(1/x)-1/x\)</span></p>
 <img alt="../_images/cosh1.jpg" class="align-center" src="../_images/cosh1.jpg" />
 </li>
 <li><p><span class="math notranslate nohighlight">\(1/(1+1/x)\)</span></p>
@@ -363,42 +361,42 @@ TeX: {
 </div>
 <div class="section" id="laplace-transform">
 <h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permalink to this headline">¶</a></h2>
-<p>Laplace transform is a transform of a function <span class="math notranslate nohighlight">\(f(t)\)</span> to a function of <span class="math notranslate nohighlight">\(s\)</span>,</p>
+<p>Laplace transform is a transform of a function of <span class="math notranslate nohighlight">\(t\)</span>, e.g. <span class="math notranslate nohighlight">\(f(t)\)</span>, to a function of <span class="math notranslate nohighlight">\(s\)</span>,</p>
 <div class="math notranslate nohighlight">
-\[L[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .\]</div>
+\[\mathscr{L}[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .\]</div>
 <p>Some useful properties:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(L[\frac{d}{dt}f(t)] = s L[f(t)] - f(0)\)</span>;</p></li>
-<li><p>:math:<a href="#id1"><span class="problematic" id="id2">`</span></a>L[frac{d^2}{dt^2}f(t) = s^2 L[f(t)] - s f(0) - frac{d f(0)}{dt} <a href="#id3"><span class="problematic" id="id4">`</span></a>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[\int_0^t g(\tau) d\tau ] = \frac{L[f(t)]}{s}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[\alpha t] = \frac{1}{\alpha} L[s/\alpha]\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[e^{at}f(t)] = L[f(s-a)]\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[tf(t)] = - \frac{d}{ds} L[f(t)]\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\frac{d}{dt}f(t)] = s \mathscr{L}[f(t)] - f(0)\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\frac{d^2}{dt^2}f(t) = s^2 \mathscr{L}[f(t)] - s f(0) - \frac{d f(0)}{dt}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\int_0^t g(\tau) d\tau ] = \frac{\mathscr{L}[f(t)]}{s}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\alpha t] = \frac{1}{\alpha} \mathscr{L}[s/\alpha]\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[e^{at}f(t)] = \mathscr{L}[f(s-a)]\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[tf(t)] = - \frac{d}{ds} \mathscr{L}[f(t)]\)</span>.</p></li>
 </ol>
 <p>Some useful results:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(L[1] = \frac{1}{s}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[\delta] = 1\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[\delta^k] = s^k\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[t] = \frac{1}{s^2}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[e^{at}]= \frac{1}[s-a]\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[1] = \frac{1}{s}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\delta] = 1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\delta^k] = s^k\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[t] = \frac{1}{s^2}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[e^{at}]= \frac{1}{s-a}\)</span>.</p></li>
 </ol>
 <p>A very nice property of Laplace transform is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}L_s [e^{at}f(t)] &amp;= \int_0^\infty e^{-st} e^{-at} f(t) dt \\
+\[\begin{split}\mathscr{L}_s [e^{at}f(t)] &amp;= \int_0^\infty e^{-st} e^{-at} f(t) dt \\
 &amp; =  \int_0^\infty e^{-(s+a)t}f(t) dt \\
 &amp; = L_{s+a}[f(t)]\end{split}\]</div>
 <p>which is very useful when dealing with master equations.</p>
 <p>Two useful results are</p>
 <div class="math notranslate nohighlight">
-\[L[I_0(2Ft)] = \frac{1}{\sqrt{ \epsilon^2 - (2F)^2 }}\]</div>
+\[\mathscr{L}[I_0(2Ft)] = \frac{1}{\sqrt{ \epsilon^2 - (2F)^2 }}\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
-\[L[J_0[2Ft]]  = \frac{1}{\sqrt{\epsilon^2 + (2F)^2}},\]</div>
+\[\mathscr{L}[J_0[2Ft]]  = \frac{1}{\sqrt{\epsilon^2 + (2F)^2}},\]</div>
 <p>where <span class="math notranslate nohighlight">\(I_0(2Ft)\)</span> is the modified Bessel functions of the first kind. <span class="math notranslate nohighlight">\(J_0(2Ft)\)</span> is its companion.</p>
 <p>Using the property above, we can find out</p>
 <div class="math notranslate nohighlight">
-\[L[I_0(2Ft)e^{-2Ft}]  = \frac{1}{\sqrt{(\epsilon + 2F)^2 - (2F)^2}} .\]</div>
+\[\mathscr{L}[I_0(2Ft)e^{-2Ft}]  = \frac{1}{\sqrt{(\epsilon + 2F)^2 - (2F)^2}} .\]</div>
 </div>
 <div class="section" id="functions-that-will-saturate">
 <h2>Functions that will saturate<a class="headerlink" href="#functions-that-will-saturate" title="Permalink to this headline">¶</a></h2>
@@ -408,11 +406,11 @@ TeX: {
 \cosh(\frac{1}{x}) - \frac{1}{x}\]</div>
 </div>
 <div class="section" id="legendre-transform">
-<span id="id5"></span><h2>Legendre Transform<a class="headerlink" href="#legendre-transform" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Legendre Transform<a class="headerlink" href="#legendre-transform" title="Permalink to this headline">¶</a></h2>
 <p>The geometrical of physical meaning of Legendre transformation in thermodynamics can be illustrated by the following graph.</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id3">
 <img alt="Legendre Transform made clear" src="../_images/LegendreTransform.png" />
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Legendre transform</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Legendre transform</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>For example, we know that entropy <span class="math notranslate nohighlight">\(S\)</span> is actually a function of temperature <span class="math notranslate nohighlight">\(T\)</span>. For simplicity, we assume that they are monotonically related like in the graph above. When we are talking about the quantity <span class="math notranslate nohighlight">\(T \mathrm d S\)</span> we actually mean the area shaded with blue grid lines. Meanwhile the area shaded with orange line means <span class="math notranslate nohighlight">\(S \mathrm d T\)</span>.</p>
 <p>Let’s think about the change in internal energy which only the thermal part are considered here, that is,</p>
@@ -436,26 +434,6 @@ TeX: {
   </div>
 </div>
 
-
-<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
-<div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'neuphysics'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script');
-            dsq.type = 'text/javascript';
-            dsq.async = true;
-            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the
-        <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-    </noscript>
-</div>
 
 <hr>
 
