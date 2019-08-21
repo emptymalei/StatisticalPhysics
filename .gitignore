@@ -118,3 +118,5 @@ dmypy.json
 .vscode/*
 
 _build/*
+
+conf.local.py
