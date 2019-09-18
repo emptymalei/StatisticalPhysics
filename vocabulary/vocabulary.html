@@ -297,10 +297,27 @@ TeX: {
 <p>The Gaussian integral is a handy tool for calculating/estimating integrals.</p>
 <div class="math notranslate nohighlight">
 \[\int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx = \sqrt{\frac{\pi}{a}}\]</div>
-<p>A comprehensive description of how this is done is <a class="reference external" href="http://mathworld.wolfram.com/GaussianIntegral.html">here</a>. The idea behind it is to transform integrals to the <span class="math notranslate nohighlight">\(\int e^{-x} \mathrm dx\)</span> problem by integrate by part.</p>
+<p>A comprehensive description of how this is done is <a class="reference external" href="http://mathworld.wolfram.com/GaussianIntegral.html">here</a>. It is easier to solve the integral using polar coordinates.</p>
+<p>In general, we could define a more general form of the integral,</p>
+<div class="math notranslate nohighlight">
+\[I_n(a) = \int_{0}^{\infty} e^{-ax^2} \mathrm dx.\]</div>
 <div class="note admonition">
-<p class="admonition-title">Examples</p>
-<p>Here are some examples.</p>
+<p class="admonition-title">A Practice of Symmetries</p>
+<p>The integral we just solved is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx \\
+=&amp; \int_{0}^\infty e^{- a x^2} \mathrm dx + \int_{-\infty}^0 e^{-a x^2} \mathrm dx  \\
+=&amp; I_0(a) - \int_{-x=\infty}^{-x=0} e^{-a (-x)^2} \mathrm d (-x) \\
+=&amp; I_0(a) + \int_{-x=0}^{-x=\infty} e^{-a (-x)^2} \mathrm d (-x) \\
+=&amp; I_0(a) + I_0(a) \\
+=&amp; 2 I_0(a)\end{split}\]</div>
+<p>Another view of this is that we could investigate the symmetry of the expression <span class="math notranslate nohighlight">\(I_n(a)\)</span>. By changing the sign of <span class="math notranslate nohighlight">\(x\)</span>, we know that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;\int_{x=0}^{x=\infty} e^{-a(-x)^2} \mathrm d(-x) \\
+=&amp; \int_{-x=0}^{-x=-\infty} e^{-a (-x)^2} \mathrm d(-x) \\
+=&amp; -\int_{x=0}^{x=\infty} e^{-a x^2} \mathrm dx \\
+= - I_n(a).\end{split}\]</div>
+<p>Using this we could easily calculate the first integral.</p>
 </div>
 </div>
 <div class="section" id="visual-understanding-of-functions">
