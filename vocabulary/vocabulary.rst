@@ -9,17 +9,21 @@ Vocabulary
 Gaussian Intergral
 --------------------
 
+The Gaussian integral is a handy tool for calculating/estimating integrals.
+
 .. math::
    \int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx = \sqrt{\frac{\pi}{a}}
 
-A comprehensive description of how this is done is `here <http://mathworld.wolfram.com/GaussianIntegral.html>`_.
+A comprehensive description of how this is done is `here <http://mathworld.wolfram.com/GaussianIntegral.html>`_. The idea behind it is to transform integrals to the :math:`\int e^{-x} \mathrm dx` problem by integrate by part.
 
-Basicly, we just transform the problem to the :math:`\int e^{-x} \mathrm dx` problem by integrate by part.
+.. admonition:: Examples
+   :class: note
+
+   Here are some examples.
 
 
 Visual Understanding of Functions
 ----------------------------------------------
-
 
 
 .. note::
