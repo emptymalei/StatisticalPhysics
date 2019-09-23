@@ -6,6 +6,8 @@ In this chapter, we will list some useful background and tricks, as well as some
 .. toctree::
     :maxdepth: 2
 
-    vocabulary.rst
+    functions.rst
+    integrals.rst
+    transforms.rst
     green.rst
-    program.rst
+    computations.rst

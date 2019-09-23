@@ -44,9 +44,9 @@ html_sidebars = {
         # 'searchbox.html',
         # 'donate.html',
         # 'chat.html',
-        'localtoc.html',
+        # 'localtoc.html',
         # 'sourcelink.html',
-        'searchbox.html'
+        # 'searchbox.html'
     ]
 }
 
