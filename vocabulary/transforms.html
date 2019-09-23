@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Program &#8212; Statistical Physics Notes</title>
+    <title>Transforms &#8212; Statistical Physics Notes</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Thermodynamics" href="../thermodynamics/index.html" />
-    <link rel="prev" title="Green’s Function" href="green.html" />
+    <link rel="next" title="Green’s Function" href="green.html" />
+    <link rel="prev" title="Integrals" href="integrals.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -159,9 +159,11 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Vocabulary and Program</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="vocabulary.html">Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrals.html">Integrals</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="green.html">Green’s Function</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="computations.html">Computations</a></li>
 </ul>
 </li>
 </ul>
@@ -216,8 +218,11 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Program</a><ul>
-<li><a class="reference internal" href="#monte-carlo">Monte Carlo</a></li>
+<li><a class="reference internal" href="#">Transforms</a><ul>
+<li><a class="reference internal" href="#fourier-transform">Fourier Transform</a></li>
+<li><a class="reference internal" href="#laplace-transform">Laplace Transform</a></li>
+<li><a class="reference internal" href="#legendre-transform">Legendre Transform</a></li>
+<li><a class="reference internal" href="#refs-note">Refs &amp; Note</a></li>
 </ul>
 </li>
 </ul>
@@ -229,11 +234,11 @@ TeX: {
               
                 
   <li>
-    <a href="green.html" title="Previous Chapter: Green’s Function"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Green’s Function</span>
+    <a href="integrals.html" title="Previous Chapter: Integrals"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Integrals</span>
     </a>
   </li>
   <li>
-    <a href="../thermodynamics/index.html" title="Next Chapter: Thermodynamics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Thermodynamics &raquo;</span>
+    <a href="green.html" title="Next Chapter: Green’s Function"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Green’s Function &raquo;</span>
     </a>
   </li>
               
@@ -259,48 +264,76 @@ TeX: {
 
 <div class="container">
   <div class="row">
-      <div class="col-md-3">
-        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">Program</a><ul>
-<li><a class="reference internal" href="#monte-carlo">Monte Carlo</a></li>
-</ul>
-</li>
-</ul>
-
-<form action="../search.html" method="get">
- <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
- </div>
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-        </div>
-      </div>
-    <div class="col-md-9 content">
+    <div class="col-md-12 content">
       
-  <div class="section" id="program">
-<h1>Program<a class="headerlink" href="#program" title="Permalink to this headline">¶</a></h1>
-<p>Most problems in stat mech have similiar procedures. This page is for the programs of solving problems.</p>
-<div class="section" id="monte-carlo">
-<h2>Monte Carlo<a class="headerlink" href="#monte-carlo" title="Permalink to this headline">¶</a></h2>
-<p>The steps of Monte Carlo of Metropolis.</p>
+  <div class="section" id="transforms">
+<span id="index-0"></span><h1>Transforms<a class="headerlink" href="#transforms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fourier-transform">
+<h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permalink to this headline">¶</a></h2>
+<p>Fourier transform for continuous equation is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial}{\partial x} e^{ikx}=ike^{ikx} &amp;\implies \frac{\partial}{\partial x} \to ik \\
+\frac{\partial^2}{\partial x^2} e^{ikx} = -k^2 e^{ikx} &amp; \implies \frac{\partial^2}{\partial x^2} \to -k^2\end{split}\]</div>
+</div>
+<div class="section" id="laplace-transform">
+<h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permalink to this headline">¶</a></h2>
+<p>Laplace transform is a transform of a function of <span class="math notranslate nohighlight">\(t\)</span>, e.g. <span class="math notranslate nohighlight">\(f(t)\)</span>, to a function of <span class="math notranslate nohighlight">\(s\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mathscr{L}[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .\]</div>
+<p>Some useful properties:</p>
 <ol class="arabic simple">
-<li><p>Initialize</p></li>
-<li><p>Change</p></li>
-<li><p>Transition probability</p></li>
-<li><p>Random number</p></li>
-<li><p>Compare</p></li>
-<li><p>Update states</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\frac{d}{dt}f(t)] = s \mathscr{L}[f(t)] - f(0)\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\frac{d^2}{dt^2}f(t) = s^2 \mathscr{L}[f(t)] - s f(0) - \frac{d f(0)}{dt}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\int_0^t g(\tau) d\tau ] = \frac{\mathscr{L}[f(t)]}{s}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\alpha t] = \frac{1}{\alpha} \mathscr{L}[s/\alpha]\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[e^{at}f(t)] = \mathscr{L}[f(s-a)]\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[tf(t)] = - \frac{d}{ds} \mathscr{L}[f(t)]\)</span>.</p></li>
 </ol>
-<p>Detail balance is the key to the update rule,</p>
+<p>Some useful results:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[1] = \frac{1}{s}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\delta] = 1\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\delta^k] = s^k\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[t] = \frac{1}{s^2}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[e^{at}]= \frac{1}{s-a}\)</span>.</p></li>
+</ol>
+<p>A very nice property of Laplace transform is</p>
 <div class="math notranslate nohighlight">
-\[P(S_i)P(S_i \to S_j) = P(S_j) P(S_j\to S_i),\]</div>
-<p>which can be rewritten as</p>
+\[\begin{split}\mathscr{L}_s [e^{at}f(t)] &amp;= \int_0^\infty e^{-st} e^{-at} f(t) dt \\
+&amp; =  \int_0^\infty e^{-(s+a)t}f(t) dt \\
+&amp; = L_{s+a}[f(t)]\end{split}\]</div>
+<p>which is very useful when dealing with master equations.</p>
+<p>Two useful results are</p>
 <div class="math notranslate nohighlight">
-\[\frac{P(S_i\to S_j)}{P(S_j\to S_i)} = \frac{ P(S_j) }{ P(S_i) }.\]</div>
-<p>For Boltzmann distribution, we have</p>
+\[\mathscr{L}[I_0(2Ft)] = \frac{1}{\sqrt{ \epsilon^2 - (2F)^2 }}\]</div>
+<p>and</p>
 <div class="math notranslate nohighlight">
-\[\frac{ P(S_j) }{ P(S_i) } = e^{ - (E_j - E_i)/k_B T}.\]</div>
+\[\mathscr{L}[J_0[2Ft]]  = \frac{1}{\sqrt{\epsilon^2 + (2F)^2}},\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_0(2Ft)\)</span> is the modified Bessel functions of the first kind. <span class="math notranslate nohighlight">\(J_0(2Ft)\)</span> is its companion.</p>
+<p>Using the property above, we can find out</p>
+<div class="math notranslate nohighlight">
+\[\mathscr{L}[I_0(2Ft)e^{-2Ft}]  = \frac{1}{\sqrt{(\epsilon + 2F)^2 - (2F)^2}} .\]</div>
+</div>
+<div class="section" id="legendre-transform">
+<span id="id1"></span><h2>Legendre Transform<a class="headerlink" href="#legendre-transform" title="Permalink to this headline">¶</a></h2>
+<p>The geometrical of physical meaning of Legendre transformation in thermodynamics can be illustrated by the following graph.</p>
+<div class="figure align-center" id="id2">
+<img alt="Legendre Transform made clear" src="../_images/LegendreTransform.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Legendre transform</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>For example, we know that entropy <span class="math notranslate nohighlight">\(S\)</span> is actually a function of temperature <span class="math notranslate nohighlight">\(T\)</span>. For simplicity, we assume that they are monotonically related like in the graph above. When we are talking about the quantity <span class="math notranslate nohighlight">\(T \mathrm d S\)</span> we actually mean the area shaded with blue grid lines. Meanwhile the area shaded with orange line means <span class="math notranslate nohighlight">\(S \mathrm d T\)</span>.</p>
+<p>Let’s think about the change in internal energy which only the thermal part are considered here, that is,</p>
+<div class="math notranslate nohighlight">
+\[\mathrm d U = T \mathrm d S  .\]</div>
+<p>So internal energy change is equal to the the area shaded with blue lines. Now think about a three dimensional graph with a third axis of internal energy which I can’t show here. Notice that the line of internal energy is on the plane which is vertical to <span class="math notranslate nohighlight">\({T, S}\)</span> plane and contains the line black line in the graph above. The change of internal energy with an increase of <span class="math notranslate nohighlight">\(\mathrm dS\)</span> is the value that the line of internal energy goes up.</p>
+<p>Now we do such a transform that we actually remove the internal energy from <span class="math notranslate nohighlight">\(\mathrm d ( T S )\)</span>, which finally gives us Helmholtz free energy,</p>
+<div class="math notranslate nohighlight">
+\[\mathrm d A = S \mathrm d T .\]</div>
+<p>It’s obvious that after this Legendre transform, the new area is the part shaded with orange lines.</p>
+<p>Now the key point is that <span class="math notranslate nohighlight">\(S(T)\)</span> is a function of <span class="math notranslate nohighlight">\(T\)</span>. So if we know the blue area then we can find out the orange area, which means that the two function <span class="math notranslate nohighlight">\(A(T)\)</span> and <span class="math notranslate nohighlight">\(U(S)\)</span> are identical. Choosing one of them for a specific calculation is a kind of freedom and won’t change the final results.</p>
+</div>
+<div class="section" id="refs-note">
+<h2>Refs &amp; Note<a class="headerlink" href="#refs-note" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -340,7 +373,7 @@ TeX: {
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../_sources/vocabulary/program.rst.txt"
+       <a href="../_sources/vocabulary/transforms.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 

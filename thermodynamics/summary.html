@@ -159,9 +159,11 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../vocabulary/vocabulary.html">Vocabulary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/integrals.html">Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/green.html">Green’s Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vocabulary/program.html">Program</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/computations.html">Computations</a></li>
 </ul>
 </li>
 </ul>
@@ -268,33 +270,7 @@ TeX: {
 
 <div class="container">
   <div class="row">
-      <div class="col-md-3">
-        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
-<li><a class="reference internal" href="#">Summary</a><ul>
-<li><a class="reference internal" href="#thermodynamic-potentials">Thermodynamic Potentials</a></li>
-<li><a class="reference internal" href="#differential-forms">Differential Forms</a><ul>
-<li><a class="reference internal" href="#related-papers">Related Papers</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#the-laws-of-four">The Laws of Four</a></li>
-<li><a class="reference internal" href="#the-entropy">The Entropy</a></li>
-<li><a class="reference internal" href="#irreversiblity">Irreversiblity</a></li>
-<li><a class="reference internal" href="#gas">Gas</a></li>
-<li><a class="reference internal" href="#refs-notes">Refs &amp; Notes</a></li>
-</ul>
-</li>
-</ul>
-
-<form action="../search.html" method="get">
- <div class="form-group">
-  <input type="text" name="q" class="form-control" placeholder="Search" />
- </div>
-  <input type="hidden" name="check_keywords" value="yes" />
-  <input type="hidden" name="area" value="default" />
-</form>
-        </div>
-      </div>
-    <div class="col-md-9 content">
+    <div class="col-md-12 content">
       
   <div class="section" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
@@ -314,7 +290,7 @@ TeX: {
 <p>The first thermodynamics potential we can think of is the (differential) internal energy, which, by definition is a function of entropy <span class="math notranslate nohighlight">\(S\)</span>, volume <span class="math notranslate nohighlight">\(V\)</span> and number of particles <span class="math notranslate nohighlight">\(N_i\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[d U(S,V,\{N_i\}) = T dS - p dV + \mu_i d N_i,\]</div>
-<p>where repeated indices are summed over. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in <a class="reference internal" href="../vocabulary/vocabulary.html#legendre-transform"><span class="std std-ref">Legendre Transform</span></a>.</p>
+<p>where repeated indices are summed over. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in <a class="reference internal" href="../vocabulary/transforms.html#legendre-transform"><span class="std std-ref">Legendre Transform</span></a>.</p>
 <p>Mathematically, three-variable function will generate seven extra functions through Legendre transform. The differential forms of them are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}dA(T,V,\{N_i\}) &amp; = dU(S,V,\{N_i\}) - d(ST) = - S dT - p dV + \mu_i dN_i\\

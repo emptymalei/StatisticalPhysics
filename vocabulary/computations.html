@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Some Topics in Statistical Mechanics &#8212; Statistical Physics Notes</title>
+    <title>Computations &#8212; Statistical Physics Notes</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Information Theory and Statistical Mechanics" href="information-theory-and-statistical-mechanics.html" />
-    <link rel="prev" title="Projection Technique" href="../nonequilibrium/projection-technique.html" />
+    <link rel="next" title="Thermodynamics" href="../thermodynamics/index.html" />
+    <link rel="prev" title="Green’s Function" href="green.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -157,13 +157,13 @@ TeX: {
      href="../index.html">Chapters <b class="caret"></b></a>
   <ul class="dropdown-menu globaltoc"
       role="menu"
-      aria-labelledby="dLabelGlobalToc"><ul>
-<li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../vocabulary/functions.html">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vocabulary/integrals.html">Integrals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vocabulary/transforms.html">Transforms</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vocabulary/green.html">Green’s Function</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../vocabulary/computations.html">Computations</a></li>
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Vocabulary and Program</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrals.html">Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="transforms.html">Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="green.html">Green’s Function</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Computations</a></li>
 </ul>
 </li>
 </ul>
@@ -200,9 +200,9 @@ TeX: {
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Some Topics in Statistical Mechanics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Some Topics in Statistical Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a></li>
 </ul>
 </li>
 </ul>
@@ -218,7 +218,10 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Some Topics in Statistical Mechanics</a></li>
+<li><a class="reference internal" href="#">Computations</a><ul>
+<li><a class="reference internal" href="#monte-carlo">Monte Carlo</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -228,11 +231,11 @@ TeX: {
               
                 
   <li>
-    <a href="../nonequilibrium/projection-technique.html" title="Previous Chapter: Projection Technique"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Projection Technique</span>
+    <a href="green.html" title="Previous Chapter: Green’s Function"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Green’s Function</span>
     </a>
   </li>
   <li>
-    <a href="information-theory-and-statistical-mechanics.html" title="Next Chapter: Information Theory and Statistical Mechanics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Information T... &raquo;</span>
+    <a href="../thermodynamics/index.html" title="Next Chapter: Thermodynamics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Thermodynamics &raquo;</span>
     </a>
   </li>
               
@@ -260,17 +263,29 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="some-topics-in-statistical-mechanics">
-<h1>Some Topics in Statistical Mechanics<a class="headerlink" href="#some-topics-in-statistical-mechanics" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="information-theory-and-statistical-mechanics.html#line-of-reasoning">Line of Reasoning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information-theory-and-statistical-mechanics.html#is-this-related-to-mutual-information">Is this related to mutual information?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information-theory-and-statistical-mechanics.html#classical-balls-on-chessboard">Classical Balls on Chessboard</a></li>
-</ul>
-</li>
-</ul>
+  <div class="section" id="computations">
+<h1>Computations<a class="headerlink" href="#computations" title="Permalink to this headline">¶</a></h1>
+<p>Most problems in stat mech have similiar procedures. This page is for the programs of solving problems.</p>
+<div class="section" id="monte-carlo">
+<h2>Monte Carlo<a class="headerlink" href="#monte-carlo" title="Permalink to this headline">¶</a></h2>
+<p>The steps of Monte Carlo of Metropolis.</p>
+<ol class="arabic simple">
+<li><p>Initialize</p></li>
+<li><p>Change</p></li>
+<li><p>Transition probability</p></li>
+<li><p>Random number</p></li>
+<li><p>Compare</p></li>
+<li><p>Update states</p></li>
+</ol>
+<p>Detail balance is the key to the update rule,</p>
+<div class="math notranslate nohighlight">
+\[P(S_i)P(S_i \to S_j) = P(S_j) P(S_j\to S_i),\]</div>
+<p>which can be rewritten as</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(S_i\to S_j)}{P(S_j\to S_i)} = \frac{ P(S_j) }{ P(S_i) }.\]</div>
+<p>For Boltzmann distribution, we have</p>
+<div class="math notranslate nohighlight">
+\[\frac{ P(S_j) }{ P(S_i) } = e^{ - (E_j - E_i)/k_B T}.\]</div>
 </div>
 </div>
 
@@ -310,7 +325,7 @@ TeX: {
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../_sources/topics/index.rst.txt"
+       <a href="../_sources/vocabulary/computations.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 
