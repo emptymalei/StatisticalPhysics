@@ -1,116 +1,7 @@
-.. index:: Gaussian Integral, Special Functions
+.. index:: Laplace Transform
 
-
-Vocabulary
+Transforms
 ===========
-
-.. index:: Gaussian Integral
-
-Gaussian Intergral
---------------------
-
-The Gaussian integral is a handy tool for calculating/estimating integrals.
-
-.. math::
-   \int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx = \sqrt{\frac{\pi}{a}}
-   :label: gaussian-integral-1
-
-A comprehensive description of how this is proved is `here <http://mathworld.wolfram.com/GaussianIntegral.html>`_. The idea is to transform the integral into a new integral that can be easily integrated using polar coordinates.
-
-In general, we could define a more general form of the integral,
-
-.. math::
-   I_n(a) = \int_{0}^{\infty} e^{-ax^2} x^n \mathrm dx.
-
-One we know the following two integrals, we could easily find $I_n(a)$ for any integer $n$.
-
-.. math::
-   I_0(a) &= \frac{1}{2}\sqrt{\frac{\pi}{a}} \\
-   I_1(a) &= \frac{1}{2}\frac{\pi}{a}
-
-.. admonition:: A Practice of Symmetries
-   :class: note
-
-   The integral :eq:`gaussian-integral-1` we just solved is
-
-   .. math::
-      &\int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx \\
-      =& \int_{0}^\infty e^{- a x^2} \mathrm dx + \int_{-\infty}^0 e^{-a x^2} \mathrm dx  \\
-      =& I_0(a) - \int_{-x=\infty}^{-x=0} e^{-a (-x)^2} \mathrm d (-x) \\
-      =& I_0(a) + \int_{-x=0}^{-x=\infty} e^{-a (-x)^2} \mathrm d (-x) \\
-      =& I_0(a) + I_0(a) \\
-      =& 2 I_0(a)
-
-   Another view of this is that we could investigate the symmetry of the expression :math:`I_n(a)`. By changing the sign of :math:`x`, we know that
-
-   .. math::
-      &\int_{x=0}^{x=\infty} e^{-a(-x)^2} \mathrm d(-x) \\
-      =& \int_{-x=0}^{-x=-\infty} e^{-a (-x)^2} \mathrm d(-x) \\
-      =& -\int_{x=0}^{x=\infty} e^{-a x^2} \mathrm dx \\
-      =& - I_n(a).
-
-   Using this we could easily calculate the first integral.
-
-
-
-
-Visual Understanding of Functions
-----------------------------------------------
-
-
-.. note::
-   It is much easier to understand the functions or dataset if we make the quantities dimensionless. This trick is also extremely useful for theoretical derivations. In other words, dimensionless equations can reveal more.
-
-
-0. **Boltzmann factor**
-
-   Boltzmann factor is both important and weird in statmech.
-
-   .. figure:: ../_static/voc/boltzfactor.png
-      :align: center
-
-      The nth order derivative of this function is always 0 at x=0, for all finite n. Then the question is, how could this function even grow to non-zero values? The reason is that we are actually dealing with infinite nth order derivatives.
-
-      Quoter from Professor Kenkre: sleeping lion!
-
-
-1. Tanh(x)
-
-   .. image:: ../_static/voc/tanh.jpg
-      :align: center
-
-2. :math:`1-\exp(-x)`
-
-   .. image:: ../_static/voc/exp1.jpg
-      :align: center
-
-3. :math:`\cosh(1/x)-1/x`
-
-   .. image:: ../_static/voc/cosh1.jpg
-      :align: center
-
-4. :math:`1/(1+1/x)`
-
-   .. image:: ../_static/voc/fraction1.jpg
-      :align: center
-
-
-
-   .. admonition:: Examples in Physics
-      :class: note
-
-      An example of this :math:`1/(1+1/x)` is the modified gas model.
-
-      .. math::
-         P (V - b) = N k T
-
-      We can find out :math:`1/V`, which is
-
-      .. math::
-         \frac{1}{V} = \frac{1}{b+\frac{N k T}{P}}
-
-      Now we can plot out :math:`\frac{1}{V} ~ P` and it shows a behavior just like :math:`1/(1+1/x)`.
-
 
 
 
@@ -183,17 +74,6 @@ Using the property above, we can find out
 
 
 
-Functions that will saturate
-----------------------------
-
-
-.. math::
-   1-e^{-\alpha x}
-   \tanh(x)
-   \cosh(\frac{1}{x}) - \frac{1}{x}
-
-
-
 .. _legendre-transform:
 
 Legendre Transform
@@ -227,12 +107,6 @@ Now we do such a transform that we actually remove the internal energy from :mat
 It's obvious that after this Legendre transform, the new area is the part shaded with orange lines.
 
 Now the key point is that :math:`S(T)` is a function of :math:`T`. So if we know the blue area then we can find out the orange area, which means that the two function :math:`A(T)` and :math:`U(S)` are identical. Choosing one of them for a specific calculation is a kind of freedom and won't change the final results.
-
-
-
-
-
-
 
 
 
