@@ -13,18 +13,25 @@ The Gaussian integral is a handy tool for calculating/estimating integrals.
 
 .. math::
    \int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx = \sqrt{\frac{\pi}{a}}
+   :label: gaussian-integral-1
 
-A comprehensive description of how this is done is `here <http://mathworld.wolfram.com/GaussianIntegral.html>`_. It is easier to solve the integral using polar coordinates.
+A comprehensive description of how this is proved is `here <http://mathworld.wolfram.com/GaussianIntegral.html>`_. The idea is to transform the integral into a new integral that can be easily integrated using polar coordinates.
 
 In general, we could define a more general form of the integral,
 
 .. math::
-   I_n(a) = \int_{0}^{\infty} e^{-ax^2} \mathrm dx.
+   I_n(a) = \int_{0}^{\infty} e^{-ax^2} x^n \mathrm dx.
+
+One we know the following two integrals, we could easily find $I_n(a)$ for any integer $n$.
+
+.. math::
+   I_0(a) &= \frac{1}{2}\sqrt{\frac{\pi}{a}} \\
+   I_1(a) &= \frac{1}{2}\frac{\pi}{a}
 
 .. admonition:: A Practice of Symmetries
    :class: note
 
-   The integral we just solved is
+   The integral :eq:`gaussian-integral-1` we just solved is
 
    .. math::
       &\int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx \\
@@ -40,7 +47,7 @@ In general, we could define a more general form of the integral,
       &\int_{x=0}^{x=\infty} e^{-a(-x)^2} \mathrm d(-x) \\
       =& \int_{-x=0}^{-x=-\infty} e^{-a (-x)^2} \mathrm d(-x) \\
       =& -\int_{x=0}^{x=\infty} e^{-a x^2} \mathrm dx \\
-      = - I_n(a).
+      =& - I_n(a).
 
    Using this we could easily calculate the first integral.
 
