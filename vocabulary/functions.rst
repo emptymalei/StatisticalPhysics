@@ -11,13 +11,16 @@ Visual Understanding of Functions
 ----------------------------------------------
 
 
-.. note::
+.. admonition:: Make it Dimensionless
+   :class: toggle
+
    In most cases, datasets, functions, and equations in physics carry dimensions.
 
    It is much easier to understand the datasets, functions and equations if we make them dimensionless. In other words, dimensionless equations and functions can reveal some more fundamental propertities of themselves and are easier to use.
 
    This trick is extremely useful for theoretical derivations.
 
+We plot out some most used functions in statistical physics.
 
 0. **Boltzmann factor**
 
@@ -53,18 +56,27 @@ Visual Understanding of Functions
 
 
 
-   .. admonition:: Examples in Physics
-      :class: note
+   .. admonition:: Example: Modified Gas Model
+      :class: toggle
 
-      An example of this :math:`1/(1+1/x)` is the modified gas model.
-
-      .. math::
-         P (V - b) = N k T
-
-      We can find out :math:`1/V`, which is
+      The ideal gas law is determined by
 
       .. math::
-         \frac{1}{V} = \frac{1}{b+\frac{N k T}{P}}
+         P V = NkT,
+
+      where :math:`P` is the pressure of the gas, :math:`V` is the volume, :math:`N` is the total number of molecules, :math:`T` is the temperature, and :math:`k` is the Boltzmann constant. This equation is telling us that the pressure is proportional to the temperature for a fixed bottle of gas.
+
+      However, the idea gas model sees the gas molecules as points without any interactions between them. For real gas, molecules do interact with each other. Effectively, we have an effective size for the molecules.
+
+      So we modified ideal gas model so that the molecules are treated as hard balls. Assuming the molecules are taking up volume :math:`b` out of the total volume of the gas, we simply need to replace :math:`V` with :math:`V-b`, i.e.,
+
+      .. math::
+         P (V - b) = N k T.
+
+      We solve :math:`1/V`, which is
+
+      .. math::
+         \frac{1}{V} = \frac{1}{b+\frac{N k T}{P}}.
 
       Now we can plot out :math:`\frac{1}{V} ~ P` and it shows a behavior just like :math:`1/(1+1/x)`.
 
@@ -80,7 +92,10 @@ Functions that will saturate
    \tanh(x)
    \cosh(\frac{1}{x}) - \frac{1}{x}
 
+.. figure:: images/function-1etcf.png
+   :align: center
 
+   Plot of the function
 
 
 
