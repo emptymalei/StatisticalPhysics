@@ -4,10 +4,7 @@ Statistical Physics
 
 
 
-This is a set of lecture notes for statistical physics.
-
-
-
+This started as a set of lecture notes for the statistical physics course I took. Then I expanded it and rebuilt it into something much more useful.
 
 Acknowledgement
 ==================
@@ -23,8 +20,6 @@ Professor Kenkre's lectures are fantastic. He made the lectures to be as inspiri
 It says that the subplot permeates through thousands of pages before people realize it's importance.
 
 I am very grateful to him for this adventure of modern statistical mechanics. I am also very grateful to the TA of this course, `Anastasia <http://www.unm.edu/~aierides/505/>`_, who helped me a lot with my homework and lecture notes.
-
-
 
 
 

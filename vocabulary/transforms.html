@@ -270,13 +270,30 @@ TeX: {
 <span id="index-0"></span><h1>Transforms<a class="headerlink" href="#transforms" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="fourier-transform">
 <h2>Fourier Transform<a class="headerlink" href="#fourier-transform" title="Permalink to this headline">¶</a></h2>
-<p>Fourier transform for continuous equation is</p>
+<p>Fourier transforms are quite useful in solving differential equations. By decomposing the functions using Fourier transform, we might be able to simplify many differential equations.</p>
+<p>Suppose we have a differential equation</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial}{\partial x} f(x) = a g(x).\]</div>
+<p>To solve the equation, we decompose <span class="math notranslate nohighlight">\(f(x)\)</span> using its Fourier transform,</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{2\pi} \int_{-\infty}^{\infty} f(k) e^{ikx} dk.\]</div>
+<p>Then we get</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{2\pi}\frac{\partial}{\partial x} \int_{-\infty}^{\infty} f(k) e^{ikx} dk = a \frac{1}{2\pi}\int_{-\infty}^{\infty} g(k) e^{ikx} dk.\]</div>
+<p>The equation is then simplified into</p>
+<div class="math notranslate nohighlight">
+\[ik f(k) = a g(k).\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To summarize, we simple do replacement of the differential operators.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{\partial}{\partial x} e^{ikx}=ike^{ikx} &amp;\implies \frac{\partial}{\partial x} \to ik \\
 \frac{\partial^2}{\partial x^2} e^{ikx} = -k^2 e^{ikx} &amp; \implies \frac{\partial^2}{\partial x^2} \to -k^2\end{split}\]</div>
 </div>
+</div>
 <div class="section" id="laplace-transform">
 <h2>Laplace Transform<a class="headerlink" href="#laplace-transform" title="Permalink to this headline">¶</a></h2>
+<p>Similar to Fourier transform, Laplace transform is also useful in equation solving.</p>
 <p>Laplace transform is a transform of a function of <span class="math notranslate nohighlight">\(t\)</span>, e.g. <span class="math notranslate nohighlight">\(f(t)\)</span>, to a function of <span class="math notranslate nohighlight">\(s\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\mathscr{L}[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .\]</div>
@@ -295,6 +312,7 @@ TeX: {
 <li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\delta] = 1\)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\delta^k] = s^k\)</span>;</p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathscr{L}[t] = \frac{1}{s^2}\)</span>;</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[t^n] = \frac{n!}{s^{n+1}}\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\mathscr{L}[e^{at}]= \frac{1}{s-a}\)</span>.</p></li>
 </ol>
 <p>A very nice property of Laplace transform is</p>
@@ -313,27 +331,71 @@ TeX: {
 <p>Using the property above, we can find out</p>
 <div class="math notranslate nohighlight">
 \[\mathscr{L}[I_0(2Ft)e^{-2Ft}]  = \frac{1}{\sqrt{(\epsilon + 2F)^2 - (2F)^2}} .\]</div>
+<div class="toggle admonition">
+<p class="admonition-title">Example: Solving Differential Equations</p>
+<p>For a first order differential equation</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = x,\]</div>
+<p>we apply Laplace transform,</p>
+<div class="math notranslate nohighlight">
+\[s F(s) - f(0) = \frac{1}{s^2},\]</div>
+<p>from which we solve</p>
+<div class="math notranslate nohighlight">
+\[F(s) = \frac{1}{s^3} + \frac{f(0)}{s}.\]</div>
+<p>Then we lookup in the transform table, we find that</p>
+<div class="math notranslate nohighlight">
+\[f(x) = x^2/2 + f(0).\]</div>
+</div>
 </div>
 <div class="section" id="legendre-transform">
 <span id="id1"></span><h2>Legendre Transform<a class="headerlink" href="#legendre-transform" title="Permalink to this headline">¶</a></h2>
-<p>The geometrical of physical meaning of Legendre transformation in thermodynamics can be illustrated by the following graph.</p>
+<p>The geometrical meaning of Legendre transformation in thermodynamics can be illustrated by the following graph.</p>
 <div class="figure align-center" id="id2">
 <img alt="Legendre Transform made clear" src="../_images/LegendreTransform.png" />
-<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Legendre transform</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Legendre transform</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>For example, we know that entropy <span class="math notranslate nohighlight">\(S\)</span> is actually a function of temperature <span class="math notranslate nohighlight">\(T\)</span>. For simplicity, we assume that they are monotonically related like in the graph above. When we are talking about the quantity <span class="math notranslate nohighlight">\(T \mathrm d S\)</span> we actually mean the area shaded with blue grid lines. Meanwhile the area shaded with orange line means <span class="math notranslate nohighlight">\(S \mathrm d T\)</span>.</p>
-<p>Let’s think about the change in internal energy which only the thermal part are considered here, that is,</p>
+<p>In the above example, we know that entropy <span class="math notranslate nohighlight">\(S\)</span> is actually a function of temperature <span class="math notranslate nohighlight">\(T\)</span>. For simplicity, we assume that they are monotonically related like in the graph above. When we are talking about the quantity <span class="math notranslate nohighlight">\(T \mathrm d S\)</span> we actually mean the area shaded with blue grid lines. Meanwhile the area shaded with orange line means <span class="math notranslate nohighlight">\(S \mathrm d T\)</span>.</p>
+<p>Let’s think about the change in internal energy. For this example, we only consider the thermal part,</p>
 <div class="math notranslate nohighlight">
 \[\mathrm d U = T \mathrm d S  .\]</div>
-<p>So internal energy change is equal to the the area shaded with blue lines. Now think about a three dimensional graph with a third axis of internal energy which I can’t show here. Notice that the line of internal energy is on the plane which is vertical to <span class="math notranslate nohighlight">\({T, S}\)</span> plane and contains the line black line in the graph above. The change of internal energy with an increase of <span class="math notranslate nohighlight">\(\mathrm dS\)</span> is the value that the line of internal energy goes up.</p>
-<p>Now we do such a transform that we actually remove the internal energy from <span class="math notranslate nohighlight">\(\mathrm d ( T S )\)</span>, which finally gives us Helmholtz free energy,</p>
+<p>Internal energy change is equal to the the area shaded with blue lines. The area shaded with orange lines is the Helmholtz free energy,</p>
 <div class="math notranslate nohighlight">
 \[\mathrm d A = S \mathrm d T .\]</div>
-<p>It’s obvious that after this Legendre transform, the new area is the part shaded with orange lines.</p>
-<p>Now the key point is that <span class="math notranslate nohighlight">\(S(T)\)</span> is a function of <span class="math notranslate nohighlight">\(T\)</span>. So if we know the blue area then we can find out the orange area, which means that the two function <span class="math notranslate nohighlight">\(A(T)\)</span> and <span class="math notranslate nohighlight">\(U(S)\)</span> are identical. Choosing one of them for a specific calculation is a kind of freedom and won’t change the final results.</p>
+<p>The two quantities <span class="math notranslate nohighlight">\(T \mathrm d S\)</span> and <span class="math notranslate nohighlight">\(S \mathrm d T\)</span> sum up to <span class="math notranslate nohighlight">\(d(TS)\)</span>. This is also the area change of the rectangle determined by two edges <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>This is a Legendre transform,</p>
+<div class="math notranslate nohighlight">
+\[\mathrm d U \to \mathrm d A,\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[T\mathrm dS \to S \mathrm d T.\]</div>
+<p>The point is that <span class="math notranslate nohighlight">\(S(T)\)</span> is a function of <span class="math notranslate nohighlight">\(T\)</span>. However, if we know the blue area, we can find out the orange area. This means that the two functions <span class="math notranslate nohighlight">\(A(T)\)</span> and <span class="math notranslate nohighlight">\(U(S)\)</span> are somewhat like a pair. Choosing one of them for a specific calculation is a choice of freedom but we carry all the information in either one.</p>
+<p>The above example we use is not the exact Legendre transform. The mathematical form is a little bit tedious but we will illustrate it using an example. For a function <span class="math notranslate nohighlight">\(U(T, S)\)</span>, we find its differential as</p>
+<div class="math notranslate nohighlight">
+\[\mathrm d U(T, X) = \frac{\partial U}{\partial T} \mathrm d T + \frac{\partial U}{\partial X} \mathrm d X.\]</div>
+<p>For convinience, we define</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}S =&amp; \frac{\partial U}{\partial T} \\
+Y =&amp; \frac{\partial U}{\partial X}.\end{split}\]</div>
+<p>The differential of function becomes</p>
+<div class="math notranslate nohighlight">
+\[\mathrm d U(T, X) = S \mathrm dT + Y \mathrm d X,\]</div>
+<p>where <span class="math notranslate nohighlight">\(S\)</span> (<span class="math notranslate nohighlight">\(Y\)</span>) and <span class="math notranslate nohighlight">\(T\)</span> (<span class="math notranslate nohighlight">\(X\)</span>) are a conjugate pair.</p>
+<p>A Legendre transform says that we change the variable of the differential from <span class="math notranslate nohighlight">\(T\)</span> (<span class="math notranslate nohighlight">\(X\)</span>) to <span class="math notranslate nohighlight">\(S\)</span> (<span class="math notranslate nohighlight">\(Y\)</span>). For example, we know that</p>
+<div class="math notranslate nohighlight">
+\[S \mathrm d T = \mathrm d (ST) - T \mathrm d S.\]</div>
+<p>Plugging this into <span class="math notranslate nohighlight">\(\mathrm d U\)</span>, we get</p>
+<div class="math notranslate nohighlight">
+\[\mathrm d U(T, X) - \mathrm d(ST) = - T \mathrm dS + Y \mathrm d X.\]</div>
+<p>The left hand side is defined as a new differential</p>
+<div class="math notranslate nohighlight">
+\[\mathrm d A(S, X) = \mathrm d ( U(T, X) - ST ).\]</div>
+<p>In these calculations, <span class="math notranslate nohighlight">\(U\)</span> is our internal energy and <span class="math notranslate nohighlight">\(A\)</span> is our Helmholtz free energy. The transform that changes the variable from <span class="math notranslate nohighlight">\(X\)</span> to <span class="math notranslate nohighlight">\(Y\)</span> gives us enthalpy <span class="math notranslate nohighlight">\(H\)</span>. If we transform both variables then we get Gibbs free energy <span class="math notranslate nohighlight">\(G\)</span>.</p>
 </div>
 <div class="section" id="refs-note">
 <h2>Refs &amp; Note<a class="headerlink" href="#refs-note" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Zia, Royce K. P., Edward F. Redish and Susan R. McKay. “Making sense of the Legendre transform.” (2009).</p></li>
+</ol>
 </div>
 </div>
 

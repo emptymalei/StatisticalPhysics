@@ -51,8 +51,10 @@ We plot out some most used functions in statistical physics.
 
 4. :math:`1/(1+1/x)`
 
-   .. image:: ../_static/voc/fraction1.jpg
+   .. figure:: ../_static/voc/fraction1.jpg
       :align: center
+
+      The function approaches 1 at :math:`x\to \infty`
 
 
 
@@ -82,20 +84,12 @@ We plot out some most used functions in statistical physics.
 
 
 
+5. :math:`1-e^{-\alpha x}\tanh(x)\cosh(\frac{1}{x}) - \frac{1}{x}`
 
-Functions that will saturate
-----------------------------
+   .. figure:: images/function-1etcf.png
+      :align: center
 
-
-.. math::
-   1-e^{-\alpha x}
-   \tanh(x)
-   \cosh(\frac{1}{x}) - \frac{1}{x}
-
-.. figure:: images/function-1etcf.png
-   :align: center
-
-   Plot of the function
+      It is easy to prove that this function will saturate to 1 at :math:`x\to \infty`
 
 
 
