@@ -196,7 +196,7 @@ The left hand side is defined as a new differential
 .. math::
    \mathrm d A(S, X) = \mathrm d ( U(T, X) - ST ).
 
-In these calculations, :math:`U` is our internal energy and :math:`A` is our Helmholtz free energy. The transform that changes the variable from :math:`X` to :math:`Y` gives us enthalpy :math:`H`. If we transform both variables then we get Gibbs free energy :math:`G`.
+In these calculations, :math:`U` is our internal energy and :math:`A` is our Helmholtz free energy. The transform that changes the variable from :math:`X` to :math:`Y` gives us enthalpy :math:`H`. If we transform both variables then we get Gibbs free energy :math:`G`. More about the thermodynamic potentials will be discussed in the following chapters.
 
 
 
