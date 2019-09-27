@@ -219,7 +219,7 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Green’s Function</a><ul>
-<li><a class="reference internal" href="#green-s-functions-for-second-order-equations">Green’s Functions for Second Order Equations</a><ul>
+<li><a class="reference internal" href="#green-s-function-for-second-order-differential-equations">Green’s Function for Second Order Differential Equations</a><ul>
 <li><a class="reference internal" href="#examples">Examples</a></li>
 </ul>
 </li>
@@ -268,52 +268,52 @@ TeX: {
       
   <div class="section" id="green-s-function">
 <h1>Green’s Function<a class="headerlink" href="#green-s-function" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="green-s-functions-for-second-order-equations">
-<span id="index-0"></span><h2>Green’s Functions for Second Order Equations<a class="headerlink" href="#green-s-functions-for-second-order-equations" title="Permalink to this headline">¶</a></h2>
-<p>Any second order differential equations can be written as</p>
+<div class="section" id="green-s-function-for-second-order-differential-equations">
+<span id="index-0"></span><h2>Green’s Function for Second Order Differential Equations<a class="headerlink" href="#green-s-function-for-second-order-differential-equations" title="Permalink to this headline">¶</a></h2>
+<p>A general form of second order differential equations is written as</p>
 <div class="math notranslate nohighlight">
 \[L[y] \equiv y'' + p(x) y' + q(x) y = f(x),\]</div>
 <p>for <span class="math notranslate nohighlight">\(a&lt;x&lt;b\)</span> with boundary conditions</p>
 <div class="math notranslate nohighlight">
 \[B_1[y] = B_2[y] = 0.\]</div>
-<p>The solution should be</p>
+<p>The solution to it is</p>
 <div class="math notranslate nohighlight">
 \[y(x) = \int _a ^b G(x\vert \xi) f(\xi) d\xi\]</div>
-<p>where Green function is defined as</p>
+<p>where <span class="math notranslate nohighlight">\(G(x\vert \xi)\)</span> is the Green’s function. The Green’s function is an impulse response of the dynamical system, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[L[G(x\vert \xi)] = \delta(x-\xi)\]</div>
 <p>with the two boundary conditions,</p>
 <div class="math notranslate nohighlight">
 \[B_1[G] = B_2[G] = 0.\]</div>
-<p>First order differential of Green function <span class="math notranslate nohighlight">\(G'(x\vert \xi)\)</span> has a jump condition at <span class="math notranslate nohighlight">\(x=\xi\)</span> that the jump discontinuity of height is 1.</p>
+<p>First order differential of Green’s function <span class="math notranslate nohighlight">\(G'(x\vert \xi)\)</span> has a jump discontinuity at <span class="math notranslate nohighlight">\(x=\xi\)</span>. This is expected since we have to have a dirac delta type of response at <span class="math notranslate nohighlight">\(x=\xi\)</span>.</p>
 <div class="section" id="examples">
 <h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
 <p>For a 2nd order differential equation,</p>
 <div class="math notranslate nohighlight">
-\[y''(x) = f(x), \qquad y(0)= y(1)=0.\]</div>
-<p>Then Green function for this problem is</p>
+\[y''(x) = f(x), \qquad y(0)= y(1)=0,\]</div>
+<p>the Green function is</p>
 <div class="math notranslate nohighlight">
 \[G''(x\vert \xi) = \delta(x-\xi), \qquad G(0\vert \xi) = G(1\vert \xi) = 0.\]</div>
-<p>We know the two solutions to the homogeneous equation, <span class="math notranslate nohighlight">\(y=1\)</span> or <span class="math notranslate nohighlight">\(y=x\)</span>. However, only the second solution can satisfy the BC. So Green function should have these properties,</p>
+<p>We already know the two solutions to the homogeneous equation, <span class="math notranslate nohighlight">\(y=1\)</span> or <span class="math notranslate nohighlight">\(y=x\)</span>. However, only the second solution can satisfy the boundary conditions. Then the Green’s function should have these properties,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}G(x\vert \xi) = \begin{cases} c_1+c_2 x &amp;\quad  x&lt;\xi \\ d_1+d_2 x &amp; \quad x&gt;\xi .  \end{cases}\end{split}\]</div>
-<p>The BCs give us</p>
+\[\begin{split}G(x\vert \xi) = \begin{cases} c_1+c_2 x, &amp;\quad  x&lt;\xi \\ d_1+d_2 x. &amp; \quad x&gt;\xi  \end{cases}\end{split}\]</div>
+<p>The boundary conditions give us</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}G(x\vert \xi) = \begin{cases} c x &amp;\quad  x&lt;\xi \\ d(x-1) \quad x&gt;\xi . \end{cases}\end{split}\]</div>
-<p>Green functon must be continuous, we have</p>
+\[\begin{split}G(x\vert \xi) = \begin{cases} c x, &amp;\quad  x&lt;\xi \\ d(x-1). &amp; \quad x&gt;\xi  \end{cases}\end{split}\]</div>
+<p>We also know that the Green’s functon must be continuous, we then require</p>
 <div class="math notranslate nohighlight">
 \[c\xi = d (\xi -1).\]</div>
-<p>Apply the discontinuity of the first order derivative of Green function,</p>
+<p>Using the discontinuity of the first order derivative of the Green’s function, we get</p>
 <div class="math notranslate nohighlight">
 \[d_x d (x-1)- d_x cx = 1.\]</div>
-<p>With all these equation, we can determine the Green function,</p>
+<p>With all these equation, we determine the Green’s function,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}G(x\vert\xi) = \begin{cases}  (\xi -1 ) x , &amp; \qquad x&lt;\xi  \\ \xi(x-1), &amp; \qquad x&gt;\xi  \end{cases}\end{split}\]</div>
-<p>Finally we integrate over <span class="math notranslate nohighlight">\(\xi\)</span> to get the solution,</p>
+\[\begin{split}G(x\vert\xi) = \begin{cases}  (\xi -1 ) x , &amp; \qquad x&lt;\xi  \\ \xi(x-1). &amp; \qquad x&gt;\xi  \end{cases}\end{split}\]</div>
+<p>To get the solution to <span class="math notranslate nohighlight">\(y\)</span>, we integrate over <span class="math notranslate nohighlight">\(\xi\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}y(x) &amp;= \int_0^1  G(x\vert \xi) f(\xi) d\xi  \\
 &amp; = (x-1)\int_0^x \xi f(\xi) d\xi + x \int_x^1 (\xi -1) f(\xi) d\xi .\end{split}\]</div>
-<p>This is the power of Green function.</p>
+<p>It is that easy. This is the super power of the Green’s function.</p>
 </div>
 </div>
 </div>
