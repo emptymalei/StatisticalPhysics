@@ -44,46 +44,45 @@ Examples
 For a 2nd order differential equation,
 
 .. math::
-   y''(x) = f(x), \qquad y(0)= y(1)=0.
+   y''(x) = f(x), \qquad y(0)= y(1)=0,
 
 
-Then Green function for this problem is
+the Green function is
 
 .. math::
    G''(x\vert \xi) = \delta(x-\xi), \qquad G(0\vert \xi) = G(1\vert \xi) = 0.
 
-We know the two solutions to the homogeneous equation, :math:`y=1` or :math:`y=x`. However, only the second solution can satisfy the BC. So Green function should have these properties,
+We already know the two solutions to the homogeneous equation, :math:`y=1` or :math:`y=x`. However, only the second solution can satisfy the boundary conditions. Then the Green's function should have these properties,
 
 .. math::
-   G(x\vert \xi) = \begin{cases} c_1+c_2 x &\quad  x<\xi \\ d_1+d_2 x & \quad x>\xi .  \end{cases}
+   G(x\vert \xi) = \begin{cases} c_1+c_2 x, &\quad  x<\xi \\ d_1+d_2 x. & \quad x>\xi  \end{cases}
 
-The BCs give us
+The boundary conditions give us
 
 .. math::
-   G(x\vert \xi) = \begin{cases} c x &\quad  x<\xi \\ d(x-1) \quad x>\xi . \end{cases}
+   G(x\vert \xi) = \begin{cases} c x, &\quad  x<\xi \\ d(x-1). & \quad x>\xi  \end{cases}
 
 
-Green functon must be continuous, we have
+We also know that the Green's functon must be continuous, we then require
 
 .. math::
    c\xi = d (\xi -1).
 
-Apply the discontinuity of the first order derivative of Green function,
+Using the discontinuity of the first order derivative of the Green's function, we get
 
 .. math::
    d_x d (x-1)- d_x cx = 1.
 
-With all these equation, we can determine the Green function,
+With all these equation, we determine the Green's function,
 
 .. math::
-   G(x\vert\xi) = \begin{cases}  (\xi -1 ) x , & \qquad x<\xi  \\ \xi(x-1), & \qquad x>\xi  \end{cases}
+   G(x\vert\xi) = \begin{cases}  (\xi -1 ) x , & \qquad x<\xi  \\ \xi(x-1). & \qquad x>\xi  \end{cases}
 
 
-Finally we integrate over :math:`\xi` to get the solution,
+To get the solution to :math:`y`, we integrate over :math:`\xi`,
 
 .. math::
    y(x) &= \int_0^1  G(x\vert \xi) f(\xi) d\xi  \\
    & = (x-1)\int_0^x \xi f(\xi) d\xi + x \int_x^1 (\xi -1) f(\xi) d\xi .
 
-
-This is the power of Green function.
+It is that easy. This is the super power of the Green's function.
