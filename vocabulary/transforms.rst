@@ -161,9 +161,9 @@ or
 .. math::
    T\mathrm dS \to S \mathrm d T.
 
-The point is that :math:`S(T)` is a function of :math:`T`. However, if we know the blue area, we can find out the orange area. This means that the two functions :math:`A(T)` and :math:`U(S)` are somewhat like a pair. Choosing one of them for a specific calculation is a choice of freedom but we carry all the information in either one.
+The point is that :math:`S(T)` is a function of :math:`T`. However, if we know the blue area, we can find out the orange area. This means that the two functions :math:`A(T)` and :math:`U(S)` are somewhat like a pair. Choosing one of them for a specific calculation is a choice of freedom but we carry all the information in either one once the relation between :math:`T` and :math:`S` is know.
 
-The above example we use is not the exact Legendre transform. The mathematical form is a little bit tedious but we will illustrate it using an example. For a function :math:`U(T, S)`, we find its differential as
+The above example sheds light on Legendre transform. The mathematical form is a little bit tricky so we will illustrate it using an example. For a function :math:`U(T, X)`, we find its differential as
 
 .. math::
     \mathrm d U(T, X) = \frac{\partial U}{\partial T} \mathrm d T + \frac{\partial U}{\partial X} \mathrm d X.
@@ -196,7 +196,7 @@ The left hand side is defined as a new differential
 .. math::
    \mathrm d A(S, X) = \mathrm d ( U(T, X) - ST ).
 
-In these calculations, :math:`U` is our internal energy and :math:`A` is our Helmholtz free energy. The transform that changes the variable from :math:`X` to :math:`Y` gives us enthalpy :math:`H`. If we transform both variables then we get Gibbs free energy :math:`G`. More about the thermodynamic potentials will be discussed in the following chapters.
+In these calculations, :math:`U` is the internal energy and :math:`A` is the Helmholtz free energy. The transform that changes the variable from :math:`X` to :math:`Y` gives us enthalpy :math:`H`. If we transform both variables then we get Gibbs free energy :math:`G`. More about these thermodynamic potentials will be discussed in the following chapters.
 
 
 
