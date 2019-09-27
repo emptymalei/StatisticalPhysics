@@ -35,7 +35,7 @@ with the two boundary conditions,
    B_1[G] = B_2[G] = 0.
 
 
-First order differential of Green function :math:`G'(x\vert \xi)` has a jump condition at :math:`x=\xi` that the jump discontinuity of height is 1.
+First order differential of Green's function :math:`G'(x\vert \xi)` has a jump discontinuity at :math:`x=\xi`. This is expected since we have to have a dirac delta type of response at :math:`x=\xi`.
 
 Examples
 ~~~~~~~~~~~~~~~~~
