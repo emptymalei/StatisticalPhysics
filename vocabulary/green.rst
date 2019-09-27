@@ -4,11 +4,11 @@ Green's Function
 .. index:: Green's Function
 
 
-Green's Functions for Second Order Equations
-------------------------------------------------------
+Green's Function for Second Order Differential Equations
+----------------------------------------------------------
 
 
-Any second order differential equations can be written as
+A general form of second order differential equations is written as
 
 .. math::
    L[y] \equiv y'' + p(x) y' + q(x) y = f(x),
@@ -19,12 +19,12 @@ for :math:`a<x<b` with boundary conditions
    B_1[y] = B_2[y] = 0.
 
 
-The solution should be
+The solution to it is
 
 .. math::
    y(x) = \int _a ^b G(x\vert \xi) f(\xi) d\xi
 
-where Green function is defined as
+where :math:`G(x\vert \xi)` is the Green's function. The Green's function is an impulse response of the dynamical system, i.e.,
 
 .. math::
    L[G(x\vert \xi)] = \delta(x-\xi)
