@@ -2,17 +2,32 @@ Summary
 ************************
 
 
-Thermodynamics is about the desciption of large systems which is mostly about the following keypoints. (*A Modern Course in Statistical Physics* by L. E. Reichl)
+Thermodynamics descibes the macroscopic properties of a large collection of particles.
 
-1. Thermodynamic variables; extensive, intensive, neither;
-2. Equations of state;
-3. Four fundamental laws of thermodynamics;
-4. Thermodynamics potentials
-5. Phase transitions
-6. Response
-7. Stability
+.. admonition:: Some Key Ideas in Thermodynamics
+   :class: toggle
 
-Anyway, thermodynamics is a kind of theory that deals with black boxes. We manipulate any variables we like and look at the changes. Then we summarize and get a set of laws.
+   1. Thermodynamic variables: extensive, intensive, neither;
+   2. Equation of state;
+   3. Four fundamental laws of thermodynamics;
+   4. Thermodynamics potentials;
+   5. Phase transitions;
+   6. Response;
+   7. Stability;
+
+In some sense, thermodynamics is a theory that deals with black boxes. We deal with a large collection of one type of serveral types of particles. Then we manipulate some properties of the system and observing the changes.
+
+.. note::
+
+   Thermodynamics is like business management, statistical mechanics is like data science.
+
+   Can we apply these methods to social communities?
+
+   A community consists a lot of human beings. We could categorize human beings into different types based on the focus we have. Then we have transformed the community into a system whose property is determined by the types of human beings, the population of each type, and the interactions.
+
+   Do we define the pressure and entropy?
+
+
 
 
 
@@ -24,14 +39,14 @@ Anyway, thermodynamics is a kind of theory that deals with black boxes. We manip
 Thermodynamic Potentials
 ==========================================
 
-The first thermodynamics potential we can think of is the (differential) internal energy, which, by definition is a function of entropy :math:`S`, volume :math:`V` and number of particles :math:`N_i`,
+The first thermodynamics potential we will investigate is the (differential) internal energy, which, by definition is a function of entropy :math:`S`, volume :math:`V` and number of particles :math:`N_i`,
 
 .. math::
    d U(S,V,\{N_i\}) = T dS - p dV + \mu_i d N_i,
 
-where repeated indices are summed over. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in :ref:`legendre-transform`.
+where repeated indices are summed over as being used in Einstein summation convention. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in :ref:`legendre-transform`.
 
-Mathematically, three-variable function will generate seven extra functions through Legendre transform. The differential forms of them are
+Mathematically, a three-variable function will generate seven extra functions through Legendre transform. The differential forms of them are
 
 .. math::
    dA(T,V,\{N_i\}) & = dU(S,V,\{N_i\}) - d(ST) = - S dT - p dV + \mu_i dN_i\\
@@ -339,3 +354,5 @@ Gas
 
 Refs & Notes
 =====================
+
+1. *A Modern Course in Statistical Physics* by L. E. Reichl
