@@ -22,7 +22,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Equilibrium Statistical Mechanics" href="../equilibrium/index.html" />
+    <link rel="next" title="Topics on Thermodynamics" href="topics/index.html" />
     <link rel="prev" title="Thermodynamics" href="index.html" />
 
 <meta charset='utf-8'>
@@ -170,6 +170,7 @@ TeX: {
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Thermodynamics</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/index.html">Topics on Thermodynamics</a></li>
 </ul>
 </li>
 </ul>
@@ -244,7 +245,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="../equilibrium/index.html" title="Next Chapter: Equilibrium Statistical Mechanics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Equilibrium S... &raquo;</span>
+    <a href="topics/index.html" title="Next Chapter: Topics on Thermodynamics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Topics on The... &raquo;</span>
     </a>
   </li>
               
@@ -274,33 +275,12 @@ TeX: {
       
   <div class="section" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
-<p>Thermodynamics descibes the macroscopic properties of a large collection of particles.</p>
-<div class="toggle admonition">
-<p class="admonition-title">Some Key Ideas in Thermodynamics</p>
-<ol class="arabic simple">
-<li><p>Thermodynamic variables: extensive, intensive, neither;</p></li>
-<li><p>Equation of state;</p></li>
-<li><p>Four fundamental laws of thermodynamics;</p></li>
-<li><p>Thermodynamics potentials;</p></li>
-<li><p>Phase transitions;</p></li>
-<li><p>Response;</p></li>
-<li><p>Stability;</p></li>
-</ol>
-</div>
-<p>In some sense, thermodynamics is a theory that deals with black boxes. We deal with a large collection of one type of serveral types of particles. Then we manipulate some properties of the system and observing the changes.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Thermodynamics is like business management, statistical mechanics is like data science.</p>
-<p>Can we apply these methods to social communities?</p>
-<p>A community consists a lot of human beings. We could categorize human beings into different types based on the focus we have. Then we have transformed the community into a system whose property is determined by the types of human beings, the population of each type, and the interactions.</p>
-<p>Do we define the pressure and entropy?</p>
-</div>
 <div class="section" id="thermodynamic-potentials">
 <span id="thermodynamical-potentials"></span><span id="index-0"></span><h2>Thermodynamic Potentials<a class="headerlink" href="#thermodynamic-potentials" title="Permalink to this headline">¶</a></h2>
-<p>The first thermodynamics potential we will investigate is the (differential) internal energy, which, by definition is a function of entropy <span class="math notranslate nohighlight">\(S\)</span>, volume <span class="math notranslate nohighlight">\(V\)</span> and number of particles <span class="math notranslate nohighlight">\(N_i\)</span>,</p>
+<p>The first thermodynamics potential we will investigate is the (differential) internal energy <span class="math notranslate nohighlight">\(U\)</span>. By definition, the internal energy is a function of entropy <span class="math notranslate nohighlight">\(S\)</span>, volume <span class="math notranslate nohighlight">\(V\)</span> and number of particles <span class="math notranslate nohighlight">\(N_i\)</span>, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[d U(S,V,\{N_i\}) = T dS - p dV + \mu_i d N_i,\]</div>
-<p>where repeated indices are summed over as being used in Einstein summation convention. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in <a class="reference internal" href="../vocabulary/transforms.html#legendre-transform"><span class="std std-ref">Legendre Transform</span></a>.</p>
+<p>where repeated indices are summed over as in <a class="reference external" href="https://en.wikipedia.org/wiki/Einstein_notation">Einstein’s summation convention</a>. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in <a class="reference internal" href="../vocabulary/transforms.html#legendre-transform"><span class="std std-ref">Legendre Transform</span></a>.</p>
 <p>Mathematically, a three-variable function will generate seven extra functions through Legendre transform. The differential forms of them are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}dA(T,V,\{N_i\}) &amp; = dU(S,V,\{N_i\}) - d(ST) = - S dT - p dV + \mu_i dN_i\\
@@ -310,60 +290,60 @@ d\Omega (T,X,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(ST) - d(\mu_i N_i) = -SdT - 
 d\kappa_1(T,Y,\{\mu_i\})&amp; = dU(S,V,\{N_i\}) - d(ST) - d(\mu_iN_i) - d(-pV) = -SdT + V dp - N_i d\mu_i\\
 d\kappa_2(T,V,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) -  d(\mu_i N_i) = TdS -pdV - N_i d\mu_i \\
 d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS + Vdp - N_i d\mu_i.\end{split}\]</div>
-<p>Physically, there are at three different kinds of couplings here, which are</p>
+<p>Physically, there are three different kinds of couplings here, which are</p>
 <ul class="simple">
 <li><p>thermal coupling: <span class="math notranslate nohighlight">\(d(ST)\)</span>;</p></li>
 <li><p>mechanical coupling: <span class="math notranslate nohighlight">\(d(pV)\)</span>;</p></li>
 <li><p>chemical coupling: <span class="math notranslate nohighlight">\(d(\mu_i N_i)\)</span>.</p></li>
 </ul>
-<p>Legendre transform, in an easy understanding, is about turning on and off switches of the three different couplings. Turning off the mechanical coupling of (differential) internal energy <span class="math notranslate nohighlight">\(dU(S,V,\{N_i\})\)</span> leads to (differential) enthalpy <span class="math notranslate nohighlight">\(dH(S,p,\{N_i\})\)</span>. Indeed, enthalpy is the same as internal energy when we are talking about constant pressure.</p>
-<p>Let’s sum up.</p>
+<p>Legendre transform is about turning on and off switches of the three different couplings. For example, turning off the mechanical coupling of (differential) internal energy <span class="math notranslate nohighlight">\(dU(S,V,\{N_i\})\)</span> leads to (differential) enthalpy <span class="math notranslate nohighlight">\(dH(S,p,\{N_i\})\)</span>. Indeed, enthalpy is the same as internal energy when we are talking about constant pressure.</p>
+<p>To summarize, we have</p>
 <ol class="arabic simple">
-<li><p>Internal Energy</p></li>
-<li><p>Enthalpy</p></li>
-<li><p>Helmholtz Free Energy</p></li>
-<li><p>Gibbs Free Energy</p></li>
-<li><p>Grand Potential</p></li>
+<li><p>Internal Energy <span class="math notranslate nohighlight">\(U(S,V,\{N_i\})\)</span>,</p></li>
+<li><p>Enthalpy <span class="math notranslate nohighlight">\(H(S,p,\{N_i\})\)</span>,</p></li>
+<li><p>Helmholtz Free Energy <span class="math notranslate nohighlight">\(A(T,V,\{N_i\})\)</span>,</p></li>
+<li><p>Gibbs Free Energy <span class="math notranslate nohighlight">\(G(T,Y,\{N_i\})\)</span>,</p></li>
+<li><p>Grand Potential <span class="math notranslate nohighlight">\(\Omega (T,X,\{\mu_i\})\)</span>.</p></li>
 </ol>
-<p>The relations between them? All potentials are Legendre transformation of each other. To sum up, let’s gliffy.</p>
+<p>Their relations are charted in <a class="reference internal" href="#thermodynamicpotentials"><span class="std std-numref">Fig. 5</span></a>.</p>
 <div class="figure align-center" id="id2">
 <span id="thermodynamicpotentials"></span><a class="reference internal image-reference" href="../_images/thermodynamicPotentials1.png"><img alt="Thermodynamic Potentials" src="../_images/thermodynamicPotentials1.png" style="width: 1160.0px; height: 602.4px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">(The gliffy source file is <a class="reference external" href="images/thermodynamicPotentials.gliffy">here</a> . Feel free to download and create your own version.)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The relations between these thermodynamic potentials.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p><a class="reference internal" href="#thermodynamicpotentials"><span class="std std-numref">Fig. 5</span></a> needs some illustration.</p>
+<p>Here are a few interesting points.</p>
 <ol class="arabic simple">
-<li><p>Legendre transformation: <span class="math notranslate nohighlight">\(ST-U(S)\)</span> transform a funcion <span class="math notranslate nohighlight">\(U(S)\)</span> with variable <span class="math notranslate nohighlight">\(S\)</span> to another function <span class="math notranslate nohighlight">\(H(T)\)</span>. However, in thermodynamics use the different sign can be more convinient. In other words, <span class="math notranslate nohighlight">\(U(S)\)</span> and <span class="math notranslate nohighlight">\(-H(T)\)</span> are dual to each other.</p></li>
-<li><p>Starting from this graph, we can find out the differentials of thermodynamic potentials. Next take the partial derivatives of thermodynamic potential with respect to their own variables. By comparing the partial derivatives and the definitions of them, we find out expressions of their vairables. Finally different expressions for the same variable are equal, which are the Maxwell relations.</p></li>
-<li><p>As we have seen in 2, all the thermodynamic quantities can be obstained by taking the derivatives of thermodynamic potentials.</p></li>
+<li><p>All the thermodynamic observables can be obstained by taking the derivatives of thermodynamic potentials.</p></li>
+<li><p>Using this chart and 1, we could easily derive the Maxwell relations by <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell_relations">using the Schwarz’ theorem</a>.</p></li>
 </ol>
 <div class="toggle admonition">
 <p class="admonition-title">The Sixth Potential?</p>
-<p><strong>Question:</strong> Mathematically we can construct the sixth potential namely the one that should appear at the right bottom of the graph. Why don’t people talk about it?</p>
-<p>We can surely define a new potential called <span class="math notranslate nohighlight">\(Null(T,X,\{\mu_i\})\)</span>. However, the value of this function is zero. So we can have the derivitive of this potential is also zero. This is the Gibbs Duhem equation.</p>
-<p>The answer I want to hear is that this is something <span class="math notranslate nohighlight">\(\mathrm d\mathrm d f = 0\)</span> where f is exact.</p>
+<p><strong>Question:</strong> It seems that we can construct the sixth potential mathematically. It should appear at the right bottom of <a class="reference internal" href="#thermodynamicpotentials"><span class="std std-numref">Fig. 5</span></a>. Why don’t people talk about it?</p>
+<p>Now we define this new potential and call it <span class="math notranslate nohighlight">\(f(T,X,\{\mu_i\})\)</span>. The value of this function is actually zero. So we can have the derivitive of this potential which is also zero. This is the Gibbs-Duhem equation.</p>
+<p>In the language of differential forms, we have <span class="math notranslate nohighlight">\(\mathrm d\mathrm d f = 0\)</span> where f is exact.</p>
 </div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p><strong>Question</strong>: Why is internal energy <span class="math notranslate nohighlight">\(U\)</span> a function of three extensive quantities, <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(N\)</span>?</p>
-<p>There are three aspects to be considered.</p>
+<p>We can start with any of the thermodynamic potentials and perform Legendre transform. Then again, we will get all the potentials. Then again we just have to name them. This function <span class="math notranslate nohighlight">\(U(V,S,N)\)</span> is just being named as internal energy.</p>
+<p>Of course we mean something when we use the words ‘internal energy’.</p>
 </div>
 </div>
 <div class="section" id="differential-forms">
 <h2>Differential Forms<a class="headerlink" href="#differential-forms" title="Permalink to this headline">¶</a></h2>
-<p>This has always been confusing to use so many differential potentials. The trick of math is to discuss in the theory of differential forms.</p>
-<div class="toggle admonition">
+<p>It is quite confusing to have so many potentials. We do have a mathematical theory called differential forms that make it easier to understand them.</p>
+<div class="note admonition">
 <p class="admonition-title">What Are Forms</p>
 <p>In simple words, 1-forms are linear mapping of functions to numbers.</p>
 <p>For illustration purpose, we take the simple case that</p>
 <div class="math notranslate nohighlight">
 \[\bar d Q = p dV + dU.\]</div>
-<p>We know that <span class="math notranslate nohighlight">\(dU\)</span> is a 1-form and it can be the basis of 1-forms, so is <span class="math notranslate nohighlight">\(dV\)</span>. Also notice that we could difine a map from a point <span class="math notranslate nohighlight">\((U,V)\)</span> to a real number, which explains the pressure <span class="math notranslate nohighlight">\(p(U,V)\)</span>. As a result, <span class="math notranslate nohighlight">\(\bar dQ\)</span> is also a 1-form. Rewrite the equation using the language of forms,</p>
+<p>We know that <span class="math notranslate nohighlight">\(dU\)</span> is a 1-form and it can be the basis of 1-forms, so is <span class="math notranslate nohighlight">\(dV\)</span>. Also notice that we could define a map from a point <span class="math notranslate nohighlight">\((U,V)\)</span> to a real number, which explains the pressure <span class="math notranslate nohighlight">\(p(U,V)\)</span>. As a result, <span class="math notranslate nohighlight">\(\bar dQ\)</span> is also a 1-form. Rewrite the equation using the language of forms,</p>
 <div class="math notranslate nohighlight">
 \[\underset{^\sim}{\omega} = p \underset{^\sim}{dV} + \underset{^\sim}{dU},\]</div>
 <p>where the under tilde denotes 1-form. However, <span class="math notranslate nohighlight">\(\underset{^\sim}{\omega}\)</span> is not exact, which means that we do not find a function <span class="math notranslate nohighlight">\(Q(U,V)\)</span> on the manifold so that <span class="math notranslate nohighlight">\(\mathbf{d d }Q = 0\)</span>. Following Bernard Schutz in his Geometrical Methods in Mathematical Physics, an exact <span class="math notranslate nohighlight">\(\underset{^\sim}{\omega}\)</span> means that</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{d}\underset{^\sim}{\omega}=0=\mathbf{dd}Q = \mathbf{d}p\wedge \underset{^\sim}{dU}=\left( \frac{\partial p}{\partial U} \right)_V \underset{^\sim}{dU}\wedge \underset{^\sim}{dV},\]</div>
-<p>where we have used the condition that <span class="math notranslate nohighlight">\(\underset{^\sim}{dU}\)</span> is exact, i.e., <span class="math notranslate nohighlight">\(\mathbf{d}\underset{^\sim}{dU}=0\)</span>. In order for it to be valid at all point, we have to require <span class="math notranslate nohighlight">\(\left( \frac{\partial p}{\partial U} \right)_V=0\)</span> at all points on the manifold.</p>
+<p>where we have used the condition that <span class="math notranslate nohighlight">\(\underset{^\sim}{dU}\)</span> is exact, i.e., <span class="math notranslate nohighlight">\(\mathbf{d}\underset{^\sim}{dU}=0\)</span>. For it to be valid at all point, we have to require <span class="math notranslate nohighlight">\(\left( \frac{\partial p}{\partial U} \right)_V=0\)</span> at all points on the manifold.</p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Frobenius_theorem_(differential_topology)">Frobenius’ theorem</a> tells us that we will find functions on the manifold so that <span class="math notranslate nohighlight">\(\underset{^\sim}{\omega}=T(U,V)\mathbf{d}S\)</span>, which gives us</p>
 <div class="math notranslate nohighlight">
 \[T(U,V)\mathbf{d}S = p \underset{^\sim}{dV} + \underset{^\sim}{dU},\]</div>
@@ -371,17 +351,12 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <p>Or if we are back to functions,</p>
 <div class="math notranslate nohighlight" id="equation-thermodynamics-not-the-second-law">
 <span class="eqno">(1)<a class="headerlink" href="#equation-thermodynamics-not-the-second-law" title="Permalink to this equation">¶</a></span>\[T(U,V)\mathbf{d}S = p \mathbf{d}V + \mathbf{d}U.\]</div>
-<p>A list of references for differential geometry and thermodynamics:</p>
-<ol class="arabic simple">
-<li><p>Bernard Schutz, Geometrical Methods in Mathematical Physics.</p></li>
-<li><p>Hannay, J. H. (2006). Carnot and the fields formulation of elementary thermodynamics. American Journal of Physics, 74(2), 134. doi:10.1119/1.2121755</p></li>
-</ol>
 </div>
-<p>With the help of differential forms, we could derive the Maxwell identities more easily by rewriting the functions to be functions of other variables. The punch line is the exterior derivative of equation <a class="reference internal" href="#equation-thermodynamics-not-the-second-law">(1)</a>,</p>
+<p>With the help of differential forms, we could derive the Maxwell identities more easily. We start with the exterior derivative of equation <a class="reference internal" href="#equation-thermodynamics-not-the-second-law">(1)</a>,</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{d} T \wedge \mathbf{d} S = \mathbf{d} p \wedge \mathbf{d} V.\]</div>
 <p>Maxwell identities are obtained by writing functions as functions of <span class="math notranslate nohighlight">\((S,V)\)</span> or <span class="math notranslate nohighlight">\(T,V\)</span> etc.</p>
-<p>The questions is, how could this formalism help us understanding more of the laws of thermodynamics. As an example, we examine second law using differential forms. For a more general composite system which has more dimensions or basis, we write down a one form that is related to heat production,</p>
+<p>Mathematics aside, how could this formalism help us understand more of the laws of thermodynamics. As an example, we examine second law using differential forms. For a more general composite system which has more dimensions or basis, we write down a one form that is related to heat production,</p>
 <div class="math notranslate nohighlight">
 \[\underset{^\sim}{\omega_n} = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right).\]</div>
 <p>In general, on a n-dimension manifold, we could have non-zero <span class="math notranslate nohighlight">\(\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}\)</span> since we have up to non-zero n-forms. The meaning is that we do not find global temperature and entropy on the whole manifold <a class="reference internal" href="#bschutz" id="id1"><span>[BSchutz]</span></a> or no globally integrable function of heat exchange <span class="math notranslate nohighlight">\(\underset{^\sim}{\omega_n}\)</span>.</p>
@@ -390,6 +365,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <h3>Related Papers<a class="headerlink" href="#related-papers" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
 <li><p>Samuel L. Braunstein and Carlton M. Caves, <a class="reference external" href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.72.3439">Statistical distance and the geometry of quantum states</a>, Phys. Rev. Lett. 72, 3439.</p></li>
+<li><p>Hannay, J. H. (2006). <a class="reference external" href="http://doi:10.1119/1.2121755">Carnot and the fields formulation of elementary thermodynamics</a>. American Journal of Physics, 74(2), 134.</p></li>
 </ol>
 <dl class="citation">
 <dt class="label" id="bschutz"><span class="brackets"><a class="fn-backref" href="#id1">BSchutz</a></span></dt>
@@ -490,6 +466,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li><p><em>A Modern Course in Statistical Physics</em> by L. E. Reichl</p></li>
+<li><p><a class="reference external" href="https://web.stanford.edu/~peastman/statmech/phasetransitions.html">Phase Transitions &#64; Introduction to Statistical Mechanics</a></p></li>
 </ol>
 </div>
 </div>

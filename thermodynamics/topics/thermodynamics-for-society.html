@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Thermodynamics for Our Society &#8212; Statistical Physics Notes</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Equilibrium Statistical Mechanics" href="../../equilibrium/index.html" />
+    <link rel="prev" title="Topics on Thermodynamics" href="index.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44466929-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1],
+     Tr: ['\\operatorname{Tr}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+ 
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Statistical Physics</a>
+        <span class="navbar-text navbar-version pull-left"><b>3.14159</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../vocabulary/index.html">Vocabulary and Program</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/integrals.html">Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/transforms.html">Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/green.html">Green’s Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/computations.html">Computations</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Thermodynamics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../summary.html">Summary</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Topics on Thermodynamics</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../equilibrium/index.html">Equilibrium Statistical Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/summary.html">Equilibrium Statistical Mechanics Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/basics.html">Basics of Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/ho-dos.html">Harmonic Oscillator and Density of States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/debye-model.html">Observables and Debye Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/phase-transitions.html">Phase Transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/most-probable-distribution.html">Most Probable Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/ensembles.html">Ensembles</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../nonequilibrium/index.html">Stochastic And Non-Equilibrium Statistical Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/gamma-space-mu-space.html"><span class="math notranslate nohighlight">\(\Gamma\)</span> Space and <span class="math notranslate nohighlight">\(\mu\)</span> Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/important-questions.html">Important Questions of Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/master-eqn.html">Master Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/solving-master-eqn.html">Solving Master Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/master-eqn-examples.html">Master Equation Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/smoluchowski-eqn.html">Smoluchowski Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/effect-of-defects.html">Effect of Defects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/quantum-master-eqn.html">Quantum Master Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/brownian-motion.html">Brownian Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/projection-technique.html">Projection Technique</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/index.html">Some Topics in Statistical Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../topics/information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Thermodynamics for Our Society</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="index.html" title="Previous Chapter: Topics on Thermodynamics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Topics on The...</span>
+    </a>
+  </li>
+  <li>
+    <a href="../../equilibrium/index.html" title="Next Chapter: Equilibrium Statistical Mechanics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Equilibrium S... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="thermodynamics-for-our-society">
+<h1>Thermodynamics for Our Society<a class="headerlink" href="#thermodynamics-for-our-society" title="Permalink to this headline">¶</a></h1>
+<p>Can we apply these methods to social communities?</p>
+<p>A community consists a lot of human beings. We could categorize human beings into different types based on the focus we have. Then we have transformed the community into a system whose property is determined by the types of human beings, the population of each type, and the interactions.</p>
+<p>Why are we even doing this? Will this provide new insights to our understanding of communities? Is is a gimmick?</p>
+<p>One of the important usage of thermodynamics is to calculate the phase transitions. On the other hand, we also see abrupt changes in our society.</p>
+<p>Before we really move on to a thermodynamical theory for our society, we have to answer the following questions clearly.</p>
+<ol class="arabic simple">
+<li><p>Can we define phase transitions for a community? To answer this, we have to define some macroscopic observables that make sense.</p></li>
+<li><p>Are the abrupt changes in our society related to phase transitions? If so, can we make a phase diagram and explain it?</p></li>
+<li><p>Can we come up with a microscopic model like statistical mechanics for our society? If so, is it consistent with our thermodynamical theory?</p></li>
+</ol>
+<p>There are indeed many research papers about the thermodynamics and statistical physics of social dynamics. However, we should be really skeptical when reading them.</p>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+
+
+        <a href="#"><span class="label label-info">Back to top</span></a>
+
+    </p>
+    <p>
+        <span>© 2019, Lei Ma </span>|
+        <span>Created with
+        <a href="http://sphinx.pocoo.org/">Sphinx</a> and <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>.
+        </span>|
+        <span><span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+        <a href="https://github.com/emptymalei/statisticalphysics">On GitHub</a>
+        </span>|
+        <span><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+              <a href="http://physics.openmetric.org">Physics Notebook</a>
+        </span>
+        <span><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+            <a href="http://datumorphism.com">Datumorphism</a>
+        </span>
+         |
+        <span><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+        <a href="/genindex.html">Index</a>
+     </span> |
+       <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+       <a href="../../_sources/thermodynamics/topics/thermodynamics-for-society.rst.txt"
+      rel="nofollow">Page Source</a>
+      </span>
+
+        <span><script data-gittip-username="emptymalei"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script></span>
+    </p>
+
+    <hr>
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+ 
+  </body>
+</html>
