@@ -274,24 +274,34 @@ TeX: {
       
   <div class="section" id="summary">
 <h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
-<p>Thermodynamics is about the desciption of large systems which is mostly about the following keypoints. (<em>A Modern Course in Statistical Physics</em> by L. E. Reichl)</p>
+<p>Thermodynamics descibes the macroscopic properties of a large collection of particles.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Some Key Ideas in Thermodynamics</p>
 <ol class="arabic simple">
-<li><p>Thermodynamic variables; extensive, intensive, neither;</p></li>
-<li><p>Equations of state;</p></li>
+<li><p>Thermodynamic variables: extensive, intensive, neither;</p></li>
+<li><p>Equation of state;</p></li>
 <li><p>Four fundamental laws of thermodynamics;</p></li>
-<li><p>Thermodynamics potentials</p></li>
-<li><p>Phase transitions</p></li>
-<li><p>Response</p></li>
-<li><p>Stability</p></li>
+<li><p>Thermodynamics potentials;</p></li>
+<li><p>Phase transitions;</p></li>
+<li><p>Response;</p></li>
+<li><p>Stability;</p></li>
 </ol>
-<p>Anyway, thermodynamics is a kind of theory that deals with black boxes. We manipulate any variables we like and look at the changes. Then we summarize and get a set of laws.</p>
+</div>
+<p>In some sense, thermodynamics is a theory that deals with black boxes. We deal with a large collection of one type of serveral types of particles. Then we manipulate some properties of the system and observing the changes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Thermodynamics is like business management, statistical mechanics is like data science.</p>
+<p>Can we apply these methods to social communities?</p>
+<p>A community consists a lot of human beings. We could categorize human beings into different types based on the focus we have. Then we have transformed the community into a system whose property is determined by the types of human beings, the population of each type, and the interactions.</p>
+<p>Do we define the pressure and entropy?</p>
+</div>
 <div class="section" id="thermodynamic-potentials">
 <span id="thermodynamical-potentials"></span><span id="index-0"></span><h2>Thermodynamic Potentials<a class="headerlink" href="#thermodynamic-potentials" title="Permalink to this headline">¶</a></h2>
-<p>The first thermodynamics potential we can think of is the (differential) internal energy, which, by definition is a function of entropy <span class="math notranslate nohighlight">\(S\)</span>, volume <span class="math notranslate nohighlight">\(V\)</span> and number of particles <span class="math notranslate nohighlight">\(N_i\)</span>,</p>
+<p>The first thermodynamics potential we will investigate is the (differential) internal energy, which, by definition is a function of entropy <span class="math notranslate nohighlight">\(S\)</span>, volume <span class="math notranslate nohighlight">\(V\)</span> and number of particles <span class="math notranslate nohighlight">\(N_i\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[d U(S,V,\{N_i\}) = T dS - p dV + \mu_i d N_i,\]</div>
-<p>where repeated indices are summed over. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in <a class="reference internal" href="../vocabulary/transforms.html#legendre-transform"><span class="std std-ref">Legendre Transform</span></a>.</p>
-<p>Mathematically, three-variable function will generate seven extra functions through Legendre transform. The differential forms of them are</p>
+<p>where repeated indices are summed over as being used in Einstein summation convention. The simplest way to generate all the other thermodynamics potentials is to use Legendre transform, which is explained in <a class="reference internal" href="../vocabulary/transforms.html#legendre-transform"><span class="std std-ref">Legendre Transform</span></a>.</p>
+<p>Mathematically, a three-variable function will generate seven extra functions through Legendre transform. The differential forms of them are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}dA(T,V,\{N_i\}) &amp; = dU(S,V,\{N_i\}) - d(ST) = - S dT - p dV + \mu_i dN_i\\
 dH(S,p,\{N_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) = T dS + V dp + \mu_i dN_i \\
@@ -478,6 +488,9 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 </div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><em>A Modern Course in Statistical Physics</em> by L. E. Reichl</p></li>
+</ol>
 </div>
 </div>
 
