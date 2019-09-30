@@ -2,12 +2,19 @@ Computations
 ===============
 
 
-Most problems in stat mech have similiar procedures. This page is for the programs of solving problems.
+As one of the pilars of the modern physics, computation serves as an important role in statistical phyiscs.
 
 
 Monte Carlo
 -----------------------
 
+The idea of Monte Carlo is to simulate a system with certain probability distributions.
+
+For example, as we flip coins, we might get heads or tails. To find out the probability of getting heads, we could simply flip it a lot of times. With the help of computers, this process is even more convenient.
+
+In statistical physics, we are interested in calculating the ensemble average of obervables. To achieve that, we generate a system with a reasonable probability distribution that is approaching the physical system. For example, we would require it to have a Boltzmann distribution.
+
+The most popular algorithm to simulate such a system is to use Markov chain. There are many Markov chain processes that is ergodic so that it can be used in statistical physics. One of such is the Metropolis algorithm.
 
 The steps of Monte Carlo of Metropolis.
 
