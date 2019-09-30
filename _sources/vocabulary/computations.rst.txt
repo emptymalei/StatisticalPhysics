@@ -18,25 +18,27 @@ The most popular algorithm to simulate such a system is to use Markov chain. The
 
 The steps of Monte Carlo of Metropolis.
 
-1. Initialize the system with random states, we denote the state of the system as :math:`\mathscr S_{t}`.
-2. Calculate the energy of the system, :math:`E_{t}`.
-3. Change the state of one of the particles, so that the state of the system becomes :math:`\mathscr S'_{t}`.
-4. Recalculate the energy of the system, :math:`E'_{t}`.
-5. If the energy of the new state is lower, :math:`E'_{t}<=E_{t}`, we accept the change and say the system evolves to the state :math:`\mathscr S_{t+1} = \mathscr S'_{t}`. If :math:`E'_{t}>E_{t}`, we generate a random number between 0 and 1 :math:`p`. Then we compare :math:`p` with :math:`e^{-E'_{t}/kT}/e^{-E_{t}/kT}`. If :math:`p` is larger, we reject the change.
-6. Update states
+1. Initialize the system with random states, we denote the state of the system as :math:`\mathscr S_{i}`.
+2. Calculate the energy of the system, :math:`E_{i}`.
+3. Change the state of one of the particles, so that the state of the system becomes :math:`\mathscr S'_{i}`.
+4. Recalculate the energy of the system, :math:`E'_{i}`.
+5. If the energy of the new state is lower, :math:`E'_{i}<=E_{i}`, we accept the change and say the system evolves to the state :math:`\mathscr S_{i+1} = \mathscr S'_{i}`. If :math:`E'_{i}>E_{i}`, we generate a random number between 0 and 1 :math:`p`. Then we compare :math:`p` with :math:`e^{-E'_{i}/k_B T}/e^{-E_{i}/k_B T}`. If :math:`p` is larger, we reject the change and set :math:`\mathscr S_{i+1} = \mathscr S'_{i}`. Otherwise, we accept the change and keep the state :math:`\mathscr S_{i+1} = \mathscr S_{i}`.
+6. Repeat the process.
 
 
-Detail balance is the key to the update rule,
-
-.. math::
-   P(S_i)P(S_i \to S_j) = P(S_j) P(S_j\to S_i),
-
-which can be rewritten as
+Detailed balance is the key to the update rule. When a system reaches equlibrium, we assume a detailed balance rule, i.e.,
 
 .. math::
-   \frac{P(S_i\to S_j)}{P(S_j\to S_i)} = \frac{ P(S_j) }{ P(S_i) }.
+   P(\mathscr S_i)P(  \mathscr S_j \vert \mathscr S_i ) = P(\mathscr S_j) P(\mathscr S_i \vert \mathscr S_j),
+
+which can be reformulated as
+
+.. math::
+   \frac{P(\mathscr S_j \vert \mathscr S_i)}{P(\mathscr S_i \vert \mathscr S_j)} = \frac{ P(\mathscr S_j) }{ P(\mathscr S_i) }.
 
 For Boltzmann distribution, we have
 
 .. math::
-   \frac{ P(S_j) }{ P(S_i) } = e^{ - (E_j - E_i)/k_B T}.
+   \frac{ P(\mathscr S_j) }{ P(\mathscr S_i) } = e^{ - (E_j - E_i)/k_B T}.
+
+For forcing the transition probability using Metropolis algorithm, we could reach an equlibrium state with Boltzmann distribution.

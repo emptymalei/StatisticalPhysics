@@ -274,22 +274,23 @@ TeX: {
 <p>The most popular algorithm to simulate such a system is to use Markov chain. There are many Markov chain processes that is ergodic so that it can be used in statistical physics. One of such is the Metropolis algorithm.</p>
 <p>The steps of Monte Carlo of Metropolis.</p>
 <ol class="arabic simple">
-<li><p>Initialize the system with random states, we denote the state of the system as <span class="math notranslate nohighlight">\(\mathscr S_{t}\)</span>.</p></li>
-<li><p>Calculate the energy of the system, <span class="math notranslate nohighlight">\(E_{t}\)</span>.</p></li>
-<li><p>Change the state of one of the particles, so that the state of the system becomes <span class="math notranslate nohighlight">\(\mathscr S'_{t}\)</span>.</p></li>
-<li><p>Recalculate the energy of the system, <span class="math notranslate nohighlight">\(E'_{t}\)</span>.</p></li>
-<li><p>If the energy of the new state is lower, <span class="math notranslate nohighlight">\(E'_{t}&lt;=E_{t}\)</span>, we accept the change and say the system evolves to the state <span class="math notranslate nohighlight">\(\mathscr S_{t+1} = \mathscr S'_{t}\)</span>. If <span class="math notranslate nohighlight">\(E'_{t}&gt;E_{t}\)</span>, we generate a random number between 0 and 1 <span class="math notranslate nohighlight">\(p\)</span>. Then we compare <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(e^{-E'_{t}/kT}/e^{-E_{t}/kT}\)</span>. If <span class="math notranslate nohighlight">\(p\)</span> is larger, we reject the change.</p></li>
-<li><p>Update states</p></li>
+<li><p>Initialize the system with random states, we denote the state of the system as <span class="math notranslate nohighlight">\(\mathscr S_{i}\)</span>.</p></li>
+<li><p>Calculate the energy of the system, <span class="math notranslate nohighlight">\(E_{i}\)</span>.</p></li>
+<li><p>Change the state of one of the particles, so that the state of the system becomes <span class="math notranslate nohighlight">\(\mathscr S'_{i}\)</span>.</p></li>
+<li><p>Recalculate the energy of the system, <span class="math notranslate nohighlight">\(E'_{i}\)</span>.</p></li>
+<li><p>If the energy of the new state is lower, <span class="math notranslate nohighlight">\(E'_{i}&lt;=E_{i}\)</span>, we accept the change and say the system evolves to the state <span class="math notranslate nohighlight">\(\mathscr S_{i+1} = \mathscr S'_{i}\)</span>. If <span class="math notranslate nohighlight">\(E'_{i}&gt;E_{i}\)</span>, we generate a random number between 0 and 1 <span class="math notranslate nohighlight">\(p\)</span>. Then we compare <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(e^{-E'_{i}/k_B T}/e^{-E_{i}/k_B T}\)</span>. If <span class="math notranslate nohighlight">\(p\)</span> is larger, we reject the change and set <span class="math notranslate nohighlight">\(\mathscr S_{i+1} = \mathscr S'_{i}\)</span>. Otherwise, we accept the change and keep the state <span class="math notranslate nohighlight">\(\mathscr S_{i+1} = \mathscr S_{i}\)</span>.</p></li>
+<li><p>Repeat the process.</p></li>
 </ol>
-<p>Detail balance is the key to the update rule,</p>
+<p>Detailed balance is the key to the update rule. When a system reaches equlibrium, we assume a detailed balance rule, i.e.,</p>
 <div class="math notranslate nohighlight">
-\[P(S_i)P(S_i \to S_j) = P(S_j) P(S_j\to S_i),\]</div>
-<p>which can be rewritten as</p>
+\[P(\mathscr S_i)P(  \mathscr S_j \vert \mathscr S_i ) = P(\mathscr S_j) P(\mathscr S_i \vert \mathscr S_j),\]</div>
+<p>which can be reformulated as</p>
 <div class="math notranslate nohighlight">
-\[\frac{P(S_i\to S_j)}{P(S_j\to S_i)} = \frac{ P(S_j) }{ P(S_i) }.\]</div>
+\[\frac{P(\mathscr S_j \vert \mathscr S_i)}{P(\mathscr S_i \vert \mathscr S_j)} = \frac{ P(\mathscr S_j) }{ P(\mathscr S_i) }.\]</div>
 <p>For Boltzmann distribution, we have</p>
 <div class="math notranslate nohighlight">
-\[\frac{ P(S_j) }{ P(S_i) } = e^{ - (E_j - E_i)/k_B T}.\]</div>
+\[\frac{ P(\mathscr S_j) }{ P(\mathscr S_i) } = e^{ - (E_j - E_i)/k_B T}.\]</div>
+<p>For forcing the transition probability using Metropolis algorithm, we could reach an equlibrium state with Boltzmann distribution.</p>
 </div>
 </div>
 
