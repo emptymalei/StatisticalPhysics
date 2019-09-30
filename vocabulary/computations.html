@@ -265,16 +265,20 @@ TeX: {
       
   <div class="section" id="computations">
 <h1>Computations<a class="headerlink" href="#computations" title="Permalink to this headline">¶</a></h1>
-<p>Most problems in stat mech have similiar procedures. This page is for the programs of solving problems.</p>
+<p>As one of the pilars of the modern physics, computation serves as an important role in statistical phyiscs.</p>
 <div class="section" id="monte-carlo">
 <h2>Monte Carlo<a class="headerlink" href="#monte-carlo" title="Permalink to this headline">¶</a></h2>
+<p>The idea of Monte Carlo is to simulate a system with certain probability distributions.</p>
+<p>For example, as we flip coins, we might get heads or tails. To find out the probability of getting heads, we could simply flip it a lot of times. With the help of computers, this process is even more convenient.</p>
+<p>In statistical physics, we are interested in calculating the ensemble average of obervables. To achieve that, we generate a system with a reasonable probability distribution that is approaching the physical system. For example, we would require it to have a Boltzmann distribution.</p>
+<p>The most popular algorithm to simulate such a system is to use Markov chain. There are many Markov chain processes that is ergodic so that it can be used in statistical physics. One of such is the Metropolis algorithm.</p>
 <p>The steps of Monte Carlo of Metropolis.</p>
 <ol class="arabic simple">
-<li><p>Initialize</p></li>
-<li><p>Change</p></li>
-<li><p>Transition probability</p></li>
-<li><p>Random number</p></li>
-<li><p>Compare</p></li>
+<li><p>Initialize the system with random states, we denote the state of the system as <span class="math notranslate nohighlight">\(\mathscr S_{t}\)</span>.</p></li>
+<li><p>Calculate the energy of the system, <span class="math notranslate nohighlight">\(E_{t}\)</span>.</p></li>
+<li><p>Change the state of one of the particles, so that the state of the system becomes <span class="math notranslate nohighlight">\(\mathscr S'_{t}\)</span>.</p></li>
+<li><p>Recalculate the energy of the system, <span class="math notranslate nohighlight">\(E'_{t}\)</span>.</p></li>
+<li><p>If the energy of the new state is lower, <span class="math notranslate nohighlight">\(E'_{t}&lt;=E_{t}\)</span>, we accept the change and say the system evolves to the state <span class="math notranslate nohighlight">\(\mathscr S_{t+1} = \mathscr S'_{t}\)</span>. If <span class="math notranslate nohighlight">\(E'_{t}&gt;E_{t}\)</span>, we generate a random number between 0 and 1 <span class="math notranslate nohighlight">\(p\)</span>. Then we compare <span class="math notranslate nohighlight">\(p\)</span> with <span class="math notranslate nohighlight">\(e^{-E'_{t}/kT}/e^{-E_{t}/kT}\)</span>. If <span class="math notranslate nohighlight">\(p\)</span> is larger, we reject the change.</p></li>
 <li><p>Update states</p></li>
 </ol>
 <p>Detail balance is the key to the update rule,</p>
