@@ -18,11 +18,11 @@ The most popular algorithm to simulate such a system is to use Markov chain. The
 
 The steps of Monte Carlo of Metropolis.
 
-1. Initialize
-2. Change
-3. Transition probability
-4. Random number
-5. Compare
+1. Initialize the system with random states, we denote the state of the system as :math:`\mathscr S_{t}`.
+2. Calculate the energy of the system, :math:`E_{t}`.
+3. Change the state of one of the particles, so that the state of the system becomes :math:`\mathscr S'_{t}`.
+4. Recalculate the energy of the system, :math:`E'_{t}`.
+5. If the energy of the new state is lower, :math:`E'_{t}<=E_{t}`, we accept the change and say the system evolves to the state :math:`\mathscr S_{t+1} = \mathscr S'_{t}`. If :math:`E'_{t}>E_{t}`, we generate a random number between 0 and 1 :math:`p`. Then we compare :math:`p` with :math:`e^{-E'_{t}/kT}/e^{-E_{t}/kT}`. If :math:`p` is larger, we reject the change.
 6. Update states
 
 
