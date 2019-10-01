@@ -16,3 +16,7 @@ Before we really move on to a thermodynamical theory for our society, we have to
 3. Can we come up with a microscopic model like statistical mechanics for our society? If so, is it consistent with our thermodynamical theory?
 
 There are indeed many research papers about the thermodynamics and statistical physics of social dynamics. However, we should be really skeptical when reading them.
+
+These questions aside, we could have a look at public opinion as an demonstration of how we may integrate our ideas of thermodynamics and statistical physics into social science.
+
+Suppose there exists a bipolar opinions on individuals, :math:`\mathbf s_i`, and a controlled opinion from the government, :math:`\mathbf S`. Then this becomes the Ising model. Then we could infer from the setup that we could have domains which are like communities, phase transitions under certain conditions, etc. Of course, there are many papers about opinion dynamics and Ising model.
