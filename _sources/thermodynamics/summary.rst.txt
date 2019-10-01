@@ -124,16 +124,16 @@ With the help of differential forms, we could derive the Maxwell identities more
 .. math::
    \mathbf{d} T \wedge \mathbf{d} S = \mathbf{d} p \wedge \mathbf{d} V.
 
-Maxwell identities are obtained by writing functions as functions of :math:`(S,V)` or :math:`T,V` etc.
+Maxwell identities are obtained by plugging in :math:`T(S,V)` and :math:`p(S,V)` etc [VShelest2017]_.
 
-Mathematics aside, how could this formalism help us understand more of the laws of thermodynamics. As an example, we examine second law using differential forms. For a more general composite system which has more dimensions or basis, we write down a one form that is related to heat production,
+How could this formalism help us understand more about the laws of thermodynamics, apart from the beauty of mathematics? As an example, we examine the second law using differential forms. Suppose we have a composite system, we write down the 1-form about the heat production,
 
 .. math::
-   \underset{^\sim}{\omega_n} = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right).
+   \underset{^\sim}{\omega_n} = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right) = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + T \mathbf{d} S \right).
 
-In general, on a n-dimension manifold, we could have non-zero :math:`\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}` since we have up to non-zero n-forms. The meaning is that we do not find global temperature and entropy on the whole manifold [BSchutz]_ or no globally integrable function of heat exchange :math:`\underset{^\sim}{\omega_n}`.
+We do not find global heat function :math:`Q` and work function :math:`W` on the whole manifold , i.e., we do not find a 0-form :math:`Q` so that :math:`\mathbf dQ` is :math:`T\mathbf d S`.[BSchutz]_
 
-Regarding the geometrical meaning of 1-forms, which are surfaces of equi-function values, just like equipotential lines, we think of a system that has a global entropy and temperature with such equi-entropy surfaces. One of the aspects of the second law thus is to state that for a system that has no heat exchange :math:`\underset{^\sim}{\omega}=0`, it is restricted on a curtain part of the phase space, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy, by Caratheodory's theorem.
+We then consider the geometrical meaning of 1-forms. On a surface that describes the values of a potential, 1-forms are like equipotential lines. We think of a surface that describes the values of internal energy, where we find equi-entropy lines and equi-volume lines. One of the aspects of the second law is thus to state that for a system without heat exchange, the dynamics of the system is restricted to be only in a certain part of the manifold, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy (Caratheodory's theorem).
 
 
 Related Papers
@@ -145,9 +145,7 @@ Related Papers
 
 
 .. [BSchutz] Bernard Schutz, *Geometrical Methods in Mathematical Physics*.
-
-
-
+.. [VShelest2017] V. Shelest, V. (2017). `Thermodynamic Potentials Theory Aspects in External Differential Forms Calculus Representation <https://doi.org/10.11648/j.jmpt.20170302.11>`_. Journal of Photonic Materials and Technology, 3(2), 6.
 
 
 
