@@ -151,7 +151,10 @@ Related Papers
 
 
 
-.. index:: Laws of Thermodynamics
+.. index:: The Four Laws in Thermodynamics
+
+.. _laws-of-thermodynamics:
+
 
 The Laws of Four
 ========================
