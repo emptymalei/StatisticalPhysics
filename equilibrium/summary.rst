@@ -1,14 +1,14 @@
 Equilibrium Statistical Mechanics Summary
 ================================================
 
-Here is the framework of lectures for the first six weeks. This part is a review of equilibrium statistical mechanics.
+This is a review of equilibrium statistical mechanics.
 
 
 Review of Thermodynamics
 --------------------------------------------------
 
-1. Description of States: thermodynamics quantities;
-2. Kinematics: Equation of state; `Thermodynamic potential <../vocabulary/vocabulary.html#thermodynamic-potentials>`_
+1. Description of States in statistical mechanmics: thermodynamical quantities as macroscopic state;
+2. Kinematics: equation of state; thermodynamical-potentials
 
    .. figure:: ../vocabulary/images/thermodynamicPotentials.png
       :align: center
