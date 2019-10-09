@@ -8,7 +8,7 @@ Review of Thermodynamics
 --------------------------------------------------
 
 1. Description of States in statistical mechanmics: thermodynamical quantities as macroscopic state;
-2. Kinematics: equation of state; thermodynamical-potentials
+2. Kinematics: equation of state; :ref:`thermodynamical-potentials`.
 
    .. figure:: ../vocabulary/images/thermodynamicPotentials.png
       :align: center
@@ -16,14 +16,16 @@ Review of Thermodynamics
 
       The relationship between different thermodynamic potentials. There are three different couplings and five different potentials. For more details please read vocabulary :ref:`thermodynamical-potentials` .
 
-3. First principles: `The laws of four <../vocabulary/vocabulary.html#the-laws-of-four>`_
+3. First principles: :ref:`laws-of-thermodynamics`
 4. Dynamics: Phase transition; Stability; Response
 
 
 The Two Approaches of Statistical Mechanics
 ---------------------------------------------
 
-Two approaches utilize most probable distribution and ensemble respectively. However they have something in common.
+To estimate the macroscopic observables, we require the distribution of the microscopic states of the system. However, the microscopic state of the system is not known in general. We have to apply some assumptions and tricks.
+
+There are two famous approaches in statistical mechanics. The first one is utilizing the most probable distributions while the other one is using ensembles. However they have something in common.
 
 1. Phase space
 2. Liouville equation
