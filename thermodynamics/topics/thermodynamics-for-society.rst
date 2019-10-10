@@ -1,6 +1,11 @@
 Thermodynamics for Our Society
 ================================
 
+.. warning::
+
+   This article is just food for thought. No guarantee whatsoever.
+
+
 Can we apply these methods to social communities?
 
 A community consists a lot of human beings. We could categorize human beings into different types based on the focus we have. Then we have transformed the community into a system whose property is determined by the types of human beings, the population of each type, and the interactions.

@@ -13,3 +13,4 @@ Equilibrium Statistical Mechanics
     phase-transitions.rst
     most-probable-distribution.rst
     ensembles.rst
+    topics/index.rst
