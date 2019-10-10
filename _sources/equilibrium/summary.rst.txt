@@ -25,7 +25,7 @@ The Two Approaches of Statistical Mechanics
 
 To estimate the macroscopic observables, we require the distribution of the microscopic states of the system. However, the microscopic state of the system is not known in general. We have to apply some assumptions and tricks.
 
-There are two famous approaches in statistical mechanics. The first one is utilizing the most probable distributions while the other one is using ensembles. However they have something in common.
+There are two famous approaches built in statistical mechanics. The Boltzmann's approach is utilizing the most probable distributions while the Gibbs' approach is using ensembles. However they do have something in common.
 
 1. Phase space
 2. Liouville equation
@@ -41,9 +41,10 @@ There are two famous approaches in statistical mechanics. The first one is utili
 Boltzmann Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+In Boltzmann statistics, we follow these guidelines.
 
 1. Two postulates: One is about state occurrence in phase space; The other one is about which state the equilibrium system will stay at.
-2. Boltzmann factor (which is kind of derived from Gibbs micro-ensemble theory)
+2. Boltzmann factor (which can also be derived from Gibbs micro-ensemble theory)
 3. Partition function
 
    1. Density of state :math:`g(E)` ;
@@ -92,8 +93,6 @@ Boltzmann Factor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Boltzmann factor appears many times in thermodynamics and statistical mechanics. In Boltzmann's most probable theory, ensemble theory, etc.
-
-
 
 Applications of These Theories
 -------------------------------
