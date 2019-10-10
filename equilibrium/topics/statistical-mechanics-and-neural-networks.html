@@ -280,8 +280,14 @@ TeX: {
 <p>“Sparsely distributed” doesn’t really indicate the spatial distributions. It indicates the interactions.</p>
 </div>
 <p>For systems with more interactions between the building blocks, we need more work to find a suitable distribution for the probabilities of the states of the building blocks. In general, we describe the flow of the states in phase space using Liouville equation.</p>
-<p>In artificial neural networks, the neurons are our building blocks. We also encapsulate them so that we only expose a few metrics and parameters. The details of the neurons will be responsible for the training process. Presumbly, we don’t care about the details of the neurons once the network has been trained.</p>
-<p>That being said, we also have a phase space for the neurons in artificial neural networks that we can use to describe a general flow of the states in the phase space once the network has reached equalibrium.</p>
+<p>In artificial neural networks, the neurons are our building blocks. We also encapsulate them so that we only expose a few metrics and parameters. That being said, we also have a phase space for the neurons in artificial neural networks that we can use to describe a general flow of the states in the phase space once the network during training.</p>
+<p>In essence, this becomes a highly non-equilibrium problem. There are a few interesting question to be investigated.</p>
+<ol class="arabic simple">
+<li><p>Do the neurons have strong interactions? The interactions should come from the training algorithms such as back propagation.</p></li>
+<li><p>Can we find a law for the phase space distribution and motion probabilities?</p></li>
+<li><p>Do the equilibrium state follow the Liouville equation? It is hard to validate this since equilibrium state of the neural network doesn’t change that much.</p></li>
+</ol>
+<p>Also, what do we gain from this investigation?</p>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">

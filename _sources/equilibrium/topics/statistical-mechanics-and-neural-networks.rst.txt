@@ -19,12 +19,15 @@ What is even more exciting is that we could even ignore the correlations between
 
 For systems with more interactions between the building blocks, we need more work to find a suitable distribution for the probabilities of the states of the building blocks. In general, we describe the flow of the states in phase space using Liouville equation.
 
-In artificial neural networks, the neurons are our building blocks. We also encapsulate them so that we only expose a few metrics and parameters. The details of the neurons will be responsible for the training process. Presumbly, we don't care about the details of the neurons once the network has been trained.
+In artificial neural networks, the neurons are our building blocks. We also encapsulate them so that we only expose a few metrics and parameters. That being said, we also have a phase space for the neurons in artificial neural networks that we can use to describe a general flow of the states in the phase space once the network during training.
 
-That being said, we also have a phase space for the neurons in artificial neural networks that we can use to describe a general flow of the states in the phase space once the network has reached equalibrium.
+In essence, this becomes a highly non-equilibrium problem. There are a few interesting question to be investigated.
 
+1. Do the neurons have strong interactions? The interactions should come from the training algorithms such as back propagation.
+2. Can we find a law for the phase space distribution and motion probabilities?
+3. Do the equilibrium state follow the Liouville equation? It is hard to validate this since equilibrium state of the neural network doesn't change that much.
 
-
+Also, what do we gain from this investigation?
 
 
 References
