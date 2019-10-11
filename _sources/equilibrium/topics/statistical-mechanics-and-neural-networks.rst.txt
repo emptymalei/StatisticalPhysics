@@ -12,7 +12,7 @@ Statistical Mechanics and Artificial Neural Networks
 
 One of the reason that statistical physics works is that we have common properties in the building blocks, i.e., the particles in the physical system. To construct a macroscopic property of the system, we "encapsulate" the building blocks and only expose a few relevant properties.
 
-What is even more exciting is that we could even ignore the correlations between the building blocks if they are "sparsely distributed". This makes the statistics easy to calculate.
+What is even more exciting is that we could even ignore the correlations between the building blocks if they are "sparsely distributed", i.e., more or less indenpendent and identical. This makes the statistics easy to calculate.
 
 .. note::
    "Sparsely distributed" doesn't really indicate the spatial distributions. It indicates the interactions.
