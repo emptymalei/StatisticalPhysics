@@ -1,7 +1,8 @@
 Equilibrium Statistical Mechanics Summary
 ================================================
 
-This is a review of equilibrium statistical mechanics.
+.. note::
+   This is a review of equilibrium statistical mechanics. Though I called it a review, it is more like a list of keywords at this moment.
 
 
 Review of Thermodynamics
@@ -19,16 +20,23 @@ Review of Thermodynamics
 3. First principles: :ref:`laws-of-thermodynamics`
 4. Dynamics: Phase transition; Stability; Response
 
+Description of the Microstates
+--------------------------------------
+
+For a system with :math:`N` particles of :math:`r` degrees of freedom, we could always describe the microstates of the system by looking at the state of each particle. There are at least two different point of views, the :math:`\mu` space (mu space) and the :math:`\Gamma` space (Gamma space).
+
+The :math:`\mu` space is a :math:`r` dimensional space where each dimension corresponds to one degree of freedom of the particle. Thus a point in the :math:`\mu` space represents a the state of one particle. To represent the microstate of the whole system, we need :math:`N` points in the :math:`\mu` space.
+
+The :math:`\Gamma` space is a :math:`rN` dimensional space. In the :math:`\Gamma` space, we have a holistic view. Each point in the :math:`\Gamma` space represents the state of all the particles. For example, we use the first :math:`r` dimensions out of the :math:`rN` dimension to represent the state of the first particle, the next :math:`r` dimensions to represent the state of the second particle, and so on.
+
+
 
 The Two Approaches of Statistical Mechanics
 ---------------------------------------------
 
 To estimate the macroscopic observables, we require the distribution of the microscopic states of the system. However, the microscopic state of the system is not known in general. We have to apply some assumptions and tricks.
 
-There are two famous approaches built in statistical mechanics. The Boltzmann's approach is utilizing the most probable distributions while the Gibbs' approach is using ensembles. However they do have something in common.
-
-1. Phase space
-2. Liouville equation
+There are two famous approaches built in statistical mechanics. The Boltzmann's approach is utilizing the most probable distributions while the Gibbs' approach is using ensembles. They do not only differ from the way of estimating the probabilities of the states but also differ phylosophically.
 
 
 .. figure:: images/BoltzmannVSGibbs.png
