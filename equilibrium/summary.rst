@@ -20,6 +20,9 @@ Review of Thermodynamics
 3. First principles: :ref:`laws-of-thermodynamics`
 4. Dynamics: Phase transition; Stability; Response
 
+.. _mu-space-and-gamma-space:
+.. _discription-of-microstates:
+
 Description of the Microstates
 --------------------------------------
 
@@ -30,34 +33,54 @@ The :math:`\mu` space is a :math:`r` dimensional space where each dimension corr
 The :math:`\Gamma` space is a :math:`rN` dimensional space. In the :math:`\Gamma` space, we have a holistic view. Each point in the :math:`\Gamma` space represents the state of all the particles. For example, we use the first :math:`r` dimensions out of the :math:`rN` dimension to represent the state of the first particle, the next :math:`r` dimensions to represent the state of the second particle, and so on.
 
 
+What is Statistical Mechanics
+--------------------------------------
+
+Physical systems are usually composed of a large amount of particles. In principle, we could calculate the macroscopic quantities if we know the exact motions of the particles. For example, we only need the momentum transfer per unit area to know the pressure of the gas and momentum transfer could be calculated if we know the motion of the particles.
+
+This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the macroscopic quantities, i.e., the probability of the system being on each point in the :math:`\Gamma` space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it. However, we would get degeneracies of microscopic state for each combination of thermodynamic observables.
+
+
 
 The Two Approaches of Statistical Mechanics
 ---------------------------------------------
 
-To estimate the macroscopic observables, we require the distribution of the microscopic states of the system. However, the microscopic state of the system is not known in general. We have to apply some assumptions and tricks.
+The **probability distribution of the microscopic states**  of the system, :math:`p(\{O_i\})`, is needed to estimate the macroscopic observables :math:`\{O_i\}`. For example, to estimate the energy of the system, we take the statistical average using the distribution :math:`\int E p(E) \mathrm dE`.
 
-There are two famous approaches built in statistical mechanics. The Boltzmann's approach is utilizing the most probable distributions while the Gibbs' approach is using ensembles. They do not only differ from the way of estimating the probabilities of the states but also differ phylosophically.
+However the microscopic state of the system is not known in general. We have to apply some assumptions and tricks.
+
+There are two famous approaches developed in statistical mechanics. The Boltzmann's approach is utilizing the most probable distributions while the Gibbs' approach is using ensembles. They do not only differ from the way of estimating the probabilities of the states but also differ philosophically.
 
 
 .. figure:: images/BoltzmannVSGibbs.png
    :align: center
    :width: 100%
 
-   A UML modeling of the two theories. Refer to :ref:`most-probable-distribution`.
+   Modeling of the two theories. Refer to :ref:`most-probable-distribution`.
 
+.. _summary-boltzmann-statistics:
 
 Boltzmann Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+As mentioned in :ref:`discription-of-microstates`, many microstates have the same observables such as energy :math:`E`. For each value of energy, we could figure out the number of microstates, the distribution of microstates :math:`\Omega(E, \cdots)`. What makes this distribution powerful is that we could figure out the total number of microstates for this distribution by integrating or summing up for all energies :math:`\int \Omega(E, \cdots) \mathrm d E \mathrm d\cdots`. The total number of microstates is closely related the the probability of this distribution as will be discussed below. Meanwhile, we could calculate the thermodynamic observables using the distribution.
+
+In statistical physics, we will be focusing on the **distribution of the microstates** with respect to thermodynamic variables.
+
 In Boltzmann statistics, we follow these guidelines.
 
-1. Two postulates: One is about state occurrence in phase space; The other one is about which state the equilibrium system will stay at.
-2. Boltzmann factor (which can also be derived from Gibbs micro-ensemble theory)
-3. Partition function
+1. Two postulates:
+
+   1. Occurrence of state in phase space ( :ref:`equal-a-prior-probability` ): all microstates have the same probabilities of occurence; This means that the most probable distribution for different energy :math:`\Omega(E, \cdots)` should have the most total number of microstates, :math:`\int \Omega(E, \cdots) \mathrm d E \mathrm d\cdots`.
+   2. Which state the equilibrium system is staying at: the most probable microstate. This means that the most probable distribution discussed in 1 will be the actual distribution of the system.
+
+2. We find the most probable distrinution by maximizing the total number of microstates. Boltzmann distribution and Boltzmann factor is derived from this.
+3. Partition function makes it easy to calculate the observables.
 
    1. Density of state :math:`g(E)` ;
    2. Partition function :math:`Z = \int g(E) \exp(-\beta E) \mathrm dE`; Variable of integration can be changed;
    3. Systems of 3N DoFs :math:`Z = Z_1^{3N}`.
+   4. Macroscopic observables are calculated by taking specific transformations such as derivatives of the partition function.
 
 4. Observable
 
@@ -65,25 +88,6 @@ In Boltzmann statistics, we follow these guidelines.
    1. Internal energy :math:`U = \avg{E} = - \partial_\beta \ln Z`; All quantities can be extracted from partition function except those serve as variables of internal energy.
    2. Heat capacity :math:`C = \partial_T U`
 
-
-.. admonition:: Equal A Prior Probability
-   :class: note
-
-   For systems with enormous number of particles, we observe their macroscopic properties such as energies, pressure. We have very limited information about the internal structure. The principle by Boltzmann is that all these different possible configurations of microstructure are equally distributed, a.k.a., principle of equal *a prior* probabilities.
-
-   We can think about this using two spin system.
-
-   .. figure:: images/equal-a-prior-probability.png
-      :align: center
-
-      Spin system
-
-   With an external magnetic field, the energy of the system is determined by
-
-   .. math::
-      J s_1 s_2 + (s_1  + s_2) B,
-
-   where :math:`s_i=\pm 1`. We find that the second row of the configurations shows two different configurations that have the same energy. How do we determine the probability of these two configurations? In principle, we need more information. But we assume that the two spins are exactly the same with same properties. Then we do we need to distinguish the two configurations anyways. The is a very simple explanation of the equal *a prior* probability.
 
 
 Gibbs Ensemble Theory

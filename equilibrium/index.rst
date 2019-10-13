@@ -8,9 +8,9 @@ Equilibrium Statistical Mechanics
 
     summary.rst
     basics.rst
+    most-probable-distribution.rst
     ho-dos.rst
     debye-model.rst
     phase-transitions.rst
-    most-probable-distribution.rst
     ensembles.rst
     topics/index.rst
