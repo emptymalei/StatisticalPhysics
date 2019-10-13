@@ -178,10 +178,10 @@ TeX: {
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Equilibrium Statistical Mechanics</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Equilibrium Statistical Mechanics Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basics.html">Basics of Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="most-probable-distribution.html">Most Probable Distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ho-dos.html">Harmonic Oscillator and Density of States</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debye-model.html">Observables and Debye Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phase-transitions.html">Phase Transitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="most-probable-distribution.html">Most Probable Distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
 </ul>
@@ -223,6 +223,7 @@ TeX: {
 <li><a class="reference internal" href="#">Equilibrium Statistical Mechanics Summary</a><ul>
 <li><a class="reference internal" href="#review-of-thermodynamics">Review of Thermodynamics</a></li>
 <li><a class="reference internal" href="#description-of-the-microstates">Description of the Microstates</a></li>
+<li><a class="reference internal" href="#what-is-statistical-mechanics">What is Statistical Mechanics</a></li>
 <li><a class="reference internal" href="#the-two-approaches-of-statistical-mechanics">The Two Approaches of Statistical Mechanics</a><ul>
 <li><a class="reference internal" href="#boltzmann-statistics">Boltzmann Statistics</a></li>
 <li><a class="reference internal" href="#gibbs-ensemble-theory">Gibbs Ensemble Theory</a></li>
@@ -301,30 +302,44 @@ TeX: {
 </ol>
 </div>
 <div class="section" id="description-of-the-microstates">
-<h2>Description of the Microstates<a class="headerlink" href="#description-of-the-microstates" title="Permalink to this headline">¶</a></h2>
+<span id="discription-of-microstates"></span><span id="mu-space-and-gamma-space"></span><h2>Description of the Microstates<a class="headerlink" href="#description-of-the-microstates" title="Permalink to this headline">¶</a></h2>
 <p>For a system with <span class="math notranslate nohighlight">\(N\)</span> particles of <span class="math notranslate nohighlight">\(r\)</span> degrees of freedom, we could always describe the microstates of the system by looking at the state of each particle. There are at least two different point of views, the <span class="math notranslate nohighlight">\(\mu\)</span> space (mu space) and the <span class="math notranslate nohighlight">\(\Gamma\)</span> space (Gamma space).</p>
 <p>The <span class="math notranslate nohighlight">\(\mu\)</span> space is a <span class="math notranslate nohighlight">\(r\)</span> dimensional space where each dimension corresponds to one degree of freedom of the particle. Thus a point in the <span class="math notranslate nohighlight">\(\mu\)</span> space represents a the state of one particle. To represent the microstate of the whole system, we need <span class="math notranslate nohighlight">\(N\)</span> points in the <span class="math notranslate nohighlight">\(\mu\)</span> space.</p>
 <p>The <span class="math notranslate nohighlight">\(\Gamma\)</span> space is a <span class="math notranslate nohighlight">\(rN\)</span> dimensional space. In the <span class="math notranslate nohighlight">\(\Gamma\)</span> space, we have a holistic view. Each point in the <span class="math notranslate nohighlight">\(\Gamma\)</span> space represents the state of all the particles. For example, we use the first <span class="math notranslate nohighlight">\(r\)</span> dimensions out of the <span class="math notranslate nohighlight">\(rN\)</span> dimension to represent the state of the first particle, the next <span class="math notranslate nohighlight">\(r\)</span> dimensions to represent the state of the second particle, and so on.</p>
 </div>
+<div class="section" id="what-is-statistical-mechanics">
+<h2>What is Statistical Mechanics<a class="headerlink" href="#what-is-statistical-mechanics" title="Permalink to this headline">¶</a></h2>
+<p>Physical systems are usually composed of a large amount of particles. In principle, we could calculate the macroscopic quantities if we know the exact motions of the particles. For example, we only need the momentum transfer per unit area to know the pressure of the gas and momentum transfer could be calculated if we know the motion of the particles.</p>
+<p>This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the macroscopic quantities, i.e., the probability of the system being on each point in the <span class="math notranslate nohighlight">\(\Gamma\)</span> space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it. However, we would get degeneracies of microscopic state for each combination of thermodynamic observables.</p>
+</div>
 <div class="section" id="the-two-approaches-of-statistical-mechanics">
 <h2>The Two Approaches of Statistical Mechanics<a class="headerlink" href="#the-two-approaches-of-statistical-mechanics" title="Permalink to this headline">¶</a></h2>
-<p>To estimate the macroscopic observables, we require the distribution of the microscopic states of the system. However, the microscopic state of the system is not known in general. We have to apply some assumptions and tricks.</p>
-<p>There are two famous approaches built in statistical mechanics. The Boltzmann’s approach is utilizing the most probable distributions while the Gibbs’ approach is using ensembles. They do not only differ from the way of estimating the probabilities of the states but also differ phylosophically.</p>
+<p>The <strong>probability distribution of the microscopic states</strong>  of the system, <span class="math notranslate nohighlight">\(p(\{O_i\})\)</span>, is needed to estimate the macroscopic observables <span class="math notranslate nohighlight">\(\{O_i\}\)</span>. For example, to estimate the energy of the system, we take the statistical average using the distribution <span class="math notranslate nohighlight">\(\int E p(E) \mathrm dE\)</span>.</p>
+<p>However the microscopic state of the system is not known in general. We have to apply some assumptions and tricks.</p>
+<p>There are two famous approaches developed in statistical mechanics. The Boltzmann’s approach is utilizing the most probable distributions while the Gibbs’ approach is using ensembles. They do not only differ from the way of estimating the probabilities of the states but also differ philosophically.</p>
 <div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/BoltzmannVSGibbs.png"><img alt="../_images/BoltzmannVSGibbs.png" src="../_images/BoltzmannVSGibbs.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">A UML modeling of the two theories. Refer to <a class="reference internal" href="most-probable-distribution.html#most-probable-distribution"><span class="std std-ref">Most Probable Distribution</span></a>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Modeling of the two theories. Refer to <a class="reference internal" href="most-probable-distribution.html#most-probable-distribution"><span class="std std-ref">Most Probable Distribution</span></a>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="boltzmann-statistics">
-<h3>Boltzmann Statistics<a class="headerlink" href="#boltzmann-statistics" title="Permalink to this headline">¶</a></h3>
+<span id="summary-boltzmann-statistics"></span><h3>Boltzmann Statistics<a class="headerlink" href="#boltzmann-statistics" title="Permalink to this headline">¶</a></h3>
+<p>As mentioned in <a class="reference internal" href="#discription-of-microstates"><span class="std std-ref">Description of the Microstates</span></a>, many microstates have the same observables such as energy <span class="math notranslate nohighlight">\(E\)</span>. For each value of energy, we could figure out the number of microstates, the distribution of microstates <span class="math notranslate nohighlight">\(\Omega(E, \cdots)\)</span>. What makes this distribution powerful is that we could figure out the total number of microstates for this distribution by integrating or summing up for all energies <span class="math notranslate nohighlight">\(\int \Omega(E, \cdots) \mathrm d E \mathrm d\cdots\)</span>. The total number of microstates is closely related the the probability of this distribution as will be discussed below. Meanwhile, we could calculate the thermodynamic observables using the distribution.</p>
+<p>In statistical physics, we will be focusing on the <strong>distribution of the microstates</strong> with respect to thermodynamic variables.</p>
 <p>In Boltzmann statistics, we follow these guidelines.</p>
 <ol class="arabic simple">
-<li><p>Two postulates: One is about state occurrence in phase space; The other one is about which state the equilibrium system will stay at.</p></li>
-<li><p>Boltzmann factor (which can also be derived from Gibbs micro-ensemble theory)</p></li>
-<li><p>Partition function</p>
+<li><p>Two postulates:</p>
+<ol class="arabic simple">
+<li><p>Occurrence of state in phase space ( <a class="reference internal" href="most-probable-distribution.html#equal-a-prior-probability"><span class="std std-ref">Equal A Prior Probability</span></a> ): all microstates have the same probabilities of occurence; This means that the most probable distribution for different energy <span class="math notranslate nohighlight">\(\Omega(E, \cdots)\)</span> should have the most total number of microstates, <span class="math notranslate nohighlight">\(\int \Omega(E, \cdots) \mathrm d E \mathrm d\cdots\)</span>.</p></li>
+<li><p>Which state the equilibrium system is staying at: the most probable microstate. This means that the most probable distribution discussed in 1 will be the actual distribution of the system.</p></li>
+</ol>
+</li>
+<li><p>We find the most probable distrinution by maximizing the total number of microstates. Boltzmann distribution and Boltzmann factor is derived from this.</p></li>
+<li><p>Partition function makes it easy to calculate the observables.</p>
 <ol class="arabic simple">
 <li><p>Density of state <span class="math notranslate nohighlight">\(g(E)\)</span> ;</p></li>
 <li><p>Partition function <span class="math notranslate nohighlight">\(Z = \int g(E) \exp(-\beta E) \mathrm dE\)</span>; Variable of integration can be changed;</p></li>
 <li><p>Systems of 3N DoFs <span class="math notranslate nohighlight">\(Z = Z_1^{3N}\)</span>.</p></li>
+<li><p>Macroscopic observables are calculated by taking specific transformations such as derivatives of the partition function.</p></li>
 </ol>
 </li>
 <li><p>Observable</p>
@@ -335,19 +350,6 @@ TeX: {
 </ol>
 </li>
 </ol>
-<div class="note admonition">
-<p class="admonition-title">Equal A Prior Probability</p>
-<p>For systems with enormous number of particles, we observe their macroscopic properties such as energies, pressure. We have very limited information about the internal structure. The principle by Boltzmann is that all these different possible configurations of microstructure are equally distributed, a.k.a., principle of equal <em>a prior</em> probabilities.</p>
-<p>We can think about this using two spin system.</p>
-<div class="figure align-center" id="id3">
-<img alt="../_images/equal-a-prior-probability.png" src="../_images/equal-a-prior-probability.png" />
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Spin system</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
-<p>With an external magnetic field, the energy of the system is determined by</p>
-<div class="math notranslate nohighlight">
-\[J s_1 s_2 + (s_1  + s_2) B,\]</div>
-<p>where <span class="math notranslate nohighlight">\(s_i=\pm 1\)</span>. We find that the second row of the configurations shows two different configurations that have the same energy. How do we determine the probability of these two configurations? In principle, we need more information. But we assume that the two spins are exactly the same with same properties. Then we do we need to distinguish the two configurations anyways. The is a very simple explanation of the equal <em>a prior</em> probability.</p>
-</div>
 </div>
 <div class="section" id="gibbs-ensemble-theory">
 <h3>Gibbs Ensemble Theory<a class="headerlink" href="#gibbs-ensemble-theory" title="Permalink to this headline">¶</a></h3>

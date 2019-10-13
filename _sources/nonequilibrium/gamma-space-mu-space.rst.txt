@@ -10,7 +10,7 @@ Two Spaces
 -----------------------------
 
 
-To get some easy equations we need to reduce from :math:`\Gamma` space to :math:`\mu` space.
+To get some easy equations we need to reduce from :math:`\Gamma` space to :math:`\mu` space. (More about :math:`\mu` space and :math:`\Gamma` space: :ref:`mu-space-and-gamma-space`.)
 
 +-----------------------+-----------------------------------------------------------+-----------------------------------+
 |      Two Spaces       | :math:`\Gamma` space                                      |  :math:`\mu` space                |
