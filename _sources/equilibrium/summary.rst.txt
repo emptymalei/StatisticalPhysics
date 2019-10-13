@@ -36,16 +36,16 @@ The :math:`\Gamma` space is a :math:`rN` dimensional space. In the :math:`\Gamma
 What is Statistical Mechanics
 --------------------------------------
 
-Physical systems are usually composed of a large amount of particles. In principle, we could calculate the macroscopic quantities if we know the exact motions of the particles. For example, we only need the momentum transfer per unit area to know the pressure of the gas and momentum transfer could be calculated if we know the motion of the particles.
+Physical systems are usually composed of a large amount of particles. In principle, we could calculate the observable quantities if we know the exact motions of the particles. For example, we only need the momentum transfer per unit area to know the pressure of the gas and momentum transfer could be calculated if we know the motion of the particles.
 
-This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the macroscopic quantities, i.e., the probability of the system being on each point in the :math:`\Gamma` space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it. However, we would get degeneracies of microscopic state for each combination of thermodynamic observables.
+This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the observable quantities, i.e., the probability of the system being on each point in the :math:`\Gamma` space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it. However, we would get degeneracies of microscopic state for each combination of thermodynamic observables.
 
 
 
 The Two Approaches of Statistical Mechanics
 ---------------------------------------------
 
-The **probability distribution of the microscopic states**  of the system, :math:`p(\{O_i\})`, is needed to estimate the macroscopic observables :math:`\{O_i\}`. For example, to estimate the energy of the system, we take the statistical average using the distribution :math:`\int E p(E) \mathrm dE`.
+The **probability distribution of the microscopic states**  of the system, :math:`p(\{O_i\})`, is needed to estimate the observables :math:`\{O_i\}`. For example, to estimate the energy of the system, we take the statistical average using the distribution :math:`\int E p(E) \mathrm dE`.
 
 However the microscopic state of the system is not known in general. We have to apply some assumptions and tricks.
 
