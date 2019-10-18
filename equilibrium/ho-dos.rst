@@ -130,7 +130,10 @@ We can rewrite the expressions,
 
 where :math:`d` is the dimension of the system or box.
 
-Note that the gradient of energy :math:`\frac{d E}{d k}` gives us the spread out or dispersion.
+.. admonition:: Dispersion relations and Density of States
+   :class: note
+
+   Note that the gradient of energy :math:`\frac{d E}{d k}` gives us the spread out of energy, a.k.a. dispersion relations. Dispersion relations and density of states are tightly related.
 
 To sum up, the quantities that are used to determine the DoS:
 
@@ -143,52 +146,53 @@ Density of States for Some Simple Systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-1. 2D free particle in a box with length :math:`L`
+1. Free particle in a 2D box with length :math:`L`:
 
    .. math::
-      \frac{d E}{d k} = \frac{d}{d k}\left( \frac{\hbar^2 k^2}{2m} \right) = \frac{\hbar^2 k}{m}
+      \frac{d E}{d k} = \frac{d}{d k}\left( \frac{\hbar^2 k^2}{2m} \right) = \frac{\hbar^2 k}{m}.
 
-   Thus we have,
+   The density of states is
 
    .. math::
       g(E) = \frac{2\pi k }{\frac{\hbar^2 k}{m}} \frac{L^2}{(2\pi)^2} = (\frac{1}{2\pi} \frac{m}{\hbar^2})L^2
 
-2. 3D free particle in a box with length :math:`L`
+2. Free particle in a 3D box with length :math:`L`:
 
    .. math::
-      \frac{d E}{d k} = \frac{\hbar^2 k^2}{2m}
+      \frac{d E}{d k} = \frac{\hbar^2 k^2}{2m}.
 
-   DoS
+   The density of states is
 
    .. math::
       g(E) = \frac{m}{\hbar^2} \frac{L^3}{2\pi^2} k
 
    This is :math:`k` dependent.
 
-3. 1D
+3. Free particle in a 1D box with length :math:`L`:
 
    .. math::
       g(E) = \frac{1}{k} \frac{m L}{2\pi \hbar^2}
 
 
-.. admonition:: Dimension is Crucial
+.. admonition:: Dimension is Crucial for Density of States
    :class: note
 
-   These results are so different. For 1D system, the higher energy of the system is, the small DoS is. 2D DoS doesn't depend on energy. 3D is proportional to the square root of energy.
+   These results are very different. For 1D system, the higher energy of the system is, the smaller the DoS is. As a comparison, the DoS for 2D systems doesn't depend on the energy. In 3D, the DoS is proportional to the square root of energy.
 
-   DoS is very important in quantum systems because quantization can make strange DoS. In classical systems without quantization, DoS is always some kind of constant.
-
-
+   The DoS is very important in understanding quantum systems. Quantization can lead to strange DoS. On ther other hand, the DoS is always constant in classical systems without quantizations.
 
 
-Partition Function and DoS
-----------------------------
+
+Partition Function and Density of States
+--------------------------------------------------------
 
 
-Thermal wavelength is defined as
+The thermal wavelength decides the characteristic correlation length in statistical mechanics, which is defined as
 
 .. math::
-   \lambda_T = \frac{\hbar}{ \sqrt{ 2\pi m k_B T } }
+   \lambda_T = \frac{\hbar}{ \sqrt{ 2\pi m k_B T } }.
+
+The thermal wavelength is a combination of quantum mechanics and thermodynamics. :math:`\sqrt{m k_B T}` has dimension of energy while :math:`\hbar` has dimension of energy * time. In natural units, time is basically length. This is why the quantity is a characteristic length.
 
 For 1 particle in 3D box,
 
