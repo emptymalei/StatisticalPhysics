@@ -192,36 +192,47 @@ The thermal wavelength decides the characteristic correlation length in statisti
 .. math::
    \lambda_T = \frac{\hbar}{ \sqrt{ 2\pi m k_B T } }.
 
-The thermal wavelength is a combination of quantum mechanics and thermodynamics. :math:`\sqrt{m k_B T}` has dimension of energy while :math:`\hbar` has dimension of energy * time. In natural units, time is basically length. This is why the quantity is a characteristic length.
+The thermal wavelength is a combination of quantum mechanics and thermodynamics. :math:`\sqrt{m k_B T}` has dimension of energy while :math:`\hbar` has dimension of energy * time. In natural units, time is basically length. This is why the quantity serves as a characteristic length.
 
-For 1 particle in 3D box,
+For a single particle in a 3D box, the partition function is
 
 .. math::
-   Z_1 = \frac{V}{\lambda_T^3}
+   Z_1 = \frac{V}{\lambda_T^3}.
 
+Recall that the partition function is the average of density of states under the Boltzman distribution and that the thermal length is the characteristic length of the thermal system. We rewrite this formula using words
 
-It's obvious that for a N particles system without interaction between particles, :math:`Z_N  = (Z_1)^N`. Free energy
+.. math::
+   &\text{density of states} = \text{physical volumne} \text{unit thermal volume} \\
+   \Rightarrow & \text{number of states} / \text{energy span} = \text{physical volumne} / \text{unit thermal volume}.
+
+.. admonition:: Thermal Length
+   :class: note
+
+   TO BE ADDED.
+
+For a N-particles system without interaction between particles, density of states will be more dense since we have more possible states and degrees of freedom. **In classical mechanics**, the number of states will be full combination of all the single particle states since all the particles are distinguishable. Thus the partition function should be :math:`Z_N  = (Z_1)^N`. The free energy
 
 .. math::
    A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)
 
-.. note::
-   This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won't have twice of the free energy. It's called Gibbs mixing paradox.
+.. admonition:: Gibbs Mixing Paradox
+   :class: warning
 
+   This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won't have twice of the free energy. It's called **Gibbs mixing paradox**.
 
 
 
 Phase Space of Quantum Partition Function
 ------------------------------------------
 
-This is a physical idea of how do we get the quantum partition function from Classical Mechanics.
+We will provide a physical vision of the quantum partition function using classical mechanics.
 
-Classically, the partition function
+In classical mechanics, the partition function is
 
 .. math::
    Z = \int d^3 x \int d^3 p e^{-\beta p^2/2m} = V \left( \sqrt{\frac{ 2m \pi }{\beta} } \right)^3
 
-We can see from this that thermal wave length is :math:`1/\sqrt{\frac{ 2m \pi }{\beta}}` classically. In quantum, partition function is a summation,
+We can infer from this that the thermal wave length is :math:`1/\sqrt{\frac{ 2m \pi }{\beta}}`. In quantum mechanics, the partition function is a summation,
 
 .. math::
    Z = \sum_i e^{-\beta E_i}
