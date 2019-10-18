@@ -3,41 +3,54 @@ Harmonic Oscillator and Density of States
 
 
 
-
-
 Quantum Harmonic Oscillator
 ----------------------------
 
-Quantum HO tells us the eigen energy
+As derived in quantum mechanics, quantum harmonic oscillators have the following energy levels,
 
 .. math::
    E_n  = \left(n + \frac{1}{2}\right)\hbar \omega
 
-where :math:`\omega = \sqrt{ k/m }`.
+where :math:`\omega = \sqrt{ k/m }` is the base frequency of the oscillator. The :math:`1/2` is our signature that we are working with quantum systems.
 
-Partition function
+Thus the partition function is easily calculated since it is a simple geometric progression,
 
 .. math::
-   Z = \sum_n e^{-\beta E_n} = \frac{e^{-\frac{1}{2} \hbar \omega }} { 1 - e^{- \beta \hbar \omega} } = \frac{1}{2}  \sinh(\beta \hbar \omega/2)
+   Z = \sum_n e^{-\beta E_n} = \frac{e^{-\frac{1}{2} \hbar \omega }} { 1 - e^{- \beta \hbar \omega} } = \frac{1}{2}  \sinh(\beta \hbar \omega/2).
 
-Energy
+The limiting behavior of the partition function is
+
+.. math::
+   \lim_{\beta \to \infty} Z &= e^{-\frac{1}{2} \hbar \omega }, \\
+   \lim_{\omega \to \infty} Z &= 0.
+
+
+The internal energy is derived using the partition function,
 
 .. math::
    \langle E \rangle = -\frac{\partial}{\partial\beta} \ln Z =  \hbar \omega \left( \frac{1}{2} + \frac{1}{\exp(\beta\hbar\omega) - 1} \right)
 
-Specific heat
+By definition, the specific heat is the change of internal energy as temperature changes, i.e.,
 
 .. math::
    C = \frac{\partial}{\partial T} \langle E\rangle = k_B (\beta \hbar \omega)^2 \frac{\exp(\beta \hbar \omega)}{ (\exp(\beta \hbar \omega) - 1)^2 }
 
 
-This specific heat behaves like this.
+This specific heat behaves is shown in :numref:`quantum-harmonic-oscillators-specific-heat`.
 
-.. image:: images/shQHO.png
+.. _quantum-harmonic-oscillators-specific-heat:
+
+.. figure:: images/specific-heat.png
+   :alt: Probability distribution with an attraction point.
+   :width: 90%
    :align: center
 
-Though we have infinite energy levels, the specific heat won't blow up because the probability of a high energy level state is very small.
+   Specific heat as a function of :math:`\beta`. We have the Boltzman constant :math:`k_B=1` and the characteristic energy scale :math:`\hbar \omega = 1`.
 
+.. admonition:: Why don't we have infinite specific heat due to infinite energy levels
+   :class: note
+
+   Though we have infinite energy levels, the specific heat won't blow up because the probability of a high energy level state is extremely small.
 
 
 
@@ -49,34 +62,34 @@ Density of States
 .. admonition:: Free Energy and Partition Function
    :class: note
 
-   Free energy
+   In thermodynamics, the free energy of a system is given by
 
    .. math::
       A = U - T S
 
-   In another way,
+   In statistical mechanics, the free energy can be derived from the partition function,
 
    .. math::
       A = - k_B T \ln Z
 
-   As long as we find out partition function, all thermodynamics quantities are solved, including entropy.
+   In fact, all thermodynamics quantities are solved, as long as we find out partition function. For example, the entropy is
 
    .. math::
       S = -k_B \beta  \left(T \ln Z - \frac{\partial}{\partial \beta} \ln Z \right)
 
 
 
-Specific heat is very different in 1D, 2D, 3D even for similar Hamiltonian. In the case of dipole systems, this is because for 1D, there discrete energy levels, for 2D and 3D energy levels fill up the gap. But what's the difference between 2D and 3D? Obviously the degeneracies are different.
+Specific heat is very different for systems in 1D, 2D, and 3D. We take the dipole system as an example. In 1D, the dipole system has discrete energy levels. However, the energy levels are filling up the gaps in 2D and 3D. Even for 2D and 3D systems, we have different degeneracies.
 
-Generally,
+Generally speaking, the partition function can be expressed using the following integral,
 
 .. math::
-   Z = \int g(E) e^{-\beta E}\mathrm d E
+   Z = \int g(E) e^{-\beta E}\mathrm d E,
 
-where :math:`g(E)` is the density of states.
+where :math:`g(E)` is the density of states. The density of states tells us about the degeneracies.
 
 
-.. admonition:: Discussion of Partition Function  -  Lingfei, Qian-yuan, Lei
+.. admonition:: Discussions of Partition Function  -  Lingfei, Qian-yuan, Lei
    :class: discussion
 
    1. :math:`Z` is an average of :math:`g(E)` under Boltzman distribution;
@@ -84,46 +97,50 @@ where :math:`g(E)` is the density of states.
 
 
 
-Calculation of DoS
-~~~~~~~~~~~~~~~~~~~~
+Calculation of the Density of States
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-QM free particle in a 2D box.
+Here we consider the free quantum particle in a 2D box as an example.
 
-In the momentum (wave number) space, all possible states are distributed on a grid.
+In the momentum (wave number :math:`\mathbf k`) space, all possible states are distributed on a virtual grid as shown in :numref:`particle-in-a-2d-box-dos-cal`.
 
-.. image:: images/2DDoS.png
+.. _particle-in-a-2d-box-dos-cal:
+
+.. figure:: images/2DDoS.png
    :align: center
 
-How do we calculate the DoS? For a given E, we have :math:`k_x^2 + k_y^2 = \mathrm{Constant} E`. The # of states between :math:`E ~ E + \mathrm d E` is just the area of it divided by the area of each grid box.
+   Quantum particle in a 2D box
+
+For any given energy :math:`E`, we have the relation between the wave number and the energy :math:`k_x^2 + k_y^2 \propto E`. The number of states on an energy shell :math:`E ~ E + \mathrm d E` is determined by the area of it divided by the area of each small box on the virtual grid shown in :numref:`particle-in-a-2d-box-dos-cal`, i.e.,
 
 .. math::
-   N = \frac{d V_k}{d V_0} = \frac{2\pi k d k}{\frac{2\pi}{L_x} \frac{2\pi}{L_y} } \equiv g(E) d E
+   N = \frac{d V_k}{d V_0} = \frac{2\pi k d k}{\frac{2\pi}{L_x} \frac{2\pi}{L_y} } \equiv g(E) d E.
 
 
-DoS :math:`g(E)` is
+The DoS :math:`g(E)` is the ratio of the differential number of states divided by the differential energy,
 
 .. math::
    g(E) = \frac{ 2\pi k }{\frac{d E}{d k}} \frac{L_x L_y}{(2\pi)^2}
 
-In the laguage of physics,
+We can rewrite the expressions,
 
 .. math::
-   g(E) = \frac{\mathrm{area of } E ~ d E}{|\nabla_k E|} \frac{\mathrm{Volume of the box} }{(2\pi)^d}
+   g(E) = \frac{\text{area of } E ~ d E}{|\nabla_k E|} \frac{\text{volume of the box} }{(2\pi)^d}
 
 where :math:`d` is the dimension of the system or box.
 
-Gradient of energy gives us the spread out or dispersion.
+Note that the gradient of energy :math:`\frac{d E}{d k}` gives us the spread out or dispersion.
 
-To sum up, the quantities that determines the DoS are,
+To sum up, the quantities that are used to determine the DoS:
 
 * :math:`E(k)`
 * :math:`n`: dimension
 * :math:`V`: volume of the box (important in QM because this sets the boundary conditions)
 
 
-Examples of DoS
-~~~~~~~~~~~~~~~~~~~
+Density of States for Some Simple Systems
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 1. 2D free particle in a box with length :math:`L`
