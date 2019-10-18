@@ -223,8 +223,8 @@ TeX: {
 <li><a class="reference internal" href="#">Harmonic Oscillator and Density of States</a><ul>
 <li><a class="reference internal" href="#quantum-harmonic-oscillator">Quantum Harmonic Oscillator</a></li>
 <li><a class="reference internal" href="#density-of-states">Density of States</a><ul>
-<li><a class="reference internal" href="#calculation-of-dos">Calculation of DoS</a></li>
-<li><a class="reference internal" href="#examples-of-dos">Examples of DoS</a></li>
+<li><a class="reference internal" href="#calculation-of-the-density-of-states">Calculation of the Density of States</a></li>
+<li><a class="reference internal" href="#density-of-states-for-some-simple-systems">Density of States for Some Simple Systems</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#partition-function-and-dos">Partition Function and DoS</a></li>
@@ -277,74 +277,87 @@ TeX: {
 <h1>Harmonic Oscillator and Density of States<a class="headerlink" href="#harmonic-oscillator-and-density-of-states" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="quantum-harmonic-oscillator">
 <h2>Quantum Harmonic Oscillator<a class="headerlink" href="#quantum-harmonic-oscillator" title="Permalink to this headline">¶</a></h2>
-<p>Quantum HO tells us the eigen energy</p>
+<p>As derived in quantum mechanics, quantum harmonic oscillators have the following energy levels,</p>
 <div class="math notranslate nohighlight">
 \[E_n  = \left(n + \frac{1}{2}\right)\hbar \omega\]</div>
-<p>where <span class="math notranslate nohighlight">\(\omega = \sqrt{ k/m }\)</span>.</p>
-<p>Partition function</p>
+<p>where <span class="math notranslate nohighlight">\(\omega = \sqrt{ k/m }\)</span> is the base frequency of the oscillator. The <span class="math notranslate nohighlight">\(1/2\)</span> is our signature that we are working with quantum systems.</p>
+<p>Thus the partition function is easily calculated since it is a simple geometric progression,</p>
 <div class="math notranslate nohighlight">
-\[Z = \sum_n e^{-\beta E_n} = \frac{e^{-\frac{1}{2} \hbar \omega }} { 1 - e^{- \beta \hbar \omega} } = \frac{1}{2}  \sinh(\beta \hbar \omega/2)\]</div>
-<p>Energy</p>
+\[Z = \sum_n e^{-\beta E_n} = \frac{e^{-\frac{1}{2} \hbar \omega }} { 1 - e^{- \beta \hbar \omega} } = \frac{1}{2}  \sinh(\beta \hbar \omega/2).\]</div>
+<p>The limiting behavior of the partition function is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\lim_{\beta \to \infty} Z &amp;= e^{-\frac{1}{2} \hbar \omega }, \\
+\lim_{\omega \to \infty} Z &amp;= 0.\end{split}\]</div>
+<p>The internal energy is derived using the partition function,</p>
 <div class="math notranslate nohighlight">
 \[\langle E \rangle = -\frac{\partial}{\partial\beta} \ln Z =  \hbar \omega \left( \frac{1}{2} + \frac{1}{\exp(\beta\hbar\omega) - 1} \right)\]</div>
-<p>Specific heat</p>
+<p>By definition, the specific heat is the change of internal energy as temperature changes, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[C = \frac{\partial}{\partial T} \langle E\rangle = k_B (\beta \hbar \omega)^2 \frac{\exp(\beta \hbar \omega)}{ (\exp(\beta \hbar \omega) - 1)^2 }\]</div>
-<p>This specific heat behaves like this.</p>
-<img alt="../_images/shQHO.png" class="align-center" src="../_images/shQHO.png" />
-<p>Though we have infinite energy levels, the specific heat won’t blow up because the probability of a high energy level state is very small.</p>
+<p>This specific heat behaves is shown in <a class="reference internal" href="#quantum-harmonic-oscillators-specific-heat"><span class="std std-numref">Fig. 10</span></a>.</p>
+<div class="figure align-center" id="id2">
+<span id="quantum-harmonic-oscillators-specific-heat"></span><a class="reference internal image-reference" href="../_images/specific-heat.png"><img alt="Probability distribution with an attraction point." src="../_images/specific-heat.png" style="width: 90%;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Specific heat as a function of <span class="math notranslate nohighlight">\(\beta\)</span>. We have the Boltzman constant <span class="math notranslate nohighlight">\(k_B=1\)</span> and the characteristic energy scale <span class="math notranslate nohighlight">\(\hbar \omega = 1\)</span>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Why don’t we have infinite specific heat due to infinite energy levels</p>
+<p>Though we have infinite energy levels, the specific heat won’t blow up because the probability of a high energy level state is extremely small.</p>
+</div>
 </div>
 <div class="section" id="density-of-states">
 <h2>Density of States<a class="headerlink" href="#density-of-states" title="Permalink to this headline">¶</a></h2>
 <div class="note admonition">
 <p class="admonition-title">Free Energy and Partition Function</p>
-<p>Free energy</p>
+<p>In thermodynamics, the free energy of a system is given by</p>
 <div class="math notranslate nohighlight">
 \[A = U - T S\]</div>
-<p>In another way,</p>
+<p>In statistical mechanics, the free energy can be derived from the partition function,</p>
 <div class="math notranslate nohighlight">
 \[A = - k_B T \ln Z\]</div>
-<p>As long as we find out partition function, all thermodynamics quantities are solved, including entropy.</p>
+<p>In fact, all thermodynamics quantities are solved, as long as we find out partition function. For example, the entropy is</p>
 <div class="math notranslate nohighlight">
 \[S = -k_B \beta  \left(T \ln Z - \frac{\partial}{\partial \beta} \ln Z \right)\]</div>
 </div>
-<p>Specific heat is very different in 1D, 2D, 3D even for similar Hamiltonian. In the case of dipole systems, this is because for 1D, there discrete energy levels, for 2D and 3D energy levels fill up the gap. But what’s the difference between 2D and 3D? Obviously the degeneracies are different.</p>
-<p>Generally,</p>
+<p>Specific heat is very different for systems in 1D, 2D, and 3D. We take the dipole system as an example. In 1D, the dipole system has discrete energy levels. However, the energy levels are filling up the gaps in 2D and 3D. Even for 2D and 3D systems, we have different degeneracies.</p>
+<p>Generally speaking, the partition function can be expressed using the following integral,</p>
 <div class="math notranslate nohighlight">
-\[Z = \int g(E) e^{-\beta E}\mathrm d E\]</div>
-<p>where <span class="math notranslate nohighlight">\(g(E)\)</span> is the density of states.</p>
+\[Z = \int g(E) e^{-\beta E}\mathrm d E,\]</div>
+<p>where <span class="math notranslate nohighlight">\(g(E)\)</span> is the density of states. The density of states tells us about the degeneracies.</p>
 <div class="discussion admonition">
-<p class="admonition-title">Discussion of Partition Function  -  Lingfei, Qian-yuan, Lei</p>
+<p class="admonition-title">Discussions of Partition Function  -  Lingfei, Qian-yuan, Lei</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(Z\)</span> is an average of <span class="math notranslate nohighlight">\(g(E)\)</span> under Boltzman distribution;</p></li>
 <li><p><span class="math notranslate nohighlight">\(Z\)</span> is the Laplace transform of <span class="math notranslate nohighlight">\(g(E)\)</span>.</p></li>
 </ol>
 </div>
-<div class="section" id="calculation-of-dos">
-<h3>Calculation of DoS<a class="headerlink" href="#calculation-of-dos" title="Permalink to this headline">¶</a></h3>
-<p>QM free particle in a 2D box.</p>
-<p>In the momentum (wave number) space, all possible states are distributed on a grid.</p>
-<img alt="../_images/2DDoS.png" class="align-center" src="../_images/2DDoS.png" />
-<p>How do we calculate the DoS? For a given E, we have <span class="math notranslate nohighlight">\(k_x^2 + k_y^2 = \mathrm{Constant} E\)</span>. The # of states between <span class="math notranslate nohighlight">\(E ~ E + \mathrm d E\)</span> is just the area of it divided by the area of each grid box.</p>
+<div class="section" id="calculation-of-the-density-of-states">
+<h3>Calculation of the Density of States<a class="headerlink" href="#calculation-of-the-density-of-states" title="Permalink to this headline">¶</a></h3>
+<p>Here we consider the free quantum particle in a 2D box as an example.</p>
+<p>In the momentum (wave number <span class="math notranslate nohighlight">\(\mathbf k\)</span>) space, all possible states are distributed on a virtual grid as shown in <a class="reference internal" href="#particle-in-a-2d-box-dos-cal"><span class="std std-numref">Fig. 11</span></a>.</p>
+<div class="figure align-center" id="id3">
+<span id="particle-in-a-2d-box-dos-cal"></span><img alt="../_images/2DDoS.png" src="../_images/2DDoS.png" />
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Quantum particle in a 2D box</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>For any given energy <span class="math notranslate nohighlight">\(E\)</span>, we have the relation between the wave number and the energy <span class="math notranslate nohighlight">\(k_x^2 + k_y^2 \propto E\)</span>. The number of states on an energy shell <span class="math notranslate nohighlight">\(E ~ E + \mathrm d E\)</span> is determined by the area of it divided by the area of each small box on the virtual grid shown in <a class="reference internal" href="#particle-in-a-2d-box-dos-cal"><span class="std std-numref">Fig. 11</span></a>, i.e.,</p>
 <div class="math notranslate nohighlight">
-\[N = \frac{d V_k}{d V_0} = \frac{2\pi k d k}{\frac{2\pi}{L_x} \frac{2\pi}{L_y} } \equiv g(E) d E\]</div>
-<p>DoS <span class="math notranslate nohighlight">\(g(E)\)</span> is</p>
+\[N = \frac{d V_k}{d V_0} = \frac{2\pi k d k}{\frac{2\pi}{L_x} \frac{2\pi}{L_y} } \equiv g(E) d E.\]</div>
+<p>The DoS <span class="math notranslate nohighlight">\(g(E)\)</span> is the ratio of the differential number of states divided by the differential energy,</p>
 <div class="math notranslate nohighlight">
 \[g(E) = \frac{ 2\pi k }{\frac{d E}{d k}} \frac{L_x L_y}{(2\pi)^2}\]</div>
-<p>In the laguage of physics,</p>
+<p>We can rewrite the expressions,</p>
 <div class="math notranslate nohighlight">
-\[g(E) = \frac{\mathrm{area of } E ~ d E}{|\nabla_k E|} \frac{\mathrm{Volume of the box} }{(2\pi)^d}\]</div>
+\[g(E) = \frac{\text{area of } E ~ d E}{|\nabla_k E|} \frac{\text{volume of the box} }{(2\pi)^d}\]</div>
 <p>where <span class="math notranslate nohighlight">\(d\)</span> is the dimension of the system or box.</p>
-<p>Gradient of energy gives us the spread out or dispersion.</p>
-<p>To sum up, the quantities that determines the DoS are,</p>
+<p>Note that the gradient of energy <span class="math notranslate nohighlight">\(\frac{d E}{d k}\)</span> gives us the spread out or dispersion.</p>
+<p>To sum up, the quantities that are used to determine the DoS:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(E(k)\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(n\)</span>: dimension</p></li>
 <li><p><span class="math notranslate nohighlight">\(V\)</span>: volume of the box (important in QM because this sets the boundary conditions)</p></li>
 </ul>
 </div>
-<div class="section" id="examples-of-dos">
-<h3>Examples of DoS<a class="headerlink" href="#examples-of-dos" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="density-of-states-for-some-simple-systems">
+<h3>Density of States for Some Simple Systems<a class="headerlink" href="#density-of-states-for-some-simple-systems" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
 <li><p>2D free particle in a box with length <span class="math notranslate nohighlight">\(L\)</span></p>
 <div class="math notranslate nohighlight">
