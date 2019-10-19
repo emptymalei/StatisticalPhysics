@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Observables and Debye Model &#8212; Statistical Physics Notes</title>
+    <title>Debye Model &#8212; Statistical Physics Notes</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -23,7 +23,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Phase Transitions" href="phase-transitions.html" />
-    <link rel="prev" title="Harmonic Oscillator and Density of States" href="ho-dos.html" />
+    <link rel="prev" title="Observables in Statistical Physics" href="observables.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -180,7 +180,9 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="basics.html">Basics of Statistical Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="most-probable-distribution.html">Most Probable Distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ho-dos.html">Harmonic Oscillator and Density of States</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Observables and Debye Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gibbs-mixing-paradox.html">Gibbs Mixing Paradox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observables.html">Observables in Statistical Physics</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Debye Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phase-transitions.html">Phase Transitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ising-model.html">Ising Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
@@ -221,9 +223,7 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Observables and Debye Model</a><ul>
-<li><a class="reference internal" href="#observables-equilibrium">Observables &amp; Equilibrium</a></li>
-<li><a class="reference internal" href="#gibbs-mixing-paradox">Gibbs Mixing Paradox</a></li>
+<li><a class="reference internal" href="#">Debye Model</a><ul>
 <li><a class="reference internal" href="#interacting-particles">Interacting Particles</a></li>
 <li><a class="reference internal" href="#beyond-debye-model">Beyond Debye Model</a></li>
 </ul>
@@ -237,7 +237,7 @@ TeX: {
               
                 
   <li>
-    <a href="ho-dos.html" title="Previous Chapter: Harmonic Oscillator and Density of States"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Harmonic Osci...</span>
+    <a href="observables.html" title="Previous Chapter: Observables in Statistical Physics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Observables i...</span>
     </a>
   </li>
   <li>
@@ -269,46 +269,8 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="observables-and-debye-model">
-<h1>Observables and Debye Model<a class="headerlink" href="#observables-and-debye-model" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="observables-equilibrium">
-<h2>Observables &amp; Equilibrium<a class="headerlink" href="#observables-equilibrium" title="Permalink to this headline">¶</a></h2>
-<p>Average of an observable is</p>
-<div class="math notranslate nohighlight">
-\[O = Tr(\hat O \rho)\]</div>
-<p>where <span class="math notranslate nohighlight">\(\rho\)</span> is the “probability matrix”. In QM, this is</p>
-<div class="math notranslate nohighlight">
-\[\rho = \frac{ e^{-\beta H} }{\mathrm{Tr} ( e^{-\beta H} ) }\]</div>
-<p>If a system of QM comes to equilibrium, that means</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\rho  = \frac{ e^{-\beta H} }{\mathrm{Tr} e^{-\beta H} }\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\rho\)</span> is diagonal in energy eigen space.</p></li>
-</ol>
-</div>
-<div class="section" id="gibbs-mixing-paradox">
-<span id="id1"></span><h2>Gibbs Mixing Paradox<a class="headerlink" href="#gibbs-mixing-paradox" title="Permalink to this headline">¶</a></h2>
-<p>As we already know, from math of classical statistical mechanics, free energy</p>
-<div class="math notranslate nohighlight">
-\[A  = -k_B T N ( \ln V - 3 \ln \lambda )\]</div>
-<p>Suppose we have two systems, one with <span class="math notranslate nohighlight">\(N_1\)</span> and <span class="math notranslate nohighlight">\(V_1\)</span> the other with <span class="math notranslate nohighlight">\(N_2\)</span> and <span class="math notranslate nohighlight">\(V_2\)</span>. Now we mix them. Our physics intuition would tell us that the free energy of this new system should be <span class="math notranslate nohighlight">\(A = A_1 + A_2\)</span>. However, from the free energy equation, we get</p>
-<div class="math notranslate nohighlight">
-\[A = \cdots - k_B T \ln (V_1^{N_1} V_2^{N2})\]</div>
-<p>This is different from the result we thought of</p>
-<div class="math notranslate nohighlight">
-\[A = \cdots - k_B T (N_1 + N_2) \ln (V_1 + V_2) = \cdots - k_B T \ln \left(  (V_1 + V_2)^{N_1+N_2}  \right)\]</div>
-<p>That is, free energy becomes neither intensive nor extensive in our derivation.</p>
-<p>The fairly simple way to make it extensive is to <strong>divide V by N</strong>. Now a new term will appear in our free energy, namely <span class="math notranslate nohighlight">\(N\ln N\)</span>. Recall that in Sterling approximation, <span class="math notranslate nohighlight">\(\ln N! = N\ln N -N\)</span>. So in a large system, we can create some kind of free energy definition which makes it extensive.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>We can’t just pull out some results from statistical mechanics and apply them to a small system composed of several particles. In stat mech we use a lot of approximations like Sterling approximation which is only valid when particle number is huge.</p>
-</div>
-<div class="math notranslate nohighlight">
-\[A = - k_B T N ( \ln(V/N!) - 3 \ln \lambda)\]</div>
-<p>which is to say</p>
-<div class="math notranslate nohighlight">
-\[Z_N = \frac{Z_1^N}{N!}\]</div>
-<p>This definition “solves” the Gibbs mixing paradox. The physics of this modification requires QM.</p>
-</div>
+  <div class="section" id="debye-model">
+<h1>Debye Model<a class="headerlink" href="#debye-model" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="interacting-particles">
 <h2>Interacting Particles<a class="headerlink" href="#interacting-particles" title="Permalink to this headline">¶</a></h2>
 <p>Statistical mechanics starts from a given energy spectrum. With energy spectrum solved, we can do statistics.</p>

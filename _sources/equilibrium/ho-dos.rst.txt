@@ -184,6 +184,7 @@ Density of States for Some Simple Systems
 
 
 .. index:: Thermal Wavelength
+.. _partition_function_and_density_of_states:
 
 Partition Function and Density of States
 --------------------------------------------------------
@@ -213,6 +214,7 @@ For a N-particles system without interaction between particles, density of state
 
 .. math::
    A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)
+   :label: gibbs-mixing-paradox-free-energy-thermal-wavelength
 
 .. index:: Gibbs Mixing Paradox
 
@@ -222,6 +224,8 @@ For a N-particles system without interaction between particles, density of state
    This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won't have twice of the free energy. It's called **Gibbs mixing paradox**.
 
    The solution to this paradox is to apply the symmetries in quantum mechanics and consider the indistinguisabilities.
+
+   More about the Gibbs mixing paradox is discussed in :ref:`gibbs-mixing-paradox`.
 
 
 

@@ -22,7 +22,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Observables and Debye Model" href="debye-model.html" />
+    <link rel="next" title="Gibbs Mixing Paradox" href="gibbs-mixing-paradox.html" />
     <link rel="prev" title="Most Probable Distribution" href="most-probable-distribution.html" />
 
 <meta charset='utf-8'>
@@ -180,7 +180,9 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="basics.html">Basics of Statistical Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="most-probable-distribution.html">Most Probable Distribution</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Harmonic Oscillator and Density of States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="debye-model.html">Observables and Debye Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gibbs-mixing-paradox.html">Gibbs Mixing Paradox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observables.html">Observables in Statistical Physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debye-model.html">Debye Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phase-transitions.html">Phase Transitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ising-model.html">Ising Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
@@ -245,7 +247,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="debye-model.html" title="Next Chapter: Observables and Debye Model"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Observables a... &raquo;</span>
+    <a href="gibbs-mixing-paradox.html" title="Next Chapter: Gibbs Mixing Paradox"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Gibbs Mixing Paradox &raquo;</span>
     </a>
   </li>
               
@@ -295,9 +297,9 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[C = \frac{\partial}{\partial T} \langle E\rangle = k_B (\beta \hbar \omega)^2 \frac{\exp(\beta \hbar \omega)}{ (\exp(\beta \hbar \omega) - 1)^2 }\]</div>
 <p>This specific heat behaves is shown in <a class="reference internal" href="#quantum-harmonic-oscillators-specific-heat"><span class="std std-numref">Fig. 10</span></a>.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id2">
 <span id="quantum-harmonic-oscillators-specific-heat"></span><a class="reference internal image-reference" href="../_images/specific-heat.png"><img alt="Probability distribution with an attraction point." src="../_images/specific-heat.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Specific heat as a function of <span class="math notranslate nohighlight">\(\beta\)</span>. We have the Boltzman constant <span class="math notranslate nohighlight">\(k_B=1\)</span> and the characteristic energy scale <span class="math notranslate nohighlight">\(\hbar \omega = 1\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Specific heat as a function of <span class="math notranslate nohighlight">\(\beta\)</span>. We have the Boltzman constant <span class="math notranslate nohighlight">\(k_B=1\)</span> and the characteristic energy scale <span class="math notranslate nohighlight">\(\hbar \omega = 1\)</span>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Why don’t we have infinite specific heat due to infinite energy levels</p>
@@ -334,9 +336,9 @@ TeX: {
 <h3>Calculation of the Density of States<a class="headerlink" href="#calculation-of-the-density-of-states" title="Permalink to this headline">¶</a></h3>
 <p>Here we consider the free quantum particle in a 2D box as an example.</p>
 <p>In the momentum (wave number <span class="math notranslate nohighlight">\(\mathbf k\)</span>) space, all possible states are distributed on a virtual grid as shown in <a class="reference internal" href="#particle-in-a-2d-box-dos-cal"><span class="std std-numref">Fig. 11</span></a>.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <span id="particle-in-a-2d-box-dos-cal"></span><img alt="../_images/2DDoS.png" src="../_images/2DDoS.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Quantum particle in a 2D box</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Quantum particle in a 2D box</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>For any given energy <span class="math notranslate nohighlight">\(E\)</span>, we have the relation between the wave number and the energy <span class="math notranslate nohighlight">\(k_x^2 + k_y^2 \propto E\)</span>. The number of states on an energy shell <span class="math notranslate nohighlight">\(E ~ E + \mathrm d E\)</span> is determined by the area of it divided by the area of each small box on the virtual grid shown in <a class="reference internal" href="#particle-in-a-2d-box-dos-cal"><span class="std std-numref">Fig. 11</span></a>, i.e.,</p>
 <div class="math notranslate nohighlight">
@@ -390,7 +392,7 @@ TeX: {
 </div>
 </div>
 <div class="section" id="partition-function-and-density-of-states">
-<span id="index-2"></span><h2>Partition Function and Density of States<a class="headerlink" href="#partition-function-and-density-of-states" title="Permalink to this headline">¶</a></h2>
+<span id="index-2"></span><span id="id1"></span><h2>Partition Function and Density of States<a class="headerlink" href="#partition-function-and-density-of-states" title="Permalink to this headline">¶</a></h2>
 <p>The thermal wavelength decides the characteristic correlation length in thermal systems. It is the estimated average de Broglie wavelength of the particles under this temperature, i.e., the average size per quantum state. Thermal wavelength is</p>
 <div class="math notranslate nohighlight">
 \[\lambda_T = \frac{\hbar}{ \sqrt{ 2\pi m k_B T } }.\]</div>
@@ -402,12 +404,13 @@ TeX: {
 <div class="math notranslate nohighlight" id="equation-partition-function-and-thermal-wavelength-explained">
 <span class="eqno">(3)<a class="headerlink" href="#equation-partition-function-and-thermal-wavelength-explained" title="Permalink to this equation">¶</a></span>\[\text{number of states} = \text{physical volumne} \text{volumne per quantum state}.\]</div>
 <p>For a N-particles system without interaction between particles, density of states will be more dense since we have more possible states and degrees of freedom. <strong>In classical mechanics</strong>, the number of states will be full combination of all the single particle states since all the particles are distinguishable. Thus the partition function should be <span class="math notranslate nohighlight">\(Z_N  = (Z_1)^N\)</span>. The free energy</p>
-<div class="math notranslate nohighlight">
-\[A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)\]</div>
+<div class="math notranslate nohighlight" id="equation-gibbs-mixing-paradox-free-energy-thermal-wavelength">
+<span class="eqno">(4)<a class="headerlink" href="#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength" title="Permalink to this equation">¶</a></span>\[A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)\]</div>
 <div class="warning admonition" id="index-3">
 <p class="admonition-title">Gibbs Mixing Paradox</p>
 <p>This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won’t have twice of the free energy. It’s called <strong>Gibbs mixing paradox</strong>.</p>
 <p>The solution to this paradox is to apply the symmetries in quantum mechanics and consider the indistinguisabilities.</p>
+<p>More about the Gibbs mixing paradox is discussed in <span class="xref std std-ref">gibbs-mixing-paradox</span>.</p>
 </div>
 </div>
 <div class="section" id="phase-space-of-quantum-partition-function">
@@ -416,14 +419,14 @@ TeX: {
 <p>In classical mechanics, the partition for a free particle function is</p>
 <p>We can infer from this that the thermal wave length is <span class="math notranslate nohighlight">\(1/\sqrt{\frac{ 2m \pi }{\beta}}\)</span> using <a class="reference internal" href="#equation-partition-function-and-thermal-wavelength">(2)</a> and <a class="reference internal" href="#equation-partition-function-and-thermal-wavelength-explained">(3)</a>. In quantum mechanics, the partition function is,</p>
 <div class="math notranslate nohighlight" id="equation-partition-function-free-particle-quantum-sum">
-<span class="eqno">(4)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-sum" title="Permalink to this equation">¶</a></span>\[Z = \sum_i e^{-\beta E_i}\]</div>
+<span class="eqno">(5)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-sum" title="Permalink to this equation">¶</a></span>\[Z = \sum_i e^{-\beta E_i}\]</div>
 <p>We assume that the energy levels are very close to each other and so that <span class="math notranslate nohighlight">\(E_i\)</span> becomes almost continuous. Then we rewrite the partition into a integral,</p>
 <div class="math notranslate nohighlight" id="equation-partition-function-free-particle-quantum-integral">
-<span class="eqno">(5)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-integral" title="Permalink to this equation">¶</a></span>\[Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }.\]</div>
+<span class="eqno">(6)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-integral" title="Permalink to this equation">¶</a></span>\[Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }.\]</div>
 <div class="warning admonition">
 <p class="admonition-title">The Dimensions Doesn’t Match</p>
 <p>We are using natural units.</p>
-<p>Equantion <a class="reference internal" href="#equation-partition-function-free-particle-quantum-integral">(5)</a> seems to be problematic since it has a different dimension from <a class="reference internal" href="#equation-partition-function-free-particle-quantum-sum">(4)</a>. It is not a problem because we are using natural units. We need to supplement some quantity which has a dimension <span class="math notranslate nohighlight">\([p\cdot x ]^3\)</span>. It has to be <span class="math notranslate nohighlight">\(h^3\)</span>. So the integral form of the partition function becomes</p>
+<p>Equantion <a class="reference internal" href="#equation-partition-function-free-particle-quantum-integral">(6)</a> seems to be problematic since it has a different dimension from <a class="reference internal" href="#equation-partition-function-free-particle-quantum-sum">(5)</a>. It is not a problem because we are using natural units. We need to supplement some quantity which has a dimension <span class="math notranslate nohighlight">\([p\cdot x ]^3\)</span>. It has to be <span class="math notranslate nohighlight">\(h^3\)</span>. So the integral form of the partition function becomes</p>
 <div class="math notranslate nohighlight">
 \[Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }\]</div>
 <p>In fact, <span class="math notranslate nohighlight">\(h^3\)</span> is the characteristic phase space block in quantum mechanics.</p>

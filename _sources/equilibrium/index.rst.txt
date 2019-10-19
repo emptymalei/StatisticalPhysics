@@ -10,6 +10,8 @@ Equilibrium Statistical Mechanics
     basics.rst
     most-probable-distribution.rst
     ho-dos.rst
+    gibbs-mixing-paradox.rst
+    observables.rst
     debye-model.rst
     phase-transitions.rst
     ising-model.rst

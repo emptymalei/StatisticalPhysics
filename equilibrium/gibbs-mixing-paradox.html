@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Some Topics in Statistical Mechanics &#8212; Statistical Physics Notes</title>
+    <title>Gibbs Mixing Paradox &#8212; Statistical Physics Notes</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -22,8 +22,8 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Information Theory and Statistical Mechanics" href="information-theory-and-statistical-mechanics.html" />
-    <link rel="prev" title="Projection Technique" href="../nonequilibrium/projection-technique.html" />
+    <link rel="next" title="Observables in Statistical Physics" href="observables.html" />
+    <link rel="prev" title="Harmonic Oscillator and Density of States" href="ho-dos.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -174,19 +174,19 @@ TeX: {
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../equilibrium/index.html">Equilibrium Statistical Mechanics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/summary.html">Equilibrium Statistical Mechanics Summary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/basics.html">Basics of Statistical Mechanics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/most-probable-distribution.html">Most Probable Distribution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/ho-dos.html">Harmonic Oscillator and Density of States</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/gibbs-mixing-paradox.html">Gibbs Mixing Paradox</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/observables.html">Observables in Statistical Physics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/debye-model.html">Debye Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/phase-transitions.html">Phase Transitions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/ising-model.html">Ising Model</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/ensembles.html">Ensembles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../equilibrium/topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Equilibrium Statistical Mechanics</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="summary.html">Equilibrium Statistical Mechanics Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics.html">Basics of Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="most-probable-distribution.html">Most Probable Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ho-dos.html">Harmonic Oscillator and Density of States</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Gibbs Mixing Paradox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="observables.html">Observables in Statistical Physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debye-model.html">Debye Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="phase-transitions.html">Phase Transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ising-model.html">Ising Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
 </ul>
 </li>
 </ul>
@@ -205,9 +205,9 @@ TeX: {
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Some Topics in Statistical Mechanics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Some Topics in Statistical Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../topics/information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a></li>
 </ul>
 </li>
 </ul>
@@ -223,7 +223,10 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Some Topics in Statistical Mechanics</a></li>
+<li><a class="reference internal" href="#">Gibbs Mixing Paradox</a><ul>
+<li><a class="reference internal" href="#id2">Gibbs Mixing Paradox</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -233,11 +236,11 @@ TeX: {
               
                 
   <li>
-    <a href="../nonequilibrium/projection-technique.html" title="Previous Chapter: Projection Technique"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Projection Technique</span>
+    <a href="ho-dos.html" title="Previous Chapter: Harmonic Oscillator and Density of States"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Harmonic Osci...</span>
     </a>
   </li>
   <li>
-    <a href="information-theory-and-statistical-mechanics.html" title="Next Chapter: Information Theory and Statistical Mechanics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Information T... &raquo;</span>
+    <a href="observables.html" title="Next Chapter: Observables in Statistical Physics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Observables i... &raquo;</span>
     </a>
   </li>
               
@@ -265,17 +268,31 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="some-topics-in-statistical-mechanics">
-<h1>Some Topics in Statistical Mechanics<a class="headerlink" href="#some-topics-in-statistical-mechanics" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="information-theory-and-statistical-mechanics.html#line-of-reasoning">Line of Reasoning</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information-theory-and-statistical-mechanics.html#is-this-related-to-mutual-information">Is this related to mutual information?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="information-theory-and-statistical-mechanics.html#classical-balls-on-chessboard">Classical Balls on Chessboard</a></li>
-</ul>
-</li>
-</ul>
+  <span class="target" id="gibbs-mixing-paradox"></span><div class="section" id="index-0">
+<span id="id1"></span><h1>Gibbs Mixing Paradox<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Gibbs Mixing Paradox<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned in <a class="reference internal" href="ho-dos.html#partition-function-and-density-of-states"><span class="std std-ref">Partition Function and Density of States</span></a>, we reach a paradox when mixing the many non-interacting classical particles. In classical statistical mechanics, the free energy as derived in <a class="reference internal" href="ho-dos.html#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength">(4)</a> is</p>
+<div class="math notranslate nohighlight" id="equation-gibbs-mixing-paradox-free-energy-thermal-wavelength-copy">
+<span class="eqno">(7)<a class="headerlink" href="#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength-copy" title="Permalink to this equation">¶</a></span>\[A  = -k_B T N ( \ln V - 3 \ln \lambda_T )\]</div>
+<p>Imagine we have two systems, one has <span class="math notranslate nohighlight">\(N_1\)</span> particles and volume <span class="math notranslate nohighlight">\(V_1\)</span> while the other has <span class="math notranslate nohighlight">\(N_2\)</span> particles and volume <span class="math notranslate nohighlight">\(V_2\)</span>. Now we mix the two systems. Our physics intuition would tell us that the free energy of this new system should be <span class="math notranslate nohighlight">\(A = A_1 + A_2\)</span> since they are non-interacting particles. However, the free energy shown in <a class="reference internal" href="#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength-copy">(7)</a> tells us that</p>
+<div class="math notranslate nohighlight">
+\[A_{\text{mixed}} = \cdots - k_B T \ln (V_1^{N_1} V_2^{N2})\]</div>
+<p>which is different from the result we expect, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[A = \cdots - k_B T (N_1 + N_2) \ln (V_1 + V_2) = \cdots - k_B T \ln \left(  (V_1 + V_2)^{N_1+N_2}  \right)\]</div>
+<p>That is, free energy becomes neither intensive nor extensive in our theory.</p>
+<p>To make the free energy extensive, we could choose to <strong>divide volume by the particle number</strong>. Then a new term will appear in the epression for free energy, i.e., <span class="math notranslate nohighlight">\(N\ln N\)</span>. On the other hand, we have <span class="math notranslate nohighlight">\(\ln N! = N\ln N -N\)</span> from Sterling approximation. In large systems, we can define the free energy in the following way</p>
+<div class="math notranslate nohighlight">
+\[A = - k_B T N ( \ln(V/N!) - 3 \ln \lambda)\]</div>
+<p>which is equivalent to</p>
+<div class="math notranslate nohighlight">
+\[Z_N = \frac{Z_1^N}{N!}\]</div>
+<p>This definition “solves” the Gibbs mixing paradox. The explanation of this modification requires quantum mechanics.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>We can’t just pull out some results from statistical mechanics and apply them to a small system of a few particles. In stat mech we use a lot of approximations like Sterling approximation, many of which are only valid when particle number is huge.</p>
+</div>
 </div>
 </div>
 
@@ -315,7 +332,7 @@ TeX: {
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../_sources/topics/index.rst.txt"
+       <a href="../_sources/equilibrium/gibbs-mixing-paradox.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 
