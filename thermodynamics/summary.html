@@ -182,6 +182,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/ho-dos.html">Harmonic Oscillator and Density of States</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/debye-model.html">Observables and Debye Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/phase-transitions.html">Phase Transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../equilibrium/ising-model.html">Ising Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/ensembles.html">Ensembles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../equilibrium/topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
 </ul>
@@ -307,9 +308,9 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <li><p>Grand Potential <span class="math notranslate nohighlight">\(\Omega (T,X,\{\mu_i\})\)</span>.</p></li>
 </ol>
 <p>Their relations are charted in <a class="reference internal" href="#thermodynamicpotentials"><span class="std std-numref">Fig. 5</span></a>.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <span id="thermodynamicpotentials"></span><a class="reference internal image-reference" href="../_images/thermodynamicPotentials1.png"><img alt="Thermodynamic Potentials" src="../_images/thermodynamicPotentials1.png" style="width: 1160.0px; height: 602.4px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The relations between these thermodynamic potentials.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The relations between these thermodynamic potentials.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>Here are a few interesting points.</p>
 <ol class="arabic simple">
@@ -360,7 +361,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <p>How could this formalism help us understand more about the laws of thermodynamics, apart from the beauty of mathematics? As an example, we examine the second law using differential forms. Suppose we have a composite system, we write down the 1-form about the heat production,</p>
 <div class="math notranslate nohighlight">
 \[\underset{^\sim}{\omega_n} = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right) = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + T \mathbf{d} S \right).\]</div>
-<p>We do not find global heat function <span class="math notranslate nohighlight">\(Q\)</span> and work function <span class="math notranslate nohighlight">\(W\)</span> on the whole manifold , i.e., we do not find a 0-form <span class="math notranslate nohighlight">\(Q\)</span> so that <span class="math notranslate nohighlight">\(\mathbf dQ\)</span> is <span class="math notranslate nohighlight">\(T\mathbf d S\)</span>.[BSchutz]_</p>
+<p>We do not find global heat function <span class="math notranslate nohighlight">\(Q\)</span> and work function <span class="math notranslate nohighlight">\(W\)</span> on the whole manifold , i.e., we do not find a 0-form <span class="math notranslate nohighlight">\(Q\)</span> so that <span class="math notranslate nohighlight">\(\mathbf dQ\)</span> is <span class="math notranslate nohighlight">\(T\mathbf d S\)</span> <a class="reference internal" href="#bschutz" id="id2"><span>[BSchutz]</span></a>.</p>
 <p>We then consider the geometrical meaning of 1-forms. On a surface that describes the values of a potential, 1-forms are like equipotential lines. We think of a surface that describes the values of internal energy, where we find equi-entropy lines and equi-volume lines. One of the aspects of the second law is thus to state that for a system without heat exchange, the dynamics of the system is restricted to be only in a certain part of the manifold, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy (Caratheodory’s theorem).</p>
 <div class="section" id="related-papers">
 <h3>Related Papers<a class="headerlink" href="#related-papers" title="Permalink to this headline">¶</a></h3>
@@ -369,7 +370,7 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <li><p>Hannay, J. H. (2006). <a class="reference external" href="http://doi:10.1119/1.2121755">Carnot and the fields formulation of elementary thermodynamics</a>. American Journal of Physics, 74(2), 134.</p></li>
 </ol>
 <dl class="citation">
-<dt class="label" id="bschutz"><span class="brackets">BSchutz</span></dt>
+<dt class="label" id="bschutz"><span class="brackets"><a class="fn-backref" href="#id2">BSchutz</a></span></dt>
 <dd><p>Bernard Schutz, <em>Geometrical Methods in Mathematical Physics</em>.</p>
 </dd>
 <dt class="label" id="vshelest2017"><span class="brackets"><a class="fn-backref" href="#id1">VShelest2017</a></span></dt>
@@ -453,9 +454,6 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 </div>
 <div class="section" id="irreversiblity">
 <h2>Irreversiblity<a class="headerlink" href="#irreversiblity" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic simple">
-<li><p>some discussion here. <span class="xref std std-ref">irreversiblity</span></p></li>
-</ol>
 <p>This problem can be understood by thinking of the statistics. Suppose we have a box and N gas molecules inside. We divide it into two parts, left part and right part. At first all the particles are in the L part. As time passing by the molecules will go to the R part.</p>
 <p>The question we would ask is what the probablity would be if all the particles comes back to the L part. By calculation we can show that the ratio <span class="math notranslate nohighlight">\(R\)</span> of number of particles on L part and R part,</p>
 <div class="math notranslate nohighlight">

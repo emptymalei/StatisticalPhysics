@@ -182,6 +182,7 @@ TeX: {
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Harmonic Oscillator and Density of States</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debye-model.html">Observables and Debye Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phase-transitions.html">Phase Transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ising-model.html">Ising Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
 </ul>
@@ -227,9 +228,8 @@ TeX: {
 <li><a class="reference internal" href="#density-of-states-for-some-simple-systems">Density of States for Some Simple Systems</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#partition-function-and-dos">Partition Function and DoS</a></li>
+<li><a class="reference internal" href="#partition-function-and-density-of-states">Partition Function and Density of States</a></li>
 <li><a class="reference internal" href="#phase-space-of-quantum-partition-function">Phase Space of Quantum Partition Function</a></li>
-<li><a class="reference internal" href="#id1">Phase Space of Quantum Partition Function</a></li>
 </ul>
 </li>
 </ul>
@@ -276,7 +276,7 @@ TeX: {
   <div class="section" id="harmonic-oscillator-and-density-of-states">
 <h1>Harmonic Oscillator and Density of States<a class="headerlink" href="#harmonic-oscillator-and-density-of-states" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="quantum-harmonic-oscillator">
-<h2>Quantum Harmonic Oscillator<a class="headerlink" href="#quantum-harmonic-oscillator" title="Permalink to this headline">¶</a></h2>
+<span id="index-0"></span><h2>Quantum Harmonic Oscillator<a class="headerlink" href="#quantum-harmonic-oscillator" title="Permalink to this headline">¶</a></h2>
 <p>As derived in quantum mechanics, quantum harmonic oscillators have the following energy levels,</p>
 <div class="math notranslate nohighlight">
 \[E_n  = \left(n + \frac{1}{2}\right)\hbar \omega\]</div>
@@ -295,9 +295,9 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[C = \frac{\partial}{\partial T} \langle E\rangle = k_B (\beta \hbar \omega)^2 \frac{\exp(\beta \hbar \omega)}{ (\exp(\beta \hbar \omega) - 1)^2 }\]</div>
 <p>This specific heat behaves is shown in <a class="reference internal" href="#quantum-harmonic-oscillators-specific-heat"><span class="std std-numref">Fig. 10</span></a>.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id1">
 <span id="quantum-harmonic-oscillators-specific-heat"></span><a class="reference internal image-reference" href="../_images/specific-heat.png"><img alt="Probability distribution with an attraction point." src="../_images/specific-heat.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Specific heat as a function of <span class="math notranslate nohighlight">\(\beta\)</span>. We have the Boltzman constant <span class="math notranslate nohighlight">\(k_B=1\)</span> and the characteristic energy scale <span class="math notranslate nohighlight">\(\hbar \omega = 1\)</span>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Specific heat as a function of <span class="math notranslate nohighlight">\(\beta\)</span>. We have the Boltzman constant <span class="math notranslate nohighlight">\(k_B=1\)</span> and the characteristic energy scale <span class="math notranslate nohighlight">\(\hbar \omega = 1\)</span>.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Why don’t we have infinite specific heat due to infinite energy levels</p>
@@ -305,7 +305,7 @@ TeX: {
 </div>
 </div>
 <div class="section" id="density-of-states">
-<h2>Density of States<a class="headerlink" href="#density-of-states" title="Permalink to this headline">¶</a></h2>
+<span id="index-1"></span><h2>Density of States<a class="headerlink" href="#density-of-states" title="Permalink to this headline">¶</a></h2>
 <div class="note admonition">
 <p class="admonition-title">Free Energy and Partition Function</p>
 <p>In thermodynamics, the free energy of a system is given by</p>
@@ -326,7 +326,7 @@ TeX: {
 <div class="discussion admonition">
 <p class="admonition-title">Discussions of Partition Function  -  Lingfei, Qian-yuan, Lei</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(Z\)</span> is an average of <span class="math notranslate nohighlight">\(g(E)\)</span> under Boltzman distribution;</p></li>
+<li><p><span class="math notranslate nohighlight">\(Z\)</span> is an average of <span class="math notranslate nohighlight">\(g(E)\)</span> weighted by the Boltzman distribution; In other words, this is the <strong>total number of states</strong> under Boltzman distribution.</p></li>
 <li><p><span class="math notranslate nohighlight">\(Z\)</span> is the Laplace transform of <span class="math notranslate nohighlight">\(g(E)\)</span>.</p></li>
 </ol>
 </div>
@@ -334,9 +334,9 @@ TeX: {
 <h3>Calculation of the Density of States<a class="headerlink" href="#calculation-of-the-density-of-states" title="Permalink to this headline">¶</a></h3>
 <p>Here we consider the free quantum particle in a 2D box as an example.</p>
 <p>In the momentum (wave number <span class="math notranslate nohighlight">\(\mathbf k\)</span>) space, all possible states are distributed on a virtual grid as shown in <a class="reference internal" href="#particle-in-a-2d-box-dos-cal"><span class="std std-numref">Fig. 11</span></a>.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id2">
 <span id="particle-in-a-2d-box-dos-cal"></span><img alt="../_images/2DDoS.png" src="../_images/2DDoS.png" />
-<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Quantum particle in a 2D box</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Quantum particle in a 2D box</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>For any given energy <span class="math notranslate nohighlight">\(E\)</span>, we have the relation between the wave number and the energy <span class="math notranslate nohighlight">\(k_x^2 + k_y^2 \propto E\)</span>. The number of states on an energy shell <span class="math notranslate nohighlight">\(E ~ E + \mathrm d E\)</span> is determined by the area of it divided by the area of each small box on the virtual grid shown in <a class="reference internal" href="#particle-in-a-2d-box-dos-cal"><span class="std std-numref">Fig. 11</span></a>, i.e.,</p>
 <div class="math notranslate nohighlight">
@@ -348,7 +348,10 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[g(E) = \frac{\text{area of } E ~ d E}{|\nabla_k E|} \frac{\text{volume of the box} }{(2\pi)^d}\]</div>
 <p>where <span class="math notranslate nohighlight">\(d\)</span> is the dimension of the system or box.</p>
-<p>Note that the gradient of energy <span class="math notranslate nohighlight">\(\frac{d E}{d k}\)</span> gives us the spread out or dispersion.</p>
+<div class="note admonition">
+<p class="admonition-title">Dispersion relations and Density of States</p>
+<p>Note that the gradient of energy <span class="math notranslate nohighlight">\(\frac{d E}{d k}\)</span> gives us the spread out of energy, a.k.a. dispersion relations. Dispersion relations and density of states are tightly related.</p>
+</div>
 <p>To sum up, the quantities that are used to determine the DoS:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(E(k)\)</span></p></li>
@@ -359,95 +362,71 @@ TeX: {
 <div class="section" id="density-of-states-for-some-simple-systems">
 <h3>Density of States for Some Simple Systems<a class="headerlink" href="#density-of-states-for-some-simple-systems" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p>2D free particle in a box with length <span class="math notranslate nohighlight">\(L\)</span></p>
+<li><p>Free particle in a 2D box with length <span class="math notranslate nohighlight">\(L\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\frac{d E}{d k} = \frac{d}{d k}\left( \frac{\hbar^2 k^2}{2m} \right) = \frac{\hbar^2 k}{m}\]</div>
-<p>Thus we have,</p>
+\[\frac{d E}{d k} = \frac{d}{d k}\left( \frac{\hbar^2 k^2}{2m} \right) = \frac{\hbar^2 k}{m}.\]</div>
+<p>The density of states is</p>
 <div class="math notranslate nohighlight">
 \[g(E) = \frac{2\pi k }{\frac{\hbar^2 k}{m}} \frac{L^2}{(2\pi)^2} = (\frac{1}{2\pi} \frac{m}{\hbar^2})L^2\]</div>
 </li>
-<li><p>3D free particle in a box with length <span class="math notranslate nohighlight">\(L\)</span></p>
+<li><p>Free particle in a 3D box with length <span class="math notranslate nohighlight">\(L\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\frac{d E}{d k} = \frac{\hbar^2 k^2}{2m}\]</div>
-<p>DoS</p>
+\[\frac{d E}{d k} = \frac{\hbar^2 k^2}{2m}.\]</div>
+<p>The density of states is</p>
 <div class="math notranslate nohighlight">
 \[g(E) = \frac{m}{\hbar^2} \frac{L^3}{2\pi^2} k\]</div>
 <p>This is <span class="math notranslate nohighlight">\(k\)</span> dependent.</p>
 </li>
-<li><p>1D</p>
+<li><p>Free particle in a 1D box with length <span class="math notranslate nohighlight">\(L\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[g(E) = \frac{1}{k} \frac{m L}{2\pi \hbar^2}\]</div>
 </li>
 </ol>
 <div class="note admonition">
-<p class="admonition-title">Dimension is Crucial</p>
-<p>These results are so different. For 1D system, the higher energy of the system is, the small DoS is. 2D DoS doesn’t depend on energy. 3D is proportional to the square root of energy.</p>
-<p>DoS is very important in quantum systems because quantization can make strange DoS. In classical systems without quantization, DoS is always some kind of constant.</p>
+<p class="admonition-title">Dimension is Crucial for Density of States</p>
+<p>These results are very different. For 1D system, the higher energy of the system is, the smaller the DoS is. As a comparison, the DoS for 2D systems doesn’t depend on the energy. In 3D, the DoS is proportional to the square root of energy.</p>
+<p>The DoS is very important in understanding quantum systems. Quantization can lead to strange DoS. On ther other hand, the DoS is always constant in classical systems without quantizations.</p>
 </div>
 </div>
 </div>
-<div class="section" id="partition-function-and-dos">
-<h2>Partition Function and DoS<a class="headerlink" href="#partition-function-and-dos" title="Permalink to this headline">¶</a></h2>
-<p>Thermal wavelength is defined as</p>
+<div class="section" id="partition-function-and-density-of-states">
+<span id="index-2"></span><h2>Partition Function and Density of States<a class="headerlink" href="#partition-function-and-density-of-states" title="Permalink to this headline">¶</a></h2>
+<p>The thermal wavelength decides the characteristic correlation length in thermal systems. It is the estimated average de Broglie wavelength of the particles under this temperature, i.e., the average size per quantum state. Thermal wavelength is</p>
 <div class="math notranslate nohighlight">
-\[\lambda_T = \frac{\hbar}{ \sqrt{ 2\pi m k_B T } }\]</div>
-<p>For 1 particle in 3D box,</p>
-<div class="math notranslate nohighlight">
-\[Z_1 = \frac{V}{\lambda_T^3}\]</div>
-<p>It’s obvious that for a N particles system without interaction between particles, <span class="math notranslate nohighlight">\(Z_N  = (Z_1)^N\)</span>. Free energy</p>
+\[\lambda_T = \frac{\hbar}{ \sqrt{ 2\pi m k_B T } }.\]</div>
+<p>The thermal wavelength is a combination of quantum mechanics and thermodynamics. <span class="math notranslate nohighlight">\(\sqrt{m k_B T}\)</span> has dimension of energy while <span class="math notranslate nohighlight">\(\hbar\)</span> has dimension of energy * time. In natural units, time has the same dimension as length. This is why the quantity serves as a characteristic length.</p>
+<p>For a single particle in a 3D box, the partition function is</p>
+<div class="math notranslate nohighlight" id="equation-partition-function-and-thermal-wavelength">
+<span class="eqno">(2)<a class="headerlink" href="#equation-partition-function-and-thermal-wavelength" title="Permalink to this equation">¶</a></span>\[Z_1 = \frac{V}{\lambda_T^3}.\]</div>
+<p>Recall that the partition function is the average of density of states under the Boltzman distribution and that the thermal length is the characteristic length of the thermal system. We rewrite this formula using words to make the implications clear.</p>
+<div class="math notranslate nohighlight" id="equation-partition-function-and-thermal-wavelength-explained">
+<span class="eqno">(3)<a class="headerlink" href="#equation-partition-function-and-thermal-wavelength-explained" title="Permalink to this equation">¶</a></span>\[\text{number of states} = \text{physical volumne} \text{volumne per quantum state}.\]</div>
+<p>For a N-particles system without interaction between particles, density of states will be more dense since we have more possible states and degrees of freedom. <strong>In classical mechanics</strong>, the number of states will be full combination of all the single particle states since all the particles are distinguishable. Thus the partition function should be <span class="math notranslate nohighlight">\(Z_N  = (Z_1)^N\)</span>. The free energy</p>
 <div class="math notranslate nohighlight">
 \[A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won’t have twice of the free energy. It’s called Gibbs mixing paradox.</p>
+<div class="warning admonition" id="index-3">
+<p class="admonition-title">Gibbs Mixing Paradox</p>
+<p>This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won’t have twice of the free energy. It’s called <strong>Gibbs mixing paradox</strong>.</p>
+<p>The solution to this paradox is to apply the symmetries in quantum mechanics and consider the indistinguisabilities.</p>
 </div>
 </div>
 <div class="section" id="phase-space-of-quantum-partition-function">
 <h2>Phase Space of Quantum Partition Function<a class="headerlink" href="#phase-space-of-quantum-partition-function" title="Permalink to this headline">¶</a></h2>
-<p>This is a physical idea of how do we get the quantum partition function from Classical Mechanics.</p>
-<p>Classically, the partition function</p>
-<div class="math notranslate nohighlight">
-\[Z = \int d^3 x \int d^3 p e^{-\beta p^2/2m} = V \left( \sqrt{\frac{ 2m \pi }{\beta} } \right)^3\]</div>
-<p>We can see from this that thermal wave length is <span class="math notranslate nohighlight">\(1/\sqrt{\frac{ 2m \pi }{\beta}}\)</span> classically. In quantum, partition function is a summation,</p>
-<div class="math notranslate nohighlight">
-\[Z = \sum_i e^{-\beta E_i}\]</div>
-<p>If we are going to write this into some integration, which is something like</p>
-<div class="math notranslate nohighlight">
-\[Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }\]</div>
-<p>which is problematic because it has a different dimension with the summation definition. So we need to put some quantity which has a dimension <span class="math notranslate nohighlight">\([p\cdot x ]^3\)</span>, and it got to be <span class="math notranslate nohighlight">\(h^3\)</span>. So the integration form of partition function is</p>
-<div class="math notranslate nohighlight">
-\[Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><span class="math notranslate nohighlight">\(h^3\)</span> is the smallest phase space volume in quantum mechanics.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Here we used phase space of <span class="math notranslate nohighlight">\({q_i;p_i}\)</span> which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.</p>
-</div>
-</div>
-<div class="section" id="id1">
-<h2>Phase Space of Quantum Partition Function<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>This is a physical idea of how do we get the quantum partition function from Classical Mechanics.</p>
-<p>Classically, the partition function</p>
-<div class="math notranslate nohighlight">
-\[Z = \int d^3 x \int d^3 p e^{-\beta p^2/2m} = V \left( \sqrt{\frac{ 2m \pi }{\beta} } \right)^3\]</div>
-<p>We can see from this that thermal wave length is <span class="math notranslate nohighlight">\(1/\sqrt{\frac{ 2m \pi }{\beta}}\)</span> classically. In quantum, partition function is a summation,</p>
-<div class="math notranslate nohighlight">
-\[Z = \sum_i e^{-\beta E_i}\]</div>
-<p>If we are going to write this into some integration, which is something like</p>
-<div class="math notranslate nohighlight">
-\[Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }\]</div>
-<p>which is problematic because it has a different dimension with the summation definition. So we need to put some quantity which has a dimension <span class="math notranslate nohighlight">\([p\cdot x ]^3\)</span>, and it got to be <span class="math notranslate nohighlight">\(h^3\)</span>. So the integration form of partition function is</p>
+<p>We provide a physical picture of the quantum partition function using classical mechanics in this section.</p>
+<p>In classical mechanics, the partition for a free particle function is</p>
+<p>We can infer from this that the thermal wave length is <span class="math notranslate nohighlight">\(1/\sqrt{\frac{ 2m \pi }{\beta}}\)</span> using <a class="reference internal" href="#equation-partition-function-and-thermal-wavelength">(2)</a> and <a class="reference internal" href="#equation-partition-function-and-thermal-wavelength-explained">(3)</a>. In quantum mechanics, the partition function is,</p>
+<div class="math notranslate nohighlight" id="equation-partition-function-free-particle-quantum-sum">
+<span class="eqno">(4)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-sum" title="Permalink to this equation">¶</a></span>\[Z = \sum_i e^{-\beta E_i}\]</div>
+<p>We assume that the energy levels are very close to each other and so that <span class="math notranslate nohighlight">\(E_i\)</span> becomes almost continuous. Then we rewrite the partition into a integral,</p>
+<div class="math notranslate nohighlight" id="equation-partition-function-free-particle-quantum-integral">
+<span class="eqno">(5)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-integral" title="Permalink to this equation">¶</a></span>\[Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }.\]</div>
+<div class="warning admonition">
+<p class="admonition-title">The Dimensions Doesn’t Match</p>
+<p>We are using natural units.</p>
+<p>Equantion <a class="reference internal" href="#equation-partition-function-free-particle-quantum-integral">(5)</a> seems to be problematic since it has a different dimension from <a class="reference internal" href="#equation-partition-function-free-particle-quantum-sum">(4)</a>. It is not a problem because we are using natural units. We need to supplement some quantity which has a dimension <span class="math notranslate nohighlight">\([p\cdot x ]^3\)</span>. It has to be <span class="math notranslate nohighlight">\(h^3\)</span>. So the integral form of the partition function becomes</p>
 <div class="math notranslate nohighlight">
 \[Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><span class="math notranslate nohighlight">\(h^3\)</span> is the smallest phase space volume in quantum mechanics.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Here we used phase space of <span class="math notranslate nohighlight">\({q_i;p_i}\)</span> which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.</p>
+<p>In fact, <span class="math notranslate nohighlight">\(h^3\)</span> is the characteristic phase space block in quantum mechanics.</p>
 </div>
 </div>
 </div>
