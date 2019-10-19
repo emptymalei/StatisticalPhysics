@@ -12,5 +12,6 @@ Equilibrium Statistical Mechanics
     ho-dos.rst
     debye-model.rst
     phase-transitions.rst
+    ising-model.rst
     ensembles.rst
     topics/index.rst

@@ -1,7 +1,7 @@
 Harmonic Oscillator and Density of States
 ================================================
 
-
+.. index:: Quantum Harmonic Oscillator
 
 Quantum Harmonic Oscillator
 ----------------------------
@@ -53,6 +53,7 @@ This specific heat behaves is shown in :numref:`quantum-harmonic-oscillators-spe
    Though we have infinite energy levels, the specific heat won't blow up because the probability of a high energy level state is extremely small.
 
 
+.. index:: Density of States, DoS
 
 Density of States
 -----------------------
@@ -92,7 +93,7 @@ where :math:`g(E)` is the density of states. The density of states tells us abou
 .. admonition:: Discussions of Partition Function  -  Lingfei, Qian-yuan, Lei
    :class: discussion
 
-   1. :math:`Z` is an average of :math:`g(E)` under Boltzman distribution;
+   1. :math:`Z` is an average of :math:`g(E)` weighted by the Boltzman distribution; In other words, this is the **total number of states** under Boltzman distribution.
    2. :math:`Z` is the Laplace transform of :math:`g(E)`.
 
 
@@ -182,110 +183,79 @@ Density of States for Some Simple Systems
    The DoS is very important in understanding quantum systems. Quantization can lead to strange DoS. On ther other hand, the DoS is always constant in classical systems without quantizations.
 
 
+.. index:: Thermal Wavelength
 
 Partition Function and Density of States
 --------------------------------------------------------
 
 
-The thermal wavelength decides the characteristic correlation length in statistical mechanics, which is defined as
+The thermal wavelength decides the characteristic correlation length in thermal systems. It is the estimated average de Broglie wavelength of the particles under this temperature, i.e., the average size per quantum state. Thermal wavelength is
 
 .. math::
    \lambda_T = \frac{\hbar}{ \sqrt{ 2\pi m k_B T } }.
 
-The thermal wavelength is a combination of quantum mechanics and thermodynamics. :math:`\sqrt{m k_B T}` has dimension of energy while :math:`\hbar` has dimension of energy * time. In natural units, time is basically length. This is why the quantity serves as a characteristic length.
+The thermal wavelength is a combination of quantum mechanics and thermodynamics. :math:`\sqrt{m k_B T}` has dimension of energy while :math:`\hbar` has dimension of energy * time. In natural units, time has the same dimension as length. This is why the quantity serves as a characteristic length.
 
 For a single particle in a 3D box, the partition function is
 
 .. math::
    Z_1 = \frac{V}{\lambda_T^3}.
+   :label: partition-function-and-thermal-wavelength
 
-Recall that the partition function is the average of density of states under the Boltzman distribution and that the thermal length is the characteristic length of the thermal system. We rewrite this formula using words
+Recall that the partition function is the average of density of states under the Boltzman distribution and that the thermal length is the characteristic length of the thermal system. We rewrite this formula using words to make the implications clear.
 
 .. math::
-   &\text{density of states} = \text{physical volumne} \text{unit thermal volume} \\
-   \Rightarrow & \text{number of states} / \text{energy span} = \text{physical volumne} / \text{unit thermal volume}.
+   \text{number of states} = \text{physical volumne} \text{volumne per quantum state}.
+   :label: partition-function-and-thermal-wavelength-explained
 
-.. admonition:: Thermal Length
-   :class: note
-
-   TO BE ADDED.
 
 For a N-particles system without interaction between particles, density of states will be more dense since we have more possible states and degrees of freedom. **In classical mechanics**, the number of states will be full combination of all the single particle states since all the particles are distinguishable. Thus the partition function should be :math:`Z_N  = (Z_1)^N`. The free energy
 
 .. math::
    A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)
 
+.. index:: Gibbs Mixing Paradox
+
 .. admonition:: Gibbs Mixing Paradox
    :class: warning
 
    This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won't have twice of the free energy. It's called **Gibbs mixing paradox**.
 
-
-
-Phase Space of Quantum Partition Function
-------------------------------------------
-
-We will provide a physical vision of the quantum partition function using classical mechanics.
-
-In classical mechanics, the partition function is
-
-.. math::
-   Z = \int d^3 x \int d^3 p e^{-\beta p^2/2m} = V \left( \sqrt{\frac{ 2m \pi }{\beta} } \right)^3
-
-We can infer from this that the thermal wave length is :math:`1/\sqrt{\frac{ 2m \pi }{\beta}}`. In quantum mechanics, the partition function is a summation,
-
-.. math::
-   Z = \sum_i e^{-\beta E_i}
-
-If we are going to write this into some integration, which is something like
-
-.. math::
-   Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }
-
-which is problematic because it has a different dimension with the summation definition. So we need to put some quantity which has a dimension :math:`[p\cdot x ]^3`, and it got to be :math:`h^3`. So the integration form of partition function is
-
-.. math::
-   Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }
-
-.. note::
-   :math:`h^3` is the smallest phase space volume in quantum mechanics.
-
-
-.. warning::
-   Here we used phase space of :math:`{q_i;p_i}` which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.
-
-
+   The solution to this paradox is to apply the symmetries in quantum mechanics and consider the indistinguisabilities.
 
 
 
 Phase Space of Quantum Partition Function
-------------------------------------------
+--------------------------------------------
 
-This is a physical idea of how do we get the quantum partition function from Classical Mechanics.
+We provide a physical picture of the quantum partition function using classical mechanics in this section.
 
-Classically, the partition function
+In classical mechanics, the partition for a free particle function is
 
 .. math::
    Z = \int d^3 x \int d^3 p e^{-\beta p^2/2m} = V \left( \sqrt{\frac{ 2m \pi }{\beta} } \right)^3
+   :math: partition-function-free-particle-classical
 
-We can see from this that thermal wave length is :math:`1/\sqrt{\frac{ 2m \pi }{\beta}}` classically. In quantum, partition function is a summation,
+We can infer from this that the thermal wave length is :math:`1/\sqrt{\frac{ 2m \pi }{\beta}}` using :eq:`partition-function-and-thermal-wavelength` and :eq:`partition-function-and-thermal-wavelength-explained`. In quantum mechanics, the partition function is,
 
 .. math::
    Z = \sum_i e^{-\beta E_i}
+   :label: partition-function-free-particle-quantum-sum
 
-If we are going to write this into some integration, which is something like
-
-.. math::
-   Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }
-
-which is problematic because it has a different dimension with the summation definition. So we need to put some quantity which has a dimension :math:`[p\cdot x ]^3`, and it got to be :math:`h^3`. So the integration form of partition function is
+We assume that the energy levels are very close to each other and so that :math:`E_i` becomes almost continuous. Then we rewrite the partition into a integral,
 
 .. math::
-   Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }
+   Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }.
+   :label: partition-function-free-particle-quantum-integral
 
-.. note::
-   :math:`h^3` is the smallest phase space volume in quantum mechanics.
+.. admonition:: The Dimensions Doesn't Match
+   :class: warning
 
+   We are using natural units.
 
-.. warning::
-   Here we used phase space of :math:`{q_i;p_i}` which is not a good choice for quantum mechanics. So this might be a problem. Should check books for a more rigorous method.
+   Equantion :eq:`partition-function-free-particle-quantum-integral` seems to be problematic since it has a different dimension from :eq:`partition-function-free-particle-quantum-sum`. It is not a problem because we are using natural units. We need to supplement some quantity which has a dimension :math:`[p\cdot x ]^3`. It has to be :math:`h^3`. So the integral form of the partition function becomes
+
+   .. math::
+      Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }
+
+   In fact, :math:`h^3` is the characteristic phase space block in quantum mechanics.
