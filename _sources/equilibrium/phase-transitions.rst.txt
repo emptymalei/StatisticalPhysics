@@ -6,10 +6,16 @@ Phase Transitions
 Phase Transitions
 ------------------
 
-a link `here <http://jfi.uchicago.edu/~leop/TALKS/Perimeter%20Stat%20Mech%20Lectures/lectures%20in%20PDF/Part%207%20Mean%20Field%20Theory.pdf>`_.
+Phase transitions are singularities of thermodynamic quantities. There exists many different orders of singularities:
 
-Phase transitions are properties of infinite systems.
+1. First order: discountinuities in of thermodynamic quantities;
+2. Second order: discountinuities in the first order derivatives of thermodynamic quantities.
+3. ...
 
+Phase transitions only exists in systems with infinite particles.
+
+
+.. [Leo P. Kadanoff] `Kadanoff's PI Lectures <http://jfi.uchicago.edu/~leop/TALKS/Perimeter%20Stat%20Mech%20Lectures/lectures%20in%20PDF/Part%207%20Mean%20Field%20Theory.pdf>`_
 
 
 .. _mean-field-theory:
