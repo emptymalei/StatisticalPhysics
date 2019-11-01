@@ -148,9 +148,6 @@ Related Papers
 .. [VShelest2017] V. Shelest, V. (2017). `Thermodynamic Potentials Theory Aspects in External Differential Forms Calculus Representation <https://doi.org/10.11648/j.jmpt.20170302.11>`_. Journal of Photonic Materials and Technology, 3(2), 6.
 
 
-
-
-
 .. index:: Laws of Thermodynamics
 
 The Laws of Four
