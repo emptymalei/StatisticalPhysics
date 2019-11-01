@@ -131,7 +131,7 @@ How could this formalism help us understand more about the laws of thermodynamic
 .. math::
    \underset{^\sim}{\omega_n} = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right) = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + T \mathbf{d} S \right).
 
-We do not find global heat function :math:`Q` and work function :math:`W` on the whole manifold , i.e., we do not find a 0-form :math:`Q` so that :math:`\mathbf dQ` is :math:`T\mathbf d S`.[BSchutz]_
+We do not find global heat function :math:`Q` and work function :math:`W` on the whole manifold , i.e., we do not find a 0-form :math:`Q` so that :math:`\mathbf dQ` is :math:`T\mathbf d S` [BSchutz]_.
 
 We then consider the geometrical meaning of 1-forms. On a surface that describes the values of a potential, 1-forms are like equipotential lines. We think of a surface that describes the values of internal energy, where we find equi-entropy lines and equi-volume lines. One of the aspects of the second law is thus to state that for a system without heat exchange, the dynamics of the system is restricted to be only in a certain part of the manifold, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy (Caratheodory's theorem).
 
@@ -148,7 +148,13 @@ Related Papers
 .. [VShelest2017] V. Shelest, V. (2017). `Thermodynamic Potentials Theory Aspects in External Differential Forms Calculus Representation <https://doi.org/10.11648/j.jmpt.20170302.11>`_. Journal of Photonic Materials and Technology, 3(2), 6.
 
 
-.. index:: Laws of Thermodynamics
+
+
+
+.. index:: The Four Laws in Thermodynamics
+
+.. _laws-of-thermodynamics:
+
 
 The Laws of Four
 ========================
@@ -284,7 +290,6 @@ Irreversiblity
 ===================
 
 
-1. some discussion here. :ref:`irreversiblity`
 
 
 This problem can be understood by thinking of the statistics. Suppose we have a box and N gas molecules inside. We divide it into two parts, left part and right part. At first all the particles are in the L part. As time passing by the molecules will go to the R part.

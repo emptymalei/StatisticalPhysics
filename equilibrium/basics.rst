@@ -11,7 +11,7 @@ Phase Space
 --------------------
 
 
-Why is statistics important? Remember we are dealing with DoFs on the order of Avogadro's number. If we are going to calculate the dynamics of this system by calculating the dynamics of each particles. To store one screen shot of the system takes a huge amount of storage. Assuming each DoF take only 8 bits, we need :math:`10^23` bytes that is :math:`10^17` GB. It seems to be impossible to store this one snapshot of the system. It is time to steer away from this Newtonian approach.
+Why are statistics important? In statistical physics, we are in fact dealing with DoFs in the order of Avogadro's number, most of the time. If we are going to calculate the dynamics of these systems by combining all the dynamics of each particles, it becomes rather difficult. It already takes a huge amount of storage to store one screenshot of the system. Assuming each DoF take only 8 bits, we need :math:`10^23` bytes that is :math:`10^17` GB. It seems to be impossible to store this one snapshot of the system. It is time to steer away from this Newtonian approach.
 
 .. figure:: images/newtonian-dream.svg
    :alt: Newton's Dream
