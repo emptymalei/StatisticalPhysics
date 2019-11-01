@@ -1,150 +1,88 @@
-Observables and Debye Model
+Debye Model
 ==========================================
 
-
-
-Observables & Equilibrium
----------------------------
-
-
-Average of an observable is
-
-.. math::
-   O = Tr(\hat O \rho)
-
-where :math:`\rho` is the "probability matrix". In QM, this is
-
-.. math::
-   \rho = \frac{ e^{-\beta H} }{\mathrm{Tr} ( e^{-\beta H} ) }
-
-
-If a system of QM comes to equilibrium, that means
-
-1. :math:`\rho  = \frac{ e^{-\beta H} }{\mathrm{Tr} e^{-\beta H} }`;
-2. :math:`\rho` is diagonal in energy eigen space.
-
-
-
-
-.. _gibbs-mixing-paradox:
-
-Gibbs Mixing Paradox
-----------------------
-
-
-
-As we already know, from math of classical statistical mechanics, free energy
-
-.. math::
-   A  = -k_B T N ( \ln V - 3 \ln \lambda )
-
-Suppose we have two systems, one with :math:`N_1` and :math:`V_1` the other with :math:`N_2` and :math:`V_2`. Now we mix them. Our physics intuition would tell us that the free energy of this new system should be :math:`A = A_1 + A_2`. However, from the free energy equation, we get
-
-.. math::
-   A = \cdots - k_B T \ln (V_1^{N_1} V_2^{N2})
-
-This is different from the result we thought of
-
-.. math::
-   A = \cdots - k_B T (N_1 + N_2) \ln (V_1 + V_2) = \cdots - k_B T \ln \left(  (V_1 + V_2)^{N_1+N_2}  \right)
-
-That is, free energy becomes neither intensive nor extensive in our derivation.
-
-
-The fairly simple way to make it extensive is to **divide V by N**. Now a new term will appear in our free energy, namely :math:`N\ln N`. Recall that in Sterling approximation, :math:`\ln N! = N\ln N -N`. So in a large system, we can create some kind of free energy definition which makes it extensive.
-
-.. note::
-   We can't just pull out some results from statistical mechanics and apply them to a small system composed of several particles. In stat mech we use a lot of approximations like Sterling approximation which is only valid when particle number is huge.
-
-.. math::
-   A = - k_B T N ( \ln(V/N!) - 3 \ln \lambda)
-
-which is to say
-
-.. math::
-   Z_N = \frac{Z_1^N}{N!}
-
-This definition "solves" the Gibbs mixing paradox. The physics of this modification requires QM.
-
+.. warning::
+   I need to rewrite this section.
 
 
 Interacting Particles
 ------------------------
 
+To work out the statistical mechanics of a system, we need the probability distribution of the states or the density of states (DoS). For systems with non-interacting particles, the distribution is determined by the motion of the free particles. For systems with interactions between the composite particles, the dynamics of the particles are coupled.
 
-Statistical mechanics starts from a given energy spectrum. With energy spectrum solved, we can do statistics.
+In this section, we will discuss a 1D system of coupled harmonic oscillators of the same mass :math:`m`. In :numref:`coupled-harmonic-oscillators-demo`, two coupled oscillators are shown. The displacement of the :math:`i`th particle is denoted by :math:`x_i`.
 
-For an interacting system, we need to solve the energy spectrum first then calculate the partition function. Usually we would have coupled equations for interacting systems. For example, in a coupled HO system with N oscillators. Image of two HO example is given here.
-
-.. image:: images/Coupled_Harmonic_Oscillator.png
+.. _coupled-harmonic-oscillators-demo:
+.. figure:: images/Coupled_Harmonic_Oscillator.png
    :align: center
 
-Our equations of motion are
+   Coupled harmonic oscillators with two particles.
+
+In general, the equation of motion of a N-particle system is determined by
 
 .. math::
-   m \ddot x_i + k( x_i -x_{i-1} + x_i - x_{i+1}) =0
+   m \ddot x_i + k( x_i -x_{i-1} + x_i - x_{i+1}) = 0
+   :label: eq-2-coupled-harmonic-oscillators-eom
 
-with i go from 2 to N-1.
+with i goes from :math:`2` to :math:`N-1`, and :math:`k` is the spring constant of the springs. We will have :math:`N-2` equations together with two boundary conditions for the first and the last particle.
 
-A transformation :math:`x_q = \sum x_m e^{i m q}` will dissociate these equations,
+This system of second order differential equations is easily solved using Fourier transform. Here we apply the transform :math:`x_q = \sum x_m e^{i m q}` to :eq:`eq-2-coupled-harmonic-oscillators-eom`. This Fourier transform will decouple the equations,
 
 .. math::
    m \ddot x_q + k' x_q =0
 
-We would have normal modes. :math:`w_q ~ \sin|q/2|`.
-
-In some sense, Debye theory is an many Einstein theory.
+The solutions to :math:`x_q` are the normal modes with frequencies :math:`\omega_q ~ \sin|q/2|`. Thus the Debye theory is a theory of many Einstein solutions, i.e.,
 
 .. math::
    C_{\mathrm{Debye}} = \int C_{\mathrm{Einstein}} (\omega) g(\omega) d \omega
 
+In Einstein's model, every particle is identical thus has the same oscillation frequency. However, the Einstein theory is wrong due to the extremely slow rising of the Boltzman factor as shown in :numref:`boltzman_factor_and_low_temperature`.
 
-In Einstein model, every particle is identical and have the same frequency. However, this theory shows a result of Boltzmann factor behavior, which is
+.. _boltzman_factor_and_low_temperature:
 
-.. image:: ../_static/voc/boltzfactor.png
+.. figure:: ../_static/voc/boltzfactor.png
    :align: center
 
-We got sleeping slope at very low temperature where experiments show that this wrong.
+   The Boltzman factor and its behavior at low temperature. It has a 'sleeping slope' at very low temperature.
+
+.. admonition:: Calculate the Heat Capacity
+   :class: note
+
+   To calculate the heat capacity in Debye's theory, we require the following steps.
+
+   1. Calculate the energy spectrum of :math:`N` coupled particles system using Fourier transform;
+   2. Evaluate the heat capacity integral.
 
 
+The energy spectrum indicates the dispersion relations. The dispersion relations in Debye's model is very different from that of Einstein's model.
 
-
-
-So the Debye theory is composed of two steps.
-
-1. Calculate the energy spectrum of N coupled particle system by finding out a decouple transformation;
-2. Evaluate the heat capacity integral.
-
-
-
-Once we find the energy spectrum, we will know the dispersion relation, which is different from Einstein's model.
-
-.. image:: images/DebyeModelkSpace.png
+.. figure:: images/DebyeModelkSpace.png
    :align: center
 
-(Taken without permission from `here <http://griffin.ucsc.edu/teaching/08Q1-155/download/Lecture%2006%20-%20Phonon%20Dynamics.pdf>`_ .)
+   Dispersion relations. (Image taken from `here <http://griffin.ucsc.edu/teaching/08Q1-155/download/Lecture%2006%20-%20Phonon%20Dynamics.pdf>`_ .)
 
-What did Debye do is to use a linear approximation, :math:`w= c k` for dispersion relation.
 
-.. image:: images/DebyeModelApprox.png
+We obtain a simple solution if we apply a linear approximation of the dispersion relation :math:`w= c k`.
+
+.. figure:: images/DebyeModelApprox.png
    :align: center
 
-(Taken without permission from `here <http://griffin.ucsc.edu/teaching/08Q1-155/download/Lecture%2006%20-%20Phonon%20Dynamics.pdf>`_ .)
+   Linear approximation of the dispersion relation. (Image taken from `here <http://griffin.ucsc.edu/teaching/08Q1-155/download/Lecture%2006%20-%20Phonon%20Dynamics.pdf>`_ .)
 
 
-Through a calculation, we show that
+The density of state is calculated as
 
 .. math::
    g(\omega) = \frac{V \omega^2}{2\pi^2 c^3}
 
 for a 3D lattice.
 
-So average energy is
+The average energy becomes
 
 .. math::
    E = \frac{3V}{2\pi^2 c^3 \hbar^3} (k_B T)^4 \int_0^{x(\omega_m)} \frac{x^3}{e^x - 1} d x
 
-Heat Capacity is
+while the heat capacity is
 
 .. math::
    C = 9 N k_B \left(\frac{T}{\Theta_D}\right)^3 \int _ 0 ^{x(\omega_m)} \frac{x^4 e^x}{(e^x - 1)^2} d x
@@ -153,33 +91,28 @@ where :math:`x(\omega_m) = \Theta_D/ T` and :math:`\Theta_D = \hbar \omega_D/k_B
 
 
 .. note::
-   What's amazing of Debye theory is that the low temperature behavior is independent of cut off frequency. At low temperature, :math:`x(\omega_D)` becomes infinite and it becomes an integration from 0 to infinity thus we do not need to know the cut off temperature to find out the low temperature result and it agrees with experiments well.
+   What's amazing about Debye's theory is that the low temperature behavior is independent of cut off frequency. At low temperature, :math:`x(\omega_D)` becomes infinite and it becomes an integration from 0 to infinity thus we do not need to know the cut off temperature to find out the low temperature result and it agrees with experiments very well.
 
 .. important::
-   We start for an Einstein theory and reaches a non sleeping model. What happened when we integrated over all DoS in Debye model? Work this out in details.
+   We start for the Einstein's theory and reaches a 'non-sleeping' model. What happened when we integrated over all DoS in Debye model?
 
-   .. hint::
-      This has something to do with density of states dispersion relation.
+   This is because our density of states :math:`g(\omega)\propto \omega^2` at low temperature tells us that we would have more states at a certain energy as :math:`\omega` increases. The system needs more energy to raise the temperature, i.e., the heat capacity line becomes steeper.
 
-   This is because our density of states :math:`g(\omega)\propto \omega^2` at low temperature tells us that we would have more states at a certain energy as :math:`\omega` increases. That is to say the system need more energy to increase temperature, identically the heat capacity line becomes steeper.
+.. admonition:: Why is the number of modes important in Debye model?
+   :class: important
 
-
-.. important::
-   Why is the # of modes important in Debye model? The degree of freedom is finite in an system. If we don't cut off the frequency, that means we would have infinite degree of freedom because we have made an approximation that dispersion relation is a straight line :math:`\omega = c k`. That would certainly lead to infinite heat capacity and infinite total energy.
-
-
-
+   The degree of freedom is finite in these systems. If we don't cut off the frequency, we would have infinite degree of freedom because we have made an approximation that dispersion relation is a straight line :math:`\omega = c k` all the time. This would certainly lead to an infinite heat capacity and infinite total energy.
 
 
 Beyond Debye Model
 ----------------------
 
-Debye model is simple yet classic. Generally we can not find the right transformation that decouples the particles. For example we have the Ising model,
+Debye model is simple yet powerful. Generally speaking we can not alway find out the correct transformation that decouples the particles in the equation of motion. The Ising model is a perfect example for this. The Hamiltonian for the Ising model is
 
 .. math::
    H = \sum_i \mu \sigma B - \sum _ {i,j} J^{ij}\sigma_i \sigma _ j
 
-with :math:`J^{ij} = J (  \delta _ i \delta _ {j-1} +\delta _ i \delta _{j+1} )` as an simple model.
+where :math:`J^{ij}` is the coupling constants between the particles. With :math:`J^{ij} = J (  \delta _ i \delta _ {j-1} +\delta _ i \delta _{j+1} )`, we reach our simple model.
 
 .. hint::
-   The reason that we can decouple the simple coupled HO system is that the coupling constant are the same and each HO is identical. In that case the system is just a homogeneous chain such that the normal modes are sin or cos waves depending on the boundary condition. If the system is inhomogeneous, there is no way that we can use simple plain waves on the chain as normal modes.
+   The reason that we can decouple the simple coupled harmonic oscillators system is that the coupling constant are the same for all springs and each harmonic oscillator is identical. The system becomes a homogeneous chain such that the normal modes are sin or cos waves depending on the boundary condition. As the chain becomes inhomogeneous, we can not use simple plain waves as normal modes any more.

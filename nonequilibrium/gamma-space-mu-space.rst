@@ -10,7 +10,7 @@ Two Spaces
 -----------------------------
 
 
-To get some easy equations we need to reduce from :math:`\Gamma` space to :math:`\mu` space.
+To get some easy equations we need to reduce from :math:`\Gamma` space to :math:`\mu` space. (More about :math:`\mu` space and :math:`\Gamma` space: :ref:`mu-space-and-gamma-space`.)
 
 +-----------------------+-----------------------------------------------------------+-----------------------------------+
 |      Two Spaces       | :math:`\Gamma` space                                      |  :math:`\mu` space                |
@@ -20,7 +20,7 @@ To get some easy equations we need to reduce from :math:`\Gamma` space to :math:
 |  State of system      |   A point                                                 |  :math:`N` points                 |
 +-----------------------+-----------------------------------------------------------+-----------------------------------+
 |  Probability density  | :math:`\rho(q^n_i, p^n_i; t)`                             |  :math:`f_n(q_i,p_i; t)`          |
-+-----------------------+-----------------------------------------------------------------------------------------------+
++-----------------------+-----------------------------------------------------------+-----------------------------------+
 |  Observables          |  Difference in the integration                                                                |
 +-----------------------+-----------------------------------------------------------+-----------------------------------+
 |  EoM                  | Liouville equation or Von Neumann equation                |   BBGKY Hierarchy                 |
