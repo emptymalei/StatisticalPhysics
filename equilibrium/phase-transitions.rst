@@ -17,6 +17,21 @@ Phase transitions only exists in systems with infinite particles.
 
 .. [Leo P. Kadanoff] `Kadanoff's PI Lectures <http://jfi.uchicago.edu/~leop/TALKS/Perimeter%20Stat%20Mech%20Lectures/lectures%20in%20PDF/Part%207%20Mean%20Field%20Theory.pdf>`_
 
+.. admonition:: Phase Transitions in Other Fields
+   :class: toggle
+
+   If we are looking for well defined phase transitions in other fields, such as our society, it would be the best if we could all agree on which observables to use.
+
+   For example, in social science, there is the model called Schelling's model which models the segregation of races. The model is fairly simple yet is able to match the data.
+
+   The idea is that we have several races scatter on a grid. Each individual is more satistifed if the individual can live nearby a predefined percentage of population of races. If the individual is not satistifed, then the individual will move to another place.
+
+   Just like the Ising model, domains might appear. But domains might not appear for some certain parameters. This change is drastic. There is a phase transition.
+
+   References:
+
+   1. `Schelling’s Segregation Model, I <https://medium.com/@jxxcarlson/schellings-segregation-model-i-43e612241b62>`_
+   2. `DT&SC 7-11: Schelling's Segregation Model @ YouTube <https://www.youtube.com/watch?v=AZlWOykGzYg>`_
 
 .. _mean-field-theory:
 
