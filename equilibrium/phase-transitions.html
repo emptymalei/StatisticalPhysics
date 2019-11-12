@@ -290,15 +290,24 @@ TeX: {
 <p>Phase transitions only exists in systems with infinite particles.</p>
 <div class="toggle admonition">
 <p class="admonition-title">Phase Transitions in Other Fields</p>
-<p>If we are looking for well defined phase transitions in other fields, such as our society, it would be the best if we could all agree on which observables to use.</p>
+<p>If we are looking for well defined phase transitions in other fields, such as our society, it would be the best if we could all agree on which observables to use, aka, order parameters.</p>
 <p>For example, in social science, there is the model called Schelling’s model which models the segregation of races. The model is fairly simple yet is able to match the data.</p>
 <p>The idea is that we have several races scatter on a grid. Each individual is more satistifed if the individual can live nearby a predefined percentage of population of races. If the individual is not satistifed, then the individual will move to another place.</p>
-<p>Just like the Ising model, domains might appear. But domains might not appear for some certain parameters. This change is drastic. There is a phase transition.</p>
+<p>For better understanding, checkout this web app I wrote: <a class="reference external" href="http://schelling.openmetric.org/">Schelling’s segeration model</a>.</p>
+<p>Just like the Ising model, domains might appear. But domains might not appear for some certain parameters. This change is drastic. There is a phase transition. To be precise, we have to define the order parameter in Schelling’s model. For example, we define the average size of the communities as our order parameter.</p>
+<ol class="arabic simple">
+<li><p>For very low similarity requirements, our agents will be quite satistifed with whatever neighbours they have initially. Very little will change in this case. This is the so called frozen state. In this case, average size of the communities are small but the satisfactions are high.</p></li>
+<li><p>For very large similarity requirements, our agents is very hard to please. They will relocate all the time and remain not satisfied. This is the mixed state. Or average size of communities is small.</p></li>
+<li><p>In between, agents will move to live close to their own ethical groups. Domains will form. This is the segreged state. The average size of communities is large.</p></li>
+</ol>
+<p>There are also other parameters to consider but a phase diagram can be calculated.</p>
 <p>References:</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://medium.com/&#64;jxxcarlson/schellings-segregation-model-i-43e612241b62">Schelling’s Segregation Model, I</a></p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=AZlWOykGzYg">DT&amp;SC 7-11: Schelling’s Segregation Model &#64; YouTube</a></p></li>
 </ol>
+<p>2. <a class="reference external" href="https://www.coursera.org/lecture/model-thinking/schellings-segregation-model-1qEBU">Schelling’s Segregation Model | Model Thinking</a>
+2. <a class="reference external" href="https://www.youtube.com/watch?v=AZlWOykGzYg">DT&amp;SC 7-11: Schelling’s Segregation Model &#64; YouTube</a>
+3. <a class="reference external" href="https://doi.org/10.1140/epjb/e2009-00234-0">Gauvin, L., Vannimenus, J., &amp; Nadal, J. P. (2009). Phase diagram of a Schelling segregation model. European Physical Journal B, 70(2), 293–304.</a></p>
 </div>
 </div>
 <div class="section" id="mean-field-thoery">
