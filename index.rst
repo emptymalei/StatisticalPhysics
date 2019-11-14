@@ -39,7 +39,7 @@ One interesting question about statistical mechanics is how we ended up with pro
 We wouldn't need probability theory if we carry out Newton's plan exactly, in theory. But we do not have such computing powers. So we give up something for computability. The first thing we compromise is to drop the initial conditions of the particles. The reason is that it's impossible to write down all the initial conditions of all the particles. Then we find that we can't track the trajectory of all the particles so we anonymize them. In order to describe these anonymized particles, we have to use probability. What's more, some detailed dynamics of the particles have to be dropped to make our statistical quantities calculable. This is another reason that we turn to probabilities.
 
 
-**Of course, tt's kind of disappointing that Newton's plan didn't succeed. However, we are seeing this world differently by looking at the key insights.**
+**Though it's kind of disappointing that Newton's plan didn't succeed, this conflict between Newton's plan and our nature brought us new insights about our world.**
 
 
 
