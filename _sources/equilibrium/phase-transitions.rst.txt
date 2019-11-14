@@ -107,8 +107,19 @@ The two different views of the average magnetic field for a magnet should be the
 
 .. math::
    \tanh( \beta (4Jm + H) ) = m.
+   :label: eq-weiss-theory-equation
 
 This equation can be understood using graphical solutions.
+
+.. figure:: images/weiss-theory-graphical-solutions.png
+   :alt: Weiss Theory Magnets Grid
+   :align: center
+
+   Examples of solving equation :eq:`eq-weiss-theory-equation` graphically.
+
+In the example, we are solving the case for :math:`H=0`. For :math:`4\beta J=0.5`, the left side of the equation becomes :math:`\tanh(0.5 m)`. On the right hand side, we have :math:`m`. The value of :math:`m` must be determined by the interceptions of the left hand side and the right hand side. However, we only find :math:`m=0` which is paramagnetic. For :math:`4\beta J=2`, we do find two other solutions for :math:`m`. In fact, due to the slope of the hyperbolic tangent at origin, we only have 3 solutions if :math:`4\beta J>1`. This is interesting because this corresponds to a phase transition at different :math:`\beta`, i.e., :math:`1/k_B T`.
+
+
 
 
 .. admonition:: Why is this an approximation
@@ -117,7 +128,7 @@ This equation can be understood using graphical solutions.
    Why is this an approximation?
    Because translational symmetry doesn't really hold all the time and the fluctuations are not necessarily 0. But it captures the primary feature of such a system.
 
-Mean field theory often fails at the critical points since the fluctuations will be significant around critical points. That being said, mean field theory is not precise enough for phase transition in some low dimensional systems.
+This Weiss mean field theory also predicts phase transitions for 1D which is wrong. There is no phase transitions in 1D Ising model. What's more, the theory also predicts the critical temperature wrong. The reason behind it is related to the fact that the fluctuations will be significant around critical points. That being said, mean field theory is not precise enough for phase transition in some low dimensional systems. Just like in statistics, more neighbours will make our standard deviations smaller thus we reach a better approximation by using the mean field.
 
 .. admonition:: Why does mean field theory even work?
    :class: important
@@ -151,6 +162,10 @@ Mean field theory often fails at the critical points since the fluctuations will
    What makes the phase transition in such a system? Finite system has no phase transitions because finite continuous function can only make up continuous function by addition. Phase transition happens when the correlation length becomes infinite. It is all about correlations.
 
 
+References
+~~~~~~~~~~~~~~~~~~~~~~~
+
+1. `Kochmański, M., Paszkiewicz, T., & Wolski, S. (2013). Curie-Weiss magnet - A simple model of phase transition. European Journal of Physics, 34(6), 1555–1573. <https://doi.org/10.1088/0143-0807/34/6/1555>`_
 
 .. _van-der-waals-gas:
 
@@ -315,3 +330,4 @@ It's simply done by using the ensemble average
    \langle O \rangle = \int O(p_i; q_i;t) \rho(p_i;q_i;t) \sum_i dp_i dq_i dt
 
 where :math:`i=1,2,..., 3N`.
+

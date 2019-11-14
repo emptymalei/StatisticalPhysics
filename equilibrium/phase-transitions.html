@@ -225,7 +225,10 @@ TeX: {
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Phase Transitions</a><ul>
 <li><a class="reference internal" href="#id1">Phase Transitions</a></li>
-<li><a class="reference internal" href="#mean-field-thoery">Mean Field Thoery</a></li>
+<li><a class="reference internal" href="#mean-field-thoery">Mean Field Thoery</a><ul>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#van-der-waals-gas">Van der Waals Gas</a></li>
 <li><a class="reference internal" href="#ensemble">Ensemble</a><ul>
 <li><a class="reference internal" href="#states">States</a></li>
@@ -346,15 +349,20 @@ TeX: {
 =&amp; \frac{ e^{\beta ( 4 Jm + H ) } - e^{ - \beta ( 4 Jm + H ) } }{ e^{\beta ( 4 Jm + H ) } + e^{ - \beta ( 4 Jm + H ) } } \\
 =&amp; \tanh( \beta (4Jm + H) ).\end{split}\]</div>
 <p>The two different views of the average magnetic field for a magnet should be the same, i.e.,</p>
-<div class="math notranslate nohighlight">
-\[\tanh( \beta (4Jm + H) ) = m.\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-weiss-theory-equation">
+<span class="eqno">(9)<a class="headerlink" href="#equation-eq-weiss-theory-equation" title="Permalink to this equation">¶</a></span>\[\tanh( \beta (4Jm + H) ) = m.\]</div>
 <p>This equation can be understood using graphical solutions.</p>
+<div class="figure align-center" id="id4">
+<img alt="Weiss Theory Magnets Grid" src="../_images/weiss-theory-graphical-solutions.png" />
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Examples of solving equation <a class="reference internal" href="#equation-eq-weiss-theory-equation">(9)</a> graphically.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>In the example, we are solving the case for <span class="math notranslate nohighlight">\(H=0\)</span>. For <span class="math notranslate nohighlight">\(4\beta J=0.5\)</span>, the left side of the equation becomes <span class="math notranslate nohighlight">\(\tanh(0.5 m)\)</span>. On the right hand side, we have <span class="math notranslate nohighlight">\(m\)</span>. The value of <span class="math notranslate nohighlight">\(m\)</span> must be determined by the interceptions of the left hand side and the right hand side. However, we only find <span class="math notranslate nohighlight">\(m=0\)</span> which is paramagnetic. For <span class="math notranslate nohighlight">\(4\beta J=2\)</span>, we do find two other solutions for <span class="math notranslate nohighlight">\(m\)</span>. In fact, due to the slope of the hyperbolic tangent at origin, we only have 3 solutions if <span class="math notranslate nohighlight">\(4\beta J&gt;1\)</span>. This is interesting because this corresponds to a phase transition at different <span class="math notranslate nohighlight">\(\beta\)</span>, i.e., <span class="math notranslate nohighlight">\(1/k_B T\)</span>.</p>
 <div class="note admonition">
 <p class="admonition-title">Why is this an approximation</p>
 <p>Why is this an approximation?
 Because translational symmetry doesn’t really hold all the time and the fluctuations are not necessarily 0. But it captures the primary feature of such a system.</p>
 </div>
-<p>Mean field theory often fails at the critical points since the fluctuations will be significant around critical points. That being said, mean field theory is not precise enough for phase transition in some low dimensional systems.</p>
+<p>This Weiss mean field theory also predicts phase transitions for 1D which is wrong. There is no phase transitions in 1D Ising model. What’s more, the theory also predicts the critical temperature wrong. The reason behind it is related to the fact that the fluctuations will be significant around critical points. That being said, mean field theory is not precise enough for phase transition in some low dimensional systems. Just like in statistics, more neighbours will make our standard deviations smaller thus we reach a better approximation by using the mean field.</p>
 <div class="important admonition">
 <p class="admonition-title">Why does mean field theory even work?</p>
 <p>Why does mean field theory even work? From the view of mathematics, any continuous potential function can be Taylor expanded at the mean value of the magnetic field.</p>
@@ -376,6 +384,12 @@ Because translational symmetry doesn’t really hold all the time and the fluctu
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>What makes the phase transition in such a system? Finite system has no phase transitions because finite continuous function can only make up continuous function by addition. Phase transition happens when the correlation length becomes infinite. It is all about correlations.</p>
+</div>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://doi.org/10.1088/0143-0807/34/6/1555">Kochmański, M., Paszkiewicz, T., &amp; Wolski, S. (2013). Curie-Weiss magnet - A simple model of phase transition. European Journal of Physics, 34(6), 1555–1573.</a></p></li>
+</ol>
 </div>
 </div>
 <div class="section" id="van-der-waals-gas">
