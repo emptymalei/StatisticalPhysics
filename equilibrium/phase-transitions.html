@@ -22,7 +22,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ising Model" href="ising-model.html" />
+    <link rel="next" title="Gas Revisted" href="gas-revisted.html" />
     <link rel="prev" title="Debye Model" href="debye-model.html" />
 
 <meta charset='utf-8'>
@@ -184,6 +184,8 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="observables.html">Observables in Statistical Physics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debye-model.html">Debye Model</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Phase Transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gas-revisted.html">Gas Revisted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="systematic-view.html">A More Systematic View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ising-model.html">Ising Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
@@ -229,14 +231,6 @@ TeX: {
 <li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#van-der-waals-gas">Van der Waals Gas</a></li>
-<li><a class="reference internal" href="#ensemble">Ensemble</a><ul>
-<li><a class="reference internal" href="#states">States</a></li>
-<li><a class="reference internal" href="#time-evolution">Time evolution</a></li>
-<li><a class="reference internal" href="#requirements-for-liouville-density">Requirements for Liouville Density</a></li>
-<li><a class="reference internal" href="#extraction-of-observables">Extraction of observables</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -252,7 +246,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="ising-model.html" title="Next Chapter: Ising Model"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Ising Model &raquo;</span>
+    <a href="gas-revisted.html" title="Next Chapter: Gas Revisted"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Gas Revisted &raquo;</span>
     </a>
   </li>
               
@@ -318,9 +312,9 @@ TeX: {
 <p>More is the same.</p>
 <p>We take Weiss theory as an example. Weiss theory is a theory of ferromagnetism. In his theory, each molecule in the material serves as a small magnet.</p>
 <p>To make it easy to understand, we assume the small magnets are arranged on a 2D grid.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id2">
 <img alt="Weiss Theory Magnets Grid" src="../_images/weiss-theory-grid.png" />
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Magnets on a 2D grid. The red magnet <span class="math notranslate nohighlight">\(s\)</span> is surrounded by four neighbours, <span class="math notranslate nohighlight">\(s_1\)</span>, <span class="math notranslate nohighlight">\(s_2\)</span>, <span class="math notranslate nohighlight">\(s_3\)</span>, and <span class="math notranslate nohighlight">\(s_4\)</span>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Magnets on a 2D grid. The red magnet <span class="math notranslate nohighlight">\(s\)</span> is surrounded by four neighbours, <span class="math notranslate nohighlight">\(s_1\)</span>, <span class="math notranslate nohighlight">\(s_2\)</span>, <span class="math notranslate nohighlight">\(s_3\)</span>, and <span class="math notranslate nohighlight">\(s_4\)</span>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Hamiltonian for the magnet <span class="math notranslate nohighlight">\(s\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -352,9 +346,9 @@ TeX: {
 <div class="math notranslate nohighlight" id="equation-eq-weiss-theory-equation">
 <span class="eqno">(9)<a class="headerlink" href="#equation-eq-weiss-theory-equation" title="Permalink to this equation">¶</a></span>\[\tanh( \beta (4Jm + H) ) = m.\]</div>
 <p>This equation can be understood using graphical solutions.</p>
-<div class="figure align-center" id="id4">
+<div class="figure align-center" id="id3">
 <img alt="Weiss Theory Magnets Grid" src="../_images/weiss-theory-graphical-solutions.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Examples of solving equation <a class="reference internal" href="#equation-eq-weiss-theory-equation">(9)</a> graphically.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Examples of solving equation <a class="reference internal" href="#equation-eq-weiss-theory-equation">(9)</a> graphically.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the example, we are solving the case for <span class="math notranslate nohighlight">\(H=0\)</span>. For <span class="math notranslate nohighlight">\(4\beta J=0.5\)</span>, the left side of the equation becomes <span class="math notranslate nohighlight">\(\tanh(0.5 m)\)</span>. On the right hand side, we have <span class="math notranslate nohighlight">\(m\)</span>. The value of <span class="math notranslate nohighlight">\(m\)</span> must be determined by the interceptions of the left hand side and the right hand side. However, we only find <span class="math notranslate nohighlight">\(m=0\)</span> which is paramagnetic. For <span class="math notranslate nohighlight">\(4\beta J=2\)</span>, we do find two other solutions for <span class="math notranslate nohighlight">\(m\)</span>. In fact, due to the slope of the hyperbolic tangent at origin, we only have 3 solutions if <span class="math notranslate nohighlight">\(4\beta J&gt;1\)</span>. This is interesting because this corresponds to a phase transition at different <span class="math notranslate nohighlight">\(\beta\)</span>, i.e., <span class="math notranslate nohighlight">\(1/k_B T\)</span>.</p>
 <div class="note admonition">
@@ -390,105 +384,7 @@ Because translational symmetry doesn’t really hold all the time and the fluctu
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://doi.org/10.1088/0143-0807/34/6/1555">Kochmański, M., Paszkiewicz, T., &amp; Wolski, S. (2013). Curie-Weiss magnet - A simple model of phase transition. European Journal of Physics, 34(6), 1555–1573.</a></p></li>
 </ol>
-</div>
-</div>
-<div class="section" id="van-der-waals-gas">
-<span id="id2"></span><h2>Van der Waals Gas<a class="headerlink" href="#van-der-waals-gas" title="Permalink to this headline">¶</a></h2>
-<p>Ideal gas is the simplest. Van de Waals model considers the correction in pressure and volume.</p>
-<div class="math notranslate nohighlight">
-\[(P + a n^2/V^2)(V- n b) = n R T\]</div>
-<p>for n mole gas.</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(nb\)</span> is because molecules are not point particles, they take up space. In Lenard-Jones potential model, b is 4 times the size of all molecules.</p></li>
-<li><p><span class="math notranslate nohighlight">\(a n^2/V^2\)</span> is because in this model molecules will attract to each other when they get too close. This attractive force makes it possible to have phase transition, condensation of gas molecules.</p></li>
-</ol>
-<p>This models, is basically a kind of mean field theory which treats the corrections as a mean field. More specifically, we write the original Hamiltonian</p>
-<div class="math notranslate nohighlight">
-\[H = \sum \frac{\vec p_i^2}{2m} + \sum _ {\langle i,j \rangle} \phi(r_{ij})\]</div>
-<p>as</p>
-<div class="math notranslate nohighlight">
-\[H = \sum \frac{\vec p_i^2}{2m} +  \sum _ {\langle i,j \rangle} \phi(r)\]</div>
-<p>in which <span class="math notranslate nohighlight">\(\phi(r)\)</span> is the average of potential and all particles interaction have the same value.</p>
-<p>Onnes used series to write the equation of state,</p>
-<div class="math notranslate nohighlight">
-\[P = \frac{n R T}{V} \left[ 1 + \frac{n}{V} B(T) + \left(\frac{n}{V}\right)^2 C(T) + \cdots \right]\]</div>
-<p>This can be derived using Mayer function and cluster expansion.</p>
-</div>
-<div class="section" id="ensemble">
-<h2>Ensemble<a class="headerlink" href="#ensemble" title="Permalink to this headline">¶</a></h2>
-<p>A standard procedure of solving mechanics problems, said by Prof. Kenkre which is don’t really accept, is</p>
-<p>Initial condition / Description of states -&gt; Time evolution -&gt; Extraction of observables</p>
-<div class="section" id="states">
-<h3>States<a class="headerlink" href="#states" title="Permalink to this headline">¶</a></h3>
-<p><strong>Density of states in phase space</strong></p>
-<p>Continuity equation</p>
-<div class="math notranslate nohighlight">
-\[\partial _ t \rho + \nabla \cdot (\rho \vec u) =0\]</div>
-<p>This conservation law can be more simpler if dropped the term <span class="math notranslate nohighlight">\(\nabla\cdot \vec u = 0\)</span> for incompressibility.</p>
-<p>Or more generally,</p>
-<div class="math notranslate nohighlight">
-\[\partial _ t \rho + \nabla \cdot \vec j = 0\]</div>
-<p>and here <span class="math notranslate nohighlight">\(\vec j\)</span> can take other definitions like <span class="math notranslate nohighlight">\(\vec j = - D \partial_x \rho\)</span>.</p>
-<p>This second continuity equation can represent any conservation law provided the proper <span class="math notranslate nohighlight">\(\vec j\)</span>.</p>
-<div class="toggle admonition">
-<p class="admonition-title">From continuity equation to Liouville theorem</p>
-<p>From continuity equation to Liouville theorem:</p>
-<p>We start from</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial t} \rho + \vec \nabla \cdot (\rho \vec v)\]</div>
-<p>Divergence means</p>
-<div class="math notranslate nohighlight">
-\[\vec \nabla \cdot  = \sum_i \left( \frac{\partial}{\partial q_i} + \frac{\partial}{\partial p_i} \right) .\]</div>
-<p>Then we will have the initial expression written as</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial t} \rho + \sum_i \left( \frac{\partial}{\partial q_i} (\rho \dot q_i) + \frac{\partial}{\partial \dot p_i} \right) .\]</div>
-<p>Expand the derivatives,</p>
-<div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial t} \rho + \sum_i \left[  \left( \frac{\partial}{\partial q_i} \dot q_i + \frac{\partial}{\partial p_i} \dot p_i\right) \rho +  \dot q_i \frac{\partial}{\partial q_i} \rho  + \dot p_i \frac{\partial}{\partial p_i} \rho  \right]   .\]</div>
-<p>Recall that Hamiltonian equations</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\dot q_i  = \frac{\partial H}{\partial p_i}\\\dot p_i = - \frac{\partial H}{\partial q_i}\end{aligned}\end{align} \]</div>
-<p>Then</p>
-<div class="math notranslate nohighlight">
-\[\left( \frac{\partial}{\partial q_i} \dot q_i + \frac{\partial}{\partial p_i} \dot p_i\right) \rho  .\]</div>
-<p>Finally convective time derivative becomes zero because <span class="math notranslate nohighlight">\(\rho\)</span> is not changing with time in a comoving frame like perfect fluid.</p>
-<div class="math notranslate nohighlight">
-\[\frac{d}{d t} \rho \equiv  \frac{\partial}{\partial t}\rho + \sum_i \left[ \dot q_i \frac{\partial}{\partial q_i} \rho  + \dot p_i \frac{\partial}{\partial p_i} \rho \right] =0\]</div>
-</div>
-</div>
-<div class="section" id="time-evolution">
-<h3>Time evolution<a class="headerlink" href="#time-evolution" title="Permalink to this headline">¶</a></h3>
-<p>Apply Hamiltonian dynamics to this continuity equation, we can get</p>
-<div class="math notranslate nohighlight">
-\[\partial_t \rho = \{H, \rho\}\]</div>
-<p>which is very similar to quantum density matrix operator</p>
-<div class="math notranslate nohighlight">
-\[\mathrm i \hbar \partial_t \hat \rho = [ \hat H, \hat \rho ]\]</div>
-<p>That is to say, the time evolution is solved if we can find out the Poisson bracket of Hamiltonian and probability density.</p>
-</div>
-<div class="section" id="requirements-for-liouville-density">
-<h3>Requirements for Liouville Density<a class="headerlink" href="#requirements-for-liouville-density" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p>Liouville theorem;</p></li>
-<li><p>Normalizable;</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>What about a system with constant probability for each state all over the phase space? This is not normalizable. Such a system can not really pick out a value. It seems that the probability to be on states with a constant energy is zero. So no such system really exist. I guess?</p>
-<p>Like this?</p>
-<a class="reference internal image-reference" href="../_images/sandiaPeaks.png"><img alt="../_images/sandiaPeaks.png" class="align-center" src="../_images/sandiaPeaks.png" style="width: 873.0px; height: 1073.7px;" /></a>
-<p>Someone have 50% probability each to stop on one of the two Sandia Peaks for a picnic. Can we do an average for such a system? <strong>Example by Professor Kenkre.</strong></p>
-</div>
-</li>
-</ol>
-<p>And one more for equilibrium systems, <span class="math notranslate nohighlight">\(\partial_t \rho =0\)</span>.</p>
-</div>
-<div class="section" id="extraction-of-observables">
-<h3>Extraction of observables<a class="headerlink" href="#extraction-of-observables" title="Permalink to this headline">¶</a></h3>
-<p>It’s simply done by using the ensemble average</p>
-<div class="math notranslate nohighlight">
-\[\langle O \rangle = \int O(p_i; q_i;t) \rho(p_i;q_i;t) \sum_i dp_i dq_i dt\]</div>
-<p>where <span class="math notranslate nohighlight">\(i=1,2,..., 3N\)</span>.</p>
-</div>
+<span class="target" id="van-der-waals-gas"></span></div>
 </div>
 </div>
 
