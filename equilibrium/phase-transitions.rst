@@ -52,22 +52,82 @@ Mean Field Thoery
 
 More is the same.
 
+We take Weiss theory as an example. Weiss theory is a theory of ferromagnetism. In his theory, each molecule in the material serves as a small magnet.
+
+To make it easy to understand, we assume the small magnets are arranged on a 2D grid.
+
+.. figure:: images/weiss-theory-grid.png
+   :alt: Weiss Theory Magnets Grid
+   :align: center
+
+   Magnets on a 2D grid. The red magnet :math:`s` is surrounded by four neighbours, :math:`s_1`, :math:`s_2`, :math:`s_3`, and :math:`s_4`.
+
+The Hamiltonian for the magnet :math:`s` is
+
+.. math::
+   \mathscr H_s = - s ( J \sum_{i} s_i + H),
+
+where :math:`\sum_i s_i` is summing over all the neighbours, i.e., 1,2,3,4 in our example, :math:`H` is the external magnetic field.
+
+There are two key ideas in Weiss mean field theory.
+
+The first idea is to think of the neighours being an average magnetic field :math:`m`. Thus each neighbour can be decomposed into the average magnetic field and the difference, :math:`s_i = m + (s_i - m)`.
+
+.. math::
+   \mathscr H_s =& - s ( J \sum_{i} s_i + H) \\
+   =& -s ( J \sum_{i} (m + (s_i - m) ) + H) \\
+   = & -s ( 4 J m - J\sum_i (s_i - m) + H ) \\
+   = & -s ( 4 Jm + H ) + s J \sum_i (s_i - m) \\
+   = & \mathscr H_{mf} + \mathscr H_{flu},
+
+where
+
+.. math::
+   \mathscr H_{mf} = -s ( 4 Jm + H )
+
+is the mean field Hamiltonian and
+
+.. math::
+   \mathscr H_{flu} = s J \sum_i (s_i - m)
+
+is the fluctuations.
+
+The second key idea is to assume translational symmetry on the grid. On this homogenous grid, each spin is no different from other spins. Thus the fluctuations :math:`\mathscr H_{flu}` must be averaged to 0, otherwise the translational symmetry is broken.
+
+The translational symmetry also tells us that the average magnet field for each magnet should be the same and they should all be :math:`\langle s \rangle = m`.
+
+On the other hand, statistical mechanics tells that the average should be calculated as
+
+.. math::
+   \langle s \rangle =& \frac{ \sum_s s e^{-\beta \mathscr H_{mf} } }{ \sum_s e^{-\beta \mathscr H_{mf} } } \\
+   =& \frac{ e^{\beta ( 4 Jm + H ) } - e^{ - \beta ( 4 Jm + H ) } }{ e^{\beta ( 4 Jm + H ) } + e^{ - \beta ( 4 Jm + H ) } } \\
+   =& \tanh( \beta (4Jm + H) ).
+
+The two different views of the average magnetic field for a magnet should be the same, i.e.,
+
+.. math::
+   \tanh( \beta (4Jm + H) ) = m.
+
+This equation can be understood using graphical solutions.
+
 
 .. admonition:: Why is this an approximation
    :class: note
 
    Why is this an approximation?
-   Because the actual magnetic field for example is often not the average of all the magnetic dipoles.
+   Because translational symmetry doesn't really hold all the time and the fluctuations are not necessarily 0. But it captures the primary feature of such a system.
 
-Mean field theory often fails at the critical points that is mean field theory is not precise enough for phase transition in some low dimensional systems. This gives us a very interesting thought.
+Mean field theory often fails at the critical points since the fluctuations will be significant around critical points. That being said, mean field theory is not precise enough for phase transition in some low dimensional systems.
 
-.. admonition:: Why does mean field theory work
+.. admonition:: Why does mean field theory even work?
    :class: important
 
-   Why does mean field theory work? From the view of mathematics, potential can always be expanded at some value which is exactly the mean value of the field. For an Hamiltonian,
+   Why does mean field theory even work? From the view of mathematics, any continuous potential function can be Taylor expanded at the mean value of the magnetic field.
+
+   The generic form of the Hamiltonian for magnets on a grid is
 
    .. math::
-      H = - \sum _{\langle i,j \rangle} J^{ij} \sigma_i \sigma_j - \mu \sum_i h^i \sigma_i
+      \mathscr H = - \sum _{\langle i,j \rangle} J^{ij} \sigma_i \sigma_j - \mu \sum_i h^i \sigma_i
 
    Mean field treatment is
 
@@ -76,9 +136,7 @@ Mean field theory often fails at the critical points that is mean field theory i
 
    where :math:`\sigma = \sum_i \sigma_i/N` is the average spin configuration.
 
-   This looks just like we take the 0 order of spin configuration expansion. And we can also include the second order which means add the interaction of just two spins.
-
-
+   In this approximation, we take the 0 order of spin configuration expansion. We can also include the second order if we need, but it brings in the fluction term.
 
 
 
@@ -90,11 +148,8 @@ Mean field theory often fails at the critical points that is mean field theory i
 
 
 .. important::
-   What makes the phase transition in such a system? Finite system has no phase transitions because finite continuous function can only make up continuous function by addition. Phase transition happens when the correlation length becomes infinite. So this is all about correlations.
+   What makes the phase transition in such a system? Finite system has no phase transitions because finite continuous function can only make up continuous function by addition. Phase transition happens when the correlation length becomes infinite. It is all about correlations.
 
-
-.. important::
-   Why is mean field theory an approximation? Because the actual spin is more or less different from the average of spin configuration. Fluctuations in the spin makes the difference.
 
 
 .. _van-der-waals-gas:
