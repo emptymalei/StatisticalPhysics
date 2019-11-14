@@ -313,22 +313,59 @@ TeX: {
 <div class="section" id="mean-field-thoery">
 <span id="mean-field-theory"></span><h2>Mean Field Thoery<a class="headerlink" href="#mean-field-thoery" title="Permalink to this headline">¶</a></h2>
 <p>More is the same.</p>
+<p>We take Weiss theory as an example. Weiss theory is a theory of ferromagnetism. In his theory, each molecule in the material serves as a small magnet.</p>
+<p>To make it easy to understand, we assume the small magnets are arranged on a 2D grid.</p>
+<div class="figure align-center" id="id3">
+<img alt="Weiss Theory Magnets Grid" src="../_images/weiss-theory-grid.png" />
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Magnets on a 2D grid. The red magnet <span class="math notranslate nohighlight">\(s\)</span> is surrounded by four neighbours, <span class="math notranslate nohighlight">\(s_1\)</span>, <span class="math notranslate nohighlight">\(s_2\)</span>, <span class="math notranslate nohighlight">\(s_3\)</span>, and <span class="math notranslate nohighlight">\(s_4\)</span>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>The Hamiltonian for the magnet <span class="math notranslate nohighlight">\(s\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\mathscr H_s = - s ( J \sum_{i} s_i + H),\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sum_i s_i\)</span> is summing over all the neighbours, i.e., 1,2,3,4 in our example, <span class="math notranslate nohighlight">\(H\)</span> is the external magnetic field.</p>
+<p>There are two key ideas in Weiss mean field theory.</p>
+<p>The first idea is to think of the neighours being an average magnetic field <span class="math notranslate nohighlight">\(m\)</span>. Thus each neighbour can be decomposed into the average magnetic field and the difference, <span class="math notranslate nohighlight">\(s_i = m + (s_i - m)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathscr H_s =&amp; - s ( J \sum_{i} s_i + H) \\
+=&amp; -s ( J \sum_{i} (m + (s_i - m) ) + H) \\
+= &amp; -s ( 4 J m - J\sum_i (s_i - m) + H ) \\
+= &amp; -s ( 4 Jm + H ) + s J \sum_i (s_i - m) \\
+= &amp; \mathscr H_{mf} + \mathscr H_{flu},\end{split}\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\mathscr H_{mf} = -s ( 4 Jm + H )\]</div>
+<p>is the mean field Hamiltonian and</p>
+<div class="math notranslate nohighlight">
+\[\mathscr H_{flu} = s J \sum_i (s_i - m)\]</div>
+<p>is the fluctuations.</p>
+<p>The second key idea is to assume translational symmetry on the grid. On this homogenous grid, each spin is no different from other spins. Thus the fluctuations <span class="math notranslate nohighlight">\(\mathscr H_{flu}\)</span> must be averaged to 0, otherwise the translational symmetry is broken.</p>
+<p>The translational symmetry also tells us that the average magnet field for each magnet should be the same and they should all be <span class="math notranslate nohighlight">\(\langle s \rangle = m\)</span>.</p>
+<p>On the other hand, statistical mechanics tells that the average should be calculated as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\langle s \rangle =&amp; \frac{ \sum_s s e^{-\beta \mathscr H_{mf} } }{ \sum_s e^{-\beta \mathscr H_{mf} } } \\
+=&amp; \frac{ e^{\beta ( 4 Jm + H ) } - e^{ - \beta ( 4 Jm + H ) } }{ e^{\beta ( 4 Jm + H ) } + e^{ - \beta ( 4 Jm + H ) } } \\
+=&amp; \tanh( \beta (4Jm + H) ).\end{split}\]</div>
+<p>The two different views of the average magnetic field for a magnet should be the same, i.e.,</p>
+<div class="math notranslate nohighlight">
+\[\tanh( \beta (4Jm + H) ) = m.\]</div>
+<p>This equation can be understood using graphical solutions.</p>
 <div class="note admonition">
 <p class="admonition-title">Why is this an approximation</p>
 <p>Why is this an approximation?
-Because the actual magnetic field for example is often not the average of all the magnetic dipoles.</p>
+Because translational symmetry doesn’t really hold all the time and the fluctuations are not necessarily 0. But it captures the primary feature of such a system.</p>
 </div>
-<p>Mean field theory often fails at the critical points that is mean field theory is not precise enough for phase transition in some low dimensional systems. This gives us a very interesting thought.</p>
+<p>Mean field theory often fails at the critical points since the fluctuations will be significant around critical points. That being said, mean field theory is not precise enough for phase transition in some low dimensional systems.</p>
 <div class="important admonition">
-<p class="admonition-title">Why does mean field theory work</p>
-<p>Why does mean field theory work? From the view of mathematics, potential can always be expanded at some value which is exactly the mean value of the field. For an Hamiltonian,</p>
+<p class="admonition-title">Why does mean field theory even work?</p>
+<p>Why does mean field theory even work? From the view of mathematics, any continuous potential function can be Taylor expanded at the mean value of the magnetic field.</p>
+<p>The generic form of the Hamiltonian for magnets on a grid is</p>
 <div class="math notranslate nohighlight">
-\[H = - \sum _{\langle i,j \rangle} J^{ij} \sigma_i \sigma_j - \mu \sum_i h^i \sigma_i\]</div>
+\[\mathscr H = - \sum _{\langle i,j \rangle} J^{ij} \sigma_i \sigma_j - \mu \sum_i h^i \sigma_i\]</div>
 <p>Mean field treatment is</p>
 <div class="math notranslate nohighlight">
 \[H = - \sum _{\langle i,j \rangle} J^{ij} \sigma_i \sigma - \mu \sum_i h^i \sigma_i\]</div>
 <p>where <span class="math notranslate nohighlight">\(\sigma = \sum_i \sigma_i/N\)</span> is the average spin configuration.</p>
-<p>This looks just like we take the 0 order of spin configuration expansion. And we can also include the second order which means add the interaction of just two spins.</p>
+<p>In this approximation, we take the 0 order of spin configuration expansion. We can also include the second order if we need, but it brings in the fluction term.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -338,11 +375,7 @@ Because the actual magnetic field for example is often not the average of all th
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>What makes the phase transition in such a system? Finite system has no phase transitions because finite continuous function can only make up continuous function by addition. Phase transition happens when the correlation length becomes infinite. So this is all about correlations.</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Why is mean field theory an approximation? Because the actual spin is more or less different from the average of spin configuration. Fluctuations in the spin makes the difference.</p>
+<p>What makes the phase transition in such a system? Finite system has no phase transitions because finite continuous function can only make up continuous function by addition. Phase transition happens when the correlation length becomes infinite. It is all about correlations.</p>
 </div>
 </div>
 <div class="section" id="van-der-waals-gas">
