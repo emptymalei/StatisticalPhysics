@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Gas Revisted &#8212; Statistical Physics Notes</title>
+    <title>Gas Revisited &#8212; Statistical Physics Notes</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -184,7 +184,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="observables.html">Observables in Statistical Physics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debye-model.html">Debye Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="phase-transitions.html">Phase Transitions</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Gas Revisted</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Gas Revisited</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systematic-view.html">A More Systematic View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ising-model.html">Ising Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
@@ -225,7 +225,7 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Gas Revisted</a><ul>
+<li><a class="reference internal" href="#">Gas Revisited</a><ul>
 <li><a class="reference internal" href="#van-der-waals-gas">Van der Waals Gas</a></li>
 </ul>
 </li>
@@ -270,29 +270,33 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="gas-revisted">
-<h1>Gas Revisted<a class="headerlink" href="#gas-revisted" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="gas-revisited">
+<h1>Gas Revisited<a class="headerlink" href="#gas-revisited" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="van-der-waals-gas">
 <h2>Van der Waals Gas<a class="headerlink" href="#van-der-waals-gas" title="Permalink to this headline">¶</a></h2>
-<p>Ideal gas is the simplest. Van de Waals model considers the correction in pressure and volume.</p>
+<p>The ideal gas model is simple yet not realistic in many cases. Since the ideal gas model ignores the interactions between the gas molecules, it only applies to sparse gas.</p>
+<p>The van de Waals model adds two new elements to the ideal gas model: molecules size and interaction potential. It deals with the correction in pressure and volume. The equation of state writes</p>
 <div class="math notranslate nohighlight">
 \[(P + a n^2/V^2)(V- n b) = n R T\]</div>
-<p>for n mole gas.</p>
+<p>for <span class="math notranslate nohighlight">\(n\)</span> moles of gas.</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(nb\)</span> is because molecules are not point particles, they take up space. In Lenard-Jones potential model, b is 4 times the size of all molecules.</p></li>
-<li><p><span class="math notranslate nohighlight">\(a n^2/V^2\)</span> is because in this model molecules will attract to each other when they get too close. This attractive force makes it possible to have phase transition, condensation of gas molecules.</p></li>
+<li><p>We have introduced <span class="math notranslate nohighlight">\(nb\)</span> because molecules are not point particles. In the van der Waals model, we assume that the molecules are incompressible hard balls. Here the variable <span class="math notranslate nohighlight">\(b\)</span> is related to the size of the molecules. In the Lenard-Jones potential model, <span class="math notranslate nohighlight">\(b\)</span> is 4 times the size of all molecules.</p></li>
+<li><p>We have the term <span class="math notranslate nohighlight">\(a n^2/V^2\)</span> because molecules will attract to each other when they get too close. In fact, the attractive potential makes it possible for phase transition, a.k.a., condensation of gas molecules.</p></li>
 </ol>
-<p>This models, is basically a kind of mean field theory which treats the corrections as a mean field. More specifically, we write the original Hamiltonian</p>
-<div class="math notranslate nohighlight">
-\[H = \sum \frac{\vec p_i^2}{2m} + \sum _ {\langle i,j \rangle} \phi(r_{ij})\]</div>
-<p>as</p>
-<div class="math notranslate nohighlight">
-\[H = \sum \frac{\vec p_i^2}{2m} +  \sum _ {\langle i,j \rangle} \phi(r)\]</div>
-<p>in which <span class="math notranslate nohighlight">\(\phi(r)\)</span> is the average of potential and all particles interaction have the same value.</p>
-<p>Onnes used series to write the equation of state,</p>
+<p>The van der Waals model is essentially a mean field theory which averages out the higher orders of potentials. We could expand the van der Waals gas law using Taylor series,</p>
 <div class="math notranslate nohighlight">
 \[P = \frac{n R T}{V} \left[ 1 + \frac{n}{V} B(T) + \left(\frac{n}{V}\right)^2 C(T) + \cdots \right]\]</div>
-<p>This can be derived using Mayer function and cluster expansion.</p>
+<p>The coefficients can be derived using virial potential or cluster expansion.</p>
+<div class="note admonition">
+<p class="admonition-title">Why is Harmonic Oscillator so Popular in Physics</p>
+<p>More specifically, we write down an abstract Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[\mathscr H = \sum \frac{\vec p_i^2}{2m} + \sum _ {\langle i,j \rangle} \phi(r_{ij})\]</div>
+<p>as</p>
+<div class="math notranslate nohighlight">
+\[\mathscr H = \sum \frac{\vec p_i^2}{2m} +  \sum _ {\langle i,j \rangle} \phi(r)\]</div>
+<p>in which <span class="math notranslate nohighlight">\(\phi(r)\)</span> is the average of potential and all particles interaction have the same value.</p>
+</div>
 </div>
 </div>
 
@@ -332,7 +336,7 @@ TeX: {
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../_sources/equilibrium/gas-revisted.rst.txt"
+       <a href="../_sources/equilibrium/gas-revisited.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 
