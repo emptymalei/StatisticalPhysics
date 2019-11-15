@@ -6,3 +6,4 @@ Topics on Equilibrium Statistical Mechanics
     :maxdepth: 2
 
     statistical-mechanics-and-neural-networks.rst
+    importance-sampling.rst

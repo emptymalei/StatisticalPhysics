@@ -226,6 +226,8 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Ising Model</a><ul>
+<li><a class="reference internal" href="#monte-carlo-method-for-ising-model">Monte Carlo Method for Ising Model</a></li>
+<li><a class="reference internal" href="#state-transitions-and-markov-chain">State Transitions and Markov Chain</a></li>
 <li><a class="reference internal" href="#refs-notes">Refs &amp; Notes</a></li>
 </ul>
 </li>
@@ -272,11 +274,40 @@ TeX: {
       
   <div class="section" id="ising-model">
 <h1>Ising Model<a class="headerlink" href="#ising-model" title="Permalink to this headline">¶</a></h1>
-<p>The Ising model describes the ferromagnetic materials with a simple Hamiltonian</p>
+<p>Ising model is a simple and powerful model in magnetism. Given its simplicity, Ising model has been expanding to other fields of science.</p>
+<p>As an example, we use the Ising model to describe ferromagnetic materials. It’s Hamiltonian is as simple as</p>
 <div class="math notranslate nohighlight">
-\[H = - J \sum_{\langle i,j \rangle} \sigma_i \sigma_j - \mu H \sum_{i} \sigma_i .\]</div>
+\[\mathscr H = - J \sum_{\langle i,j \rangle} \sigma_i \sigma_j - \mu B \sum_{i} \sigma_i.\]</div>
+<p>where <span class="math notranslate nohighlight">\(- J \sum_{\langle i,j \rangle} \sigma_i \sigma_j\)</span> is energy of the magnetic moment self-interactions, and the second term <span class="math notranslate nohighlight">\(- \mu B \sum_{i} \sigma_i\)</span> is the energy of the magnet moments and the external field <span class="math notranslate nohighlight">\(B\)</span>.</p>
+<p>With the above Hamiltonian, we can write down the partition function from which we derive all the thermodynamic observables, in principle. For example, we are quite interested in solving the order parameters such as the average spin <span class="math notranslate nohighlight">\(\langle s \rangle\)</span> so we could infer from this the phase transitions.</p>
+<p>Ising model can be analytically and exactly solved in 1D easily and in 2D with some tricks. However, it becomes hard to solve exactly in 3D. We turn to approximations and numerical methods for help. One example of approximations is the <a class="reference internal" href="phase-transitions.html#mean-field-theory"><span class="std std-ref">Mean Field Thoery</span></a>, while the Monte Carlo method is the famous numerical method.</p>
+<div class="section" id="monte-carlo-method-for-ising-model">
+<h2>Monte Carlo Method for Ising Model<a class="headerlink" href="#monte-carlo-method-for-ising-model" title="Permalink to this headline">¶</a></h2>
+<p>The idea behind the Monte Carlo method is to fake a system that obays a specific distribution. In our case, we would like to have the system stay close to the Boltzman distribution,</p>
+<div class="math notranslate nohighlight">
+\[P(E) = \frac{e^{-E/k_B T}}{Z} \propto e^{-E/k_B T},\]</div>
+<p>where <span class="math notranslate nohighlight">\(E\)</span> is the energy and <span class="math notranslate nohighlight">\(Z\)</span> is the partition function.</p>
+<p>On a 2D grid, the energy <span class="math notranslate nohighlight">\(E\)</span> of all the spin is determined by the configuration of the spins (the microstates) <span class="math notranslate nohighlight">\(\mathscr M\)</span>, i.e., <span class="math notranslate nohighlight">\(E =  E(\mathscr M)\)</span>.</p>
+<p>Given all the possible configurations of Ising model, we calculate observable in the following way,</p>
+<div class="math notranslate nohighlight">
+\[\langle O \rangle   = \frac{ \sum_{\mathscr M} O(\mathscr M) \frac{e^{-E(\mathscr M)/k_B T}}{Z} }{ \sum_{\mathscr M} \frac{e^{-E(\mathscr M)/k_B T}}{Z} }.\]</div>
+<p>For a Ising model with <span class="math notranslate nohighlight">\(N\)</span> spins, we have <span class="math notranslate nohighlight">\(2^N\)</span> possible configurations for the spins. It quickly becomes an impossible mission as the number of spins increases.</p>
+<p>In statistics, we could estimate the average of quantities using sampling methods. There is no need to exhaust the whole population. W randomly choose some configurations, <span class="math notranslate nohighlight">\(\{\mathscr M_i\}\)</span> and calculate the observables using this sample.</p>
+<div class="warning admonition">
+<p class="admonition-title">Importance Sampling</p>
+<p>There is always a catch. We also have the curse of high dimensions. Random sampling becomes inefficient in high dimensions. To achive a reasonably good result, we have to sample a huge amount of configurations. To solve this problem, the glory importance sampling was invented.</p>
+</div>
+<p>In Monte Carlo method, we will generate some configurations and use those configurations to calculate our ensemble average of observables.</p>
+</div>
+<div class="section" id="state-transitions-and-markov-chain">
+<h2>State Transitions and Markov Chain<a class="headerlink" href="#state-transitions-and-markov-chain" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Reichl, L., A Modern Course in Statistical Physics.</p></li>
+<li><p><a class="reference external" href="http://arxiv.org/abs/cond-mat/0104167">Murthy, K. P. N. (2001). An Introduction to Monte Carlo Simulation of Statistical physics Problem.</a></p></li>
+</ol>
 </div>
 </div>
 
