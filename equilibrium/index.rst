@@ -14,7 +14,7 @@ Equilibrium Statistical Mechanics
     observables.rst
     debye-model.rst
     phase-transitions.rst
-    gas-revisted.rst
+    gas-revisited.rst
     systematic-view.rst
     ising-model.rst
     ensembles.rst
