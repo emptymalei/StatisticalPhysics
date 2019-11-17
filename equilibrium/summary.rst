@@ -71,8 +71,8 @@ In Boltzmann statistics, we follow these guidelines.
 
 1. Two postulates:
 
-   1. Occurrence of state in phase space ( :ref:`equal-a-prior-probability` ): all microstates have the same probabilities of occurence; This means that the most probable distribution for different energy :math:`\Omega(E, \cdots)` should have the most total number of microstates, :math:`\int \Omega(E, \cdots) \mathrm d E \mathrm d\cdots`.
-   2. Which state the equilibrium system is staying at: the most probable microstate. This means that the most probable distribution discussed in 1 will be the actual distribution of the system.
+   1. Occurrence of state in phase space ( :ref:`equal-a-prior-probability` ): all microstates have the same probabilities of occurence; This means that the most probable distribution for different energy :math:`\Omega(E, \cdots)` should have the **largest** total number of microstates, :math:`\int \Omega(E, \cdots) \mathrm d E \mathrm d\cdots`.
+   2. The most probable energy state is the state that an equilibrium system is staying at. This means that the most probable distribution discussed in 1 will be the actual distribution of the system. This postulate is not precise but there is a reason why it works. The distribution of the energy states is an extremely sharp peak at the most probable state.
 
 2. We find the most probable distrinution by maximizing the total number of microstates. Boltzmann distribution and Boltzmann factor is derived from this.
 3. Partition function makes it easy to calculate the observables.
