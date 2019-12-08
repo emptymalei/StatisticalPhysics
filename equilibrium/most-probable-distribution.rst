@@ -30,11 +30,17 @@ An Example of Calculations
 ----------------------------
 
 .. admonition:: This is Only an Example for the Calculation
-   :class: error
+   :class: warning
 
    This example is not exactly an statistical physics problem since we do not have enough particles to make it statistically significant. For example, we use Sterling's approximation but this doesn't hold in this case.
 
-The equal a-priori principle can be illustrated using a two-magnet system. For simplicity, we will ignore the interactions between the magnets.
+The equal a-priori principle can be illustrated using a two-magnet system. For simplicity, we will ignore the interactions between the magnets. In the example, we use :math:`a_i` to denote the number spins on the different states,
+
+.. math::
+   \begin{cases}
+   a_1 \qquad \text{Number of spins pointing downward}, \\
+   a_2 \qquad \text{Number of spins pointing upward}
+   \end{cases}
 
 .. figure:: images/equal-a-prior-probability.png
    :align: center
@@ -83,7 +89,7 @@ which has total energy of :math:`-2\mu B` and number of microstates :math:`\Omeg
 According to equal a priori principle, we will have to conclude that the second distribution is the most probable distribution. Thus the observed energy of an equilibrium system of such components should be 0.
 
 
-.. admonition:: Full Calculation without the Equal A-priori Princple
+.. admonition:: Full Calculation without the Equal A-priori Principle
    :class: warning
 
    This result also agrees with the full calculation using the equal a-priori principle
