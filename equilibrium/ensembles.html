@@ -285,22 +285,20 @@ TeX: {
       
   <div class="section" id="ensembles">
 <h1>Ensembles<a class="headerlink" href="#ensembles" title="Permalink to this headline">¶</a></h1>
-<p>The problem in statistical mechanics is that we can only use partial information of the system, thus we could expect partial results to be obtained sometimes. In the language of statistics, we have been using a lot of assumptions on the population as well as the samplig methods.</p>
-<p>From a macroscopic point of view, thermodynamic observables do not tell us about the microstates. We using the contimiuum in the phase space, aka, the phase space distributions, to represent the internal stuctures of the system. Apart from the question of why equilibrium even exists, equilibrium tells us that this density doesn’t change. In Boltzmann’s theory, we are using equal-a-prior probability as the probability of the microstates and most probable distribution to calculate our thermodynamic observales. With this, we are assuming that the system to dynamically moving in the phase space but is close to most probable distribution most of the time. With this assumption, we will observe little fluctuations of macroscopic observables since the most probable distribution is a delta-like distribution.</p>
-<p>On the other hand, we could also use ensemble methods. Instead of collecting statistical sampling on the microstates in time dimension, we make virtual copies of the system so that we sample among these virtual copies.</p>
+<p>The problem in statistical mechanics is that we can only use partial information of the system, thus we could expect partial results to be obtained sometimes. From a macroscopic point of view, thermodynamic observables do not tell us about the microstates. We using the contimiuum in the phase space, aka, the phase space distributions, to represent the internal stuctures of the system. Apart from the question of why equilibrium even exists, equilibrium tells us that this density doesn’t change. For equlibrium physics, we need the probability distribution of the microstates <span class="math notranslate nohighlight">\(\rho(\{p_i\}, \{q_i\})\)</span> to calculate the macroscopic observables <span class="math notranslate nohighlight">\(\mathscr O\)</span>, i.e., <span class="math notranslate nohighlight">\(\langle \mathscr O \rangle (t) = \int \mathscr O (\{p_i\}, \{q_i\}) \rho(\{p_i\}, \{q_i\}) d\Omega\)</span>. The question is how to obtain the probability density <span class="math notranslate nohighlight">\(\rho(\{p_i\}, \{q_i\})\)</span>, i.e., the probability density distribution of phases space points.</p>
+<p>In the language of statistics, we either invent a knowing-all theory to involve the whole population of microscopic states, or a good sampling method to sample some representative microstates.</p>
+<p>In Boltzmann’s theory, we are using equal-a-prior probability as the probability of the microstates and most probable distribution to calculate our thermodynamic observales. With this, we are assuming that the system to dynamically moving in the phase space but is close to most probable distribution most of the time. With this assumption, we will observe little fluctuations of macroscopic observables since the most probable distribution is a delta-like distribution.</p>
+<p>On the other hand, we could also use ensemble methods. Instead of collecting statistical sampling on the different microstates in time dimension, we make virtual copies of the system so that we sample among these virtual copies. When working out the macroscopic observables, the experimentalists measure different microscopic states, aka, sampling with the same predefined physical conditions. This makes statistical physics a more statistical topic.</p>
 <div class="note admonition">
 <p class="admonition-title">Ensemble Methods in Machine Learning</p>
 <p>In the field of machine learning, ensemble methods have been quite popular. They reduce the problems to the very fundations of statistics which makes them generalizable.</p>
 </div>
 <div class="section" id="ensemble">
 <span id="index-0"></span><h2>Ensemble<a class="headerlink" href="#ensemble" title="Permalink to this headline">¶</a></h2>
-<p>Gibbs’ idea of ensemble is to create copies of the system with the same thermodynamics quantities.</p>
-<p>The question is how the copies are created. Are they in different time of the system or simply different systems?</p>
-<p>We can create a huge amount copies of the system and imagine that they are at different place. Then we have all the possible states of the system.</p>
-<p>We can also wait infinite long time and all possible states will occur, at least for some system, which is called ergodic. Ergodic means the system can visit all possible states many times during a long time. This is rather a hypothesis than a theorem.</p>
-<p>The problem is, not all systems are ergodic. For such systems, of course, we can only do the ensemble average.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<p>Gibbs’ idea of ensemble is to create copies of the system under certain macroscopic conditions. For different macroscopic conditions, we then derive the observables differently.</p>
+<div class="note admonition">
+<p class="admonition-title">Ergodic</p>
+<p>We might expect that all possible states to occur at least once in some systems. This is called ergodic. In other words, ergodic means the system can visit all possible states many times during a long time. Oh the other hand, not all systems are ergodic. For such non-ergodic systems, the concept of ensemble is problematic since it might not represent the physics process anymore.</p>
 <p><strong>Cons</strong></p>
 <ol class="arabic simple">
 <li><p>Not possible to prove ensemble average is the same as time average. In fact some systems don’t obey this rule.</p></li>
@@ -313,9 +311,6 @@ TeX: {
 <p>This is a box of absolutely smooth with balls collide with walls perpendicularly. Then this system can stay on some discrete points with same values of momentum components.</p>
 <p>Another image from <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Ergodic_hypothesis_w_reflecting_rays.jpg">Wikipedia</a> :</p>
 <a class="reference internal image-reference" href="../_images/Ergodic_hypothesis_w_reflecting_rays.jpg"><img alt="ergodic system" class="align-center" src="../_images/Ergodic_hypothesis_w_reflecting_rays.jpg" style="width: 813.6px; height: 540.0px;" /></a>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <p><strong>Pros</strong></p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Poincar%C3%A9_recurrence_theorem">Poincaré recurrence theorem</a> proves that at least some systems will come back to a state that is very close the the initial state after a long but finite time.</p></li>
@@ -394,6 +389,10 @@ TeX: {
 </tr>
 </tbody>
 </table>
+<div class="figure align-default" id="id2">
+<img alt="Statistical Ensembles" src="../_images/statistical_ensembles.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Visual schematic representations of statistical ensembles. <a class="reference external" href="https://commons.wikimedia.org/w/index.php?curid=61475757">By Nzjacobmartin - Own work, CC BY-SA 4.0.</a>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <div class="section" id="isolated-system-micro-canonical-ensemble">
 <span id="index-1"></span><h2>Isolated System - Micro-canonical Ensemble<a class="headerlink" href="#isolated-system-micro-canonical-ensemble" title="Permalink to this headline">¶</a></h2>

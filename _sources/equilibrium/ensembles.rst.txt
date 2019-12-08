@@ -2,11 +2,13 @@ Ensembles
 ============
 
 
-The problem in statistical mechanics is that we can only use partial information of the system, thus we could expect partial results to be obtained sometimes. In the language of statistics, we have been using a lot of assumptions on the population as well as the samplig methods.
+The problem in statistical mechanics is that we can only use partial information of the system, thus we could expect partial results to be obtained sometimes. From a macroscopic point of view, thermodynamic observables do not tell us about the microstates. We using the contimiuum in the phase space, aka, the phase space distributions, to represent the internal stuctures of the system. Apart from the question of why equilibrium even exists, equilibrium tells us that this density doesn't change. For equlibrium physics, we need the probability distribution of the microstates :math:`\rho(\{p_i\}, \{q_i\})` to calculate the macroscopic observables :math:`\mathscr O`, i.e., :math:`\langle \mathscr O \rangle (t) = \int \mathscr O (\{p_i\}, \{q_i\}) \rho(\{p_i\}, \{q_i\}) d\Omega`. The question is how to obtain the probability density :math:`\rho(\{p_i\}, \{q_i\})`, i.e., the probability density distribution of phases space points.
 
-From a macroscopic point of view, thermodynamic observables do not tell us about the microstates. We using the contimiuum in the phase space, aka, the phase space distributions, to represent the internal stuctures of the system. Apart from the question of why equilibrium even exists, equilibrium tells us that this density doesn't change. In Boltzmann's theory, we are using equal-a-prior probability as the probability of the microstates and most probable distribution to calculate our thermodynamic observales. With this, we are assuming that the system to dynamically moving in the phase space but is close to most probable distribution most of the time. With this assumption, we will observe little fluctuations of macroscopic observables since the most probable distribution is a delta-like distribution.
+In the language of statistics, we either invent a knowing-all theory to involve the whole population of microscopic states, or a good sampling method to sample some representative microstates.
 
-On the other hand, we could also use ensemble methods. Instead of collecting statistical sampling on the microstates in time dimension, we make virtual copies of the system so that we sample among these virtual copies.
+In Boltzmann's theory, we are using equal-a-prior probability as the probability of the microstates and most probable distribution to calculate our thermodynamic observales. With this, we are assuming that the system to dynamically moving in the phase space but is close to most probable distribution most of the time. With this assumption, we will observe little fluctuations of macroscopic observables since the most probable distribution is a delta-like distribution.
+
+On the other hand, we could also use ensemble methods. Instead of collecting statistical sampling on the different microstates in time dimension, we make virtual copies of the system so that we sample among these virtual copies. When working out the macroscopic observables, the experimentalists measure different microscopic states, aka, sampling with the same predefined physical conditions. This makes statistical physics a more statistical topic.
 
 .. admonition:: Ensemble Methods in Machine Learning
    :class: note
@@ -19,18 +21,13 @@ On the other hand, we could also use ensemble methods. Instead of collecting sta
 Ensemble
 ----------------
 
-Gibbs' idea of ensemble is to create copies of the system with the same thermodynamics quantities.
+Gibbs' idea of ensemble is to create copies of the system under certain macroscopic conditions. For different macroscopic conditions, we then derive the observables differently.
 
-The question is how the copies are created. Are they in different time of the system or simply different systems?
+.. admonition:: Ergodic
+   :class: note
 
-We can create a huge amount copies of the system and imagine that they are at different place. Then we have all the possible states of the system.
+   We might expect that all possible states to occur at least once in some systems. This is called ergodic. In other words, ergodic means the system can visit all possible states many times during a long time. Oh the other hand, not all systems are ergodic. For such non-ergodic systems, the concept of ensemble is problematic since it might not represent the physics process anymore.
 
-We can also wait infinite long time and all possible states will occur, at least for some system, which is called ergodic. Ergodic means the system can visit all possible states many times during a long time. This is rather a hypothesis than a theorem.
-
-The problem is, not all systems are ergodic. For such systems, of course, we can only do the ensemble average.
-
-
-.. note::
 
    **Cons**
 
@@ -56,9 +53,6 @@ The problem is, not all systems are ergodic. For such systems, of course, we can
       :scale: 90%
       :align: center
 
-
-
-.. note::
 
    **Pros**
 
@@ -140,6 +134,14 @@ Ensembles, Systems
      Weak interacting                 Canonical
      Exchange particles                  Grand canonical
    =================================  ======================================  ======================================  ======================================
+
+
+
+.. figure:: images/statistical_ensembles.png
+   :alt: Statistical Ensembles
+
+   Visual schematic representations of statistical ensembles. `By Nzjacobmartin - Own work, CC BY-SA 4.0. <https://commons.wikimedia.org/w/index.php?curid=61475757>`_.
+
 
 
 
