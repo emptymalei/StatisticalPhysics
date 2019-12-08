@@ -226,6 +226,7 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Ising Model</a><ul>
+<li><a class="reference internal" href="#phase-transitions">Phase Transitions</a></li>
 <li><a class="reference internal" href="#refs-notes">Refs &amp; Notes</a></li>
 </ul>
 </li>
@@ -279,6 +280,10 @@ TeX: {
 <p>where <span class="math notranslate nohighlight">\(- J \sum_{\langle i,j \rangle} \sigma_i \sigma_j\)</span> is energy of the magnetic moment self-interactions, and the second term <span class="math notranslate nohighlight">\(- \mu B \sum_{i} \sigma_i\)</span> is the energy of the magnet moments and the external field <span class="math notranslate nohighlight">\(B\)</span>.</p>
 <p>With the above Hamiltonian, we can write down the partition function from which we derive all the thermodynamic observables, in principle. For example, we are quite interested in solving the order parameters such as the average spin <span class="math notranslate nohighlight">\(\langle s \rangle\)</span> so we could infer from this the phase transitions.</p>
 <p>Ising model can be analytically and exactly solved in 1D easily and in 2D with some tricks. However, it becomes hard to solve exactly in 3D. We turn to approximations and numerical methods for help. One example of approximations is the <a class="reference internal" href="phase-transitions.html#mean-field-theory"><span class="std std-ref">Mean Field Thoery</span></a>, while the Monte Carlo method is the famous numerical method.</p>
+<div class="section" id="phase-transitions">
+<h2>Phase Transitions<a class="headerlink" href="#phase-transitions" title="Permalink to this headline">¶</a></h2>
+<p>Ising model is simple to solve numerically yet it provides insights in terms of many thermodynamical phenomona. Phase transitions in Ising model is one of the examples. During the phase transition, we could explicitly see the correlation length of the spins becomes infinily, or simply large in finite systems. Many techniques have been used to investigate such behaviors such as scaling.</p>
+</div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">

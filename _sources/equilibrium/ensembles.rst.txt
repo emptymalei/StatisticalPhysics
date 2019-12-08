@@ -2,10 +2,16 @@ Ensembles
 ============
 
 
-The problem in statistical mechanics is that we can only gain partial information of the system, thus only partial results are obtained. However we know that in equilibrium, all possible states appear with an equal probability. Recall that states means points in phase space. We use hydrodynamics to represent the phase space distribution but this can not determine if the phase space points are change or not. The only thing this density show us the the aparant density doesn't change. So it seems that we don't need to know the exact position of a phase space point. We can rely on average values.
+The problem in statistical mechanics is that we can only use partial information of the system, thus we could expect partial results to be obtained sometimes. In the language of statistics, we have been using a lot of assumptions on the population as well as the samplig methods.
 
-The system is like a black box. Even we know all the quantities, we still have no idea about the exact state of the system.
+From a macroscopic point of view, thermodynamic observables do not tell us about the microstates. We using the contimiuum in the phase space, aka, the phase space distributions, to represent the internal stuctures of the system. Apart from the question of why equilibrium even exists, equilibrium tells us that this density doesn't change. In Boltzmann's theory, we are using equal-a-prior probability as the probability of the microstates and most probable distribution to calculate our thermodynamic observales.
 
+On the other hand, we could also use ensemble methods. Instead of using the whole system for statistics, we use an ensemble of systems to approach our statistical probelems.
+
+.. admonition:: Ensemble Methods in Machine Learning
+   :class: note
+
+   In the field of machine learning, ensemble methods have been quite popular. They reduce the problems to the very fundations of statistics which makes them generalizable.
 
 
 .. index:: Ensemble
@@ -13,11 +19,11 @@ The system is like a black box. Even we know all the quantities, we still have n
 Ensemble
 ----------------
 
-Gibbs' idea of ensemble is to create a lot of copies of the system with the same thermodynamics quantities.
+Gibbs' idea of ensemble is to create copies of the system with the same thermodynamics quantities.
 
-The question is where to put them? In different time or in different space?
+The question is how the copies are created. Are they in different time of the system or simply different systems?
 
-We can create a uge amount copies of the system and imagine that they are at different place. Then we have all the possible states of the system.
+We can create a huge amount copies of the system and imagine that they are at different place. Then we have all the possible states of the system.
 
 We can also wait infinite long time and all possible states will occur, at least for some system, which is called ergodic. Ergodic means the system can visit all possible states many times during a long time. This is rather a hypothesis than a theorem.
 

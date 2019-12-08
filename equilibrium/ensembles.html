@@ -285,13 +285,18 @@ TeX: {
       
   <div class="section" id="ensembles">
 <h1>Ensembles<a class="headerlink" href="#ensembles" title="Permalink to this headline">¶</a></h1>
-<p>The problem in statistical mechanics is that we can only gain partial information of the system, thus only partial results are obtained. However we know that in equilibrium, all possible states appear with an equal probability. Recall that states means points in phase space. We use hydrodynamics to represent the phase space distribution but this can not determine if the phase space points are change or not. The only thing this density show us the the aparant density doesn’t change. So it seems that we don’t need to know the exact position of a phase space point. We can rely on average values.</p>
-<p>The system is like a black box. Even we know all the quantities, we still have no idea about the exact state of the system.</p>
+<p>The problem in statistical mechanics is that we can only use partial information of the system, thus we could expect partial results to be obtained sometimes. In the language of statistics, we have been using a lot of assumptions on the population as well as the samplig methods.</p>
+<p>From a macroscopic point of view, thermodynamic observables do not tell us about the microstates. We using the contimiuum in the phase space, aka, the phase space distributions, to represent the internal stuctures of the system. Apart from the question of why equilibrium even exists, equilibrium tells us that this density doesn’t change. In Boltzmann’s theory, we are using equal-a-prior probability as the probability of the microstates and most probable distribution to calculate our thermodynamic observales.</p>
+<p>On the other hand, we could also use ensemble methods. Instead of using the whole system for statistics, we use an ensemble of systems to approach our statistical probelems.</p>
+<div class="note admonition">
+<p class="admonition-title">Ensemble Methods in Machine Learning</p>
+<p>In the field of machine learning, ensemble methods have been quite popular. They reduce the problems to the very fundations of statistics which makes them generalizable.</p>
+</div>
 <div class="section" id="ensemble">
 <span id="index-0"></span><h2>Ensemble<a class="headerlink" href="#ensemble" title="Permalink to this headline">¶</a></h2>
-<p>Gibbs’ idea of ensemble is to create a lot of copies of the system with the same thermodynamics quantities.</p>
-<p>The question is where to put them? In different time or in different space?</p>
-<p>We can create a uge amount copies of the system and imagine that they are at different place. Then we have all the possible states of the system.</p>
+<p>Gibbs’ idea of ensemble is to create copies of the system with the same thermodynamics quantities.</p>
+<p>The question is how the copies are created. Are they in different time of the system or simply different systems?</p>
+<p>We can create a huge amount copies of the system and imagine that they are at different place. Then we have all the possible states of the system.</p>
 <p>We can also wait infinite long time and all possible states will occur, at least for some system, which is called ergodic. Ergodic means the system can visit all possible states many times during a long time. This is rather a hypothesis than a theorem.</p>
 <p>The problem is, not all systems are ergodic. For such systems, of course, we can only do the ensemble average.</p>
 <div class="admonition note">

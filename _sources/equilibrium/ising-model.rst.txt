@@ -14,6 +14,16 @@ With the above Hamiltonian, we can write down the partition function from which 
 
 Ising model can be analytically and exactly solved in 1D easily and in 2D with some tricks. However, it becomes hard to solve exactly in 3D. We turn to approximations and numerical methods for help. One example of approximations is the :ref:`mean-field-theory`, while the Monte Carlo method is the famous numerical method.
 
+Phase Transitions
+----------------------
+
+Ising model is simple to solve numerically yet it provides insights in terms of many thermodynamical phenomona. Phase transitions in Ising model is one of the examples. During the phase transition, we could explicitly see the correlation length of the spins becomes infinily, or simply large in finite systems. Many techniques have been used to investigate such behaviors such as scaling.
+
+
+
+
+
+
 
 
 
