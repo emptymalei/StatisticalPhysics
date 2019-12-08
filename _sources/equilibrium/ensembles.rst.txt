@@ -4,9 +4,9 @@ Ensembles
 
 The problem in statistical mechanics is that we can only use partial information of the system, thus we could expect partial results to be obtained sometimes. In the language of statistics, we have been using a lot of assumptions on the population as well as the samplig methods.
 
-From a macroscopic point of view, thermodynamic observables do not tell us about the microstates. We using the contimiuum in the phase space, aka, the phase space distributions, to represent the internal stuctures of the system. Apart from the question of why equilibrium even exists, equilibrium tells us that this density doesn't change. In Boltzmann's theory, we are using equal-a-prior probability as the probability of the microstates and most probable distribution to calculate our thermodynamic observales.
+From a macroscopic point of view, thermodynamic observables do not tell us about the microstates. We using the contimiuum in the phase space, aka, the phase space distributions, to represent the internal stuctures of the system. Apart from the question of why equilibrium even exists, equilibrium tells us that this density doesn't change. In Boltzmann's theory, we are using equal-a-prior probability as the probability of the microstates and most probable distribution to calculate our thermodynamic observales. With this, we are assuming that the system to dynamically moving in the phase space but is close to most probable distribution most of the time. With this assumption, we will observe little fluctuations of macroscopic observables since the most probable distribution is a delta-like distribution.
 
-On the other hand, we could also use ensemble methods. Instead of using the whole system for statistics, we use an ensemble of systems to approach our statistical probelems.
+On the other hand, we could also use ensemble methods. Instead of collecting statistical sampling on the microstates in time dimension, we make virtual copies of the system so that we sample among these virtual copies.
 
 .. admonition:: Ensemble Methods in Machine Learning
    :class: note
@@ -66,7 +66,12 @@ The problem is, not all systems are ergodic. For such systems, of course, we can
    2. Systems are often chaotic so it's not really possible to have pictures like the first one in Cons.
 
 
+.. admonition:: Poincare Recurrence Theorem
+   :class: note
 
+   There is a very interesting paper regarding the recurrence theorem.
+
+   `Dyson, F. J., & Falk, H. (1992). Period of a Discrete Cat Mapping. The American Mathematical Monthly, 99(7), 603. <https://doi.org/10.2307/2324989>`_
 
 
 
