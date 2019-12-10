@@ -227,6 +227,7 @@ TeX: {
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Ising Model</a><ul>
 <li><a class="reference internal" href="#phase-transitions">Phase Transitions</a></li>
+<li><a class="reference internal" href="#metropolis-algorithm">Metropolis Algorithm</a></li>
 <li><a class="reference internal" href="#refs-notes">Refs &amp; Notes</a></li>
 </ul>
 </li>
@@ -282,7 +283,31 @@ TeX: {
 <p>Ising model can be analytically and exactly solved in 1D easily and in 2D with some tricks. However, it becomes hard to solve exactly in 3D. We turn to approximations and numerical methods for help. One example of approximations is the <a class="reference internal" href="phase-transitions.html#mean-field-theory"><span class="std std-ref">Mean Field Thoery</span></a>, while the Monte Carlo method is the famous numerical method.</p>
 <div class="section" id="phase-transitions">
 <h2>Phase Transitions<a class="headerlink" href="#phase-transitions" title="Permalink to this headline">¶</a></h2>
-<p>Ising model is simple to solve numerically yet it provides insights in terms of many thermodynamical phenomona. Phase transitions in Ising model is one of the examples. During the phase transition, we could explicitly see the correlation length of the spins becomes infinily, or simply large in finite systems. Many techniques have been used to investigate such behaviors such as scaling.</p>
+<p>Ising model is simple to solve numerically yet it provides insights in terms of many thermodynamical phenomona. Phase transitions in Ising model is one of the examples. During the phase transition, we could explicitly see the correlation length of the spins becomes infinily, or simply large in finite systems. Many techniques have been used to investigate such behaviors such as scaling, numerical methods, etc.</p>
+</div>
+<div class="section" id="metropolis-algorithm">
+<h2>Metropolis Algorithm<a class="headerlink" href="#metropolis-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>Metropolis algorithm is a Monte Carlo method for sampling. We will calculate the energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> and magnetization <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> of the equilibrium Ising model. The specific heat and magnetic susceptibility can be calculated using the energy and magnetization.</p>
+<p>To demonstrate the algorithm, we use a 2D N by N lattice of magnetic spins.</p>
+<div class="figure align-center" id="id1">
+<img alt="Metropolis algorithm" src="../_images/metropolis-algorithm-flowchart.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Metropolis algorithm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Flowchart Code</p>
+<p><a class="reference external" href="https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ">Here</a> <a class="reference external" href="https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ">is</a> the mermainjs link.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>graph TD
+A[Initialize lattice spins randomly] --&gt; B(randomly flip a spin)
+B --&gt; C{&quot;Is ∆E &lt; 0 &lt;br&gt; or &lt;br&gt; exp(-∆E/beta) &gt; random number [0,1]&quot; }
+C --&gt;|True| D(Accept flip)
+C --&gt;|False| F(Reject flip)
+D --&gt; J{&quot;Is equilibrium&quot;}
+F --&gt; J{&quot;Is equilibrium&quot;}
+J --&gt; |False| B
+J --&gt; |True| K[&quot;Collected data and calculate observables&quot;]
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
