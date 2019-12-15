@@ -54,9 +54,7 @@ To demonstrate the algorithm, we use a 2D N by N lattice of magnetic spins.
 
 
 
-
-
-
+`This GitHub repository <https://github.com/emptymalei/ising-model>`_ is my working example of this algorithm for Ising model.
 
 
 
