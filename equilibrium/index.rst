@@ -17,5 +17,6 @@ Equilibrium Statistical Mechanics
     gas-revisited.rst
     systematic-view.rst
     ising-model.rst
+    monte-carlo.rst
     ensembles.rst
     topics/index.rst
