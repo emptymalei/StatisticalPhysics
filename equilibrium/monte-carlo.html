@@ -22,6 +22,8 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Ensembles" href="ensembles.html" />
+    <link rel="prev" title="Ising Model" href="ising-model.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -172,8 +174,8 @@ TeX: {
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Equilibrium Statistical Mechanics</a><ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Equilibrium Statistical Mechanics</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="summary.html">Equilibrium Statistical Mechanics Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basics.html">Basics of Statistical Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="most-probable-distribution.html">Most Probable Distribution</a></li>
@@ -185,6 +187,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="gas-revisited.html">Gas Revisited</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systematic-view.html">A More Systematic View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ising-model.html">Ising Model</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Monte Carlo Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
 </ul>
@@ -224,8 +227,13 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Monte Carlo Method</a><ul>
-<li><a class="reference internal" href="#monte-carlo-method-for-ising-model">Monte Carlo Method for Ising Model</a></li>
+<li><a class="reference internal" href="#why-not-just-randomly-sample-from-all-states">Why Not Just Randomly Sample from All States</a></li>
+<li><a class="reference internal" href="#metropolis-algorithm-for-ising-model">Metropolis Algorithm for Ising Model</a><ul>
 <li><a class="reference internal" href="#state-transitions-and-markov-chain">State Transitions and Markov Chain</a></li>
+<li><a class="reference internal" href="#metropolis-algorithm">Metropolis Algorithm</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 </ul>
@@ -236,6 +244,14 @@ TeX: {
             
               
                 
+  <li>
+    <a href="ising-model.html" title="Previous Chapter: Ising Model"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Ising Model</span>
+    </a>
+  </li>
+  <li>
+    <a href="ensembles.html" title="Next Chapter: Ensembles"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Ensembles &raquo;</span>
+    </a>
+  </li>
               
             
             
@@ -262,10 +278,21 @@ TeX: {
     <div class="col-md-12 content">
       
   <div class="section" id="monte-carlo-method">
-<h1>Monte Carlo Method<a class="headerlink" href="#monte-carlo-method" title="Permalink to this headline">¶</a></h1>
+<span id="id1"></span><h1>Monte Carlo Method<a class="headerlink" href="#monte-carlo-method" title="Permalink to this headline">¶</a></h1>
 <p>We use Monte Carlo method to “fake” a system that obays a specific distribution so that we could use it as samples of such a distribution.</p>
-<div class="section" id="monte-carlo-method-for-ising-model">
-<h2>Monte Carlo Method for Ising Model<a class="headerlink" href="#monte-carlo-method-for-ising-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="why-not-just-randomly-sample-from-all-states">
+<h2>Why Not Just Randomly Sample from All States<a class="headerlink" href="#why-not-just-randomly-sample-from-all-states" title="Permalink to this headline">¶</a></h2>
+<p>In statistics, the <a class="reference external" href="https://en.wikipedia.org/wiki/Curse_of_dimensionality">curse of dimensionality</a> has been haunting us. In Ising model, the number of dimension is the number of spins. In such a high dimensional system, sampling the representative states requires a huge sample.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Curse of Dimensionality: Volume of 20D Ball</p>
+<p>It can be shown with a simple random sampling method to calcuate the volume of a 20 dimensional ball of unit length diameter.</p>
+<p>To calculate the volume of this 20D ball, we construct a 20D box that contains the ball. Then we place random points in the box. Suppose we have <span class="math notranslate nohighlight">\(N_b\)</span> points out of <span class="math notranslate nohighlight">\(N\)</span> points falling inside the ball, the volume of the ball can be approximated by <span class="math notranslate nohighlight">\(N_b/N\)</span>.</p>
+<p>It may sound simple. However, one would realize that a good approximation requires a huge amount of sample points.</p>
+</div>
+<p>For our Ising model, randomly sampling the states means we are have a very high temperature that the probability of all enegy states are of no difference. Instead of such random sampling, we could make use of our theoretical knowledge of the Boltzman distribution and sample according to the Boltzman distribution, which is importance sampling in statistics.</p>
+</div>
+<div class="section" id="metropolis-algorithm-for-ising-model">
+<h2>Metropolis Algorithm for Ising Model<a class="headerlink" href="#metropolis-algorithm-for-ising-model" title="Permalink to this headline">¶</a></h2>
 <p>To solve the classical Ising model on a 2D grid, we would like to force the system to stay close to the Boltzman distribution,</p>
 <div class="math notranslate nohighlight">
 \[P(E) = \frac{e^{-E/k_B T}}{Z} \propto e^{-E/k_B T},\]</div>
@@ -281,9 +308,45 @@ TeX: {
 <p>There is always a catch. We also have the curse of high dimensions. Random sampling becomes inefficient in high dimensions. To achive a reasonably good result, we have to sample a huge amount of configurations. To solve this problem, the glory importance sampling was invented.</p>
 </div>
 <p>In Monte Carlo method, we will generate some configurations and use those configurations to calculate our ensemble average of observables.</p>
-</div>
 <div class="section" id="state-transitions-and-markov-chain">
-<h2>State Transitions and Markov Chain<a class="headerlink" href="#state-transitions-and-markov-chain" title="Permalink to this headline">¶</a></h2>
+<h3>State Transitions and Markov Chain<a class="headerlink" href="#state-transitions-and-markov-chain" title="Permalink to this headline">¶</a></h3>
+<p>To simulate the system, we will construct a series of history independent transitions between the states,</p>
+<div class="math notranslate nohighlight">
+\[\cdots \to \sigma_i \to \sigma_{i+1} \to \sigma_{i+2} \to \cdots\]</div>
+<p>We will use a lowest order approximation and require the transition probability <span class="math notranslate nohighlight">\(P(\sigma_{i+1} \vert \sigma_i)\)</span> to the next state <span class="math notranslate nohighlight">\(\sigma_i\)</span> only depends on the current state <span class="math notranslate nohighlight">\(\sigma_{i+1}\)</span>.</p>
+<p>Imagine we force a rule upon the transition probabilities, the states will be close to a path that is defined by the rule. This rule shall be the Boltzman distribution.</p>
+</div>
+<div class="section" id="metropolis-algorithm">
+<h3>Metropolis Algorithm<a class="headerlink" href="#metropolis-algorithm" title="Permalink to this headline">¶</a></h3>
+<p>Metropolis algorithm is a Monte Carlo method for sampling. We will calculate the energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> and magnetization <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> of the equilibrium Ising model. The specific heat and magnetic susceptibility can be calculated using the energy and magnetization.</p>
+<p>To demonstrate the algorithm, we use a 2D N by N lattice of magnetic spins.</p>
+<div class="figure align-center" id="id2">
+<img alt="Metropolis algorithm" src="../_images/metropolis-algorithm-flowchart.png" />
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Metropolis algorithm</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Flowchart Code</p>
+<p><a class="reference external" href="https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ">Here</a> <a class="reference external" href="https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ">is</a> the mermainjs link.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>graph TD
+A[Initialize lattice spins randomly] --&gt; B(randomly flip a spin)
+B --&gt; C{&quot;Is ∆E &lt; 0 &lt;br&gt; or &lt;br&gt; exp(-∆E/beta) &gt; random number [0,1]&quot; }
+C --&gt;|True| D(Accept flip)
+C --&gt;|False| F(Reject flip)
+D --&gt; J{&quot;Is equilibrium&quot;}
+F --&gt; J{&quot;Is equilibrium&quot;}
+J --&gt; |False| B
+J --&gt; |True| K[&quot;Collected data and calculate observables&quot;]
+</pre></div>
+</div>
+</div>
+<p><a class="reference external" href="https://github.com/emptymalei/ising-model">This GitHub repository</a> is my working example of this algorithm for Ising model.</p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2013odca.book...93J/abstract">Monte Carlo Simulations in Statistical Physics – From Basic Principles to Advanced Applications by Janke, Wolfhard.</a></p></li>
+</ol>
 </div>
 </div>
 

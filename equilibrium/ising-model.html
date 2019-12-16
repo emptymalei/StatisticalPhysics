@@ -22,7 +22,7 @@
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ensembles" href="ensembles.html" />
+    <link rel="next" title="Monte Carlo Method" href="monte-carlo.html" />
     <link rel="prev" title="A More Systematic View" href="systematic-view.html" />
 
 <meta charset='utf-8'>
@@ -187,6 +187,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="gas-revisited.html">Gas Revisited</a></li>
 <li class="toctree-l2"><a class="reference internal" href="systematic-view.html">A More Systematic View</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Ising Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="monte-carlo.html">Monte Carlo Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
 </ul>
@@ -227,7 +228,6 @@ TeX: {
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Ising Model</a><ul>
 <li><a class="reference internal" href="#phase-transitions">Phase Transitions</a></li>
-<li><a class="reference internal" href="#metropolis-algorithm">Metropolis Algorithm</a></li>
 <li><a class="reference internal" href="#refs-notes">Refs &amp; Notes</a></li>
 </ul>
 </li>
@@ -244,7 +244,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="ensembles.html" title="Next Chapter: Ensembles"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Ensembles &raquo;</span>
+    <a href="monte-carlo.html" title="Next Chapter: Monte Carlo Method"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Monte Carlo Method &raquo;</span>
     </a>
   </li>
               
@@ -284,31 +284,7 @@ TeX: {
 <div class="section" id="phase-transitions">
 <h2>Phase Transitions<a class="headerlink" href="#phase-transitions" title="Permalink to this headline">¶</a></h2>
 <p>Ising model is simple to solve numerically yet it provides insights in terms of many thermodynamical phenomona. Phase transitions in Ising model is one of the examples. During the phase transition, we could explicitly see the correlation length of the spins becomes infinily, or simply large in finite systems. Many techniques have been used to investigate such behaviors such as scaling, numerical methods, etc.</p>
-</div>
-<div class="section" id="metropolis-algorithm">
-<h2>Metropolis Algorithm<a class="headerlink" href="#metropolis-algorithm" title="Permalink to this headline">¶</a></h2>
-<p>Metropolis algorithm is a Monte Carlo method for sampling. We will calculate the energy <span class="math notranslate nohighlight">\(\langle E \rangle\)</span> and magnetization <span class="math notranslate nohighlight">\(\langle M \rangle\)</span> of the equilibrium Ising model. The specific heat and magnetic susceptibility can be calculated using the energy and magnetization.</p>
-<p>To demonstrate the algorithm, we use a 2D N by N lattice of magnetic spins.</p>
-<div class="figure align-center" id="id1">
-<img alt="Metropolis algorithm" src="../_images/metropolis-algorithm-flowchart.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Metropolis algorithm</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Flowchart Code</p>
-<p><a class="reference external" href="https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ">Here</a> <a class="reference external" href="https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ">is</a> the mermainjs link.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>graph TD
-A[Initialize lattice spins randomly] --&gt; B(randomly flip a spin)
-B --&gt; C{&quot;Is ∆E &lt; 0 &lt;br&gt; or &lt;br&gt; exp(-∆E/beta) &gt; random number [0,1]&quot; }
-C --&gt;|True| D(Accept flip)
-C --&gt;|False| F(Reject flip)
-D --&gt; J{&quot;Is equilibrium&quot;}
-F --&gt; J{&quot;Is equilibrium&quot;}
-J --&gt; |False| B
-J --&gt; |True| K[&quot;Collected data and calculate observables&quot;]
-</pre></div>
-</div>
-</div>
-<p><a class="reference external" href="https://github.com/emptymalei/ising-model">This GitHub repository</a> is my working example of this algorithm for Ising model.</p>
+<p>We will be discussing the numerical methods in the next section <a class="reference internal" href="monte-carlo.html#monte-carlo-method"><span class="std std-ref">Monte Carlo Method</span></a>.</p>
 </div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>

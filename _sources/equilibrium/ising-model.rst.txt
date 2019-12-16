@@ -19,44 +19,7 @@ Phase Transitions
 
 Ising model is simple to solve numerically yet it provides insights in terms of many thermodynamical phenomona. Phase transitions in Ising model is one of the examples. During the phase transition, we could explicitly see the correlation length of the spins becomes infinily, or simply large in finite systems. Many techniques have been used to investigate such behaviors such as scaling, numerical methods, etc.
 
-
-Metropolis Algorithm
-----------------------------
-
-
-Metropolis algorithm is a Monte Carlo method for sampling. We will calculate the energy :math:`\langle E \rangle` and magnetization :math:`\langle M \rangle` of the equilibrium Ising model. The specific heat and magnetic susceptibility can be calculated using the energy and magnetization.
-
-
-To demonstrate the algorithm, we use a 2D N by N lattice of magnetic spins.
-
-.. figure:: images/metropolis-algorithm-flowchart.png
-   :alt: Metropolis algorithm
-   :align: center
-
-   Metropolis algorithm
-
-.. admonition:: Flowchart Code
-   :class: toggle
-
-   `Here <https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ>`_ `is <https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ>`_ the mermainjs link.
-
-   .. code-block:: text
-
-      graph TD
-      A[Initialize lattice spins randomly] --> B(randomly flip a spin)
-      B --> C{"Is ∆E < 0 <br> or <br> exp(-∆E/beta) > random number [0,1]" }
-      C -->|True| D(Accept flip)
-      C -->|False| F(Reject flip)
-      D --> J{"Is equilibrium"}
-      F --> J{"Is equilibrium"}
-      J --> |False| B
-      J --> |True| K["Collected data and calculate observables"]
-
-
-
-`This GitHub repository <https://github.com/emptymalei/ising-model>`_ is my working example of this algorithm for Ising model.
-
-
+We will be discussing the numerical methods in the next section :ref:`monte-carlo-method`.
 
 
 Refs & Notes
