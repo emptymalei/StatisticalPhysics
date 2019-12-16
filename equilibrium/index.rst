@@ -8,6 +8,7 @@ Equilibrium Statistical Mechanics
 
     summary.rst
     basics.rst
+    macroscopic-states-and-microscopic-states.rst
     most-probable-distribution.rst
     ho-dos.rst
     gibbs-mixing-paradox.rst
