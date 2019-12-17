@@ -76,9 +76,11 @@ html_theme_options = {
 extensions = [
     'sphinx.ext.mathjax',
 #    'numfig',
-    "math_dollar"
+    "math_dollar",
+    'sphinx_sitemap'
 ]
 
+html_baseurl = 'https://statisticalphysics.openmetric.org/'
 
 latex_preamble_data = r"""
 \usepackage{hyperref}
@@ -291,7 +293,7 @@ copyright = u'2019, Lei Ma'
 # built documents.
 #
 # The short X.Y version.
-version = '3.14159'
+# version = '3.14159'
 # The full version, including alpha/beta/rc tags.
 release = '3.14159'
 
