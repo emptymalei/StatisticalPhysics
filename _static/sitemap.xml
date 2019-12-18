@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://statisticalphysics.openmetric.org/</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/vocabulary/index.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/vocabulary/functions.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/vocabulary/integrals.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/vocabulary/transforms.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/vocabulary/green.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/vocabulary/computations.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/thermodynamics/index.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/thermodynamics/summary.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/thermodynamics/topics/index.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/index.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/summary.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/basics.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/macroscopic-states-and-microscopic-states.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/most-probable-distribution.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/ho-dos.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/gibbs-mixing-paradox.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/observables.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/debye-model.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/phase-transitions.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/gas-revisited.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/systematic-view.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/ising-model.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/monte-carlo.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/ensembles.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/topics/index.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/index.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/gamma-space-mu-space.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/important-questions.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/master-eqn.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/solving-master-eqn.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/master-eqn-examples.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/smoluchowski-eqn.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/effect-of-defects.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/quantum-master-eqn.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/brownian-motion.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/nonequilibrium/projection-technique.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/topics/index.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/topics/information-theory-and-statistical-mechanics.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/thermodynamics/topics/thermodynamics-for-society.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/topics/statistical-mechanics-and-neural-networks.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/topics/importance-sampling.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/topics/why-does-equilibrium-state-even-exists.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/genindex.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/index.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://statisticalphysics.openmetric.org/equilibrium/backup.html</loc>
+  <lastmod>2019-12-17T23:47:21+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
