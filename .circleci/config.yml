@@ -12,6 +12,12 @@ jobs:
       - run:
           name: Build docs
           command: make html
+      - run:
+          name: Build robots.txt
+          command: echo "User-agent: * \n\nSitemap: https://statisticalphysics.openmetric.org/sitemap.xml" > _build/html/robots.txt
+      - run:
+          name: copy sitemap
+          command: cp _build/html/sitemap.xml _build/html/_downloads/sitemap.xml
       - persist_to_workspace:
           root: _build
           paths: html
