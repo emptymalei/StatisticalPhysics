@@ -232,6 +232,7 @@ TeX: {
 <li><a class="reference internal" href="#equal-a-prior-probability">Equal A Prior Probability</a></li>
 <li><a class="reference internal" href="#an-example-of-calculations">An Example of Calculations</a></li>
 <li><a class="reference internal" href="#probabilities-of-distributions">Probabilities of Distributions</a></li>
+<li><a class="reference internal" href="#the-magic-of-equal-a-priori-probabilities">The Magic of Equal a Priori Probabilities</a></li>
 </ul>
 </li>
 </ul>
@@ -281,10 +282,25 @@ TeX: {
 <p class="admonition-title">Applications of Most Probable Distribution</p>
 <p>Application of most probable distribution is discussed in <a class="reference internal" href="summary.html#summary-boltzmann-statistics"><span class="std std-ref">Boltzmann Statistics</span></a>.</p>
 </div>
-<p>In Boltzman distribution, one of the key ingredients is the most probable distribution. First things first, the most probable distribution is indicating the distribution that is most probable. On the other hand, we also talked about the probability of the microstates. It is crucial to understand the difference between distribution and microstates.</p>
-<p>Microstates describes the configurations of the system which is the most detailed view of the system in statistical physics. However, a distribution of the system describes the number of particles on each energy levels of the particle.</p>
+<p>In Boltzman distribution, one of the key ingredients is to calculate the most probable distribution. First things first, the most probable distribution is indicating the <strong>distribution of energy</strong> (abbr. <strong>distribution</strong>) that is most probable. On the other hand, we also talked about the probability of the microstates. It is crucial to understand the difference between distribution and microstates.</p>
+<p>Microstates describes the configurations of the system which is the most detailed view of the system in statistical physics. A <strong>distribution</strong> of the system describes the number of particles on each energy levels of the particle.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Why would we choose most probable distribution?</p>
+<p>First of all, tt can be derived easily.</p>
+<p>The most probable distribution in Boltzman theory is extremely sharp for large number of particles.</p>
+<p>Assuming an actual <strong>distribution of the distribution</strong>, <span class="math notranslate nohighlight">\(\rho(\{\epsilon_i:a_i\})\)</span> where <span class="math notranslate nohighlight">\(\{\epsilon_i:a_i\}\)</span> is a <strong>distribution of energies</strong>. The observable <span class="math notranslate nohighlight">\(\langle\mathscr O\rangle\)</span> can be calculated using the following integral</p>
+<div class="math notranslate nohighlight">
+\[\langle\mathscr O\rangle = \int \mathscr \rho(\{\epsilon_i:a_i\}) O(\{\epsilon_i:a_i\}) d \{\epsilon_i:a_i\}.\]</div>
+<p>If <span class="math notranslate nohighlight">\(\rho(\{\epsilon_i:a_i\})\)</span> is a delta function distribution, only the most probable distribution, <span class="math notranslate nohighlight">\(\rho_{\text{most probable}}\)</span> is need to calculate observables.</p>
+<p>This can be demonstrated with numerical simulations.</p>
+<div class="figure align-center" id="id3">
+<img alt="../_images/hist_microstate_energies.png" src="../_images/hist_microstate_energies.png" />
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">Histogram of microstate energies for different grid size of the Ising model.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
 <div class="section" id="equal-a-prior-probability">
 <span id="id2"></span><h2>Equal A Prior Probability<a class="headerlink" href="#equal-a-prior-probability" title="Permalink to this headline">¶</a></h2>
+<p>As mentioned in <a class="reference internal" href="summary.html#what-is-statistical-mechanics"><span class="std std-ref">What is Statistical Mechanics</span></a>, a theory of the distribution of the microstates shall be useful for our predictions of the macroscopic observables.</p>
 <div class="warning admonition">
 <p class="admonition-title">Equal A Prior Probability</p>
 <p>For systems with enormous number of particles, we observe their macroscopic properties such as energies, pressure in experiments. But we have very limited information about the internal structure. The principle proposed by Boltzmann is that all these different possible configurations of microstructure are equally distributed, a.k.a., principle of equal <em>a prior</em> probabilities.</p>
@@ -302,9 +318,9 @@ TeX: {
 a_1 \qquad \text{Number of spins pointing downward}, \\
 a_2 \qquad \text{Number of spins pointing upward}
 \end{cases}\end{split}\]</div>
-<div class="figure align-center" id="id3">
-<img alt="../_images/equal-a-prior-probability.png" src="../_images/equal-a-prior-probability.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">A simple system of 2 magnets in an external magnetic field. The external magnetic field is pointing upwards. The energy of the system is labelled as <span class="math notranslate nohighlight">\(E\)</span> and the distributions are labelled on the right. <em>In principle, we could also have multiple possible distributions for the same energy of the whole system. In our case, it is simply a coincidence that we only have on distribution corresponding to each energy of the system.</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<div class="figure align-center" id="id4">
+<span id="equal-a-priori-probability"></span><img alt="../_images/equal-a-prior-probability.png" src="../_images/equal-a-prior-probability.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">A simple system of 2 magnets in an external magnetic field. The external magnetic field is pointing upwards. The energy of the system is labelled as <span class="math notranslate nohighlight">\(E\)</span> and the distributions are labelled on the right. <em>In principle, we could also have multiple possible distributions for the same energy of the whole system. In our case, it is simply a coincidence that we only have on distribution corresponding to each energy of the system.</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>With an external magnetic field, the energy of the system is determined by</p>
 <div class="math notranslate nohighlight">
@@ -340,6 +356,17 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
 <div class="math notranslate nohighlight">
 \[\langle E \rangle = \frac{2 \mu B + 2\times 0 - 2 \mu B}{4} = 0.\]</div>
 <p>But this is simply a coincidence.</p>
+</div>
+</div>
+<div class="section" id="the-magic-of-equal-a-priori-probabilities">
+<h2>The Magic of Equal a Priori Probabilities<a class="headerlink" href="#the-magic-of-equal-a-priori-probabilities" title="Permalink to this headline">¶</a></h2>
+<p>Though assuming least knowledge of the distribution of the microstates, we are still able to predict the observables. There exists several magical processes in this theory.</p>
+<p>The first magics is the so called more is different. Given thorough knowledge of a single particle, we still find phenomena unexplained by the single particle property.</p>
+<div class="toggle admonition">
+<p class="admonition-title">How could Equal a Priori help?</p>
+<p>Equal a priori indicates a homogeneous distribution. How would a homogeneous distribution of microstates be useful to form complex materials?</p>
+<p>The reason behind it is the energy degeneracies of the states. Some microstates lead to the same energy, as shown in <a class="reference internal" href="#equal-a-priori-probability"><span class="std std-numref">Fig. 10</span></a>. The energy degeneracies present us a specific distribution of energies.</p>
+<p>Different degeneracies lead to different observable systems.</p>
 </div>
 </div>
 </div>

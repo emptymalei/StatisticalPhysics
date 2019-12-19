@@ -300,9 +300,9 @@ TeX: {
 <ol class="arabic">
 <li><p>Description of States in statistical mechanmics: thermodynamical quantities as macroscopic state;</p></li>
 <li><p>Kinematics: equation of state; <a class="reference internal" href="../thermodynamics/summary.html#thermodynamical-potentials"><span class="std std-ref">Thermodynamic Potentials</span></a>.</p>
-<div class="figure align-center" id="id1">
+<div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../_images/thermodynamicPotentials.png"><img alt="../_images/thermodynamicPotentials.png" src="../_images/thermodynamicPotentials.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">The relationship between different thermodynamic potentials. There are three different couplings and five different potentials. For more details please read vocabulary <a class="reference internal" href="../thermodynamics/summary.html#thermodynamical-potentials"><span class="std std-ref">Thermodynamic Potentials</span></a> .</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">The relationship between different thermodynamic potentials. There are three different couplings and five different potentials. For more details please read vocabulary <a class="reference internal" href="../thermodynamics/summary.html#thermodynamical-potentials"><span class="std std-ref">Thermodynamic Potentials</span></a> .</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>First principles: <a class="reference internal" href="../thermodynamics/summary.html#laws-of-thermodynamics"><span class="std std-ref">The Laws of Four</span></a></p></li>
@@ -314,20 +314,29 @@ TeX: {
 <p>For a system with <span class="math notranslate nohighlight">\(N\)</span> particles of <span class="math notranslate nohighlight">\(r\)</span> degrees of freedom, we could always describe the microstates of the system by looking at the state of each particle. There are at least two different point of views, the <span class="math notranslate nohighlight">\(\mu\)</span> space (mu space) and the <span class="math notranslate nohighlight">\(\Gamma\)</span> space (Gamma space).</p>
 <p>The <span class="math notranslate nohighlight">\(\mu\)</span> space is a <span class="math notranslate nohighlight">\(r\)</span> dimensional space where each dimension corresponds to one degree of freedom of the particle. Thus a point in the <span class="math notranslate nohighlight">\(\mu\)</span> space represents a the state of one particle. To represent the microstate of the whole system, we need <span class="math notranslate nohighlight">\(N\)</span> points in the <span class="math notranslate nohighlight">\(\mu\)</span> space.</p>
 <p>The <span class="math notranslate nohighlight">\(\Gamma\)</span> space is a <span class="math notranslate nohighlight">\(rN\)</span> dimensional space. In the <span class="math notranslate nohighlight">\(\Gamma\)</span> space, we have a holistic view. Each point in the <span class="math notranslate nohighlight">\(\Gamma\)</span> space represents the state of all the particles. For example, we use the first <span class="math notranslate nohighlight">\(r\)</span> dimensions out of the <span class="math notranslate nohighlight">\(rN\)</span> dimension to represent the state of the first particle, the next <span class="math notranslate nohighlight">\(r\)</span> dimensions to represent the state of the second particle, and so on.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Why Distingushing between Microstates and Macrostates</p>
+<p>In physical systems, we observe limited quantities regarding the internal structure. If we take the Bayesian point of view, we have the freedom to choose the amount of information we would like to use as priors. In statistical mechanics, macrostates is related to our view of the priors.</p>
+</div>
 </div>
 <div class="section" id="what-is-statistical-mechanics">
-<h2>What is Statistical Mechanics<a class="headerlink" href="#what-is-statistical-mechanics" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>What is Statistical Mechanics<a class="headerlink" href="#what-is-statistical-mechanics" title="Permalink to this headline">¶</a></h2>
 <p>Physical systems are usually composed of a large amount of particles. In principle, we could calculate the observable quantities if we know the exact motions of the particles. For example, we only need the momentum transfer per unit area to know the pressure of the gas and momentum transfer could be calculated if we know the motion of the particles.</p>
-<p>This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the observable quantities, i.e., the probability of the system being on each point in the <span class="math notranslate nohighlight">\(\Gamma\)</span> space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it. However, we would get degeneracies of microscopic state for each combination of thermodynamic observables.</p>
+<p>This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the observable quantities, i.e., the probability of the system being on each point in the <span class="math notranslate nohighlight">\(\Gamma\)</span> space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it.</p>
+<p>However, this approach requires a first principle that we could use to figure out the distribution of the observables. For example, the Boltzmann theory assume equal a priori probabilities for the microstates. In Boltzmann theory, we need two aspects of knowledge to understand the statistical system.</p>
+<ol class="arabic simple">
+<li><p>The distribution of the mirostates, which has been assumed to be equal.</p></li>
+<li><p>How the energy of combinations of single particles are calculated. For example, this refers to the calculation of the energy levels in quantum mechanics.</p></li>
+</ol>
 </div>
 <div class="section" id="the-two-approaches-of-statistical-mechanics">
 <h2>The Two Approaches of Statistical Mechanics<a class="headerlink" href="#the-two-approaches-of-statistical-mechanics" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>probability distribution of the microscopic states</strong>  of the system, <span class="math notranslate nohighlight">\(p(\{O_i\})\)</span>, is needed to estimate the observables <span class="math notranslate nohighlight">\(\{O_i\}\)</span>. For example, to estimate the energy of the system, we take the statistical average using the distribution <span class="math notranslate nohighlight">\(\int E p(E) \mathrm dE\)</span>.</p>
 <p>However the microscopic state of the system is not known in general. We have to apply some assumptions and tricks.</p>
 <p>There are two famous approaches developed in statistical mechanics. The Boltzmann’s approach is utilizing the most probable distributions while the Gibbs’ approach is using ensembles. They do not only differ from the way of estimating the probabilities of the states but also differ philosophically.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/BoltzmannVSGibbs.png"><img alt="../_images/BoltzmannVSGibbs.png" src="../_images/BoltzmannVSGibbs.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Modeling of the two theories. Refer to <a class="reference internal" href="most-probable-distribution.html#most-probable-distribution"><span class="std std-ref">Most Probable Distribution</span></a>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">Modeling of the two theories. Refer to <a class="reference internal" href="most-probable-distribution.html#most-probable-distribution"><span class="std std-ref">Most Probable Distribution</span></a>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="boltzmann-statistics">
 <span id="summary-boltzmann-statistics"></span><h3>Boltzmann Statistics<a class="headerlink" href="#boltzmann-statistics" title="Permalink to this headline">¶</a></h3>
