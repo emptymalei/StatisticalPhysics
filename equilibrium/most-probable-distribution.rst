@@ -31,6 +31,11 @@ Microstates describes the configurations of the system which is the most detaile
 
    This can be demonstrated with numerical simulations.
 
+   .. figure:: images/hist_microstate_energies.png
+      :align: center
+
+      Histogram of microstate energies for different grid size of the Ising model.
+
 
 
 
