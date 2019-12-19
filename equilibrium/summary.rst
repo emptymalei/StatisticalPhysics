@@ -33,13 +33,25 @@ The :math:`\mu` space is a :math:`r` dimensional space where each dimension corr
 The :math:`\Gamma` space is a :math:`rN` dimensional space. In the :math:`\Gamma` space, we have a holistic view. Each point in the :math:`\Gamma` space represents the state of all the particles. For example, we use the first :math:`r` dimensions out of the :math:`rN` dimension to represent the state of the first particle, the next :math:`r` dimensions to represent the state of the second particle, and so on.
 
 
+
+.. admonition:: Why Distingushing between Microstates and Macrostates
+   :class: toggle
+
+   In physical systems, we observe limited quantities regarding the internal structure. If we take the Bayesian point of view, we have the freedom to choose the amount of information we would like to use as priors. In statistical mechanics, macrostates is related to our view of the priors.
+
+.. _what-is-statistical-mechanics:
+
 What is Statistical Mechanics
 --------------------------------------
 
 Physical systems are usually composed of a large amount of particles. In principle, we could calculate the observable quantities if we know the exact motions of the particles. For example, we only need the momentum transfer per unit area to know the pressure of the gas and momentum transfer could be calculated if we know the motion of the particles.
 
-This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the observable quantities, i.e., the probability of the system being on each point in the :math:`\Gamma` space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it. However, we would get degeneracies of microscopic state for each combination of thermodynamic observables.
+This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the observable quantities, i.e., the probability of the system being on each point in the :math:`\Gamma` space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it.
 
+However, this approach requires a first principle that we could use to figure out the distribution of the observables. For example, the Boltzmann theory assume equal a priori probabilities for the microstates. In Boltzmann theory, we need two aspects of knowledge to understand the statistical system.
+
+1. The distribution of the mirostates, which has been assumed to be equal.
+2. How the energy of combinations of single particles are calculated. For example, this refers to the calculation of the energy levels in quantum mechanics.
 
 
 The Two Approaches of Statistical Mechanics

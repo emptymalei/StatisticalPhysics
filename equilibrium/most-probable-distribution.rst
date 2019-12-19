@@ -3,14 +3,35 @@
 Most Probable Distribution
 ==================================
 
+
+
 .. admonition:: Applications of Most Probable Distribution
    :class: note
 
    Application of most probable distribution is discussed in :ref:`summary-boltzmann-statistics`.
 
-In Boltzman distribution, one of the key ingredients is the most probable distribution. First things first, the most probable distribution is indicating the distribution that is most probable. On the other hand, we also talked about the probability of the microstates. It is crucial to understand the difference between distribution and microstates.
+In Boltzman distribution, one of the key ingredients is to calculate the most probable distribution. First things first, the most probable distribution is indicating the **distribution of energy** (abbr. **distribution**) that is most probable. On the other hand, we also talked about the probability of the microstates. It is crucial to understand the difference between distribution and microstates.
 
-Microstates describes the configurations of the system which is the most detailed view of the system in statistical physics. However, a distribution of the system describes the number of particles on each energy levels of the particle.
+Microstates describes the configurations of the system which is the most detailed view of the system in statistical physics. A **distribution** of the system describes the number of particles on each energy levels of the particle.
+
+
+.. admonition:: Why would we choose most probable distribution?
+   :class: toggle
+
+   First of all, tt can be derived easily.
+
+   The most probable distribution in Boltzman theory is extremely sharp for large number of particles.
+
+   Assuming an actual **distribution of the distribution**, :math:`\rho(\{\epsilon_i:a_i\})` where :math:`\{\epsilon_i:a_i\}` is a **distribution of energies**. The observable :math:`\langle\mathscr O\rangle` can be calculated using the following integral
+
+   .. math::
+      \langle\mathscr O\rangle = \int \mathscr \rho(\{\epsilon_i:a_i\}) O(\{\epsilon_i:a_i\}) d \{\epsilon_i:a_i\}.
+
+   If :math:`\rho(\{\epsilon_i:a_i\})` is a delta function distribution, only the most probable distribution, :math:`\rho_{\text{most probable}}` is need to calculate observables.
+
+   This can be demonstrated with numerical simulations.
+
+
 
 
 
@@ -19,6 +40,7 @@ Microstates describes the configurations of the system which is the most detaile
 Equal A Prior Probability
 ------------------------------------
 
+As mentioned in :ref:`what-is-statistical-mechanics`, a theory of the distribution of the microstates shall be useful for our predictions of the macroscopic observables.
 
 .. admonition:: Equal A Prior Probability
    :class: warning
@@ -41,6 +63,8 @@ The equal a-priori principle can be illustrated using a two-magnet system. For s
    a_1 \qquad \text{Number of spins pointing downward}, \\
    a_2 \qquad \text{Number of spins pointing upward}
    \end{cases}
+
+.. _equal-a-priori-probability:
 
 .. figure:: images/equal-a-prior-probability.png
    :align: center
@@ -98,3 +122,23 @@ According to equal a priori principle, we will have to conclude that the second 
       \langle E \rangle = \frac{2 \mu B + 2\times 0 - 2 \mu B}{4} = 0.
 
    But this is simply a coincidence.
+
+
+
+The Magic of Equal a Priori Probabilities
+---------------------------------------------
+
+
+Though assuming least knowledge of the distribution of the microstates, we are still able to predict the observables. There exists several magical processes in this theory.
+
+
+The first magics is the so called more is different. Given thorough knowledge of a single particle, we still find phenomena unexplained by the single particle property.
+
+.. admonition:: How could Equal a Priori help?
+   :class: toggle
+
+   Equal a priori indicates a homogeneous distribution. How would a homogeneous distribution of microstates be useful to form complex materials?
+
+   The reason behind it is the energy degeneracies of the states. Some microstates lead to the same energy, as shown in :numref:`equal-a-priori-probability`. The energy degeneracies present us a specific distribution of energies.
+
+   Different degeneracies lead to different observable systems.

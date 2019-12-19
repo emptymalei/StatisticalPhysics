@@ -77,7 +77,7 @@ extensions = [
     'sphinx.ext.mathjax',
 #    'numfig',
     "math_dollar",
-    "sphinx_sitemap"
+#    "sphinx_sitemap"
 ]
 
 html_baseurl = 'https://statisticalphysics.openmetric.org/'
