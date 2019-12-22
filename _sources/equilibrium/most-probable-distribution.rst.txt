@@ -81,14 +81,7 @@ where :math:`s_i=\pm 1`.
 Each of the possible configuration of the the two magnets is considered as a **microstate**. That being said, the equal a-prior principle tells us that the probabilities of the four different configurations are the same. This is an effort of least information assumption.
 
 
-In principle, we could calculate the energy of the system using this assumption. For example, we could calculate all the configurations and energies of the configurations using brute force. I calculated the energies of all the possible configurations of Ising model on a 2D grid and plotted the histogram of the energies.
-
-.. figure:: images/hist_microstate_energies.png
-   :align: center
-
-   Histogram of microstate energies for different grid size of the Ising model. `Source code <https://github.com/emptymalei/ising-model>`_.
-
-In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as :math:`2^N` where :math:`N` is the total number of particles, if we do not implement any parallel computations.
+In principle, we could calculate the energy of the system using this assumption. However, it will be extremely difficult to tranverse all the possible states.
 
 
 
@@ -132,7 +125,7 @@ According to equal a priori principle, we will have to conclude that the second 
    .. math::
       \langle E \rangle = \frac{2 \mu B + 2\times 0 - 2 \mu B}{4} = 0.
 
-   But this is simply a coincidence.
+   This result doesn't make sense. For magnets without self-interactions, we expect them to be pointing in the same direction.
 
 
 
@@ -146,10 +139,25 @@ Though assuming least knowledge of the distribution of the microstates, we are s
 The first magics is the so called more is different. Given thorough knowledge of a single particle, we still find phenomena unexplained by the single particle property.
 
 .. admonition:: How could Equal a Priori help?
-   :class: toggle
+   :class: warning
 
    Equal a priori indicates a homogeneous distribution. How would a homogeneous distribution of microstates be useful to form complex materials?
 
-   The reason behind it is the energy degeneracies of the states. Some microstates lead to the same energy, as shown in :numref:`equal-a-priori-probability`. The energy degeneracies present us a specific distribution of energies.
+   The reason behind it is the energy degeneracies of the states. Some microstates lead to the same energy, as shown in :numref:`equal-a-priori-probability`. **Even for the same microstates, the distribution of energies will be different with different interactions applied.**
 
    Different degeneracies lead to different observable systems.
+
+
+Ising Model with Self-interactions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+For example, we could calculate all the configurations and energies of the configurations using brute force. I calculated the energies of all the possible configurations of Ising model on a 2D grid and plotted the histogram of the energies.
+
+.. figure:: images/hist_microstate_energies.png
+   :align: center
+
+   Histogram of microstate energies for different grid size of the Ising model. `Source code <https://github.com/emptymalei/ising-model>`_.
+
+In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as :math:`2^N` where :math:`N` is the total number of particles, if we do not implement any parallel computations.
