@@ -32,7 +32,15 @@ Microstates describes the configurations of the system which is the most detaile
    This can be demonstrated with numerical simulations.
 
 
+.. admonition:: Other Possible Distributions
+   :class: note
 
+   Statistically speaking, energy distribution is not the only available distribution we have. We look into the energy distribution because we would like to derive something easy to use for physics using the fundamental assumption of the probabilities of the microstates.
+
+   There are other granular distributions. In Ising model,
+
+   1. distribution of the magnet directions, i.e., the number of magnets pointing upward and the number of magnets pointing downward, for each microstate,
+   2. distribution of the total energies, i.e., the number of microstates with a specific energy.
 
 
 .. _equal-a-prior-probability:
