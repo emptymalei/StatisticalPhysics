@@ -232,7 +232,8 @@ TeX: {
 <li><a class="reference internal" href="#equal-a-prior-probability">Equal A Prior Probability</a></li>
 <li><a class="reference internal" href="#an-example-of-calculations">An Example of Calculations</a></li>
 <li><a class="reference internal" href="#probabilities-of-distributions">Probabilities of Distributions</a></li>
-<li><a class="reference internal" href="#the-magic-of-equal-a-priori-probabilities">The Magic of Equal a Priori Probabilities</a><ul>
+<li><a class="reference internal" href="#the-magic-of-equal-a-priori-probabilities">The Magic of Equal a Priori Probabilities</a></li>
+<li><a class="reference internal" href="#how-expensive-is-it-to-calculate-the-distributions">How Expensive is it to Calculate the Distributions</a><ul>
 <li><a class="reference internal" href="#ising-model-with-self-interactions">Ising Model with Self-interactions</a></li>
 </ul>
 </li>
@@ -312,6 +313,7 @@ TeX: {
 <div class="warning admonition">
 <p class="admonition-title">Equal A Prior Probability</p>
 <p>For systems with enormous number of particles, we observe their macroscopic properties such as energies, pressure in experiments. But we have very limited information about the internal structure. The principle proposed by Boltzmann is that all these different possible configurations of microstructure are equally distributed, a.k.a., principle of equal <em>a prior</em> probabilities.</p>
+<p><strong>It should be noted that all the possible states to be used for the probabilities should produce the observables we already know.</strong> For example,</p>
 </div>
 </div>
 <div class="section" id="an-example-of-calculations">
@@ -334,12 +336,8 @@ a_2 \qquad \text{Number of spins pointing upward}
 <div class="math notranslate nohighlight">
 \[(s_1  + s_2) B,\]</div>
 <p>where <span class="math notranslate nohighlight">\(s_i=\pm 1\)</span>.</p>
-<p>Each of the possible configuration of the the two magnets is considered as a <strong>microstate</strong>. That being said, the equal a-prior principle tells us that the probabilities of the four different configurations are the same. This is an effort of least information assumption.</p>
-<p>In principle, we could calculate the energy of the system using this assumption. However, it will be extremely difficult to tranverse all the possible states.</p>
-</div>
-<div class="section" id="probabilities-of-distributions">
-<h2>Probabilities of Distributions<a class="headerlink" href="#probabilities-of-distributions" title="Permalink to this headline">¶</a></h2>
-<p>In such a system, we have the following possible distributions.</p>
+<p>Each of the possible configuration of the the two magnets is considered as a <strong>microstate</strong>. That being said, the equal a-prior principle tells us that the probabilities of the different configurations are the same, <strong>for each total energy</strong>, if we our restricting observable is energy. This is an effort of least information assumption.</p>
+<p>We have the following possible <strong>energy distributions</strong>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{cases}
 a_1  = 0, &amp; \qquad \text{particles at single particle energy state } \varepsilon_1 = -\mu B \\
@@ -358,14 +356,12 @@ a_1  = 2, &amp; \qquad \text{particles at single particle energy state } \vareps
 a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \varepsilon_2 = \mu B
 \end{cases}\end{split}\]</div>
 <p>which has total energy of <span class="math notranslate nohighlight">\(-2\mu B\)</span> and number of microstates <span class="math notranslate nohighlight">\(\Omega = 1\)</span>.</p>
-<p>According to equal a priori principle, we will have to conclude that the second distribution is the most probable distribution. Thus the observed energy of an equilibrium system of such components should be 0.</p>
-<div class="warning admonition">
-<p class="admonition-title">Full Calculation without the Equal A-priori Principle</p>
-<p>This result also agrees with the full calculation using the equal a-priori principle</p>
-<div class="math notranslate nohighlight">
-\[\langle E \rangle = \frac{2 \mu B + 2\times 0 - 2 \mu B}{4} = 0.\]</div>
-<p>This result doesn’t make sense. For magnets without self-interactions, we expect them to be pointing in the same direction.</p>
+<p>In principle, we could calculate all observables of the system using this assumption. However, it will be extremely difficult to tranverse all the possible states (<a class="reference internal" href="#numerical-calculations-to-iterate-through-all-microstates"><span class="std std-ref">How Expensive is it to Calculate the Distributions</span></a>).</p>
 </div>
+<div class="section" id="probabilities-of-distributions">
+<h2>Probabilities of Distributions<a class="headerlink" href="#probabilities-of-distributions" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we have an equalibrium system with energy 0. In above example of the 2-magnet system, we only have one distribution and two microstates. We do not need more granular information about the microstates. As we include more magnets, each total energy corresponds to multiple energy distributions. For example, the number of microstates associated with a energy distribution in an Ising model could be huge.</p>
+<p>The number of microstates associated with each macrostates can be derived theoretically. Those results are presented in most text books. Here we will only show the numerical results to help us building up some inutitions.</p>
 </div>
 <div class="section" id="the-magic-of-equal-a-priori-probabilities">
 <h2>The Magic of Equal a Priori Probabilities<a class="headerlink" href="#the-magic-of-equal-a-priori-probabilities" title="Permalink to this headline">¶</a></h2>
@@ -377,6 +373,10 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
 <p>The reason behind it is the energy degeneracies of the states. Some microstates lead to the same energy, as shown in <a class="reference internal" href="#equal-a-priori-probability"><span class="std std-numref">Fig. 9</span></a>. <strong>Even for the same microstates, the distribution of energies will be different with different interactions applied.</strong></p>
 <p>Different degeneracies lead to different observable systems.</p>
 </div>
+</div>
+<div class="section" id="how-expensive-is-it-to-calculate-the-distributions">
+<span id="numerical-calculations-to-iterate-through-all-microstates"></span><h2>How Expensive is it to Calculate the Distributions<a class="headerlink" href="#how-expensive-is-it-to-calculate-the-distributions" title="Permalink to this headline">¶</a></h2>
+<p>It is very expensive to iterate through all the possible microstates to simulate large systems. To demonstrate this, I use Python to iterate through all the possible states in an Ising model, without any observables constraints.</p>
 <div class="section" id="ising-model-with-self-interactions">
 <h3>Ising Model with Self-interactions<a class="headerlink" href="#ising-model-with-self-interactions" title="Permalink to this headline">¶</a></h3>
 <p>For example, we could calculate all the configurations and energies of the configurations using brute force.</p>

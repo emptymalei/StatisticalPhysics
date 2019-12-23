@@ -55,6 +55,8 @@ As mentioned in :ref:`what-is-statistical-mechanics`, a theory of the distributi
 
    For systems with enormous number of particles, we observe their macroscopic properties such as energies, pressure in experiments. But we have very limited information about the internal structure. The principle proposed by Boltzmann is that all these different possible configurations of microstructure are equally distributed, a.k.a., principle of equal *a prior* probabilities.
 
+   **It should be noted that all the possible states to be used for the probabilities should produce the observables we already know.** For example,
+
 
 An Example of Calculations
 ----------------------------
@@ -86,17 +88,9 @@ With an external magnetic field, the energy of the system is determined by
 
 where :math:`s_i=\pm 1`.
 
-Each of the possible configuration of the the two magnets is considered as a **microstate**. That being said, the equal a-prior principle tells us that the probabilities of the four different configurations are the same. This is an effort of least information assumption.
+Each of the possible configuration of the the two magnets is considered as a **microstate**. That being said, the equal a-prior principle tells us that the probabilities of the different configurations are the same, **for each total energy**, if we our restricting observable is energy. This is an effort of least information assumption.
 
-
-In principle, we could calculate the energy of the system using this assumption. However, it will be extremely difficult to tranverse all the possible states.
-
-
-
-Probabilities of Distributions
-----------------------------------
-
-In such a system, we have the following possible distributions.
+We have the following possible **energy distributions**.
 
 .. math::
    \begin{cases}
@@ -122,18 +116,16 @@ which has total energy of :math:`0` and number of microstates :math:`\Omega = 2`
 
 which has total energy of :math:`-2\mu B` and number of microstates :math:`\Omega = 1`.
 
-According to equal a priori principle, we will have to conclude that the second distribution is the most probable distribution. Thus the observed energy of an equilibrium system of such components should be 0.
+In principle, we could calculate all observables of the system using this assumption. However, it will be extremely difficult to tranverse all the possible states (:ref:`numerical-calculations-to-iterate-through-all-microstates`).
 
 
-.. admonition:: Full Calculation without the Equal A-priori Principle
-   :class: warning
 
-   This result also agrees with the full calculation using the equal a-priori principle
+Probabilities of Distributions
+----------------------------------
 
-   .. math::
-      \langle E \rangle = \frac{2 \mu B + 2\times 0 - 2 \mu B}{4} = 0.
+Suppose we have an equalibrium system with energy 0. In above example of the 2-magnet system, we only have one distribution and two microstates. We do not need more granular information about the microstates. As we include more magnets, each total energy corresponds to multiple energy distributions. For example, the number of microstates associated with a energy distribution in an Ising model could be huge.
 
-   This result doesn't make sense. For magnets without self-interactions, we expect them to be pointing in the same direction.
+The number of microstates associated with each macrostates can be derived theoretically. Those results are presented in most text books. Here we will only show the numerical results to help us building up some inutitions.
 
 
 
@@ -156,9 +148,16 @@ The first magics is the so called more is different. Given thorough knowledge of
    Different degeneracies lead to different observable systems.
 
 
+.. _numerical-calculations-to-iterate-through-all-microstates:
+
+How Expensive is it to Calculate the Distributions
+-----------------------------------------------------
+
+It is very expensive to iterate through all the possible microstates to simulate large systems. To demonstrate this, I use Python to iterate through all the possible states in an Ising model, without any observables constraints.
+
+
 Ising Model with Self-interactions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 
 For example, we could calculate all the configurations and energies of the configurations using brute force.
@@ -182,7 +181,6 @@ For example, we could calculate all the configurations and energies of the confi
       :align: center
 
       Histogram of microstate energies for different grid size of the Ising model. `Source code <https://github.com/emptymalei/ising-model>`_.
-
 
 
 
