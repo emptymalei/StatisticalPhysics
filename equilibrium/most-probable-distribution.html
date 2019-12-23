@@ -297,6 +297,15 @@ TeX: {
 <p>If <span class="math notranslate nohighlight">\(\rho(\{\epsilon_i:a_i\})\)</span> is a delta function distribution, only the most probable distribution, <span class="math notranslate nohighlight">\(\rho_{\text{most probable}}\)</span> is need to calculate observables.</p>
 <p>This can be demonstrated with numerical simulations.</p>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Other Possible Distributions</p>
+<p>Statistically speaking, energy distribution is not the only available distribution we have. We look into the energy distribution because we would like to derive something easy to use for physics using the fundamental assumption of the probabilities of the microstates.</p>
+<p>There are other granular distributions. In Ising model,</p>
+<ol class="arabic simple">
+<li><p>distribution of the magnet directions, i.e., the number of magnets pointing upward and the number of magnets pointing downward, for each microstate,</p></li>
+<li><p>distribution of the total energies, i.e., the number of microstates with a specific energy.</p></li>
+</ol>
+</div>
 <div class="section" id="equal-a-prior-probability">
 <span id="id2"></span><h2>Equal A Prior Probability<a class="headerlink" href="#equal-a-prior-probability" title="Permalink to this headline">¶</a></h2>
 <p>As mentioned in <a class="reference internal" href="summary.html#what-is-statistical-mechanics"><span class="std std-ref">What is Statistical Mechanics</span></a>, a theory of the distribution of the microstates shall be useful for our predictions of the macroscopic observables.</p>
@@ -370,10 +379,19 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
 </div>
 <div class="section" id="ising-model-with-self-interactions">
 <h3>Ising Model with Self-interactions<a class="headerlink" href="#ising-model-with-self-interactions" title="Permalink to this headline">¶</a></h3>
-<p>For example, we could calculate all the configurations and energies of the configurations using brute force. I calculated the energies of all the possible configurations of Ising model on a 2D grid and plotted the histogram of the energies.</p>
+<p>For example, we could calculate all the configurations and energies of the configurations using brute force.</p>
 <div class="figure align-center" id="id4">
+<img alt="../_images/distributions_on_different_grids.png" src="../_images/distributions_on_different_grids.png" />
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Microstate counts of energy distribution. The bars shows the number of microstates with the specific energy distributions, which indicates the probability of the corresponding distributions given the equal-a-priori principle. The line shows the corresponding energy of the distribution.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="toggle admonition">
+<p class="admonition-title">Distribution of Total Energy</p>
+<p>The microstate counts of the distributions indicates that some of the energies appears more frequently among all the possible energies.</p>
+<p>I calculated the energies of all the possible configurations of Ising model on a 2D grid and plotted the histogram of the energies.</p>
+<div class="figure align-center" id="id5">
 <img alt="../_images/hist_microstate_energies.png" src="../_images/hist_microstate_energies.png" />
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Histogram of microstate energies for different grid size of the Ising model. <a class="reference external" href="https://github.com/emptymalei/ising-model">Source code</a>.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 11 </span><span class="caption-text">Histogram of microstate energies for different grid size of the Ising model. <a class="reference external" href="https://github.com/emptymalei/ising-model">Source code</a>.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 <p>In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as <span class="math notranslate nohighlight">\(2^N\)</span> where <span class="math notranslate nohighlight">\(N\)</span> is the total number of particles, if we do not implement any parallel computations.</p>
 </div>

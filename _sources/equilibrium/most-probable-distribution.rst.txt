@@ -32,7 +32,15 @@ Microstates describes the configurations of the system which is the most detaile
    This can be demonstrated with numerical simulations.
 
 
+.. admonition:: Other Possible Distributions
+   :class: note
 
+   Statistically speaking, energy distribution is not the only available distribution we have. We look into the energy distribution because we would like to derive something easy to use for physics using the fundamental assumption of the probabilities of the microstates.
+
+   There are other granular distributions. In Ising model,
+
+   1. distribution of the magnet directions, i.e., the number of magnets pointing upward and the number of magnets pointing downward, for each microstate,
+   2. distribution of the total energies, i.e., the number of microstates with a specific energy.
 
 
 .. _equal-a-prior-probability:
@@ -153,11 +161,29 @@ Ising Model with Self-interactions
 
 
 
-For example, we could calculate all the configurations and energies of the configurations using brute force. I calculated the energies of all the possible configurations of Ising model on a 2D grid and plotted the histogram of the energies.
+For example, we could calculate all the configurations and energies of the configurations using brute force.
 
-.. figure:: images/hist_microstate_energies.png
+.. figure:: assets/most-probable-distribution/distributions_on_different_grids.png
    :align: center
 
-   Histogram of microstate energies for different grid size of the Ising model. `Source code <https://github.com/emptymalei/ising-model>`_.
+   Microstate counts of energy distribution. The bars shows the number of microstates with the specific energy distributions, which indicates the probability of the corresponding distributions given the equal-a-priori principle. The line shows the corresponding energy of the distribution.
+
+
+
+
+.. admonition:: Distribution of Total Energy
+   :class: toggle
+
+   The microstate counts of the distributions indicates that some of the energies appears more frequently among all the possible energies.
+
+   I calculated the energies of all the possible configurations of Ising model on a 2D grid and plotted the histogram of the energies.
+
+   .. figure:: images/hist_microstate_energies.png
+      :align: center
+
+      Histogram of microstate energies for different grid size of the Ising model. `Source code <https://github.com/emptymalei/ising-model>`_.
+
+
+
 
 In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as :math:`2^N` where :math:`N` is the total number of particles, if we do not implement any parallel computations.
