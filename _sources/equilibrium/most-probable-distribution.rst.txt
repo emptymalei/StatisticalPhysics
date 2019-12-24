@@ -177,10 +177,10 @@ For example, we could calculate all the configurations and energies of the confi
 
    I calculated the energies of all the possible configurations of Ising model on a 2D grid and plotted the histogram of the energies.
 
-   .. figure:: images/hist_microstate_energies.png
-      :align: center
+   .. .. figure:: images/hist_microstate_energies.png
+   ..    :align: center
 
-      Histogram of microstate energies for different grid size of the Ising model. `Source code <https://github.com/emptymalei/ising-model>`_.
+   ..    Histogram of microstate energies for different grid size of the Ising model. `Source code <https://github.com/emptymalei/ising-model>`_.
 
 
 
