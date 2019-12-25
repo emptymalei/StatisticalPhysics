@@ -282,7 +282,7 @@ TeX: {
       
   <div class="section" id="most-probable-distribution">
 <span id="id1"></span><h1>Most Probable Distribution<a class="headerlink" href="#most-probable-distribution" title="Permalink to this headline">¶</a></h1>
-<div class="note admonition">
+<div class="note admonition" id="index-0">
 <p class="admonition-title">Applications of Most Probable Distribution</p>
 <p>Application of most probable distribution is discussed in <a class="reference internal" href="summary.html#summary-boltzmann-statistics"><span class="std std-ref">Boltzmann Statistics</span></a>.</p>
 </div>
@@ -309,7 +309,7 @@ TeX: {
 </div>
 <div class="section" id="equal-a-prior-probability">
 <span id="id2"></span><h2>Equal A Prior Probability<a class="headerlink" href="#equal-a-prior-probability" title="Permalink to this headline">¶</a></h2>
-<p>As mentioned in <a class="reference internal" href="summary.html#what-is-statistical-mechanics"><span class="std std-ref">What is Statistical Mechanics</span></a>, a theory of the distribution of the microstates shall be useful for our predictions of the macroscopic observables.</p>
+<p id="index-1">As mentioned in <a class="reference internal" href="summary.html#what-is-statistical-mechanics"><span class="std std-ref">What is Statistical Mechanics</span></a>, a theory of the distribution of the microstates shall be useful for our predictions of the macroscopic observables.</p>
 <div class="warning admonition">
 <p class="admonition-title">Equal A Prior Probability</p>
 <p>For systems with enormous number of particles, we observe their macroscopic properties such as energies, pressure in experiments. But we have very limited information about the internal structure. The principle proposed by Boltzmann is that all these different possible configurations of microstructure are equally distributed, a.k.a., principle of equal <em>a prior</em> probabilities.</p>
@@ -361,7 +361,12 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
 <div class="section" id="probabilities-of-distributions">
 <h2>Probabilities of Distributions<a class="headerlink" href="#probabilities-of-distributions" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we have an equalibrium system with energy 0. In above example of the 2-magnet system, we only have one distribution and two microstates. We do not need more granular information about the microstates. As we include more magnets, each total energy corresponds to multiple energy distributions. For example, the number of microstates associated with a energy distribution in an Ising model could be huge.</p>
-<p>The number of microstates associated with each macrostates can be derived theoretically. Those results are presented in most text books. Here we will only show the numerical results to help us building up some inutitions.</p>
+<p>The number of microstates associated with each macrostates can be derived theoretically. Those results are presented in most textbooks. The derivation involves the following steps.</p>
+<ol class="arabic simple">
+<li><p>Find the total number of macrostates (single particle energy distributions), <span class="math notranslate nohighlight">\(\Omega\)</span>.</p></li>
+<li><p>Take the log of the distribution and find the maximum using Lagrange multipler method.</p></li>
+<li><p>The most probable distribution should follow the Boltzman distribution of exponential distribution based on energy levels.</p></li>
+</ol>
 </div>
 <div class="section" id="the-magic-of-equal-a-priori-probabilities">
 <h2>The Magic of Equal a Priori Probabilities<a class="headerlink" href="#the-magic-of-equal-a-priori-probabilities" title="Permalink to this headline">¶</a></h2>
@@ -373,10 +378,15 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
 <p>The reason behind it is the energy degeneracies of the states. Some microstates lead to the same energy, as shown in <a class="reference internal" href="#equal-a-priori-probability"><span class="std std-numref">Fig. 9</span></a>. <strong>Even for the same microstates, the distribution of energies will be different with different interactions applied.</strong></p>
 <p>Different degeneracies lead to different observable systems.</p>
 </div>
+<div class="warning admonition">
+<p class="admonition-title">Why is Temperature Relevant?</p>
+<p>In this formalism, we do not consider the temperature. In the deriveation, we used the Lagrange multiplier method which introduced an equivalent of the temperature.</p>
+<p>Temperature is a punishment of our energy distribution. It sets the level of base energy.</p>
+</div>
 </div>
 <div class="section" id="how-expensive-is-it-to-calculate-the-distributions">
 <span id="numerical-calculations-to-iterate-through-all-microstates"></span><h2>How Expensive is it to Calculate the Distributions<a class="headerlink" href="#how-expensive-is-it-to-calculate-the-distributions" title="Permalink to this headline">¶</a></h2>
-<p>It is very expensive to iterate through all the possible microstates to simulate large systems. To demonstrate this, I use Python to iterate through all the possible states in an Ising model, without any observables constraints.</p>
+<p>It is very expensive to iterate through all the possible microstates to simulate large systems. To demonstrate this, I use Python to iterate through all the possible states in an Ising model, without any observables constraints. All the results can be dervied theoretically. However we will only show the numerical results to help us building up some inutitions and to understand how expensive it is to iterate through all the possible states.</p>
 <div class="section" id="ising-model-with-self-interactions">
 <h3>Ising Model with Self-interactions<a class="headerlink" href="#ising-model-with-self-interactions" title="Permalink to this headline">¶</a></h3>
 <p>For example, we could calculate all the configurations and energies of the configurations using brute force.</p>

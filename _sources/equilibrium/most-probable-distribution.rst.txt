@@ -3,7 +3,7 @@
 Most Probable Distribution
 ==================================
 
-
+.. index:: Most Probable Distribution
 
 .. admonition:: Applications of Most Probable Distribution
    :class: note
@@ -47,6 +47,8 @@ Microstates describes the configurations of the system which is the most detaile
 
 Equal A Prior Probability
 ------------------------------------
+
+.. index:: Equal A Prior Probability
 
 As mentioned in :ref:`what-is-statistical-mechanics`, a theory of the distribution of the microstates shall be useful for our predictions of the macroscopic observables.
 
@@ -125,7 +127,11 @@ Probabilities of Distributions
 
 Suppose we have an equalibrium system with energy 0. In above example of the 2-magnet system, we only have one distribution and two microstates. We do not need more granular information about the microstates. As we include more magnets, each total energy corresponds to multiple energy distributions. For example, the number of microstates associated with a energy distribution in an Ising model could be huge.
 
-The number of microstates associated with each macrostates can be derived theoretically. Those results are presented in most text books. Here we will only show the numerical results to help us building up some inutitions.
+The number of microstates associated with each macrostates can be derived theoretically. Those results are presented in most textbooks. The derivation involves the following steps.
+
+1. Find the total number of macrostates (single particle energy distributions), :math:`\Omega`.
+2. Take the log of the distribution and find the maximum using Lagrange multipler method.
+3. The most probable distribution should follow the Boltzman distribution of exponential distribution based on energy levels.
 
 
 
@@ -148,12 +154,20 @@ The first magics is the so called more is different. Given thorough knowledge of
    Different degeneracies lead to different observable systems.
 
 
+.. admonition:: Why is Temperature Relevant?
+   :class: warning
+
+   In this formalism, we do not consider the temperature. In the deriveation, we used the Lagrange multiplier method which introduced an equivalent of the temperature.
+
+   Temperature is a punishment of our energy distribution. It sets the level of base energy.
+
+
 .. _numerical-calculations-to-iterate-through-all-microstates:
 
 How Expensive is it to Calculate the Distributions
 -----------------------------------------------------
 
-It is very expensive to iterate through all the possible microstates to simulate large systems. To demonstrate this, I use Python to iterate through all the possible states in an Ising model, without any observables constraints.
+It is very expensive to iterate through all the possible microstates to simulate large systems. To demonstrate this, I use Python to iterate through all the possible states in an Ising model, without any observables constraints. All the results can be dervied theoretically. However we will only show the numerical results to help us building up some inutitions and to understand how expensive it is to iterate through all the possible states.
 
 
 Ising Model with Self-interactions
