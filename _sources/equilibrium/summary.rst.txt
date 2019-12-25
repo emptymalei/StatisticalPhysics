@@ -20,11 +20,14 @@ Review of Thermodynamics
 3. First principles: :ref:`laws-of-thermodynamics`
 4. Dynamics: Phase transition; Stability; Response
 
+
 .. _mu-space-and-gamma-space:
 .. _discription-of-microstates:
 
 Description of the Microstates
 --------------------------------------
+
+.. index:: mu Space, Gamma Space
 
 For a system with :math:`N` particles of :math:`r` degrees of freedom, we could always describe the microstates of the system by looking at the state of each particle. There are at least two different point of views, the :math:`\mu` space (mu space) and the :math:`\Gamma` space (Gamma space).
 

@@ -9,7 +9,6 @@ Stochastic process is very important in many fields of physics.
 .. toctree::
     :maxdepth: 2
 
-    gamma-space-mu-space.rst
     important-questions.rst
     master-eqn.rst
     solving-master-eqn.rst

@@ -1,5 +1,4 @@
 .. _gibbs-mixing-paradox:
-.. index:: Gibbs Mixing Paradox
 
 Gibbs Mixing Paradox
 ==================================

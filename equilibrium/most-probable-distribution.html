@@ -179,6 +179,7 @@ TeX: {
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Equilibrium Statistical Mechanics</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="summary.html">Equilibrium Statistical Mechanics Summary</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basics.html">Basics of Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gamma-space-mu-space.html"><span class="math notranslate nohighlight">\(\Gamma\)</span> Space and <span class="math notranslate nohighlight">\(\mu\)</span> Space</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macroscopic-states-and-microscopic-states.html">Macroscopic States and Microscropic State</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Most Probable Distribution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ho-dos.html">Harmonic Oscillator and Density of States</a></li>
@@ -197,7 +198,6 @@ TeX: {
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../nonequilibrium/index.html">Stochastic And Non-Equilibrium Statistical Mechanics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../nonequilibrium/gamma-space-mu-space.html"><span class="math notranslate nohighlight">\(\Gamma\)</span> Space and <span class="math notranslate nohighlight">\(\mu\)</span> Space</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nonequilibrium/important-questions.html">Important Questions of Statistical Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nonequilibrium/master-eqn.html">Master Equation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../nonequilibrium/solving-master-eqn.html">Solving Master Equations</a></li>
@@ -383,11 +383,6 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
 <div class="figure align-center" id="id4">
 <img alt="../_images/distributions_on_different_grids.png" src="../_images/distributions_on_different_grids.png" />
 <p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Microstate counts of energy distribution. The bars shows the number of microstates with the specific energy distributions, which indicates the probability of the corresponding distributions given the equal-a-priori principle. The line shows the corresponding energy of the distribution.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
-</div>
-<div class="toggle admonition">
-<p class="admonition-title">Distribution of Total Energy</p>
-<p>The microstate counts of the distributions indicates that some of the energies appears more frequently among all the possible energies.</p>
-<p>I calculated the energies of all the possible configurations of Ising model on a 2D grid and plotted the histogram of the energies.</p>
 </div>
 <p>In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as <span class="math notranslate nohighlight">\(2^N\)</span> where <span class="math notranslate nohighlight">\(N\)</span> is the total number of particles, if we do not implement any parallel computations.</p>
 </div>
