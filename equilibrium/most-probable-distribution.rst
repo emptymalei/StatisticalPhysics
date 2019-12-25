@@ -169,19 +169,4 @@ For example, we could calculate all the configurations and energies of the confi
 
 
 
-
-.. admonition:: Distribution of Total Energy
-   :class: toggle
-
-   The microstate counts of the distributions indicates that some of the energies appears more frequently among all the possible energies.
-
-   I calculated the energies of all the possible configurations of Ising model on a 2D grid and plotted the histogram of the energies.
-
-   .. .. figure:: images/hist_microstate_energies.png
-   ..    :align: center
-
-   ..    Histogram of microstate energies for different grid size of the Ising model. `Source code <https://github.com/emptymalei/ising-model>`_.
-
-
-
 In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as :math:`2^N` where :math:`N` is the total number of particles, if we do not implement any parallel computations.
