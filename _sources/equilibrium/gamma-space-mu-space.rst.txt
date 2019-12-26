@@ -1,4 +1,4 @@
-.. index:: Gamma Space, mu Space
+.. index:: Gamma Space, mu Space, BBGKY
 
 :math:`\Gamma` Space and :math:`\mu` Space
 ==============================================================================

@@ -1,13 +1,13 @@
 Important Questions of Statistical Mechanics
 ============================================================
 
-.. index:: nonequilibrium, BBGKY, Liouville Operator
+.. index:: non-equilibrium, BBGKY, Liouville Operator
 
 
 Liouville Operator And Liouville Equation
 ------------------------------------------
 
-Instead of writing Poisson bracket as an bracket, we can define a Poisson bracket operator:
+Instead of writing Poisson bracket as a bracket, we define a Poisson bracket operator:
 
 .. math::
    \hat{\mathscr H}^N = - \sum_{j=1}^N \left( \frac{\partial H^N}{\partial \vec q_j}\frac{\partial}{\partial \vec p_j} - \frac{\partial H^N}{\partial \vec p_j}\frac{\partial}{\partial \vec q_j} \right)

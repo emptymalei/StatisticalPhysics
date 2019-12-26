@@ -188,8 +188,8 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="debye-model.html">Debye Model</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Phase Transitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gas-revisited.html">Gas Revisited</a></li>
-<li class="toctree-l2"><a class="reference internal" href="systematic-view.html">A More Systematic View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ising-model.html">Ising Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="systematic-view.html">A More Systematic View</a></li>
 <li class="toctree-l2"><a class="reference internal" href="monte-carlo.html">Monte Carlo Method</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ensembles.html">Ensembles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
@@ -288,7 +288,7 @@ TeX: {
 <li><p>…</p></li>
 </ol>
 <p>Phase transitions only exists in systems with infinite particles.</p>
-<div class="toggle admonition">
+<div class="note admonition">
 <p class="admonition-title">Phase Transitions in Other Fields</p>
 <p>If we are looking for well defined phase transitions in other fields, such as our society, it would be the best if we could all agree on which observables to use, aka, order parameters.</p>
 <p>For example, in social science, there is the model called Schelling’s model which models the segregation of races. The model is fairly simple yet is able to match the data.</p>
@@ -301,7 +301,10 @@ TeX: {
 <li><p>In between, agents will move to live close to their own ethical groups. Domains will form. This is the segreged state. The average size of communities is large.</p></li>
 </ol>
 <p>There are also other parameters to consider but a phase diagram can be calculated.</p>
-<p>References:</p>
+<p>The following is an app for Schelling’s model. It is better to click on the link <a class="reference external" href="http://schelling.openmetric.org/">Schelling’s segeration model</a>.</p>
+<iframe width="100%" height="1500"
+src="http://schelling.openmetric.org/"
+frameborder="0" allowfullscreen></iframe><p>References:</p>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://medium.com/&#64;jxxcarlson/schellings-segregation-model-i-43e612241b62">Schelling’s Segregation Model, I</a></p></li>
 </ol>
@@ -315,9 +318,9 @@ TeX: {
 <p>More is the same.</p>
 <p>We take Weiss theory as an example. Weiss theory is a theory of ferromagnetism. In his theory, each molecule in the material serves as a small magnet.</p>
 <p>To make it easy to understand, we assume the small magnets are arranged on a 2D grid.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id3">
 <img alt="Weiss Theory Magnets Grid" src="../_images/weiss-theory-grid.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Magnets on a 2D grid. The red magnet <span class="math notranslate nohighlight">\(s\)</span> is surrounded by four neighbours, <span class="math notranslate nohighlight">\(s_1\)</span>, <span class="math notranslate nohighlight">\(s_2\)</span>, <span class="math notranslate nohighlight">\(s_3\)</span>, and <span class="math notranslate nohighlight">\(s_4\)</span>.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Magnets on a 2D grid. The red magnet <span class="math notranslate nohighlight">\(s\)</span> is surrounded by four neighbours, <span class="math notranslate nohighlight">\(s_1\)</span>, <span class="math notranslate nohighlight">\(s_2\)</span>, <span class="math notranslate nohighlight">\(s_3\)</span>, and <span class="math notranslate nohighlight">\(s_4\)</span>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Hamiltonian for the magnet <span class="math notranslate nohighlight">\(s\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -349,9 +352,9 @@ TeX: {
 <div class="math notranslate nohighlight" id="equation-eq-weiss-theory-equation">
 <span class="eqno">(9)<a class="headerlink" href="#equation-eq-weiss-theory-equation" title="Permalink to this equation">¶</a></span>\[\tanh( \beta (4Jm + H) ) = m.\]</div>
 <p>This equation can be understood using graphical solutions.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id4">
 <img alt="Weiss Theory Magnets Grid" src="../_images/weiss-theory-graphical-solutions.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Examples of solving equation <a class="reference internal" href="#equation-eq-weiss-theory-equation">(9)</a> graphically.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Examples of solving equation <a class="reference internal" href="#equation-eq-weiss-theory-equation">(9)</a> graphically.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>In the example, we are solving the case for <span class="math notranslate nohighlight">\(H=0\)</span>. For <span class="math notranslate nohighlight">\(4\beta J=0.5\)</span>, the left side of the equation becomes <span class="math notranslate nohighlight">\(\tanh(0.5 m)\)</span>. On the right hand side, we have <span class="math notranslate nohighlight">\(m\)</span>. The value of <span class="math notranslate nohighlight">\(m\)</span> must be determined by the interceptions of the left hand side and the right hand side. However, we only find <span class="math notranslate nohighlight">\(m=0\)</span> which is paramagnetic. For <span class="math notranslate nohighlight">\(4\beta J=2\)</span>, we do find two other solutions for <span class="math notranslate nohighlight">\(m\)</span>. In fact, due to the slope of the hyperbolic tangent at origin, we only have 3 solutions if <span class="math notranslate nohighlight">\(4\beta J&gt;1\)</span>. This is interesting because this corresponds to a phase transition at different <span class="math notranslate nohighlight">\(\beta\)</span>, i.e., <span class="math notranslate nohighlight">\(1/k_B T\)</span>.</p>
 <div class="note admonition">

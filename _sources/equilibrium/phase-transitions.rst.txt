@@ -18,7 +18,7 @@ Phase transitions only exists in systems with infinite particles.
 .. [Leo P. Kadanoff] `Kadanoff's PI Lectures <http://jfi.uchicago.edu/~leop/TALKS/Perimeter%20Stat%20Mech%20Lectures/lectures%20in%20PDF/Part%207%20Mean%20Field%20Theory.pdf>`_
 
 .. admonition:: Phase Transitions in Other Fields
-   :class: toggle
+   :class: note
 
    If we are looking for well defined phase transitions in other fields, such as our society, it would be the best if we could all agree on which observables to use, aka, order parameters.
 
@@ -36,6 +36,14 @@ Phase transitions only exists in systems with infinite particles.
 
    There are also other parameters to consider but a phase diagram can be calculated.
 
+
+   The following is an app for Schelling's model. It is better to click on the link `Schelling's segeration model <http://schelling.openmetric.org/>`_.
+
+   .. raw:: html
+
+    <iframe width="100%" height="1500"
+    src="http://schelling.openmetric.org/"
+    frameborder="0" allowfullscreen></iframe>
 
 
    References:
