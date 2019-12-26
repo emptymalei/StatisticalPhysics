@@ -17,8 +17,8 @@ Equilibrium Statistical Mechanics
     debye-model.rst
     phase-transitions.rst
     gas-revisited.rst
-    systematic-view.rst
     ising-model.rst
+    systematic-view.rst
     monte-carlo.rst
     ensembles.rst
     topics/index.rst
