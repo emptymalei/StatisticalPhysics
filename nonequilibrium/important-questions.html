@@ -231,13 +231,15 @@ TeX: {
 <li><a class="reference internal" href="#">Important Questions of Statistical Mechanics</a><ul>
 <li><a class="reference internal" href="#liouville-operator-and-liouville-equation">Liouville Operator And Liouville Equation</a></li>
 <li><a class="reference internal" href="#bbgky-hierarchy">BBGKY Hierarchy</a></li>
-<li><a class="reference internal" href="#why-irreversible">Why Irreversible</a></li>
 <li><a class="reference internal" href="#road-map-of-statistical-mechanics">Road Map of Statistical Mechanics</a></li>
+<li><a class="reference internal" href="#why-irreversible">Why Irreversible</a><ul>
 <li><a class="reference internal" href="#a-review-of-boltzmann-equation-h-theorem">A Review of Boltzmann Equation &amp; H Theorem</a><ul>
 <li><a class="reference internal" href="#boltzmann-equation-derivation">Boltzmann equation derivation</a></li>
 <li><a class="reference internal" href="#boltzmann-equation-continuity-equation">Boltzmann equation &amp; Continuity Equation</a></li>
 <li><a class="reference internal" href="#h-theorem">H Theorem</a></li>
-<li><a class="reference internal" href="#h-theorem-discussion">H Theorem Discussion</a></li>
+<li><a class="reference internal" href="#h-theorem-discussions">H Theorem Discussions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#footnotes">Footnotes</a></li>
@@ -288,37 +290,43 @@ TeX: {
 <h1>Important Questions of Statistical Mechanics<a class="headerlink" href="#important-questions-of-statistical-mechanics" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="liouville-operator-and-liouville-equation">
 <span id="index-0"></span><h2>Liouville Operator And Liouville Equation<a class="headerlink" href="#liouville-operator-and-liouville-equation" title="Permalink to this headline">¶</a></h2>
-<p>Instead of writing Poisson bracket as a bracket, we define a Poisson bracket operator:</p>
+<p>Instead of writing Poisson bracket as a bracket, Poisson bracket operator is defined to simplify the notation,</p>
 <div class="math notranslate nohighlight">
 \[\hat{\mathscr H}^N = - \sum_{j=1}^N \left( \frac{\partial H^N}{\partial \vec q_j}\frac{\partial}{\partial \vec p_j} - \frac{\partial H^N}{\partial \vec p_j}\frac{\partial}{\partial \vec q_j} \right)\]</div>
-<p>More generally, we can define an Liouville operator, which is</p>
+<p>For convenience, we can define a Liouville operator,</p>
 <div class="math notranslate nohighlight">
 \[\hat L^N := -i \hat{\mathscr H}^N  .\]</div>
-<p>Now the Liouville equation becomes</p>
+<p>so that the Liouville equation becomes</p>
 <div class="math notranslate nohighlight">
 \[i \frac{\partial \rho^N}{\partial t} = \hat L^N \rho^N  .\]</div>
-<p>For stationary state we have</p>
+<p>For stationary state, <span class="math notranslate nohighlight">\(\frac{\partial \rho^N}{\partial t} = 0\)</span>, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[\hat L^N \rho^N _ {\mathrm{stationary}} = 0 .\]</div>
 </div>
 <div class="section" id="bbgky-hierarchy">
 <h2>BBGKY Hierarchy<a class="headerlink" href="#bbgky-hierarchy" title="Permalink to this headline">¶</a></h2>
-<p>Now we think about the problems we are going to solve. In statistical mechanics, the most ideal method is to solve the Liouville equation directly and leave only initial condition missing for the problem. However, solving the Liouville equation is so hard for complicated problems we finally thinking about dropping some dynamics. This is no big deal as we already dropped initial condition and makes our solution probabilistic.</p>
-<p>Now the question is what to drop. For non-interacting systems, the solution comes directly from Liouville equation. It’s interactions that makes our life so hard (yet make us alive). So we would like to make approximations on interactions.</p>
-<p>For non-interacting systems, <span class="math notranslate nohighlight">\(\Gamma\)</span> space can actually be reduced to <span class="math notranslate nohighlight">\(\mu\)</span> space which is spanned by the freedoms of only one particle. Here we need to address the fact that we are dealing with <strong>identical particles</strong>.</p>
-<p>Actually we are not trying to reduce to <span class="math notranslate nohighlight">\(\mu\)</span> space exactly. We just want to make the dimension as less as possible. So we want to talk about some reduced quantities.</p>
-<p>First of all is the probability density of s particles. For one particle, it’s</p>
+<p>To solve the statistical system completely, the most ideal method is to solve the Liouville equation directly, but without initial conditions given. However, solving the Liouville equation is impractical for complicated systems. Some simplifications have to be applied.</p>
+<p>For systems without self-interactions, the solution of Liouville equation is straight forward. <span class="math notranslate nohighlight">\(\Gamma\)</span> space can actually be reduced to <span class="math notranslate nohighlight">\(\mu\)</span> space which is spanned by the freedoms of only one particle. Here we need to address the fact that we are dealing with <strong>identical particles</strong>.</p>
+<p>We reduce the complicity of the interactions while keeping the salient features. Dimension reduction is key to this idea. First of all, we will introduce some reduced densities.</p>
+<ol class="arabic">
+<li><p>The probability density of particles describes the average density of some particles inside a system of particles.</p>
+<p>For one particle, the probability density requires us to integrate over all other particles,</p>
 <div class="math notranslate nohighlight">
 \[\rho_1(\vec X_1, t) := \int \cdots\int d\vec X_2 \cdots d \vec X_N \rho^N(\vec X_1, \cdots, \vec X_N, t)\]</div>
-<p>Similarly, we can define s particles probability density, <a class="footnote-reference brackets" href="#id2" id="id1">1</a></p>
+<p>Similarly, we can define <span class="math notranslate nohighlight">\(s\)</span> particles probability density, <a class="reference internal" href="#reichl" id="id1"><span>[Reichl]</span></a></p>
 <div class="math notranslate nohighlight">
 \[\rho_s(\vec X_s, \cdots, \vec X_N, t) := \int \cdots \int d \vec X_{s+1}\cdots d\vec X_N \rho^N(\vec X_1, \cdots, \vec X_N, t) .\]</div>
-<p>We define a new quantity, which has a weight, as</p>
+</li>
+</ol>
+<p>We define a normalized density</p>
 <div class="math notranslate nohighlight">
-\[F_s(\vec X_1, \cdots,\vec X_s,t) := V^s \int\cdots \int \rho^N(\vec X_1, \cdots, \vec X_N, t) d\vec X_{s+1}\cdots d\vec X_N   .\]</div>
-<p>Obviously, <span class="math notranslate nohighlight">\(s=N\)</span> gives us</p>
+\[F_s(\vec X_1, \cdots,\vec X_s,t) := V^s \int\cdots \int \rho^N(\vec X_{1}, \cdots, \vec X_N, t) d\vec X_{s+1}\cdots d\vec X_N   .\]</div>
+<div class="toggle admonition">
+<p class="admonition-title">About <span class="math notranslate nohighlight">\(V\)</span></p>
+<p>Setting <span class="math notranslate nohighlight">\(s=N\)</span> leads to</p>
 <div class="math notranslate nohighlight">
-\[F_Ns = V^N \rho  .\]</div>
+\[F_N(t) = V^N \rho^N(t) .\]</div>
+</div>
 <p>We can write down the Hamiltonian of the system for any two-body spherically symmetric interaction,</p>
 <div class="math notranslate nohighlight">
 \[H^N  =  \sum_{i=1}^N \frac{\vec p_i^2}{2m} + \sum_{i&lt;j}^{N(N-1)/2} \phi(|\vec q_i - \vec q_j|) .\]</div>
@@ -331,46 +339,44 @@ TeX: {
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[\hat \Theta_{ij} := \frac{\partial \phi_{ij} }{\partial \vec q_i}\frac{\partial }{\partial \vec p_i} + \frac{\partial \phi_{ij}}{\partial \vec q_j} \frac{\partial}{\partial \vec p_j}\]</div>
-<p>Next write down the explicit Liouville equation for this problem and integrate over <span class="math notranslate nohighlight">\(\{ \vec X_{s+1}, \cdots, \vec X_N \}\)</span>. Make approximations (large N etc), finally we have a hierarchy,</p>
+<p>Write down the explicit Liouville equation for this problem and integrate over <span class="math notranslate nohighlight">\(\{ \vec X_{s+1}, \cdots, \vec X_N \}\)</span>. Using approximation of large N limit, we derive a hierarchical set of equations,</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial F_s}{\partial t} +  \hat{\mathscr H^s} F_s = \frac{1}{v}\sum_{i=1}^s\int d\vec X_{s+1} \hat \Theta_{i,s+1} F_{s+1}(\vec X_1,\cdots,\vec X_{s+1}, t)\]</div>
 <p>where <span class="math notranslate nohighlight">\(v=V/N\)</span>.</p>
-<p>This shows exactly why stat mech is hard. The smaller s is, the easier the solution. BUT we see that to find out <span class="math notranslate nohighlight">\(s=1\)</span>, we need <span class="math notranslate nohighlight">\(s=2\)</span> and the hierarchy never cut. What do we do? We cut manually.</p>
-</div>
-<div class="section" id="why-irreversible">
-<span id="index-1"></span><h2>Why Irreversible<a class="headerlink" href="#why-irreversible" title="Permalink to this headline">¶</a></h2>
-<p>The reason that a system is irreversible is because we lost information. In other words, the correlation function of time is shorter as the any system would be coupled to the reservoir. So any system would transfer information to the reservoir and the information just runs aways deep into the reservoir. With information loss the system can not be reversible. More quantum mechanically, the system loses information throught entanglement (mostly).</p>
-<p>The classical idea of irreversibility is through H theorem. Boltzmann defines a quantity</p>
-<div class="math notranslate nohighlight">
-\[H = \int\int \rho(\vec r,\vec v, t) \ln \rho(\vec r,\vec v, t) d\tau d\omega\]</div>
-<p>where <span class="math notranslate nohighlight">\(d\tau d\omega\)</span> is the infinitesemal volume in <span class="math notranslate nohighlight">\(\mu\)</span> space, <span class="math notranslate nohighlight">\(\rho(\vec r,\vec v, t)\)</span> is the probability density.</p>
-<p>Boltzmann proved that this quantity can not decrease using Boltzmann equation.</p>
-<p>This result shows the statistical mechanics view of the second law of thermodynamics, which says that adiabatic process can never decrease the entropy of a system.</p>
+<p>The smaller <span class="math notranslate nohighlight">\(s\)</span> is, the lower the order of differentials is, thus the easier the solution seems to be. Unfortunately, to find out <span class="math notranslate nohighlight">\(s=1\)</span>, we need <span class="math notranslate nohighlight">\(s=2\)</span> and the hierarchy goes haywire. Sooner or later, we have to cut the hierarchy manually.</p>
 </div>
 <div class="section" id="road-map-of-statistical-mechanics">
 <h2>Road Map of Statistical Mechanics<a class="headerlink" href="#road-map-of-statistical-mechanics" title="Permalink to this headline">¶</a></h2>
-<p>As we said previously, the ideal situation is that we solve Liouville equation directly and exactly. However, it’s not generally possible. So we turn to some mesoscropic method for help.</p>
+<p>As mentioned previously, the ideal situation is to solve Liouville equation directly and exactly. However, it’s generally impossible. The knowledge in between marcoscopic and microscopic, aka, mesoscropic, can help.</p>
+<p>We start from the microscopic equations, then trucate at some hierarchy. Approximated results can be obtained. Then the approximated result is used to calculate the marcoscopic quantities.</p>
 <img alt="How Statistical Physicists Break Their Promise" src="../_images/mesoscopic.png" />
-<p>We start from microscopic equation, work on them, them trucate at some point, meaning approximation. Then use the approximated result to calculate the marcoscopic quantities.</p>
-<p>An example of this method is that we divide a box of gas into two parts. Then we talk about only two states which is LEFT state and RIGHT state instead of the phase space states.</p>
+<p>We investigate a box of gas. First of all, we divide the box of gas into two parts. Two states, i.e.,  the LEFT state and the RIGHT state, are discussed instead of states in the whole phase space.</p>
 <img alt="Coarsing Process" class="align-center" src="../_images/coarseProcess.png" />
-<p>Now we can write down two equations by intuition,</p>
+<p>We can write down two equations using our intuition,</p>
 <div class="math notranslate nohighlight">
 \[\frac{d P_L}{d t} = T_{LR} P_R - T_{RL}P_L\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[\frac{d P_R}{d t} = T_{RL} P_L - T_{LR}P_R .\]</div>
-<p>The first equation means that the change of probability that a particle in LEFT state is rate from RIGHT to LEFT time the probability that the particle is in RIGHT state, minus the rate from LEFT state to RIGHT state times the probability that the particle is in LEFT state. This is just simply an linear model of gaining and losing.</p>
-<p>It becomes interesting that we can discribe the system in such an easy way. Will it work? We’ll see.</p>
-<p>More generally, we have</p>
+<p>The first equation means that the change of <strong>probability that a particle is in LEFT state</strong> is the <strong>rate from RIGHT to LEFT</strong> times the <strong>probability that the particle is in RIGHT state</strong>, minus the <strong>rate from LEFT state to RIGHT state</strong> times the <strong>probability that the particle is in LEFT state</strong>. This is just simply an linear model of gains and loses.</p>
+<p>This is a coarse grained view. More generally, we have</p>
 <div class="math notranslate nohighlight">
 \[\frac{d}{d t} P_\xi = \sum_\mu \left( T_{\xi\mu}P_\mu - T_{\mu\xi} P_{\xi} \right) .\]</div>
 <p>The important thing is that these equations are linear.</p>
-<p><strong>Now we can start form these equations instead of the Liouville equation to solve the problem. It’s called mesoscopic. The next thing is to connect these mesoscopic equations to the microscopic equations.</strong></p>
+<p><strong>Now we can start form these equations instead of the Liouville equation to solve the problem. It’s called mesoscopic.</strong> We simply need to connect these mesoscopic equations to the microscopic equations.</p>
 </div>
+<div class="section" id="why-irreversible">
+<span id="index-1"></span><h2>Why Irreversible<a class="headerlink" href="#why-irreversible" title="Permalink to this headline">¶</a></h2>
+<p>The reason that a system is irreversible is because we’ve lost information. In other words, the correlation function of time is short as the any system would be coupled to the reservoir. So any system would transfer information in and out into the reservoir and the information just dissipates deep into the reservoir. With information loss the system can not be reversible. In quantum mechanics, the system loses information (mostly) throught entanglement.</p>
+<p>The classical idea of irreversibility is through H theorem. Boltzmann defined a <span class="math notranslate nohighlight">\(H\)</span> functional to measure the irreversibility</p>
+<div class="math notranslate nohighlight">
+\[H = \int\int \rho(\vec r,\vec v, t) \ln \rho(\vec r,\vec v, t) d\tau d\omega\]</div>
+<p>where <span class="math notranslate nohighlight">\(d\tau d\omega\)</span> is the infinitesemal volume in <span class="math notranslate nohighlight">\(\mu\)</span> space, <span class="math notranslate nohighlight">\(\rho(\vec r,\vec v, t)\)</span> is the probability density.</p>
+<p>Boltzmann then proved that this <span class="math notranslate nohighlight">\(H\)</span> functional can not decrease for isolated and weakly interacting systems.</p>
+<p>This result shows the statistical mechanics view of the second law of thermodynamics, which indicates that adiabatic process can never decrease the entropy of a system.</p>
 <div class="section" id="a-review-of-boltzmann-equation-h-theorem">
-<h2>A Review of Boltzmann Equation &amp; H Theorem<a class="headerlink" href="#a-review-of-boltzmann-equation-h-theorem" title="Permalink to this headline">¶</a></h2>
-<p>The objectives are</p>
+<h3>A Review of Boltzmann Equation &amp; H Theorem<a class="headerlink" href="#a-review-of-boltzmann-equation-h-theorem" title="Permalink to this headline">¶</a></h3>
+<p>We will</p>
 <ol class="arabic simple">
 <li><p>Derive Boltzmann equation from classical scattering theory of rigid balls.</p></li>
 <li><p>Derive continuity equation from Boltzmann equation.</p></li>
@@ -378,50 +384,53 @@ TeX: {
 <li><p>Understand H theorem.</p></li>
 </ol>
 <div class="section" id="boltzmann-equation-derivation">
-<h3>Boltzmann equation derivation<a class="headerlink" href="#boltzmann-equation-derivation" title="Permalink to this headline">¶</a></h3>
-<p>The idea is to find out an equation for one particle probability density <span class="math notranslate nohighlight">\(f_j(\vec r, \vec v_j,t)\)</span> by considering the number of particles into this state and out of state due to collision. Since we can find all contributions to <span class="math notranslate nohighlight">\(f_j\)</span> by applying scattering theory of classical particles, this equation can be written down explicitly which turns out to be an integrodifferential equation.</p>
-<p>The number of particles in a volume <span class="math notranslate nohighlight">\(d\vec r d\vec v\)</span> at position <span class="math notranslate nohighlight">\(\vec r\)</span> with velocity <span class="math notranslate nohighlight">\(\vec v_j\)</span> is</p>
+<span id="index-2"></span><h4>Boltzmann equation derivation<a class="headerlink" href="#boltzmann-equation-derivation" title="Permalink to this headline">¶</a></h4>
+<p>The idea is to find an equation for one particle probability density <span class="math notranslate nohighlight">\(f_j(\vec r, \vec v_j,t)\)</span> by considering the number of particles move into this state and out of state due to collisions between the particles. Since we can find all contributions to <span class="math notranslate nohighlight">\(f_j\)</span> by applying scattering theory of classical particles, this equation can be written down explicitly. It will be an integrodifferential equation.</p>
+<p>The number of particles in a differential volume <span class="math notranslate nohighlight">\(d\vec r d\vec v\)</span> at position <span class="math notranslate nohighlight">\(\vec r\)</span> with velocity <span class="math notranslate nohighlight">\(\vec v_j\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[f_j(\vec r, \vec v_j,t)d\vec r d\vec v_j .\]</div>
-<p>Consider the situation after a short time <span class="math notranslate nohighlight">\(dt\)</span> we can write down the change of particle numbers due to collision and finally we will get Boltzmann equation.</p>
+<p>Consider the distribution in a short time <span class="math notranslate nohighlight">\(dt\)</span>. We write down the change of particle numbers due to collision and we find the Boltzmann equation.</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial f_j}{\partial t} + \vec v_j\cdot \nabla _ {\vec r}f_j + \frac{\vec X _ j}{m_j} \cdot \nabla_{\vec v_j} f_j = 2\pi \sum_i \iint \left(f _ i'f _ j' - f _ i f _ j\right) g _ {ij} b \mathrm db  \mathrm d \vec v_i\]</div>
-<p>where <span class="math notranslate nohighlight">\(\vec X\)</span> is the external force on the particle, prime denotes the quantity after collision, <span class="math notranslate nohighlight">\(b\)</span> is the impact parameter.</p>
-<p>In the derivation, the most important part is to identify the number of particles into and out of this state due to collision.</p>
+<p>where <span class="math notranslate nohighlight">\(\vec X\)</span> is the external force on the particle, the prime <span class="math notranslate nohighlight">\({}'\)</span> denotes the quantity after collision, and <span class="math notranslate nohighlight">\(b\)</span> is the impact parameter.</p>
+<div class="hint admonition">
+<p class="admonition-title">Derivation</p>
+<p>In the derivation, the most important part is to identify the number of particles into and out of this state due to collisions.</p>
+</div>
 </div>
 <div class="section" id="boltzmann-equation-continuity-equation">
-<h3>Boltzmann equation &amp; Continuity Equation<a class="headerlink" href="#boltzmann-equation-continuity-equation" title="Permalink to this headline">¶</a></h3>
-<p>We can derive from Boltzmann equation the Enskog’s equation then simplify to continuity equation by picking up an conserved quantity as <span class="math notranslate nohighlight">\(\psi_i\)</span> in Enskog’s equation.</p>
-<p>Continuity equation is alway true for such an conserved system so this results is very conceivable.</p>
+<span id="index-3"></span><h4>Boltzmann equation &amp; Continuity Equation<a class="headerlink" href="#boltzmann-equation-continuity-equation" title="Permalink to this headline">¶</a></h4>
+<p>We can derive from the Boltzmann equation the Enskog’s equation and continuity equation by choosing an conserved quantity as <span class="math notranslate nohighlight">\(\psi_i\)</span> in Enskog’s equation.</p>
 </div>
 <div class="section" id="h-theorem">
-<h3>H Theorem<a class="headerlink" href="#h-theorem" title="Permalink to this headline">¶</a></h3>
-<p>H theorem says that the quantity <span class="math notranslate nohighlight">\(H\)</span> can not decrease. The requirements of course should be that in a classical, particle number conserved system.</p>
-<p>First define</p>
+<h4>H Theorem<a class="headerlink" href="#h-theorem" title="Permalink to this headline">¶</a></h4>
+<p>H theorem says that the functional <span class="math notranslate nohighlight">\(H\)</span> can not decrease. This particular derivation requires a classical, particle number conserved system.</p>
+<p>Define the <span class="math notranslate nohighlight">\(H\)</span> functional,</p>
 <div class="math notranslate nohighlight">
 \[H(t) = \iint  f(\vec r, \vec v, t) \ln  f(\vec r, \vec v, t) d\vec r d\vec v\]</div>
-<p>Use Boltzmann equation we find out that</p>
+<p>Using the Boltzmann equation derived previously, the following relation is proved</p>
 <div class="math notranslate nohighlight">
 \[\frac{d H}{dt} \leq 0\]</div>
 <p>in which equal sign is valid if&amp;f</p>
 <div class="math notranslate nohighlight">
 \[f' f_1' = f f_1 .\]</div>
 </div>
-<div class="section" id="h-theorem-discussion">
-<h3>H Theorem Discussion<a class="headerlink" href="#h-theorem-discussion" title="Permalink to this headline">¶</a></h3>
-<p>There were two objections on H theorem.</p>
+<div class="section" id="h-theorem-discussions">
+<h4>H Theorem Discussions<a class="headerlink" href="#h-theorem-discussions" title="Permalink to this headline">¶</a></h4>
+<p>There were two objections on H theorem:</p>
 <ol class="arabic simple">
 <li><p>Loschmidt: All collisions can be reversed in the view of classical mechanics;</p></li>
 <li><p>Zermelo: Poincare recursion theorem says an equilibrium system can go back to inequilibrium.</p></li>
 </ol>
-<p>To Loschmidt’s questioning, Boltzmann pointed out that H theorem is a statistical theorem rather than mechanics theorem. Quantities in this theorem like <span class="math notranslate nohighlight">\(f\)</span> are statistical average not the quantity of exactly which particle.</p>
-<p>Zermelo’s objection is not valid because the recursion time is extremely long.</p>
+<p>To Loschmidt’s questioning, Boltzmann pointed out that H theorem is a statistical theorem rather than mechanics theorem. Quantities in this theorem like <span class="math notranslate nohighlight">\(f\)</span> are statistical averages, not the quantity of a specific particle.</p>
+<p>Zermelo’s objection is not a serious problem because the recursion time is extremely long.</p>
+</div>
 </div>
 </div>
 <div class="section" id="footnotes">
 <h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
-<dl class="footnote brackets">
-<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dl class="citation">
+<dt class="label" id="reichl"><span class="brackets"><a class="fn-backref" href="#id1">Reichl</a></span></dt>
 <dd><ol class="upperalpha simple" start="12">
 <li><ol class="upperalpha simple" start="5">
 <li><p>Reichl, A Modern Course in Statistical Physics</p></li>
