@@ -90,7 +90,7 @@ With an external magnetic field, the energy of the system is determined by
 
 where :math:`s_i=\pm 1`.
 
-Each of the possible configuration of the the two magnets is considered as a **microstate**. That being said, the equal a-prior principle tells us that the probabilities of the different configurations are the same, **for each total energy**, if we our restricting observable is energy. This is an effort of least information assumption.
+Each of the possible configuration of the the two magnets is considered as a **microstate**. That being said, the equal a-prior principle tells us that the probabilities of the different configurations are the same, **for each total energy**, if we our restricting observable is energy. This is an effort of least information assumption, a.k.a., the Bernoulli's principle of indifference.[Buck2015]_
 
 We have the following possible **energy distributions**.
 
@@ -184,3 +184,9 @@ For example, we could calculate all the configurations and energies of the confi
 
 
 In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as :math:`2^N` where :math:`N` is the total number of particles, if we do not implement any parallel computations.
+
+
+References
+--------------------------
+
+.. [Buck2015] `Buck, B., & Merchant, A. C. (2015). Probabilistic Foundations of Statistical Mechanics: A Bayesian Approach. <http://arxiv.org/abs/1512.01368>`_
