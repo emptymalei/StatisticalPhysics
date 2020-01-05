@@ -17,7 +17,7 @@ In this section, we argue that requiring the average energy of a whole quantum m
 The Schrodinger equation reads
 
 .. math::
-   i \frac{\partial \ket{\Psi (t)} }{\partial t} = \hat \mathscr H \ket{\Psi (t)},
+   i \frac{\partial \ket{\Psi (t)} }{\partial t} = \hat {\mathscr H} \ket{\Psi (t)},
 
 where :math:`\ket{\Psi (t)}` is the state describing the whole system of many particles. The general solution is
 
@@ -29,25 +29,25 @@ where :math:`\ket{\psi_n}` are the energy eigenstates, :math:`E_n` are the energ
 Conservation of energy says
 
 .. math::
-   \frac{\partial \bra{ \Psi (t) } \hat \mathscr H \ket{\Psi (t)} }{\partial t} = 0.
+   \frac{\partial \bra{ \Psi (t) } \hat {\mathscr H} \ket{\Psi (t)} }{\partial t} = 0.
 
 
-Suppose we have an **observable that commutes with the Hamiltonian**, i.e., :math:`\left[\hat \mathscr O , \hat \mathscr H \right] = 0`, the expectation of the observable is also constant of motion, i.e.,
-
-.. math::
-   \frac{\partial \bra{ \Psi (t) } \hat \mathscr O \ket{\Psi (t)} }{\partial t} = 0.
-
-Suppose we have an **observable that does't commute with the Hamiltonian**, i.e., :math:`\left[\hat \mathscr O , \hat \mathscr H \right] \neq 0`, the expectation of the observable is
+Suppose we have an **observable that commutes with the Hamiltonian**, i.e., :math:`\left[\hat {\mathscr O}, \hat {\mathscr H} \right] = 0`, the expectation of the observable is also constant of motion, i.e.,
 
 .. math::
-   & \bra{ \Psi (t) } \hat \mathscr O \ket{\Psi (t)} \\
-   =& \sum_{m,n}a^*_m a_n \bra{\phi_m} \hat\mathscr O \ket{\phi_n} e^{-i (E_n - E_m) t} \\
-   = & \sum_{m,n} \delta_{m,n} a^*_m a_n \bra{\phi_m} \hat\mathscr O \ket{\phi_n} + \tilde O(t),
+   \frac{\partial \bra{ \Psi (t) } \hat {\mathscr O} \ket{\Psi (t)} }{\partial t} = 0.
+
+Suppose we have an **observable that does't commute with the Hamiltonian**, i.e., :math:`\left[\hat {\mathscr O} , \hat {\mathscr H} \right] \neq 0`, the expectation of the observable is
+
+.. math::
+   & \bra{ \Psi (t) } \hat {\mathscr O} \ket{\Psi (t)} \\
+   =& \sum_{m,n}a^*_m a_n \bra{\phi_m} \hat{\mathscr O} \ket{\phi_n} e^{-i (E_n - E_m) t} \\
+   = & \sum_{m,n} \delta_{m,n} a^*_m a_n \bra{\phi_m} \hat {\mathscr O} \ket{\phi_n} + \tilde O(t),
 
 where :math:`\tilde O(t)` is the time dependent part
 
 .. math::
-   \tilde O(t) = \sum_{m \neq n} a^*_m a_n \bra{\phi_m} \hat\mathscr O \ket{\phi_n} e^{-i (E_n - E_m) t} \equiv \sum_{m, n} A_{mn} O_{mn} e^{-i(E_n - E_m)t},
+   \tilde O(t) = \sum_{m \neq n} a^*_m a_n \bra{\phi_m} \hat {\mathscr O} \ket{\phi_n} e^{-i (E_n - E_m) t} \equiv \sum_{m, n} A_{mn} O_{mn} e^{-i(E_n - E_m)t},
 
 where :math:`A_{mn} \delta_{mn} = 0` and both :math:`A_{mn}` and :math:`O_{mn}` are hermitian. The key is to prove that :math:`\tilde O(t)` only provides small fluctuations. Unless the terms satisfies some specific coherent conditions, those oscillations will not add up to large values. Thus the time dependent term provides fluctuations only.
 

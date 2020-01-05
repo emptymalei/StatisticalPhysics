@@ -284,25 +284,25 @@ TeX: {
 <p>In this section, we argue that requiring the average energy of a whole quantum mechanical system to be constant, a.k.a., constant of motion, leads to constant or almost constant observables. We follow the derivation in <a class="reference internal" href="#buck2015" id="id2"><span>[Buck2015]</span></a>.</p>
 <p>The Schrodinger equation reads</p>
 <div class="math notranslate nohighlight">
-\[i \frac{\partial \ket{\Psi (t)} }{\partial t} = \hat \mathscr H \ket{\Psi (t)},\]</div>
+\[i \frac{\partial \ket{\Psi (t)} }{\partial t} = \hat {\mathscr H} \ket{\Psi (t)},\]</div>
 <p>where <span class="math notranslate nohighlight">\(\ket{\Psi (t)}\)</span> is the state describing the whole system of many particles. The general solution is</p>
 <div class="math notranslate nohighlight">
 \[\ket{\Psi(t)} = \sum a_n e^{-i E_n t} \ket{\psi_n},\]</div>
 <p>where <span class="math notranslate nohighlight">\(\ket{\psi_n}\)</span> are the energy eigenstates, <span class="math notranslate nohighlight">\(E_n\)</span> are the energy eigen values.</p>
 <p>Conservation of energy says</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial \bra{ \Psi (t) } \hat \mathscr H \ket{\Psi (t)} }{\partial t} = 0.\]</div>
-<p>Suppose we have an <strong>observable that commutes with the Hamiltonian</strong>, i.e., <span class="math notranslate nohighlight">\(\left[\hat \mathscr O , \hat \mathscr H \right] = 0\)</span>, the expectation of the observable is also constant of motion, i.e.,</p>
+\[\frac{\partial \bra{ \Psi (t) } \hat {\mathscr H} \ket{\Psi (t)} }{\partial t} = 0.\]</div>
+<p>Suppose we have an <strong>observable that commutes with the Hamiltonian</strong>, i.e., <span class="math notranslate nohighlight">\(\left[\hat {\mathscr O}, \hat {\mathscr H} \right] = 0\)</span>, the expectation of the observable is also constant of motion, i.e.,</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial \bra{ \Psi (t) } \hat \mathscr O \ket{\Psi (t)} }{\partial t} = 0.\]</div>
-<p>Suppose we have an <strong>observable that does’t commute with the Hamiltonian</strong>, i.e., <span class="math notranslate nohighlight">\(\left[\hat \mathscr O , \hat \mathscr H \right] \neq 0\)</span>, the expectation of the observable is</p>
+\[\frac{\partial \bra{ \Psi (t) } \hat {\mathscr O} \ket{\Psi (t)} }{\partial t} = 0.\]</div>
+<p>Suppose we have an <strong>observable that does’t commute with the Hamiltonian</strong>, i.e., <span class="math notranslate nohighlight">\(\left[\hat {\mathscr O} , \hat {\mathscr H} \right] \neq 0\)</span>, the expectation of the observable is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}&amp; \bra{ \Psi (t) } \hat \mathscr O \ket{\Psi (t)} \\
-=&amp; \sum_{m,n}a^*_m a_n \bra{\phi_m} \hat\mathscr O \ket{\phi_n} e^{-i (E_n - E_m) t} \\
-= &amp; \sum_{m,n} \delta_{m,n} a^*_m a_n \bra{\phi_m} \hat\mathscr O \ket{\phi_n} + \tilde O(t),\end{split}\]</div>
+\[\begin{split}&amp; \bra{ \Psi (t) } \hat {\mathscr O} \ket{\Psi (t)} \\
+=&amp; \sum_{m,n}a^*_m a_n \bra{\phi_m} \hat{\mathscr O} \ket{\phi_n} e^{-i (E_n - E_m) t} \\
+= &amp; \sum_{m,n} \delta_{m,n} a^*_m a_n \bra{\phi_m} \hat {\mathscr O} \ket{\phi_n} + \tilde O(t),\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\tilde O(t)\)</span> is the time dependent part</p>
 <div class="math notranslate nohighlight">
-\[\tilde O(t) = \sum_{m \neq n} a^*_m a_n \bra{\phi_m} \hat\mathscr O \ket{\phi_n} e^{-i (E_n - E_m) t} \equiv \sum_{m, n} A_{mn} O_{mn} e^{-i(E_n - E_m)t},\]</div>
+\[\tilde O(t) = \sum_{m \neq n} a^*_m a_n \bra{\phi_m} \hat {\mathscr O} \ket{\phi_n} e^{-i (E_n - E_m) t} \equiv \sum_{m, n} A_{mn} O_{mn} e^{-i(E_n - E_m)t},\]</div>
 <p>where <span class="math notranslate nohighlight">\(A_{mn} \delta_{mn} = 0\)</span> and both <span class="math notranslate nohighlight">\(A_{mn}\)</span> and <span class="math notranslate nohighlight">\(O_{mn}\)</span> are hermitian. The key is to prove that <span class="math notranslate nohighlight">\(\tilde O(t)\)</span> only provides small fluctuations. Unless the terms satisfies some specific coherent conditions, those oscillations will not add up to large values. Thus the time dependent term provides fluctuations only.</p>
 <p>In other words, a quantum mechanical system has equilibrium states.</p>
 </div>
