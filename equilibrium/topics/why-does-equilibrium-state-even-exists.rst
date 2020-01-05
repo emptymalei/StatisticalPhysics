@@ -12,7 +12,7 @@ In most cases, we merely confine a few macroscopic observables. Why does equilib
 Quantum Mechanics
 -----------------------------------
 
-In this section, we argue that requiring the average energy of a whole quantum mechanical system to be constant, a.k.a., constant of motion, leads to constant or almost constant observables. We follow derivation in [Buck2015]_.
+In this section, we argue that requiring the average energy of a whole quantum mechanical system to be constant, a.k.a., constant of motion, leads to constant or almost constant observables. We follow the derivation in [Buck2015]_.
 
 The Schrodinger equation reads
 

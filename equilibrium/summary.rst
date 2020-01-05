@@ -51,10 +51,28 @@ Physical systems are usually composed of a large amount of particles. In princip
 
 This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the observable quantities, i.e., the probability of the system being on each point in the :math:`\Gamma` space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it.
 
-However, this approach requires a first principle that we could use to figure out the distribution of the observables. For example, the Boltzmann theory assume equal a priori probabilities for the microstates. In Boltzmann theory, we need two aspects of knowledge to understand the statistical system.
+However, this approach requires a first principle that we could use to figure out the distribution of the observables :math:`\{\mathscr O_i\}`, i.e., :math:`p(\{\mathscr O_i\})`. More regoriously, it is expected that we derive a theory that tells us the conditional probability :math:`p(\{\mathscr O_i\} \vert t, \{m_i, r_i\})` where :math:`\{m_i, r_i\}` is a set of features that are defined by the materials, the enviroment and the restrictions, :math:`t` is time.
+
+.. admonition:: A Bayesian View
+   :class: note
+
+   In Bayesian statistics,
+
+   .. math::
+      p(\{\mathscr O_i\} \vert t, \{m_i, r_i\}) p(t \vert \{m_i, r_i\} ) = p(t \vert \{\mathscr O_i\} , \{m_i, r_i\} ) p(\{\mathscr O_i\}).
+
+   :math:`p(\{\mathscr O_i\})` is the prior distribution and is observed in experiments.
+
+   This formalism brings in the question of how our statistical theory of matter is validated. A statistical theory predict the most prominent values of the observables as well as the confidence of the predicted value. On the other hand, our experiments tell us the probability distributions of the observables from our sampling methods in experiments. To validate the statistical theory being developed, a hypothesis test should be carried out.
+
+
+
+For example, the Boltzmann theory assume equal a priori probabilities for the microstates. In Boltzmann theory, we need two aspects of knowledge to understand the statistical system.
 
 1. The distribution of the mirostates, which has been assumed to be equal.
 2. How the energy of combinations of single particles are calculated. For example, this refers to the calculation of the energy levels in quantum mechanics.
+
+
 
 
 The Two Approaches of Statistical Mechanics
