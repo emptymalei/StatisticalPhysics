@@ -285,7 +285,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Statistical Physics'
-copyright = u'2019, Lei Ma'
+copyright = u'2020, Lei Ma'
 
 
 # The version info for the project you're documenting, acts as replacement for
@@ -598,7 +598,7 @@ texinfo_documents = [
 epub_title = u'Statistical Physics'
 epub_author = u'Lei Ma'
 epub_publisher = u'Lei Ma'
-epub_copyright = u'2019, Lei Ma'
+epub_copyright = u'2020, Lei Ma'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
