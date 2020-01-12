@@ -284,69 +284,74 @@ TeX: {
 <h1>Master Equation<a class="headerlink" href="#master-equation" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="index-0">
 <span id="id1"></span><h2>Master Equation<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h2>
-<p>One way of starting somewhere in between instead of starting from microscopic equations to get macroscopic quantities is coarsing the system and use <strong>Master Equation</strong>.</p>
+<p><strong>Master equation</strong> method allows us to ignore the details of the microscopic equations yet capturing the properties of the system. The master equations describes the probability of states <span class="math notranslate nohighlight">\(P_\xi(t)\)</span> by looking into the gains and losses,</p>
 <div class="math notranslate nohighlight">
-\[\frac{dP_\xi}{d t} = \sum_{\mu} \left( T_{\xi\mu} P_\mu - T_{\mu\xi} P_\xi \right)\]</div>
-<p>which means the rate of <span class="math notranslate nohighlight">\(P_\xi(t)\)</span> is determined by the gain and loss of probability.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p><strong>What’s the problem of this master equation?</strong></p>
-<p>It’s linear. AND it comes from nowhere.</p>
+\[\frac{dP_\xi}{d t} = \sum_{\mu} \left( T_{\xi\mu} P_\mu - T_{\mu\xi} P_\xi \right).\]</div>
+<div class="warning admonition">
+<p class="admonition-title">What’s the problem of this master equation?</p>
+<ol class="arabic simple">
+<li><p>It’s linear and first order. High order effects are ignored.</p></li>
+<li><p>It comes from nowhere. To prove and interprate the transfer rates is required.</p></li>
+</ol>
 </div>
 </div>
 <div class="section" id="derive-master-equation">
 <span id="index-1"></span><h2>“Derive” Master Equation<a class="headerlink" href="#derive-master-equation" title="Permalink to this headline">¶</a></h2>
-<p>One way of deriving master equation is to start from <span class="highlit">Chapman-Kolmogorov equation</span> which is</p>
-<div class="math notranslate nohighlight">
-\[P_\xi(t) = \sum_\mu Q_{\xi\mu} P_\mu(t-\tau) .\]</div>
-<p>This equation describes a discrete and randomwalk process, aka Markov process. In other words, the information about motion is lost with every movement. In this case, all information has been lost before a time interval <span class="math notranslate nohighlight">\(\tau\)</span>.</p>
-<p>The formalism of this equation reminds us the time derivative,</p>
+<p>Suppose the states of a system are denoted as <span class="math notranslate nohighlight">\(\xi\)</span>, and the probability of the states at time <span class="math notranslate nohighlight">\(t\)</span> are denoted as <span class="math notranslate nohighlight">\(P_\xi(t)\)</span>. We assume the probability of the states at time <span class="math notranslate nohighlight">\(t\)</span> only depend on the probability of the states a moment ago,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn">
+<span class="eqno">(10)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn" title="Permalink to this equation">¶</a></span>\[P_\xi(t) = \sum_\mu Q_{\xi\mu} P_\mu(t-\tau) .\]</div>
+<p>This is the <span class="highlit">Chapman-Kolmogorov equation</span>. The equation describes a randomwalk process, a.k.a. Markov process.</p>
+<div class="note admonition">
+<p class="admonition-title">Markov Process and State Machine</p>
+<p>The assumption that the current states doesn’t depend on the full history indicates that the system follows a fixed state diagram. In other words, we are using a state machine to approximate a statistical system, except that our physical system has an enormous amount of possible states.</p>
+<p>It may sound weird that we only need the most recent history. However, a Markov process allows us to reach an desired equilibrium quickly.</p>
+</div>
+<p>The formalism of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn">(10)</a> reminds us of the time derivative,</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_\xi(t) = \lim \frac{P_\xi(t) - P_\xi(t-\tau)}{\tau} .\]</div>
-<p>To achieve this, notice that</p>
-<div class="math notranslate nohighlight">
-\[\sum_\mu Q_{\mu\xi} = 1.\]</div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>It’s very important to see this result clearly. Here we write this identity by regarding that the system must jump out of <span class="math notranslate nohighlight">\(\xi\)</span> state because the summation doesn’t include the case that <span class="math notranslate nohighlight">\(\mu=\xi\)</span>.</p>
+<p>Notice that</p>
+<div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn-normalization-relation">
+<span class="eqno">(11)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation" title="Permalink to this equation">¶</a></span>\[\sum_\mu Q_{\mu\xi} = 1.\]</div>
+<div class="note admonition">
+<p class="admonition-title">Why the normalization?</p>
+<p>It is required that the probability of all the states at time <span class="math notranslate nohighlight">\(t\)</span> to be 1, <span class="math notranslate nohighlight">\(\sum_\xi P_\xi(t) = 1\)</span>.</p>
 </div>
-<p>Then we can rewrite Chapman-Kolmogorov equation,</p>
-<div class="math notranslate nohighlight">
-\[P_\xi(t) - P_\xi(t-\tau) = \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
-<p>in which we used</p>
+<p>Substract from the Chapman-Kolmogorov equation a term <span class="math notranslate nohighlight">\(P_\xi(t-\tau)\)</span>, we get</p>
+<div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">
+<span class="eqno">(12)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel" title="Permalink to this equation">¶</a></span>\[P_\xi(t) - P_\xi(t-\tau) = \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
+<p>in which we have applied a variation of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation">(11)</a>, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[P_\xi(t-\tau) = \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
-<p>Then it seems clear that we can just divide <span class="math notranslate nohighlight">\(\tau\)</span> on each side and take the limit that <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span>.</p>
+<p>We divide equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">(12)</a> by <span class="math notranslate nohighlight">\(\tau\)</span> on both sides and the limit of <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span> is applied,</p>
 <div class="math notranslate nohighlight">
 \[\lim_{\tau\rightarrow} \frac{P_\xi(t) - P_\xi(t-\tau)}{\tau} = \lim_{\tau\rightarrow 0} \frac{ \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) }{\tau}\]</div>
-<p>Watch out. The right hand side goes to infinity usually. One of the way out is to assume that</p>
+<p>At first glance, the right hand side of the above equation goes to infinity. However, <strong>we do not expect the time derivative of a probability distribution to be infinite.</strong> That being said, there should be a specific relation between the two terms in the denominator. If we assume that</p>
 <div class="math notranslate nohighlight">
 \[Q_{ux} = R_{ux}\tau + O(\tau^n)\]</div>
-<p>with <span class="math notranslate nohighlight">\(n &gt; 1\)</span> which introduces a weird property to the system.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>By saying a system obeys <span class="highlit">Chapman-Kolmogorov equation</span> we admit that the system loses information after an time interval <span class="math notranslate nohighlight">\(\tau\)</span>. Now we take the limit <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span>, which means the system has no memory of the past at all! How to is this possible?</p>
-<p>Or can we assume that <span class="math notranslate nohighlight">\(P(t-\tau)\propto \tau\)</span>?</p>
+<p>with <span class="math notranslate nohighlight">\(n &gt; 1\)</span>, the infinity is removed. This is a self-consistency condition so that our initial assumption that the system doesn’t depend the full history holds even for our infinitesimal relations.</p>
+<div class="warning admonition">
+<p class="admonition-title">It is werid.</p>
+<p>By enforcing a system to obey <span class="highlit">Chapman-Kolmogorov equation</span>, we admit that the system loses information before a short time interval <span class="math notranslate nohighlight">\(\tau\)</span>. Now we take the limit <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span>, which means the system has no memory of the past at all! How is this possible?</p>
 </div>
-<p>Anyway, we reach our destination</p>
+<p>We get the following differential form</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_\xi(t) = \sum_\mu \left( R_{\xi\mu}P_\mu(t) - R_{\mu\xi}P_\xi(t) \right)  .\]</div>
 <div class="note admonition">
 <p class="admonition-title">Derivation of Master Equation “Rigorously”</p>
-<p>Derivation of master equation can be more rigorous. <a class="footnote-reference brackets" href="#id7" id="id2">1</a> This note is a rephrase of Reichl’s chapter 6 B. Also refer to Irwin Oppenheim and Kurt E. Shuler’s paper. <a class="footnote-reference brackets" href="#id8" id="id3">2</a></p>
-<p>To do this we need to use conditional probability,</p>
+<p>Derivation of the master equation can be more rigorous. <a class="footnote-reference brackets" href="#id7" id="id2">1</a> This note references Reichl’s chapter 6 B and Irwin Oppenheim and Kurt E. Shuler’s paper. <a class="footnote-reference brackets" href="#id8" id="id3">2</a></p>
+<p>First of all we need the following conditional probability,</p>
 <div class="math notranslate nohighlight">
 \[P_1(y_1,t_1) P_{1|1}(y_1,t_1|y_2,t_2) = P_2(y_1,t_1;y_2,t_2)\]</div>
-<p>which means the probability density of variable Y has value <span class="math notranslate nohighlight">\(y_1\)</span> at time <span class="math notranslate nohighlight">\(t_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> at time <span class="math notranslate nohighlight">\(t_2\)</span> is given by the probability density of variable Y has value <span class="math notranslate nohighlight">\(y_1\)</span> at time <span class="math notranslate nohighlight">\(t_1\)</span> times that of it has value <span class="math notranslate nohighlight">\(y_1\)</span> at time <span class="math notranslate nohighlight">\(t_1\)</span> given it has value <span class="math notranslate nohighlight">\(y_2\)</span> at time <span class="math notranslate nohighlight">\(t_2\)</span>.</p>
-<p>Assume that <span class="highlit">the probability density at</span> <span class="math notranslate nohighlight">\(t_n\)</span> <span class="highlit">only depends on that at</span> <span class="math notranslate nohighlight">\(t_{n-1}\)</span>, we have</p>
+<p>which means the probability of variable Y has value <span class="math notranslate nohighlight">\(y_1\)</span> at time <span class="math notranslate nohighlight">\(t_1\)</span> and <span class="math notranslate nohighlight">\(y_2\)</span> at time <span class="math notranslate nohighlight">\(t_2\)</span> is given by the probability of variable Y has value <span class="math notranslate nohighlight">\(y_1\)</span> at time <span class="math notranslate nohighlight">\(t_1\)</span> times that of it has value <span class="math notranslate nohighlight">\(y_1\)</span> at time <span class="math notranslate nohighlight">\(t_1\)</span> given it has value <span class="math notranslate nohighlight">\(y_2\)</span> at time <span class="math notranslate nohighlight">\(t_2\)</span>.</p>
+<p>Assume that <span class="highlit">the probability at</span> <span class="math notranslate nohighlight">\(t_n\)</span> <span class="highlit">only depends on that at</span> <span class="math notranslate nohighlight">\(t_{n-1}\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[P_{n-1|1}(y_1,t_1;\cdots;y_{n-1},t_{n-1}|y_n,t_n) = P_{1|1}(y_{n-1},t_{n-1}|y_n,t_n) = P_{1|1}(y_{n-1},t_{n-1}|y_n,t_n) ,\]</div>
-<p>if we define the variable in a way that <span class="math notranslate nohighlight">\(t_1&lt;t_2&lt; \cdots &lt;t_n\)</span>.</p>
-<p><strong>This assumption means that the system is chaotic enough.</strong> This is called <strong>Markov process</strong>.</p>
-<p>Like the transition coefficients <span class="math notranslate nohighlight">\(T_{\xi\mu}\)</span> we defined previously, this <span class="math notranslate nohighlight">\(P_{1|1}(y_{n-1},t_{n-1}|y_n,t_n)\)</span> is the <strong>transition probability</strong>.</p>
+<p>if the indices are arranged so that <span class="math notranslate nohighlight">\(t_1&lt;t_2&lt; \cdots &lt;t_n\)</span>.</p>
+<p><strong>This assumption indicates that the system is chaotic enough.</strong> This is called a <strong>Markov process</strong>.</p>
+<p>Similar to the transition coefficients <span class="math notranslate nohighlight">\(T_{\xi\mu}\)</span> we defined previously, this <span class="math notranslate nohighlight">\(P_{1|1}(y_{n-1},t_{n-1}|y_n,t_n)\)</span> is the <strong>transition probability</strong>.</p>
 <p>To find out the time derivative of <span class="math notranslate nohighlight">\(P_1(y_2,t_2)\)</span>, we need to write down the time dependence of it,</p>
 <div class="math notranslate nohighlight">
-\[P_(y_1,t_1;y_2,t_2) = P_1(y_1,t_1) P_{1|1}(y_1,t_1|y_2,t_2)\]</div>
+\[P_1(y_1,t_1;y_2,t_2) = P_1(y_1,t_1) P_{1|1}(y_1,t_1|y_2,t_2)\]</div>
 <p>We integrate over <span class="math notranslate nohighlight">\(y_1\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[P_1(y_2,t_2) = \int P_1(y_1,t_1)P_{1|1}(y_1,t_1|y_2,t_2)dy_1\]</div>
@@ -356,19 +361,19 @@ TeX: {
 <p>Next we can construct time derivatives of these quantities.</p>
 <div class="math notranslate nohighlight">
 \[\partial_{t_1} P_1(y_2,t_1) = \int \lim_{\tau\rightarrow 0} \frac{\int P_1(y_1,t_1) P _ {1|1}(y_1,t_1|y_2,t_1+\tau) - P_1(y_1,t_1) P _ {1|1}(y_1,t_1|y_2,t_1) }{\tau} dy_1\]</div>
-<p>The next step is the messy one. Expand the right hand side using Taylor series, which one can find in Reichl’s book <a class="footnote-reference brackets" href="#id7" id="id4">1</a> , we get the expression for this time derivative,</p>
-<div class="math notranslate nohighlight">
-\[\partial_{t} P_1(y_2,t) = \int dy_1 \left( W(y_1,y_2)P_1(y_1,t) - W(y_2,y_1)P_1(y_2,t) \right) .\]</div>
-<p>This is the <span class="highlit">master equation</span>.</p>
-<p>The reason that <span class="math notranslate nohighlight">\(W(y_1,y_2)\)</span> is an transition rate is that it represents “the probability density perunit time that the system changes from state <span class="math notranslate nohighlight">\(y_1\)</span> to <span class="math notranslate nohighlight">\(y_2\)</span> in the time interval <span class="math notranslate nohighlight">\(t_1\rightarrow t_1 +\tau\)</span> “. <a class="footnote-reference brackets" href="#id7" id="id5">1</a></p>
+<p>We expand the right hand side using Taylor series, the details of which can be found in Reichl’s book <a class="footnote-reference brackets" href="#id7" id="id4">1</a> , then we get a time derivative,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-master-equation-rigorous">
+<span class="eqno">(13)<a class="headerlink" href="#equation-eqn-master-equation-rigorous" title="Permalink to this equation">¶</a></span>\[\partial_{t} P_1(y_2,t) = \int dy_1 \left( W(y_1,y_2)P_1(y_1,t) - W(y_2,y_1)P_1(y_2,t) \right) .\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-master-equation-rigorous">(13)</a> is the <span class="highlit">master equation</span>.</p>
+<p>The reason that <span class="math notranslate nohighlight">\(W(y_1,y_2)\)</span> is a transition rate is that it represents “the probability per unit time that the system changes from state <span class="math notranslate nohighlight">\(y_1\)</span> to <span class="math notranslate nohighlight">\(y_2\)</span> in the time interval <span class="math notranslate nohighlight">\(t_1\rightarrow t_1 +\tau\)</span> “. <a class="footnote-reference brackets" href="#id7" id="id5">1</a></p>
 </div>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Now we see that <span class="highlit">Markov process</span> is the hypothesis we need to get master equation? DO NOT mistake this with <span class="highlit">Markov process</span> ever. There are things unclear in the derivation.</p>
+<div class="important admonition">
+<p class="admonition-title">Is master equation the same as a Markov process?</p>
+<p>In this derivation, we have used the <span class="highlit">Markov process</span>. However, a master equation is not equivalent to a <span class="highlit">Markov process</span>.</p>
 <p>Read Irwin Oppenheim and Kurt E. Shuler’s paper for more details. <a class="footnote-reference brackets" href="#id8" id="id6">2</a></p>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
+<div class="note admonition">
+<p class="admonition-title">Patterns in the Probabilities</p>
 <p>We can find out the <span class="highlit">Chapman-Kolmogorov equation</span></p>
 <div class="math notranslate nohighlight">
 \[P_{1|1}(y_1,t_1|y_3,t_3) = \int P _{1|1}(y_1,t_1|y_2,t_2)P_{1|1}(y_2,t_2|y_3,t_3)dy_2\]</div>
@@ -383,24 +388,24 @@ TeX: {
 </div>
 <div class="section" id="examples-of-master-equation">
 <h2>Examples of Master Equation<a class="headerlink" href="#examples-of-master-equation" title="Permalink to this headline">¶</a></h2>
-<p>Master equation is</p>
+<p>The are many application of the master equation</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_\xi(t) = \sum_\mu \left( R_{\xi\mu}P_\mu(t) - R_{\mu\xi}P_\xi(t) \right) .\]</div>
 <div class="section" id="two-states-degenerate-system">
 <h3>Two States Degenerate System<a class="headerlink" href="#two-states-degenerate-system" title="Permalink to this headline">¶</a></h3>
-<p>In such a system master equations are simply</p>
+<p>The master equations for a two-state degenerate system are</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_1 = R (P_2 - P_1)\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_2 = R (P_1 - P_2) .\]</div>
-<p>To solve the problem, we can choose “canonical coordinates”,</p>
+<p>To solve the equations, we choose a set of “canonical coordinates”,</p>
 <div class="math notranslate nohighlight">
 \[P_+ = P_1+P_2\]</div>
 <p>and</p>
 <div class="math notranslate nohighlight">
 \[P_- = P_1 - P_2 .\]</div>
-<p>By adding the master equations, we have</p>
+<p>By adding the two original master equations, we have</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_+ = 0\]</div>
 <p>and</p>
@@ -409,10 +414,9 @@ TeX: {
 <p>Obviously, the solutions to these equations are</p>
 <div class="math notranslate nohighlight">
 \[P_+(t) = P_+(0), \qquad P_-(t) = P_-(0)e^{-2Rt} .\]</div>
-<p>This result proves that whatever states was the system in initially, it will get to equilibrium finally.</p>
-<p>The term <span class="math notranslate nohighlight">\(e^{-2R t}\)</span> is a decaying process, or in other words a relaxation process.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
+<p>This result proves that whatever states was the system in initially, it will get to equilibrium since the term <span class="math notranslate nohighlight">\(e^{-2R t}\)</span> is a decaying process. This is a relaxation process.</p>
+<div class="hint admonition">
+<p class="admonition-title">Von Neumann equation</p>
 <p>In QM, Von Neumann equations is</p>
 <div class="math notranslate nohighlight">
 \[\hat \rho = \hat\rho(0) e^{-i \hat H t/\hbar},\]</div>
@@ -422,24 +426,23 @@ TeX: {
 <p>where A is a matrix</p>
 <div class="math notranslate nohighlight">
 \[A_{\xi\mu} = -R_{\xi\mu}, \qquad A_{\xi\xi} = \sum_\mu R_{\mu\xi} .\]</div>
-<p>The difference here is the <span class="math notranslate nohighlight">\(i\)</span> in the exponential. Think about decay and rotation.</p>
+<p>The difference here is the <span class="math notranslate nohighlight">\(i\)</span> in the exponential. With <span class="math notranslate nohighlight">\(i\)</span>, we get rotation or oscillation, while without <span class="math notranslate nohighlight">\(i\)</span>, the process is a decay process.</p>
 </div>
 </div>
 <div class="section" id="non-degenerate-two-state-system">
 <h3>Non Degenerate Two State System<a class="headerlink" href="#non-degenerate-two-state-system" title="Permalink to this headline">¶</a></h3>
-<p>In such a system, the transfer matrix is</p>
+<p>In a non-degenerate two-state system, the transfer matrix is</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}A = \begin{pmatrix}A_{11}, A{12} \\ A_{21}, A_{22}\end{pmatrix}\end{split}\]</div>
-<p>Then the master equation for this kind of systems is</p>
+\[\begin{split}\mathbf A = \begin{pmatrix}A_{11}, A{12} \\ A_{21}, A_{22}\end{pmatrix}\end{split}\]</div>
+<p>The master equation is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\partial_t \begin{pmatrix}P_1 \\ P_2 \end{pmatrix} = \begin{pmatrix}A_{11}, A_{12}\\ A_{21}, A_{22} \end{pmatrix} \begin{pmatrix}P_1 \\ P_2 \end{pmatrix}\end{split}\]</div>
-<p>We will see similar exponential decaying or growing behaviors as degenerate system. The difference is the equilibrium point.</p>
+<p>The non-degenerate system shows similar exponential decaying or growing behaviors as in the degenerate system. However, the equilibrium point or fixed point is different.</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_1 = R_{12} P_2 - R_{21} P_1\]</div>
-<p>shows us that at equilibrium when <span class="math notranslate nohighlight">\(\partial_t P_1 = 0\)</span>,</p>
+<p>shows that at equilibrium, i.e., <span class="math notranslate nohighlight">\(\partial_t P_1 = 0\)</span>, the ratio of the probabilities is defined by the coefficients</p>
 <div class="math notranslate nohighlight">
-\[\frac{R_{12}}{R_{21}} = \frac{P_1(\infty)}{P_2(\infty)}\]</div>
-<p>which means the coefficients defines the equilibrium point.</p>
+\[\frac{R_{12}}{R_{21}} = \frac{P_1(\infty)}{P_2(\infty)}.\]</div>
 </div>
 </div>
 <div class="section" id="footnotes">
@@ -473,12 +476,12 @@ TeX: {
 
     </p>
     <p>
-        <span>© <a href="https://leima.is">2019, Lei Ma  <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a> </span>|
+        <span>© <a href="https://leima.is">2020, Lei Ma  <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a> </span>|
         <span>Created with
         <a href="http://sphinx.pocoo.org/">Sphinx</a> and <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>.
         </span>|
         <span><span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
-        <a href="https://github.com/emptymalei/statisticalphysics">On GitHub</a>
+        <a href="https://github.com/emptymalei/statisticalphysics">Source on GitHub</a>
         </span>|
         <span><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
               <a href="http://physics.openmetric.org">Physics Notebook</a>
