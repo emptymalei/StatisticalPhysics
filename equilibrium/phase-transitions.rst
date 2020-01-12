@@ -1,7 +1,7 @@
 Phase Transitions
 ========================
 
-
+.. _schelling-model:
 
 Phase Transitions
 ------------------
@@ -16,6 +16,8 @@ Phase transitions only exists in systems with infinite particles.
 
 
 .. [Leo P. Kadanoff] `Kadanoff's PI Lectures <http://jfi.uchicago.edu/~leop/TALKS/Perimeter%20Stat%20Mech%20Lectures/lectures%20in%20PDF/Part%207%20Mean%20Field%20Theory.pdf>`_
+
+
 
 .. admonition:: Phase Transitions in Other Fields
    :class: note
