@@ -385,7 +385,13 @@ TeX: {
 </div>
 <div class="note admonition">
 <p class="admonition-title">Ensemble Methods in Machine Learning</p>
-<p>In the field of machine learning, ensemble methods have been quite popular. They reduce the problems to the very fundations of statistics which makes them generalizable.</p>
+<p>In the field of machine learning, ensemble methods have been quite popular. Ensemble learning empowers an ensemble of models and aggregate the ensemble predictions into one output.</p>
+<p>For example, random forest method takes the data and make <span class="math notranslate nohighlight">\(N\)</span> copies of it using sampling method such as Bootstrap Aggregating (Bagging) while each of these copies are used to train a decision tree model. The final result is the “average” of all the decision tree results.</p>
+<p>Imagine that each row of the dataset describes a particle. The dataset is then describing a box of particles. The interactions between the particles are not stated but the interactions are the source of the patterns. Thus <strong>an ultimate machine learning algorithm should find a way to simulate the interactions though it is very hard in reality.</strong></p>
+<p>Random forest creates copies of orignal system thus creating an ensemble. <strong>It has been assumed that the sampling with replacement would create copies with similar macroscropic properties.</strong> Each copy is used to calculate a prediction.</p>
+<p>In random forest, the distribution of all the predictions is not necessarily sharp. The solution is to take the average. By taking the average assumes that each decision tree is making the same contribution, or being “democratic”. To ensure the “democracy”, random subspace method, or feature bagging, is introduced. Feature bagging is the core of random forest method.</p>
+<p>In ensemble theory of statistical physics, the macroscopic quantities are calculated using most probable distribution not average. This is justifiy by the sharp distribution of distributions.</p>
+<p>However, one could imagine that the random forest tricks would be useful if ensemble method is treated on a small physical system.</p>
 </div>
 <div class="section" id="ensemble">
 <span id="index-0"></span><h2>Ensemble<a class="headerlink" href="#ensemble" title="Permalink to this headline">¶</a></h2>
