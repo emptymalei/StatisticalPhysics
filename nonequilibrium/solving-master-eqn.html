@@ -285,61 +285,61 @@ TeX: {
 <h1>Solving Master Equations<a class="headerlink" href="#solving-master-equations" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="index-0">
 <span id="id1"></span><h2>Solving Master Equations<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h2>
-<p>Master equation, again, is</p>
-<div class="math notranslate nohighlight">
-\[\frac{d P_m}{dt} = \sum_n R_{mn} P_n - \sum_n R_{nm} P_m\]</div>
-<p>which can be written as a more simple form,</p>
-<div class="math notranslate nohighlight">
-\[\frac{d P_m}{dt} + \sum_n A_{mn}P_n = 0 .\]</div>
-<p>To figure out the elements of this new matrix <span class="math notranslate nohighlight">\(A\)</span>, we need to understand how to combine the RHS of master equation.</p>
+<p>A master equation</p>
+<div class="math notranslate nohighlight" id="equation-eqn-master-eqn-raw">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eqn-master-eqn-raw" title="Permalink to this equation">¶</a></span>\[\frac{d P_m}{dt} = \sum_n R_{mn} P_n - \sum_n R_{nm} P_m\]</div>
+<p>can be simplified into</p>
+<div class="math notranslate nohighlight" id="equation-eqn-master-eqn-comb">
+<span class="eqno">(15)<a class="headerlink" href="#equation-eqn-master-eqn-comb" title="Permalink to this equation">¶</a></span>\[\frac{d P_m}{dt} + \sum_n A_{mn}P_n = 0 .\]</div>
+<p>To figure out the elements of this new matrix <span class="math notranslate nohighlight">\(A\)</span>, we need to understand how to combine the RHS of master equation. The matrix form of the master equation <a class="reference internal" href="#equation-eqn-master-eqn-raw">(14)</a> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\partial_t \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} = \begin{pmatrix} 0  &amp; R_{12} &amp; \cdots &amp; R_{1N} \\ R_{21}  &amp; 0 &amp; \cdots &amp; R_{2N} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ R_{N1} &amp; R_{N2} &amp; \cdots &amp; 0   \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix}   - \sum_{n}R_{nm} \begin{pmatrix}  1 &amp; 0 &amp; \cdots &amp; 0 \\  0 &amp; 1 &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp;  0  \\ 0 &amp; 0 &amp; \cdots &amp; 1  \end{pmatrix}  \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix}\end{split}\]</div>
-<p>Since <span class="math notranslate nohighlight">\(A_{mm} = \sum_n R_{nm}\)</span> is just a real number, we can combine the two matrices on the RHS, which is</p>
+<p>Since <span class="math notranslate nohighlight">\(A_{mm} = \sum_n R_{nm}\)</span> is just a real number, we can combine the two matrices on the RHS,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\partial_t \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} + \begin{pmatrix} A_{11}  &amp; -R_{12} &amp; \cdots &amp; -R_{1N} \\ -R_{21}  &amp; A_{22} &amp; \cdots &amp; -R_{2N} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ -R_{N1} &amp; -R_{N2} &amp; \cdots &amp; A_{NN}   \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} = 0  .\end{split}\]</div>
-<p>We can define the <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix now.</p>
+<p>The <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix is then defined as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}A_{mn} = \begin{cases} -R_{mn} &amp;\quad  n \neq m \\ \sum_{n} R_{nm} &amp; \quad n=m  \end{cases}\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix is defined in this way so that we have the master equation becomes</p>
-<div class="math notranslate nohighlight">
-\[\partial_t \mathbf P + \mathbf A \mathbf P = 0 .\]</div>
-<p>So solve such a matrix equation, we need to diagonalize <span class="math notranslate nohighlight">\(\mathbf A\)</span>, so that we have a simple solution</p>
+<p>The abstract form of the master equation <a class="reference internal" href="#equation-eqn-master-eqn-comb">(15)</a> is</p>
+<div class="math notranslate nohighlight" id="equation-eqn-master-eqn-comb-abstract">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eqn-master-eqn-comb-abstract" title="Permalink to this equation">¶</a></span>\[\partial_t \mathbf P + \mathbf A \mathbf P = 0 .\]</div>
+<p>To solve it, we need to diagonalize <span class="math notranslate nohighlight">\(\mathbf A\)</span> so that the solution can be written down as</p>
 <div class="math notranslate nohighlight">
 \[\mathbf P_{\text{diag}} = e^{- \mathbf A_{\text{diag}} t} .\]</div>
-<p>The most general way is to diagonalize it using an invertible matrix <span class="math notranslate nohighlight">\(\mathbf S\)</span>, i.e.,</p>
+<p>In general, the diagonailization is achieved by using an invertible matrix <span class="math notranslate nohighlight">\(\mathbf S\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\partial_t \bf S^{-1} P + S^{-1}AS S^{-1} P = 0\]</div>
-<p>in which we’ll define <span class="math notranslate nohighlight">\(\mathbf A_{\text{diag}} = \bf S^{-1} P S\)</span> and <span class="math notranslate nohighlight">\(\mathbf P_{\text{diag}} = \bf S^{-1} P\)</span>. For simplicity, we won’t write down the indices from now on.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p>in which <span class="math notranslate nohighlight">\(\mathbf A_{\text{diag}} = \bf S^{-1} P S\)</span> and <span class="math notranslate nohighlight">\(\mathbf P_{\text{diag}} = \bf S^{-1} P\)</span>.</p>
+<div class="warning admonition">
+<p class="admonition-title">Food for Thought</p>
 <p>Is there a mechanism that ensures the <span class="math notranslate nohighlight">\(\mathbf A\)</span> is <span class="highlit">invertible</span> ? If <span class="math notranslate nohighlight">\(\mathbf A\)</span> is <span class="highlit">defective</span> , none of these can be done. Do all physical systems have invertible <span class="math notranslate nohighlight">\(\mathbf A\)</span>?</p>
 </div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Notice that the form of master equation after this transform is similar to the dynamics of quantum mechanics which is</p>
+<div class="note admonition">
+<p class="admonition-title">Quantum Mechanics</p>
+<p>The master equation <a class="reference internal" href="#equation-eqn-master-eqn-comb-abstract">(16)</a> is similar to the Schrodinger equation quantum mechanics</p>
 <div class="math notranslate nohighlight">
 \[i\hbar \frac{\partial }{\partial t} \ket{\psi} = \hat H \ket{\psi}.\]</div>
-<p>Another thing is that this form is also similar to Liouville equation,</p>
+<p>It is also quite similar to the Liouville equation,</p>
 <div class="math notranslate nohighlight">
 \[i\partial_t \rho^N = \hat L^N \rho^N .\]</div>
 </div>
 </div>
 <div class="section" id="solving-master-equations-fourier-transform">
 <h2>Solving Master Equations: Fourier Transform<a class="headerlink" href="#solving-master-equations-fourier-transform" title="Permalink to this headline">¶</a></h2>
-<p>Fourier transform is a quick and efficient way of diagonalizing <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix.</p>
-<p>We consider the case that coarsed system has translational symmetry, then we know the value of elements in <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix only dependends on <span class="math notranslate nohighlight">\(l:= n-m\)</span>. In ohter words,</p>
+<p>Fourier transform is a fast and efficient method of diagonalizing <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix.</p>
+<p>We consider the case that a coarse-grain system with translational symmetry. The values of the elements in <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix only dependends on <span class="math notranslate nohighlight">\(l:= n-m\)</span>, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_m  + \sum_n A_{mn} P_n  = 0.\]</div>
-<p>For translational symmetric system, we can work out discrete Fourier transform to find the normal modes. Define the kth mode as</p>
-<div class="math notranslate nohighlight">
-\[P^k = P_m e^{ikm} .\]</div>
-<p>Multiply by <span class="math notranslate nohighlight">\(e^{ikm}\)</span> on master equstion and sum over m, we get</p>
+<p>For translational symmetric system, a discrete Fourier transform is applied to find out the normal modes. Define the kth mode as</p>
+<div class="math notranslate nohighlight" id="equation-eqn-fourier-transform-kth-mode">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eqn-fourier-transform-kth-mode" title="Permalink to this equation">¶</a></span>\[P^k = P_m e^{ikm} .\]</div>
+<p>Multiply <span class="math notranslate nohighlight">\(e^{ikm}\)</span> on both sides of the master equstion and sum over <span class="math notranslate nohighlight">\(m\)</span>, we get</p>
 <div class="math notranslate nohighlight">
 \[\sum_m \partial_t P_m e^{ikm} + \sum_m \sum_n e^{ikm}A_{m-n} P_n = 0.\]</div>
-<p>With the definition of kth mode above there, the master equation can be written as</p>
+<p>With the definition of the kth mode defined in <a class="reference internal" href="#equation-eqn-fourier-transform-kth-mode">(17)</a>, the master equation can be written as</p>
 <div class="math notranslate nohighlight">
-\[\partial_t P^k + \sum_n\sum_m e^{ik(m-n)}A_{m-n} e^{ikn}P_n = 0\]</div>
-<p>which “accidently” diagonalizes the matrix <span class="math notranslate nohighlight">\(\mathbf A\)</span>. So define the kth mode of <span class="math notranslate nohighlight">\(\mathbf A\)</span> as <span class="math notranslate nohighlight">\(A^k = \sum_{l=m-n} e^{ik(m-n)}A_{m-n}\)</span> then</p>
+\[\partial_t P^k + \sum_n\sum_m e^{ik(m-n)}A_{m-n} e^{ikn}P_n = 0,\]</div>
+<p>which “accidently” diagonalizes the matrix <span class="math notranslate nohighlight">\(\mathbf A\)</span>. Define the kth mode of <span class="math notranslate nohighlight">\(\mathbf A\)</span> as <span class="math notranslate nohighlight">\(A^k = \sum_{l=m-n} e^{ik(m-n)}A_{m-n}\)</span>. The master equation</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P^k + \sum_{l=m-n}e^{ik(m-n)}A_{m-n} \sum_n e^{ikn}P_n = 0\]</div>
 <p>is reduced to</p>
@@ -349,24 +349,24 @@ TeX: {
 <p class="admonition-title">Note</p>
 <p>Note that summation over n and m is equivalent to summation over n and m-n.</p>
 </div>
-<p>Finally we have the solution of normal modes,</p>
+<p>Finally we have the solution for the normal modes,</p>
 <div class="math notranslate nohighlight">
 \[P^k(t) = P^k(0) e^{-A^k t} .\]</div>
-<p>To find out the final solution, inverse Fourier transform on kth mode,</p>
+<p>To find out the final solution, perform an inverse Fourier transform on the kth mode,</p>
 <div class="math notranslate nohighlight">
 \[P_m(t) = \frac{1}{N} \sum_k P^k(t) e^{-ikm} .\]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Note that due to the Born van Karman BC we chose,</p>
+<p>Due to the Born van Karman BC, we chose,</p>
 <div class="math notranslate nohighlight">
 \[e^{ikm} = e^{ik(m+N)}\]</div>
 <p>which leads to</p>
 <div class="math notranslate nohighlight">
 \[k=\frac{2\pi}{N} .\]</div>
-<p>Discrete transform will become integral if we are dealing with continous systems, which will be achieved by using the following transformation,</p>
+<p>A discrete transform will become an integral if we are dealing with continous systems. It is achieved by using the following transformation,</p>
 <div class="math notranslate nohighlight">
-\[\frac{1}{N}\sum_k  \rightarrow \frac{1}{2\pi} \int dk\]</div>
-<p>We write down this identity like transformation because the discrete result has the form <span class="math notranslate nohighlight">\(\frac{1}{N}\sum_k\)</span>.</p>
+\[\frac{1}{N}\sum_k  \rightarrow \frac{1}{2\pi} \int dk.\]</div>
+<p>This transformation is important because the discrete transform has <span class="math notranslate nohighlight">\(\frac{1}{N}\sum_k\)</span> in it.</p>
 </div>
 </div>
 <div class="section" id="finite-chain-with-nearest-neighbor-interactions">

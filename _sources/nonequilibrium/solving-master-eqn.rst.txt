@@ -9,64 +9,71 @@ Solving Master Equations
 Solving Master Equations
 -----------------------------
 
-Master equation, again, is
+A master equation
 
 .. math::
    \frac{d P_m}{dt} = \sum_n R_{mn} P_n - \sum_n R_{nm} P_m
+   :label: eqn-master-eqn-raw
 
-which can be written as a more simple form,
+can be simplified into
 
 .. math::
    \frac{d P_m}{dt} + \sum_n A_{mn}P_n = 0 .
+   :label: eqn-master-eqn-comb
 
-To figure out the elements of this new matrix :math:`A`, we need to understand how to combine the RHS of master equation.
+To figure out the elements of this new matrix :math:`A`, we need to understand how to combine the RHS of master equation. The matrix form of the master equation :eq:`eqn-master-eqn-raw` is
 
 .. math::
    \partial_t \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} = \begin{pmatrix} 0  & R_{12} & \cdots & R_{1N} \\ R_{21}  & 0 & \cdots & R_{2N} \\ \vdots & \vdots & \ddots & \vdots \\ R_{N1} & R_{N2} & \cdots & 0   \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix}   - \sum_{n}R_{nm} \begin{pmatrix}  1 & 0 & \cdots & 0 \\  0 & 1 & \cdots & 0 \\ \vdots & \vdots & \ddots &  0  \\ 0 & 0 & \cdots & 1  \end{pmatrix}  \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix}
 
 
-Since :math:`A_{mm} = \sum_n R_{nm}` is just a real number, we can combine the two matrices on the RHS, which is
+Since :math:`A_{mm} = \sum_n R_{nm}` is just a real number, we can combine the two matrices on the RHS,
 
 .. math::
    \partial_t \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} + \begin{pmatrix} A_{11}  & -R_{12} & \cdots & -R_{1N} \\ -R_{21}  & A_{22} & \cdots & -R_{2N} \\ \vdots & \vdots & \ddots & \vdots \\ -R_{N1} & -R_{N2} & \cdots & A_{NN}   \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} = 0  .
 
-We can define the :math:`\mathbf A` matrix now.
+The :math:`\mathbf A` matrix is then defined as
 
 .. math::
    A_{mn} = \begin{cases} -R_{mn} &\quad  n \neq m \\ \sum_{n} R_{nm} & \quad n=m  \end{cases}
 
-:math:`\mathbf A` matrix is defined in this way so that we have the master equation becomes
+The abstract form of the master equation :eq:`eqn-master-eqn-comb` is
 
 .. math::
    \partial_t \mathbf P + \mathbf A \mathbf P = 0 .
+   :label: eqn-master-eqn-comb-abstract
 
-So solve such a matrix equation, we need to diagonalize :math:`\mathbf A`, so that we have a simple solution
+To solve it, we need to diagonalize :math:`\mathbf A` so that the solution can be written down as
 
 .. math::
    \mathbf P_{\text{diag}} = e^{- \mathbf A_{\text{diag}} t} .
 
 
-The most general way is to diagonalize it using an invertible matrix :math:`\mathbf S`, i.e.,
+In general, the diagonailization is achieved by using an invertible matrix :math:`\mathbf S`,
 
 .. math::
    \partial_t \bf S^{-1} P + S^{-1}AS S^{-1} P = 0
 
-in which we'll define :math:`\mathbf A_{\text{diag}} = \bf S^{-1} P S` and :math:`\mathbf P_{\text{diag}} = \bf S^{-1} P`. For simplicity, we won't write down the indices from now on.
+in which :math:`\mathbf A_{\text{diag}} = \bf S^{-1} P S` and :math:`\mathbf P_{\text{diag}} = \bf S^{-1} P`.
 
 
-.. warning::
+.. admonition:: Food for Thought
+   :class: warning
+
    Is there a mechanism that ensures the :math:`\mathbf A` is :highlit:`invertible` ? If :math:`\mathbf A` is :highlit:`defective` , none of these can be done. Do all physical systems have invertible :math:`\mathbf A`?
 
 
 
 
-.. hint::
-   Notice that the form of master equation after this transform is similar to the dynamics of quantum mechanics which is
+.. admonition:: Quantum Mechanics
+   :class: note
+
+   The master equation :eq:`eqn-master-eqn-comb-abstract` is similar to the Schrodinger equation quantum mechanics
 
    .. math::
       i\hbar \frac{\partial }{\partial t} \ket{\psi} = \hat H \ket{\psi}.
 
-   Another thing is that this form is also similar to Liouville equation,
+   It is also quite similar to the Liouville equation,
 
    .. math::
       i\partial_t \rho^N = \hat L^N \rho^N .
@@ -77,30 +84,30 @@ in which we'll define :math:`\mathbf A_{\text{diag}} = \bf S^{-1} P S` and :math
 Solving Master Equations: Fourier Transform
 ---------------------------------------------
 
-Fourier transform is a quick and efficient way of diagonalizing :math:`\mathbf A` matrix.
+Fourier transform is a fast and efficient method of diagonalizing :math:`\mathbf A` matrix.
 
-
-We consider the case that coarsed system has translational symmetry, then we know the value of elements in :math:`\mathbf A` matrix only dependends on :math:`l:= n-m`. In ohter words,
+We consider the case that a coarse-grain system with translational symmetry. The values of the elements in :math:`\mathbf A` matrix only dependends on :math:`l:= n-m`, i.e.,
 
 .. math::
    \partial_t P_m  + \sum_n A_{mn} P_n  = 0.
 
-For translational symmetric system, we can work out discrete Fourier transform to find the normal modes. Define the kth mode as
+For translational symmetric system, a discrete Fourier transform is applied to find out the normal modes. Define the kth mode as
 
 .. math::
    P^k = P_m e^{ikm} .
+   :label: eqn-fourier-transform-kth-mode
 
-Multiply by :math:`e^{ikm}` on master equstion and sum over m, we get
+Multiply :math:`e^{ikm}` on both sides of the master equstion and sum over :math:`m`, we get
 
 .. math::
    \sum_m \partial_t P_m e^{ikm} + \sum_m \sum_n e^{ikm}A_{m-n} P_n = 0.
 
-With the definition of kth mode above there, the master equation can be written as
+With the definition of the kth mode defined in :eq:`eqn-fourier-transform-kth-mode`, the master equation can be written as
 
 .. math::
-   \partial_t P^k + \sum_n\sum_m e^{ik(m-n)}A_{m-n} e^{ikn}P_n = 0
+   \partial_t P^k + \sum_n\sum_m e^{ik(m-n)}A_{m-n} e^{ikn}P_n = 0,
 
-which "accidently" diagonalizes the matrix :math:`\mathbf A`. So define the kth mode of :math:`\mathbf A` as :math:`A^k = \sum_{l=m-n} e^{ik(m-n)}A_{m-n}` then
+which "accidently" diagonalizes the matrix :math:`\mathbf A`. Define the kth mode of :math:`\mathbf A` as :math:`A^k = \sum_{l=m-n} e^{ik(m-n)}A_{m-n}`. The master equation
 
 .. math::
    \partial_t P^k + \sum_{l=m-n}e^{ik(m-n)}A_{m-n} \sum_n e^{ikn}P_n = 0
@@ -113,12 +120,12 @@ is reduced to
 .. note::
    Note that summation over n and m is equivalent to summation over n and m-n.
 
-Finally we have the solution of normal modes,
+Finally we have the solution for the normal modes,
 
 .. math::
    P^k(t) = P^k(0) e^{-A^k t} .
 
-To find out the final solution, inverse Fourier transform on kth mode,
+To find out the final solution, perform an inverse Fourier transform on the kth mode,
 
 .. math::
    P_m(t) = \frac{1}{N} \sum_k P^k(t) e^{-ikm} .
@@ -126,7 +133,7 @@ To find out the final solution, inverse Fourier transform on kth mode,
 
 
 .. important::
-   Note that due to the Born van Karman BC we chose,
+   Due to the Born van Karman BC, we chose,
 
    .. math::
       e^{ikm} = e^{ik(m+N)}
@@ -136,12 +143,12 @@ To find out the final solution, inverse Fourier transform on kth mode,
    .. math::
       k=\frac{2\pi}{N} .
 
-   Discrete transform will become integral if we are dealing with continous systems, which will be achieved by using the following transformation,
+   A discrete transform will become an integral if we are dealing with continous systems. It is achieved by using the following transformation,
 
    .. math::
-      \frac{1}{N}\sum_k  \rightarrow \frac{1}{2\pi} \int dk
+      \frac{1}{N}\sum_k  \rightarrow \frac{1}{2\pi} \int dk.
 
-   We write down this identity like transformation because the discrete result has the form :math:`\frac{1}{N}\sum_k`.
+   This transformation is important because the discrete transform has :math:`\frac{1}{N}\sum_k` in it.
 
 
 
