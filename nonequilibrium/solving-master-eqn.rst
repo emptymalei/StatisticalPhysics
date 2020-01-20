@@ -153,49 +153,48 @@ To find out the final solution, perform an inverse Fourier transform on the kth 
 
 
 
-Finite Chain with Nearest Neighbor Interactions
+Finite Chain with Nearest-Neighbor Interactions
 -----------------------------------------------------
 
+.. figure:: assets/solving-master-eqn/finite-chain-nearest-neighbour-interactions.png
+   :align: center
 
-In this simple case, the transfer is
+   Finite chain with nearest-neighbour interactions
+
+On a 1D finite chain, the transfer rate is
 
 .. math::
-   R_{mn} = F(\delta_{m,n-1}+ \delta_{m,n+1}) .
+   R_{mn} = F(\delta_{m,n-1}+ \delta_{m,n+1}).
 
-
-
-So master equation becomes
+which leads to the following master equation,
 
 .. math::
    \partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .
+   :label: eqn-master-equation-1d-finite-chain-nn-interactions
 
 
-.. note::
-   There is no need to use the definition of :math:`\mathbf A` matrix in this simple case.
-
-Discrete Fourier transform,
+Perform a discrete Fourier transform on equation :eq:`eqn-master-equation-1d-finite-chain-nn-interactions`,
 
 .. math::
    \partial_t P^k  = F(e^{ikm} P_{m+1} + e^{ikm} P_{m-1} -2 P^k) .
 
-Combine terms,
+Collect terms, we get
 
 .. math::
    \partial_t P^k = 4F\sin^2\frac{k}{2} .
 
-
-The solution for kth mode should be
+The solution for the kth mode is solved,
 
 .. math::
    P^k(t) = P^k(0) e^{-4F \sin^2\frac{k}{2} t} .
 
 
-Inverse Fourier transform gives us the result of
+To retrieve the solution to the original master equation, an inverse Fourier transform is applied,
 
 .. math::
    P_m(t)  = \frac{1}{N} \sum_ {k} P^k(t) e^{-i km} .
 
-The last thing is to find out the value of :math:`k`. Apply Born-Von Karman boundary condition, we find that :math:`k` is quantized,
+Apply Born-Von Karman boundary condition, we find that :math:`k` is quantized,
 
 .. math::
    k = \frac{2\pi}{N} n, \qquad n=0,1,2, \cdots, N-1 .
@@ -204,68 +203,63 @@ The last thing is to find out the value of :math:`k`. Apply Born-Von Karman boun
 Matrix Form
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-To make it clear, we'll redo this problem in matrix form.
+The matrix form of the equations makes it easier to understand. Here we work out the 1D finite chain problem using the matrix form explicitly.
 
-First of all, write down master equation for this problem again,
+First of all, citing the master equation :eq:`eqn-master-equation-1d-finite-chain-nn-interactions`, we have
 
 .. math::
    \partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .
 
-In the form of matrix, we have
+We rewrite it in the matrix form
 
 .. math::
    \partial_t \begin{pmatrix} P_1 \\ P_2 \\ P_3 \\ P_4 \\ P_5 \\ P_6 \end{pmatrix} + F \begin{pmatrix}  2 & -1 & 0 & 0 & 0 & -1 \\ -1 & 2 & -1 & 0 & 0 & 0 \\0 & -1 & 2 & -1 & 0 & 0 \\ 0 & 0 & -1 & 2 & -1 & 0 \\ 0 & 0 & 0 & -1 & 2 & -1 \\ -1 & 0 & 0 & 0 & -1 & 2 \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ P_3 \\ P_4 \\ P_5 \\ P_6 \end{pmatrix} = 0
 
 
 
-.. hint::
-   An easy way to get the matrix is to write down the :math:`\mathbf R` matrix which has 0 diagonal elements, construct :math:`\mathbf A` matrix by adding minus sign to all elements and put the sum of the original elements at the diagonal in the corresponding line. Pay attention to the signs.
+.. admonition:: Matrix Form Makes a Difference
+   :class: toggle
 
-   Another propertity worth talking about is the :highlit:`additive of the matrices`. :highlit:`A more complicated system can be decomposed into several simple systems.`
+   An easy method to get the matrix form is to write down the :math:`\mathbf R` matrix whose diagonal elements are all 0s. We construct the :math:`\mathbf A` matrix by adding a minus sign to all elements and use the sum of the original elements at the diagonal in the corresponding line. One should pay attention to the signs.
+
+   The :highlit:`additive of the matrices` makes it possible to :highlit:`decomposed a complicated matrix into several simple matrices.`
 
 
-The technique used to solve this problem is to diagonalize the 6 times 6 matrix because we can then just write down the solutions.
-
-The way to do this is exactly what have did in the previous part, that is defining new quantities. Then we have in matrix form
+To solve this equation, we diagonalize the 6 times 6 matrix. Similar to the discrete Fourier transform we used in the previous method, we have
 
 .. math::
    \partial_t \begin{pmatrix} P^{k_1} \\ P^{k_2}\\ P^{k_3}\\ P^{k_4}\\ P^{k_5}\\ P^{k_6} \end{pmatrix} + 4F \begin{pmatrix} \sin^2\frac{k_1}{2} 0 & 0 & 0 & 0 & 0 \\ 0 &  \sin^2\frac{k_2}{2} & 0 & 0 & 0 & 0 \\ 0 & 0 &  \sin^2\frac{k_3}{2} & 0 & 0 & 0 \\ 0 & 0 & 0 & \sin^2\frac{k_4}{2} & 0 & 0 \\ 0 & 0 & 0 & 0 &  \sin^2\frac{k_5}{2} & 0 \\ 0 & 0 & 0 & 0 & 0 &  \sin^2\frac{k_6}{2}   \end{pmatrix} \begin{pmatrix} P^{k_1} \\ P^{k_2}\\ P^{k_3}\\ P^{k_4}\\ P^{k_5}\\ P^{k_6} \end{pmatrix} = 0
 
-By writing in this form, we imediately know why diagonalizing is the thing we eager to do. The solutions are just
+We imediately recognize the solution,
 
 .. math::
    P^k(t) = P^k(0) e^{-4F\sin^2(k/2) t} .
 
 
-.. hint::
-   Recall that the elements in the diagonailized :math:`\mathbf A_{\text{diag}}` matrix are just the eigenvalues of :math:`\mathbf A` matrix with corresponding eigenvectors. So in other words, the way to solve this kind of descrete master equations is to solve the eigen problem of :math:`\mathbf A` matrix and then find the eigen modes and finally inverse transform back to :math:`P_m(t)`.
+.. admonition:: Eigenvalue Problem
+   :class: hint
+
+   Note that the elements of the diagonailized :math:`\mathbf A_{\text{diag}}` matrix are just the eigenvalues of :math:`\mathbf A` matrix with their corresponding eigenvectors. The descrete master equations is equivalent to the eigenvalue problem of :math:`\mathbf A` matrix.
 
 
-
-
-
-
-Infinite Chain with Nearest Neighbor Interactions
+Infinite Chain with Nearest-Neighbor Interactions
 ---------------------------------------------------------------------
 
 
-We have exactly the same equations as in finite chain. The difference lies in the boundary condition where :math:`N\rightarrow \infty` and
+For an infinite chain, we have exactly the same master equation. The difference lies in the boundary conditions. For infinite chain, we have :math:`N\rightarrow \infty` and
 
 .. math::
    \frac{1}{N}\sum_k \rightarrow \frac{1}{2\pi}\int dk .
 
-.. hint::
-   The way to check this result is to check the sum of unit probability.
+.. admonition:: Validate the Relation
+   :class: hint
+
+   The way to check this result is to check the sum. Apply the operators on unity, both sides should converge to 1,
 
    .. math::
       \frac{1}{N}\sum_{k=1}^{N} 1 = 1 \Leftrightarrow \frac{1}{2\pi}\int_{-\pi}^{\pi} 1 dk = 1
 
-
-
-So the solutions are
-
-
-
+The solutions are
 
 
 .. math::
@@ -273,24 +267,23 @@ So the solutions are
    & = P^k(0)  e^{-2Ft} \mathrm{I_m}(2Ft)
 
 
-
 .. index:: Modified Bessel Function
 
-.. important::
-   **Vocabulary**: :highlit:`Modified Bessel function` is defined as
+.. admonition:: Modified Bessel Function
+   :class: important
+
+   **Vocabulary**: The :highlit:`modified Bessel function` is defined as
 
    .. math::
       \mathrm{I_m} (z) = \frac{1}{2\pi}\int_{-\pi}^{\pi} e^{-ikm} e^{z\cos{k}} dk  .
 
-   Since the argument has imaginary part, this is also called Bessel function of imaginary argument.
-
-   Check out more properties about this function in vocabulary part.
+   Since the argument has imaginary part in it, it is also called the Bessel function of imaginary argument.
 
    .. figure:: ../vocabulary/images/besselIFunctions1stKind.png
       :align: center
       :width: 100%
 
-      https://en.wikipedia.org/wiki/File:BesselI_Functions_(1st_Kind,_n%3D0,1,2,3).svg
+      Source: `BesselI_Functions_(1st_Kind) @ Wikipedia <https://en.wikipedia.org/wiki/File:BesselI_Functions_(1st_Kind,_n%3D0,1,2,3).svg>`_
 
 
 
@@ -305,49 +298,42 @@ So the solutions are
 -----------
 
 
-A 2D lattice image is shown below `with image cridet of Jim Belk (public domain) <https://commons.wikimedia.org/wiki/File:Equilateral_Triangle_Lattice.svg>`_.
+A 2D lattice is shown in :numref:`fig-master-eqn-2d-lattice-illustration`.
 
+
+.. _fig-master-eqn-2d-lattice-illustration:
 .. figure:: images/equilateralTriangleLattice.png
    :alt: equilateral Triangle Lattice
    :align: center
 
-   An equilateral triangle lattice
+   An equilateral triangle lattice. Source: `Equilateral Triangle Lattice by Jim Belk @ Wikipedia <https://commons.wikimedia.org/wiki/File:Equilateral_Triangle_Lattice.svg>`_
 
 
 
-Note that we have translational symmetry in both x and y direction. So the solution is simply the product of solutions to two directioins,
+We require it to have translational symmetry in both x and y directions. The solution is the product of solutions to x and y directions,
 
 .. math::
    P_m(t) = e^{-2(F_x+F_y)t} \mathrm{I_m}(2F_xt) \mathrm{I_m}(2F_y t)
 
 
-
-
 Continuum Limit
 -----------------
 
-
-Suppose we have a continuum system,
+For a continuum system,
 
 .. math::
    \partial_t P_m &= F(P_{m-1} + P_{m+1}) - 2FP_m \\
    & = F(P_{m+1}-P_m -(P_m-P_{m-1})) \\
    & = F \epsilon^2 \frac{ (P_{m+1}-P_m)/\epsilon -(P_m-P_{m-1})/\epsilon )  }{\epsilon}
 
-We can identify the form of derivatives but RHS becomes zero if :math:`F` is a constant when we take the limit :math:`\epsilon \rightarrow 0`.
+We can identify the form of derivatives on the right hand side but it becomes zero if :math:`F` is a constant when we take the limit :math:`\epsilon \rightarrow 0`.
 
-It does make sense that :math:`F` actually increases when the distance between two sites becomes smaller. And the way to reconcile the zero problem is to assume that
+On the other hand, :math:`F` should increases when the two particle sites becomes closer. To reconcile the zero-right-hand-side problem, we assume that
 
 .. math::
    F = \frac{D}{\epsilon^2} .
 
-Then we have the diffusion equation.
+The continuum limit of our master equation becomes the diffusion equation,
 
 .. math::
-   \frac{\partial P(x,t)}{\partial t} = D\frac{\partial^2 P(x,t)}{\partial x^2}
-
-
-
-
-
-.
+   \frac{\partial P(x,t)}{\partial t} = D\frac{\partial^2 P(x,t)}{\partial x^2}.
