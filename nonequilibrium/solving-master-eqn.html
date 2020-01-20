@@ -231,11 +231,11 @@ TeX: {
 <li><a class="reference internal" href="#">Solving Master Equations</a><ul>
 <li><a class="reference internal" href="#index-0">Solving Master Equations</a></li>
 <li><a class="reference internal" href="#solving-master-equations-fourier-transform">Solving Master Equations: Fourier Transform</a></li>
-<li><a class="reference internal" href="#finite-chain-with-nearest-neighbor-interactions">Finite Chain with Nearest Neighbor Interactions</a><ul>
+<li><a class="reference internal" href="#finite-chain-with-nearest-neighbor-interactions">Finite Chain with Nearest-Neighbor Interactions</a><ul>
 <li><a class="reference internal" href="#matrix-form">Matrix Form</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#infinite-chain-with-nearest-neighbor-interactions">Infinite Chain with Nearest Neighbor Interactions</a></li>
+<li><a class="reference internal" href="#infinite-chain-with-nearest-neighbor-interactions">Infinite Chain with Nearest-Neighbor Interactions</a></li>
 <li><a class="reference internal" href="#d-lattice">2D Lattice</a></li>
 <li><a class="reference internal" href="#continuum-limit">Continuum Limit</a></li>
 </ul>
@@ -370,113 +370,110 @@ TeX: {
 </div>
 </div>
 <div class="section" id="finite-chain-with-nearest-neighbor-interactions">
-<h2>Finite Chain with Nearest Neighbor Interactions<a class="headerlink" href="#finite-chain-with-nearest-neighbor-interactions" title="Permalink to this headline">¶</a></h2>
-<p>In this simple case, the transfer is</p>
-<div class="math notranslate nohighlight">
-\[R_{mn} = F(\delta_{m,n-1}+ \delta_{m,n+1}) .\]</div>
-<p>So master equation becomes</p>
-<div class="math notranslate nohighlight">
-\[\partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>There is no need to use the definition of <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix in this simple case.</p>
+<h2>Finite Chain with Nearest-Neighbor Interactions<a class="headerlink" href="#finite-chain-with-nearest-neighbor-interactions" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id2">
+<img alt="../_images/finite-chain-nearest-neighbour-interactions.png" src="../_images/finite-chain-nearest-neighbour-interactions.png" />
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Finite chain with nearest-neighbour interactions</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>Discrete Fourier transform,</p>
+<p>On a 1D finite chain, the transfer rate is</p>
+<div class="math notranslate nohighlight">
+\[R_{mn} = F(\delta_{m,n-1}+ \delta_{m,n+1}).\]</div>
+<p>which leads to the following master equation,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-master-equation-1d-finite-chain-nn-interactions">
+<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-master-equation-1d-finite-chain-nn-interactions" title="Permalink to this equation">¶</a></span>\[\partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .\]</div>
+<p>Perform a discrete Fourier transform on equation <a class="reference internal" href="#equation-eqn-master-equation-1d-finite-chain-nn-interactions">(18)</a>,</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P^k  = F(e^{ikm} P_{m+1} + e^{ikm} P_{m-1} -2 P^k) .\]</div>
-<p>Combine terms,</p>
+<p>Collect terms, we get</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P^k = 4F\sin^2\frac{k}{2} .\]</div>
-<p>The solution for kth mode should be</p>
+<p>The solution for the kth mode is solved,</p>
 <div class="math notranslate nohighlight">
 \[P^k(t) = P^k(0) e^{-4F \sin^2\frac{k}{2} t} .\]</div>
-<p>Inverse Fourier transform gives us the result of</p>
+<p>To retrieve the solution to the original master equation, an inverse Fourier transform is applied,</p>
 <div class="math notranslate nohighlight">
 \[P_m(t)  = \frac{1}{N} \sum_ {k} P^k(t) e^{-i km} .\]</div>
-<p>The last thing is to find out the value of <span class="math notranslate nohighlight">\(k\)</span>. Apply Born-Von Karman boundary condition, we find that <span class="math notranslate nohighlight">\(k\)</span> is quantized,</p>
+<p>Apply Born-Von Karman boundary condition, we find that <span class="math notranslate nohighlight">\(k\)</span> is quantized,</p>
 <div class="math notranslate nohighlight">
 \[k = \frac{2\pi}{N} n, \qquad n=0,1,2, \cdots, N-1 .\]</div>
 <div class="section" id="matrix-form">
 <h3>Matrix Form<a class="headerlink" href="#matrix-form" title="Permalink to this headline">¶</a></h3>
-<p>To make it clear, we’ll redo this problem in matrix form.</p>
-<p>First of all, write down master equation for this problem again,</p>
+<p>The matrix form of the equations makes it easier to understand. Here we work out the 1D finite chain problem using the matrix form explicitly.</p>
+<p>First of all, citing the master equation <a class="reference internal" href="#equation-eqn-master-equation-1d-finite-chain-nn-interactions">(18)</a>, we have</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .\]</div>
-<p>In the form of matrix, we have</p>
+<p>We rewrite it in the matrix form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\partial_t \begin{pmatrix} P_1 \\ P_2 \\ P_3 \\ P_4 \\ P_5 \\ P_6 \end{pmatrix} + F \begin{pmatrix}  2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ P_3 \\ P_4 \\ P_5 \\ P_6 \end{pmatrix} = 0\end{split}\]</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>An easy way to get the matrix is to write down the <span class="math notranslate nohighlight">\(\mathbf R\)</span> matrix which has 0 diagonal elements, construct <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix by adding minus sign to all elements and put the sum of the original elements at the diagonal in the corresponding line. Pay attention to the signs.</p>
-<p>Another propertity worth talking about is the <span class="highlit">additive of the matrices</span>. <span class="highlit">A more complicated system can be decomposed into several simple systems.</span></p>
+<div class="toggle admonition">
+<p class="admonition-title">Matrix Form Makes a Difference</p>
+<p>An easy method to get the matrix form is to write down the <span class="math notranslate nohighlight">\(\mathbf R\)</span> matrix whose diagonal elements are all 0s. We construct the <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix by adding a minus sign to all elements and use the sum of the original elements at the diagonal in the corresponding line. One should pay attention to the signs.</p>
+<p>The <span class="highlit">additive of the matrices</span> makes it possible to <span class="highlit">decomposed a complicated matrix into several simple matrices.</span></p>
 </div>
-<p>The technique used to solve this problem is to diagonalize the 6 times 6 matrix because we can then just write down the solutions.</p>
-<p>The way to do this is exactly what have did in the previous part, that is defining new quantities. Then we have in matrix form</p>
+<p>To solve this equation, we diagonalize the 6 times 6 matrix. Similar to the discrete Fourier transform we used in the previous method, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\partial_t \begin{pmatrix} P^{k_1} \\ P^{k_2}\\ P^{k_3}\\ P^{k_4}\\ P^{k_5}\\ P^{k_6} \end{pmatrix} + 4F \begin{pmatrix} \sin^2\frac{k_1}{2} 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp;  \sin^2\frac{k_2}{2} &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp;  \sin^2\frac{k_3}{2} &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \sin^2\frac{k_4}{2} &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp;  \sin^2\frac{k_5}{2} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp;  \sin^2\frac{k_6}{2}   \end{pmatrix} \begin{pmatrix} P^{k_1} \\ P^{k_2}\\ P^{k_3}\\ P^{k_4}\\ P^{k_5}\\ P^{k_6} \end{pmatrix} = 0\end{split}\]</div>
-<p>By writing in this form, we imediately know why diagonalizing is the thing we eager to do. The solutions are just</p>
+<p>We imediately recognize the solution,</p>
 <div class="math notranslate nohighlight">
 \[P^k(t) = P^k(0) e^{-4F\sin^2(k/2) t} .\]</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Recall that the elements in the diagonailized <span class="math notranslate nohighlight">\(\mathbf A_{\text{diag}}\)</span> matrix are just the eigenvalues of <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix with corresponding eigenvectors. So in other words, the way to solve this kind of descrete master equations is to solve the eigen problem of <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix and then find the eigen modes and finally inverse transform back to <span class="math notranslate nohighlight">\(P_m(t)\)</span>.</p>
+<div class="hint admonition">
+<p class="admonition-title">Eigenvalue Problem</p>
+<p>Note that the elements of the diagonailized <span class="math notranslate nohighlight">\(\mathbf A_{\text{diag}}\)</span> matrix are just the eigenvalues of <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix with their corresponding eigenvectors. The descrete master equations is equivalent to the eigenvalue problem of <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix.</p>
 </div>
 </div>
 </div>
 <div class="section" id="infinite-chain-with-nearest-neighbor-interactions">
-<h2>Infinite Chain with Nearest Neighbor Interactions<a class="headerlink" href="#infinite-chain-with-nearest-neighbor-interactions" title="Permalink to this headline">¶</a></h2>
-<p>We have exactly the same equations as in finite chain. The difference lies in the boundary condition where <span class="math notranslate nohighlight">\(N\rightarrow \infty\)</span> and</p>
+<h2>Infinite Chain with Nearest-Neighbor Interactions<a class="headerlink" href="#infinite-chain-with-nearest-neighbor-interactions" title="Permalink to this headline">¶</a></h2>
+<p>For an infinite chain, we have exactly the same master equation. The difference lies in the boundary conditions. For infinite chain, we have <span class="math notranslate nohighlight">\(N\rightarrow \infty\)</span> and</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{N}\sum_k \rightarrow \frac{1}{2\pi}\int dk .\]</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>The way to check this result is to check the sum of unit probability.</p>
+<div class="hint admonition">
+<p class="admonition-title">Validate the Relation</p>
+<p>The way to check this result is to check the sum. Apply the operators on unity, both sides should converge to 1,</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{N}\sum_{k=1}^{N} 1 = 1 \Leftrightarrow \frac{1}{2\pi}\int_{-\pi}^{\pi} 1 dk = 1\]</div>
 </div>
-<p>So the solutions are</p>
+<p>The solutions are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}P_m(t) &amp;= \frac{1}{2\pi} \int _{-\pi}^{\pi} P^k(0) e^{-2F(1-\cos{k})t} e^{-ikm} dk \\ &amp;=  P^k(0)  e^{-2Ft} \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{2Ft\cos{k}} e^{-ikm} dk \\
 &amp; = P^k(0)  e^{-2Ft} \mathrm{I_m}(2Ft)\end{split}\]</div>
-<div class="admonition important" id="index-1">
-<p class="admonition-title">Important</p>
-<p><strong>Vocabulary</strong>: <span class="highlit">Modified Bessel function</span> is defined as</p>
+<div class="important admonition" id="index-1">
+<p class="admonition-title">Modified Bessel Function</p>
+<p><strong>Vocabulary</strong>: The <span class="highlit">modified Bessel function</span> is defined as</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{I_m} (z) = \frac{1}{2\pi}\int_{-\pi}^{\pi} e^{-ikm} e^{z\cos{k}} dk  .\]</div>
-<p>Since the argument has imaginary part, this is also called Bessel function of imaginary argument.</p>
-<p>Check out more properties about this function in vocabulary part.</p>
-<div class="figure align-center" id="id2">
+<p>Since the argument has imaginary part in it, it is also called the Bessel function of imaginary argument.</p>
+<div class="figure align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/besselIFunctions1stKind.png"><img alt="../_images/besselIFunctions1stKind.png" src="../_images/besselIFunctions1stKind.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text"><a class="reference external" href="https://en.wikipedia.org/wiki/File:BesselI_Functions_(1st_Kind,_n%3D0,1,2,3).svg">https://en.wikipedia.org/wiki/File:BesselI_Functions_(1st_Kind,_n%3D0,1,2,3).svg</a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Source: <a class="reference external" href="https://en.wikipedia.org/wiki/File:BesselI_Functions_(1st_Kind,_n%3D0,1,2,3).svg">BesselI_Functions_(1st_Kind) &#64; Wikipedia</a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="d-lattice">
 <h2>2D Lattice<a class="headerlink" href="#d-lattice" title="Permalink to this headline">¶</a></h2>
-<p>A 2D lattice image is shown below <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Equilateral_Triangle_Lattice.svg">with image cridet of Jim Belk (public domain)</a>.</p>
-<div class="figure align-center" id="id3">
-<img alt="equilateral Triangle Lattice" src="../_images/equilateralTriangleLattice.png" />
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">An equilateral triangle lattice</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p>A 2D lattice is shown in <a class="reference internal" href="#fig-master-eqn-2d-lattice-illustration"><span class="std std-numref">Fig. 24</span></a>.</p>
+<div class="figure align-center" id="id4">
+<span id="fig-master-eqn-2d-lattice-illustration"></span><img alt="equilateral Triangle Lattice" src="../_images/equilateralTriangleLattice.png" />
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">An equilateral triangle lattice. Source: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Equilateral_Triangle_Lattice.svg">Equilateral Triangle Lattice by Jim Belk &#64; Wikipedia</a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>Note that we have translational symmetry in both x and y direction. So the solution is simply the product of solutions to two directioins,</p>
+<p>We require it to have translational symmetry in both x and y directions. The solution is the product of solutions to x and y directions,</p>
 <div class="math notranslate nohighlight">
 \[P_m(t) = e^{-2(F_x+F_y)t} \mathrm{I_m}(2F_xt) \mathrm{I_m}(2F_y t)\]</div>
 </div>
 <div class="section" id="continuum-limit">
 <h2>Continuum Limit<a class="headerlink" href="#continuum-limit" title="Permalink to this headline">¶</a></h2>
-<p>Suppose we have a continuum system,</p>
+<p>For a continuum system,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\partial_t P_m &amp;= F(P_{m-1} + P_{m+1}) - 2FP_m \\
 &amp; = F(P_{m+1}-P_m -(P_m-P_{m-1})) \\
 &amp; = F \epsilon^2 \frac{ (P_{m+1}-P_m)/\epsilon -(P_m-P_{m-1})/\epsilon )  }{\epsilon}\end{split}\]</div>
-<p>We can identify the form of derivatives but RHS becomes zero if <span class="math notranslate nohighlight">\(F\)</span> is a constant when we take the limit <span class="math notranslate nohighlight">\(\epsilon \rightarrow 0\)</span>.</p>
-<p>It does make sense that <span class="math notranslate nohighlight">\(F\)</span> actually increases when the distance between two sites becomes smaller. And the way to reconcile the zero problem is to assume that</p>
+<p>We can identify the form of derivatives on the right hand side but it becomes zero if <span class="math notranslate nohighlight">\(F\)</span> is a constant when we take the limit <span class="math notranslate nohighlight">\(\epsilon \rightarrow 0\)</span>.</p>
+<p>On the other hand, <span class="math notranslate nohighlight">\(F\)</span> should increases when the two particle sites becomes closer. To reconcile the zero-right-hand-side problem, we assume that</p>
 <div class="math notranslate nohighlight">
 \[F = \frac{D}{\epsilon^2} .\]</div>
-<p>Then we have the diffusion equation.</p>
+<p>The continuum limit of our master equation becomes the diffusion equation,</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial P(x,t)}{\partial t} = D\frac{\partial^2 P(x,t)}{\partial x^2}\]</div>
-<p>.</p>
+\[\frac{\partial P(x,t)}{\partial t} = D\frac{\partial^2 P(x,t)}{\partial x^2}.\]</div>
 </div>
 </div>
 
