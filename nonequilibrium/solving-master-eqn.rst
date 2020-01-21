@@ -267,6 +267,13 @@ The solutions are
    & = P^k(0)  e^{-2Ft} \mathrm{I_m}(2Ft)
 
 
+or
+
+.. math::
+   P_m(t) = P_m(0)I_m(2Ft)e^{-2Ft}
+
+where :math:`I_m(2Ft)e^{-2Ft}` is the :highlit:`propagator`.
+
 .. index:: Modified Bessel Function
 
 .. admonition:: Modified Bessel Function
