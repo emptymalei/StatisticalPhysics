@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Master Equation Examples &#8212; Statistical Physics Notes</title>
+    <title>Examples of Master Equations &#8212; Statistical Physics Notes</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -201,7 +201,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="important-questions.html">Important Questions of Statistical Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="master-eqn.html">Master Equation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="solving-master-eqn.html">Solving Master Equations</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Master Equation Examples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Examples of Master Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smoluchowski-eqn.html">Smoluchowski Equation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="effect-of-defects.html">Effect of Defects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quantum-master-eqn.html">Quantum Master Equation</a></li>
@@ -228,12 +228,11 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Master Equation Examples</a><ul>
-<li><a class="reference internal" href="#irrersibility">Irrersibility</a></li>
-<li><a class="reference internal" href="#master-equation">Master Equation</a></li>
+<li><a class="reference internal" href="#">Examples of Master Equations</a><ul>
+<li><a class="reference internal" href="#irrersibility-and-master-equation">Irrersibility and Master Equation</a></li>
 <li><a class="reference internal" href="#continuum-limit">Continuum Limit</a></li>
 <li><a class="reference internal" href="#landau-teller-master-equation">Landau-Teller Master Equation</a><ul>
-<li><a class="reference internal" href="#continuous-grid-or-energy">Continuous Grid or Energy</a></li>
+<li><a class="reference internal" href="#continuous-grid-or-energy-levels">Continuous Grid or Energy Levels</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#d-discrete-master-equation">1-D Discrete Master Equation</a></li>
@@ -283,60 +282,53 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="master-equation-examples">
-<h1>Master Equation Examples<a class="headerlink" href="#master-equation-examples" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="irrersibility">
-<span id="index-0"></span><h2>Irrersibility<a class="headerlink" href="#irrersibility" title="Permalink to this headline">¶</a></h2>
-<p>Fourier series are complete,</p>
+  <div class="section" id="examples-of-master-equations">
+<h1>Examples of Master Equations<a class="headerlink" href="#examples-of-master-equations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="irrersibility-and-master-equation">
+<span id="index-0"></span><h2>Irrersibility and Master Equation<a class="headerlink" href="#irrersibility-and-master-equation" title="Permalink to this headline">¶</a></h2>
+<p>Fourier series is a <span class="highlit">Complete Orthogonal System</span>. An function <span class="math notranslate nohighlight">\(F(x)\)</span> is expanded using the Fourier series,</p>
 <div class="math notranslate nohighlight">
-\[F(x) = \sum_{n=0}^{n=\infty} a_n \cos(\omega_n t) .\]</div>
-<p>Any equations can be expanded using Fourier series including the decay behavior we have seen in previous lectures.</p>
-<p>However the problem is, for finite system, the expansion is not really complete. The series composed by all these finite components might not be decay and recurrence could happen. But the time needed for recurrence is so long that we never see it.</p>
+\[F(x) = \sum_{n=0}^{n=\infty} a_n \cos(\omega_n t).\]</div>
+<p>Recall that the solution to the master equation of a finite chain of particles with nearest-neighbour interactions is</p>
+<div class="math notranslate nohighlight" id="equation-eqn-master-eqn-sol-1d-finite-chain">
+<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-master-eqn-sol-1d-finite-chain" title="Permalink to this equation">¶</a></span>\[P_m(t)  = \frac{1}{N} \sum_ {k} P^k(0) e^{-4F \sin^2\frac{k}{2} t}  e^{-i km},\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[k = \frac{2\pi}{N} n, \qquad n=0,1,2, \cdots, N-1 .\]</div>
+<p>Note that the expansion is not going to infinity. On such a finite component series, recurrence of states will happen. Though the time needed for recurrence is long when the number of particles gets large.</p>
+<p>The <span class="highlit">second moment</span>, <span class="math notranslate nohighlight">\(\langle m^2 \rangle\)</span>, tells us the expected location of the particle.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Why not the first moment?</p>
+<p>The first moment is 0 for a symmetric system.</p>
 </div>
-<div class="section" id="master-equation">
-<h2>Master Equation<a class="headerlink" href="#master-equation" title="Permalink to this headline">¶</a></h2>
-<p>Solution to descrete master equation with nearest neighbour interaction is</p>
-<div class="math notranslate nohighlight">
-\[P_m(t) = P_m(0)I_m(2Ft)e^{-2Ft}\]</div>
-<p>where <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span> is the <span class="highlit">propagator</span>.</p>
-<p>Sometimes we want to know where the particle goes after a while. In this case, we should find out <span class="highlit">second moment</span>, <span class="math notranslate nohighlight">\(\langle m^2 \rangle\)</span>.</p>
-<p>To find out second moment, take the second derivative of <span class="math notranslate nohighlight">\(P^k(t)\)</span>,</p>
+<p>To calculate the second moment, take the second derivative of <span class="math notranslate nohighlight">\(P^k(t)\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}P^k &amp;=\sum_m P_m e^{imk} \\
 \frac{\partial^2}{\partial k^2} P^k &amp;= \sum_m P_m (i m)^2 e^{imk} .\end{split}\]</div>
-<p>Set <span class="math notranslate nohighlight">\(k=0\)</span>, we have</p>
+<p>Set <span class="math notranslate nohighlight">\(k=0\)</span>, we get</p>
 <div class="math notranslate nohighlight">
-\[\langle m^2 \rangle := \sum_m m^2 P_m =\frac{\partial^2}{\partial k^2} .\]</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>So we don’t need to calculate <span class="math notranslate nohighlight">\(P_m(t)\)</span> which takes a lot of time to calculate.</p>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>No mater what kind of interaction the system has,</p>
+\[\langle m^2 \rangle := \sum_m m^2 P_m =\frac{\partial^2}{\partial k^2} P^0 .\]</div>
+<p>There is no need to calculate <span class="math notranslate nohighlight">\(P_m(t)\)</span> anymore.</p>
+<div class="toggle admonition">
+<p class="admonition-title">Generalization</p>
+<p>Regardless of the details of the interactions, we always have the form</p>
 <div class="math notranslate nohighlight">
-\[P^k(t) = P^k(0) e^{-\cdots}\]</div>
-<p>is alway true.</p>
+\[P^k(t) = P^k(0) e^{-\cdots}.\]</div>
 </div>
 </div>
 <div class="section" id="continuum-limit">
 <h2>Continuum Limit<a class="headerlink" href="#continuum-limit" title="Permalink to this headline">¶</a></h2>
-<p>In continuum limit, our master equation becomes</p>
+<p>In the continuum limit, the master equation is the diffusion equation,</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial t} P = D \frac{\partial^2 P}{\partial x^2}\]</div>
-<p>which is infact a diffusion equation.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<ul class="simple">
+\[\frac{\partial}{\partial t} P = D \frac{\partial^2 P}{\partial x^2}.\]</div>
+<div class="hint admonition">
+<p class="admonition-title">Propagators</p>
+<ol class="arabic simple">
 <li><p>Propagators of this equation is gaussian like.</p></li>
-<li><p>Propagators of discrete master equation is a decay, <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span>.</p></li>
-</ul>
+<li><p>Propagators of discrete master equation is a decay function, i.e., <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span>.</p></li>
+</ol>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In principle, we can take some limit of the master equation propagator and make it the diffusion propagator.</p>
-</div>
-<p>Second moment of diffusion equaiton is the Einstein brownian motion result</p>
+<p>It is know that the second moment of the diffusion equaiton is the Einstein’s brownian motion result</p>
 <div class="math notranslate nohighlight">
 \[\langle x^2 \rangle = 2 D t .\]</div>
 <p>where</p>
@@ -346,46 +338,47 @@ TeX: {
 </div>
 <div class="section" id="landau-teller-master-equation">
 <h2>Landau-Teller Master Equation<a class="headerlink" href="#landau-teller-master-equation" title="Permalink to this headline">¶</a></h2>
-<p>Consider a system in a heat bath, we can expand the system to second order and the system becomes a HO or HOs. Fermi golden rule tells us that HO can only have nearest energy transition.</p>
-<div class="section" id="continuous-grid-or-energy">
-<h3>Continuous Grid or Energy<a class="headerlink" href="#continuous-grid-or-energy" title="Permalink to this headline">¶</a></h3>
+<p>Consider a system bathed in heat bath, we can Taylor expand the system to second order which are harmonic oscillators. Fermi golden rule tells us that these harmonic oscillators can only have nearest energy transition.</p>
+<div class="section" id="continuous-grid-or-energy-levels">
+<h3>Continuous Grid or Energy Levels<a class="headerlink" href="#continuous-grid-or-energy-levels" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Different energy states in a system should have</p>
+<p>Different energy states in a system follows the ratio</p>
 <div class="math notranslate nohighlight">
 \[\frac{f_1}{f_1'} = e^{-\frac{\epsilon_1 - \epsilon_1'}{kT}} .\]</div>
-<p>And <span class="math notranslate nohighlight">\(f_1\neq f_1'\)</span> most of the time. For the case of HO</p>
+<p>with <span class="math notranslate nohighlight">\(f_1\neq f_1'\)</span>. For harmonic oscillators,</p>
 <div class="math notranslate nohighlight">
 \[\frac{f_1}{f_1'} = e^{-\frac{\hbar \omega}{kT}} .\]</div>
 </div>
-<p>Here in such a system</p>
+<p>In such a system</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{d}{dt}P_m =&amp; k \left[(m+1)(P_{m+1} - e^{-\beta \hbar \omega} P_m)\right. \\
 &amp; \left. +m(e^{-\beta \hbar\omega} P_{m-1} - P_m)  \right] .\end{split}\]</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Transition</p>
+<p>The transition</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{d}{dt}P_m =&amp; (R_{m,m+1}P_{m+1} -  R_{m,m-1}P_{m-1}) \\
 &amp; - (R_{m+1,m}P_m + R_{m-1,m}P_m)\end{split}\]</div>
-<p>is called <span class="highlit">Landau-Teller master equation</span>. It’s good for non-translational-invariant system.</p>
+<p>is called the <span class="highlit">Landau-Teller master equation</span>. It works on non-translational-invariant systems.</p>
 </div>
 </div>
 </div>
 <div class="section" id="d-discrete-master-equation">
 <h2>1-D Discrete Master Equation<a class="headerlink" href="#d-discrete-master-equation" title="Permalink to this headline">¶</a></h2>
+<p>The master equation</p>
 <div class="math notranslate nohighlight">
 \[\frac{d}{dt}P_m= F(P_{m+1} + P_{m-1} -2 P_m)\]</div>
-<p>with solution</p>
+<p>has the solution</p>
 <div class="math notranslate nohighlight">
 \[P_m(t) = \sum_n \Pi_{m-n}(t) P_n(0)\]</div>
 <p>in which <span class="math notranslate nohighlight">\(\Pi_{m-n}(t) = e^{-2Ft}I_m(2Ft)\)</span> is the propagator.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>If the sytem has no translational invariance,</p>
+<div class="toggle admonition">
+<p class="admonition-title">Non-translational Invariant</p>
+<p>If the sytem doesn’t have translational invariance, the solution</p>
 <div class="math notranslate nohighlight">
 \[P_m(t) = \sum_n \Pi_{m,n}(t) P_m(0)\]</div>
-<p>propagator becomes <span class="math notranslate nohighlight">\(\Pi_{m,n}(t)\)</span> depends on both m and n.</p>
+<p>has a propagator of <span class="math notranslate nohighlight">\(\Pi_{m,n}(t)\)</span> which depends on both m and n.</p>
 </div>
 </div>
 <div class="section" id="id1">
@@ -406,28 +399,29 @@ TeX: {
 </div>
 <div class="section" id="propagator">
 <span id="index-1"></span><h2>Propagator<a class="headerlink" href="#propagator" title="Permalink to this headline">¶</a></h2>
-<p>To solve master equation, we usually find out the propagator <span class="math notranslate nohighlight">\(\Pi(x-x',t)\)</span>. For simple discrete master equation, we have the propagator with the form <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span>.</p>
+<p>To solve the master equation, the propagator <span class="math notranslate nohighlight">\(\Pi(x-x',t)\)</span> is very helpful. For simple discrete master equations, the propagator becomes <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span>.</p>
 <div class="figure align-default" id="id3">
 <a class="reference internal image-reference" href="../_images/distInit.png"><img alt="initial distribution" src="../_images/distInit.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Some initial distribution</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Initial distribution</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>For continuous master equation which is the diffusion equation, given the initial distribution, it evolves according to</p>
+<p>Continuous master equations or diffusion equations evolve according to</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial t} P(x,t) = \zeta \frac{\partial}{\partial x} P(x,t) + D \frac{\partial^2}{\partial x^2} P(x,t) .\]</div>
-<p>Then after infinite time, we have the final distribution.</p>
+\[\frac{\partial}{\partial t} P(x,t) = \zeta \frac{\partial}{\partial x} P(x,t) + D \frac{\partial^2}{\partial x^2} P(x,t),\]</div>
+<p>given the initial distribution.</p>
+<p>In infinite time, the system reach equilibrium.</p>
 <div class="figure align-default" id="id4">
 <a class="reference internal image-reference" href="../_images/distFinal.png"><img alt="final distribution" src="../_images/distFinal.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Some final distribution</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Final distribution</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p><strong>As long as the system has translational or rotational invariance, we can use Fourier transform to reduce the higher order derivatives to solve the equation.</strong></p>
-<p>For <span class="math notranslate nohighlight">\(\zeta =0\)</span>, there is only diffusion, so we have translational invariance. Fourier transform for continuous equation is</p>
+<p><strong>As long as the system has translational or rotational invariance, we can use Fourier transform to solve the equation.</strong></p>
+<p>For <span class="math notranslate nohighlight">\(\zeta =0\)</span>, there is only diffusion. Translational invariance is preserved. The Fourier transform for continuous equation is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{\partial}{\partial x} e^{ikx}=ike^{ikx} &amp;\implies \frac{\partial}{\partial x} \to ik \\
 \frac{\partial^2}{\partial x^2} e^{ikx} = -k^2 e^{ikx} &amp; \implies \frac{\partial^2}{\partial x^2} \to -k^2\end{split}\]</div>
-<p>So we can write down the transformed equation right away (for <span class="math notranslate nohighlight">\(\zeta=0\)</span> case).</p>
+<p>The transformed equation (for <span class="math notranslate nohighlight">\(\zeta=0\)</span> case),</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t}P^k = -D k^2 P^k\]</div>
-<p>and the solution to this equation is</p>
+<p>and the solution is</p>
 <div class="math notranslate nohighlight">
 \[P^k(t) = P^k(0) e^{-D k^2 t} .\]</div>
 <p>To find out the propagator, we complete the square,</p>
@@ -435,47 +429,41 @@ TeX: {
 \[\begin{split}P(x,t) &amp; = \int P(k,0) e^{-Dk^2t+ikx} dk \\
 &amp; = \int P(k,0) e^{-\frac{x^2}{4Dt}} e^{-Dt(k-\frac{ix}{2Dt})^2 }dk \\
 &amp; = e^{-\frac{x^2}{4Dt}}  \int P(k,0) e^{-Dt(k-\frac{ix}{2Dt})^2 }dk\end{split}\]</div>
-<p>The propagator is finally</p>
+<p>The propagator is then</p>
 <div class="math notranslate nohighlight">
-\[\Pi(x,t) = \frac{e^{-\frac{x^2}{4Dt}}}{\sqrt{4\pi Dt}}\]</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Somehow I can’t derive it.</p>
-</div>
+\[\Pi(x,t) = \frac{e^{-\frac{x^2}{4Dt}}}{\sqrt{4\pi Dt}}.\]</div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>There might be sigularity in the propagator. One example of it is logorithm sigularity in 2D.</p>
+<p>The propagator can also be singular. One of such examples is the logorithm sigularity in 2D.</p>
 </div>
 </div>
 <div class="section" id="bias-in-master-equation">
 <h2>Bias in Master Equation<a class="headerlink" href="#bias-in-master-equation" title="Permalink to this headline">¶</a></h2>
-<p>When <span class="math notranslate nohighlight">\(\zeta\neq 0\)</span>, the first term on RHS is a decay or viscous term.</p>
+<p>When <span class="math notranslate nohighlight">\(\zeta\neq 0\)</span>, the first term on the right hand side is a decay or viscous term,</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial t}P(x,t) = \zeta \frac{\partial}{\partial x}P(x,t) + D\frac{\partial^2}{\partial x^2}P(x,t)\]</div>
+\[\frac{\partial}{\partial t}P(x,t) = \zeta \frac{\partial}{\partial x}P(x,t) + D\frac{\partial^2}{\partial x^2}P(x,t).\]</div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>To check the properties of <span class="math notranslate nohighlight">\(\zeta\)</span>, set <span class="math notranslate nohighlight">\(D=0\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t} P = \zeta \frac{\partial}{\partial x} P \Rightarrow P\propto e^{k_w(\omega + \zeta t)}\]</div>
-<p>So we know that when <span class="math notranslate nohighlight">\(k_w &gt; 0\)</span>,</p>
+<p>When <span class="math notranslate nohighlight">\(k_w &gt; 0\)</span>,</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(\zeta &gt; 0\)</span> : exponential grow;</p></li>
 <li><p><span class="math notranslate nohighlight">\(\zeta &lt; 0\)</span> : decay</p></li>
 </ol>
 </div>
-<p>We can Fourier transform then complete the square to solve this kind of problem.</p>
+<p>We can use Fourier transform and complete the square to solve it.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
 <p>This formalism is very much like the <span class="highlit">Gauge Transformation</span>. We define a new derivative</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial x} \to \frac{\partial}{\partial x} + \Gamma(x)\]</div>
-<p>Then we put this new derivative into diffusion equation,</p>
+<p>Then we plugin this new derivative into diffusion equation,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp; \frac{\partial}{\partial t} P(x,t) = D\frac{\partial^2}{\partial x^2} P(x,t) \\
 \to &amp; \frac{\partial}{\partial t} P(x,t) = D \left(\frac{\partial^2}{\partial x^2} P(x,t) + 2\Gamma\frac{\partial}{\partial x}P(x,t) \right) + D\left( P\left( 2\Gamma^2 + \frac{\partial}{\partial x} \Gamma \right) \right)\end{split}\]</div>
-<p>Now we define <span class="math notranslate nohighlight">\(\zeta := 2\Gamma\)</span>, and let <span class="math notranslate nohighlight">\(2\Gamma^2 + \frac{\partial}{\partial x} \Gamma\)</span>. <a href="#id5"><span class="problematic" id="id2">[1]_</span></a>  The diffusion equation under this kind of transformation becomes the one we need.</p>
-<p><span class="highlit">Does it imply that the diffusion equation and gauge transformation are related?</span></p>
-<p>We might find some symmetry using this method.</p>
+<p>Define <span class="math notranslate nohighlight">\(\zeta := 2\Gamma\)</span>, and let <span class="math notranslate nohighlight">\(2\Gamma^2 + \frac{\partial}{\partial x} \Gamma\)</span>. <a href="#id5"><span class="problematic" id="id2">[1]_</span></a>  The diffusion equation under this kind of transformation becomes the one we need.</p>
 </div>
 </div>
 </div>

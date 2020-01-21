@@ -23,7 +23,7 @@
     <link rel="canonical" href="https://statisticalphysics.openmetric.org/nonequilibrium/solving-master-eqn.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Master Equation Examples" href="master-eqn-examples.html" />
+    <link rel="next" title="Examples of Master Equations" href="master-eqn-examples.html" />
     <link rel="prev" title="Master Equation" href="master-eqn.html" />
 
 <meta charset='utf-8'>
@@ -201,7 +201,7 @@ TeX: {
 <li class="toctree-l2"><a class="reference internal" href="important-questions.html">Important Questions of Statistical Mechanics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="master-eqn.html">Master Equation</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Solving Master Equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="master-eqn-examples.html">Master Equation Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="master-eqn-examples.html">Examples of Master Equations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="smoluchowski-eqn.html">Smoluchowski Equation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="effect-of-defects.html">Effect of Defects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quantum-master-eqn.html">Quantum Master Equation</a></li>
@@ -253,7 +253,7 @@ TeX: {
     </a>
   </li>
   <li>
-    <a href="master-eqn-examples.html" title="Next Chapter: Master Equation Examples"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Master Equati... &raquo;</span>
+    <a href="master-eqn-examples.html" title="Next Chapter: Examples of Master Equations"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Examples of M... &raquo;</span>
     </a>
   </li>
               
@@ -437,6 +437,10 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\begin{split}P_m(t) &amp;= \frac{1}{2\pi} \int _{-\pi}^{\pi} P^k(0) e^{-2F(1-\cos{k})t} e^{-ikm} dk \\ &amp;=  P^k(0)  e^{-2Ft} \frac{1}{2\pi} \int_{-\pi}^{\pi} e^{2Ft\cos{k}} e^{-ikm} dk \\
 &amp; = P^k(0)  e^{-2Ft} \mathrm{I_m}(2Ft)\end{split}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[P_m(t) = P_m(0)I_m(2Ft)e^{-2Ft}\]</div>
+<p>where <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span> is the <span class="highlit">propagator</span>.</p>
 <div class="important admonition" id="index-1">
 <p class="admonition-title">Modified Bessel Function</p>
 <p><strong>Vocabulary</strong>: The <span class="highlit">modified Bessel function</span> is defined as</p>
