@@ -281,28 +281,27 @@ TeX: {
 <a class="reference internal image-reference" href="../_images/smoluchowski.png"><img alt="Probability distribution with an attraction point." src="../_images/smoluchowski.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Probability distribution with an attraction point.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>If we have some potential with a mininum point, then the motion of particles will be attracted to this minimum point. With the force in mind, we can write down the master equation, which is the <span class="math notranslate nohighlight">\(\zeta \neq 0\)</span> case,</p>
+<p>Smoluchowski equation describes the probability distribution of particles in a attractive potential. Given a potential <span class="math notranslate nohighlight">\(U(x)\)</span>, the master equation is,</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t} P(x,t) = \frac{\partial}{\partial x}\left( \frac{\partial U(x)}{\partial x} P(x,t)  \right) + D \frac{\partial^2}{\partial x^2} P(x,t) .\]</div>
-<p>This equation is called the Smoluchowski equation.</p>
-<p>A very simple case is</p>
+<p>This equation is called the <span class="highlit">Smoluchowski equation</span>.</p>
+<p>For a quadratic potential <span class="math notranslate nohighlight">\(U(x) = \gamma x^2/2\)</span>, we get</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t} P(x,t) = \gamma \frac{\partial}{\partial x}\left(x P(x,t)  \right) + D \frac{\partial^2}{\partial x^2} P(x,t) .\]</div>
-<p>which corresponds to a quadrople potential <span class="math notranslate nohighlight">\(U(x) = \gamma x^2/2\)</span>.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>We have <span class="highlit">methods of characteristics</span> to solve such partial differential equations.</p>
+<p>The Smoluchowski equation is solved by the <span class="highlit">methods of characteristics</span>.</p>
 </div>
-<p>We can also use Fourier transform to solve the problem. However, we will only get</p>
+<p>Apply Fourier transform to the Smoluchowski equation, we get</p>
 <div class="math notranslate nohighlight">
-\[\frac{\partial}{\partial t} P^k = \cdots \frac{\partial}{\partial k} P^k  + \cdots k^2 P^k\]</div>
-<p>and the propagator is</p>
+\[\frac{\partial}{\partial t} P^k = \cdots \frac{\partial}{\partial k} P^k  + \cdots k^2 P^k.\]</div>
+<p>The propagator is</p>
 <div class="math notranslate nohighlight">
 \[\Pi(x,x',t) = \frac{e^{-(x - x' \exp(-\gamma t))^2}{4D\mathscr T(t)} }{\sqrt{4 \pi D \mathscr T(t)}}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathscr T(t) = \frac{1-e^{-2\gamma t}}{2\gamma}\)</span>.</p>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/smoluTime.png"><img alt="../_images/smoluTime.png" src="../_images/smoluTime.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">The redefined time parameter in the solution of Smoluchowski equation example.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Examples of the normalized time parameter in the solution of Smoluchowski equation.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets">1</span></dt>
