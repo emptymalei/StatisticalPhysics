@@ -1,8 +1,8 @@
+.. _greens-function:
 Green's Function
 ==================
 
 .. index:: Green's Function
-
 
 Green's Function for Second Order Differential Equations
 ----------------------------------------------------------

@@ -39,6 +39,8 @@ The equation is then simplified into
       \frac{\partial^2}{\partial x^2} e^{ikx} = -k^2 e^{ikx} & \implies \frac{\partial^2}{\partial x^2} \to -k^2
 
 
+.. _laplace-transform:
+
 Laplace Transform
 --------------------
 
