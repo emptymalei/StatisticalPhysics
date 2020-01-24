@@ -3,6 +3,8 @@ Smoluchowski Equation
 
 .. role:: highlit
 
+.. _smoluchowski-equation:
+
 Smoluchowski Equation
 -----------------------
 
