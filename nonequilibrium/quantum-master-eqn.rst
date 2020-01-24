@@ -3,84 +3,86 @@ Quantum Master Equation
 
 .. role:: highlit
 
-The game of quantum master equations is presented in this lecture notes.
+.. index:: Quantum Master Equation
 
+.._Quantum Master Equation:
 
 Quantum Master Equation
 ------------------------
 
-.. important::
-   In quantum mechanics, probability is not complete. We need density matrix.
+.. admonition:: Density Matrix
+   :class: important
 
-Quantum mechanics observables are averaging over all density matrix elements,
+   In quantum mechanics, the probability doesn't deliver all the information available. The density matrix is a better choice to construct a master equation for quantum systems.
+
+Quantum mechanics observables are averages over all the density matrix elements,
 
 .. math::
    \langle O \rangle = \sum_{m,n} O_{nm}\rho_{mn}.
 
-For diagonalized density matrix, this averaging becomes the ordinary probability averaging.
+Given an initial condition with diagonalized density matrix, the dynamics won't necessarily guarantee the diagonalizion of the density matrix. Thus the average pickup off-diagonal element contributions as time goes on.
 
-However, even if we start with a diagonalized density matrix, the averaging procedure won't stay on the classical averaging procedure as time goes on. Off diagonal elements can be created out of the diagonal elements.
+The classical master equations won't solve authentic quantum problems given the different definition of the average of the observables.
 
-In that sense, it's not even possible to use the classical master equation to solve most quantum problems. We need the quantum master equation.
-
-The first principle of quantum mechanics is
+To derive a quantum master equation, we start from the first principle in quantum mechanics,
 
 .. math::
-   i\hbar \frac{d}{dt}\hat \rho = [\hat H,\hat \rho] = \hat L \hat \rho.
+   i\hbar \frac{d}{dt}\hat \rho = [\hat H,\hat \rho] \equiv \hat L \hat \rho.
 
-Then the question is, as the first idea, how to derive an equation for the probability.
 
 
 Pauli's Mistake
 ~~~~~~~~~~~~~~~~~
 
 
-Pauli derived the first quantum master equation which is not quite right.
+Pauli derived the first quantum master equation. However, it was not quite right.
 
-The solution to a quantum system is
+The formal solution to a quantum system is
 
 .. math::
    \hat \rho(t) = e^{-iL(t-t_0)} \hat \rho(t_0) .
 
 
-In Heisenberg picture,
+In the Heisenberg picture,
 
 .. math::
    \hat \rho(t+\tau) = e^{-i\tau \hat H} \hat \rho(t) e^{i\tau \hat H} .
 
-The diagonal elements of density matrix are
+The diagonal elements of the density matrix are
 
 .. math::
    \rho_{mm}(t+\tau) = \bra{m}e^{-i\tau \hat H} \hat \rho(t) e^{i\tau \hat H} \ket{m}.
 
 
-The left hand side is the probability, :math:`P_m`. Right had side becomes
+On the left hand side, :math:`P_m\equiv \rho_{mm}` is the probability of the state. The right hand side becomes
 
 .. math::
    \text{RHS} = \sum_{n,l}\bra{m}e^{-i\tau \hat H} \ket{n} \bra{n}\hat \rho(t) \ket{l}\bra{l} e^{i\tau \hat H} \ket{m}.
 
 
-Here is where Pauli's idea comes in. He assumed that the system is dirty enought to have repeatedly recurance of diagonalized density matrix. Then he use diagonalized density matrix to calculate the probability,
+Pauli's then assumed that the system is "dirty" enought to have recurances of diagonalized density matrix. The diagonalized density matrix is used to calculate the probability,
 
 .. math::
    P_m(t+\tau) &= \sum_{n}\bra{m}e^{-i\tau \hat H} \ket{n} \bra{n}\hat \rho(t) \ket{n}\bra{n} e^{i\tau \hat H} \ket{m} \\
    & = \sum_{n} P_n \left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2 .
 
-The term :math:`\left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2` RHS is the probability of a state n to be at state m after a short time :math:`\tau`. We'll define this as :math:`Q_{mn}(\tau)`.
+The term :math:`\left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2` on the right hand side is the transition probability from a state n to state m in a short period :math:`\tau`. We define
 
-So in short the probability is
+.. math::
+   Q_{mn}(\tau) \equiv \left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2.
+
+The probability at time :math:`t+\tau` is
 
 .. math::
    P_m(t+\tau) = \sum_n Q_{mn}(\tau)P_n(t).
 
-Then we can repeat the Chapman method to derive a master eqution.
-
+The Chapman method to then applied to derive the master eqution.
 
 .. important::
-   However, the Pauli assumption is basically the Fermi golden rule which requires a infinite amount of time. This is obviously not valid for an master equation system.
+   The Pauli assumption is the Fermi golden rule which requires an infinite amount of time. This is not gererally valid.
 
 
-Then it comes the van Hove derivation.
+The first working quantum master equation was derived by van Hove.
 
 
 van Hove's Derivation
@@ -282,7 +284,7 @@ in which :math:`- i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) = 0` (in
 We have the definition
 
 .. math::
-   \mathscr K(t-t') & = \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D)  (\hat L_0 + \lambda \hat L_W ) (t-t')} (\hat L_0 + \lambda \hat L_W ) .
+   \mathscr K(t-t') = \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D)  (\hat L_0 + \lambda \hat L_W ) (t-t')} (\hat L_0 + \lambda \hat L_W ) .
 
 In weak coupling interaction, :math:`\lambda \rightarrow 0`, we can put :math:`\lambda = 0` in the exponential.
 
