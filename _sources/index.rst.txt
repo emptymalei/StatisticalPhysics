@@ -97,20 +97,6 @@ Some Topics in Statistical Mechanics
 
 
 
-
-
-------
-
-.. figure:: _static/images/cc_byncsa.png
-   :target: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
-
-
-
-
-
-
-
-
 Acknowledgement
 ==================
 
@@ -131,6 +117,10 @@ Many thanks to open source project `Sphinx <http://sphinx-doc.org>`_ for it save
 -----
 
 This open source project is hosted on GitHub: `Statistical Physics <https://github.com/emptymalei/statisticalphysics>`_ .
+
+.. figure:: _static/images/cc_byncsa.png
+   :target: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
+
 
 
 Read online: `Statistical Physics Notes <http://statisticalphysics.openmetric.org>`_ .
