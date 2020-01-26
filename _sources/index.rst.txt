@@ -9,7 +9,7 @@ This started as a set of lecture notes for the statistical physics course I took
 Acknowledgement
 ==================
 
-In 2014, I took the statistical physics course at UNM. It was a early-morning course taught by Professor V. M. Kenkre. I was never a fan of early-morning classes but Professor Kenkre's statmech lectures were among the best lectures I have ever took.
+In 2014, I took the statistical physics course at UNM. It was a early-morning course taught by Professor V. M. Kenkre. I was never a fan of early-morning classes but Professor Kenkre's statmech lectures were among the best lectures I ever took.
 
 Professor Kenkre's lectures are truly fantastic. He made the lectures to be as inspiring and exciting as thrilling movies. Those lectures had such a power that a tiny hint would develop into an important result as the adventure goes on. The only words I can think of to describe them are the words used on the best chinese novel, *Dream of the Red Chamber*.
 
