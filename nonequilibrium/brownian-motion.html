@@ -234,7 +234,7 @@ TeX: {
 <li><a class="reference internal" href="#ornstein-uhlenbeck-process">Ornstein-Uhlenbeck Process</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#harmonic-oscillators-the-skeleton-key">Harmonic Oscillators The Skeleton Key</a></li>
+<li><a class="reference internal" href="#harmonic-oscillators-as-the-skeleton-keys">Harmonic Oscillators as the Skeleton Keys</a></li>
 </ul>
 </li>
 </ul>
@@ -279,86 +279,85 @@ TeX: {
     <div class="col-md-12 content">
       
   <div class="section" id="brownian-motion">
-<h1>Brownian Motion<a class="headerlink" href="#brownian-motion" title="Permalink to this headline">¶</a></h1>
-<p>The equation for Brownian Motion is</p>
+<span id="index-0"></span><h1>Brownian Motion<a class="headerlink" href="#brownian-motion" title="Permalink to this headline">¶</a></h1>
+<p>Brownian motion is described by</p>
+<div class="math notranslate nohighlight" id="equation-eqn-brownian-motion-langevin-eqn">
+<span class="eqno">(24)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt} v + \gamma v = R(t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(R(t)\)</span> is a random force density which is required to following</p>
+<div class="math notranslate nohighlight" id="equation-eqn-brownian-motion-langevin-eqn-force-req">
+<span class="eqno">(25)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-force-req" title="Permalink to this equation">¶</a></span>\[\begin{split}\avg{R(t)} &amp;= 0, \\
+\avg{R(t)R(t')} &amp;= C \delta(t-t') .\end{split}\]</div>
+<p>The first condition enforces the force density to be unbiased and the second condition indicates that the force density is spiking in time. Equation <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn">(24)</a> and <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn-force-req">(25)</a> form the linear <span class="highlit">Langevin equation</span>.</p>
+<p>The formal solution to the Langevin equation is</p>
+<div class="math notranslate nohighlight" id="equation-eqn-brownian-motion-langevin-eqn-formal-sol">
+<span class="eqno">(26)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-formal-sol" title="Permalink to this equation">¶</a></span>\[v(t) = v(0)e^{-\gamma t} + \int_0^t dt' e^{-\gamma (t-t')} R(t') .\]</div>
+<p>Given the fact that <span class="math notranslate nohighlight">\(R(t)\)</span> is stochastic, <span class="math notranslate nohighlight">\(v(t)\)</span> is also stochastic. The statistics of the observables can be derived. The velocity squared is</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt} v + \gamma v = R(t),\]</div>
-<p>where <span class="math notranslate nohighlight">\(R(t)\)</span> is random force which requires</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\avg{R(t)} &amp;= 0 \\
-\avg{R(t)R(t')} = C \delta(t-t') .\end{split}\]</div>
-<p>This equation is the linear <span class="highlit">Langevin equation</span>.</p>
-<p>The formal solution, which seems to be useless, is</p>
-<div class="math notranslate nohighlight">
-\[v(t) = v(0)e^{-\gamma t} + \int_0^t dt' e^{-\gamma (t-t')} R(t') .\]</div>
-<p>Knowing that <span class="math notranslate nohighlight">\(R(t)\)</span> is random, or stochastic, we imediately realize that <span class="math notranslate nohighlight">\(v(t)\)</span> is stochastic. The thing to do is to find out the statistics.</p>
-<p>This quantity squared is,</p>
-<div class="math notranslate nohighlight">
-\[v(t)^2 = v(0)^2 e^{-2\gamma t} + \int_0^t dt'\int_0^t dt'' e^{-\gamma (t- t')} e^{-\gamma (t - t'')} R(t')R(t'') + \mathrm{Cross Terms}\]</div>
-<p>Average of the solution is</p>
+\[v(t)^2 = v(0)^2 e^{-2\gamma t} + \int_0^t dt'\int_0^t dt'' e^{-\gamma (t- t')} e^{-\gamma (t - t'')} R(t')R(t'') + \mathrm{Cross Terms}.\]</div>
+<p>Take the average,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\avg{v} &amp;= \avg{v(0)e^{-\gamma t}} + {\color{magenta}\avg{\int_0^t dt' e^{-\gamma (t-t')} R(t') } } \\
 \avg{v^2} &amp;= \avg{v(0)^2 e^{-2\gamma t}} + \avg{\int_0^t dt'\int_0^t dt'' e^{-\gamma (t- t')} e^{-\gamma (t - t'')} R(t')R(t'')} + {\color{magenta}\avg{ \mathrm{Cross Terms}} }\end{split}\]</div>
 <p>where these magenta colored terms are zero.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Note that the average here is ensemble average. Define probability density <span class="math notranslate nohighlight">\(P(v,t)\)</span> for velocity at time t. Recall that in velocity space, Liouville equation is</p>
+<div class="hint admonition">
+<p class="admonition-title">The Liouville equation</p>
+<p>The average being used here is the ensemble average. Define a probability density <span class="math notranslate nohighlight">\(P(v,t)\)</span> for velocity at any time <span class="math notranslate nohighlight">\(t\)</span>. In velocity space, the Liouville equation is</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt}P(v,t) + \frac{d}{dt}j = 0.\]</div>
-<p>It’s very important to realize that this current density is the current density in velocity space. Applying <span class="math notranslate nohighlight">\(d_t v = -\gamma vt R(t)\)</span>,</p>
+\[\frac{d}{dt}P(v,t) + \frac{d}{dt}j = 0,\]</div>
+<p>where <span class="math notranslate nohighlight">\(j\)</span> is the current density is the current density in the velocity space. Apply <span class="math notranslate nohighlight">\(d_t v = -\gamma vt + R(t)\)</span>, we get</p>
 <div class="math notranslate nohighlight">
 \[\frac{d}{dt}P(v,t) + \frac{d}{dv} \left(  (-\gamma v+ R(t))P(v,t) \right) = 0 .\]</div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Now I am curious what ENSEMBLE average is. It’s not this probability density because there is time dependence.</p>
+<div class="hint admonition">
+<p class="admonition-title">The Fokker-Plank equation</p>
+<p>The <span class="highlit">Fokker-Plank equation</span>.</p>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>What about <span class="highlit">Fokker-Plank equation</span>?</p>
-</div>
-<p>By using the definition of random motion, the ensemble average shows us very simple results.</p>
+<p>The ensemble average is simplified to</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\avg{v(t)} &amp;= \avg{v(0)} e^{-\gamma t} \\
-\avg{v(t)^2} &amp; = \avg{v(0)^2}e^{-2\gamma t} + C \frac{1- e^{-2\gamma t}}{2\gamma}\end{split}\]</div>
-<p>In the limit that time goes to infinity, we have</p>
+\avg{v(t)^2} &amp; = \avg{v(0)^2}e^{-2\gamma t} + C \frac{1- e^{-2\gamma t}}{2\gamma}.\end{split}\]</div>
+<p>As time goes to infinity, <span class="math notranslate nohighlight">\(t\to\infty\)</span>, we have</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\avg{v(t\to\infty)} &amp; = 0 \\
+\[\begin{split}\avg{v(t\to\infty)} &amp; = 0, \\
 \avg{v(t\to \infty)^2} &amp; = \frac{C}{2\gamma} .\end{split}\]</div>
-<p>The legacy of Einstein is to measure Boltzmann constant using Brownian motion. The regorous derivation can be found in <a class="reference external" href="http://books.google.com/books?id=74ggAwAAQBAJ">Physical Mathematics</a> . The results, however, is that <span class="math notranslate nohighlight">\(\avg{v(t)^2}\)</span> is related to thermal energy of the particle and also related to the temperature according to equipartition theorem,</p>
+<p>Einstein’s showed that the Boltzmann constant <span class="math notranslate nohighlight">\(k\)</span> could be measured in Brownian motion experiments. <span class="math notranslate nohighlight">\(\avg{v(t)^2}\)</span> is related to the thermal energy of the particles and also the temperature of the system based on the equipartition theorem,</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{2}m \avg{v(t\to \infty)^2} = \frac{1}{2}k_B T .\]</div>
+<p>The rigorous derivation is found in the book <a class="reference external" href="http://books.google.com/books?id=74ggAwAAQBAJ">Physical Mathematics</a>.</p>
 <div class="section" id="other-forms-of-random-motion">
 <h2>Other Forms of Random Motion<a class="headerlink" href="#other-forms-of-random-motion" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="wiener-process">
-<h3>Wiener Process<a class="headerlink" href="#wiener-process" title="Permalink to this headline">¶</a></h3>
-<p>Equation for this process is</p>
+<span id="index-1"></span><h3>Wiener Process<a class="headerlink" href="#wiener-process" title="Permalink to this headline">¶</a></h3>
+<p>Wiener process is determined by</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt} x = R(t).\]</div>
-<p>Derived from this,</p>
+\[\frac{d}{dt} x = R(t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> is the displacement and <span class="math notranslate nohighlight">\(R(t)\)</span> is the random force density defined by equation <span class="math notranslate nohighlight">\(eqn-brownian-motion-langevin-eqn-force-req\)</span>.</p>
+<p>The solution shows that the average of displacement squared is proportional to the time <span class="math notranslate nohighlight">\(t\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\avg{x^2} \propto t.\]</div>
 </div>
 <div class="section" id="ornstein-uhlenbeck-process">
-<h3>Ornstein-Uhlenbeck Process<a class="headerlink" href="#ornstein-uhlenbeck-process" title="Permalink to this headline">¶</a></h3>
-<p>Change the velocity in Brownian motion to displacement,</p>
+<span id="index-2"></span><span id="id1"></span><h3>Ornstein-Uhlenbeck Process<a class="headerlink" href="#ornstein-uhlenbeck-process" title="Permalink to this headline">¶</a></h3>
+<p>Another version of the random motion is to replace the random force density with a random velocity restriction. In this case, we find the equation of motion to be</p>
 <div class="math notranslate nohighlight">
-\[\frac{d}{dt} x + \gamma x  =  R(t).\]</div>
-<p>Suppose we have <span class="math notranslate nohighlight">\(\avg{v(0)}=0\)</span>, <span class="math notranslate nohighlight">\(\avg{x^2}\)</span> becomes constant.</p>
+\[\frac{d}{dt} x + \gamma x  =  R(t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(R(t)\)</span> is a random velocity restriction.</p>
+<p>The solution is the same as Brownian motion but for <span class="math notranslate nohighlight">\(x(t)\)</span> instead of <span class="math notranslate nohighlight">\(v(t)\)</span>.</p>
 </div>
 </div>
-<div class="section" id="harmonic-oscillators-the-skeleton-key">
-<h2>Harmonic Oscillators The Skeleton Key<a class="headerlink" href="#harmonic-oscillators-the-skeleton-key" title="Permalink to this headline">¶</a></h2>
-<p>A damped, driven harmonic oscillator is</p>
-<div class="math notranslate nohighlight">
-\[m \frac{d^2}{dt^2} x  + \alpha \frac{d}{dt} x + \beta x = R(t)  .\]</div>
-<p>Divided by <span class="math notranslate nohighlight">\(\alpha\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[\frac{d^2}{dt^2} x  + \frac{\alpha}{m} \frac{d}{dt} x + \frac{\beta}{m} x = \frac{1}{m}R(t)  .\]</div>
-<p>We understand immediately that this reduces to a <span class="highlit">Ornstein-Uhlenbeck</span> equation if mass is very small.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Does it ring a bell of the WKB approximation?</p>
+<div class="section" id="harmonic-oscillators-as-the-skeleton-keys">
+<h2>Harmonic Oscillators as the Skeleton Keys<a class="headerlink" href="#harmonic-oscillators-as-the-skeleton-keys" title="Permalink to this headline">¶</a></h2>
+<p>A driven and damped harmonic oscillator is</p>
+<div class="math notranslate nohighlight" id="equation-eqn-harmonic-oscillator-driven-damped-eom">
+<span class="eqno">(27)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom" title="Permalink to this equation">¶</a></span>\[m \frac{d^2}{dt^2} x  + \alpha \frac{d}{dt} x + \beta x = R(t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> is the displacement and <span class="math notranslate nohighlight">\(R(t)\)</span> is a random force. Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(27)</a> has the genes of Brownian motion and <a class="reference internal" href="#ornstein-uhlenbeck-process"><span class="std std-ref">Ornstein-Uhlenbeck Process</span></a>.</p>
+<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(27)</a> divided by <span class="math notranslate nohighlight">\(m\)</span> leads to</p>
+<div class="math notranslate nohighlight" id="equation-eqn-harmonic-oscillator-driven-damped-eom-reduced">
+<span class="eqno">(28)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced" title="Permalink to this equation">¶</a></span>\[\frac{d^2}{dt^2} x  + \frac{\alpha}{m} \frac{d}{dt} x + \frac{\beta}{m} x = \frac{1}{m}R(t).\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced">(28)</a> is reduceed to the <span class="highlit">Ornstein-Uhlenbeck</span> equation when the mass is very small, i.e., <span class="math notranslate nohighlight">\(\frac{\alpha}{m}\gg 1\)</span>.</p>
+<div class="hint admonition">
+<p class="admonition-title">WKB Approximation</p>
+<p>WKB approximation.</p>
 </div>
 <p>.</p>
 </div>
