@@ -2,16 +2,6 @@ Statistical Physics
 =============================
 
 
-
-
-This started as a set of lecture notes for the statistical physics course I took. Then I expanded it and rebuilt it into something much more useful.
-
-
-
-
-Introduction
-========================
-
 Statistical Physics is the holy grail of physics. It taught us great lessons about this universe and it definitely will teach us more. Some ideas (such as Verlinde's scenario) even place thermodynamics and statistical physics as the fundamental theory of all theories. This leads to the thought that it might be possible that everything is a result of emergence.
 
 Statistical mechanics is the mechanics of large bodies using statistical methods.
@@ -22,7 +12,7 @@ Statistical mechanics is the mechanics of large bodies using statistical methods
 
 How did we end up with probabilities?
 
-We wouldn't need statistics if we could carry out Newton's plan exactly, in theory. But we do not have such computing powers nor such detailed knowledge of each particle. So we give up the detailed kinematics of each particle. First things first, we drop the initial conditions of the particles. The argument is that it's impossible to write down all the initial conditions of all the particles given the experimental technology and potato computers we have. Secondly, we can't track the trajectory of all the particles so we anonymize them. In order to describe these anonymized particles, we use probabilities. What is even more intriguing is that some detailed dynamics of the particles have to be dropped to make our statistical quantities calculable. With these simplifications, statistics is then powerful enough to predict many physical observables.
+We wouldn't need statistics if we could carry out Newton's plan exactly, in theory. But we do not have such computing powers nor such detailed knowledge of each particle. So we give up the detailed kinematics of each particle. First things first, we drop the initial conditions of the particles. The argument is that it's impossible to write down all the initial conditions of all the particles given the experimental technology and potato computers we have. Secondly, we can't track the trajectory of all the particles so we anonymize them. To describe these anonymized particles, we use probabilities. What is even more intriguing is that some detailed dynamics of the particles have to be dropped to make our statistical quantities calculable. With these simplifications, statistics is then powerful enough to predict many physical observables.
 
 
 **Though it's kind of disappointing that Newton's plan didn't succeed, this conflict between Newton's plan and the universe brought us new insights about our world.**
@@ -100,9 +90,9 @@ Some Topics in Statistical Mechanics
 Acknowledgement
 ==================
 
-In 2014, I took the statistical physics course at UNM. It was a early-morning course taught by Professor V. M. Kenkre. I was never a fan of early-morning classes but Professor Kenkre's statmech lectures were among the best lectures I ever took.
+In 2014, I took the statistical physics course at UNM. It was an early-morning course taught by Professor V. M. Kenkre. I was never a fan of early-morning classes but Professor Kenkre's statmech lectures were among the best lectures I ever took.
 
-Professor Kenkre's lectures are truly fantastic. He made the lectures to be as inspiring and exciting as thrilling movies. Those lectures had such a power that a tiny hint would develop into an important result as the adventure goes on. The only words I can think of to describe them are the words used on the best chinese novel, *Dream of the Red Chamber*.
+Professor Kenkre's lectures are truly fantastic. He made the lectures to be as inspiring and exciting as thrilling movies. Those lectures had such a power that a tiny hint would develop into an important result as the adventure goes on. The only words I can think of to describe them are the words used on the best Chinese novel, *Dream of the Red Chamber*.
 
 
 .. image:: _static/images/aComment.png
