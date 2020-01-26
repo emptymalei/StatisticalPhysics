@@ -6,20 +6,6 @@ Statistical Physics
 
 This started as a set of lecture notes for the statistical physics course I took. Then I expanded it and rebuilt it into something much more useful.
 
-Acknowledgement
-==================
-
-In 2014, I took the statistical physics course at UNM. It was a early-morning course taught by Professor V. M. Kenkre. I was never a fan of early-morning classes but Professor Kenkre's statmech lectures were among the best lectures I ever took.
-
-Professor Kenkre's lectures are truly fantastic. He made the lectures to be as inspiring and exciting as thrilling movies. Those lectures had such a power that a tiny hint would develop into an important result as the adventure goes on. The only words I can think of to describe them are the words used on the best chinese novel, *Dream of the Red Chamber*.
-
-
-.. image:: _static/images/aComment.png
-   :align: center
-
-It says that the subplot permeates through thousands of pages before people realize it's importance.
-
-I am very grateful to him for this adventure of modern statistical mechanics. I am also very grateful to the TA of this course, `Anastasia <http://www.unm.edu/~aierides/505/>`_, who helped me a lot with my homework and lecture notes.
 
 
 
@@ -122,6 +108,26 @@ Some Topics in Statistical Mechanics
 
 
 
+
+
+
+Acknowledgement
+==================
+
+In 2014, I took the statistical physics course at UNM. It was a early-morning course taught by Professor V. M. Kenkre. I was never a fan of early-morning classes but Professor Kenkre's statmech lectures were among the best lectures I ever took.
+
+Professor Kenkre's lectures are truly fantastic. He made the lectures to be as inspiring and exciting as thrilling movies. Those lectures had such a power that a tiny hint would develop into an important result as the adventure goes on. The only words I can think of to describe them are the words used on the best chinese novel, *Dream of the Red Chamber*.
+
+
+.. image:: _static/images/aComment.png
+   :align: center
+
+It says that the subplot permeates through thousands of pages before people realize it's importance.
+
+I am very grateful to him for this adventure of modern statistical mechanics. I am also very grateful to the TA of this course, `Anastasia <http://www.unm.edu/~aierides/505/>`_, who helped me a lot with my homework and lecture notes.
+
+Many thanks to open source project `Sphinx <http://sphinx-doc.org>`_ for it saves me a lot of time on making this website.
+
 -----
 
 This open source project is hosted on GitHub: `Statistical Physics <https://github.com/emptymalei/statisticalphysics>`_ .
@@ -131,10 +137,6 @@ Read online: `Statistical Physics Notes <http://statisticalphysics.openmetric.or
 
 Download the `Latest PDF Version <https://media.readthedocs.org/pdf/statisticalphysics/latest/statisticalphysics.pdf>`_ .
 
-
------
-
-Many thanks to open source project `Sphinx <http://sphinx-doc.org>`_ for it saves me a lot of time on making this website.
 
 -----
 
