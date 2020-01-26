@@ -168,7 +168,7 @@ and the all the off-diagonal elements of the density matrix
 .. math::
    \hat \rho_{od} = (1-\hat D)\hat \rho.
 
-.. admonition:: Reconstruct the Density Matri
+.. admonition:: Reconstruct the Density Matrix
    :class: hint
 
    The density matrix is trivilly reconstructed by
@@ -201,14 +201,14 @@ Use the completeness relation :math:`\hat \rho = \hat \rho_d + \hat \rho_{od}`,
    \partial_t \hat \rho _{od} & = - i (1 - \hat D)  \hat L \hat \rho _ d - i (1 - \hat D)  \hat L \hat \rho_{od} .
    :label: eqn-quantum-master-equations-projection-technique-dod-2
 
-The off-diagonal equation in equation :eq:`:label: eqn-quantum-master-equations-projection-technique-dod-2` is solved using Green's function,
+The off-diagonal equation in equation :eq:`eqn-quantum-master-equations-projection-technique-dod-2` is solved using Green's function,
 
 .. math::
    \hat \rho_{od} = e^{-i(1-\hat D)\hat L t} + \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(-i(1-\hat D)\hat L \hat \rho_d(t')) .
    :label: eqn-quantum-master-equations-projection-technique-od-green
 
 .. admonition:: Green's Function
-   :class: hint
+   :class: toggle
 
    Recall that the solution to
 
@@ -256,45 +256,61 @@ The term :math:`- i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0)` disapea
 
    However, we can always choose a combination of the current basis to diagonalize the density matrix.
 
+The projection technique can also be applied on the flavor transformations of neutrinos. [3]_
+
 
 Simplify the Quantum Master Equation
 ----------------------------------------
 
 We derived the quantum master equation using the projection method. However, the equation is complicated.
 
-Let's stare at the results for a minute.
+Let's stare at the solution equation :eq:`eqn-quantum-master-equations-projection-technique-master-equation` for a minute,
 
 .. math::
    {\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.
 
-By definition, :math:`\rho_d=\hat D\rho`. So what is :math:`\hat D \hat L \rho_d`?
+By definition, :math:`\rho_d=\hat D\rho`. The term on the right hand side :math:`\hat D \hat L \rho_d` is
 
 .. math::
    \hat D \hat L \rho_d & = \hat D\hat L \hat D \hat \rho \\
    & = \hat D \left[ {\color{magenta}  \begin{pmatrix}\rho_{11} & 0 & 0 & \cdots \\ 0 & \rho_{22} & 0 & \cdots \\ 0 & 0 & \rho_{33} & \cdots  \\ \vdots & \vdots & \vdots &  \ddots  \end{pmatrix} \begin{pmatrix} H_{11} & H_{12} & H_{13} & \cdots \\ H_{21} & H_{22} & H_{23} & \cdots  \\ H_{31} & H_{32} & H_{33} & \cdots \\ \vdots & \vdots \vdots & & \ddots \end{pmatrix}    } -  {\color{green} \begin{pmatrix} H_{11} & H_{12} & H_{13} & \cdots \\ H_{21} & H_{22} & H_{23} & \cdots  \\ H_{31} & H_{32} & H_{33} & \cdots \\ \vdots & \vdots \vdots & & \ddots   \end{pmatrix} \begin{pmatrix} \rho_{11} & 0 & 0 & \cdots \\ 0 & \rho_{22} & 0 & \cdots \\  0 & 0 & \rho_{33} & \cdots \\ \vdots & \vdots & \ddots & \cdots \end{pmatrix} } \right]
 
 
-We can easily see that the diagonal elements are equal for the two terms (magenta and green) in the braket so all the diagonal elements go away. Now when the :math:`\hat D` outside of the bracket applied, the whole term is zero.
+The diagonal elements are the same for the two terms (the magenta term and the green term) in the braket so that all the diagonal elements are gone. Finally, we apply :math:`\hat D` to the off-diagonalized matrix and get 0,
 
-We are so lucky to eliminate the term :math:`-i\hat D\hat L\hat \rho_d`.
+.. math::
+   \hat D \hat L \rho_d = 0.
 
-We do perturbation theory most of the time. Consider the case that Hamiltonian of the system is :math:`\hat H = \hat H_0 + \lambda \hat W`. We can split the Liouville operator into two parts, :math:`\hat L = \hat L_0 + \lambda \hat L_W `.
+Thus the first term on the right hand side in equation :eq:`eqn-quantum-master-equations-projection-technique-master-equation` :math:`-i\hat D\hat L\hat \rho_d = 0`.
 
-Our master equation becomes
+In quantum perturbation theory, the Hamiltonian is :math:`\hat H = \hat H_0 + \lambda \hat W`. The Liouville operator for this system has two parts,
+
+.. math::
+   \hat L = \hat L_0 + \lambda \hat L_W.
+
+The master equation becomes
 
 .. math::
    \partial_t \hat \rho_d & =  -  \int_0^t dt' \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D) (\hat L_0 + \lambda \hat L_W  )(t-t')}(1-\hat D)\hat L \hat \rho_d \\
    & =  -  \int_0^t dt' \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D)  (\hat L_0 + \lambda \hat L_W ) (t-t')} (\hat L_0 + \lambda \hat L_W ) \hat \rho_d \\
    & =  -  \int_0^t dt' \mathscr K(t-t') \hat \rho_d .
 
-in which :math:`- i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) = 0` (initial condition), :math:`\hat D \hat L \rho_d = 0` (just proved).
+under the initial condition
 
-We have the definition
+.. math::
+   - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) = 0
+
+and the proved relation
+
+.. math::
+   \hat D \hat L \rho_d = 0.
+
+Define
 
 .. math::
    \mathscr K(t-t') = \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D)  (\hat L_0 + \lambda \hat L_W ) (t-t')} (\hat L_0 + \lambda \hat L_W ) .
 
-In weak coupling interaction, :math:`\lambda \rightarrow 0`, we can put :math:`\lambda = 0` in the exponential.
+In the weak coupling interaction limit, :math:`\lambda \rightarrow 0`,
 
 .. math::
    \mathscr K(t-t')  &=  \hat D (\hat L_0 + \lambda \hat L_W ) e^{-i(1-\hat D)  (\hat L_0 + \lambda \hat L_W ) (t-t')} (\hat L_0 + \lambda \hat L_W )  \\
@@ -302,32 +318,35 @@ In weak coupling interaction, :math:`\lambda \rightarrow 0`, we can put :math:`\
    &= \hat D \hat L_0  e^{-i(1-\hat D)  \hat L_0 (t-t')} \hat L_0  + \lambda \hat D \hat L_0  e^{-i(1-\hat D)  \hat L_0 (t-t')}   \hat L_W   \\
    \phantom{\mathscr K(t-t')} & \phantom{{} = } + \lambda \hat D  \hat L_W  e^{-i(1-\hat D)  \hat L_0 (t-t')} \hat L_0  + \lambda^2 \hat D   \hat L_W  e^{-i(1-\hat D)  \hat L_0 (t-t')}  \hat L_W  \\
    &=  \lambda^2 \hat D   \hat L_W  e^{-i(1-\hat D)  \hat L_0 (t-t')}  \hat L_W  \\
-   &=  \lambda^2 \hat D   \hat L_W  e^{-i\hat L_0 (t-t')}  \hat L_W  .
+   &=  \lambda^2 \hat D   \hat L_W  e^{-i\hat L_0 (t-t')}  \hat L_W .
 
+Several terms of :math:`\lambda` are dropped. [1]_
 
-I dropped several terms even the first order of :math:`\lambda`. This has been done correctly because the interaction term can be very different from the zeroth order. [1]_
-
-With a lot of terms being disappears, we can now start to look at the numbers which ia the density matrix elements sandwiched between states,
+We will derive the Fermi's golden rule. First, we have
 
 .. math::
    \bra{m} \partial_t \rho_d \ket{m} = -\lambda^2 \bra{m} \int_0^t dt' \hat L_W e^{-i(t-t')\hat L_0} \hat L_W \rho_d(t') \ket{m}.
+   :label: eqn-qme-d-avg-eqn-1
 
 
 
+.. admonition:: A Useful Relation
+   :class: hint
 
-
-
-.. hint::
-   Here is an useful relation,
+   Here is a useful relation,
 
    .. math::
       e^{iA\hat L} \hat O & = \hat O + i A \hat L \hat O + \frac{(iA)^2}{2} \hat L \hat L \hat O + \cdots \\
       & = \hat O + iA[\hat H, \hat O] + \frac{(iA)^2}{2}  [\hat H, [\hat H,\hat O]] + \cdots \\
-      & = e^{iA\hat H}\hat O e^{-iA\hat H}
+      & = e^{iA\hat H}\hat O e^{-iA\hat H}.
 
 
-Notice that :math:`\hat L_W \hat \rho_d = \frac{1}{\hbar}[W, \rho_d]`. Define :math:`\hat{\mathscr M} = e^{-i(t-t')\hat H_0}[\hat V,\hat \rho_d]e^{i(t-t')\hat H_0}`.
+By definition, :math:`\hat L_W \hat \rho_d = \frac{1}{\hbar}[W, \rho_d]`. Define
 
+.. math::
+   \hat{\mathscr M} = e^{-i(t-t')\hat H_0}[\hat V,\hat \rho_d]e^{i(t-t')\hat H_0}.
+
+Equation :eq:`eqn-qme-d-avg-eqn-1` becomes
 
 .. math::
    \bra{m} \partial_t \rho_d \ket{m} &= -\lambda^2 \bra{m} \int_0^t dt' [\hat W, e^{-i(t-t')\hat L_0}[\hat W, \rho_d(t')]] \ket{m}  \\
@@ -335,19 +354,19 @@ Notice that :math:`\hat L_W \hat \rho_d = \frac{1}{\hbar}[W, \rho_d]`. Define :m
    & = -\lambda^2 \left( \bra{m} \int_0^t dt' \hat W\hat{\mathscr M} \ket{m} - \bra{m} \int_0^t \hat{\mathscr M}\hat W\ket{m} dt' \right) \\
    & = -\lambda^2 \int_0^t dt' \left( \bra{m} \hat W\hat{\mathscr M} \ket{m} - \bra{m} \hat{\mathscr M}\hat W\ket{m}  \right) \\
    & = -\lambda^2 \int_0^t dt' \sum_n (W_{mn}\mathscr M_{nm} - \mathscr M_{mn}W_{nm}).
+   :label: eqn-qme-d-avg-eqn-2
 
-We know that :math:`\rho_d = P_{m}`. So the master equation becomes
+We already know that :math:`\rho_d = P_{m}`. We rewrite equation :eq:`eqn-qme-d-avg-eqn-2`,
 
 .. math::
    \partial_t P_m(t) = -\lambda^2 \int_0^t dt' \sum_n (W_{mn}\mathscr M_{nm} - \mathscr M_{mn}W_{nm}).
-
 
 The eigen function of the system is
 
 .. math::
    \hat H_0 \ket{m} = \epsilon_m \ket{m} .
 
-With this result we can calculate the matrix elements,
+The matrix elements :math:`M_{mn}` are
 
 .. math::
    \mathscr M_{mn} &= \bra{m} e^{-i(t-t')\hat H_0}[\hat W,\hat \rho_d]e^{i(t-t')\hat H_0} \ket{n} \\
@@ -356,37 +375,46 @@ With this result we can calculate the matrix elements,
    & = \sum_\mu  e^{-i(t-t')\epsilon_m} (W_{m\mu}\rho_{\mu n} - \rho_{m\mu}W_{\mu n}) e^{i(t-t')\epsilon_n} \\
    & = e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} .
 
-Finally we have our quantum master equation,
+Finally, the quantum master equation becomes
 
 .. math::
    \partial_t P_m &= -\lambda^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')\epsilon_n} ( W_{nm}P_{m} - P_{n}W_{n m} ) e^{i(t-t')\epsilon_m}) - (e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} )W_{nm}  \right] \\
    & =  -\lambda^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')(\epsilon_n - \epsilon_m )  }  W_{nm} (P_{m} - P_{n}) - (e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} )W_{nm}  \right] \\
    & = -2 \lambda^2 \int_0^t dt' \sum_n \left\vert W_{mn} \right\vert^2 \left[ P_n- P_m \right] \cos((\epsilon_m-\epsilon_n)(t-t'))
+   :label: eqn-qme-pm-fgr
 
-which is actually the :highlit:`Fermi's golden rule`.
+The above equation :eq:`eqn-qme-pm-fgr` is the :highlit:`Fermi's golden rule`.
 
-Define :math:`\Omega_{mn}(t-t')=\Omega_{nm}(t-t') = 2\lambda^2 \left\vert W_{mn} \right\vert^2\cos((t-t')(\epsilon_m-\epsilon_n))`, we can write the master equation into a really simple form,
+We define :math:`\Omega_{mn}(t-t')=\Omega_{nm}(t-t') = 2\lambda^2 \left\vert W_{mn} \right\vert^2\cos((t-t')(\epsilon_m-\epsilon_n))`, so that the master equation,
 
 .. math::
    \partial_t P_m = \int_0^t dt' \sum_n \left( \Omega_{mn}(t-t') P_n - \Omega_{nm}(t-t') P_m \right).
+   :label: eqn-qme-pm-omega
 
 
-Markovian - Kenkre Approach
+Markovian
 ------------------------------
 
-We can simplify the equation more using Markovian approximation,
+.. admonition:: The Kenkre Approach
+   :class: note
+
+   This is method tought by Professor Kenkre.
+
+We can simplify equation :eq:`eqn-qme-pm-omega` more using the Markovian approximation,
 
 .. math::
    \Omega_{mn}(t) = \delta(t) \left[\int_0^t d\tau \Omega_{mn}(\tau) \right].
 
-We can see that the Laplace transform of this is really simple,
+The Laplace transform of the above equation is,
 
 .. math::
-   \tilde \Omega_{mn}(\epsilon) =  \Omega_{mn}(0).
+   \tilde \Omega_{mn}(\epsilon) =  \Omega_{mn}(0),
 
+from which the Fermi's golden rule is derived.
 
+.. admonition:: Laplace Transform of :math:`\Omega`
+   :class: toggle
 
-.. hint::
    Laplace transform of integral and delta function are
 
    .. math::
@@ -405,22 +433,17 @@ We can see that the Laplace transform of this is really simple,
 
 
 
-.. warning::
-   Derive the Fermi's golden rule from this.
+Markovian - The Second Approach
+----------------------------------
 
-Finally we can reach Fermi's golden rule.
+.. admonition:: :math:`\hbar=1`
+   :class: hint
 
+   We use the natural unit system.
 
+Here is a second Markovian approach to derive the Fermi's golden rule from quantum master equation. [2]_
 
-Markovian - Another Approach
--------------------------------
-
-**I'll put all the :math:`\hbar`s back into the equations in this subsection.**
-
-I read the Markovian idea on quantiki [2]_ . Here is my derivation of Fermi's golden rule from quantum master equation using this approach.
-
-
-First of all, we can use interaction picture. Master equation here can be rewritten using interaction picture.
+The quantum master equationin the interaction picture is
 
 .. math::
    \partial_t P_m & =  -\lambda^2/\hbar^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')(\epsilon_n - \epsilon_m ) /\hbar }  W_{nm} (P_{m} - P_{n}) - (e^{-i(t-t')\epsilon_m/\hbar} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n/\hbar} )W_{nm}  \right] \\
@@ -428,19 +451,24 @@ First of all, we can use interaction picture. Master equation here can be rewrit
    & = -\lambda^2/\hbar^2 \sum_n \left[  \int_0^t dt' W_{mn}^I W_{nm}^I(P_m-P_n) - \int_0^t dt' W_{mn}^I W_{nm}^I(P_n-P_m)  \right]
 
 
-Markovian means there is no dependence on the past, in other words, **the two point correlation in time** is non-zero only when the two time are equal in the correlation function, :math:`\mathrm{Corr}(t_1,t_2)=0` for all :math:`t_1\not= t_2`. In our master equation case,
+In a Markov process, **the two point correlation in time** is zero at different time in the correlation function,
+
+.. math::
+   \mathrm{Corr}(t_1,t_2)=0
+
+for all :math:`t_1\not= t_2`. In our master equation,
 
 .. math::
    &\int_0^t dt' W_{mn}^I(t) W_{nm}^I(t')(P_m(t')-P_n(t')) \\
    & = \int_0^t dt' W_{mn}^I(t-t') W_{nm}^I(0)(P_m(t)-P_n(t)) \\
    & = (P_m(t)-P_n(t)) \lim_{t\rightarrow \infty}\int_0^t dt' W_{mn}^I(t-t') W_{nm}^I(0) .
 
-.. hint::
-   This is corresponding to the Kenkre definition of Markovian.
+.. admonition:: Kenkre Approach
+   :class: note
 
+   This is the same as the previous Markov approach (Kenkre approach).
 
-
-So our master equation becomes
+The master equation in interaction picture becomes
 
 .. math::
    \partial_t P_m(t) &= -\frac{\lambda^2}{\hbar ^2} \sum_n(P_m - P_n) \left[ \lim_{t\rightarrow \infty} \left( \int_0^t dt' e^{i(t-t')\epsilon_m/\hbar} W_{mn} e^{-i(t-t')\epsilon_n/\hbar} W_{nm} + \int_0^t dt' e^{-i(t-t')\epsilon_m/\hbar} W_{mn} e^{i(t-t')\epsilon_n/\hbar} W_{nm} \right) \right] \\
@@ -449,22 +477,23 @@ So our master equation becomes
    & =  \sum_n (P_m - P_n) \left[  \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar^2}  \lim_{t\rightarrow \infty}   \left( \frac{\sin(\omega_{mn}t)}{\pi\omega_{nm}}   \right)   \right]
 
 
-.. important::
+.. admonition:: Delta Function
+   :class: hint
+
    We have the following expression,
 
    .. math::
       \lim_{\epsilon\rightarrow 0} \frac{\sin(x/\epsilon)}{\pi x} = \delta(x) .
 
 
-Using this expression of delta, we derived the Fermi's golden rule.
+We derive the Fermi's golden rule,
 
 .. math::
    \partial_t P_m & =  \sum_n (P_m - P_n)   \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar^2}  \delta(\omega_mn)  \\
    & =  \sum_n (P_m - P_n)   \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar^2}  \delta((\epsilon_m - \epsilon_n)/\hbar) \\
    & =  \sum_n (P_m - P_n)   \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar}  \delta(\epsilon_m - \epsilon_n)
 
-
-Comparing this result with the classical master equation, we can find out the transition rate,
+Comparing this result with the classical master equation, the transition rate is
 
 .. math::
    \Omega_{mn} = \frac{2 \pi \lambda^2 \left| W_{mn}\right|^2 }{\hbar}  \delta(\epsilon_m - \epsilon_n)
@@ -474,9 +503,10 @@ which is exactly the Fermi's golden rule.
 
 
 
-Footnotes
+References
 -----------
 
 
 .. [1] Refer to *Quantum Noise* by Gardiner and Zoller, Chapter 5, Section 1.
 .. [2] `Quantiki <http://www.quantiki.org/wiki/>`_ is a website of quantum information etc. The item about master equation is `here <http://www.quantiki.org/wiki/Master_equation>`_ .
+.. [3] `Master equation for neutrinos <http://docs.neutrino.xyz/statistical-physics/master-eqn.html>`_.

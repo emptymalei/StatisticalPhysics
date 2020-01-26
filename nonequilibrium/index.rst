@@ -17,4 +17,3 @@ Stochastic process is very important in many fields of physics.
     effect-of-defects.rst
     brownian-motion.rst
     quantum-master-eqn.rst
-    projection-technique.rst
