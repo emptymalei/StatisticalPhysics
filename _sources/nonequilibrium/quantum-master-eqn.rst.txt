@@ -76,133 +76,141 @@ The probability at time :math:`t+\tau` is
 .. math::
    P_m(t+\tau) = \sum_n Q_{mn}(\tau)P_n(t).
 
-The Chapman method to then applied to derive the master eqution.
+The Chapman method is applied to derive the master eqution.
 
-.. important::
+.. admonition:: Fermi's Golden Rule
+   :class: important
+
    The Pauli assumption is the Fermi golden rule which requires an infinite amount of time. This is not gererally valid.
 
 
-The first working quantum master equation was derived by van Hove.
+Better Quantum Master Equations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+The first "real" quantum master equation was derived by van Hove.
 
-van Hove's Derivation
-~~~~~~~~~~~~~~~~~~~~~~~
-
-
-van Hove argued that Pauli's result is nonsense. He started with
+van Hove argued that Pauli's result is not correct. First of all,
 
 .. math::
    P_m(t+\tau) &= \sum_n Q_{mn}(\tau) P_n(t) \\
-   P_m(t-\tau) & = \sum_n Q_{mn}(-\tau) P_m(t) .
+   P_m(t-\tau) & = \sum_n Q_{mn}(-\tau) P_n(t) .
 
-
-The key point is that :math:`Q_{mn}(\tau) = Q_{mn}(-\tau)`,
+With :math:`Q_{mn}(\tau) = Q_{mn}(-\tau)`, we have
 
 .. math::
    Q_{mn}(\tau) & = \left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2 \\
    & = \left\vert \bra{m} e^{i\tau \hat H} \ket{n}  \right\vert^2 \\
-   & = Q_{mn}(-\tau) .
+   & = Q_{mn}(-\tau),
 
-Without any calculations, we just know imediately that
+which leads to
 
 .. math::
-   P_m(t+\tau) = P_m(t-\tau) ,
+   P_m(t+\tau) = P_m(t-\tau).
 
-in other words, there's no evolution of probability density.
+In other words, we've shown that the probabilities of states are constant.
+
 
 van Hove
 ---------------------------------------------------
 
 
-.. important::
-   van Hove made a great progress by bringing up the following questions.
+.. admonition:: Questions
+   :class: important
 
-   1. What systems can be described by master equations?
+   There are several key questions in inventing a quantum master equation.
+
+   1. Which systems can be described by the master equations?
    2. What's the time scale for quantum master equation to be valid?
-   3. How to derive a quantum master equation?
 
-
-Suppose we have a quantum system with Hamiltonian,
+Suppose we have a quantum system with the Hamiltonian
 
 .. math::
    \hat H = \hat H_0 + \lambda(t)\hat W .
 
-van Hove's idea was that quantum master equations can describe systems with diagonal singularity conditions.
-
-
-Then he said, the time scale of the system should be long enough, the perturbation should be as small as the condition :math:`\lambda^2 t \approx \text{constant}`.
-
-.. warning::
-   This looks weird to me because I can not see why this is good for an approximation.
-
-
-So we can write down the diagonal elements
+van Hove's method was to describe systems with diagonal singularity conditions on a large time scale. The perturbations should be small enough, i.e., :math:`\lambda^2 t \approx \text{constant}`. The diagonal elements are
 
 .. math::
    P_m & = \bra{m}\hat \rho \ket{m} \\
    & = \sum_{m,n} \bra{m} e^{i\hat H t/\hbar} \ket{n}\bra{n} \hat \rho(0) \ket{l}\bra{l} e^{-iHt/\hbar} \ket{m} \\
    & = \sum_{m,n} \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 \rho_{nl}(0) .
+   :label: eqn-quantum-master-equation-van-hove-pm-1
 
-van Hove applied random phase condition for only initial condition, :math:`\rho_{nl}(0)` is diagonalized at initial :math:`t=0`.
-
-Then we have
+van Hove applied random phase condition on the initial condition, i.e., :math:`\rho_{nl}(0)` is diagonalized at initial :math:`t=0`. We have
 
 .. math::
-   \rho_{nl} (0) = \rho_{nn} \delta_{nl} = P_n(0) \delta_{nl} .
+   \rho_{nl} (0) = \rho_{nn} \delta_{nl} = P_n(0) \delta_{nl},
 
-Put this result back to the probability,
+Equation :eq:`eqn-quantum-master-equation-van-hove-pm-1` becomes,
 
 .. math::
    P_m = \sum_n \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 P_n(0) .
+   :label: eqn-quantum-master-equation-van-hove-pm-2
 
+The equation :eq:`eqn-quantum-master-equation-van-hove-pm-2` is furthure simplified by the Dyson series.
 
-Then use the whole Dyson series then selectively make some terms zero and use the assumptions to derive a master equation.
-
-
-
+.. index:: Projection Technique
+.. _projection-technique:
 
 Zwawzig and Nakajiwa
 ---------------------
 
+Zwawzig and Nakajiwa invented the projection technique to solve quantum master equations.
 
-They invented the projection technique.
+We define a :highlit:`diagonalizing operator` :math:`\hat D` which keeps the diagonal elements and drops the off-diagonal elements of a matrix. With this definition, it's conjugate :math:`1-\hat D` will drop all diagonal elements.
 
-First of all define a diagonalizing operator :math:`\hat D` which just keeps the diagonal elements and simply drops the off diagonal elements. We see that :math:`1-\hat D` will element all diagonal elements.
-
-We can define the diagonalized density matrix as :math:`\hat \rho_d = \hat D \hat \rho` and off-diagonalized density matrix as :math:`\hat \rho_{od} = (1-\hat D)\hat \rho`. As an application,
-
-.. math::
-   \hat \rho = \hat \rho_d + \hat \rho_{od} .
-
-Starting from the von Neumann equation,
+The diagonalized density matrix is
 
 .. math::
-   i\hbar \partial_t \hat \rho = \left[\hat H, \hat \rho \right] .
+   \hat \rho_d = \hat D \hat \rho
 
-By using the Liouville operator,
+and the all the off-diagonal elements of the density matrix
+
+.. math::
+   \hat \rho_{od} = (1-\hat D)\hat \rho.
+
+.. admonition:: Reconstruct the Density Matri
+   :class: hint
+
+   The density matrix is trivilly reconstructed by
+
+   .. math::
+      \hat \rho = \hat \rho_d + \hat \rho_{od} .
+
+
+The von Neumann equation is
+
+.. math::
+   i\hbar \partial_t \hat \rho = \left[\hat H, \hat \rho \right],
+
+With the Liouville operator :math:`\hat L`, the von Neumann equation is rewritten as
 
 .. math::
    \partial_t \hat \rho = -i \hat L \hat \rho .
 
-Apply :math:`\hat D` and :math:`1-\hat D` to the von Neumann equation,
+Apply :math:`\hat D` and :math:`1-\hat D` to the von Neumann equation, we get two equations
 
 .. math::
    \partial_t \hat \rho_d & = -i \hat D  \hat L \hat \rho \\
    \partial_t \hat \rho _{od} & = -i (1 - \hat D)  \hat L \hat \rho .
+   :label: eqn-quantum-master-equations-projection-technique-dod-1
 
-Use the relation that :math:`\hat \rho = \hat \rho_d + \hat \rho_{od}`, we have
+Use the completeness relation :math:`\hat \rho = \hat \rho_d + \hat \rho_{od}`,
 
 .. math::
    \partial_t \hat \rho_d & = -i \hat D  \hat L \hat \rho_d - i \hat D  \hat L \hat \rho _ {od} \\
-   \partial_t \hat \rho _{od} & = - i (1 - \hat D)  \hat L \hat \rho _ d - i (1 - \hat D)  \hat L \hat \rho_{od}  .
+   \partial_t \hat \rho _{od} & = - i (1 - \hat D)  \hat L \hat \rho _ d - i (1 - \hat D)  \hat L \hat \rho_{od} .
+   :label: eqn-quantum-master-equations-projection-technique-dod-2
 
-Solve the second equation using Green function technique,
+The off-diagonal equation in equation :eq:`:label: eqn-quantum-master-equations-projection-technique-dod-2` is solved using Green's function,
 
 .. math::
    \hat \rho_{od} = e^{-i(1-\hat D)\hat L t} + \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(-i(1-\hat D)\hat L \hat \rho_d(t')) .
+   :label: eqn-quantum-master-equations-projection-technique-od-green
 
-.. hint::
-   Recall that the solution for
+.. admonition:: Green's Function
+   :class: hint
+
+   Recall that the solution to
 
    .. math::
       \dot y + \alpha y = f
@@ -213,46 +221,46 @@ Solve the second equation using Green function technique,
       y = e^{-\alpha t} y(0) + \int_0^t dt' e^{-\alpha (t-t')} f(t') .
 
 
-Insert this solution to the equation of :math:`\hat \rho_d`,
+Insert :eq:`eqn-quantum-master-equations-projection-technique-od-green` into the equation for :math:`\hat \rho_d` in equation :eq:`eqn-quantum-master-equations-projection-technique-dod-2`,
 
 .. math::
    {\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.
+   :label: eqn-quantum-master-equations-projection-technique-d-1
 
-What happened to the blue term? It disapears when we apply the initial random phase condition.
+The term :math:`- i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0)` disapears when we apply the random phase initial condition. Then we get our closed master equation for :math:`\hat \rho_d`, i.e.,  an equation for the probabilities,
 
-When it happens we get our closed master equation for :math:`\hat \rho_d`, which is an equation for the probability.
-
-
-
-About Off-diagonal Elements
------------------------------
-
-Though we need to set :math:`\rho_{od}(0)=0` to have a closed master equation, that doens't mean we have to make only localized initial condition on only one state.
-
-    "We can always use phasers."
-
-    -- V. M. Kenkre
+.. math::
+   {\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')}.
+   :label: eqn-quantum-master-equations-projection-technique-master-equation
 
 
-Suppose we have a system with five possible states, the off-diagonal elements don't exist initially if the system is in only one state.
-
-.. image:: images/quantum1state.png
-   :align: center
-
-The density matrix will contain off-diagonal elements if we have two states initially.
-
-.. image:: images/quantum2states.png
-   :align: center
-
-However, we can always choose a combination of the states to use as the basis, so that the density matrix becomes diagonalized.
+.. admonition:: The Off-diagonal Elements
+   :class: toggle
 
 
+      "We can always use phasers."
 
-Simplify Quantum Master Equation
------------------------------------
+      -- V. M. Kenkre
 
-We derived some sort of quantum master equation using projection method. Here we will simplify it.
+   The condition :math:`\rho_{od}(0)=0` needed to reach a closed master equation doens't imply that we have to require localized initial condition on any specific state.
 
+   Given a system of five possible states, the off-diagonal elements are zeros if the system is on a specific state initially.
+
+   .. image:: images/quantum1state.png
+      :align: center
+
+   The density matrix might contain off-diagonal elements if we have two non-orthogonal states initially.
+
+   .. image:: images/quantum2states.png
+      :align: center
+
+   However, we can always choose a combination of the current basis to diagonalize the density matrix.
+
+
+Simplify the Quantum Master Equation
+----------------------------------------
+
+We derived the quantum master equation using the projection method. However, the equation is complicated.
 
 Let's stare at the results for a minute.
 

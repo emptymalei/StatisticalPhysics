@@ -231,13 +231,12 @@ TeX: {
 <li><a class="reference internal" href="#">Quantum Master Equation</a><ul>
 <li><a class="reference internal" href="#id1">Quantum Master Equation</a><ul>
 <li><a class="reference internal" href="#pauli-s-mistake">Pauli’s Mistake</a></li>
-<li><a class="reference internal" href="#van-hove-s-derivation">van Hove’s Derivation</a></li>
+<li><a class="reference internal" href="#better-quantum-master-equations">Better Quantum Master Equations</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#van-hove">van Hove</a></li>
 <li><a class="reference internal" href="#zwawzig-and-nakajiwa">Zwawzig and Nakajiwa</a></li>
-<li><a class="reference internal" href="#about-off-diagonal-elements">About Off-diagonal Elements</a></li>
-<li><a class="reference internal" href="#simplify-quantum-master-equation">Simplify Quantum Master Equation</a></li>
+<li><a class="reference internal" href="#simplify-the-quantum-master-equation">Simplify the Quantum Master Equation</a></li>
 <li><a class="reference internal" href="#markovian-kenkre-approach">Markovian - Kenkre Approach</a></li>
 <li><a class="reference internal" href="#markovian-another-approach">Markovian - Another Approach</a></li>
 <li><a class="reference internal" href="#footnotes">Footnotes</a></li>
@@ -326,119 +325,121 @@ TeX: {
 <p>The probability at time <span class="math notranslate nohighlight">\(t+\tau\)</span> is</p>
 <div class="math notranslate nohighlight">
 \[P_m(t+\tau) = \sum_n Q_{mn}(\tau)P_n(t).\]</div>
-<p>The Chapman method to then applied to derive the master eqution.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
+<p>The Chapman method is applied to derive the master eqution.</p>
+<div class="important admonition">
+<p class="admonition-title">Fermi’s Golden Rule</p>
 <p>The Pauli assumption is the Fermi golden rule which requires an infinite amount of time. This is not gererally valid.</p>
 </div>
-<p>The first working quantum master equation was derived by van Hove.</p>
 </div>
-<div class="section" id="van-hove-s-derivation">
-<h3>van Hove’s Derivation<a class="headerlink" href="#van-hove-s-derivation" title="Permalink to this headline">¶</a></h3>
-<p>van Hove argued that Pauli’s result is nonsense. He started with</p>
+<div class="section" id="better-quantum-master-equations">
+<h3>Better Quantum Master Equations<a class="headerlink" href="#better-quantum-master-equations" title="Permalink to this headline">¶</a></h3>
+<p>The first “real” quantum master equation was derived by van Hove.</p>
+<p>van Hove argued that Pauli’s result is not correct. First of all,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}P_m(t+\tau) &amp;= \sum_n Q_{mn}(\tau) P_n(t) \\
-P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_m(t) .\end{split}\]</div>
-<p>The key point is that <span class="math notranslate nohighlight">\(Q_{mn}(\tau) = Q_{mn}(-\tau)\)</span>,</p>
+P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
+<p>With <span class="math notranslate nohighlight">\(Q_{mn}(\tau) = Q_{mn}(-\tau)\)</span>, we have</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}Q_{mn}(\tau) &amp; = \left\vert \bra{m} e^{-i\tau \hat H} \ket{n}  \right\vert^2 \\
 &amp; = \left\vert \bra{m} e^{i\tau \hat H} \ket{n}  \right\vert^2 \\
-&amp; = Q_{mn}(-\tau) .\end{split}\]</div>
-<p>Without any calculations, we just know imediately that</p>
+&amp; = Q_{mn}(-\tau),\end{split}\]</div>
+<p>which leads to</p>
 <div class="math notranslate nohighlight">
-\[P_m(t+\tau) = P_m(t-\tau) ,\]</div>
-<p>in other words, there’s no evolution of probability density.</p>
+\[P_m(t+\tau) = P_m(t-\tau).\]</div>
+<p>In other words, we’ve shown that the probabilities of states are constant.</p>
 </div>
 </div>
 <div class="section" id="van-hove">
 <h2>van Hove<a class="headerlink" href="#van-hove" title="Permalink to this headline">¶</a></h2>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>van Hove made a great progress by bringing up the following questions.</p>
+<div class="important admonition">
+<p class="admonition-title">Questions</p>
+<p>There are several key questions in inventing a quantum master equation.</p>
 <ol class="arabic simple">
-<li><p>What systems can be described by master equations?</p></li>
+<li><p>Which systems can be described by the master equations?</p></li>
 <li><p>What’s the time scale for quantum master equation to be valid?</p></li>
-<li><p>How to derive a quantum master equation?</p></li>
 </ol>
 </div>
-<p>Suppose we have a quantum system with Hamiltonian,</p>
+<p>Suppose we have a quantum system with the Hamiltonian</p>
 <div class="math notranslate nohighlight">
 \[\hat H = \hat H_0 + \lambda(t)\hat W .\]</div>
-<p>van Hove’s idea was that quantum master equations can describe systems with diagonal singularity conditions.</p>
-<p>Then he said, the time scale of the system should be long enough, the perturbation should be as small as the condition <span class="math notranslate nohighlight">\(\lambda^2 t \approx \text{constant}\)</span>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This looks weird to me because I can not see why this is good for an approximation.</p>
-</div>
-<p>So we can write down the diagonal elements</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}P_m &amp; = \bra{m}\hat \rho \ket{m} \\
+<p>van Hove’s method was to describe systems with diagonal singularity conditions on a large time scale. The perturbations should be small enough, i.e., <span class="math notranslate nohighlight">\(\lambda^2 t \approx \text{constant}\)</span>. The diagonal elements are</p>
+<div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equation-van-hove-pm-1">
+<span class="eqno">(29)<a class="headerlink" href="#equation-eqn-quantum-master-equation-van-hove-pm-1" title="Permalink to this equation">¶</a></span>\[\begin{split}P_m &amp; = \bra{m}\hat \rho \ket{m} \\
 &amp; = \sum_{m,n} \bra{m} e^{i\hat H t/\hbar} \ket{n}\bra{n} \hat \rho(0) \ket{l}\bra{l} e^{-iHt/\hbar} \ket{m} \\
 &amp; = \sum_{m,n} \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 \rho_{nl}(0) .\end{split}\]</div>
-<p>van Hove applied random phase condition for only initial condition, <span class="math notranslate nohighlight">\(\rho_{nl}(0)\)</span> is diagonalized at initial <span class="math notranslate nohighlight">\(t=0\)</span>.</p>
-<p>Then we have</p>
+<p>van Hove applied random phase condition on the initial condition, i.e., <span class="math notranslate nohighlight">\(\rho_{nl}(0)\)</span> is diagonalized at initial <span class="math notranslate nohighlight">\(t=0\)</span>. We have</p>
 <div class="math notranslate nohighlight">
-\[\rho_{nl} (0) = \rho_{nn} \delta_{nl} = P_n(0) \delta_{nl} .\]</div>
-<p>Put this result back to the probability,</p>
-<div class="math notranslate nohighlight">
-\[P_m = \sum_n \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 P_n(0) .\]</div>
-<p>Then use the whole Dyson series then selectively make some terms zero and use the assumptions to derive a master equation.</p>
+\[\rho_{nl} (0) = \rho_{nn} \delta_{nl} = P_n(0) \delta_{nl},\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-quantum-master-equation-van-hove-pm-1">(29)</a> becomes,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equation-van-hove-pm-2">
+<span class="eqno">(30)<a class="headerlink" href="#equation-eqn-quantum-master-equation-van-hove-pm-2" title="Permalink to this equation">¶</a></span>\[P_m = \sum_n \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 P_n(0) .\]</div>
+<p>The equation <a class="reference internal" href="#equation-eqn-quantum-master-equation-van-hove-pm-2">(30)</a> is furthure simplified by the Dyson series.</p>
 </div>
 <div class="section" id="zwawzig-and-nakajiwa">
-<h2>Zwawzig and Nakajiwa<a class="headerlink" href="#zwawzig-and-nakajiwa" title="Permalink to this headline">¶</a></h2>
-<p>They invented the projection technique.</p>
-<p>First of all define a diagonalizing operator <span class="math notranslate nohighlight">\(\hat D\)</span> which just keeps the diagonal elements and simply drops the off diagonal elements. We see that <span class="math notranslate nohighlight">\(1-\hat D\)</span> will element all diagonal elements.</p>
-<p>We can define the diagonalized density matrix as <span class="math notranslate nohighlight">\(\hat \rho_d = \hat D \hat \rho\)</span> and off-diagonalized density matrix as <span class="math notranslate nohighlight">\(\hat \rho_{od} = (1-\hat D)\hat \rho\)</span>. As an application,</p>
+<span id="projection-technique"></span><span id="index-1"></span><h2>Zwawzig and Nakajiwa<a class="headerlink" href="#zwawzig-and-nakajiwa" title="Permalink to this headline">¶</a></h2>
+<p>Zwawzig and Nakajiwa invented the projection technique to solve quantum master equations.</p>
+<p>We define a <span class="highlit">diagonalizing operator</span> <span class="math notranslate nohighlight">\(\hat D\)</span> which keeps the diagonal elements and drops the off-diagonal elements of a matrix. With this definition, it’s conjugate <span class="math notranslate nohighlight">\(1-\hat D\)</span> will drop all diagonal elements.</p>
+<p>The diagonalized density matrix is</p>
+<div class="math notranslate nohighlight">
+\[\hat \rho_d = \hat D \hat \rho\]</div>
+<p>and the all the off-diagonal elements of the density matrix</p>
+<div class="math notranslate nohighlight">
+\[\hat \rho_{od} = (1-\hat D)\hat \rho.\]</div>
+<div class="hint admonition">
+<p class="admonition-title">Reconstruct the Density Matri</p>
+<p>The density matrix is trivilly reconstructed by</p>
 <div class="math notranslate nohighlight">
 \[\hat \rho = \hat \rho_d + \hat \rho_{od} .\]</div>
-<p>Starting from the von Neumann equation,</p>
+</div>
+<p>The von Neumann equation is</p>
 <div class="math notranslate nohighlight">
-\[i\hbar \partial_t \hat \rho = \left[\hat H, \hat \rho \right] .\]</div>
-<p>By using the Liouville operator,</p>
+\[i\hbar \partial_t \hat \rho = \left[\hat H, \hat \rho \right],\]</div>
+<p>With the Liouville operator <span class="math notranslate nohighlight">\(\hat L\)</span>, the von Neumann equation is rewritten as</p>
 <div class="math notranslate nohighlight">
 \[\partial_t \hat \rho = -i \hat L \hat \rho .\]</div>
-<p>Apply <span class="math notranslate nohighlight">\(\hat D\)</span> and <span class="math notranslate nohighlight">\(1-\hat D\)</span> to the von Neumann equation,</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho \\
+<p>Apply <span class="math notranslate nohighlight">\(\hat D\)</span> and <span class="math notranslate nohighlight">\(1-\hat D\)</span> to the von Neumann equation, we get two equations</p>
+<div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-dod-1">
+<span class="eqno">(31)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-dod-1" title="Permalink to this equation">¶</a></span>\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho \\
 \partial_t \hat \rho _{od} &amp; = -i (1 - \hat D)  \hat L \hat \rho .\end{split}\]</div>
-<p>Use the relation that <span class="math notranslate nohighlight">\(\hat \rho = \hat \rho_d + \hat \rho_{od}\)</span>, we have</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho_d - i \hat D  \hat L \hat \rho _ {od} \\
-\partial_t \hat \rho _{od} &amp; = - i (1 - \hat D)  \hat L \hat \rho _ d - i (1 - \hat D)  \hat L \hat \rho_{od}  .\end{split}\]</div>
-<p>Solve the second equation using Green function technique,</p>
-<div class="math notranslate nohighlight">
-\[\hat \rho_{od} = e^{-i(1-\hat D)\hat L t} + \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(-i(1-\hat D)\hat L \hat \rho_d(t')) .\]</div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Recall that the solution for</p>
+<p>Use the completeness relation <span class="math notranslate nohighlight">\(\hat \rho = \hat \rho_d + \hat \rho_{od}\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-dod-2">
+<span class="eqno">(32)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-dod-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho_d - i \hat D  \hat L \hat \rho _ {od} \\
+\partial_t \hat \rho _{od} &amp; = - i (1 - \hat D)  \hat L \hat \rho _ d - i (1 - \hat D)  \hat L \hat \rho_{od} .\end{split}\]</div>
+<p>The off-diagonal equation in equation <code class="xref eq docutils literal notranslate"><span class="pre">:label:</span> <span class="pre">eqn-quantum-master-equations-projection-technique-dod-2</span></code> is solved using Green’s function,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-od-green">
+<span class="eqno">(33)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-od-green" title="Permalink to this equation">¶</a></span>\[\hat \rho_{od} = e^{-i(1-\hat D)\hat L t} + \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(-i(1-\hat D)\hat L \hat \rho_d(t')) .\]</div>
+<div class="hint admonition">
+<p class="admonition-title">Green’s Function</p>
+<p>Recall that the solution to</p>
 <div class="math notranslate nohighlight">
 \[\dot y + \alpha y = f\]</div>
 <p>is</p>
 <div class="math notranslate nohighlight">
 \[y = e^{-\alpha t} y(0) + \int_0^t dt' e^{-\alpha (t-t')} f(t') .\]</div>
 </div>
-<p>Insert this solution to the equation of <span class="math notranslate nohighlight">\(\hat \rho_d\)</span>,</p>
-<div class="math notranslate nohighlight">
-\[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.\]</div>
-<p>What happened to the blue term? It disapears when we apply the initial random phase condition.</p>
-<p>When it happens we get our closed master equation for <span class="math notranslate nohighlight">\(\hat \rho_d\)</span>, which is an equation for the probability.</p>
-</div>
-<div class="section" id="about-off-diagonal-elements">
-<h2>About Off-diagonal Elements<a class="headerlink" href="#about-off-diagonal-elements" title="Permalink to this headline">¶</a></h2>
-<p>Though we need to set <span class="math notranslate nohighlight">\(\rho_{od}(0)=0\)</span> to have a closed master equation, that doens’t mean we have to make only localized initial condition on only one state.</p>
+<p>Insert <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-od-green">(33)</a> into the equation for <span class="math notranslate nohighlight">\(\hat \rho_d\)</span> in equation <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-dod-2">(32)</a>,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-d-1">
+<span class="eqno">(34)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-d-1" title="Permalink to this equation">¶</a></span>\[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.\]</div>
+<p>The term <span class="math notranslate nohighlight">\(- i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0)\)</span> disapears when we apply the random phase initial condition. Then we get our closed master equation for <span class="math notranslate nohighlight">\(\hat \rho_d\)</span>, i.e.,  an equation for the probabilities,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-master-equation">
+<span class="eqno">(35)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-master-equation" title="Permalink to this equation">¶</a></span>\[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')}.\]</div>
+<div class="toggle admonition">
+<p class="admonition-title">The Off-diagonal Elements</p>
 <blockquote>
 <div><p>“We can always use phasers.”</p>
 <p class="attribution">—V. M. Kenkre</p>
 </div></blockquote>
-<p>Suppose we have a system with five possible states, the off-diagonal elements don’t exist initially if the system is in only one state.</p>
+<p>The condition <span class="math notranslate nohighlight">\(\rho_{od}(0)=0\)</span> needed to reach a closed master equation doens’t imply that we have to require localized initial condition on any specific state.</p>
+<p>Given a system of five possible states, the off-diagonal elements are zeros if the system is on a specific state initially.</p>
 <img alt="../_images/quantum1state.png" class="align-center" src="../_images/quantum1state.png" />
-<p>The density matrix will contain off-diagonal elements if we have two states initially.</p>
+<p>The density matrix might contain off-diagonal elements if we have two non-orthogonal states initially.</p>
 <img alt="../_images/quantum2states.png" class="align-center" src="../_images/quantum2states.png" />
-<p>However, we can always choose a combination of the states to use as the basis, so that the density matrix becomes diagonalized.</p>
+<p>However, we can always choose a combination of the current basis to diagonalize the density matrix.</p>
 </div>
-<div class="section" id="simplify-quantum-master-equation">
-<h2>Simplify Quantum Master Equation<a class="headerlink" href="#simplify-quantum-master-equation" title="Permalink to this headline">¶</a></h2>
-<p>We derived some sort of quantum master equation using projection method. Here we will simplify it.</p>
+</div>
+<div class="section" id="simplify-the-quantum-master-equation">
+<h2>Simplify the Quantum Master Equation<a class="headerlink" href="#simplify-the-quantum-master-equation" title="Permalink to this headline">¶</a></h2>
+<p>We derived the quantum master equation using the projection method. However, the equation is complicated.</p>
 <p>Let’s stare at the results for a minute.</p>
 <div class="math notranslate nohighlight">
 \[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.\]</div>
