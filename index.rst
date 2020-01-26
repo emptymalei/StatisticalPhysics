@@ -2,16 +2,6 @@ Statistical Physics
 =============================
 
 
-
-
-This started as a set of lecture notes for the statistical physics course I took. Then I expanded it and rebuilt it into something much more useful.
-
-
-
-
-Introduction
-========================
-
 Statistical Physics is the holy grail of physics. It taught us great lessons about this universe and it definitely will teach us more. Some ideas (such as Verlinde's scenario) even place thermodynamics and statistical physics as the fundamental theory of all theories. This leads to the thought that it might be possible that everything is a result of emergence.
 
 Statistical mechanics is the mechanics of large bodies using statistical methods.
