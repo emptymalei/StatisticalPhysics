@@ -76,9 +76,11 @@ html_theme_options = {
 extensions = [
     'sphinx.ext.mathjax',
 #    'numfig',
-    "math_dollar"
+    "math_dollar",
+   "sphinx_sitemap"
 ]
 
+html_baseurl = 'https://statisticalphysics.openmetric.org/'
 
 latex_preamble_data = r"""
 \usepackage{hyperref}
@@ -283,7 +285,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Statistical Physics'
-copyright = u'2019, Lei Ma'
+copyright = u'2020, Lei Ma'
 
 
 # The version info for the project you're documenting, acts as replacement for
@@ -291,7 +293,7 @@ copyright = u'2019, Lei Ma'
 # built documents.
 #
 # The short X.Y version.
-version = '3.14159'
+# version = '3.14159'
 # The full version, including alpha/beta/rc tags.
 release = '3.14159'
 
@@ -439,7 +441,7 @@ html_static_path = ['_static']
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
 # directly to the root of the documentation.
-#html_extra_path = []
+html_extra_path = ['robots.txt']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
@@ -596,7 +598,7 @@ texinfo_documents = [
 epub_title = u'Statistical Physics'
 epub_author = u'Lei Ma'
 epub_publisher = u'Lei Ma'
-epub_copyright = u'2019, Lei Ma'
+epub_copyright = u'2020, Lei Ma'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.

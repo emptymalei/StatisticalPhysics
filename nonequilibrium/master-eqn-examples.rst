@@ -1,88 +1,84 @@
-Master Equation Examples
+Examples of Master Equations
 ========================================
 
 .. index:: Irrersibility
 
 .. role:: highlit
 
-Irrersibility
------------------------------
+Irrersibility and Master Equation
+--------------------------------------
 
 
-Fourier series are complete,
-
-.. math::
-   F(x) = \sum_{n=0}^{n=\infty} a_n \cos(\omega_n t) .
-
-Any equations can be expanded using Fourier series including the decay behavior we have seen in previous lectures.
-
-However the problem is, for finite system, the expansion is not really complete. The series composed by all these finite components might not be decay and recurrence could happen. But the time needed for recurrence is so long that we never see it.
-
-
-
-Master Equation
---------------------
-
-Solution to descrete master equation with nearest neighbour interaction is
+Fourier series is a :highlit:`Complete Orthogonal System`. An function :math:`F(x)` is expanded using the Fourier series,
 
 .. math::
-   P_m(t) = P_m(0)I_m(2Ft)e^{-2Ft}
+   F(x) = \sum_{n=0}^{n=\infty} a_n \cos(\omega_n t).
 
-where :math:`I_m(2Ft)e^{-2Ft}` is the :highlit:`propagator`.
+Recall that the solution to the master equation of a finite chain of particles with nearest-neighbour interactions is
+
+.. math::
+   P_m(t)  = \frac{1}{N} \sum_ {k} P^k(0) e^{-4F \sin^2\frac{k}{2} t}  e^{-i km},
+   :label: eqn-master-eqn-sol-1d-finite-chain
+
+with
+
+.. math::
+   k = \frac{2\pi}{N} n, \qquad n=0,1,2, \cdots, N-1 .
+
+Note that the expansion is not going to infinity. On such a finite component series, recurrence of states will happen. Though the time needed for recurrence is long when the number of particles gets large.
+
+The :highlit:`second moment`, :math:`\langle m^2 \rangle`, tells us the expected location of the particle.
+
+.. admonition:: Why not the first moment?
+   :class: toggle
+
+   The first moment is 0 for a symmetric system.
 
 
-Sometimes we want to know where the particle goes after a while. In this case, we should find out :highlit:`second moment`, :math:`\langle m^2 \rangle`.
-
-
-To find out second moment, take the second derivative of :math:`P^k(t)`,
+To calculate the second moment, take the second derivative of :math:`P^k(t)`,
 
 .. math::
    P^k &=\sum_m P_m e^{imk} \\
    \frac{\partial^2}{\partial k^2} P^k &= \sum_m P_m (i m)^2 e^{imk} .
 
-Set :math:`k=0`, we have
+Set :math:`k=0`, we get
 
 .. math::
-   \langle m^2 \rangle := \sum_m m^2 P_m =\frac{\partial^2}{\partial k^2} .
+   \langle m^2 \rangle := \sum_m m^2 P_m =\frac{\partial^2}{\partial k^2} P^0 .
 
+There is no need to calculate :math:`P_m(t)` anymore.
 
-.. note::
-   So we don't need to calculate :math:`P_m(t)` which takes a lot of time to calculate.
+.. admonition:: Generalization
+   :class: toggle
 
-
-
-.. hint::
-   No mater what kind of interaction the system has,
+   Regardless of the details of the interactions, we always have the form
 
    .. math::
-      P^k(t) = P^k(0) e^{-\cdots}
-
-   is alway true.
+      P^k(t) = P^k(0) e^{-\cdots}.
 
 
 
 Continuum Limit
 ----------------
 
-
-In continuum limit, our master equation becomes
+In the continuum limit, the master equation is the diffusion equation,
 
 .. math::
-   \frac{\partial}{\partial t} P = D \frac{\partial^2 P}{\partial x^2}
-
-which is infact a diffusion equation.
+   \frac{\partial}{\partial t} P = D \frac{\partial^2 P}{\partial x^2}.
 
 
-.. hint::
-   * Propagators of this equation is gaussian like.
-   * Propagators of discrete master equation is a decay, :math:`I_m(2Ft)e^{-2Ft}`.
+.. admonition:: Propagators
+   :class: hint
+
+   1. Propagators of this equation is gaussian like.
+   2. Propagators of discrete master equation is a decay function, i.e., :math:`I_m(2Ft)e^{-2Ft}`.
 
 
-.. warning::
+..
    In principle, we can take some limit of the master equation propagator and make it the diffusion propagator.
 
 
-Second moment of diffusion equaiton is the Einstein brownian motion result
+It is know that the second moment of the diffusion equaiton is the Einstein's brownian motion result
 
 .. math::
    \langle x^2 \rangle = 2 D t .
@@ -94,55 +90,53 @@ where
    \langle m^2 \rangle &:= \sum_{-\infty}^{+\infty} P_m(t) m^2  .
 
 
-
-
 Landau-Teller Master Equation
 --------------------------------
 
-Consider a system in a heat bath, we can expand the system to second order and the system becomes a HO or HOs. Fermi golden rule tells us that HO can only have nearest energy transition.
+Consider a system bathed in heat bath, we can Taylor expand the system to second order which are harmonic oscillators. Fermi golden rule tells us that these harmonic oscillators can only have nearest energy transition.
 
 
-Continuous Grid or Energy
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Continuous Grid or Energy Levels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 .. note::
-   Different energy states in a system should have
+   Different energy states in a system follows the ratio
 
    .. math::
       \frac{f_1}{f_1'} = e^{-\frac{\epsilon_1 - \epsilon_1'}{kT}} .
 
-   And :math:`f_1\neq f_1'` most of the time. For the case of HO
+   with :math:`f_1\neq f_1'`. For harmonic oscillators,
 
    .. math::
       \frac{f_1}{f_1'} = e^{-\frac{\hbar \omega}{kT}} .
 
-Here in such a system
+In such a system
 
 .. math::
    \frac{d}{dt}P_m =& k \left[(m+1)(P_{m+1} - e^{-\beta \hbar \omega} P_m)\right. \\
    & \left. +m(e^{-\beta \hbar\omega} P_{m-1} - P_m)  \right] .
 
 .. note::
-   Transition
+   The transition
 
    .. math::
       \frac{d}{dt}P_m =& (R_{m,m+1}P_{m+1} -  R_{m,m-1}P_{m-1}) \\
       & - (R_{m+1,m}P_m + R_{m-1,m}P_m)
 
-   is called :highlit:`Landau-Teller master equation`. It's good for non-translational-invariant system.
-
-
+   is called the :highlit:`Landau-Teller master equation`. It works on non-translational-invariant systems.
 
 
 
 1-D Discrete Master Equation
 ------------------------------
 
+The master equation
+
 .. math::
    \frac{d}{dt}P_m= F(P_{m+1} + P_{m-1} -2 P_m)
 
-with solution
+has the solution
 
 .. math::
    P_m(t) = \sum_n \Pi_{m-n}(t) P_n(0)
@@ -150,16 +144,15 @@ with solution
 in which :math:`\Pi_{m-n}(t) = e^{-2Ft}I_m(2Ft)` is the propagator.
 
 
-.. hint::
-   If the sytem has no translational invariance,
+.. admonition:: Non-translational Invariant
+   :class: toggle
+
+   If the sytem doesn't have translational invariance, the solution
 
    .. math::
       P_m(t) = \sum_n \Pi_{m,n}(t) P_m(0)
 
-   propagator becomes :math:`\Pi_{m,n}(t)` depends on both m and n.
-
-
-
+   has a propagator of :math:`\Pi_{m,n}(t)` which depends on both m and n.
 
 Continuum Limit
 ----------------
@@ -197,48 +190,45 @@ Inverse
 Propagator
 ----------------------------
 
-To solve master equation, we usually find out the propagator :math:`\Pi(x-x',t)`. For simple discrete master equation, we have the propagator with the form :math:`I_m(2Ft)e^{-2Ft}`.
-
+To solve the master equation, the propagator :math:`\Pi(x-x',t)` is very helpful. For simple discrete master equations, the propagator becomes :math:`I_m(2Ft)e^{-2Ft}`.
 
 .. figure:: images/distInit.png
    :alt: initial distribution
    :width: 90%
 
-   Some initial distribution
+   Initial distribution
 
-
-
-
-For continuous master equation which is the diffusion equation, given the initial distribution, it evolves according to
+Continuous master equations or diffusion equations evolve according to
 
 .. math::
-   \frac{\partial}{\partial t} P(x,t) = \zeta \frac{\partial}{\partial x} P(x,t) + D \frac{\partial^2}{\partial x^2} P(x,t) .
+   \frac{\partial}{\partial t} P(x,t) = \zeta \frac{\partial}{\partial x} P(x,t) + D \frac{\partial^2}{\partial x^2} P(x,t),
 
+given the initial distribution.
 
-Then after infinite time, we have the final distribution.
+In infinite time, the system reach equilibrium.
 
 
 .. figure:: images/distFinal.png
    :alt: final distribution
    :width: 90%
 
-   Some final distribution
+   Final distribution
 
 
-**As long as the system has translational or rotational invariance, we can use Fourier transform to reduce the higher order derivatives to solve the equation.**
+**As long as the system has translational or rotational invariance, we can use Fourier transform to solve the equation.**
 
-For :math:`\zeta =0`, there is only diffusion, so we have translational invariance. Fourier transform for continuous equation is
+For :math:`\zeta =0`, there is only diffusion. Translational invariance is preserved. The Fourier transform for continuous equation is
 
 .. math::
    \frac{\partial}{\partial x} e^{ikx}=ike^{ikx} &\implies \frac{\partial}{\partial x} \to ik \\
    \frac{\partial^2}{\partial x^2} e^{ikx} = -k^2 e^{ikx} & \implies \frac{\partial^2}{\partial x^2} \to -k^2
 
-So we can write down the transformed equation right away (for :math:`\zeta=0` case).
+The transformed equation (for :math:`\zeta=0` case),
 
 .. math::
    \frac{\partial}{\partial t}P^k = -D k^2 P^k
 
-and the solution to this equation is
+and the solution is
 
 .. math::
    P^k(t) = P^k(0) e^{-D k^2 t} .
@@ -252,30 +242,24 @@ To find out the propagator, we complete the square,
    & = e^{-\frac{x^2}{4Dt}}  \int P(k,0) e^{-Dt(k-\frac{ix}{2Dt})^2 }dk
 
 
-
-
-The propagator is finally
+The propagator is then
 
 .. math::
-   \Pi(x,t) = \frac{e^{-\frac{x^2}{4Dt}}}{\sqrt{4\pi Dt}}
-
-.. warning::
-   Somehow I can't derive it.
+   \Pi(x,t) = \frac{e^{-\frac{x^2}{4Dt}}}{\sqrt{4\pi Dt}}.
 
 
 .. hint::
-   There might be sigularity in the propagator. One example of it is logorithm sigularity in 2D.
-
+   The propagator can also be singular. One of such examples is the logorithm sigularity in 2D.
 
 
 Bias in Master Equation
 -------------------------
 
 
-When :math:`\zeta\neq 0`, the first term on RHS is a decay or viscous term.
+When :math:`\zeta\neq 0`, the first term on the right hand side is a decay or viscous term,
 
 .. math::
-   \frac{\partial}{\partial t}P(x,t) = \zeta \frac{\partial}{\partial x}P(x,t) + D\frac{\partial^2}{\partial x^2}P(x,t)
+   \frac{\partial}{\partial t}P(x,t) = \zeta \frac{\partial}{\partial x}P(x,t) + D\frac{\partial^2}{\partial x^2}P(x,t).
 
 .. hint::
    To check the properties of :math:`\zeta`, set :math:`D=0`.
@@ -284,14 +268,13 @@ When :math:`\zeta\neq 0`, the first term on RHS is a decay or viscous term.
       \frac{\partial}{\partial t} P = \zeta \frac{\partial}{\partial x} P \Rightarrow P\propto e^{k_w(\omega + \zeta t)}
 
 
-   So we know that when :math:`k_w > 0`,
+   When :math:`k_w > 0`,
 
    1. :math:`\zeta > 0` : exponential grow;
    2. :math:`\zeta < 0` : decay
 
 
-
-We can Fourier transform then complete the square to solve this kind of problem.
+We can use Fourier transform and complete the square to solve it.
 
 .. hint::
    This formalism is very much like the :highlit:`Gauge Transformation`. We define a new derivative
@@ -299,14 +282,11 @@ We can Fourier transform then complete the square to solve this kind of problem.
    .. math::
       \frac{\partial}{\partial x} \to \frac{\partial}{\partial x} + \Gamma(x)
 
-   Then we put this new derivative into diffusion equation,
+   Then we plugin this new derivative into diffusion equation,
 
    .. math::
       & \frac{\partial}{\partial t} P(x,t) = D\frac{\partial^2}{\partial x^2} P(x,t) \\
       \to & \frac{\partial}{\partial t} P(x,t) = D \left(\frac{\partial^2}{\partial x^2} P(x,t) + 2\Gamma\frac{\partial}{\partial x}P(x,t) \right) + D\left( P\left( 2\Gamma^2 + \frac{\partial}{\partial x} \Gamma \right) \right)
 
-   Now we define :math:`\zeta := 2\Gamma`, and let :math:`2\Gamma^2 + \frac{\partial}{\partial x} \Gamma`. [1]_  The diffusion equation under this kind of transformation becomes the one we need.
+   Define :math:`\zeta := 2\Gamma`, and let :math:`2\Gamma^2 + \frac{\partial}{\partial x} \Gamma`. [1]_  The diffusion equation under this kind of transformation becomes the one we need.
 
-   :highlit:`Does it imply that the diffusion equation and gauge transformation are related?`
-
-   We might find some symmetry using this method.

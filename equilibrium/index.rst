@@ -8,12 +8,17 @@ Equilibrium Statistical Mechanics
 
     summary.rst
     basics.rst
+    gamma-space-mu-space.rst
+    macroscopic-states-and-microscopic-states.rst
     most-probable-distribution.rst
     ho-dos.rst
     gibbs-mixing-paradox.rst
     observables.rst
     debye-model.rst
     phase-transitions.rst
+    gas-revisited.rst
     ising-model.rst
+    systematic-view.rst
+    monte-carlo.rst
     ensembles.rst
     topics/index.rst

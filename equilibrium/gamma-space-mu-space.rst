@@ -1,16 +1,14 @@
-.. index:: nonequilibrium
+.. index:: Gamma Space, mu Space, BBGKY
 
 :math:`\Gamma` Space and :math:`\mu` Space
 ==============================================================================
-
-.. index:: BBGKY, Gamma Space, mu Space
 
 
 Two Spaces
 -----------------------------
 
 
-To get some easy equations we need to reduce from :math:`\Gamma` space to :math:`\mu` space. (More about :math:`\mu` space and :math:`\Gamma` space: :ref:`mu-space-and-gamma-space`.)
+Here we have a table comparing the two spaces: :math:`\Gamma` space and :math:`\mu` space. (More about :math:`\mu` space and :math:`\Gamma` space, :ref:`mu-space-and-gamma-space`.)
 
 +-----------------------+-----------------------------------------------------------+-----------------------------------+
 |      Two Spaces       | :math:`\Gamma` space                                      |  :math:`\mu` space                |

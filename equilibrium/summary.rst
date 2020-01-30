@@ -20,11 +20,14 @@ Review of Thermodynamics
 3. First principles: :ref:`laws-of-thermodynamics`
 4. Dynamics: Phase transition; Stability; Response
 
+
 .. _mu-space-and-gamma-space:
 .. _discription-of-microstates:
 
 Description of the Microstates
 --------------------------------------
+
+.. index:: mu Space, Gamma Space
 
 For a system with :math:`N` particles of :math:`r` degrees of freedom, we could always describe the microstates of the system by looking at the state of each particle. There are at least two different point of views, the :math:`\mu` space (mu space) and the :math:`\Gamma` space (Gamma space).
 
@@ -33,12 +36,42 @@ The :math:`\mu` space is a :math:`r` dimensional space where each dimension corr
 The :math:`\Gamma` space is a :math:`rN` dimensional space. In the :math:`\Gamma` space, we have a holistic view. Each point in the :math:`\Gamma` space represents the state of all the particles. For example, we use the first :math:`r` dimensions out of the :math:`rN` dimension to represent the state of the first particle, the next :math:`r` dimensions to represent the state of the second particle, and so on.
 
 
+
+.. admonition:: Why Distingushing between Microstates and Macrostates
+   :class: toggle
+
+   In physical systems, we observe limited quantities regarding the internal structure. If we take the Bayesian point of view, we have the freedom to choose the amount of information we would like to use as priors. In statistical mechanics, macrostates is related to our view of the priors.
+
+.. _what-is-statistical-mechanics:
+
 What is Statistical Mechanics
 --------------------------------------
 
 Physical systems are usually composed of a large amount of particles. In principle, we could calculate the observable quantities if we know the exact motions of the particles. For example, we only need the momentum transfer per unit area to know the pressure of the gas and momentum transfer could be calculated if we know the motion of the particles.
 
-This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the observable quantities, i.e., the probability of the system being on each point in the :math:`\Gamma` space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it. However, we would get degeneracies of microscopic state for each combination of thermodynamic observables.
+This method is obviously unrealistic given the number of particles that we are dealing with. Alternatively, we could figure out the probabilities of each possible values of the observable quantities, i.e., the probability of the system being on each point in the :math:`\Gamma` space. For each microscopic state, we could calculate the thermodynamic observables corresponding to it.
+
+However, this approach requires a first principle that we could use to figure out the distribution of the observables :math:`\{\mathscr O_i\}`, i.e., :math:`p(\{\mathscr O_i\})`. More regoriously, it is expected that we derive a theory that tells us the conditional probability :math:`p(\{\mathscr O_i\} \vert t, \{m_i, r_i\})` where :math:`\{m_i, r_i\}` is a set of features that are defined by the materials, the enviroment and the restrictions, :math:`t` is time.
+
+.. admonition:: A Bayesian View
+   :class: note
+
+   In Bayesian statistics,
+
+   .. math::
+      p(\{\mathscr O_i\} \vert t, \{m_i, r_i\}) p(t \vert \{m_i, r_i\} ) = p(t \vert \{\mathscr O_i\} , \{m_i, r_i\} ) p(\{\mathscr O_i\}).
+
+   :math:`p(\{\mathscr O_i\})` is the prior distribution and is observed in experiments.
+
+   This formalism brings in the question of how our statistical theory of matter is validated. A statistical theory predict the most prominent values of the observables as well as the confidence of the predicted value. On the other hand, our experiments tell us the probability distributions of the observables from our sampling methods in experiments. To validate the statistical theory being developed, a hypothesis test should be carried out.
+
+
+
+For example, the Boltzmann theory assume equal a priori probabilities for the microstates. In Boltzmann theory, we need two aspects of knowledge to understand the statistical system.
+
+1. The distribution of the mirostates, which has been assumed to be equal.
+2. How the energy of combinations of single particles are calculated. For example, this refers to the calculation of the energy levels in quantum mechanics.
+
 
 
 
@@ -71,8 +104,8 @@ In Boltzmann statistics, we follow these guidelines.
 
 1. Two postulates:
 
-   1. Occurrence of state in phase space ( :ref:`equal-a-prior-probability` ): all microstates have the same probabilities of occurence; This means that the most probable distribution for different energy :math:`\Omega(E, \cdots)` should have the most total number of microstates, :math:`\int \Omega(E, \cdots) \mathrm d E \mathrm d\cdots`.
-   2. Which state the equilibrium system is staying at: the most probable microstate. This means that the most probable distribution discussed in 1 will be the actual distribution of the system.
+   1. Occurrence of state in phase space ( :ref:`equal-a-prior-probability` ): all microstates have the same probabilities of occurence; This means that the most probable distribution for different energy :math:`\Omega(E, \cdots)` should have the **largest** total number of microstates, :math:`\int \Omega(E, \cdots) \mathrm d E \mathrm d\cdots`.
+   2. The most probable energy state is the state that an equilibrium system is staying at. This means that the most probable distribution discussed in 1 will be the actual distribution of the system. This postulate is not precise but there is a reason why it works. The distribution of the energy states is an extremely sharp peak at the most probable state.
 
 2. We find the most probable distrinution by maximizing the total number of microstates. Boltzmann distribution and Boltzmann factor is derived from this.
 3. Partition function makes it easy to calculate the observables.
