@@ -12,7 +12,7 @@ SIR
 .. figure:: assets/sir.png
    :align: center
 
-   SIR model
+   SIR model. `mermaid source code <https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcblx0UyhcIlN1c2NlcHRpYmxlIFModClcIikgLS0-fFwiYmV0YVwifCBJKFwiSW5mZWN0ZWQgSSh0KVwiKVxuXHRJIC0tPnxcImFscGhhXCJ8IFIoXCJSZWNvdmVyZWQgUih0KVwiKSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9>`_
 
 The Kermack-McKendrick deterministic model describes the transitions between the different populations. The susceptible population :math:`S(t)` decrease at a rate :math:`-\alpha I(t) S(t)`, where :math:`\beta` is the average probability of getting infected by the infected population. The recovery rate of the infected population is :math:`\alpha`.
 
@@ -177,9 +177,10 @@ Because most vector-borne diseases are repeatative, we combine the dynamics of t
 where :math:`q` is the rate of being transmitted from the vector to the host, :math:`\alpha` is the recovery rate. The recovered hosts become susceptible.
 
 
+Generalization
+--------------------------------
 
-
-
+A general compartment model is
 
 
 
