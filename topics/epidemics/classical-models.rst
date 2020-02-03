@@ -3,7 +3,8 @@
 Classical Models in Epidemics
 ==================================
 
-There are compartment models such as SIR.
+The classical models in epidemics are compartment models. In such models, the hosts are arranged into different populations such as susceptible populations, infected populations, and recovered populations.
+
 
 SIR
 -------------------
@@ -27,7 +28,7 @@ with the constraint
 
 where :math:`N` is the total population. [Martcheva2015]_
 
-The limiting behavior of the system is also intuitive. If the infected population is quarantined, i.e., :math:`\beta=0`, the infected population decays exponentially with a half life :math:`1/\alpha`. Notice that the populations can only be integers. When :math:`S(t)<1`, the infected population moves to the exponential decay phase.
+The limiting behavior of the system is also intuitive. If the infected population is quarantined, i.e., :math:`\beta=0`, the infected population decays exponentially with a half-life :math:`1/\alpha`. Notice that the populations can only be integers. When :math:`S(t)<1`, the infected population moves to the exponential decay phase.
 
 At a specific time :math:`t=t_t`, we might reach the threshold that
 
@@ -85,7 +86,7 @@ which leads to
 Simulate SIR Using Poisson Process
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The transition events of susceptible person being infected (:math:`S\to I`) and infected person being recovered (:math:`I\to R`).
+The transition events of a susceptible person being infected (:math:`S\to I`) and an infected person being recovered (:math:`I\to R`).
 
 The rates are determined by the equation :eq:`eqn-kermack-mckendrick-eqn-n`,
 
@@ -97,9 +98,9 @@ and
 .. math::
    Y_{I\to R}\left( \int_0^t \alpha I(t') dt' \right).
 
-Whenever a even is trigger in the process :math:`Y_{S\to I}`, we will have one more infected person and one less susceptible person.
+Whenever an event is triggered in the process :math:`Y_{S\to I}`, we will have one more infected person and one less susceptible person.
 
-In fact, :math:`1/\alpha` is the mean days an infectd person remains in the infectd status. This is used to estimate the :math:`\alpha` using data. The value of :math:`\beta` is estimated using the relation [Martcheva2015]_
+In fact, :math:`1/\alpha` is the mean days an infected person remains in the infectd status. This is used to estimate the :math:`\alpha` using data. The value of :math:`\beta` is estimated using the relation [Martcheva2015]_
 
 .. math::
    \frac{\beta}{\alpha} = \frac{\ln (S(t_0)/S(t\to\infty))}{S(t_0) + I(t_0) - S(t\to\infty) }
@@ -116,7 +117,7 @@ Some epidemics such as influenza infect us repeatedly. One simple model for them
 
    SIS model
 
-The dynamics is determined by
+The dynamics are determined by
 
 .. math::
    \frac{dI(t)}{dt} = \beta I(t) S(t) - \alpha I(t),
@@ -126,7 +127,7 @@ with the constraint
 .. math::
    S(t) + I(t) = N.
 
-The dynamics of the basic SIS model is determined by one single first order differential equation
+The dynamics of the basic SIS model is determined by one single first-order differential equation
 
 .. math::
    \frac{dI(t)}{dt} &= \beta I(t) (N - I(t)) - \alpha I(t) \\
@@ -158,22 +159,22 @@ If :math:`\mathscr R_0 > 1`, we get a positive growth grate for :math:`I(t)`. Ot
 Vector-Borne
 ----------------------------
 
-Some diseases are transmitted from one host to another with some intermediate living carriers such as ahthropod. A intermediate living carrier is called a :highlit:`vector`. Vectors do not get sick because of the pathogenic microorganism but they will carrier the pathogenic microorganism through out their lives.
+Some diseases are transmitted from one host to another with some intermediate living carriers such as arthropod. An intermediate living carrier is called a :highlit:`vector`. Vectors do not get sick because of the pathogenic microorganism but they will carry the pathogenic microorganism throughout their lives.
 
-To model the vector-borne diseases, two populations are added to the model, the infected population of vectors :math:`I_v(t)` and the susceptible population of vectors :math:`S_v(t)`. Apart being infected by the infected hosts, the birth rate :math:`\Lambda_v` and the death rate :math:`\mu` of the vectors are also related to the two populations. Thus the two populations are coupled to the different populations of the hosts,
+To model the vector-borne diseases, two populations are added to the model, the infected population of vectors :math:`I_v(t)` and the susceptible population of vectors :math:`S_v(t)`. Apart from being infected by the infected hosts, the birth rate :math:`\Lambda_v` and the death rate :math:`\mu` of the vectors are also related to the two populations. Thus the two populations are coupled to the different populations of the hosts,
 
 .. math::
    \frac{S_v(t)}{dt} &= \Lambda_v - p a S_v(t) I(t) -\mu S_v(t) \\
    \frac{I_v(t)}{dt} &= p a S_v(t) I(t) - \mu I_v,
 
-where :math:`a` is the rate of a vector biting an host, :math:`p` is the rate of a vector being infected when biting an infected hosts. The product :math:`pa` is the rate of a vector being infected. [Martcheva2015]_
+where :math:`a` is the rate of a vector biting a host, :math:`p` is the rate of a vector being infected when biting an infected host. The product :math:`pa` is the rate of a vector being infected. [Martcheva2015]_
 
-Due to the fact that most vector-borne diseases are repeative, we combine the dynamics of the vectors with the SIS model with the constraint :math:`S(t) + I(t) = N`,
+Because most vector-borne diseases are repeatative, we combine the dynamics of the vectors with the SIS model with the constraint :math:`S(t) + I(t) = N`,
 
 .. math::
    \frac{I(t)}{dt} = qa S(t) I_v(t) -\alpha I(t),
 
-where :math:`q` is the rate of being transmitted from the vector to the host, :math:`\alpha` is the recovery rate. The recvered hosts becomes susceptible.
+where :math:`q` is the rate of being transmitted from the vector to the host, :math:`\alpha` is the recovery rate. The recovered hosts become susceptible.
 
 
 
