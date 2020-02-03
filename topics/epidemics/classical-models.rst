@@ -1,3 +1,5 @@
+.. role:: highlit
+
 Classical Models in Epidemics
 ==================================
 
@@ -123,6 +125,59 @@ with the constraint
 
 .. math::
    S(t) + I(t) = N.
+
+The dynamics of the basic SIS model is determined by one single first order differential equation
+
+.. math::
+   \frac{dI(t)}{dt} &= \beta I(t) (N - I(t)) - \alpha I(t) \\
+   &= (\beta N - \alpha )I(t) - \beta I(t) I(t) \\
+   &= (\beta N - \alpha )I(t) \left( 1 - \frac{I(t)}{(\beta N - \alpha)/\beta} \right) \\
+   &\equiv r \left(1 - \frac{I}{r/\beta}\right) I(t),
+
+where we defined the :highlit:`growth rate`
+
+.. math::
+   r \equiv \beta N - \alpha = \alpha(\frac{\beta}{\alpha} N - 1) \equiv \alpha (\mathscr R_0 - 1).
+
+The parameter :math:`\mathscr R_0` is the :highlit:`basic reproduction number`,
+
+.. math::
+   \mathscr R_0 = \frac{\beta}{\alpha} N .
+
+If :math:`\mathscr R_0 > 1`, we get a positive growth grate for :math:`I(t)`. Otherwise, the infected population will decrease.
+
+.. admonition:: Basic Reproduction Rate
+   :class: note
+
+   A quote from the Martcheva [Martcheva2015]_
+
+      Epidemiologically, the reproduction number gives the number of secondary cases one infectious individual will produce in a population consisting only of susceptible individuals.
+
+
+
+Vector-Borne
+----------------------------
+
+Some diseases are transmitted from one host to another with some intermediate living carriers such as ahthropod. A intermediate living carrier is called a :highlit:`vector`. Vectors do not get sick because of the pathogenic microorganism but they will carrier the pathogenic microorganism through out their lives.
+
+To model the vector-borne diseases, two populations are added to the model, the infected population of vectors :math:`I_v(t)` and the susceptible population of vectors :math:`S_v(t)`. Apart being infected by the infected hosts, the birth rate :math:`\Lambda_v` and the death rate :math:`\mu` of the vectors are also related to the two populations. Thus the two populations are coupled to the different populations of the hosts,
+
+.. math::
+   \frac{S_v(t)}{dt} &= \Lambda_v - p a S_v(t) I(t) -\mu S_v(t) \\
+   \frac{I_v(t)}{dt} &= p a S_v(t) I(t) - \mu I_v,
+
+where :math:`a` is the rate of a vector biting an host, :math:`p` is the rate of a vector being infected when biting an infected hosts. The product :math:`pa` is the rate of a vector being infected. [Martcheva2015]_
+
+Due to the fact that most vector-borne diseases are repeative, we combine the dynamics of the vectors with the SIS model with the constraint :math:`S(t) + I(t) = N`,
+
+.. math::
+   \frac{I(t)}{dt} = qa S(t) I_v(t) -\alpha I(t),
+
+where :math:`q` is the rate of being transmitted from the vector to the host, :math:`\alpha` is the recovery rate. The recvered hosts becomes susceptible.
+
+
+
+
 
 
 
