@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Classical Models in Epidemics &#8212; Statistical Physics Notes</title>
+    <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
+    <link rel="canonical" href="https://statisticalphysics.openmetric.org/topics/epidemics/classical-models.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Information Theory and Statistical Mechanics" href="../information-theory-and-statistical-mechanics.html" />
+    <link rel="prev" title="Epidemics" href="index.html" />
+
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-44466929-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({ TeX: { extensions: ["color.js","cancel.js", "AMSmath.js", "AMSsymbols.js"] }});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Register.StartupHook("TeX Jax Ready",function () {
+MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{
+   cancel: ["Extension","cancel"]
+   });
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+   tex2jax: {
+     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+   }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Queue(function() {
+     var all = MathJax.Hub.getAllJax(), i;
+     for(i=0; i < all.length; i += 1) {
+         all[i].SourceElement().parentNode.className += ' has-jax';
+     }
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+tex2jax: {
+   processEscapes: true
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+"fast-preview": {
+Chunks: {EqnChunk: 10000, EqnChunkFactor: 1, EqnChunkDelay: 0},
+color: "inherit!important",
+updateTime: 30, updateDelay: 6,
+messageStyle: "none",
+disabled: false
+}
+});
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+TeX: {
+   Macros: {
+     overlr: ['\\overset\\leftrightarrow{\#1}',1],
+     overl: ['\\overset\leftarrow{\#1}',1],
+     overr: ['\\overset\rightarrow{\#1}',1],
+     bra: ['\\left\\langle \#1\\right|',1],
+     ket: ['\\left| \#1\\right\\rangle',1],
+     braket: ['\\langle \#1 \\mid \#2 \\rangle',2],
+     avg: ['\\left< \#1 \\right>',1],
+     slashed: ['\\cancel{\#1}',1],
+     bold: ['\\boldsymbol{\#1}',1],
+     sech: ['\\operatorname{sech}{\#1}',1],
+     csch: ['\\operatorname{csch}{\#1}',1],
+     Tr: ['\\operatorname{Tr}{\#1}',1]
+   }
+}
+});
+</script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+
+<!-- Toggle Environment Begin -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .admonition-title").show();
+        $(".toggle .admonition-title").click(function() {
+            $(this).parent().children().not(".admonition-title").toggle(400);
+            $(this).parent().children(".admonition-title").toggleClass("open");
+        })
+    });
+    </script>
+<!-- Toggle Environment End -->
+
+ 
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-inverse navbar-default ">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../index.html">
+          Statistical Physics</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../index.html">Chapters <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul>
+<li class="toctree-l1"><a class="reference internal" href="../../vocabulary/index.html">Vocabulary and Program</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/integrals.html">Integrals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/transforms.html">Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/green.html">Green’s Function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/computations.html">Computations</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../thermodynamics/index.html">Thermodynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../thermodynamics/summary.html">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../thermodynamics/topics/index.html">Topics on Thermodynamics</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../equilibrium/index.html">Equilibrium Statistical Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/summary.html">Equilibrium Statistical Mechanics Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/basics.html">Basics of Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/gamma-space-mu-space.html"><span class="math notranslate nohighlight">\(\Gamma\)</span> Space and <span class="math notranslate nohighlight">\(\mu\)</span> Space</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/macroscopic-states-and-microscopic-states.html">Macroscopic States and Microscropic State</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/most-probable-distribution.html">Most Probable Distribution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/ho-dos.html">Harmonic Oscillator and Density of States</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/gibbs-mixing-paradox.html">Gibbs Mixing Paradox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/observables.html">Observables in Statistical Physics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/debye-model.html">Debye Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/phase-transitions.html">Phase Transitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/gas-revisited.html">Gas Revisited</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/ising-model.html">Ising Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/systematic-view.html">A More Systematic View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/monte-carlo.html">Monte Carlo Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/ensembles.html">Ensembles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../equilibrium/topics/index.html">Topics on Equilibrium Statistical Mechanics</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../nonequilibrium/index.html">Stochastic And Non-Equilibrium Statistical Mechanics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/important-questions.html">Important Questions of Statistical Mechanics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/master-eqn.html">Master Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/solving-master-eqn.html">Solving Master Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/master-eqn-examples.html">Examples of Master Equations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/smoluchowski-eqn.html">Smoluchowski Equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/effect-of-defects.html">Effect of Defects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/brownian-motion.html">Brownian Motion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../nonequilibrium/quantum-master-eqn.html">Quantum Master Equation</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Some Topics in Statistical Mechanics</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Epidemics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Sections <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Classical Models in Epidemics</a><ul>
+<li><a class="reference internal" href="#sir">SIR</a><ul>
+<li><a class="reference internal" href="#simulate-sir-using-poisson-process">Simulate SIR Using Poisson Process</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#sis">SIS</a></li>
+<li><a class="reference internal" href="#vector-borne">Vector-Borne</a></li>
+<li><a class="reference internal" href="#generalization">Generalization</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="index.html" title="Previous Chapter: Epidemics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Epidemics</span>
+    </a>
+  </li>
+  <li>
+    <a href="../information-theory-and-statistical-mechanics.html" title="Next Chapter: Information Theory and Statistical Mechanics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Information T... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="classical-models-in-epidemics">
+<h1>Classical Models in Epidemics<a class="headerlink" href="#classical-models-in-epidemics" title="Permalink to this headline">¶</a></h1>
+<p>The classical models in epidemics are compartment models. In such models, the hosts are arranged into different populations such as susceptible populations, infected populations, and recovered populations.</p>
+<div class="section" id="sir">
+<h2>SIR<a class="headerlink" href="#sir" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-center" id="id6">
+<img alt="../../_images/sir.png" src="../../_images/sir.png" />
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">SIR model</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>The Kermack-McKendrick deterministic model describes the transitions between the different populations. The susceptible population <span class="math notranslate nohighlight">\(S(t)\)</span> decrease at a rate <span class="math notranslate nohighlight">\(-\alpha I(t) S(t)\)</span>, where <span class="math notranslate nohighlight">\(\beta\)</span> is the average probability of getting infected by the infected population. The recovery rate of the infected population is <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-eqn-kermack-mckendrick-eqn-n">
+<span class="eqno">(40)<a class="headerlink" href="#equation-eqn-kermack-mckendrick-eqn-n" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{dS(t)}{dt} &amp;= -\beta I(t) S(t) \\
+\frac{dI(t)}{dt} &amp;= \beta S(t) I(t) - \alpha I(t),\end{split}\]</div>
+<p>with the constraint</p>
+<div class="math notranslate nohighlight">
+\[S(t) + I(t) + R(t) = N,\]</div>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the total population. <a class="reference internal" href="#martcheva2015" id="id1"><span>[Martcheva2015]</span></a></p>
+<p>The limiting behavior of the system is also intuitive. If the infected population is quarantined, i.e., <span class="math notranslate nohighlight">\(\beta=0\)</span>, the infected population decays exponentially with a half-life <span class="math notranslate nohighlight">\(1/\alpha\)</span>. Notice that the populations can only be integers. When <span class="math notranslate nohighlight">\(S(t)&lt;1\)</span>, the infected population moves to the exponential decay phase.</p>
+<p>At a specific time <span class="math notranslate nohighlight">\(t=t_t\)</span>, we might reach the threshold that</p>
+<div class="math notranslate nohighlight">
+\[\beta S(t_t) - \alpha = 0.\]</div>
+<p>Suppose the susceptible population is larger initially, we would have <span class="math notranslate nohighlight">\(\beta S(t_0) - \alpha &gt; 0\)</span> initially. The infected population will grow. The threshold indicates a flipping moment when the infected population will start to decrease.</p>
+<p>The threshold requires</p>
+<div class="math notranslate nohighlight">
+\[\frac{\beta S(t_t)}{\alpha} = 1.\]</div>
+<p>When <span class="math notranslate nohighlight">\(\frac{\beta S(t_t)}{\alpha}&gt;1\)</span>, the infected population is growing. It is convinient to define</p>
+<div class="math notranslate nohighlight">
+\[\tau(t) = \frac{\beta S(t)}{\alpha},\]</div>
+<p>with which equations <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(40)</a> becomes</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{dS(t)}{dt} &amp;= - \alpha \tau(t) I(t)  \\
+\frac{dI(t)}{dt} &amp;= \alpha (\tau(t) - 1) I(t),\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(\tau(t)&gt;1\)</span>, the infected population will grow. If <span class="math notranslate nohighlight">\(\tau(t)&lt;1\)</span>, the infected population will decrease.</p>
+<p>In the <strong>very beginning of a epidemic event</strong>, the susceptible population fraction is almost constant, thus <span class="math notranslate nohighlight">\(\tau(t)\)</span> is almost constant, i.e., <span class="math notranslate nohighlight">\(\tau(t) = \tau_0\)</span>, the growth rate of <span class="math notranslate nohighlight">\(I(t)\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\frac{dI(t)}{dt} = \alpha (\tau_0 - 1) I(t).\]</div>
+<p>The equations are solved</p>
+<div class="math notranslate nohighlight">
+\[I(t) = I(t_0) e^{\alpha (\tau_0 - 1) t}.\]</div>
+<p>The exponential growth rate is determined by</p>
+<div class="math notranslate nohighlight">
+\[\alpha (\tau_0 - 1).\]</div>
+<p>The days <span class="math notranslate nohighlight">\(\Delta t\)</span> required to double the infected population is a constant in the early stage. To find out <span class="math notranslate nohighlight">\(\Delta t_d\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{I(t+\Delta t)}{I(t)} = e^{\alpha (\tau_0 - 1) \Delta t} \equiv 2,\]</div>
+<p>which leads to</p>
+<div class="math notranslate nohighlight">
+\[\Delta t = \frac{\ln 2}{\alpha(\tau_0 -1)} \sim \frac{0.7}{\alpha(\tau_0 -1)} .\]</div>
+<div class="section" id="simulate-sir-using-poisson-process">
+<h3>Simulate SIR Using Poisson Process<a class="headerlink" href="#simulate-sir-using-poisson-process" title="Permalink to this headline">¶</a></h3>
+<p>The transition events of a susceptible person being infected (<span class="math notranslate nohighlight">\(S\to I\)</span>) and an infected person being recovered (<span class="math notranslate nohighlight">\(I\to R\)</span>).</p>
+<p>The rates are determined by the equation <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(40)</a>,</p>
+<div class="math notranslate nohighlight">
+\[Y_{S\to I}\left(\int_0^t \beta I(t') S(t') dt' \right)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[Y_{I\to R}\left( \int_0^t \alpha I(t') dt' \right).\]</div>
+<p>Whenever an event is triggered in the process <span class="math notranslate nohighlight">\(Y_{S\to I}\)</span>, we will have one more infected person and one less susceptible person.</p>
+<p>In fact, <span class="math notranslate nohighlight">\(1/\alpha\)</span> is the mean days an infected person remains in the infectd status. This is used to estimate the <span class="math notranslate nohighlight">\(\alpha\)</span> using data. The value of <span class="math notranslate nohighlight">\(\beta\)</span> is estimated using the relation <a class="reference internal" href="#martcheva2015" id="id2"><span>[Martcheva2015]</span></a></p>
+<div class="math notranslate nohighlight">
+\[\frac{\beta}{\alpha} = \frac{\ln (S(t_0)/S(t\to\infty))}{S(t_0) + I(t_0) - S(t\to\infty) }\]</div>
+</div>
+</div>
+<div class="section" id="sis">
+<h2>SIS<a class="headerlink" href="#sis" title="Permalink to this headline">¶</a></h2>
+<p>Some epidemics such as influenza infect us repeatedly. One simple model for them is the SIS model shown in figure <a class="reference internal" href="#epidemic-compartment-sis-scheme"><span class="std std-ref">SIS model.</span></a>,</p>
+<div class="figure align-center" id="id7">
+<span id="epidemic-compartment-sis-scheme"></span><img alt="../../_images/sis.png" src="../../_images/sis.png" />
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">SIS model.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>The dynamics are determined by</p>
+<div class="math notranslate nohighlight">
+\[\frac{dI(t)}{dt} = \beta I(t) S(t) - \alpha I(t),\]</div>
+<p>with the constraint</p>
+<div class="math notranslate nohighlight">
+\[S(t) + I(t) = N.\]</div>
+<p>The dynamics of the basic SIS model is determined by one single first-order differential equation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{dI(t)}{dt} &amp;= \beta I(t) (N - I(t)) - \alpha I(t) \\
+&amp;= (\beta N - \alpha )I(t) - \beta I(t) I(t) \\
+&amp;= (\beta N - \alpha )I(t) \left( 1 - \frac{I(t)}{(\beta N - \alpha)/\beta} \right) \\
+&amp;\equiv r \left(1 - \frac{I}{r/\beta}\right) I(t),\end{split}\]</div>
+<p>where we defined the <span class="highlit">growth rate</span></p>
+<div class="math notranslate nohighlight">
+\[r \equiv \beta N - \alpha = \alpha(\frac{\beta}{\alpha} N - 1) \equiv \alpha (\mathscr R_0 - 1).\]</div>
+<p>The parameter <span class="math notranslate nohighlight">\(\mathscr R_0\)</span> is the <span class="highlit">basic reproduction number</span>,</p>
+<div class="math notranslate nohighlight">
+\[\mathscr R_0 = \frac{\beta}{\alpha} N .\]</div>
+<p>If <span class="math notranslate nohighlight">\(\mathscr R_0 &gt; 1\)</span>, we get a positive growth grate for <span class="math notranslate nohighlight">\(I(t)\)</span>. Otherwise, the infected population will decrease.</p>
+<div class="note admonition">
+<p class="admonition-title">Basic Reproduction Rate</p>
+<p>A quote from the Martcheva <a class="reference internal" href="#martcheva2015" id="id3"><span>[Martcheva2015]</span></a></p>
+<blockquote>
+<div><p>Epidemiologically, the reproduction number gives the number of secondary cases one infectious individual will produce in a population consisting only of susceptible individuals.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="vector-borne">
+<h2>Vector-Borne<a class="headerlink" href="#vector-borne" title="Permalink to this headline">¶</a></h2>
+<p>Some diseases are transmitted from one host to another with some intermediate living carriers such as arthropod. An intermediate living carrier is called a <span class="highlit">vector</span>. Vectors do not get sick because of the pathogenic microorganism but they will carry the pathogenic microorganism throughout their lives.</p>
+<p>To model the vector-borne diseases, two populations are added to the model, the infected population of vectors <span class="math notranslate nohighlight">\(I_v(t)\)</span> and the susceptible population of vectors <span class="math notranslate nohighlight">\(S_v(t)\)</span>. Apart from being infected by the infected hosts, the birth rate <span class="math notranslate nohighlight">\(\Lambda_v\)</span> and the death rate <span class="math notranslate nohighlight">\(\mu\)</span> of the vectors are also related to the two populations. Thus the two populations are coupled to the different populations of the hosts,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{S_v(t)}{dt} &amp;= \Lambda_v - p a S_v(t) I(t) -\mu S_v(t) \\
+\frac{I_v(t)}{dt} &amp;= p a S_v(t) I(t) - \mu I_v,\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the rate of a vector biting a host, <span class="math notranslate nohighlight">\(p\)</span> is the rate of a vector being infected when biting an infected host. The product <span class="math notranslate nohighlight">\(pa\)</span> is the rate of a vector being infected. <a class="reference internal" href="#martcheva2015" id="id4"><span>[Martcheva2015]</span></a></p>
+<p>Because most vector-borne diseases are repeatative, we combine the dynamics of the vectors with the SIS model with the constraint <span class="math notranslate nohighlight">\(S(t) + I(t) = N\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{I(t)}{dt} = qa S(t) I_v(t) -\alpha I(t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(q\)</span> is the rate of being transmitted from the vector to the host, <span class="math notranslate nohighlight">\(\alpha\)</span> is the recovery rate. The recovered hosts become susceptible.</p>
+</div>
+<div class="section" id="generalization">
+<h2>Generalization<a class="headerlink" href="#generalization" title="Permalink to this headline">¶</a></h2>
+<p>A general compartment model is a model may include other stages of the disease. The differential equations are easily translated from the flowcharts.</p>
+<p>In the disease progression, four stages are relevant. <a class="reference internal" href="#martcheva2015" id="id5"><span>[Martcheva2015]</span></a></p>
+<ol class="arabic simple">
+<li><p>Exposed stage <span class="highlit">E</span> or latent stage <span class="highlit">L</span>: infected but not infectious;</p></li>
+<li><p>Asymptomatic stage <span class="highlit">A</span>: the asymptomatic stage describes the asymptomatic infection or subclinical infection where the host is infected by no symptoms are shown;</p></li>
+<li><p>Carrier stage <span class="highlit">C</span>: infected but not sick;</p></li>
+<li><p>Passive immunity stage <span class="highlit">M</span>: antibodies are transferred between hosts.</p></li>
+</ol>
+<div class="figure align-center" id="id8">
+<img alt="../../_images/seir.png" src="../../_images/seir.png" />
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">SEIR model</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id9">
+<img alt="../../_images/seir-a.png" src="../../_images/seir-a.png" />
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">SEIR model with an asymptomatic stage</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id10">
+<img alt="../../_images/scirs.png" src="../../_images/scirs.png" />
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">SCIRS model</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<p>Compartments related to epidemic control can also be integrated into the models.</p>
+<ol class="arabic simple">
+<li><p>Quarantine Q</p></li>
+<li><p>Treatment T</p></li>
+<li><p>Vaccination V</p></li>
+</ol>
+<div class="figure align-center" id="id11">
+<img alt="../../_images/siqr.png" src="../../_images/siqr.png" />
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">SIQR model</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id12">
+<img alt="../../_images/seit.png" src="../../_images/seit.png" />
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">SEIT model</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="citation">
+<dt class="label" id="martcheva2015"><span class="brackets">Martcheva2015</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>,<a href="#id5">5</a>)</span></dt>
+<dd><p><a class="reference external" href="https://doi.org/10.1007/978-1-4899-7612-3_2">Martcheva, M. (2015). Introduction to Epidemic Modeling, 9–31.</a></p>
+</dd>
+<dt class="label" id="hill2016"><span class="brackets">Hill2016</span></dt>
+<dd><p><a class="reference external" href="https://scipython.com/book/chapter-8-scipy/additional-examples/the-sir-epidemic-model/">Learning Scientific Programming with Python</a></p>
+</dd>
+</dl>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+
+<hr>
+
+<script src="https://utteranc.es/client.js"
+        repo="emptymalei/statisticalphysics"
+        issue-term="title"
+        label="Comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+<hr>
+
+
+<div class="container" style="border-top:solid 1px black;margin-top:10px;padding-top:10px;padding-bottom:10px;">
+    <p class="pull-right">
+
+
+        <a href="#"><span class="label label-info">Back to top</span></a>
+
+    </p>
+    <p>
+        <span>© <a href="https://leima.is">2020, Lei Ma  <span class="glyphicon glyphicon-link" aria-hidden="true"></span></a> </span>|
+        <span>Created with
+        <a href="http://sphinx.pocoo.org/">Sphinx</a> and <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>.
+        </span>|
+        <span><span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
+        <a href="https://github.com/emptymalei/statisticalphysics">Source on GitHub</a>
+        </span>|
+        <span><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+              <a href="http://physics.openmetric.org">Physics Notebook</a>
+        </span>
+        <span><span class="glyphicon glyphicon-book" aria-hidden="true"></span>
+            <a href="http://datumorphism.com">Datumorphism</a>
+        </span>
+         |
+        <span><span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+        <a href="/genindex.html">Index</a>
+     </span> |
+       <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
+       <a href="../../_sources/topics/epidemics/classical-models.rst.txt"
+      rel="nofollow">Page Source</a>
+      </span>
+
+        <span><script data-gittip-username="emptymalei"
+        data-gittip-widget="button"
+        src="//gttp.co/v1.js"></script></span>
+    </p>
+
+    <hr>
+
+    <script>
+        window.jQuery || document.write('<script src="_static/js/vendor/jquery-1.9.1.min.js"><\/script>')
+    </script>
+
+</div>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-44466929-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+ 
+  </body>
+</html>

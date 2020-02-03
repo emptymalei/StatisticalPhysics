@@ -7,8 +7,8 @@ Statistical Physics is the holy grail of physics. It taught us great lessons abo
 Statistical mechanics is the mechanics of large bodies using statistical methods.
 
 * Classical mechanics is Newton's great plan of kinematics.
-* Large number of bodies means a lot of degrees of freedom (DoFs). The system is large if it is consisting Avogadro's number of particles. That being said, we would study DoFs of the order :math:`10^{23}`.
-* Each member of the system is responsible for the properties of the whole system but we can't explain everything using the single particle properties. More is different.
+* A Large number of bodies means a lot of degrees of freedom (DoFs). The system is large if it is consisting of Avogadro's number of particles. That being said, we would study DoFs of the order :math:`10^{23}`.
+* Each member of the system is responsible for the properties of the whole system but we can't explain everything using the single-particle properties. More is different.
 
 How did we end up with probabilities?
 
