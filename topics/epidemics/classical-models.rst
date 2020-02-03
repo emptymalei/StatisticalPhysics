@@ -207,15 +207,22 @@ In the disease progression, four stages are relevant. [Martcheva2015]_
 
    SCIRS model
 
-Compartments related to the epidemic control can also be integrated into the models.
+Compartments related to epidemic control can also be integrated into the models.
 
-1. Quarantine Q:
-2. Treatment T:
+1. Quarantine Q
+2. Treatment T
+3. Vaccination V
 
 .. figure:: assets/siqr.png
    :align: center
 
    SIQR model
+
+
+.. figure:: assets/seit.png
+   :align: center
+
+   SEIT model
 
 
 
