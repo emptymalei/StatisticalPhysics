@@ -12,7 +12,7 @@ SIR
 .. figure:: assets/sir.png
    :align: center
 
-   SIR model. `mermaid source code <https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcblx0UyhcIlN1c2NlcHRpYmxlIFModClcIikgLS0-fFwiYmV0YVwifCBJKFwiSW5mZWN0ZWQgSSh0KVwiKVxuXHRJIC0tPnxcImFscGhhXCJ8IFIoXCJSZWNvdmVyZWQgUih0KVwiKSIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9>`_
+   SIR model
 
 The Kermack-McKendrick deterministic model describes the transitions between the different populations. The susceptible population :math:`S(t)` decrease at a rate :math:`-\alpha I(t) S(t)`, where :math:`\beta` is the average probability of getting infected by the infected population. The recovery rate of the infected population is :math:`\alpha`.
 
@@ -115,7 +115,7 @@ Some epidemics such as influenza infect us repeatedly. One simple model for them
 .. figure:: assets/sis.png
    :align: center
 
-   SIS model
+   SIS model.
 
 The dynamics are determined by
 
@@ -180,7 +180,43 @@ where :math:`q` is the rate of being transmitted from the vector to the host, :m
 Generalization
 --------------------------------
 
-A general compartment model is
+A general compartment model is a model may include other stages of the disease. The differential equations are easily translated from the flowcharts.
+
+In the disease progression, four stages are relevant. [Martcheva2015]_
+
+1. Exposed stage :highlit:`E` or latent stage :highlit:`L`: infected but not infectious;
+2. Asymptomatic stage :highlit:`A`: the asymptomatic stage describes the asymptomatic infection or subclinical infection where the host is infected by no symptoms are shown;
+3. Carrier stage :highlit:`C`: infected but not sick;
+4. Passive immunity stage :highlit:`M`: antibodies are transferred between hosts.
+
+
+
+.. figure:: assets/seir.png
+   :align: center
+
+   SEIR model
+
+
+.. figure:: assets/seir-a.png
+   :align: center
+
+   SEIR model with an asymptomatic stage
+
+.. figure:: assets/scirs.png
+   :align: center
+
+   SCIRS model
+
+Compartments related to the epidemic control can also be integrated into the models.
+
+1. Quarantine Q:
+2. Treatment T:
+
+.. figure:: assets/siqr.png
+   :align: center
+
+   SIQR model
+
 
 
 
