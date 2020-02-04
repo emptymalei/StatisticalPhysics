@@ -233,6 +233,30 @@ Each compartment is also subject to variants based on the demographics of the po
    SIS with two strains
 
 
+Basic Reproduction Number and Stability Analysis
+------------------------------------------------------
+
+Consider the SIR model :eq:`eqn-kermack-mckendrick-eqn-n` and add birth rate :math:`\Lambda` and death rate :math:`\mu` to the model,
+
+.. math::
+   \frac{dS(t)}{dt} &= \Lambda - \beta I(t) S(t) - \mu S(t)\\
+   \frac{dI(t)}{dt} & = \beta I(t) S(t) - \alpha I(t) - \mu I(t) \\
+   \frac{dN(t)}{dt} &= \alpha I(t) - \mu N(t),
+
+with
+
+.. math::
+   R(t) + I(t) + S(t) = N(t).
+
+The reproduction number is
+
+.. math::
+   \mathscr R_0 = \frac{\Lambda \beta}{\mu(\alpha + \mu)}.
+
+Since the equation for :math:`N(t)` is independent of :math:`S(t)` and :math:`I(t)`, the stability is determined by the first two equations. Denote the equilibrium point as :math:`S_0, I_0`, we linearize the equations using :ref:`linear-stability-analysis` and find that the characteristic equation is related to :math:`\mathscr R_0`, i.e., the growth rate of the linearized system :math:`\lambda` is a function of :math:`\mathscr R_0`. That being said, by looking into the growth rate of the infected populations in a short time, we could roughly estimate the reproduction number :math:`\mathscr R_0`.
+
+
+
 
 References
 --------------

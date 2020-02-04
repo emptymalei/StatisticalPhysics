@@ -15,9 +15,10 @@ the equilibrium points are determined by :math:`\frac{d \mathbf{x}(t)}{dt} = 0`,
 
 from which we solve the equilibrium point :math:`\mathbf x(t) = \mathbf x_0`
 
+.. _linear-stability-analysis:
 
-Linearization
-----------------
+Linear Stability Analysis
+--------------------------------
 
 The system of differential equations is linearized using perturbations. For simplicity, we consider the following two-dimensional system,
 
@@ -103,7 +104,7 @@ To investigate the stability of the differential system, we assume that
    \end{pmatrix} = \begin{pmatrix}
    \delta x_1(t_0) \\
    \delta x_2(t_0)
-   \end{pmatrix} e^{\Lambda t},
+   \end{pmatrix} e^{\lambda t},
 
 which leads to linear equations
 
@@ -111,7 +112,7 @@ which leads to linear equations
    \begin{pmatrix}
    \delta x_1(t_0) \\
    \delta x_2(t_0)
-   \end{pmatrix} \Lambda = \mathbf J \begin{pmatrix}
+   \end{pmatrix} \lambda = \mathbf J \begin{pmatrix}
    \delta x_1(t_0) \\
    \delta x_2(t_0)
    \end{pmatrix}.
@@ -119,13 +120,13 @@ which leads to linear equations
 For non-trivial solutions, we require
 
 .. math::
-   \operatorname{Det}(\mathbf J - \Lambda \mathbf I) = 0,
+   \operatorname{Det}(\mathbf J - \lambda \mathbf I) = 0,
 
 which is also the eigen value problem of the Jacobian matrix. We expand the determinant
 
 .. math::
-   \Lambda^2 - (J_{11} + J_{22}) \Lambda + (J_{11}J_{22} - J_{12}J_{21}) = 0.
+   \lambda^2 - (J_{11} + J_{22}) \lambda + (J_{11}J_{22} - J_{12}J_{21}) = 0.
    :label: eqn-sa-2-d-1ode-perturbation-linearized-det
 
-For real positive solutions :math:`\Lambda>0`, we get an exponential growing result for the linearized equation. Any deviation from the equilibrium point leads to a run-away process and the system moves further away from the equilibrium point. For real negative solutions :math:`\Lambda < 0`, the system will move back to the equilibrium point given any deviations from the equilibrium. Imaginary solutions of :math:`\Lambda` leads to oscillations.
+For real positive solutions :math:`\lambda>0`, we get an exponential growing result for the linearized equation. Any deviation from the equilibrium point leads to a run-away process and the system moves further away from the equilibrium point. For real negative solutions :math:`\lambda < 0`, the system will move back to the equilibrium point given any deviations from the equilibrium. Imaginary solutions of :math:`\lambda` leads to oscillations.
 
