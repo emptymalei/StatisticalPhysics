@@ -161,6 +161,7 @@ TeX: {
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../../vocabulary/index.html">Vocabulary and Program</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../vocabulary/stability-analysis.html">Stability Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vocabulary/integrals.html">Integrals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vocabulary/transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../vocabulary/green.html">Green’s Function</a></li>
@@ -236,6 +237,7 @@ TeX: {
 <li><a class="reference internal" href="#sis">SIS</a></li>
 <li><a class="reference internal" href="#vector-borne">Vector-Borne</a></li>
 <li><a class="reference internal" href="#generalization">Generalization</a></li>
+<li><a class="reference internal" href="#basic-reproduction-number-and-stability-analysis">Basic Reproduction Number and Stability Analysis</a></li>
 <li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
@@ -285,13 +287,13 @@ TeX: {
 <p>The classical models in epidemics are compartment models. In such models, the hosts are arranged into different populations such as susceptible populations, infected populations, and recovered populations.</p>
 <div class="section" id="sir">
 <h2>SIR<a class="headerlink" href="#sir" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id7">
 <img alt="../../_images/sir.png" src="../../_images/sir.png" />
-<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">SIR model</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">SIR model</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Kermack-McKendrick deterministic model describes the transitions between the different populations. The susceptible population <span class="math notranslate nohighlight">\(S(t)\)</span> decrease at a rate <span class="math notranslate nohighlight">\(-\alpha I(t) S(t)\)</span>, where <span class="math notranslate nohighlight">\(\beta\)</span> is the average probability of getting infected by the infected population. The recovery rate of the infected population is <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-eqn-kermack-mckendrick-eqn-n">
-<span class="eqno">(40)<a class="headerlink" href="#equation-eqn-kermack-mckendrick-eqn-n" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{dS(t)}{dt} &amp;= -\beta I(t) S(t) \\
+<span class="eqno">(45)<a class="headerlink" href="#equation-eqn-kermack-mckendrick-eqn-n" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{dS(t)}{dt} &amp;= -\beta I(t) S(t) \\
 \frac{dI(t)}{dt} &amp;= \beta S(t) I(t) - \alpha I(t),\end{split}\]</div>
 <p>with the constraint</p>
 <div class="math notranslate nohighlight">
@@ -308,7 +310,7 @@ TeX: {
 <p>When <span class="math notranslate nohighlight">\(\frac{\beta S(t_t)}{\alpha}&gt;1\)</span>, the infected population is growing. It is convinient to define</p>
 <div class="math notranslate nohighlight">
 \[\tau(t) = \frac{\beta S(t)}{\alpha},\]</div>
-<p>with which equations <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(40)</a> becomes</p>
+<p>with which equations <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(45)</a> becomes</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{dS(t)}{dt} &amp;= - \alpha \tau(t) I(t)  \\
 \frac{dI(t)}{dt} &amp;= \alpha (\tau(t) - 1) I(t),\end{split}\]</div>
@@ -331,7 +333,7 @@ TeX: {
 <div class="section" id="simulate-sir-using-poisson-process">
 <h3>Simulate SIR Using Poisson Process<a class="headerlink" href="#simulate-sir-using-poisson-process" title="Permalink to this headline">¶</a></h3>
 <p>The transition events of a susceptible person being infected (<span class="math notranslate nohighlight">\(S\to I\)</span>) and an infected person being recovered (<span class="math notranslate nohighlight">\(I\to R\)</span>).</p>
-<p>The rates are determined by the equation <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(40)</a>,</p>
+<p>The rates are determined by the equation <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(45)</a>,</p>
 <div class="math notranslate nohighlight">
 \[Y_{S\to I}\left(\int_0^t \beta I(t') S(t') dt' \right)\]</div>
 <p>and</p>
@@ -346,9 +348,9 @@ TeX: {
 <div class="section" id="sis">
 <h2>SIS<a class="headerlink" href="#sis" title="Permalink to this headline">¶</a></h2>
 <p>Some epidemics such as influenza infect us repeatedly. One simple model for them is the SIS model shown in figure <a class="reference internal" href="#epidemic-compartment-sis-scheme"><span class="std std-ref">SIS model.</span></a>,</p>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="id8">
 <span id="epidemic-compartment-sis-scheme"></span><img alt="../../_images/sis.png" src="../../_images/sis.png" />
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">SIS model.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">SIS model.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The dynamics are determined by</p>
 <div class="math notranslate nohighlight">
@@ -400,17 +402,17 @@ TeX: {
 <li><p>Carrier stage <span class="highlit">C</span>: infected but not sick;</p></li>
 <li><p>Passive immunity stage <span class="highlit">M</span>: antibodies are transferred between hosts.</p></li>
 </ol>
-<div class="figure align-center" id="id8">
-<img alt="../../_images/seir.png" src="../../_images/seir.png" />
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">SEIR model</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</div>
 <div class="figure align-center" id="id9">
-<img alt="../../_images/seir-a.png" src="../../_images/seir-a.png" />
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">SEIR model with an asymptomatic stage</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+<img alt="../../_images/seir.png" src="../../_images/seir.png" />
+<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">SEIR model</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <div class="figure align-center" id="id10">
+<img alt="../../_images/seir-a.png" src="../../_images/seir-a.png" />
+<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">SEIR model with an asymptomatic stage</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-center" id="id11">
 <img alt="../../_images/scirs.png" src="../../_images/scirs.png" />
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">SCIRS model</span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">SCIRS model</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
 </div>
 <p>Compartments related to epidemic control can also be integrated into the models.</p>
 <ol class="arabic simple">
@@ -418,19 +420,39 @@ TeX: {
 <li><p>Treatment T</p></li>
 <li><p>Vaccination V</p></li>
 </ol>
-<div class="figure align-center" id="id11">
-<img alt="../../_images/siqr.png" src="../../_images/siqr.png" />
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">SIQR model</span><a class="headerlink" href="#id11" title="Permalink to this image">¶</a></p>
-</div>
 <div class="figure align-center" id="id12">
-<img alt="../../_images/seit.png" src="../../_images/seit.png" />
-<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">SEIT model</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
+<img alt="../../_images/siqr.png" src="../../_images/siqr.png" />
+<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">SIQR model</span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </div>
+<div class="figure align-center" id="id13">
+<img alt="../../_images/seit.png" src="../../_images/seit.png" />
+<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">SEIT model</span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
+</div>
+<p>Each compartment is also subject to variants based on the demographics of the populations, heterogeneities of the pathogens and hosts. <a class="reference internal" href="#martcheva2015" id="id6"><span>[Martcheva2015]</span></a></p>
+<div class="figure align-center" id="id14">
+<img alt="../../_images/sis-two-strain.png" src="../../_images/sis-two-strain.png" />
+<p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">SIS with two strains</span><a class="headerlink" href="#id14" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="basic-reproduction-number-and-stability-analysis">
+<h2>Basic Reproduction Number and Stability Analysis<a class="headerlink" href="#basic-reproduction-number-and-stability-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Consider the SIR model <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(45)</a> and add birth rate <span class="math notranslate nohighlight">\(\Lambda\)</span> and death rate <span class="math notranslate nohighlight">\(\mu\)</span> to the model,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{dS(t)}{dt} &amp;= \Lambda - \beta I(t) S(t) - \mu S(t)\\
+\frac{dI(t)}{dt} &amp; = \beta I(t) S(t) - \alpha I(t) - \mu I(t) \\
+\frac{dN(t)}{dt} &amp;= \alpha I(t) - \mu N(t),\end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[R(t) + I(t) + S(t) = N(t).\]</div>
+<p>The reproduction number is</p>
+<div class="math notranslate nohighlight">
+\[\mathscr R_0 = \frac{\Lambda \beta}{\mu(\alpha + \mu)}.\]</div>
+<p>Since the equation for <span class="math notranslate nohighlight">\(N(t)\)</span> is independent of <span class="math notranslate nohighlight">\(S(t)\)</span> and <span class="math notranslate nohighlight">\(I(t)\)</span>, the stability is determined by the first two equations. Denote the equilibrium point as <span class="math notranslate nohighlight">\(S_0, I_0\)</span>, we linearize the equations using <a class="reference internal" href="../../vocabulary/stability-analysis.html#linear-stability-analysis"><span class="std std-ref">Linear Stability Analysis</span></a> and find that the characteristic equation is related to <span class="math notranslate nohighlight">\(\mathscr R_0\)</span>, i.e., the growth rate of the linearized system <span class="math notranslate nohighlight">\(\lambda\)</span> is a function of <span class="math notranslate nohighlight">\(\mathscr R_0\)</span>. That being said, by looking into the growth rate of the infected populations in a short time, we could roughly estimate the reproduction number <span class="math notranslate nohighlight">\(\mathscr R_0\)</span>.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <dl class="citation">
-<dt class="label" id="martcheva2015"><span class="brackets">Martcheva2015</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>,<a href="#id5">5</a>)</span></dt>
+<dt class="label" id="martcheva2015"><span class="brackets">Martcheva2015</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>,<a href="#id5">5</a>,<a href="#id6">6</a>)</span></dt>
 <dd><p><a class="reference external" href="https://doi.org/10.1007/978-1-4899-7612-3_2">Martcheva, M. (2015). Introduction to Epidemic Modeling, 9–31.</a></p>
 </dd>
 <dt class="label" id="hill2016"><span class="brackets">Hill2016</span></dt>

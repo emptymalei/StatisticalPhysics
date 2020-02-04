@@ -161,6 +161,7 @@ TeX: {
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/stability-analysis.html">Stability Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/integrals.html">Integrals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/green.html">Green’s Function</a></li>
@@ -282,15 +283,15 @@ TeX: {
 <span id="index-0"></span><h1>Brownian Motion<a class="headerlink" href="#brownian-motion" title="Permalink to this headline">¶</a></h1>
 <p>Brownian motion is described by</p>
 <div class="math notranslate nohighlight" id="equation-eqn-brownian-motion-langevin-eqn">
-<span class="eqno">(24)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt} v + \gamma v = R(t),\]</div>
+<span class="eqno">(29)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt} v + \gamma v = R(t),\]</div>
 <p>where <span class="math notranslate nohighlight">\(R(t)\)</span> is a random force density which is required to following</p>
 <div class="math notranslate nohighlight" id="equation-eqn-brownian-motion-langevin-eqn-force-req">
-<span class="eqno">(25)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-force-req" title="Permalink to this equation">¶</a></span>\[\begin{split}\avg{R(t)} &amp;= 0, \\
+<span class="eqno">(30)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-force-req" title="Permalink to this equation">¶</a></span>\[\begin{split}\avg{R(t)} &amp;= 0, \\
 \avg{R(t)R(t')} &amp;= C \delta(t-t') .\end{split}\]</div>
-<p>The first condition enforces the force density to be unbiased and the second condition indicates that the force density is spiking in time. Equation <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn">(24)</a> and <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn-force-req">(25)</a> form the linear <span class="highlit">Langevin equation</span>.</p>
+<p>The first condition enforces the force density to be unbiased and the second condition indicates that the force density is spiking in time. Equation <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn">(29)</a> and <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn-force-req">(30)</a> form the linear <span class="highlit">Langevin equation</span>.</p>
 <p>The formal solution to the Langevin equation is</p>
 <div class="math notranslate nohighlight" id="equation-eqn-brownian-motion-langevin-eqn-formal-sol">
-<span class="eqno">(26)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-formal-sol" title="Permalink to this equation">¶</a></span>\[v(t) = v(0)e^{-\gamma t} + \int_0^t dt' e^{-\gamma (t-t')} R(t') .\]</div>
+<span class="eqno">(31)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-formal-sol" title="Permalink to this equation">¶</a></span>\[v(t) = v(0)e^{-\gamma t} + \int_0^t dt' e^{-\gamma (t-t')} R(t') .\]</div>
 <p>Given the fact that <span class="math notranslate nohighlight">\(R(t)\)</span> is stochastic, <span class="math notranslate nohighlight">\(v(t)\)</span> is also stochastic. The statistics of the observables can be derived. The velocity squared is</p>
 <div class="math notranslate nohighlight">
 \[v(t)^2 = v(0)^2 e^{-2\gamma t} + \int_0^t dt'\int_0^t dt'' e^{-\gamma (t- t')} e^{-\gamma (t - t'')} R(t')R(t'') + \mathrm{Cross Terms}.\]</div>
@@ -349,12 +350,12 @@ TeX: {
 <h2>Harmonic Oscillators as the Skeleton Keys<a class="headerlink" href="#harmonic-oscillators-as-the-skeleton-keys" title="Permalink to this headline">¶</a></h2>
 <p>A driven and damped harmonic oscillator is</p>
 <div class="math notranslate nohighlight" id="equation-eqn-harmonic-oscillator-driven-damped-eom">
-<span class="eqno">(27)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom" title="Permalink to this equation">¶</a></span>\[m \frac{d^2}{dt^2} x  + \alpha \frac{d}{dt} x + \beta x = R(t),\]</div>
-<p>where <span class="math notranslate nohighlight">\(x\)</span> is the displacement and <span class="math notranslate nohighlight">\(R(t)\)</span> is a random force. Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(27)</a> has the genes of Brownian motion and <a class="reference internal" href="#ornstein-uhlenbeck-process"><span class="std std-ref">Ornstein-Uhlenbeck Process</span></a>.</p>
-<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(27)</a> divided by <span class="math notranslate nohighlight">\(m\)</span> leads to</p>
+<span class="eqno">(32)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom" title="Permalink to this equation">¶</a></span>\[m \frac{d^2}{dt^2} x  + \alpha \frac{d}{dt} x + \beta x = R(t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> is the displacement and <span class="math notranslate nohighlight">\(R(t)\)</span> is a random force. Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(32)</a> has the genes of Brownian motion and <a class="reference internal" href="#ornstein-uhlenbeck-process"><span class="std std-ref">Ornstein-Uhlenbeck Process</span></a>.</p>
+<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(32)</a> divided by <span class="math notranslate nohighlight">\(m\)</span> leads to</p>
 <div class="math notranslate nohighlight" id="equation-eqn-harmonic-oscillator-driven-damped-eom-reduced">
-<span class="eqno">(28)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced" title="Permalink to this equation">¶</a></span>\[\frac{d^2}{dt^2} x  + \frac{\alpha}{m} \frac{d}{dt} x + \frac{\beta}{m} x = \frac{1}{m}R(t).\]</div>
-<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced">(28)</a> is reduceed to the <span class="highlit">Ornstein-Uhlenbeck</span> equation when the mass is very small, i.e., <span class="math notranslate nohighlight">\(\frac{\alpha}{m}\gg 1\)</span>.</p>
+<span class="eqno">(33)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced" title="Permalink to this equation">¶</a></span>\[\frac{d^2}{dt^2} x  + \frac{\alpha}{m} \frac{d}{dt} x + \frac{\beta}{m} x = \frac{1}{m}R(t).\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced">(33)</a> is reduceed to the <span class="highlit">Ornstein-Uhlenbeck</span> equation when the mass is very small, i.e., <span class="math notranslate nohighlight">\(\frac{\alpha}{m}\gg 1\)</span>.</p>
 <div class="hint admonition">
 <p class="admonition-title">WKB Approximation</p>
 <p>WKB approximation.</p>

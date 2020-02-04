@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Integrals &#8212; Statistical Physics Notes</title>
+    <title>Stability Analysis &#8212; Statistical Physics Notes</title>
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
@@ -20,11 +20,11 @@
     <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.openmetric.org/vocabulary/integrals.html" />
+    <link rel="canonical" href="https://statisticalphysics.openmetric.org/vocabulary/stability-analysis.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Transforms" href="transforms.html" />
-    <link rel="prev" title="Stability Analysis" href="stability-analysis.html" />
+    <link rel="next" title="Integrals" href="integrals.html" />
+    <link rel="prev" title="Functions" href="functions.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -161,8 +161,8 @@ TeX: {
       aria-labelledby="dLabelGlobalToc"><ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Vocabulary and Program</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="functions.html">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stability-analysis.html">Stability Analysis</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Integrals</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Stability Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="integrals.html">Integrals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="green.html">Green’s Function</a></li>
 <li class="toctree-l2"><a class="reference internal" href="computations.html">Computations</a></li>
@@ -229,8 +229,8 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Integrals</a><ul>
-<li><a class="reference internal" href="#gaussian-intergral">Gaussian Intergral</a></li>
+<li><a class="reference internal" href="#">Stability Analysis</a><ul>
+<li><a class="reference internal" href="#linear-stability-analysis">Linear Stability Analysis</a></li>
 </ul>
 </li>
 </ul>
@@ -242,11 +242,11 @@ TeX: {
               
                 
   <li>
-    <a href="stability-analysis.html" title="Previous Chapter: Stability Analysis"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Stability Analysis</span>
+    <a href="functions.html" title="Previous Chapter: Functions"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Functions</span>
     </a>
   </li>
   <li>
-    <a href="transforms.html" title="Next Chapter: Transforms"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Transforms &raquo;</span>
+    <a href="integrals.html" title="Next Chapter: Integrals"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Integrals &raquo;</span>
     </a>
   </li>
               
@@ -274,35 +274,94 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="integrals">
-<span id="index-0"></span><h1>Integrals<a class="headerlink" href="#integrals" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="gaussian-intergral">
-<span id="index-1"></span><h2>Gaussian Intergral<a class="headerlink" href="#gaussian-intergral" title="Permalink to this headline">¶</a></h2>
-<p>The Gaussian integral is a handy tool for calculating/estimating integrals.</p>
+  <div class="section" id="stability-analysis">
+<span id="id1"></span><h1>Stability Analysis<a class="headerlink" href="#stability-analysis" title="Permalink to this headline">¶</a></h1>
+<p>Given a system of first-order differential equations</p>
 <div class="math notranslate nohighlight">
-\[\int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx = \sqrt{\frac{\pi}{a}}\]</div>
-<p>A comprehensive description of how this is done is <a class="reference external" href="http://mathworld.wolfram.com/GaussianIntegral.html">here</a>. It is easier to solve the integral using polar coordinates.</p>
-<p>In general, we could define a more general form of the integral,</p>
+\[\frac{d \mathbf{x}(t)}{dt} = \mathbf{f}(\mathbf x(t)),\]</div>
+<p>the equilibrium points are determined by <span class="math notranslate nohighlight">\(\frac{d \mathbf{x}(t)}{dt} = 0\)</span>, i.e.,</p>
 <div class="math notranslate nohighlight">
-\[I_n(a) = \int_{0}^{\infty} e^{-ax^2} \mathrm dx.\]</div>
-<div class="note admonition">
-<p class="admonition-title">A Practice of Symmetries</p>
-<p>The integral we just solved is</p>
+\[\mathbf{f}(\mathbf x(t)) = 0,\]</div>
+<p>from which we solve the equilibrium point <span class="math notranslate nohighlight">\(\mathbf x(t) = \mathbf x_0\)</span></p>
+<div class="section" id="linear-stability-analysis">
+<span id="id2"></span><h2>Linear Stability Analysis<a class="headerlink" href="#linear-stability-analysis" title="Permalink to this headline">¶</a></h2>
+<p>The system of differential equations is linearized using perturbations. For simplicity, we consider the following two-dimensional system,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-sa-2-d-1ode">
+<span class="eqno">(1)<a class="headerlink" href="#equation-eqn-sa-2-d-1ode" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{x_1(t)}{dt} &amp;= f_1(x_1, x_2)  \\
+\frac{x_2(t)}{dt} &amp;= f_2(x_1, x_2).\end{split}\]</div>
+<p>The equilibrium point <span class="math notranslate nohighlight">\(x_{1,0}, x_{2,0}\)</span> is determined by</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}&amp;\int_{-\infty}^{\infty} e^{-ax^2} \mathrm dx \\
-=&amp; \int_{0}^\infty e^{- a x^2} \mathrm dx + \int_{-\infty}^0 e^{-a x^2} \mathrm dx  \\
-=&amp; I_0(a) - \int_{-x=\infty}^{-x=0} e^{-a (-x)^2} \mathrm d (-x) \\
-=&amp; I_0(a) + \int_{-x=0}^{-x=\infty} e^{-a (-x)^2} \mathrm d (-x) \\
-=&amp; I_0(a) + I_0(a) \\
-=&amp; 2 I_0(a)\end{split}\]</div>
-<p>Another view of this is that we could investigate the symmetry of the expression <span class="math notranslate nohighlight">\(I_n(a)\)</span>. By changing the sign of <span class="math notranslate nohighlight">\(x\)</span>, we know that</p>
+\[\begin{split}f_1(x_{1,0}, x_{2,0}) &amp;= 0 \\
+f_2(x_{1,0}, x_{2,0}) &amp;= 0.\end{split}\]</div>
+<p>We perturb the equations around its equilibrium point,</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}&amp;\int_{x=0}^{x=\infty} e^{-a(-x)^2} \mathrm d(-x) \\
-=&amp; \int_{-x=0}^{-x=-\infty} e^{-a (-x)^2} \mathrm d(-x) \\
-=&amp; -\int_{x=0}^{x=\infty} e^{-a x^2} \mathrm dx \\
-= - I_n(a).\end{split}\]</div>
-<p>Using this we could easily calculate the first integral.</p>
-</div>
+\[\begin{split}x_1(t) &amp;\to x_{1,0} + \delta x_1(t) \\
+x_2(t) &amp;\to x_{2,0} + \delta x_2(t),\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta x_1(t)\)</span> and <span class="math notranslate nohighlight">\(\delta x_2(t)\)</span> are small quantities.</p>
+<p>The equation <a class="reference internal" href="#equation-eqn-sa-2-d-1ode">(1)</a> becomes</p>
+<div class="math notranslate nohighlight" id="equation-eqn-sa-2-d-1ode-perturbation">
+<span class="eqno">(2)<a class="headerlink" href="#equation-eqn-sa-2-d-1ode-perturbation" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{d\delta x_1(t)}{dt} &amp;= f_1(x_{1,0} + \delta x_1(t), x_{2,0} + \delta x_2(t)) \\
+\frac{d\delta x_2(t)}{dt} &amp;= f_2(x_{1,0} + \delta x_1(t), x_{2,0} + \delta x_2(t)).\end{split}\]</div>
+<p>We apply Talor series to <span class="math notranslate nohighlight">\(f_1(x_{1,0} + \delta x_1(t), x_{2,0} + \delta x_2(t))\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}&amp;f_1(x_{1,0} + \delta x_1(t), x_{2,0} + \delta x_2(t)) \\
+=&amp;  \left.\frac{d f_1(x_1, x_2)}{d x_1} \right\vert_{x_1=x_{1,0}, x_2=x_{2,0}} \delta x_1 + \left.\frac{d f_1(x_1, x_2)}{d x_2} \right\vert_{x_1=x_{1,0}, x_2=x_{2,0}} \delta x_2 + \mathscr{O},\end{split}\]</div>
+<p>where we have used <span class="math notranslate nohighlight">\(f_1(x_{1,0}, x_{2,0}) = 0\)</span>. The perturbed equation <a class="reference internal" href="#equation-eqn-sa-2-d-1ode-perturbation">(2)</a> is linearized</p>
+<div class="math notranslate nohighlight" id="equation-eqn-sa-2-d-1ode-perturbation-linearized">
+<span class="eqno">(3)<a class="headerlink" href="#equation-eqn-sa-2-d-1ode-perturbation-linearized" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{d\delta x_1(t)}{dt} &amp;=  \left.\frac{d f_1(x_1, x_2)}{d x_1} \right\vert_{x_1=x_{1,0}, x_2=x_{2,0}} \delta x_1 + \left.\frac{d f_1(x_1, x_2)}{d x_2} \right\vert_{x_1=x_{1,0}, x_2=x_{2,0}} \delta x_2 \\
+\frac{d\delta x_2(t)}{dt} &amp;=  \left.\frac{d f_2(x_1, x_2)}{d x_1} \right\vert_{x_1=x_{1,0}, x_2=x_{2,0}} \delta x_1 + \left.\frac{d f_2(x_1, x_2)}{d x_2} \right\vert_{x_1=x_{1,0}, x_2=x_{2,0}} \delta x_2.\end{split}\]</div>
+<p>The equation <a class="reference internal" href="#equation-eqn-sa-2-d-1ode-perturbation-linearized">(3)</a> can be rewritten into a matrix form</p>
+<div class="math notranslate nohighlight" id="equation-eqn-sa-2-d-1ode-perturbation-linearized-mat">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eqn-sa-2-d-1ode-perturbation-linearized-mat" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{d}{dt} \begin{pmatrix}
+\delta x_1(t) \\
+\delta x_2(t)
+\end{pmatrix} = \left. \begin{pmatrix}
+\frac{d f_1(x_1, x_2)}{d x_1}  &amp; \frac{d f_1(x_1, x_2)}{d x_2} \\
+\frac{d f_2(x_1, x_2)}{d x_1} &amp; \frac{d f_2(x_1, x_2)}{d x_2}
+\end{pmatrix} \right\vert_{x_1=x_{1,0}, x_2=x_{2,0}}\begin{pmatrix}
+\delta x_1(t) \\
+\delta x_2(t)
+\end{pmatrix}.\end{split}\]</div>
+<p>For simplicity, we define the Jacobian matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\mathbf J = \left. \begin{pmatrix}
+\frac{d f_1(x_1, x_2)}{d x_1}  &amp; \frac{d f_1(x_1, x_2)}{d x_2} \\
+\frac{d f_2(x_1, x_2)}{d x_1} &amp; \frac{d f_2(x_1, x_2)}{d x_2}
+\end{pmatrix} \right\vert_{x_1=x_{1,0}, x_2=x_{2,0}},\end{split}\]</div>
+<p>so that the matrix form of the linearized equation <a class="reference internal" href="#equation-eqn-sa-2-d-1ode-perturbation-linearized-mat">(4)</a> becomes,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{d}{dt} \begin{pmatrix}
+\delta x_1(t) \\
+\delta x_2(t)
+\end{pmatrix} = \mathbf J \begin{pmatrix}
+\delta x_1(t) \\
+\delta x_2(t)
+\end{pmatrix}.\end{split}\]</div>
+<p>To investigate the stability of the differential system, we assume that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+\delta x_1(t) \\
+\delta x_2(t)
+\end{pmatrix} = \begin{pmatrix}
+\delta x_1(t_0) \\
+\delta x_2(t_0)
+\end{pmatrix} e^{\lambda t},\end{split}\]</div>
+<p>which leads to linear equations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{pmatrix}
+\delta x_1(t_0) \\
+\delta x_2(t_0)
+\end{pmatrix} \lambda = \mathbf J \begin{pmatrix}
+\delta x_1(t_0) \\
+\delta x_2(t_0)
+\end{pmatrix}.\end{split}\]</div>
+<p>For non-trivial solutions, we require</p>
+<div class="math notranslate nohighlight">
+\[\operatorname{Det}(\mathbf J - \lambda \mathbf I) = 0,\]</div>
+<p>which is also the eigen value problem of the Jacobian matrix. We expand the determinant</p>
+<div class="math notranslate nohighlight" id="equation-eqn-sa-2-d-1ode-perturbation-linearized-det">
+<span class="eqno">(5)<a class="headerlink" href="#equation-eqn-sa-2-d-1ode-perturbation-linearized-det" title="Permalink to this equation">¶</a></span>\[\lambda^2 - (J_{11} + J_{22}) \lambda + (J_{11}J_{22} - J_{12}J_{21}) = 0.\]</div>
+<p>For real positive solutions <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>, we get an exponential growing result for the linearized equation. Any deviation from the equilibrium point leads to a run-away process and the system moves further away from the equilibrium point. For real negative solutions <span class="math notranslate nohighlight">\(\lambda &lt; 0\)</span>, the system will move back to the equilibrium point given any deviations from the equilibrium. Imaginary solutions of <span class="math notranslate nohighlight">\(\lambda\)</span> leads to oscillations.</p>
 </div>
 </div>
 
@@ -353,7 +412,7 @@ TeX: {
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../_sources/vocabulary/integrals.rst.txt"
+       <a href="../_sources/vocabulary/stability-analysis.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 

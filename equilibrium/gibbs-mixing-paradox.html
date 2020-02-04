@@ -161,6 +161,7 @@ TeX: {
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/stability-analysis.html">Stability Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/integrals.html">Integrals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/green.html">Green’s Function</a></li>
@@ -277,10 +278,10 @@ TeX: {
 <span id="id1"></span><h1>Gibbs Mixing Paradox<a class="headerlink" href="#gibbs-mixing-paradox" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id2">
 <h2>Gibbs Mixing Paradox<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>As mentioned in <a class="reference internal" href="ho-dos.html#partition-function-and-density-of-states"><span class="std std-ref">Partition Function and Density of States</span></a>, we reach a paradox when mixing the many non-interacting classical particles. In classical statistical mechanics, the free energy as derived in <a class="reference internal" href="ho-dos.html#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength">(4)</a> is</p>
+<p>As mentioned in <a class="reference internal" href="ho-dos.html#partition-function-and-density-of-states"><span class="std std-ref">Partition Function and Density of States</span></a>, we reach a paradox when mixing the many non-interacting classical particles. In classical statistical mechanics, the free energy as derived in <a class="reference internal" href="ho-dos.html#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength">(9)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-gibbs-mixing-paradox-free-energy-thermal-wavelength-copy">
-<span class="eqno">(7)<a class="headerlink" href="#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength-copy" title="Permalink to this equation">¶</a></span>\[A  = -k_B T N ( \ln V - 3 \ln \lambda_T )\]</div>
-<p>Imagine we have two systems, one has <span class="math notranslate nohighlight">\(N_1\)</span> particles and volume <span class="math notranslate nohighlight">\(V_1\)</span> while the other has <span class="math notranslate nohighlight">\(N_2\)</span> particles and volume <span class="math notranslate nohighlight">\(V_2\)</span>. Now we mix the two systems. Our physics intuition would tell us that the free energy of this new system should be <span class="math notranslate nohighlight">\(A = A_1 + A_2\)</span> since they are non-interacting particles. However, the free energy shown in <a class="reference internal" href="#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength-copy">(7)</a> tells us that</p>
+<span class="eqno">(12)<a class="headerlink" href="#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength-copy" title="Permalink to this equation">¶</a></span>\[A  = -k_B T N ( \ln V - 3 \ln \lambda_T )\]</div>
+<p>Imagine we have two systems, one has <span class="math notranslate nohighlight">\(N_1\)</span> particles and volume <span class="math notranslate nohighlight">\(V_1\)</span> while the other has <span class="math notranslate nohighlight">\(N_2\)</span> particles and volume <span class="math notranslate nohighlight">\(V_2\)</span>. Now we mix the two systems. Our physics intuition would tell us that the free energy of this new system should be <span class="math notranslate nohighlight">\(A = A_1 + A_2\)</span> since they are non-interacting particles. However, the free energy shown in <a class="reference internal" href="#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength-copy">(12)</a> tells us that</p>
 <div class="math notranslate nohighlight">
 \[A_{\text{mixed}} = \cdots - k_B T \ln (V_1^{N_1} V_2^{N2})\]</div>
 <p>which is different from the result we expect, i.e.,</p>

@@ -161,6 +161,7 @@ TeX: {
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/stability-analysis.html">Stability Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/integrals.html">Integrals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/green.html">Green’s Function</a></li>
@@ -299,30 +300,30 @@ TeX: {
 <span id="index-1"></span><h2>“Derive” Master Equation<a class="headerlink" href="#derive-master-equation" title="Permalink to this headline">¶</a></h2>
 <p>Suppose the states of a system are denoted as <span class="math notranslate nohighlight">\(\xi\)</span>, and the probability of the states at time <span class="math notranslate nohighlight">\(t\)</span> are denoted as <span class="math notranslate nohighlight">\(P_\xi(t)\)</span>. We assume the probability of the states at time <span class="math notranslate nohighlight">\(t\)</span> only depend on the probability of the states a moment ago,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn">
-<span class="eqno">(10)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn" title="Permalink to this equation">¶</a></span>\[P_\xi(t) = \sum_\mu Q_{\xi\mu} P_\mu(t-\tau) .\]</div>
+<span class="eqno">(15)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn" title="Permalink to this equation">¶</a></span>\[P_\xi(t) = \sum_\mu Q_{\xi\mu} P_\mu(t-\tau) .\]</div>
 <p>This is the <span class="highlit">Chapman-Kolmogorov equation</span>. The equation describes a randomwalk process, a.k.a. Markov process.</p>
 <div class="note admonition">
 <p class="admonition-title">Markov Process and State Machine</p>
 <p>The assumption that the current states doesn’t depend on the full history indicates that the system follows a fixed state diagram. In other words, we are using a state machine to approximate a statistical system, except that our physical system has an enormous amount of possible states.</p>
 <p>It may sound weird that we only need the most recent history. However, a Markov process allows us to reach an desired equilibrium quickly.</p>
 </div>
-<p>The formalism of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn">(10)</a> reminds us of the time derivative,</p>
+<p>The formalism of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn">(15)</a> reminds us of the time derivative,</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_\xi(t) = \lim \frac{P_\xi(t) - P_\xi(t-\tau)}{\tau} .\]</div>
 <p>Notice that</p>
 <div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn-normalization-relation">
-<span class="eqno">(11)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation" title="Permalink to this equation">¶</a></span>\[\sum_\mu Q_{\mu\xi} = 1.\]</div>
+<span class="eqno">(16)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation" title="Permalink to this equation">¶</a></span>\[\sum_\mu Q_{\mu\xi} = 1.\]</div>
 <div class="note admonition">
 <p class="admonition-title">Why the normalization?</p>
 <p>It is required that the probability of all the states at time <span class="math notranslate nohighlight">\(t\)</span> to be 1, <span class="math notranslate nohighlight">\(\sum_\xi P_\xi(t) = 1\)</span>.</p>
 </div>
 <p>Substract from the Chapman-Kolmogorov equation a term <span class="math notranslate nohighlight">\(P_\xi(t-\tau)\)</span>, we get</p>
 <div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">
-<span class="eqno">(12)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel" title="Permalink to this equation">¶</a></span>\[P_\xi(t) - P_\xi(t-\tau) = \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
-<p>in which we have applied a variation of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation">(11)</a>, i.e.,</p>
+<span class="eqno">(17)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel" title="Permalink to this equation">¶</a></span>\[P_\xi(t) - P_\xi(t-\tau) = \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
+<p>in which we have applied a variation of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation">(16)</a>, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[P_\xi(t-\tau) = \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
-<p>We divide equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">(12)</a> by <span class="math notranslate nohighlight">\(\tau\)</span> on both sides and the limit of <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span> is applied,</p>
+<p>We divide equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">(17)</a> by <span class="math notranslate nohighlight">\(\tau\)</span> on both sides and the limit of <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span> is applied,</p>
 <div class="math notranslate nohighlight">
 \[\lim_{\tau\rightarrow} \frac{P_\xi(t) - P_\xi(t-\tau)}{\tau} = \lim_{\tau\rightarrow 0} \frac{ \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) }{\tau}\]</div>
 <p>At first glance, the right hand side of the above equation goes to infinity. However, <strong>we do not expect the time derivative of a probability distribution to be infinite.</strong> That being said, there should be a specific relation between the two terms in the denominator. If we assume that</p>
@@ -363,8 +364,8 @@ TeX: {
 \[\partial_{t_1} P_1(y_2,t_1) = \int \lim_{\tau\rightarrow 0} \frac{\int P_1(y_1,t_1) P _ {1|1}(y_1,t_1|y_2,t_1+\tau) - P_1(y_1,t_1) P _ {1|1}(y_1,t_1|y_2,t_1) }{\tau} dy_1\]</div>
 <p>We expand the right hand side using Taylor series, the details of which can be found in Reichl’s book <a class="footnote-reference brackets" href="#id7" id="id4">1</a> , then we get a time derivative,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-equation-rigorous">
-<span class="eqno">(13)<a class="headerlink" href="#equation-eqn-master-equation-rigorous" title="Permalink to this equation">¶</a></span>\[\partial_{t} P_1(y_2,t) = \int dy_1 \left( W(y_1,y_2)P_1(y_1,t) - W(y_2,y_1)P_1(y_2,t) \right) .\]</div>
-<p>Equation <a class="reference internal" href="#equation-eqn-master-equation-rigorous">(13)</a> is the <span class="highlit">master equation</span>.</p>
+<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-master-equation-rigorous" title="Permalink to this equation">¶</a></span>\[\partial_{t} P_1(y_2,t) = \int dy_1 \left( W(y_1,y_2)P_1(y_1,t) - W(y_2,y_1)P_1(y_2,t) \right) .\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-master-equation-rigorous">(18)</a> is the <span class="highlit">master equation</span>.</p>
 <p>The reason that <span class="math notranslate nohighlight">\(W(y_1,y_2)\)</span> is a transition rate is that it represents “the probability per unit time that the system changes from state <span class="math notranslate nohighlight">\(y_1\)</span> to <span class="math notranslate nohighlight">\(y_2\)</span> in the time interval <span class="math notranslate nohighlight">\(t_1\rightarrow t_1 +\tau\)</span> “. <a class="footnote-reference brackets" href="#id7" id="id5">1</a></p>
 </div>
 <div class="important admonition">

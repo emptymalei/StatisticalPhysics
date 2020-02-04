@@ -161,6 +161,7 @@ TeX: {
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/stability-analysis.html">Stability Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/integrals.html">Integrals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/green.html">Green’s Function</a></li>
@@ -287,9 +288,9 @@ TeX: {
 <p>The <a class="reference internal" href="smoluchowski-eqn.html#id1"><span class="std std-ref">Smoluchowski Equation</span></a> describes the distribution of particles in a continuous potential. Here we discuss the distribution of particles in on a chain with defects.</p>
 <p>A defect on a chain is a site that captures the walker with a certain probability, as shown in <a class="reference internal" href="#fig-effects-of-defects-1d-chain"><span class="std std-numref">Fig. 29</span></a>. The master equation that describes the distribution is</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-eqn-effect-of-defects">
-<span class="eqno">(20)<a class="headerlink" href="#equation-eqn-master-eqn-effect-of-defects" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt}P_m = F(P_{m+1}+P_{m-1}-2P_m) - C \delta_{m,r} P_m,\]</div>
+<span class="eqno">(25)<a class="headerlink" href="#equation-eqn-master-eqn-effect-of-defects" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt}P_m = F(P_{m+1}+P_{m-1}-2P_m) - C \delta_{m,r} P_m,\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is the capture rate at the site of defect.</p>
-<p>Similar to any other master equations, the <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(20)</a> is a set of coupled first order differential equations. To solve <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(20)</a>, we consider the following equation</p>
+<p>Similar to any other master equations, the <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(25)</a> is a set of coupled first order differential equations. To solve <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(25)</a>, we consider the following equation</p>
 <div class="math notranslate nohighlight">
 \[\frac{d}{dt}y+\alpha y = f(t).\]</div>
 <p>The solution to the above equation when <span class="math notranslate nohighlight">\(\alpha\)</span> is constant, which is</p>
@@ -360,21 +361,21 @@ TeX: {
 </div>
 <p>Transform back into real space,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-equation-1d-chain-defects-g-f-l">
-<span class="eqno">(21)<a class="headerlink" href="#equation-eqn-master-equation-1d-chain-defects-g-f-l" title="Permalink to this equation">¶</a></span>\[\tilde P_m(\epsilon) = \tilde \eta_m(\epsilon)  + \sum_n \tilde \Pi_{m-n}(\epsilon) \tilde g_n(\epsilon).\]</div>
-<p>To get the solution to <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(20)</a>, we simply define</p>
+<span class="eqno">(26)<a class="headerlink" href="#equation-eqn-master-equation-1d-chain-defects-g-f-l" title="Permalink to this equation">¶</a></span>\[\tilde P_m(\epsilon) = \tilde \eta_m(\epsilon)  + \sum_n \tilde \Pi_{m-n}(\epsilon) \tilde g_n(\epsilon).\]</div>
+<p>To get the solution to <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(25)</a>, we simply define</p>
 <div class="math notranslate nohighlight">
 \[\tilde g_n = - C\delta _{n,r} \tilde P_n\]</div>
-<p>and plugin it back into <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-g-f-l">(21)</a>, we get</p>
+<p>and plugin it back into <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-g-f-l">(26)</a>, we get</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-equation-1d-chain-defects-formal-solution">
-<span class="eqno">(22)<a class="headerlink" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution" title="Permalink to this equation">¶</a></span>\[\tilde P_m = \tilde \eta _m - C \tilde \Pi_{m-r} \tilde P_r .\]</div>
-<p>In fact, we haven’t solved the equation. The solution <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution">(22)</a> is merely a formal solution. The right hand side still depends on the probabillity.</p>
+<span class="eqno">(27)<a class="headerlink" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution" title="Permalink to this equation">¶</a></span>\[\tilde P_m = \tilde \eta _m - C \tilde \Pi_{m-r} \tilde P_r .\]</div>
+<p>In fact, we haven’t solved the equation. The solution <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution">(27)</a> is merely a formal solution. The right hand side still depends on the probabillity.</p>
 <p>If we set <span class="math notranslate nohighlight">\(m=r\)</span>, we get remove the dependencis of the mth mode,</p>
 <div class="math notranslate nohighlight">
 \[\tilde P_r  = \tilde \eta_r - C\tilde \Pi_0 \tilde P_r .\]</div>
 <p>From which, we fine the solution to the rth component is,</p>
 <div class="math notranslate nohighlight">
 \[\tilde P_r = \frac{\tilde \eta_r}{1+C\tilde \Pi_0}  .\]</div>
-<p>The rth mode is then combined with <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution">(22)</a>,</p>
+<p>The rth mode is then combined with <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution">(27)</a>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\tilde P_m &amp;= \eta_m - C\tilde \Pi_{m-r}  \frac{\tilde \eta_r}{1+C\tilde \Pi_0} \\
 &amp; = \eta_m - \frac{\tilde \Pi_{m-r} \eta_r}{1/C + \tilde \Pi_0}\end{split}\]</div>
@@ -458,11 +459,11 @@ TeX: {
 &amp; = \frac{\text{Integration of survival probability with the reaction center}}{\text{Integration of survival probability without the raction center}} .\end{split}\]</div>
 <p>Without the reaction,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-survival-probability-2">
-<span class="eqno">(23)<a class="headerlink" href="#equation-eqn-survival-probability-2" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt}Q + \frac{Q}{\tau} = 0,\]</div>
+<span class="eqno">(28)<a class="headerlink" href="#equation-eqn-survival-probability-2" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt}Q + \frac{Q}{\tau} = 0,\]</div>
 <p>Assume the survival probability to have the following form</p>
 <div class="math notranslate nohighlight">
 \[Q(t) = Q(0) e^{-t/\tau}.\]</div>
-<p><a class="reference internal" href="#equation-eqn-survival-probability-2">(23)</a> becomes,</p>
+<p><a class="reference internal" href="#equation-eqn-survival-probability-2">(28)</a> becomes,</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{\tau} \int_0^\infty Q(t) dt = 1 .\]</div>
 <p>The quantum yield is</p>

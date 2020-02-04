@@ -161,6 +161,7 @@ TeX: {
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/stability-analysis.html">Stability Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/integrals.html">Integrals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/green.html">Green’s Function</a></li>
@@ -404,13 +405,13 @@ TeX: {
 <p>The thermal wavelength is a combination of quantum mechanics and thermodynamics. <span class="math notranslate nohighlight">\(\sqrt{m k_B T}\)</span> has dimension of energy while <span class="math notranslate nohighlight">\(\hbar\)</span> has dimension of energy * time. In natural units, time has the same dimension as length. This is why the quantity serves as a characteristic length.</p>
 <p>For a single particle in a 3D box, the partition function is</p>
 <div class="math notranslate nohighlight" id="equation-partition-function-and-thermal-wavelength">
-<span class="eqno">(2)<a class="headerlink" href="#equation-partition-function-and-thermal-wavelength" title="Permalink to this equation">¶</a></span>\[Z_1 = \frac{V}{\lambda_T^3}.\]</div>
+<span class="eqno">(7)<a class="headerlink" href="#equation-partition-function-and-thermal-wavelength" title="Permalink to this equation">¶</a></span>\[Z_1 = \frac{V}{\lambda_T^3}.\]</div>
 <p>Recall that the partition function is the average of density of states under the Boltzman distribution and that the thermal length is the characteristic length of the thermal system. We rewrite this formula using words to make the implications clear.</p>
 <div class="math notranslate nohighlight" id="equation-partition-function-and-thermal-wavelength-explained">
-<span class="eqno">(3)<a class="headerlink" href="#equation-partition-function-and-thermal-wavelength-explained" title="Permalink to this equation">¶</a></span>\[\text{number of states} = \text{physical volumne} \text{volumne per quantum state}.\]</div>
+<span class="eqno">(8)<a class="headerlink" href="#equation-partition-function-and-thermal-wavelength-explained" title="Permalink to this equation">¶</a></span>\[\text{number of states} = \text{physical volumne} \text{volumne per quantum state}.\]</div>
 <p>For a N-particles system without interaction between particles, density of states will be more dense since we have more possible states and degrees of freedom. <strong>In classical mechanics</strong>, the number of states will be full combination of all the single particle states since all the particles are distinguishable. Thus the partition function should be <span class="math notranslate nohighlight">\(Z_N  = (Z_1)^N\)</span>. The free energy</p>
 <div class="math notranslate nohighlight" id="equation-gibbs-mixing-paradox-free-energy-thermal-wavelength">
-<span class="eqno">(4)<a class="headerlink" href="#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength" title="Permalink to this equation">¶</a></span>\[A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)\]</div>
+<span class="eqno">(9)<a class="headerlink" href="#equation-gibbs-mixing-paradox-free-energy-thermal-wavelength" title="Permalink to this equation">¶</a></span>\[A = -k_B T \ln (Z_N) = -k_B T N \ln Z_1 = -k_B T N (\ln V - 3\ln \lambda_T)\]</div>
 <div class="warning admonition" id="index-3">
 <p class="admonition-title">Gibbs Mixing Paradox</p>
 <p>This quantity is neither intensive nor extensive! If we combine two exactly same system, then we won’t have twice of the free energy. It’s called <strong>Gibbs mixing paradox</strong>.</p>
@@ -422,16 +423,16 @@ TeX: {
 <h2>Phase Space of Quantum Partition Function<a class="headerlink" href="#phase-space-of-quantum-partition-function" title="Permalink to this headline">¶</a></h2>
 <p>We provide a physical picture of the quantum partition function using classical mechanics in this section.</p>
 <p>In classical mechanics, the partition for a free particle function is</p>
-<p>We can infer from this that the thermal wave length is <span class="math notranslate nohighlight">\(1/\sqrt{\frac{ 2m \pi }{\beta}}\)</span> using <a class="reference internal" href="#equation-partition-function-and-thermal-wavelength">(2)</a> and <a class="reference internal" href="#equation-partition-function-and-thermal-wavelength-explained">(3)</a>. In quantum mechanics, the partition function is,</p>
+<p>We can infer from this that the thermal wave length is <span class="math notranslate nohighlight">\(1/\sqrt{\frac{ 2m \pi }{\beta}}\)</span> using <a class="reference internal" href="#equation-partition-function-and-thermal-wavelength">(7)</a> and <a class="reference internal" href="#equation-partition-function-and-thermal-wavelength-explained">(8)</a>. In quantum mechanics, the partition function is,</p>
 <div class="math notranslate nohighlight" id="equation-partition-function-free-particle-quantum-sum">
-<span class="eqno">(5)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-sum" title="Permalink to this equation">¶</a></span>\[Z = \sum_i e^{-\beta E_i}\]</div>
+<span class="eqno">(10)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-sum" title="Permalink to this equation">¶</a></span>\[Z = \sum_i e^{-\beta E_i}\]</div>
 <p>We assume that the energy levels are very close to each other and so that <span class="math notranslate nohighlight">\(E_i\)</span> becomes almost continuous. Then we rewrite the partition into a integral,</p>
 <div class="math notranslate nohighlight" id="equation-partition-function-free-particle-quantum-integral">
-<span class="eqno">(6)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-integral" title="Permalink to this equation">¶</a></span>\[Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }.\]</div>
+<span class="eqno">(11)<a class="headerlink" href="#equation-partition-function-free-particle-quantum-integral" title="Permalink to this equation">¶</a></span>\[Z = \int d^3 x\int d^3 p e^{ -\beta p^2/2m }.\]</div>
 <div class="warning admonition">
 <p class="admonition-title">The Dimensions Doesn’t Match</p>
 <p>We are using natural units.</p>
-<p>Equantion <a class="reference internal" href="#equation-partition-function-free-particle-quantum-integral">(6)</a> seems to be problematic since it has a different dimension from <a class="reference internal" href="#equation-partition-function-free-particle-quantum-sum">(5)</a>. It is not a problem because we are using natural units. We need to supplement some quantity which has a dimension <span class="math notranslate nohighlight">\([p\cdot x ]^3\)</span>. It has to be <span class="math notranslate nohighlight">\(h^3\)</span>. So the integral form of the partition function becomes</p>
+<p>Equantion <a class="reference internal" href="#equation-partition-function-free-particle-quantum-integral">(11)</a> seems to be problematic since it has a different dimension from <a class="reference internal" href="#equation-partition-function-free-particle-quantum-sum">(10)</a>. It is not a problem because we are using natural units. We need to supplement some quantity which has a dimension <span class="math notranslate nohighlight">\([p\cdot x ]^3\)</span>. It has to be <span class="math notranslate nohighlight">\(h^3\)</span>. So the integral form of the partition function becomes</p>
 <div class="math notranslate nohighlight">
 \[Z = \frac{1}{h^3} \int d^3 x\int d^3 p e^{ -\beta p^2/2m }\]</div>
 <p>In fact, <span class="math notranslate nohighlight">\(h^3\)</span> is the characteristic phase space block in quantum mechanics.</p>

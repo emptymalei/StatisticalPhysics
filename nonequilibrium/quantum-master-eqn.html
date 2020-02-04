@@ -161,6 +161,7 @@ TeX: {
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/stability-analysis.html">Stability Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/integrals.html">Integrals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/green.html">Green’s Function</a></li>
@@ -364,16 +365,16 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 \[\hat H = \hat H_0 + \lambda(t)\hat W .\]</div>
 <p>van Hove’s method was to describe systems with diagonal singularity conditions on a large time scale. The perturbations should be small enough, i.e., <span class="math notranslate nohighlight">\(\lambda^2 t \approx \text{constant}\)</span>. The diagonal elements are</p>
 <div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equation-van-hove-pm-1">
-<span class="eqno">(29)<a class="headerlink" href="#equation-eqn-quantum-master-equation-van-hove-pm-1" title="Permalink to this equation">¶</a></span>\[\begin{split}P_m &amp; = \bra{m}\hat \rho \ket{m} \\
+<span class="eqno">(34)<a class="headerlink" href="#equation-eqn-quantum-master-equation-van-hove-pm-1" title="Permalink to this equation">¶</a></span>\[\begin{split}P_m &amp; = \bra{m}\hat \rho \ket{m} \\
 &amp; = \sum_{m,n} \bra{m} e^{i\hat H t/\hbar} \ket{n}\bra{n} \hat \rho(0) \ket{l}\bra{l} e^{-iHt/\hbar} \ket{m} \\
 &amp; = \sum_{m,n} \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 \rho_{nl}(0) .\end{split}\]</div>
 <p>van Hove applied random phase condition on the initial condition, i.e., <span class="math notranslate nohighlight">\(\rho_{nl}(0)\)</span> is diagonalized at initial <span class="math notranslate nohighlight">\(t=0\)</span>. We have</p>
 <div class="math notranslate nohighlight">
 \[\rho_{nl} (0) = \rho_{nn} \delta_{nl} = P_n(0) \delta_{nl},\]</div>
-<p>Equation <a class="reference internal" href="#equation-eqn-quantum-master-equation-van-hove-pm-1">(29)</a> becomes,</p>
+<p>Equation <a class="reference internal" href="#equation-eqn-quantum-master-equation-van-hove-pm-1">(34)</a> becomes,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equation-van-hove-pm-2">
-<span class="eqno">(30)<a class="headerlink" href="#equation-eqn-quantum-master-equation-van-hove-pm-2" title="Permalink to this equation">¶</a></span>\[P_m = \sum_n \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 P_n(0) .\]</div>
-<p>The equation <a class="reference internal" href="#equation-eqn-quantum-master-equation-van-hove-pm-2">(30)</a> is furthure simplified by the Dyson series.</p>
+<span class="eqno">(35)<a class="headerlink" href="#equation-eqn-quantum-master-equation-van-hove-pm-2" title="Permalink to this equation">¶</a></span>\[P_m = \sum_n \left\vert \bra{m} e^{i (\hat H_0 + \lambda \hat W) t/\hbar } \ket{n} \right\vert^2 P_n(0) .\]</div>
+<p>The equation <a class="reference internal" href="#equation-eqn-quantum-master-equation-van-hove-pm-2">(35)</a> is furthure simplified by the Dyson series.</p>
 </div>
 <div class="section" id="zwawzig-and-nakajiwa">
 <span id="projection-technique"></span><span id="index-1"></span><h2>Zwawzig and Nakajiwa<a class="headerlink" href="#zwawzig-and-nakajiwa" title="Permalink to this headline">¶</a></h2>
@@ -399,15 +400,15 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 \[\partial_t \hat \rho = -i \hat L \hat \rho .\]</div>
 <p>Apply <span class="math notranslate nohighlight">\(\hat D\)</span> and <span class="math notranslate nohighlight">\(1-\hat D\)</span> to the von Neumann equation, we get two equations</p>
 <div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-dod-1">
-<span class="eqno">(31)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-dod-1" title="Permalink to this equation">¶</a></span>\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho \\
+<span class="eqno">(36)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-dod-1" title="Permalink to this equation">¶</a></span>\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho \\
 \partial_t \hat \rho _{od} &amp; = -i (1 - \hat D)  \hat L \hat \rho .\end{split}\]</div>
 <p>Use the completeness relation <span class="math notranslate nohighlight">\(\hat \rho = \hat \rho_d + \hat \rho_{od}\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-dod-2">
-<span class="eqno">(32)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-dod-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho_d - i \hat D  \hat L \hat \rho _ {od} \\
+<span class="eqno">(37)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-dod-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\partial_t \hat \rho_d &amp; = -i \hat D  \hat L \hat \rho_d - i \hat D  \hat L \hat \rho _ {od} \\
 \partial_t \hat \rho _{od} &amp; = - i (1 - \hat D)  \hat L \hat \rho _ d - i (1 - \hat D)  \hat L \hat \rho_{od} .\end{split}\]</div>
-<p>The off-diagonal equation in equation <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-dod-2">(32)</a> is solved using Green’s function,</p>
+<p>The off-diagonal equation in equation <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-dod-2">(37)</a> is solved using Green’s function,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-od-green">
-<span class="eqno">(33)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-od-green" title="Permalink to this equation">¶</a></span>\[\hat \rho_{od} = e^{-i(1-\hat D)\hat L t} + \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(-i(1-\hat D)\hat L \hat \rho_d(t')) .\]</div>
+<span class="eqno">(38)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-od-green" title="Permalink to this equation">¶</a></span>\[\hat \rho_{od} = e^{-i(1-\hat D)\hat L t} + \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(-i(1-\hat D)\hat L \hat \rho_d(t')) .\]</div>
 <div class="toggle admonition">
 <p class="admonition-title">Green’s Function</p>
 <p>Recall that the solution to</p>
@@ -417,12 +418,12 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[y = e^{-\alpha t} y(0) + \int_0^t dt' e^{-\alpha (t-t')} f(t') .\]</div>
 </div>
-<p>Insert <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-od-green">(33)</a> into the equation for <span class="math notranslate nohighlight">\(\hat \rho_d\)</span> in equation <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-dod-2">(32)</a>,</p>
+<p>Insert <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-od-green">(38)</a> into the equation for <span class="math notranslate nohighlight">\(\hat \rho_d\)</span> in equation <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-dod-2">(37)</a>,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-d-1">
-<span class="eqno">(34)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-d-1" title="Permalink to this equation">¶</a></span>\[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.\]</div>
+<span class="eqno">(39)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-d-1" title="Permalink to this equation">¶</a></span>\[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.\]</div>
 <p>The term <span class="math notranslate nohighlight">\(- i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0)\)</span> disapears when we apply the random phase initial condition. Then we get our closed master equation for <span class="math notranslate nohighlight">\(\hat \rho_d\)</span>, i.e.,  an equation for the probabilities,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-quantum-master-equations-projection-technique-master-equation">
-<span class="eqno">(35)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-master-equation" title="Permalink to this equation">¶</a></span>\[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')}.\]</div>
+<span class="eqno">(40)<a class="headerlink" href="#equation-eqn-quantum-master-equations-projection-technique-master-equation" title="Permalink to this equation">¶</a></span>\[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')}.\]</div>
 <div class="toggle admonition">
 <p class="admonition-title">The Off-diagonal Elements</p>
 <blockquote>
@@ -441,7 +442,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 <div class="section" id="simplify-the-quantum-master-equation">
 <h2>Simplify the Quantum Master Equation<a class="headerlink" href="#simplify-the-quantum-master-equation" title="Permalink to this headline">¶</a></h2>
 <p>We derived the quantum master equation using the projection method. However, the equation is complicated.</p>
-<p>Let’s stare at the solution equation <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-master-equation">(35)</a> for a minute,</p>
+<p>Let’s stare at the solution equation <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-master-equation">(40)</a> for a minute,</p>
 <div class="math notranslate nohighlight">
 \[{\color{red}\partial_t \hat \rho_d = - i\hat D\hat L \hat \rho_d -  \hat D\hat L \int_0^t dt' e^{-i(1-\hat D) \hat L (t-t')}(1-\hat D)\hat L \hat \rho_d(t')} {\color{blue} - i \hat D \hat L e^{-i(1-\hat D)\hat L t} \rho_{od}(0) }.\]</div>
 <p>By definition, <span class="math notranslate nohighlight">\(\rho_d=\hat D\rho\)</span>. The term on the right hand side <span class="math notranslate nohighlight">\(\hat D \hat L \rho_d\)</span> is</p>
@@ -451,7 +452,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 <p>The diagonal elements are the same for the two terms (the magenta term and the green term) in the braket so that all the diagonal elements are gone. Finally, we apply <span class="math notranslate nohighlight">\(\hat D\)</span> to the off-diagonalized matrix and get 0,</p>
 <div class="math notranslate nohighlight">
 \[\hat D \hat L \rho_d = 0.\]</div>
-<p>Thus the first term on the right hand side in equation <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-master-equation">(35)</a> <span class="math notranslate nohighlight">\(-i\hat D\hat L\hat \rho_d = 0\)</span>.</p>
+<p>Thus the first term on the right hand side in equation <a class="reference internal" href="#equation-eqn-quantum-master-equations-projection-technique-master-equation">(40)</a> <span class="math notranslate nohighlight">\(-i\hat D\hat L\hat \rho_d = 0\)</span>.</p>
 <p>In quantum perturbation theory, the Hamiltonian is <span class="math notranslate nohighlight">\(\hat H = \hat H_0 + \lambda \hat W\)</span>. The Liouville operator for this system has two parts,</p>
 <div class="math notranslate nohighlight">
 \[\hat L = \hat L_0 + \lambda \hat L_W.\]</div>
@@ -480,7 +481,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 <p>Several terms of <span class="math notranslate nohighlight">\(\lambda\)</span> are dropped. <a class="footnote-reference brackets" href="#id5" id="id3">1</a></p>
 <p>We will derive the Fermi’s golden rule. First, we have</p>
 <div class="math notranslate nohighlight" id="equation-eqn-qme-d-avg-eqn-1">
-<span class="eqno">(36)<a class="headerlink" href="#equation-eqn-qme-d-avg-eqn-1" title="Permalink to this equation">¶</a></span>\[\bra{m} \partial_t \rho_d \ket{m} = -\lambda^2 \bra{m} \int_0^t dt' \hat L_W e^{-i(t-t')\hat L_0} \hat L_W \rho_d(t') \ket{m}.\]</div>
+<span class="eqno">(41)<a class="headerlink" href="#equation-eqn-qme-d-avg-eqn-1" title="Permalink to this equation">¶</a></span>\[\bra{m} \partial_t \rho_d \ket{m} = -\lambda^2 \bra{m} \int_0^t dt' \hat L_W e^{-i(t-t')\hat L_0} \hat L_W \rho_d(t') \ket{m}.\]</div>
 <div class="hint admonition">
 <p class="admonition-title">A Useful Relation</p>
 <p>Here is a useful relation,</p>
@@ -492,14 +493,14 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 <p>By definition, <span class="math notranslate nohighlight">\(\hat L_W \hat \rho_d = \frac{1}{\hbar}[W, \rho_d]\)</span>. Define</p>
 <div class="math notranslate nohighlight">
 \[\hat{\mathscr M} = e^{-i(t-t')\hat H_0}[\hat V,\hat \rho_d]e^{i(t-t')\hat H_0}.\]</div>
-<p>Equation <a class="reference internal" href="#equation-eqn-qme-d-avg-eqn-1">(36)</a> becomes</p>
+<p>Equation <a class="reference internal" href="#equation-eqn-qme-d-avg-eqn-1">(41)</a> becomes</p>
 <div class="math notranslate nohighlight" id="equation-eqn-qme-d-avg-eqn-2">
-<span class="eqno">(37)<a class="headerlink" href="#equation-eqn-qme-d-avg-eqn-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\bra{m} \partial_t \rho_d \ket{m} &amp;= -\lambda^2 \bra{m} \int_0^t dt' [\hat W, e^{-i(t-t')\hat L_0}[\hat W, \rho_d(t')]] \ket{m}  \\
+<span class="eqno">(42)<a class="headerlink" href="#equation-eqn-qme-d-avg-eqn-2" title="Permalink to this equation">¶</a></span>\[\begin{split}\bra{m} \partial_t \rho_d \ket{m} &amp;= -\lambda^2 \bra{m} \int_0^t dt' [\hat W, e^{-i(t-t')\hat L_0}[\hat W, \rho_d(t')]] \ket{m}  \\
 &amp; = -\lambda^2 \bra{m} \int_0^t [\hat W, ] dt' \ket{m}  \\
 &amp; = -\lambda^2 \left( \bra{m} \int_0^t dt' \hat W\hat{\mathscr M} \ket{m} - \bra{m} \int_0^t \hat{\mathscr M}\hat W\ket{m} dt' \right) \\
 &amp; = -\lambda^2 \int_0^t dt' \left( \bra{m} \hat W\hat{\mathscr M} \ket{m} - \bra{m} \hat{\mathscr M}\hat W\ket{m}  \right) \\
 &amp; = -\lambda^2 \int_0^t dt' \sum_n (W_{mn}\mathscr M_{nm} - \mathscr M_{mn}W_{nm}).\end{split}\]</div>
-<p>We already know that <span class="math notranslate nohighlight">\(\rho_d = P_{m}\)</span>. We rewrite equation <a class="reference internal" href="#equation-eqn-qme-d-avg-eqn-2">(37)</a>,</p>
+<p>We already know that <span class="math notranslate nohighlight">\(\rho_d = P_{m}\)</span>. We rewrite equation <a class="reference internal" href="#equation-eqn-qme-d-avg-eqn-2">(42)</a>,</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_m(t) = -\lambda^2 \int_0^t dt' \sum_n (W_{mn}\mathscr M_{nm} - \mathscr M_{mn}W_{nm}).\]</div>
 <p>The eigen function of the system is</p>
@@ -514,13 +515,13 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 &amp; = e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} .\end{split}\]</div>
 <p>Finally, the quantum master equation becomes</p>
 <div class="math notranslate nohighlight" id="equation-eqn-qme-pm-fgr">
-<span class="eqno">(38)<a class="headerlink" href="#equation-eqn-qme-pm-fgr" title="Permalink to this equation">¶</a></span>\[\begin{split}\partial_t P_m &amp;= -\lambda^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')\epsilon_n} ( W_{nm}P_{m} - P_{n}W_{n m} ) e^{i(t-t')\epsilon_m}) - (e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} )W_{nm}  \right] \\
+<span class="eqno">(43)<a class="headerlink" href="#equation-eqn-qme-pm-fgr" title="Permalink to this equation">¶</a></span>\[\begin{split}\partial_t P_m &amp;= -\lambda^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')\epsilon_n} ( W_{nm}P_{m} - P_{n}W_{n m} ) e^{i(t-t')\epsilon_m}) - (e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} )W_{nm}  \right] \\
 &amp; =  -\lambda^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')(\epsilon_n - \epsilon_m )  }  W_{nm} (P_{m} - P_{n}) - (e^{-i(t-t')\epsilon_m} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n} )W_{nm}  \right] \\
 &amp; = -2 \lambda^2 \int_0^t dt' \sum_n \left\vert W_{mn} \right\vert^2 \left[ P_n- P_m \right] \cos((\epsilon_m-\epsilon_n)(t-t'))\end{split}\]</div>
-<p>The above equation <a class="reference internal" href="#equation-eqn-qme-pm-fgr">(38)</a> is the <span class="highlit">Fermi’s golden rule</span>.</p>
+<p>The above equation <a class="reference internal" href="#equation-eqn-qme-pm-fgr">(43)</a> is the <span class="highlit">Fermi’s golden rule</span>.</p>
 <p>We define <span class="math notranslate nohighlight">\(\Omega_{mn}(t-t')=\Omega_{nm}(t-t') = 2\lambda^2 \left\vert W_{mn} \right\vert^2\cos((t-t')(\epsilon_m-\epsilon_n))\)</span>, so that the master equation,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-qme-pm-omega">
-<span class="eqno">(39)<a class="headerlink" href="#equation-eqn-qme-pm-omega" title="Permalink to this equation">¶</a></span>\[\partial_t P_m = \int_0^t dt' \sum_n \left( \Omega_{mn}(t-t') P_n - \Omega_{nm}(t-t') P_m \right).\]</div>
+<span class="eqno">(44)<a class="headerlink" href="#equation-eqn-qme-pm-omega" title="Permalink to this equation">¶</a></span>\[\partial_t P_m = \int_0^t dt' \sum_n \left( \Omega_{mn}(t-t') P_n - \Omega_{nm}(t-t') P_m \right).\]</div>
 </div>
 <div class="section" id="markovian">
 <h2>Markovian<a class="headerlink" href="#markovian" title="Permalink to this headline">¶</a></h2>
@@ -528,7 +529,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 <p class="admonition-title">The Kenkre Approach</p>
 <p>This is method tought by Professor Kenkre.</p>
 </div>
-<p>We can simplify equation <a class="reference internal" href="#equation-eqn-qme-pm-omega">(39)</a> more using the Markovian approximation,</p>
+<p>We can simplify equation <a class="reference internal" href="#equation-eqn-qme-pm-omega">(44)</a> more using the Markovian approximation,</p>
 <div class="math notranslate nohighlight">
 \[\Omega_{mn}(t) = \delta(t) \left[\int_0^t d\tau \Omega_{mn}(\tau) \right].\]</div>
 <p>The Laplace transform of the above equation is,</p>

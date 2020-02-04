@@ -161,6 +161,7 @@ TeX: {
       aria-labelledby="dLabelGlobalToc"><ul>
 <li class="toctree-l1"><a class="reference internal" href="../vocabulary/index.html">Vocabulary and Program</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vocabulary/stability-analysis.html">Stability Analysis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/integrals.html">Integrals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/transforms.html">Transforms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../vocabulary/green.html">Green’s Function</a></li>
@@ -290,9 +291,9 @@ TeX: {
 </div>
 <p>In general, the equation of motion of a N-particle system is determined by</p>
 <div class="math notranslate nohighlight" id="equation-eq-2-coupled-harmonic-oscillators-eom">
-<span class="eqno">(8)<a class="headerlink" href="#equation-eq-2-coupled-harmonic-oscillators-eom" title="Permalink to this equation">¶</a></span>\[m \ddot x_i + k( x_i -x_{i-1} + x_i - x_{i+1}) = 0\]</div>
+<span class="eqno">(13)<a class="headerlink" href="#equation-eq-2-coupled-harmonic-oscillators-eom" title="Permalink to this equation">¶</a></span>\[m \ddot x_i + k( x_i -x_{i-1} + x_i - x_{i+1}) = 0\]</div>
 <p>with i goes from <span class="math notranslate nohighlight">\(2\)</span> to <span class="math notranslate nohighlight">\(N-1\)</span>, and <span class="math notranslate nohighlight">\(k\)</span> is the spring constant of the springs. We will have <span class="math notranslate nohighlight">\(N-2\)</span> equations together with two boundary conditions for the first and the last particle.</p>
-<p>This system of second order differential equations is easily solved using Fourier transform. Here we apply the transform <span class="math notranslate nohighlight">\(x_q = \sum x_m e^{i m q}\)</span> to <a class="reference internal" href="#equation-eq-2-coupled-harmonic-oscillators-eom">(8)</a>. This Fourier transform will decouple the equations,</p>
+<p>This system of second order differential equations is easily solved using Fourier transform. Here we apply the transform <span class="math notranslate nohighlight">\(x_q = \sum x_m e^{i m q}\)</span> to <a class="reference internal" href="#equation-eq-2-coupled-harmonic-oscillators-eom">(13)</a>. This Fourier transform will decouple the equations,</p>
 <div class="math notranslate nohighlight">
 \[m \ddot x_q + k' x_q =0\]</div>
 <p>The solutions to <span class="math notranslate nohighlight">\(x_q\)</span> are the normal modes with frequencies <span class="math notranslate nohighlight">\(\omega_q ~ \sin|q/2|\)</span>. Thus the Debye theory is a theory of many Einstein solutions, i.e.,</p>
