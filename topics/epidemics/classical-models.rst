@@ -225,6 +225,13 @@ Compartments related to epidemic control can also be integrated into the models.
    SEIT model
 
 
+Each compartment is also subject to variants based on the demographics of the populations, heterogeneities of the pathogens and hosts. [Martcheva2015]_
+
+.. figure:: assets/sis-two-strain.png
+   :align: center
+
+   SIS with two strains
+
 
 
 References
