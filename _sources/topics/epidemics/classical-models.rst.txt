@@ -253,9 +253,7 @@ The reproduction number is
 .. math::
    \mathscr R_0 = \frac{\Lambda \beta}{\mu(\alpha + \mu)}.
 
-Since the equation for :math:`N(t)` is independent of :math:`S(t)` and :math:`I(t)`, the stability is determined by the first two equations. Denote the equilibrium point as :math:`S_0, I_0`, we linearize the equations using :ref:`linear-stability-analysis` and find that the characteristic equation is related to :math:`\mathscr R_0`, i.e., the growth rate of the linearized system :math:`\lambda` is a function of :math:`\mathscr R_0`. That being said, by looking into the growth rate of the infected populations in a short time, we could roughly estimate the reproduction number :math:`\mathscr R_0`.
-
-
+Since the equation for :math:`N(t)` is independent of :math:`S(t)` and :math:`I(t)`, the stability is determined by the first two equations. Denote the equilibrium point as :math:`S_0, I_0`, we linearize the equations using :ref:`linear-stability-analysis` and find that the characteristic equation is related to :math:`\mathscr R_0`, i.e., the growth rate of the linearized system :math:`\lambda` is a function of :math:`\mathscr R_0` thus the stability of the system is also related to the reproduction number. Though the compartment model can be complicated as more stages are added, linear stability analysis is a very effective tool to analyze the stability.
 
 
 References
