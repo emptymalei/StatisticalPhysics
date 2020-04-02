@@ -5,3 +5,4 @@ Epidemics
     :maxdepth: 2
 
     classical-models.rst
+    hantavirus.rst

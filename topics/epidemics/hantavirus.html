@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Topics on Thermodynamics &#8212; Statistical Physics Notes</title>
+    <title>Tempo-spatial Epidemic Models &#8212; Statistical Physics Notes</title>
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
@@ -20,11 +20,11 @@
     <script src="../../_static/js/jquery-fix.js"></script>
     <script src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script src="../../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.openmetric.org/thermodynamics/topics/index.html" />
+    <link rel="canonical" href="https://statisticalphysics.openmetric.org/topics/epidemics/hantavirus.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Thermodynamics for Our Society" href="thermodynamics-for-society.html" />
-    <link rel="prev" title="Summary" href="../summary.html" />
+    <link rel="next" title="Information Theory and Statistical Mechanics" href="../information-theory-and-statistical-mechanics.html" />
+    <link rel="prev" title="Classical Models in Epidemics" href="classical-models.html" />
 
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -169,10 +169,10 @@ TeX: {
 </ul>
 </li>
 </ul>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Thermodynamics</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../summary.html">Summary</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Topics on Thermodynamics</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../thermodynamics/index.html">Thermodynamics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../thermodynamics/summary.html">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../thermodynamics/topics/index.html">Topics on Thermodynamics</a></li>
 </ul>
 </li>
 </ul>
@@ -210,10 +210,10 @@ TeX: {
 </ul>
 </li>
 </ul>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../topics/index.html">Some Topics in Statistical Mechanics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/epidemics/index.html">Epidemics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../topics/information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Some Topics in Statistical Mechanics</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Epidemics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../information-theory-and-statistical-mechanics.html">Information Theory and Statistical Mechanics</a></li>
 </ul>
 </li>
 </ul>
@@ -229,7 +229,10 @@ TeX: {
   <ul class="dropdown-menu localtoc"
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
-<li><a class="reference internal" href="#">Topics on Thermodynamics</a></li>
+<li><a class="reference internal" href="#">Tempo-spatial Epidemic Models</a><ul>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
 </ul>
 </ul>
 </li>
@@ -239,11 +242,11 @@ TeX: {
               
                 
   <li>
-    <a href="../summary.html" title="Previous Chapter: Summary"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Summary</span>
+    <a href="classical-models.html" title="Previous Chapter: Classical Models in Epidemics"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Classical Mod...</span>
     </a>
   </li>
   <li>
-    <a href="thermodynamics-for-society.html" title="Next Chapter: Thermodynamics for Our Society"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Thermodynamic... &raquo;</span>
+    <a href="../information-theory-and-statistical-mechanics.html" title="Next Chapter: Information Theory and Statistical Mechanics"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Information T... &raquo;</span>
     </a>
   </li>
               
@@ -271,12 +274,52 @@ TeX: {
   <div class="row">
     <div class="col-md-12 content">
       
-  <div class="section" id="topics-on-thermodynamics">
-<h1>Topics on Thermodynamics<a class="headerlink" href="#topics-on-thermodynamics" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="thermodynamics-for-society.html">Thermodynamics for Our Society</a></li>
-</ul>
+  <div class="section" id="tempo-spatial-epidemic-models">
+<h1>Tempo-spatial Epidemic Models<a class="headerlink" href="#tempo-spatial-epidemic-models" title="Permalink to this headline">¶</a></h1>
+<p>We will use the Hantavirus as an example <a class="reference internal" href="#abramson2002" id="id1"><span>[Abramson2002]</span></a>.</p>
+<p>The vector of Hantavirus is mice. The population of mice <span class="math notranslate nohighlight">\(M\)</span> has two components, the infected population <span class="math notranslate nohighlight">\(M_I\)</span> and the susceptible population <span class="math notranslate nohighlight">\(M_S\)</span>. We take the SI model with demography,</p>
+<div class="math notranslate nohighlight" id="equation-eqn-mice-si-with-demography">
+<span class="eqno">(46)<a class="headerlink" href="#equation-eqn-mice-si-with-demography" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{dM_S}{dt} &amp;= \lambda M - \mu M_S - a M_S M_I, \\
+\frac{dM_I}{dt} &amp;= -\mu M_I + a M_S M_I,\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M = M_I + M_S\)</span>, <span class="math notranslate nohighlight">\(\lambda\)</span> is the natural birth rate per population, <span class="math notranslate nohighlight">\(\mu\)</span> is the natural death rate per population, <span class="math notranslate nohighlight">\(a\)</span> is the rate of the mouse being infect on contact.</p>
+<p>Summing up the two equations, we get the equation for <span class="math notranslate nohighlight">\(M\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dM}{dt} = (\lambda - \mu) M,\]</div>
+<p>which has an exponential solution</p>
+<div class="math notranslate nohighlight">
+\[M = M_0 e^{(\lambda -\mu)t}.\]</div>
+<p>This is a trivial solution. As the birth rate and death rate becomes the same, the population becomes stable.</p>
+<p>However, the population should also be limited by the natural resources they consume,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dM}{dt} = (\lambda - \mu) M - f(M, t) M,\]</div>
+<p>where <span class="math notranslate nohighlight">\(f(M, t)M\)</span> describes the competitions for resources.</p>
+<div class="note admonition">
+<p class="admonition-title"><span class="math notranslate nohighlight">\(f(M, t)\)</span></p>
+<p>Suppose we have a bunch of resources <span class="math notranslate nohighlight">\(K\)</span> and each mouse requires <span class="math notranslate nohighlight">\(k\)</span> to survive on average. The more mice we have, the more competitive,</p>
+<div class="math notranslate nohighlight">
+\[f(M,t) = \frac{kM}{K}.\]</div>
+<p>Suppose we have equal birth rate and death rate, the population is governed by</p>
+<div class="math notranslate nohighlight">
+\[\frac{dM}{dt} = \frac{kM}{K}M.\]</div>
+<p>For simplifity, we define <span class="math notranslate nohighlight">\(\kappa=k/K\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{dM}{dt} = (\lambda - \mu) M - \frac{M}{\kappa} M.\]</div>
+</div>
+<p>Following <a class="reference internal" href="#abramson2002" id="id2"><span>[Abramson2002]</span></a>, we introduce the competition term</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{dM_S}{dt} &amp;= \lambda M - \mu M_S - a M_S M_I {\color{blue}- \frac{M}{\kappa} M_S}, \\
+\frac{dM_I}{dt} &amp;= -\mu M_I + a M_S M_I {\color{blue}- \frac{M}{\kappa} M_I}.\end{split}\]</div>
+<p>The vector, deer mice, is quite mobile. The spatial distribution becomes important. To describe the spatial component, we add a diffusion term</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial M_S}{\partial t} &amp;= \lambda M - \mu M_S - a M_S M_I {\color{blue}- \frac{M}{\kappa} M_S} {\color{red}+D_S \nabla^2M_S}, \\
+\frac{dM_I}{dt} &amp;= -\mu M_I + a M_S M_I {\color{blue}- \frac{M}{\kappa} M_I}  {\color{red}+D_I \nabla^2M_I}.\end{split}\]</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<dl class="citation">
+<dt class="label" id="abramson2002"><span class="brackets">Abramson2002</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p><a class="reference external" href="https://doi.org/10.1103/PhysRevE.66.011912">Abramson, G., &amp; Kenkre, V. M. (2002). Spatiotemporal patterns in the Hantavirus infection. Physical Review E - Statistical Physics, Plasmas, Fluids, and Related Interdisciplinary Topics, 66(1), 1–5.</a></p>
+</dd>
+</dl>
 </div>
 </div>
 
@@ -327,7 +370,7 @@ TeX: {
         <a href="/genindex.html">Index</a>
      </span> |
        <span><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-       <a href="../../_sources/thermodynamics/topics/index.rst.txt"
+       <a href="../../_sources/topics/epidemics/hantavirus.rst.txt"
       rel="nofollow">Page Source</a>
       </span>
 
