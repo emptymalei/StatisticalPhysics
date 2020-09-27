@@ -37,7 +37,7 @@ html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
-	@echo "statisticalphysics.openmetric.org" > _build/html/CNAME
+	@echo "statisticalphysics.leima.is" > _build/html/CNAME
 	@echo "" > _build/html/.nojekyll
 
 web: html latexpdf
