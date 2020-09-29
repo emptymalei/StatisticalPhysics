@@ -28,7 +28,7 @@ Phase transitions only exists in systems with infinite particles.
 
    The idea is that we have several races scatter on a grid. Each individual is more satistifed if the individual can live nearby a predefined percentage of population of races. If the individual is not satistifed, then the individual will move to another place.
 
-   For better understanding, checkout this web app I wrote: `Schelling's segeration model <http://schelling.openmetric.org/>`_.
+   For better understanding, checkout this web app I wrote: `Schelling's segeration model <https://schelling.leima.is/>`_.
 
    Just like the Ising model, domains might appear. But domains might not appear for some certain parameters. This change is drastic. There is a phase transition. To be precise, we have to define the order parameter in Schelling's model. For example, we define the average size of the communities as our order parameter.
 
@@ -39,12 +39,12 @@ Phase transitions only exists in systems with infinite particles.
    There are also other parameters to consider but a phase diagram can be calculated.
 
 
-   The following is an app for Schelling's model. It is better to click on the link `Schelling's segeration model <http://schelling.openmetric.org/>`_.
+   The following is an app for Schelling's model. It is better to click on the link `Schelling's segeration model <https://schelling.leima.is/>`_.
 
    .. raw:: html
 
     <iframe width="100%" height="1500"
-    src="http://schelling.openmetric.org/"
+    src="https://schelling.leima.is/"
     frameborder="0" allowfullscreen></iframe>
 
 
