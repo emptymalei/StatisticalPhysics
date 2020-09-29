@@ -80,7 +80,7 @@ extensions = [
    "sphinx_sitemap"
 ]
 
-html_baseurl = 'https://statisticalphysics.openmetric.org/'
+html_baseurl = 'https://statisticalphysics.leima.is/'
 
 latex_preamble_data = r"""
 \usepackage{hyperref}

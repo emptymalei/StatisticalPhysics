@@ -1,7 +1,7 @@
 Statistical Mechanics Notes
 ----------------------------
 
-The notes are online: `http://statisticalphysics.openmetric.org <http://statisticalphysics.openmetric.org>`_
+The notes are online: `http://statisticalphysics.leima.is <http://statisticalphysics.leima.is>`_
 
 Notes for my stat mech course. I used the sphinx configuration files and exts filese from `theoretical-physics <https://github.com/certik/theoretical-physics>`_ (I kept all the commits from the original author, even though I deleted all the contents).
 

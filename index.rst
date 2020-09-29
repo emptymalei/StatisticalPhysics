@@ -113,7 +113,7 @@ This open source project is hosted on GitHub: `Statistical Physics <https://gith
 
 
 
-Read online: `Statistical Physics Notes <http://statisticalphysics.openmetric.org>`_ .
+Read online: `Statistical Physics Notes <http://statisticalphysics.leima.is>`_ .
 
 Download the `Latest PDF Version <https://media.readthedocs.org/pdf/statisticalphysics/latest/statisticalphysics.pdf>`_ .
 

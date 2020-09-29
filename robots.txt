@@ -1,3 +1,3 @@
 User-agent: *
 
-Sitemap: https://statisticalphysics.openmetric.org/sitemap.xml
+Sitemap: https://statisticalphysics.leima.is/sitemap.xml
