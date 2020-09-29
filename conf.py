@@ -60,8 +60,8 @@ html_theme_options = {
    'description': 'Statistical Physics',
 }
 
-# theme_canonical_url = 'http://statisticalphysics.openmetric.org/' # Not working, please find themes/theme.conf and change canonical url there.
-#theme_canonical_url = 'http://statisticalphysics.openmetric.org/'
+# theme_canonical_url = 'http://statisticalphysics.leima.is/' # Not working, please find themes/theme.conf and change canonical url there.
+#theme_canonical_url = 'http://statisticalphysics.leima.is/'
 
 
 
