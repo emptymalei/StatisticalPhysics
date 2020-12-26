@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Phase Transitions &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/equilibrium/phase-transitions.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Gas Revisited" href="gas-revisited.html" />
@@ -273,34 +272,34 @@ TeX: {
 <span id="id1"></span><h2>Phase Transitions<a class="headerlink" href="#schelling-model" title="Permalink to this headline">¶</a></h2>
 <p>Phase transitions are singularities of thermodynamic quantities. There exists many different orders of singularities:</p>
 <ol class="arabic simple">
-<li><p>First order: discountinuities in of thermodynamic quantities;</p></li>
-<li><p>Second order: discountinuities in the first order derivatives of thermodynamic quantities.</p></li>
-<li><p>…</p></li>
+<li>First order: discountinuities in of thermodynamic quantities;</li>
+<li>Second order: discountinuities in the first order derivatives of thermodynamic quantities.</li>
+<li>…</li>
 </ol>
 <p>Phase transitions only exists in systems with infinite particles.</p>
 <div class="note admonition">
-<p class="admonition-title">Phase Transitions in Other Fields</p>
+<p class="first admonition-title">Phase Transitions in Other Fields</p>
 <p>If we are looking for well defined phase transitions in other fields, such as our society, it would be the best if we could all agree on which observables to use, aka, order parameters.</p>
 <p>For example, in social science, there is the model called Schelling’s model which models the segregation of races. The model is fairly simple yet is able to match the data.</p>
 <p>The idea is that we have several races scatter on a grid. Each individual is more satistifed if the individual can live nearby a predefined percentage of population of races. If the individual is not satistifed, then the individual will move to another place.</p>
-<p>For better understanding, checkout this web app I wrote: <a class="reference external" href="https://schelling.leima.is/">Schelling’s segeration model</a>.</p>
+<p>For better understanding, checkout this web app I wrote: <a class="reference external" href="https://schelling-model.herokuapp.com/">Schelling’s segeration model</a>.</p>
 <p>Just like the Ising model, domains might appear. But domains might not appear for some certain parameters. This change is drastic. There is a phase transition. To be precise, we have to define the order parameter in Schelling’s model. For example, we define the average size of the communities as our order parameter.</p>
 <ol class="arabic simple">
-<li><p>For very low similarity requirements, our agents will be quite satistifed with whatever neighbours they have initially. Very little will change in this case. This is the so called frozen state. In this case, average size of the communities are small but the satisfactions are high.</p></li>
-<li><p>For very large similarity requirements, our agents is very hard to please. They will relocate all the time and remain not satisfied. This is the mixed state. Or average size of communities is small.</p></li>
-<li><p>In between, agents will move to live close to their own ethical groups. Domains will form. This is the segreged state. The average size of communities is large.</p></li>
+<li>For very low similarity requirements, our agents will be quite satistifed with whatever neighbours they have initially. Very little will change in this case. This is the so called frozen state. In this case, average size of the communities are small but the satisfactions are high.</li>
+<li>For very large similarity requirements, our agents is very hard to please. They will relocate all the time and remain not satisfied. This is the mixed state. Or average size of communities is small.</li>
+<li>In between, agents will move to live close to their own ethical groups. Domains will form. This is the segreged state. The average size of communities is large.</li>
 </ol>
 <p>There are also other parameters to consider but a phase diagram can be calculated.</p>
-<p>The following is an app for Schelling’s model. It is better to click on the link <a class="reference external" href="https://schelling.leima.is/">Schelling’s segeration model</a>.</p>
+<p>The following is an app for Schelling’s model. It is better to click on the link <a class="reference external" href="https://schelling-model.herokuapp.com/">Schelling’s segeration model</a>.</p>
 <iframe width="100%" height="1500"
-src="https://schelling.leima.is/"
+src="https://schelling-model.herokuapp.com/"
 frameborder="0" allowfullscreen></iframe><p>References:</p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://medium.com/&#64;jxxcarlson/schellings-segregation-model-i-43e612241b62">Schelling’s Segregation Model, I</a></p></li>
+<ol class="last arabic simple">
+<li><a class="reference external" href="https://medium.com/&#64;jxxcarlson/schellings-segregation-model-i-43e612241b62">Schelling’s Segregation Model, I</a></li>
+<li><a class="reference external" href="https://www.coursera.org/lecture/model-thinking/schellings-segregation-model-1qEBU">Schelling’s Segregation Model | Model Thinking</a></li>
+<li><a class="reference external" href="https://www.youtube.com/watch?v=AZlWOykGzYg">DT&amp;SC 7-11: Schelling’s Segregation Model &#64; YouTube</a></li>
+<li><a class="reference external" href="https://doi.org/10.1140/epjb/e2009-00234-0">Gauvin, L., Vannimenus, J., &amp; Nadal, J. P. (2009). Phase diagram of a Schelling segregation model. European Physical Journal B, 70(2), 293–304.</a></li>
 </ol>
-<p>2. <a class="reference external" href="https://www.coursera.org/lecture/model-thinking/schellings-segregation-model-1qEBU">Schelling’s Segregation Model | Model Thinking</a>
-2. <a class="reference external" href="https://www.youtube.com/watch?v=AZlWOykGzYg">DT&amp;SC 7-11: Schelling’s Segregation Model &#64; YouTube</a>
-3. <a class="reference external" href="https://doi.org/10.1140/epjb/e2009-00234-0">Gauvin, L., Vannimenus, J., &amp; Nadal, J. P. (2009). Phase diagram of a Schelling segregation model. European Physical Journal B, 70(2), 293–304.</a></p>
 </div>
 </div>
 <div class="section" id="mean-field-thoery">
@@ -310,7 +309,7 @@ frameborder="0" allowfullscreen></iframe><p>References:</p>
 <p>To make it easy to understand, we assume the small magnets are arranged on a 2D grid.</p>
 <div class="figure align-center" id="id3">
 <img alt="Weiss Theory Magnets Grid" src="../_images/weiss-theory-grid.png" />
-<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Magnets on a 2D grid. The red magnet <span class="math notranslate nohighlight">\(s\)</span> is surrounded by four neighbours, <span class="math notranslate nohighlight">\(s_1\)</span>, <span class="math notranslate nohighlight">\(s_2\)</span>, <span class="math notranslate nohighlight">\(s_3\)</span>, and <span class="math notranslate nohighlight">\(s_4\)</span>.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">Magnets on a 2D grid. The red magnet <span class="math notranslate nohighlight">\(s\)</span> is surrounded by four neighbours, <span class="math notranslate nohighlight">\(s_1\)</span>, <span class="math notranslate nohighlight">\(s_2\)</span>, <span class="math notranslate nohighlight">\(s_3\)</span>, and <span class="math notranslate nohighlight">\(s_4\)</span>.</span></p>
 </div>
 <p>The Hamiltonian for the magnet <span class="math notranslate nohighlight">\(s\)</span> is</p>
 <div class="math notranslate nohighlight">
@@ -340,21 +339,21 @@ frameborder="0" allowfullscreen></iframe><p>References:</p>
 =&amp; \tanh( \beta (4Jm + H) ).\end{split}\]</div>
 <p>The two different views of the average magnetic field for a magnet should be the same, i.e.,</p>
 <div class="math notranslate nohighlight" id="equation-eq-weiss-theory-equation">
-<span class="eqno">(14)<a class="headerlink" href="#equation-eq-weiss-theory-equation" title="Permalink to this equation">¶</a></span>\[\tanh( \beta (4Jm + H) ) = m.\]</div>
+<span class="eqno">(15)<a class="headerlink" href="#equation-eq-weiss-theory-equation" title="Permalink to this equation">¶</a></span>\[\tanh( \beta (4Jm + H) ) = m.\]</div>
 <p>This equation can be understood using graphical solutions.</p>
 <div class="figure align-center" id="id4">
 <img alt="Weiss Theory Magnets Grid" src="../_images/weiss-theory-graphical-solutions.png" />
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Examples of solving equation <a class="reference internal" href="#equation-eq-weiss-theory-equation">(14)</a> graphically.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Examples of solving equation <a class="reference internal" href="#equation-eq-weiss-theory-equation">(15)</a> graphically.</span></p>
 </div>
 <p>In the example, we are solving the case for <span class="math notranslate nohighlight">\(H=0\)</span>. For <span class="math notranslate nohighlight">\(4\beta J=0.5\)</span>, the left side of the equation becomes <span class="math notranslate nohighlight">\(\tanh(0.5 m)\)</span>. On the right hand side, we have <span class="math notranslate nohighlight">\(m\)</span>. The value of <span class="math notranslate nohighlight">\(m\)</span> must be determined by the interceptions of the left hand side and the right hand side. However, we only find <span class="math notranslate nohighlight">\(m=0\)</span> which is paramagnetic. For <span class="math notranslate nohighlight">\(4\beta J=2\)</span>, we do find two other solutions for <span class="math notranslate nohighlight">\(m\)</span>. In fact, due to the slope of the hyperbolic tangent at origin, we only have 3 solutions if <span class="math notranslate nohighlight">\(4\beta J&gt;1\)</span>. This is interesting because this corresponds to a phase transition at different <span class="math notranslate nohighlight">\(\beta\)</span>, i.e., <span class="math notranslate nohighlight">\(1/k_B T\)</span>.</p>
 <div class="note admonition">
-<p class="admonition-title">Why is this an approximation</p>
-<p>Why is this an approximation?
+<p class="first admonition-title">Why is this an approximation</p>
+<p class="last">Why is this an approximation?
 Because translational symmetry doesn’t really hold all the time and the fluctuations are not necessarily 0. But it captures the primary feature of such a system.</p>
 </div>
 <p>This Weiss mean field theory also predicts phase transitions for 1D which is wrong. There is no phase transitions in 1D Ising model. What’s more, the theory also predicts the critical temperature wrong. The reason behind it is related to the fact that the fluctuations will be significant around critical points. That being said, mean field theory is not precise enough for phase transition in some low dimensional systems. Just like in statistics, more neighbours will make our standard deviations smaller thus we reach a better approximation by using the mean field.</p>
 <div class="important admonition">
-<p class="admonition-title">Why does mean field theory even work?</p>
+<p class="first admonition-title">Why does mean field theory even work?</p>
 <p>Why does mean field theory even work? From the view of mathematics, any continuous potential function can be Taylor expanded at the mean value of the magnetic field.</p>
 <p>The generic form of the Hamiltonian for magnets on a grid is</p>
 <div class="math notranslate nohighlight">
@@ -363,22 +362,22 @@ Because translational symmetry doesn’t really hold all the time and the fluctu
 <div class="math notranslate nohighlight">
 \[H = - \sum _{\langle i,j \rangle} J^{ij} \sigma_i \sigma - \mu \sum_i h^i \sigma_i\]</div>
 <p>where <span class="math notranslate nohighlight">\(\sigma = \sum_i \sigma_i/N\)</span> is the average spin configuration.</p>
-<p>In this approximation, we take the 0 order of spin configuration expansion. We can also include the second order if we need, but it brings in the fluction term.</p>
+<p class="last">In this approximation, we take the 0 order of spin configuration expansion. We can also include the second order if we need, but it brings in the fluction term.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>Susceptibility is a parameter that shows how much an extensive parameter changes when an intensive parameter increases. Magnetic susceptibility is</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[\chi(T)= \frac{\mathrm d M(T)}{\mathrm T}\]</div>
 </div>
 <div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>What makes the phase transition in such a system? Finite system has no phase transitions because finite continuous function can only make up continuous function by addition. Phase transition happens when the correlation length becomes infinite. It is all about correlations.</p>
+<p class="first admonition-title">Important</p>
+<p class="last">What makes the phase transition in such a system? Finite system has no phase transitions because finite continuous function can only make up continuous function by addition. Phase transition happens when the correlation length becomes infinite. It is all about correlations.</p>
 </div>
 <div class="section" id="references">
 <h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://doi.org/10.1088/0143-0807/34/6/1555">Kochmański, M., Paszkiewicz, T., &amp; Wolski, S. (2013). Curie-Weiss magnet - A simple model of phase transition. European Journal of Physics, 34(6), 1555–1573.</a></p></li>
+<li><a class="reference external" href="https://doi.org/10.1088/0143-0807/34/6/1555">Kochmański, M., Paszkiewicz, T., &amp; Wolski, S. (2013). Curie-Weiss magnet - A simple model of phase transition. European Journal of Physics, 34(6), 1555–1573.</a></li>
 </ol>
 <span class="target" id="van-der-waals-gas"></span></div>
 </div>
@@ -435,9 +434,6 @@ Because translational symmetry doesn’t really hold all the time and the fluctu
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

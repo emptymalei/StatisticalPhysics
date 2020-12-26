@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Summary &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/thermodynamics/summary.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Topics on Thermodynamics" href="topics/index.html" />
@@ -291,47 +290,47 @@ d\kappa_2(T,V,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) -  d(\mu_i N_i) = TdS -pdV - N_
 d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS + Vdp - N_i d\mu_i.\end{split}\]</div>
 <p>Physically, there are three different kinds of couplings here, which are</p>
 <ul class="simple">
-<li><p>thermal coupling: <span class="math notranslate nohighlight">\(d(ST)\)</span>;</p></li>
-<li><p>mechanical coupling: <span class="math notranslate nohighlight">\(d(pV)\)</span>;</p></li>
-<li><p>chemical coupling: <span class="math notranslate nohighlight">\(d(\mu_i N_i)\)</span>.</p></li>
+<li>thermal coupling: <span class="math notranslate nohighlight">\(d(ST)\)</span>;</li>
+<li>mechanical coupling: <span class="math notranslate nohighlight">\(d(pV)\)</span>;</li>
+<li>chemical coupling: <span class="math notranslate nohighlight">\(d(\mu_i N_i)\)</span>.</li>
 </ul>
 <p>Legendre transform is about turning on and off switches of the three different couplings. For example, turning off the mechanical coupling of (differential) internal energy <span class="math notranslate nohighlight">\(dU(S,V,\{N_i\})\)</span> leads to (differential) enthalpy <span class="math notranslate nohighlight">\(dH(S,p,\{N_i\})\)</span>. Indeed, enthalpy is the same as internal energy when we are talking about constant pressure.</p>
 <p>To summarize, we have</p>
 <ol class="arabic simple">
-<li><p>Internal Energy <span class="math notranslate nohighlight">\(U(S,V,\{N_i\})\)</span>,</p></li>
-<li><p>Enthalpy <span class="math notranslate nohighlight">\(H(S,p,\{N_i\})\)</span>,</p></li>
-<li><p>Helmholtz Free Energy <span class="math notranslate nohighlight">\(A(T,V,\{N_i\})\)</span>,</p></li>
-<li><p>Gibbs Free Energy <span class="math notranslate nohighlight">\(G(T,Y,\{N_i\})\)</span>,</p></li>
-<li><p>Grand Potential <span class="math notranslate nohighlight">\(\Omega (T,X,\{\mu_i\})\)</span>.</p></li>
+<li>Internal Energy <span class="math notranslate nohighlight">\(U(S,V,\{N_i\})\)</span>,</li>
+<li>Enthalpy <span class="math notranslate nohighlight">\(H(S,p,\{N_i\})\)</span>,</li>
+<li>Helmholtz Free Energy <span class="math notranslate nohighlight">\(A(T,V,\{N_i\})\)</span>,</li>
+<li>Gibbs Free Energy <span class="math notranslate nohighlight">\(G(T,Y,\{N_i\})\)</span>,</li>
+<li>Grand Potential <span class="math notranslate nohighlight">\(\Omega (T,X,\{\mu_i\})\)</span>.</li>
 </ol>
 <p>Their relations are charted in <a class="reference internal" href="#thermodynamicpotentials"><span class="std std-numref">Fig. 5</span></a>.</p>
 <div class="figure align-center" id="id3">
 <span id="thermodynamicpotentials"></span><a class="reference internal image-reference" href="../_images/thermodynamicPotentials1.png"><img alt="Thermodynamic Potentials" src="../_images/thermodynamicPotentials1.png" style="width: 1160.0px; height: 602.4px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The relations between these thermodynamic potentials.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">The relations between these thermodynamic potentials.</span></p>
 </div>
 <p>Here are a few interesting points.</p>
 <ol class="arabic simple">
-<li><p>All the thermodynamic observables can be obstained by taking the derivatives of thermodynamic potentials.</p></li>
-<li><p>Using this chart and 1, we could easily derive the Maxwell relations by <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell_relations">using the Schwarz’ theorem</a>.</p></li>
+<li>All the thermodynamic observables can be obstained by taking the derivatives of thermodynamic potentials.</li>
+<li>Using this chart and 1, we could easily derive the Maxwell relations by <a class="reference external" href="https://en.wikipedia.org/wiki/Maxwell_relations">using the Schwarz’ theorem</a>.</li>
 </ol>
 <div class="toggle admonition">
-<p class="admonition-title">The Sixth Potential?</p>
+<p class="first admonition-title">The Sixth Potential?</p>
 <p><strong>Question:</strong> It seems that we can construct the sixth potential mathematically. It should appear at the right bottom of <a class="reference internal" href="#thermodynamicpotentials"><span class="std std-numref">Fig. 5</span></a>. Why don’t people talk about it?</p>
 <p>Now we define this new potential and call it <span class="math notranslate nohighlight">\(f(T,X,\{\mu_i\})\)</span>. The value of this function is actually zero. So we can have the derivitive of this potential which is also zero. This is the Gibbs-Duhem equation.</p>
-<p>In the language of differential forms, we have <span class="math notranslate nohighlight">\(\mathrm d\mathrm d f = 0\)</span> where f is exact.</p>
+<p class="last">In the language of differential forms, we have <span class="math notranslate nohighlight">\(\mathrm d\mathrm d f = 0\)</span> where f is exact.</p>
 </div>
 <div class="admonition hint">
-<p class="admonition-title">Hint</p>
+<p class="first admonition-title">Hint</p>
 <p><strong>Question</strong>: Why is internal energy <span class="math notranslate nohighlight">\(U\)</span> a function of three extensive quantities, <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(N\)</span>?</p>
 <p>We can start with any of the thermodynamic potentials and perform Legendre transform. Then again, we will get all the potentials. Then again we just have to name them. This function <span class="math notranslate nohighlight">\(U(V,S,N)\)</span> is just being named as internal energy.</p>
-<p>Of course we mean something when we use the words ‘internal energy’.</p>
+<p class="last">Of course we mean something when we use the words ‘internal energy’.</p>
 </div>
 </div>
 <div class="section" id="differential-forms">
 <h2>Differential Forms<a class="headerlink" href="#differential-forms" title="Permalink to this headline">¶</a></h2>
 <p>It is quite confusing to have so many potentials. We do have a mathematical theory called differential forms that make it easier to understand them.</p>
 <div class="note admonition">
-<p class="admonition-title">What Are Forms</p>
+<p class="first admonition-title">What Are Forms</p>
 <p>In simple words, 1-forms are linear mapping of functions to numbers.</p>
 <p>For illustration purpose, we take the simple case that</p>
 <div class="math notranslate nohighlight">
@@ -348,46 +347,51 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 \[T(U,V)\mathbf{d}S = p \underset{^\sim}{dV} + \underset{^\sim}{dU},\]</div>
 <p>if we have <span class="math notranslate nohighlight">\(\mathbf{d}\underset{^\sim}{\omega} \wedge \underset{^\sim}{\omega}=0\)</span>, which is easily proven to be true here since we have repeated basis if we write it down (no n+1 forms on n-dimension manifold).</p>
 <p>Or if we are back to functions,</p>
-<div class="math notranslate nohighlight" id="equation-thermodynamics-not-the-second-law">
+<div class="last math notranslate nohighlight" id="equation-thermodynamics-not-the-second-law">
 <span class="eqno">(6)<a class="headerlink" href="#equation-thermodynamics-not-the-second-law" title="Permalink to this equation">¶</a></span>\[T(U,V)\mathbf{d}S = p \mathbf{d}V + \mathbf{d}U.\]</div>
 </div>
 <p>With the help of differential forms, we could derive the Maxwell identities more easily. We start with the exterior derivative of equation <a class="reference internal" href="#equation-thermodynamics-not-the-second-law">(6)</a>,</p>
 <div class="math notranslate nohighlight">
 \[\mathbf{d} T \wedge \mathbf{d} S = \mathbf{d} p \wedge \mathbf{d} V.\]</div>
-<p>Maxwell identities are obtained by plugging in <span class="math notranslate nohighlight">\(T(S,V)\)</span> and <span class="math notranslate nohighlight">\(p(S,V)\)</span> etc <a class="reference internal" href="#vshelest2017" id="id1"><span>[VShelest2017]</span></a>.</p>
+<p>Maxwell identities are obtained by plugging in <span class="math notranslate nohighlight">\(T(S,V)\)</span> and <span class="math notranslate nohighlight">\(p(S,V)\)</span> etc <a class="reference internal" href="#vshelest2017" id="id1">[VShelest2017]</a>.</p>
 <p>How could this formalism help us understand more about the laws of thermodynamics, apart from the beauty of mathematics? As an example, we examine the second law using differential forms. Suppose we have a composite system, we write down the 1-form about the heat production,</p>
 <div class="math notranslate nohighlight">
 \[\underset{^\sim}{\omega_n} = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + \mathbf{d} U_i \right) = \sum_{i=1}^N \left( p_i \mathbf{d} V_i + T \mathbf{d} S \right).\]</div>
-<p>We do not find global heat function <span class="math notranslate nohighlight">\(Q\)</span> and work function <span class="math notranslate nohighlight">\(W\)</span> on the whole manifold , i.e., we do not find a 0-form <span class="math notranslate nohighlight">\(Q\)</span> so that <span class="math notranslate nohighlight">\(\mathbf dQ\)</span> is <span class="math notranslate nohighlight">\(T\mathbf d S\)</span> <a class="reference internal" href="#bschutz" id="id2"><span>[BSchutz]</span></a>.</p>
+<p>We do not find global heat function <span class="math notranslate nohighlight">\(Q\)</span> and work function <span class="math notranslate nohighlight">\(W\)</span> on the whole manifold , i.e., we do not find a 0-form <span class="math notranslate nohighlight">\(Q\)</span> so that <span class="math notranslate nohighlight">\(\mathbf dQ\)</span> is <span class="math notranslate nohighlight">\(T\mathbf d S\)</span> <a class="reference internal" href="#bschutz" id="id2">[BSchutz]</a>.</p>
 <p>We then consider the geometrical meaning of 1-forms. On a surface that describes the values of a potential, 1-forms are like equipotential lines. We think of a surface that describes the values of internal energy, where we find equi-entropy lines and equi-volume lines. One of the aspects of the second law is thus to state that for a system without heat exchange, the dynamics of the system is restricted to be only in a certain part of the manifold, i.e., it has limited states compared to the whole possible states on the manifold. In the language of differential forms, the second law is all about the existance of entropy (Caratheodory’s theorem).</p>
 <div class="section" id="related-papers">
 <h3>Related Papers<a class="headerlink" href="#related-papers" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
-<li><p>Samuel L. Braunstein and Carlton M. Caves, <a class="reference external" href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.72.3439">Statistical distance and the geometry of quantum states</a>, Phys. Rev. Lett. 72, 3439.</p></li>
-<li><p>Hannay, J. H. (2006). <a class="reference external" href="http://doi:10.1119/1.2121755">Carnot and the fields formulation of elementary thermodynamics</a>. American Journal of Physics, 74(2), 134.</p></li>
+<li>Samuel L. Braunstein and Carlton M. Caves, <a class="reference external" href="http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.72.3439">Statistical distance and the geometry of quantum states</a>, Phys. Rev. Lett. 72, 3439.</li>
+<li>Hannay, J. H. (2006). <a class="reference external" href="http://doi:10.1119/1.2121755">Carnot and the fields formulation of elementary thermodynamics</a>. American Journal of Physics, 74(2), 134.</li>
 </ol>
-<dl class="citation">
-<dt class="label" id="bschutz"><span class="brackets"><a class="fn-backref" href="#id2">BSchutz</a></span></dt>
-<dd><p>Bernard Schutz, <em>Geometrical Methods in Mathematical Physics</em>.</p>
-</dd>
-<dt class="label" id="vshelest2017"><span class="brackets"><a class="fn-backref" href="#id1">VShelest2017</a></span></dt>
-<dd><ol class="upperalpha simple" start="22">
-<li><p>Shelest, V. (2017). <a class="reference external" href="https://doi.org/10.11648/j.jmpt.20170302.11">Thermodynamic Potentials Theory Aspects in External Differential Forms Calculus Representation</a>. Journal of Photonic Materials and Technology, 3(2), 6.</p></li>
+<table class="docutils citation" frame="void" id="bschutz" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[BSchutz]</a></td><td>Bernard Schutz, <em>Geometrical Methods in Mathematical Physics</em>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="vshelest2017" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[VShelest2017]</a></td><td><ol class="first last upperalpha simple" start="22">
+<li>Shelest, V. (2017). <a class="reference external" href="https://doi.org/10.11648/j.jmpt.20170302.11">Thermodynamic Potentials Theory Aspects in External Differential Forms Calculus Representation</a>. Journal of Photonic Materials and Technology, 3(2), 6.</li>
 </ol>
-</dd>
-</dl>
+</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="section" id="the-laws-of-four">
 <span id="laws-of-thermodynamics"></span><span id="index-1"></span><h2>The Laws of Four<a class="headerlink" href="#the-laws-of-four" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-laws admonition">
-<p class="admonition-title">Zeroth Law of Thermodynamics</p>
+<p class="first admonition-title">Zeroth Law of Thermodynamics</p>
 <p><strong>Zeroth</strong> Law: A first peek at temperature</p>
 <p>Two bodies, each in thermodynamic equilibrium with a third system, are in thermodynamic equilibirum with each other.</p>
-<p>This gives us the idea that there is a universal quantity which depends only on the state of the system no matter what they are made of.</p>
+<p class="last">This gives us the idea that there is a universal quantity which depends only on the state of the system no matter what they are made of.</p>
 </div>
 <div class="admonition-laws admonition">
-<p class="admonition-title">First Law of Thermodynamics</p>
+<p class="first admonition-title">First Law of Thermodynamics</p>
 <p><strong>First</strong> Law: Conservation of energy</p>
 <p>Energy can be transfered or transformed, but can not be destroyed.</p>
 <p>In math,</p>
@@ -397,10 +401,10 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <div class="math notranslate nohighlight">
 \[\underset{^\sim}{\omega} \equiv \mathbf d U  - \underset{^\sim}{W},\]</div>
 <p>where in gas thermodynamics <span class="math notranslate nohighlight">\(\underset{^\sim}{W}=-p\mathbf{d}V\)</span>.</p>
-<p>Using Legendre transformation, we know that this one form have many different formalism.</p>
+<p class="last">Using Legendre transformation, we know that this one form have many different formalism.</p>
 </div>
 <div class="admonition-laws admonition">
-<p class="admonition-title">Second Law of Thermodynamics</p>
+<p class="first admonition-title">Second Law of Thermodynamics</p>
 <p><strong>Second</strong> Law: Entropy change; Heat flow direction; Efficieny of heat engine</p>
 <p>There are three different versions of this second law. Instead of statements, I would like to use two inequalities to demonstrate this law.</p>
 <div class="math notranslate nohighlight">
@@ -415,16 +419,16 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <div class="math notranslate nohighlight">
 \[\left(\frac{\partial T}{\partial V}\right)_S \mathbf d V \wedge \mathbf d S = \left( \frac{\partial p}{\partial S}\right)_S \mathbf d S \wedge \mathbf d V\]</div>
 <p>Clean up this equation we will get one of the Maxwell relations. Use Legendre transformation we can find out all the Maxwell relations.</p>
-<span class="target" id="index-2"></span><div class="hint admonition" id="index-3">
-<p class="admonition-title">Second Definition of Temperature</p>
-<p>Second definition of temperature comes out of the second law. By thinking of two reversible Carnot heat engines, we find a funtion depends only a parameter which stands for the temperature like thing of the systems. This defines the <strong>thermodynamic temeprature</strong>.</p>
+<span class="target" id="index-2"></span><div class="hint last admonition" id="index-3">
+<p class="first admonition-title">Second Definition of Temperature</p>
+<p class="last">Second definition of temperature comes out of the second law. By thinking of two reversible Carnot heat engines, we find a funtion depends only a parameter which stands for the temperature like thing of the systems. This defines the <strong>thermodynamic temeprature</strong>.</p>
 </div>
 </div>
 <div class="admonition-laws admonition">
-<p class="admonition-title">Third Law of Thermodynamics</p>
+<p class="first admonition-title">Third Law of Thermodynamics</p>
 <p><strong>Third</strong> Law: Abosoulte zero; Not an extrapolation; Quantum view</p>
 <p>The difference in entropy between states connected by a reserible process goes to zero in the limit <span class="math notranslate nohighlight">\(T\rightarrow 0 K\)</span>.</p>
-<p>Due to the asymptotic behavior, one can not get to absolute zero in a finite process.</p>
+<p class="last">Due to the asymptotic behavior, one can not get to absolute zero in a finite process.</p>
 </div>
 </div>
 <div class="section" id="the-entropy">
@@ -443,10 +447,10 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 \[S(B) - S(A) = \int_A^B \frac{\mathrm d Q}{T},\]</div>
 <p>which we call entropy (difference). It is very important to realize that entropy is such a quantity that only dependents on the initial and final state and is independent of path. Many significant results can be derived using only the fact that entropy is a function of state.</p>
 <ol class="arabic simple">
-<li><p>Adiabatic processes on the plane of state never go across each other. Adiabatic lines are isoentropic lines since <span class="math notranslate nohighlight">\(\mathrm dS = \frac{\mathrm dQ}{T}\)</span> as <span class="math notranslate nohighlight">\(\mathrm dQ = 0\)</span> gives us <span class="math notranslate nohighlight">\(\mathrm dS = 0\)</span>. The idea is that at the crossing points of adiabatic lines we would get a branch for entropy which means two entropy for one state.</p></li>
-<li><p>No more than one crossing point of two isothermal lines is possible. To prove it we need to show that entropy is a monotomic equation of <span class="math notranslate nohighlight">\(V\)</span>.</p></li>
-<li><p>We can extract heat from one source that has the same temperature and transform into work if the isoentropic lines can cross each other which is not true as entropy is quantity of state. Construct a system with a isothermal line intersects two crossing isoentropic lines.</p></li>
-<li><p>We can extract heat from low temperature source to high temperature source without causing any other results if we don’t have entropy as a quantity of state.</p></li>
+<li>Adiabatic processes on the plane of state never go across each other. Adiabatic lines are isoentropic lines since <span class="math notranslate nohighlight">\(\mathrm dS = \frac{\mathrm dQ}{T}\)</span> as <span class="math notranslate nohighlight">\(\mathrm dQ = 0\)</span> gives us <span class="math notranslate nohighlight">\(\mathrm dS = 0\)</span>. The idea is that at the crossing points of adiabatic lines we would get a branch for entropy which means two entropy for one state.</li>
+<li>No more than one crossing point of two isothermal lines is possible. To prove it we need to show that entropy is a monotomic equation of <span class="math notranslate nohighlight">\(V\)</span>.</li>
+<li>We can extract heat from one source that has the same temperature and transform into work if the isoentropic lines can cross each other which is not true as entropy is quantity of state. Construct a system with a isothermal line intersects two crossing isoentropic lines.</li>
+<li>We can extract heat from low temperature source to high temperature source without causing any other results if we don’t have entropy as a quantity of state.</li>
 </ol>
 </div>
 <div class="section" id="irreversiblity">
@@ -460,14 +464,14 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
 <div class="section" id="gas">
 <h2>Gas<a class="headerlink" href="#gas" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Van der Waals gas <span class="math notranslate nohighlight">\(\left( p + \frac{a}{V^2} \right) (V - b) = R T\)</span>.</p></li>
+<li>Van der Waals gas <span class="math notranslate nohighlight">\(\left( p + \frac{a}{V^2} \right) (V - b) = R T\)</span>.</li>
 </ul>
 </div>
 <div class="section" id="refs-notes">
 <h2>Refs &amp; Notes<a class="headerlink" href="#refs-notes" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p><em>A Modern Course in Statistical Physics</em> by L. E. Reichl</p></li>
-<li><p><a class="reference external" href="https://web.stanford.edu/~peastman/statmech/phasetransitions.html">Phase Transitions &#64; Introduction to Statistical Mechanics</a></p></li>
+<li><em>A Modern Course in Statistical Physics</em> by L. E. Reichl</li>
+<li><a class="reference external" href="https://web.stanford.edu/~peastman/statmech/phasetransitions.html">Phase Transitions &#64; Introduction to Statistical Mechanics</a></li>
 </ol>
 </div>
 </div>
@@ -523,9 +527,6 @@ d\kappa_3(T,p,\{\mu_i\}) &amp; = dU(S,V,\{N_i\}) - d(-pV) - d(\mu_i N_i) = TdS +
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

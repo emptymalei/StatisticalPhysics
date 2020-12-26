@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Most Probable Distribution &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/equilibrium/most-probable-distribution.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Harmonic Oscillator and Density of States" href="ho-dos.html" />
@@ -274,44 +273,44 @@ TeX: {
   <div class="section" id="most-probable-distribution">
 <span id="id1"></span><h1>Most Probable Distribution<a class="headerlink" href="#most-probable-distribution" title="Permalink to this headline">¶</a></h1>
 <div class="note admonition" id="index-0">
-<p class="admonition-title">Applications of Most Probable Distribution</p>
-<p>Application of most probable distribution is discussed in <a class="reference internal" href="summary.html#summary-boltzmann-statistics"><span class="std std-ref">Boltzmann Statistics</span></a>.</p>
+<p class="first admonition-title">Applications of Most Probable Distribution</p>
+<p class="last">Application of most probable distribution is discussed in <a class="reference internal" href="summary.html#summary-boltzmann-statistics"><span class="std std-ref">Boltzmann Statistics</span></a>.</p>
 </div>
 <p>In Boltzman distribution, one of the key ingredients is to calculate the most probable distribution. First things first, the most probable distribution is indicating the <strong>distribution of energy</strong> (abbr. <strong>distribution</strong>) that is most probable. On the other hand, we also talked about the probability of the microstates. It is crucial to understand the difference between distribution and microstates.</p>
 <p>Microstates describes the configurations of the system which is the most detailed view of the system in statistical physics. A <strong>distribution</strong> of the system describes the number of particles on each energy levels of the particle.</p>
 <div class="toggle admonition">
-<p class="admonition-title">Why would we choose most probable distribution?</p>
+<p class="first admonition-title">Why would we choose most probable distribution?</p>
 <p>First of all, tt can be derived easily.</p>
 <p>The most probable distribution in Boltzman theory is extremely sharp for large number of particles.</p>
 <p>Assuming an actual <strong>distribution of the distribution</strong>, <span class="math notranslate nohighlight">\(\rho(\{\epsilon_i:a_i\})\)</span> where <span class="math notranslate nohighlight">\(\{\epsilon_i:a_i\}\)</span> is a <strong>distribution of energies</strong>. The observable <span class="math notranslate nohighlight">\(\langle\mathscr O\rangle\)</span> can be calculated using the following integral</p>
 <div class="math notranslate nohighlight">
 \[\langle\mathscr O\rangle = \int \mathscr \rho(\{\epsilon_i:a_i\}) O(\{\epsilon_i:a_i\}) d \{\epsilon_i:a_i\}.\]</div>
 <p>If <span class="math notranslate nohighlight">\(\rho(\{\epsilon_i:a_i\})\)</span> is a delta function distribution, only the most probable distribution, <span class="math notranslate nohighlight">\(\rho_{\text{most probable}}\)</span> is need to calculate observables.</p>
-<p>This can be demonstrated with numerical simulations.</p>
+<p class="last">This can be demonstrated with numerical simulations.</p>
 </div>
 <div class="note admonition">
-<p class="admonition-title">Other Possible Distributions</p>
+<p class="first admonition-title">Other Possible Distributions</p>
 <p>Statistically speaking, energy distribution is not the only available distribution we have. We look into the energy distribution because we would like to derive something easy to use for physics using the fundamental assumption of the probabilities of the microstates.</p>
 <p>There are other granular distributions. In Ising model,</p>
-<ol class="arabic simple">
-<li><p>distribution of the magnet directions, i.e., the number of magnets pointing upward and the number of magnets pointing downward, for each microstate,</p></li>
-<li><p>distribution of the total energies, i.e., the number of microstates with a specific energy.</p></li>
+<ol class="last arabic simple">
+<li>distribution of the magnet directions, i.e., the number of magnets pointing upward and the number of magnets pointing downward, for each microstate,</li>
+<li>distribution of the total energies, i.e., the number of microstates with a specific energy.</li>
 </ol>
 </div>
 <div class="section" id="equal-a-prior-probability">
 <span id="id2"></span><h2>Equal A Prior Probability<a class="headerlink" href="#equal-a-prior-probability" title="Permalink to this headline">¶</a></h2>
 <p id="index-1">As mentioned in <a class="reference internal" href="summary.html#what-is-statistical-mechanics"><span class="std std-ref">What is Statistical Mechanics</span></a>, a theory of the distribution of the microstates shall be useful for our predictions of the macroscopic observables.</p>
 <div class="warning admonition">
-<p class="admonition-title">Equal A Prior Probability</p>
+<p class="first admonition-title">Equal A Prior Probability</p>
 <p>For systems with enormous number of particles, we observe their macroscopic properties such as energies, pressure in experiments. But we have very limited information about the internal structure. The principle proposed by Boltzmann is that all these different possible configurations of microstructure are equally distributed, a.k.a., principle of equal <em>a prior</em> probabilities.</p>
-<p><strong>It should be noted that all the possible states to be used for the probabilities should produce the observables we already know.</strong> For example,</p>
+<p class="last"><strong>It should be noted that all the possible states to be used for the probabilities should produce the observables we already know.</strong> For example,</p>
 </div>
 </div>
 <div class="section" id="an-example-of-calculations">
 <h2>An Example of Calculations<a class="headerlink" href="#an-example-of-calculations" title="Permalink to this headline">¶</a></h2>
 <div class="warning admonition">
-<p class="admonition-title">This is Only an Example for the Calculation</p>
-<p>This example is not exactly an statistical physics problem since we do not have enough particles to make it statistically significant. For example, we use Sterling’s approximation but this doesn’t hold in this case.</p>
+<p class="first admonition-title">This is Only an Example for the Calculation</p>
+<p class="last">This example is not exactly an statistical physics problem since we do not have enough particles to make it statistically significant. For example, we use Sterling’s approximation but this doesn’t hold in this case.</p>
 </div>
 <p>The equal a-priori principle can be illustrated using a two-magnet system. For simplicity, we will ignore the interactions between the magnets. In the example, we use <span class="math notranslate nohighlight">\(a_i\)</span> to denote the number spins on the different states,</p>
 <div class="math notranslate nohighlight">
@@ -321,7 +320,7 @@ a_2 \qquad \text{Number of spins pointing upward}
 \end{cases}\end{split}\]</div>
 <div class="figure align-center" id="id3">
 <span id="equal-a-priori-probability"></span><img alt="../_images/equal-a-prior-probability.png" src="../_images/equal-a-prior-probability.png" />
-<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">A simple system of 2 magnets in an external magnetic field. The external magnetic field is pointing upwards. The energy of the system is labelled as <span class="math notranslate nohighlight">\(E\)</span> and the distributions are labelled on the right. <em>In principle, we could also have multiple possible distributions for the same energy of the whole system. In our case, it is simply a coincidence that we only have on distribution corresponding to each energy of the system.</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">A simple system of 2 magnets in an external magnetic field. The external magnetic field is pointing upwards. The energy of the system is labelled as <span class="math notranslate nohighlight">\(E\)</span> and the distributions are labelled on the right. <em>In principle, we could also have multiple possible distributions for the same energy of the whole system. In our case, it is simply a coincidence that we only have on distribution corresponding to each energy of the system.</em></span></p>
 </div>
 <p>With an external magnetic field, the energy of the system is determined by</p>
 <div class="math notranslate nohighlight">
@@ -354,9 +353,9 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
 <p>Suppose we have an equalibrium system with energy 0. In above example of the 2-magnet system, we only have one distribution and two microstates. We do not need more granular information about the microstates. As we include more magnets, each total energy corresponds to multiple energy distributions. For example, the number of microstates associated with a energy distribution in an Ising model could be huge.</p>
 <p>The number of microstates associated with each macrostates can be derived theoretically. Those results are presented in most textbooks. The derivation involves the following steps.</p>
 <ol class="arabic simple">
-<li><p>Find the total number of macrostates (single particle energy distributions), <span class="math notranslate nohighlight">\(\Omega\)</span>.</p></li>
-<li><p>Take the log of the distribution and find the maximum using Lagrange multipler method.</p></li>
-<li><p>The most probable distribution should follow the Boltzman distribution of exponential distribution based on energy levels.</p></li>
+<li>Find the total number of macrostates (single particle energy distributions), <span class="math notranslate nohighlight">\(\Omega\)</span>.</li>
+<li>Take the log of the distribution and find the maximum using Lagrange multipler method.</li>
+<li>The most probable distribution should follow the Boltzman distribution of exponential distribution based on energy levels.</li>
 </ol>
 </div>
 <div class="section" id="the-magic-of-equal-a-priori-probabilities">
@@ -364,15 +363,15 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
 <p>Though assuming least knowledge of the distribution of the microstates, we are still able to predict the observables. There exists several magical processes in this theory.</p>
 <p>The first magics is the so called more is different. Given thorough knowledge of a single particle, we still find phenomena unexplained by the single particle property.</p>
 <div class="warning admonition">
-<p class="admonition-title">How could Equal a Priori help?</p>
+<p class="first admonition-title">How could Equal a Priori help?</p>
 <p>Equal a priori indicates a homogeneous distribution. How would a homogeneous distribution of microstates be useful to form complex materials?</p>
 <p>The reason behind it is the energy degeneracies of the states. Some microstates lead to the same energy, as shown in <a class="reference internal" href="#equal-a-priori-probability"><span class="std std-numref">Fig. 9</span></a>. <strong>Even for the same microstates, the distribution of energies will be different with different interactions applied.</strong></p>
-<p>Different degeneracies lead to different observable systems.</p>
+<p class="last">Different degeneracies lead to different observable systems.</p>
 </div>
 <div class="warning admonition">
-<p class="admonition-title">Why is Temperature Relevant?</p>
+<p class="first admonition-title">Why is Temperature Relevant?</p>
 <p>In this formalism, we do not consider the temperature. In the deriveation, we used the Lagrange multiplier method which introduced an equivalent of the temperature.</p>
-<p>Temperature is a punishment of our energy distribution. It sets the level of base energy.</p>
+<p class="last">Temperature is a punishment of our energy distribution. It sets the level of base energy.</p>
 </div>
 </div>
 <div class="section" id="how-expensive-is-it-to-calculate-the-distributions">
@@ -383,18 +382,19 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
 <p>For example, we could calculate all the configurations and energies of the configurations using brute force.</p>
 <div class="figure align-center" id="id4">
 <img alt="../_images/distributions_on_different_grids.png" src="../_images/distributions_on_different_grids.png" />
-<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Microstate counts of energy distribution. The bars shows the number of microstates with the specific energy distributions, which indicates the probability of the corresponding distributions given the equal-a-priori principle. The line shows the corresponding energy of the distribution.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Microstate counts of energy distribution. The bars shows the number of microstates with the specific energy distributions, which indicates the probability of the corresponding distributions given the equal-a-priori principle. The line shows the corresponding energy of the distribution.</span></p>
 </div>
 <p>In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as <span class="math notranslate nohighlight">\(2^N\)</span> where <span class="math notranslate nohighlight">\(N\)</span> is the total number of particles, if we do not implement any parallel computations.</p>
 </div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<dl class="citation">
-<dt class="label" id="buck2015"><span class="brackets">Buck2015</span></dt>
-<dd><p><a class="reference external" href="http://arxiv.org/abs/1512.01368">Buck, B., &amp; Merchant, A. C. (2015). Probabilistic Foundations of Statistical Mechanics: A Bayesian Approach.</a></p>
-</dd>
-</dl>
+<table class="docutils citation" frame="void" id="buck2015" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Buck2015]</td><td><a class="reference external" href="http://arxiv.org/abs/1512.01368">Buck, B., &amp; Merchant, A. C. (2015). Probabilistic Foundations of Statistical Mechanics: A Bayesian Approach.</a></td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -449,9 +449,6 @@ a_2  = 0, &amp; \qquad \text{particles at single particle energy state } \vareps
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

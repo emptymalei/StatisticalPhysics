@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Master Equation &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/nonequilibrium/master-eqn.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Solving Master Equations" href="solving-master-eqn.html" />
@@ -278,10 +277,10 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\frac{dP_\xi}{d t} = \sum_{\mu} \left( T_{\xi\mu} P_\mu - T_{\mu\xi} P_\xi \right).\]</div>
 <div class="warning admonition">
-<p class="admonition-title">What’s the problem of this master equation?</p>
-<ol class="arabic simple">
-<li><p>It’s linear and first order. High order effects are ignored.</p></li>
-<li><p>It comes from nowhere. To prove and interprate the transfer rates is required.</p></li>
+<p class="first admonition-title">What’s the problem of this master equation?</p>
+<ol class="last arabic simple">
+<li>It’s linear and first order. High order effects are ignored.</li>
+<li>It comes from nowhere. To prove and interprate the transfer rates is required.</li>
 </ol>
 </div>
 </div>
@@ -289,30 +288,30 @@ TeX: {
 <span id="index-1"></span><h2>“Derive” Master Equation<a class="headerlink" href="#derive-master-equation" title="Permalink to this headline">¶</a></h2>
 <p>Suppose the states of a system are denoted as <span class="math notranslate nohighlight">\(\xi\)</span>, and the probability of the states at time <span class="math notranslate nohighlight">\(t\)</span> are denoted as <span class="math notranslate nohighlight">\(P_\xi(t)\)</span>. We assume the probability of the states at time <span class="math notranslate nohighlight">\(t\)</span> only depend on the probability of the states a moment ago,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn">
-<span class="eqno">(15)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn" title="Permalink to this equation">¶</a></span>\[P_\xi(t) = \sum_\mu Q_{\xi\mu} P_\mu(t-\tau) .\]</div>
+<span class="eqno">(16)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn" title="Permalink to this equation">¶</a></span>\[P_\xi(t) = \sum_\mu Q_{\xi\mu} P_\mu(t-\tau) .\]</div>
 <p>This is the <span class="highlit">Chapman-Kolmogorov equation</span>. The equation describes a randomwalk process, a.k.a. Markov process.</p>
 <div class="note admonition">
-<p class="admonition-title">Markov Process and State Machine</p>
+<p class="first admonition-title">Markov Process and State Machine</p>
 <p>The assumption that the current states doesn’t depend on the full history indicates that the system follows a fixed state diagram. In other words, we are using a state machine to approximate a statistical system, except that our physical system has an enormous amount of possible states.</p>
-<p>It may sound weird that we only need the most recent history. However, a Markov process allows us to reach an desired equilibrium quickly.</p>
+<p class="last">It may sound weird that we only need the most recent history. However, a Markov process allows us to reach an desired equilibrium quickly.</p>
 </div>
-<p>The formalism of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn">(15)</a> reminds us of the time derivative,</p>
+<p>The formalism of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn">(16)</a> reminds us of the time derivative,</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_\xi(t) = \lim \frac{P_\xi(t) - P_\xi(t-\tau)}{\tau} .\]</div>
 <p>Notice that</p>
 <div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn-normalization-relation">
-<span class="eqno">(16)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation" title="Permalink to this equation">¶</a></span>\[\sum_\mu Q_{\mu\xi} = 1.\]</div>
+<span class="eqno">(17)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation" title="Permalink to this equation">¶</a></span>\[\sum_\mu Q_{\mu\xi} = 1.\]</div>
 <div class="note admonition">
-<p class="admonition-title">Why the normalization?</p>
-<p>It is required that the probability of all the states at time <span class="math notranslate nohighlight">\(t\)</span> to be 1, <span class="math notranslate nohighlight">\(\sum_\xi P_\xi(t) = 1\)</span>.</p>
+<p class="first admonition-title">Why the normalization?</p>
+<p class="last">It is required that the probability of all the states at time <span class="math notranslate nohighlight">\(t\)</span> to be 1, <span class="math notranslate nohighlight">\(\sum_\xi P_\xi(t) = 1\)</span>.</p>
 </div>
 <p>Substract from the Chapman-Kolmogorov equation a term <span class="math notranslate nohighlight">\(P_\xi(t-\tau)\)</span>, we get</p>
 <div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">
-<span class="eqno">(17)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel" title="Permalink to this equation">¶</a></span>\[P_\xi(t) - P_\xi(t-\tau) = \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
-<p>in which we have applied a variation of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation">(16)</a>, i.e.,</p>
+<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel" title="Permalink to this equation">¶</a></span>\[P_\xi(t) - P_\xi(t-\tau) = \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
+<p>in which we have applied a variation of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation">(17)</a>, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[P_\xi(t-\tau) = \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
-<p>We divide equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">(17)</a> by <span class="math notranslate nohighlight">\(\tau\)</span> on both sides and the limit of <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span> is applied,</p>
+<p>We divide equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">(18)</a> by <span class="math notranslate nohighlight">\(\tau\)</span> on both sides and the limit of <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span> is applied,</p>
 <div class="math notranslate nohighlight">
 \[\lim_{\tau\rightarrow} \frac{P_\xi(t) - P_\xi(t-\tau)}{\tau} = \lim_{\tau\rightarrow 0} \frac{ \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) }{\tau}\]</div>
 <p>At first glance, the right hand side of the above equation goes to infinity. However, <strong>we do not expect the time derivative of a probability distribution to be infinite.</strong> That being said, there should be a specific relation between the two terms in the denominator. If we assume that</p>
@@ -320,15 +319,15 @@ TeX: {
 \[Q_{ux} = R_{ux}\tau + O(\tau^n)\]</div>
 <p>with <span class="math notranslate nohighlight">\(n &gt; 1\)</span>, the infinity is removed. This is a self-consistency condition so that our initial assumption that the system doesn’t depend the full history holds even for our infinitesimal relations.</p>
 <div class="warning admonition">
-<p class="admonition-title">It is werid.</p>
-<p>By enforcing a system to obey <span class="highlit">Chapman-Kolmogorov equation</span>, we admit that the system loses information before a short time interval <span class="math notranslate nohighlight">\(\tau\)</span>. Now we take the limit <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span>, which means the system has no memory of the past at all! How is this possible?</p>
+<p class="first admonition-title">It is werid.</p>
+<p class="last">By enforcing a system to obey <span class="highlit">Chapman-Kolmogorov equation</span>, we admit that the system loses information before a short time interval <span class="math notranslate nohighlight">\(\tau\)</span>. Now we take the limit <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span>, which means the system has no memory of the past at all! How is this possible?</p>
 </div>
 <p>We get the following differential form</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_\xi(t) = \sum_\mu \left( R_{\xi\mu}P_\mu(t) - R_{\mu\xi}P_\xi(t) \right)  .\]</div>
 <div class="note admonition">
-<p class="admonition-title">Derivation of Master Equation “Rigorously”</p>
-<p>Derivation of the master equation can be more rigorous. <a class="footnote-reference brackets" href="#id7" id="id2">1</a> This note references Reichl’s chapter 6 B and Irwin Oppenheim and Kurt E. Shuler’s paper. <a class="footnote-reference brackets" href="#id8" id="id3">2</a></p>
+<p class="first admonition-title">Derivation of Master Equation “Rigorously”</p>
+<p>Derivation of the master equation can be more rigorous. <a class="footnote-reference" href="#id7" id="id2">[1]</a> This note references Reichl’s chapter 6 B and Irwin Oppenheim and Kurt E. Shuler’s paper. <a class="footnote-reference" href="#id8" id="id3">[2]</a></p>
 <p>First of all we need the following conditional probability,</p>
 <div class="math notranslate nohighlight">
 \[P_1(y_1,t_1) P_{1|1}(y_1,t_1|y_2,t_2) = P_2(y_1,t_1;y_2,t_2)\]</div>
@@ -351,19 +350,19 @@ TeX: {
 <p>Next we can construct time derivatives of these quantities.</p>
 <div class="math notranslate nohighlight">
 \[\partial_{t_1} P_1(y_2,t_1) = \int \lim_{\tau\rightarrow 0} \frac{\int P_1(y_1,t_1) P _ {1|1}(y_1,t_1|y_2,t_1+\tau) - P_1(y_1,t_1) P _ {1|1}(y_1,t_1|y_2,t_1) }{\tau} dy_1\]</div>
-<p>We expand the right hand side using Taylor series, the details of which can be found in Reichl’s book <a class="footnote-reference brackets" href="#id7" id="id4">1</a> , then we get a time derivative,</p>
+<p>We expand the right hand side using Taylor series, the details of which can be found in Reichl’s book <a class="footnote-reference" href="#id7" id="id4">[1]</a> , then we get a time derivative,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-equation-rigorous">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-master-equation-rigorous" title="Permalink to this equation">¶</a></span>\[\partial_{t} P_1(y_2,t) = \int dy_1 \left( W(y_1,y_2)P_1(y_1,t) - W(y_2,y_1)P_1(y_2,t) \right) .\]</div>
-<p>Equation <a class="reference internal" href="#equation-eqn-master-equation-rigorous">(18)</a> is the <span class="highlit">master equation</span>.</p>
-<p>The reason that <span class="math notranslate nohighlight">\(W(y_1,y_2)\)</span> is a transition rate is that it represents “the probability per unit time that the system changes from state <span class="math notranslate nohighlight">\(y_1\)</span> to <span class="math notranslate nohighlight">\(y_2\)</span> in the time interval <span class="math notranslate nohighlight">\(t_1\rightarrow t_1 +\tau\)</span> “. <a class="footnote-reference brackets" href="#id7" id="id5">1</a></p>
+<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-master-equation-rigorous" title="Permalink to this equation">¶</a></span>\[\partial_{t} P_1(y_2,t) = \int dy_1 \left( W(y_1,y_2)P_1(y_1,t) - W(y_2,y_1)P_1(y_2,t) \right) .\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-master-equation-rigorous">(19)</a> is the <span class="highlit">master equation</span>.</p>
+<p class="last">The reason that <span class="math notranslate nohighlight">\(W(y_1,y_2)\)</span> is a transition rate is that it represents “the probability per unit time that the system changes from state <span class="math notranslate nohighlight">\(y_1\)</span> to <span class="math notranslate nohighlight">\(y_2\)</span> in the time interval <span class="math notranslate nohighlight">\(t_1\rightarrow t_1 +\tau\)</span> “. <a class="footnote-reference" href="#id7" id="id5">[1]</a></p>
 </div>
 <div class="important admonition">
-<p class="admonition-title">Is master equation the same as a Markov process?</p>
+<p class="first admonition-title">Is master equation the same as a Markov process?</p>
 <p>In this derivation, we have used the <span class="highlit">Markov process</span>. However, a master equation is not equivalent to a <span class="highlit">Markov process</span>.</p>
-<p>Read Irwin Oppenheim and Kurt E. Shuler’s paper for more details. <a class="footnote-reference brackets" href="#id8" id="id6">2</a></p>
+<p class="last">Read Irwin Oppenheim and Kurt E. Shuler’s paper for more details. <a class="footnote-reference" href="#id8" id="id6">[2]</a></p>
 </div>
 <div class="note admonition">
-<p class="admonition-title">Patterns in the Probabilities</p>
+<p class="first admonition-title">Patterns in the Probabilities</p>
 <p>We can find out the <span class="highlit">Chapman-Kolmogorov equation</span></p>
 <div class="math notranslate nohighlight">
 \[P_{1|1}(y_1,t_1|y_3,t_3) = \int P _{1|1}(y_1,t_1|y_2,t_2)P_{1|1}(y_2,t_2|y_3,t_3)dy_2\]</div>
@@ -372,7 +371,7 @@ TeX: {
 \[P_2(y_1,t_1;y_3,t_3) = \int P_3(y_1,t_1;y_2,t_2;y_3,t_3) dy_2\]</div>
 <div class="math notranslate nohighlight">
 \[P_3(y_1,t_1;y_2,t_2;y_3,t_3) = P_1(y_1,t_1) P _{1|1}(y_1,t_1|y_2,t_2) P _{1|1}(y_2,t_2|y_3,t_3)\]</div>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[\frac{P_2(y_1,t_1;y_3,t_3)}{P_1(y_1,t_1)} = P_{1|1}(y_1,t_1|y_3,t_3)\]</div>
 </div>
 </div>
@@ -406,7 +405,7 @@ TeX: {
 \[P_+(t) = P_+(0), \qquad P_-(t) = P_-(0)e^{-2Rt} .\]</div>
 <p>This result proves that whatever states was the system in initially, it will get to equilibrium since the term <span class="math notranslate nohighlight">\(e^{-2R t}\)</span> is a decaying process. This is a relaxation process.</p>
 <div class="hint admonition">
-<p class="admonition-title">Von Neumann equation</p>
+<p class="first admonition-title">Von Neumann equation</p>
 <p>In QM, Von Neumann equations is</p>
 <div class="math notranslate nohighlight">
 \[\hat \rho = \hat\rho(0) e^{-i \hat H t/\hbar},\]</div>
@@ -416,7 +415,7 @@ TeX: {
 <p>where A is a matrix</p>
 <div class="math notranslate nohighlight">
 \[A_{\xi\mu} = -R_{\xi\mu}, \qquad A_{\xi\xi} = \sum_\mu R_{\mu\xi} .\]</div>
-<p>The difference here is the <span class="math notranslate nohighlight">\(i\)</span> in the exponential. With <span class="math notranslate nohighlight">\(i\)</span>, we get rotation or oscillation, while without <span class="math notranslate nohighlight">\(i\)</span>, the process is a decay process.</p>
+<p class="last">The difference here is the <span class="math notranslate nohighlight">\(i\)</span> in the exponential. With <span class="math notranslate nohighlight">\(i\)</span>, we get rotation or oscillation, while without <span class="math notranslate nohighlight">\(i\)</span>, the process is a decay process.</p>
 </div>
 </div>
 <div class="section" id="non-degenerate-two-state-system">
@@ -437,14 +436,18 @@ TeX: {
 </div>
 <div class="section" id="footnotes">
 <h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
-<dl class="footnote brackets">
-<dt class="label" id="id7"><span class="brackets">1</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>,<a href="#id5">3</a>)</span></dt>
-<dd><p>Linda E. Reichl. “A Modern Course in Statistical Physics”.</p>
-</dd>
-<dt class="label" id="id8"><span class="brackets">2</span><span class="fn-backref">(<a href="#id3">1</a>,<a href="#id6">2</a>)</span></dt>
-<dd><p>Irwin Oppenheim and Kurt E. Shuler. “Master Equations and Markov Processes”. <a class="reference external" href="http://journals.aps.org/pr/abstract/10.1103/PhysRev.138.B1007">Phys. Rev. 138, B1007 (1965)</a> .</p>
-</dd>
-</dl>
+<table class="docutils footnote" frame="void" id="id7" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id4">2</a>, <a class="fn-backref" href="#id5">3</a>)</em> Linda E. Reichl. “A Modern Course in Statistical Physics”.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id8" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[2]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id6">2</a>)</em> Irwin Oppenheim and Kurt E. Shuler. “Master Equations and Markov Processes”. <a class="reference external" href="http://journals.aps.org/pr/abstract/10.1103/PhysRev.138.B1007">Phys. Rev. 138, B1007 (1965)</a> .</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -499,9 +502,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

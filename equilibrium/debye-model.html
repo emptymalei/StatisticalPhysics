@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Debye Model &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/equilibrium/debye-model.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Phase Transitions" href="phase-transitions.html" />
@@ -267,22 +266,22 @@ TeX: {
   <div class="section" id="debye-model">
 <h1>Debye Model<a class="headerlink" href="#debye-model" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>I need to rewrite this section.</p>
+<p class="first admonition-title">Warning</p>
+<p class="last">I need to rewrite this section.</p>
 </div>
 <div class="section" id="interacting-particles">
 <h2>Interacting Particles<a class="headerlink" href="#interacting-particles" title="Permalink to this headline">¶</a></h2>
 <p>To work out the statistical mechanics of a system, we need the probability distribution of the states or the density of states (DoS). For systems with non-interacting particles, the distribution is determined by the motion of the free particles. For systems with interactions between the composite particles, the dynamics of the particles are coupled.</p>
-<p>In this section, we will discuss a 1D system of coupled harmonic oscillators of the same mass <span class="math notranslate nohighlight">\(m\)</span>. In <a class="reference internal" href="#coupled-harmonic-oscillators-demo"><span class="std std-numref">Fig. 13</span></a>, two coupled oscillators are shown. The displacement of the <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>In this section, we will discuss a 1D system of coupled harmonic oscillators of the same mass <span class="math notranslate nohighlight">\(m\)</span>. In <a class="reference internal" href="#coupled-harmonic-oscillators-demo"><span class="std std-numref">Fig. 13</span></a>, two coupled oscillators are shown. The displacement of the <span class="math notranslate nohighlight">\(i`th particle is denoted by :math:`x_i\)</span>.</p>
 <div class="figure align-center" id="id2">
 <span id="coupled-harmonic-oscillators-demo"></span><img alt="../_images/Coupled_Harmonic_Oscillator.png" src="../_images/Coupled_Harmonic_Oscillator.png" />
-<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Coupled harmonic oscillators with two particles.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Coupled harmonic oscillators with two particles.</span></p>
 </div>
 <p>In general, the equation of motion of a N-particle system is determined by</p>
 <div class="math notranslate nohighlight" id="equation-eq-2-coupled-harmonic-oscillators-eom">
-<span class="eqno">(13)<a class="headerlink" href="#equation-eq-2-coupled-harmonic-oscillators-eom" title="Permalink to this equation">¶</a></span>\[m \ddot x_i + k( x_i -x_{i-1} + x_i - x_{i+1}) = 0\]</div>
+<span class="eqno">(14)<a class="headerlink" href="#equation-eq-2-coupled-harmonic-oscillators-eom" title="Permalink to this equation">¶</a></span>\[m \ddot x_i + k( x_i -x_{i-1} + x_i - x_{i+1}) = 0\]</div>
 <p>with i goes from <span class="math notranslate nohighlight">\(2\)</span> to <span class="math notranslate nohighlight">\(N-1\)</span>, and <span class="math notranslate nohighlight">\(k\)</span> is the spring constant of the springs. We will have <span class="math notranslate nohighlight">\(N-2\)</span> equations together with two boundary conditions for the first and the last particle.</p>
-<p>This system of second order differential equations is easily solved using Fourier transform. Here we apply the transform <span class="math notranslate nohighlight">\(x_q = \sum x_m e^{i m q}\)</span> to <a class="reference internal" href="#equation-eq-2-coupled-harmonic-oscillators-eom">(13)</a>. This Fourier transform will decouple the equations,</p>
+<p>This system of second order differential equations is easily solved using Fourier transform. Here we apply the transform <span class="math notranslate nohighlight">\(x_q = \sum x_m e^{i m q}\)</span> to <a class="reference internal" href="#equation-eq-2-coupled-harmonic-oscillators-eom">(14)</a>. This Fourier transform will decouple the equations,</p>
 <div class="math notranslate nohighlight">
 \[m \ddot x_q + k' x_q =0\]</div>
 <p>The solutions to <span class="math notranslate nohighlight">\(x_q\)</span> are the normal modes with frequencies <span class="math notranslate nohighlight">\(\omega_q ~ \sin|q/2|\)</span>. Thus the Debye theory is a theory of many Einstein solutions, i.e.,</p>
@@ -291,20 +290,20 @@ TeX: {
 <p>In Einstein’s model, every particle is identical thus has the same oscillation frequency. However, the Einstein theory is wrong due to the extremely slow rising of the Boltzman factor as shown in <a class="reference internal" href="#boltzman-factor-and-low-temperature"><span class="std std-numref">Fig. 14</span></a>.</p>
 <div class="figure align-center" id="id3">
 <span id="boltzman-factor-and-low-temperature"></span><img alt="../_images/boltzfactor.png" src="../_images/boltzfactor.png" />
-<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The Boltzman factor and its behavior at low temperature. It has a ‘sleeping slope’ at very low temperature.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">The Boltzman factor and its behavior at low temperature. It has a ‘sleeping slope’ at very low temperature.</span></p>
 </div>
 <div class="note admonition">
-<p class="admonition-title">Calculate the Heat Capacity</p>
+<p class="first admonition-title">Calculate the Heat Capacity</p>
 <p>To calculate the heat capacity in Debye’s theory, we require the following steps.</p>
-<ol class="arabic simple">
-<li><p>Calculate the energy spectrum of <span class="math notranslate nohighlight">\(N\)</span> coupled particles system using Fourier transform;</p></li>
-<li><p>Evaluate the heat capacity integral.</p></li>
+<ol class="last arabic simple">
+<li>Calculate the energy spectrum of <span class="math notranslate nohighlight">\(N\)</span> coupled particles system using Fourier transform;</li>
+<li>Evaluate the heat capacity integral.</li>
 </ol>
 </div>
 <p>The energy spectrum indicates the dispersion relations. The dispersion relations in Debye’s model is very different from that of Einstein’s model.</p>
 <div class="figure align-center" id="id4">
 <img alt="../_images/DebyeModelkSpace.png" src="../_images/DebyeModelkSpace.png" />
-<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Dispersion relations. (Image taken from <a class="reference external" href="http://griffin.ucsc.edu/teaching/08Q1-155/download/Lecture%2006%20-%20Phonon%20Dynamics.pdf">here</a> .)</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">Dispersion relations. (Image taken from <a class="reference external" href="http://griffin.ucsc.edu/teaching/08Q1-155/download/Lecture%2006%20-%20Phonon%20Dynamics.pdf">here</a> .)</span></p>
 </div>
 <p>We obtain a simple solution if we apply a linear approximation of the dispersion relation <span class="math notranslate nohighlight">\(w= c k\)</span>.</p>
 <div class="figure align-center">
@@ -322,17 +321,17 @@ TeX: {
 \[C = 9 N k_B \left(\frac{T}{\Theta_D}\right)^3 \int _ 0 ^{x(\omega_m)} \frac{x^4 e^x}{(e^x - 1)^2} d x\]</div>
 <p>where <span class="math notranslate nohighlight">\(x(\omega_m) = \Theta_D/ T\)</span> and <span class="math notranslate nohighlight">\(\Theta_D = \hbar \omega_D/k_B\)</span>.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>What’s amazing about Debye’s theory is that the low temperature behavior is independent of cut off frequency. At low temperature, <span class="math notranslate nohighlight">\(x(\omega_D)\)</span> becomes infinite and it becomes an integration from 0 to infinity thus we do not need to know the cut off temperature to find out the low temperature result and it agrees with experiments very well.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">What’s amazing about Debye’s theory is that the low temperature behavior is independent of cut off frequency. At low temperature, <span class="math notranslate nohighlight">\(x(\omega_D)\)</span> becomes infinite and it becomes an integration from 0 to infinity thus we do not need to know the cut off temperature to find out the low temperature result and it agrees with experiments very well.</p>
 </div>
 <div class="admonition important">
-<p class="admonition-title">Important</p>
+<p class="first admonition-title">Important</p>
 <p>We start for the Einstein’s theory and reaches a ‘non-sleeping’ model. What happened when we integrated over all DoS in Debye model?</p>
-<p>This is because our density of states <span class="math notranslate nohighlight">\(g(\omega)\propto \omega^2\)</span> at low temperature tells us that we would have more states at a certain energy as <span class="math notranslate nohighlight">\(\omega\)</span> increases. The system needs more energy to raise the temperature, i.e., the heat capacity line becomes steeper.</p>
+<p class="last">This is because our density of states <span class="math notranslate nohighlight">\(g(\omega)\propto \omega^2\)</span> at low temperature tells us that we would have more states at a certain energy as <span class="math notranslate nohighlight">\(\omega\)</span> increases. The system needs more energy to raise the temperature, i.e., the heat capacity line becomes steeper.</p>
 </div>
 <div class="important admonition">
-<p class="admonition-title">Why is the number of modes important in Debye model?</p>
-<p>The degree of freedom is finite in these systems. If we don’t cut off the frequency, we would have infinite degree of freedom because we have made an approximation that dispersion relation is a straight line <span class="math notranslate nohighlight">\(\omega = c k\)</span> all the time. This would certainly lead to an infinite heat capacity and infinite total energy.</p>
+<p class="first admonition-title">Why is the number of modes important in Debye model?</p>
+<p class="last">The degree of freedom is finite in these systems. If we don’t cut off the frequency, we would have infinite degree of freedom because we have made an approximation that dispersion relation is a straight line <span class="math notranslate nohighlight">\(\omega = c k\)</span> all the time. This would certainly lead to an infinite heat capacity and infinite total energy.</p>
 </div>
 </div>
 <div class="section" id="beyond-debye-model">
@@ -342,8 +341,8 @@ TeX: {
 \[H = \sum_i \mu \sigma B - \sum _ {i,j} J^{ij}\sigma_i \sigma _ j\]</div>
 <p>where <span class="math notranslate nohighlight">\(J^{ij}\)</span> is the coupling constants between the particles. With <span class="math notranslate nohighlight">\(J^{ij} = J (  \delta _ i \delta _ {j-1} +\delta _ i \delta _{j+1} )\)</span>, we reach our simple model.</p>
 <div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>The reason that we can decouple the simple coupled harmonic oscillators system is that the coupling constant are the same for all springs and each harmonic oscillator is identical. The system becomes a homogeneous chain such that the normal modes are sin or cos waves depending on the boundary condition. As the chain becomes inhomogeneous, we can not use simple plain waves as normal modes any more.</p>
+<p class="first admonition-title">Hint</p>
+<p class="last">The reason that we can decouple the simple coupled harmonic oscillators system is that the coupling constant are the same for all springs and each harmonic oscillator is identical. The system becomes a homogeneous chain such that the normal modes are sin or cos waves depending on the boundary condition. As the chain becomes inhomogeneous, we can not use simple plain waves as normal modes any more.</p>
 </div>
 </div>
 </div>
@@ -399,9 +398,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Examples of Master Equations &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/nonequilibrium/master-eqn-examples.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Smoluchowski Equation" href="smoluchowski-eqn.html" />
@@ -281,15 +280,15 @@ TeX: {
 \[F(x) = \sum_{n=0}^{n=\infty} a_n \cos(\omega_n t).\]</div>
 <p>Recall that the solution to the master equation of a finite chain of particles with nearest-neighbour interactions is</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-eqn-sol-1d-finite-chain">
-<span class="eqno">(24)<a class="headerlink" href="#equation-eqn-master-eqn-sol-1d-finite-chain" title="Permalink to this equation">¶</a></span>\[P_m(t)  = \frac{1}{N} \sum_ {k} P^k(0) e^{-4F \sin^2\frac{k}{2} t}  e^{-i km},\]</div>
+<span class="eqno">(25)<a class="headerlink" href="#equation-eqn-master-eqn-sol-1d-finite-chain" title="Permalink to this equation">¶</a></span>\[P_m(t)  = \frac{1}{N} \sum_ {k} P^k(0) e^{-4F \sin^2\frac{k}{2} t}  e^{-i km},\]</div>
 <p>with</p>
 <div class="math notranslate nohighlight">
 \[k = \frac{2\pi}{N} n, \qquad n=0,1,2, \cdots, N-1 .\]</div>
 <p>Note that the expansion is not going to infinity. On such a finite component series, recurrence of states will happen. Though the time needed for recurrence is long when the number of particles gets large.</p>
 <p>The <span class="highlit">second moment</span>, <span class="math notranslate nohighlight">\(\langle m^2 \rangle\)</span>, tells us the expected location of the particle.</p>
 <div class="toggle admonition">
-<p class="admonition-title">Why not the first moment?</p>
-<p>The first moment is 0 for a symmetric system.</p>
+<p class="first admonition-title">Why not the first moment?</p>
+<p class="last">The first moment is 0 for a symmetric system.</p>
 </div>
 <p>To calculate the second moment, take the second derivative of <span class="math notranslate nohighlight">\(P^k(t)\)</span>,</p>
 <div class="math notranslate nohighlight">
@@ -300,9 +299,9 @@ TeX: {
 \[\langle m^2 \rangle := \sum_m m^2 P_m =\frac{\partial^2}{\partial k^2} P^0 .\]</div>
 <p>There is no need to calculate <span class="math notranslate nohighlight">\(P_m(t)\)</span> anymore.</p>
 <div class="toggle admonition">
-<p class="admonition-title">Generalization</p>
+<p class="first admonition-title">Generalization</p>
 <p>Regardless of the details of the interactions, we always have the form</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[P^k(t) = P^k(0) e^{-\cdots}.\]</div>
 </div>
 </div>
@@ -312,10 +311,10 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t} P = D \frac{\partial^2 P}{\partial x^2}.\]</div>
 <div class="hint admonition">
-<p class="admonition-title">Propagators</p>
-<ol class="arabic simple">
-<li><p>Propagators of this equation is gaussian like.</p></li>
-<li><p>Propagators of discrete master equation is a decay function, i.e., <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span>.</p></li>
+<p class="first admonition-title">Propagators</p>
+<ol class="last arabic simple">
+<li>Propagators of this equation is gaussian like.</li>
+<li>Propagators of discrete master equation is a decay function, i.e., <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span>.</li>
 </ol>
 </div>
 <p>It is know that the second moment of the diffusion equaiton is the Einstein’s brownian motion result</p>
@@ -332,12 +331,12 @@ TeX: {
 <div class="section" id="continuous-grid-or-energy-levels">
 <h3>Continuous Grid or Energy Levels<a class="headerlink" href="#continuous-grid-or-energy-levels" title="Permalink to this headline">¶</a></h3>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>Different energy states in a system follows the ratio</p>
 <div class="math notranslate nohighlight">
 \[\frac{f_1}{f_1'} = e^{-\frac{\epsilon_1 - \epsilon_1'}{kT}} .\]</div>
 <p>with <span class="math notranslate nohighlight">\(f_1\neq f_1'\)</span>. For harmonic oscillators,</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[\frac{f_1}{f_1'} = e^{-\frac{\hbar \omega}{kT}} .\]</div>
 </div>
 <p>In such a system</p>
@@ -345,12 +344,12 @@ TeX: {
 \[\begin{split}\frac{d}{dt}P_m =&amp; k \left[(m+1)(P_{m+1} - e^{-\beta \hbar \omega} P_m)\right. \\
 &amp; \left. +m(e^{-\beta \hbar\omega} P_{m-1} - P_m)  \right] .\end{split}\]</div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>The transition</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{d}{dt}P_m =&amp; (R_{m,m+1}P_{m+1} -  R_{m,m-1}P_{m-1}) \\
 &amp; - (R_{m+1,m}P_m + R_{m-1,m}P_m)\end{split}\]</div>
-<p>is called the <span class="highlit">Landau-Teller master equation</span>. It works on non-translational-invariant systems.</p>
+<p class="last">is called the <span class="highlit">Landau-Teller master equation</span>. It works on non-translational-invariant systems.</p>
 </div>
 </div>
 </div>
@@ -364,11 +363,11 @@ TeX: {
 \[P_m(t) = \sum_n \Pi_{m-n}(t) P_n(0)\]</div>
 <p>in which <span class="math notranslate nohighlight">\(\Pi_{m-n}(t) = e^{-2Ft}I_m(2Ft)\)</span> is the propagator.</p>
 <div class="toggle admonition">
-<p class="admonition-title">Non-translational Invariant</p>
+<p class="first admonition-title">Non-translational Invariant</p>
 <p>If the sytem doesn’t have translational invariance, the solution</p>
 <div class="math notranslate nohighlight">
 \[P_m(t) = \sum_n \Pi_{m,n}(t) P_m(0)\]</div>
-<p>has a propagator of <span class="math notranslate nohighlight">\(\Pi_{m,n}(t)\)</span> which depends on both m and n.</p>
+<p class="last">has a propagator of <span class="math notranslate nohighlight">\(\Pi_{m,n}(t)\)</span> which depends on both m and n.</p>
 </div>
 </div>
 <div class="section" id="id1">
@@ -390,18 +389,18 @@ TeX: {
 <div class="section" id="propagator">
 <span id="index-1"></span><h2>Propagator<a class="headerlink" href="#propagator" title="Permalink to this headline">¶</a></h2>
 <p>To solve the master equation, the propagator <span class="math notranslate nohighlight">\(\Pi(x-x',t)\)</span> is very helpful. For simple discrete master equations, the propagator becomes <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span>.</p>
-<div class="figure align-default" id="id3">
+<div class="figure" id="id3">
 <a class="reference internal image-reference" href="../_images/distInit.png"><img alt="initial distribution" src="../_images/distInit.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Initial distribution</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Initial distribution</span></p>
 </div>
 <p>Continuous master equations or diffusion equations evolve according to</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t} P(x,t) = \zeta \frac{\partial}{\partial x} P(x,t) + D \frac{\partial^2}{\partial x^2} P(x,t),\]</div>
 <p>given the initial distribution.</p>
 <p>In infinite time, the system reach equilibrium.</p>
-<div class="figure align-default" id="id4">
+<div class="figure" id="id4">
 <a class="reference internal image-reference" href="../_images/distFinal.png"><img alt="final distribution" src="../_images/distFinal.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Final distribution</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Final distribution</span></p>
 </div>
 <p><strong>As long as the system has translational or rotational invariance, we can use Fourier transform to solve the equation.</strong></p>
 <p>For <span class="math notranslate nohighlight">\(\zeta =0\)</span>, there is only diffusion. Translational invariance is preserved. The Fourier transform for continuous equation is</p>
@@ -423,8 +422,8 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\Pi(x,t) = \frac{e^{-\frac{x^2}{4Dt}}}{\sqrt{4\pi Dt}}.\]</div>
 <div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>The propagator can also be singular. One of such examples is the logorithm sigularity in 2D.</p>
+<p class="first admonition-title">Hint</p>
+<p class="last">The propagator can also be singular. One of such examples is the logorithm sigularity in 2D.</p>
 </div>
 </div>
 <div class="section" id="bias-in-master-equation">
@@ -433,19 +432,19 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t}P(x,t) = \zeta \frac{\partial}{\partial x}P(x,t) + D\frac{\partial^2}{\partial x^2}P(x,t).\]</div>
 <div class="admonition hint">
-<p class="admonition-title">Hint</p>
+<p class="first admonition-title">Hint</p>
 <p>To check the properties of <span class="math notranslate nohighlight">\(\zeta\)</span>, set <span class="math notranslate nohighlight">\(D=0\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t} P = \zeta \frac{\partial}{\partial x} P \Rightarrow P\propto e^{k_w(\omega + \zeta t)}\]</div>
 <p>When <span class="math notranslate nohighlight">\(k_w &gt; 0\)</span>,</p>
-<ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\zeta &gt; 0\)</span> : exponential grow;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\zeta &lt; 0\)</span> : decay</p></li>
+<ol class="last arabic simple">
+<li><span class="math notranslate nohighlight">\(\zeta &gt; 0\)</span> : exponential grow;</li>
+<li><span class="math notranslate nohighlight">\(\zeta &lt; 0\)</span> : decay</li>
 </ol>
 </div>
 <p>We can use Fourier transform and complete the square to solve it.</p>
 <div class="admonition hint">
-<p class="admonition-title">Hint</p>
+<p class="first admonition-title">Hint</p>
 <p>This formalism is very much like the <span class="highlit">Gauge Transformation</span>. We define a new derivative</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial x} \to \frac{\partial}{\partial x} + \Gamma(x)\]</div>
@@ -453,7 +452,7 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp; \frac{\partial}{\partial t} P(x,t) = D\frac{\partial^2}{\partial x^2} P(x,t) \\
 \to &amp; \frac{\partial}{\partial t} P(x,t) = D \left(\frac{\partial^2}{\partial x^2} P(x,t) + 2\Gamma\frac{\partial}{\partial x}P(x,t) \right) + D\left( P\left( 2\Gamma^2 + \frac{\partial}{\partial x} \Gamma \right) \right)\end{split}\]</div>
-<p>Define <span class="math notranslate nohighlight">\(\zeta := 2\Gamma\)</span>, and let <span class="math notranslate nohighlight">\(2\Gamma^2 + \frac{\partial}{\partial x} \Gamma\)</span>. <a href="#id5"><span class="problematic" id="id2">[1]_</span></a>  The diffusion equation under this kind of transformation becomes the one we need.</p>
+<p class="last">Define <span class="math notranslate nohighlight">\(\zeta := 2\Gamma\)</span>, and let <span class="math notranslate nohighlight">\(2\Gamma^2 + \frac{\partial}{\partial x} \Gamma\)</span>. <a href="#id5"><span class="problematic" id="id2">[1]_</span></a>  The diffusion equation under this kind of transformation becomes the one we need.</p>
 </div>
 </div>
 </div>
@@ -509,9 +508,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Transforms &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/vocabulary/transforms.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Green’s Function" href="green.html" />
@@ -284,9 +283,9 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[ik f(k) = a g(k).\]</div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="first admonition-title">Note</p>
 <p>To summarize, we simple do replacement of the differential operators.</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[\begin{split}\frac{\partial}{\partial x} e^{ikx}=ike^{ikx} &amp;\implies \frac{\partial}{\partial x} \to ik \\
 \frac{\partial^2}{\partial x^2} e^{ikx} = -k^2 e^{ikx} &amp; \implies \frac{\partial^2}{\partial x^2} \to -k^2\end{split}\]</div>
 </div>
@@ -299,21 +298,21 @@ TeX: {
 \[\mathscr{L}[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .\]</div>
 <p>Some useful properties:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\frac{d}{dt}f(t)] = s \mathscr{L}[f(t)] - f(0)\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\frac{d^2}{dt^2}f(t) = s^2 \mathscr{L}[f(t)] - s f(0) - \frac{d f(0)}{dt}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\int_0^t g(\tau) d\tau ] = \frac{\mathscr{L}[f(t)]}{s}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\alpha t] = \frac{1}{\alpha} \mathscr{L}[s/\alpha]\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[e^{at}f(t)] = \mathscr{L}[f(s-a)]\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[tf(t)] = - \frac{d}{ds} \mathscr{L}[f(t)]\)</span>.</p></li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[\frac{d}{dt}f(t)] = s \mathscr{L}[f(t)] - f(0)\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[\frac{d^2}{dt^2}f(t) = s^2 \mathscr{L}[f(t)] - s f(0) - \frac{d f(0)}{dt}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[\int_0^t g(\tau) d\tau ] = \frac{\mathscr{L}[f(t)]}{s}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[\alpha t] = \frac{1}{\alpha} \mathscr{L}[s/\alpha]\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[e^{at}f(t)] = \mathscr{L}[f(s-a)]\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[tf(t)] = - \frac{d}{ds} \mathscr{L}[f(t)]\)</span>.</li>
 </ol>
 <p>Some useful results:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[1] = \frac{1}{s}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\delta] = 1\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[\delta^k] = s^k\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[t] = \frac{1}{s^2}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[t^n] = \frac{n!}{s^{n+1}}\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathscr{L}[e^{at}]= \frac{1}{s-a}\)</span>.</p></li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[1] = \frac{1}{s}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[\delta] = 1\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[\delta^k] = s^k\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[t] = \frac{1}{s^2}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[t^n] = \frac{n!}{s^{n+1}}\)</span></li>
+<li><span class="math notranslate nohighlight">\(\mathscr{L}[e^{at}]= \frac{1}{s-a}\)</span>.</li>
 </ol>
 <p>A very nice property of Laplace transform is</p>
 <div class="math notranslate nohighlight">
@@ -332,7 +331,7 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\mathscr{L}[I_0(2Ft)e^{-2Ft}]  = \frac{1}{\sqrt{(\epsilon + 2F)^2 - (2F)^2}} .\]</div>
 <div class="toggle admonition">
-<p class="admonition-title">Example: Solving Differential Equations</p>
+<p class="first admonition-title">Example: Solving Differential Equations</p>
 <p>For a first order differential equation</p>
 <div class="math notranslate nohighlight">
 \[f'(x) = x,\]</div>
@@ -343,7 +342,7 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[F(s) = \frac{1}{s^3} + \frac{f(0)}{s}.\]</div>
 <p>Then we lookup in the transform table, we find that</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[f(x) = x^2/2 + f(0).\]</div>
 </div>
 </div>
@@ -352,7 +351,7 @@ TeX: {
 <p>The geometrical meaning of Legendre transformation in thermodynamics can be illustrated by the following graph.</p>
 <div class="figure align-center" id="id3">
 <img alt="Legendre Transform made clear" src="../_images/LegendreTransform.png" />
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Legendre transform</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Legendre transform</span></p>
 </div>
 <p>In the above example, we know that entropy <span class="math notranslate nohighlight">\(S\)</span> is actually a function of temperature <span class="math notranslate nohighlight">\(T\)</span>. For simplicity, we assume that they are monotonically related like in the graph above. When we are talking about the quantity <span class="math notranslate nohighlight">\(T \mathrm d S\)</span> we actually mean the area shaded with blue grid lines. Meanwhile the area shaded with orange line means <span class="math notranslate nohighlight">\(S \mathrm d T\)</span>.</p>
 <p>Let’s think about the change in internal energy. For this example, we only consider the thermal part,</p>
@@ -394,7 +393,7 @@ Y =&amp; \frac{\partial U}{\partial X}.\end{split}\]</div>
 <div class="section" id="refs-note">
 <h2>Refs &amp; Note<a class="headerlink" href="#refs-note" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p>Zia, Royce K. P., Edward F. Redish and Susan R. McKay. “Making sense of the Legendre transform.” (2009).</p></li>
+<li>Zia, Royce K. P., Edward F. Redish and Susan R. McKay. “Making sense of the Legendre transform.” (2009).</li>
 </ol>
 </div>
 </div>
@@ -450,9 +449,6 @@ Y =&amp; \frac{\partial U}{\partial X}.\end{split}\]</div>
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

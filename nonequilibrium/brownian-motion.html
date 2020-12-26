@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Brownian Motion &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/nonequilibrium/brownian-motion.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Quantum Master Equation" href="quantum-master-eqn.html" />
@@ -272,15 +271,15 @@ TeX: {
 <span id="index-0"></span><h1>Brownian Motion<a class="headerlink" href="#brownian-motion" title="Permalink to this headline">¶</a></h1>
 <p>Brownian motion is described by</p>
 <div class="math notranslate nohighlight" id="equation-eqn-brownian-motion-langevin-eqn">
-<span class="eqno">(29)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt} v + \gamma v = R(t),\]</div>
+<span class="eqno">(30)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt} v + \gamma v = R(t),\]</div>
 <p>where <span class="math notranslate nohighlight">\(R(t)\)</span> is a random force density which is required to following</p>
 <div class="math notranslate nohighlight" id="equation-eqn-brownian-motion-langevin-eqn-force-req">
-<span class="eqno">(30)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-force-req" title="Permalink to this equation">¶</a></span>\[\begin{split}\avg{R(t)} &amp;= 0, \\
+<span class="eqno">(31)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-force-req" title="Permalink to this equation">¶</a></span>\[\begin{split}\avg{R(t)} &amp;= 0, \\
 \avg{R(t)R(t')} &amp;= C \delta(t-t') .\end{split}\]</div>
-<p>The first condition enforces the force density to be unbiased and the second condition indicates that the force density is spiking in time. Equation <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn">(29)</a> and <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn-force-req">(30)</a> form the linear <span class="highlit">Langevin equation</span>.</p>
+<p>The first condition enforces the force density to be unbiased and the second condition indicates that the force density is spiking in time. Equation <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn">(30)</a> and <a class="reference internal" href="#equation-eqn-brownian-motion-langevin-eqn-force-req">(31)</a> form the linear <span class="highlit">Langevin equation</span>.</p>
 <p>The formal solution to the Langevin equation is</p>
 <div class="math notranslate nohighlight" id="equation-eqn-brownian-motion-langevin-eqn-formal-sol">
-<span class="eqno">(31)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-formal-sol" title="Permalink to this equation">¶</a></span>\[v(t) = v(0)e^{-\gamma t} + \int_0^t dt' e^{-\gamma (t-t')} R(t') .\]</div>
+<span class="eqno">(32)<a class="headerlink" href="#equation-eqn-brownian-motion-langevin-eqn-formal-sol" title="Permalink to this equation">¶</a></span>\[v(t) = v(0)e^{-\gamma t} + \int_0^t dt' e^{-\gamma (t-t')} R(t') .\]</div>
 <p>Given the fact that <span class="math notranslate nohighlight">\(R(t)\)</span> is stochastic, <span class="math notranslate nohighlight">\(v(t)\)</span> is also stochastic. The statistics of the observables can be derived. The velocity squared is</p>
 <div class="math notranslate nohighlight">
 \[v(t)^2 = v(0)^2 e^{-2\gamma t} + \int_0^t dt'\int_0^t dt'' e^{-\gamma (t- t')} e^{-\gamma (t - t'')} R(t')R(t'') + \mathrm{Cross Terms}.\]</div>
@@ -290,17 +289,17 @@ TeX: {
 \avg{v^2} &amp;= \avg{v(0)^2 e^{-2\gamma t}} + \avg{\int_0^t dt'\int_0^t dt'' e^{-\gamma (t- t')} e^{-\gamma (t - t'')} R(t')R(t'')} + {\color{magenta}\avg{ \mathrm{Cross Terms}} }\end{split}\]</div>
 <p>where these magenta colored terms are zero.</p>
 <div class="hint admonition">
-<p class="admonition-title">The Liouville equation</p>
+<p class="first admonition-title">The Liouville equation</p>
 <p>The average being used here is the ensemble average. Define a probability density <span class="math notranslate nohighlight">\(P(v,t)\)</span> for velocity at any time <span class="math notranslate nohighlight">\(t\)</span>. In velocity space, the Liouville equation is</p>
 <div class="math notranslate nohighlight">
 \[\frac{d}{dt}P(v,t) + \frac{d}{dt}j = 0,\]</div>
 <p>where <span class="math notranslate nohighlight">\(j\)</span> is the current density is the current density in the velocity space. Apply <span class="math notranslate nohighlight">\(d_t v = -\gamma vt + R(t)\)</span>, we get</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[\frac{d}{dt}P(v,t) + \frac{d}{dv} \left(  (-\gamma v+ R(t))P(v,t) \right) = 0 .\]</div>
 </div>
 <div class="hint admonition">
-<p class="admonition-title">The Fokker-Plank equation</p>
-<p>The <span class="highlit">Fokker-Plank equation</span>.</p>
+<p class="first admonition-title">The Fokker-Plank equation</p>
+<p class="last">The <span class="highlit">Fokker-Plank equation</span>.</p>
 </div>
 <p>The ensemble average is simplified to</p>
 <div class="math notranslate nohighlight">
@@ -339,15 +338,15 @@ TeX: {
 <h2>Harmonic Oscillators as the Skeleton Keys<a class="headerlink" href="#harmonic-oscillators-as-the-skeleton-keys" title="Permalink to this headline">¶</a></h2>
 <p>A driven and damped harmonic oscillator is</p>
 <div class="math notranslate nohighlight" id="equation-eqn-harmonic-oscillator-driven-damped-eom">
-<span class="eqno">(32)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom" title="Permalink to this equation">¶</a></span>\[m \frac{d^2}{dt^2} x  + \alpha \frac{d}{dt} x + \beta x = R(t),\]</div>
-<p>where <span class="math notranslate nohighlight">\(x\)</span> is the displacement and <span class="math notranslate nohighlight">\(R(t)\)</span> is a random force. Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(32)</a> has the genes of Brownian motion and <a class="reference internal" href="#ornstein-uhlenbeck-process"><span class="std std-ref">Ornstein-Uhlenbeck Process</span></a>.</p>
-<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(32)</a> divided by <span class="math notranslate nohighlight">\(m\)</span> leads to</p>
+<span class="eqno">(33)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom" title="Permalink to this equation">¶</a></span>\[m \frac{d^2}{dt^2} x  + \alpha \frac{d}{dt} x + \beta x = R(t),\]</div>
+<p>where <span class="math notranslate nohighlight">\(x\)</span> is the displacement and <span class="math notranslate nohighlight">\(R(t)\)</span> is a random force. Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(33)</a> has the genes of Brownian motion and <a class="reference internal" href="#ornstein-uhlenbeck-process"><span class="std std-ref">Ornstein-Uhlenbeck Process</span></a>.</p>
+<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom">(33)</a> divided by <span class="math notranslate nohighlight">\(m\)</span> leads to</p>
 <div class="math notranslate nohighlight" id="equation-eqn-harmonic-oscillator-driven-damped-eom-reduced">
-<span class="eqno">(33)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced" title="Permalink to this equation">¶</a></span>\[\frac{d^2}{dt^2} x  + \frac{\alpha}{m} \frac{d}{dt} x + \frac{\beta}{m} x = \frac{1}{m}R(t).\]</div>
-<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced">(33)</a> is reduceed to the <span class="highlit">Ornstein-Uhlenbeck</span> equation when the mass is very small, i.e., <span class="math notranslate nohighlight">\(\frac{\alpha}{m}\gg 1\)</span>.</p>
+<span class="eqno">(34)<a class="headerlink" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced" title="Permalink to this equation">¶</a></span>\[\frac{d^2}{dt^2} x  + \frac{\alpha}{m} \frac{d}{dt} x + \frac{\beta}{m} x = \frac{1}{m}R(t).\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-harmonic-oscillator-driven-damped-eom-reduced">(34)</a> is reduceed to the <span class="highlit">Ornstein-Uhlenbeck</span> equation when the mass is very small, i.e., <span class="math notranslate nohighlight">\(\frac{\alpha}{m}\gg 1\)</span>.</p>
 <div class="hint admonition">
-<p class="admonition-title">WKB Approximation</p>
-<p>WKB approximation.</p>
+<p class="first admonition-title">WKB Approximation</p>
+<p class="last">WKB approximation.</p>
 </div>
 <p>.</p>
 </div>
@@ -404,9 +403,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

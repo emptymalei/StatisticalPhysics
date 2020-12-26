@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Tempo-spatial Epidemic Models &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../../_static/js/jquery-fix.js"></script>
-    <script src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/topics/epidemics/hantavirus.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Information Theory and Statistical Mechanics" href="../information-theory-and-statistical-mechanics.html" />
@@ -265,10 +264,10 @@ TeX: {
       
   <div class="section" id="tempo-spatial-epidemic-models">
 <h1>Tempo-spatial Epidemic Models<a class="headerlink" href="#tempo-spatial-epidemic-models" title="Permalink to this headline">¶</a></h1>
-<p>We will use the Hantavirus as an example <a class="reference internal" href="#abramson2002" id="id1"><span>[Abramson2002]</span></a>.</p>
+<p>We will use the Hantavirus as an example <a class="reference internal" href="#abramson2002" id="id1">[Abramson2002]</a>.</p>
 <p>The vector of Hantavirus is mice. The population of mice <span class="math notranslate nohighlight">\(M\)</span> has two components, the infected population <span class="math notranslate nohighlight">\(M_I\)</span> and the susceptible population <span class="math notranslate nohighlight">\(M_S\)</span>. We take the SI model with demography,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-mice-si-with-demography">
-<span class="eqno">(46)<a class="headerlink" href="#equation-eqn-mice-si-with-demography" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{dM_S}{dt} &amp;= \lambda M - \mu M_S - a M_S M_I, \\
+<span class="eqno">(47)<a class="headerlink" href="#equation-eqn-mice-si-with-demography" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{dM_S}{dt} &amp;= \lambda M - \mu M_S - a M_S M_I, \\
 \frac{dM_I}{dt} &amp;= -\mu M_I + a M_S M_I,\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(M = M_I + M_S\)</span>, <span class="math notranslate nohighlight">\(\lambda\)</span> is the natural birth rate per population, <span class="math notranslate nohighlight">\(\mu\)</span> is the natural death rate per population, <span class="math notranslate nohighlight">\(a\)</span> is the rate of the mouse being infect on contact.</p>
 <p>Summing up the two equations, we get the equation for <span class="math notranslate nohighlight">\(M\)</span>,</p>
@@ -283,7 +282,7 @@ TeX: {
 \[\frac{dM}{dt} = (\lambda - \mu) M - f(M, t) M,\]</div>
 <p>where <span class="math notranslate nohighlight">\(f(M, t)M\)</span> describes the competitions for resources.</p>
 <div class="note admonition">
-<p class="admonition-title"><span class="math notranslate nohighlight">\(f(M, t)\)</span></p>
+<p class="first admonition-title"><span class="math notranslate nohighlight">\(f(M, t)\)</span></p>
 <p>Suppose we have a bunch of resources <span class="math notranslate nohighlight">\(K\)</span> and each mouse requires <span class="math notranslate nohighlight">\(k\)</span> to survive on average. The more mice we have, the more competitive,</p>
 <div class="math notranslate nohighlight">
 \[f(M,t) = \frac{kM}{K}.\]</div>
@@ -291,10 +290,10 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\frac{dM}{dt} = \frac{kM}{K}M.\]</div>
 <p>For simplifity, we define <span class="math notranslate nohighlight">\(\kappa=k/K\)</span>,</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[\frac{dM}{dt} = (\lambda - \mu) M - \frac{M}{\kappa} M.\]</div>
 </div>
-<p>Following <a class="reference internal" href="#abramson2002" id="id2"><span>[Abramson2002]</span></a>, we introduce the competition term</p>
+<p>Following <a class="reference internal" href="#abramson2002" id="id2">[Abramson2002]</a>, we introduce the competition term</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{dM_S}{dt} &amp;= \lambda M - \mu M_S - a M_S M_I {\color{blue}- \frac{M}{\kappa} M_S}, \\
 \frac{dM_I}{dt} &amp;= -\mu M_I + a M_S M_I {\color{blue}- \frac{M}{\kappa} M_I}.\end{split}\]</div>
@@ -304,11 +303,12 @@ TeX: {
 \frac{dM_I}{dt} &amp;= -\mu M_I + a M_S M_I {\color{blue}- \frac{M}{\kappa} M_I}  {\color{red}+D_I \nabla^2M_I}.\end{split}\]</div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<dl class="citation">
-<dt class="label" id="abramson2002"><span class="brackets">Abramson2002</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
-<dd><p><a class="reference external" href="https://doi.org/10.1103/PhysRevE.66.011912">Abramson, G., &amp; Kenkre, V. M. (2002). Spatiotemporal patterns in the Hantavirus infection. Physical Review E - Statistical Physics, Plasmas, Fluids, and Related Interdisciplinary Topics, 66(1), 1–5.</a></p>
-</dd>
-</dl>
+<table class="docutils citation" frame="void" id="abramson2002" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Abramson2002]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> <a class="reference external" href="https://doi.org/10.1103/PhysRevE.66.011912">Abramson, G., &amp; Kenkre, V. M. (2002). Spatiotemporal patterns in the Hantavirus infection. Physical Review E - Statistical Physics, Plasmas, Fluids, and Related Interdisciplinary Topics, 66(1), 1–5.</a></td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -363,9 +363,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

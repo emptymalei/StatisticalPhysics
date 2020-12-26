@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Information Theory and Statistical Mechanics &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/topics/information-theory-and-statistical-mechanics.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="Tempo-spatial Epidemic Models" href="epidemics/hantavirus.html" />
@@ -263,8 +262,8 @@ TeX: {
   <div class="section" id="information-theory-and-statistical-mechanics">
 <h1>Information Theory and Statistical Mechanics<a class="headerlink" href="#information-theory-and-statistical-mechanics" title="Permalink to this headline">¶</a></h1>
 <div class="important admonition">
-<p class="admonition-title">Jaynes, E. T. (1957)</p>
-<p>Jaynes, E. T. (1957) Information Theory and Statistical Mechanics. Physical Review, 106(4), 620–630. <a class="reference external" href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a></p>
+<p class="first admonition-title">Jaynes, E. T. (1957)</p>
+<p class="last">Jaynes, E. T. (1957) Information Theory and Statistical Mechanics. Physical Review, 106(4), 620–630. <a class="reference external" href="https://doi.org/10.1103/PhysRev.106.620">https://doi.org/10.1103/PhysRev.106.620</a></p>
 </div>
 <div class="section" id="line-of-reasoning">
 <h2>Line of Reasoning<a class="headerlink" href="#line-of-reasoning" title="Permalink to this headline">¶</a></h2>
@@ -276,13 +275,13 @@ TeX: {
 <p>It is a quite interesting question for stat mech. In my opinion, it can be generalized. To visualize this problem, we know think of this landscape of the states. Instead of using the state as the dimensions, we use the probabilities as the dimensions since they are unknown. In the end, we have a coordinate system with each dimension as the value of the probabilities <span class="math notranslate nohighlight">\(\{p_i\}\)</span> and the one dimension for the value of <span class="math notranslate nohighlight">\(\langle g \rangle (p_i)\)</span> which depends on <span class="math notranslate nohighlight">\(\{p_i\}\)</span>. Now we constructed a landscape of <span class="math notranslate nohighlight">\(\langle g \rangle (p_i)\)</span>. The question is, how does our universe arrange the landscape? Where are we in this landscape if we are at equilibrium?</p>
 <p>In Jaynes’ paper, he mentioned several crucial problems.</p>
 <ol class="arabic simple">
-<li><p>Do we need to know the landscape formed by <span class="math notranslate nohighlight">\(\{p_i\}\)</span> and <span class="math notranslate nohighlight">\(\langle f(x_i)\rangle\)</span>? No.</p></li>
-<li><p>Do we need to find the exact location of our system? We have to.</p></li>
-<li><p>How? Using the max entropy principle.</p></li>
-<li><p>How to calculate another macroscopic quantity based on one observed macroscopic quantity and the conservation of probability density? Using the probabilities found in the previous step.</p></li>
-<li><p>Why does max entropy work from the information point of view? Assuming less about the system.</p></li>
-<li><p>Why is the result predicting measurements even the theory is purely objective? This shows how simple nature is. Going philosophical.</p></li>
-<li><p>With the generality of the formalism, what else can we do with it to improve our statistical mechanics power? Based on the information we know, we have different formalism of statistical physics.</p></li>
+<li>Do we need to know the landscape formed by <span class="math notranslate nohighlight">\(\{p_i\}\)</span> and <span class="math notranslate nohighlight">\(\langle f(x_i)\rangle\)</span>? No.</li>
+<li>Do we need to find the exact location of our system? We have to.</li>
+<li>How? Using the max entropy principle.</li>
+<li>How to calculate another macroscopic quantity based on one observed macroscopic quantity and the conservation of probability density? Using the probabilities found in the previous step.</li>
+<li>Why does max entropy work from the information point of view? Assuming less about the system.</li>
+<li>Why is the result predicting measurements even the theory is purely objective? This shows how simple nature is. Going philosophical.</li>
+<li>With the generality of the formalism, what else can we do with it to improve our statistical mechanics power? Based on the information we know, we have different formalism of statistical physics.</li>
 </ol>
 </div>
 <div class="section" id="is-this-related-to-mutual-information">
@@ -291,8 +290,8 @@ TeX: {
 <p>However, I think we have to consider another principle. I call this max mutual information principle. Suppose we do not have this max entropy principle. Somehow, we come up with an expression of the average of another quantity. What will happen from a landscape point of view?</p>
 <p>If we construct these these two landscapes:</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(\langle f(x_i)\rangle\)</span> as a function of <span class="math notranslate nohighlight">\(\{p_i\}\)</span>,</p></li>
-<li><p>and <span class="math notranslate nohighlight">\(\langle g(x_i)\rangle\)</span> as a function of <span class="math notranslate nohighlight">\(\{p_i\}\)</span>.</p></li>
+<li><span class="math notranslate nohighlight">\(\langle f(x_i)\rangle\)</span> as a function of <span class="math notranslate nohighlight">\(\{p_i\}\)</span>,</li>
+<li>and <span class="math notranslate nohighlight">\(\langle g(x_i)\rangle\)</span> as a function of <span class="math notranslate nohighlight">\(\{p_i\}\)</span>.</li>
 </ol>
 <p>Max mutual information indicates that the <span class="math notranslate nohighlight">\(\{p_i\}\)</span> inferred from the two quantities should be the same. Huh, trivial.</p>
 </div>
@@ -353,9 +352,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

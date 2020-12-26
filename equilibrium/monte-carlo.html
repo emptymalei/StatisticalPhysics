@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Monte Carlo Method &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/equilibrium/monte-carlo.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Ensembles" href="ensembles.html" />
@@ -276,10 +275,10 @@ TeX: {
 <h2>Why Not Just Randomly Sample from All States<a class="headerlink" href="#why-not-just-randomly-sample-from-all-states" title="Permalink to this headline">¶</a></h2>
 <p>In statistics, the <a class="reference external" href="https://en.wikipedia.org/wiki/Curse_of_dimensionality">curse of dimensionality</a> has been haunting us. In Ising model, the number of dimension is the number of spins. In such a high dimensional system, sampling the representative states requires a huge sample.</p>
 <div class="toggle admonition">
-<p class="admonition-title">Curse of Dimensionality: Volume of 20D Ball</p>
+<p class="first admonition-title">Curse of Dimensionality: Volume of 20D Ball</p>
 <p>It can be shown with a simple random sampling method to calcuate the volume of a 20 dimensional ball of unit length diameter.</p>
 <p>To calculate the volume of this 20D ball, we construct a 20D box that contains the ball. Then we place random points in the box. Suppose we have <span class="math notranslate nohighlight">\(N_b\)</span> points out of <span class="math notranslate nohighlight">\(N\)</span> points falling inside the ball, the volume of the ball can be approximated by <span class="math notranslate nohighlight">\(N_b/N\)</span>.</p>
-<p>It may sound simple. However, one would realize that a good approximation requires a huge amount of sample points.</p>
+<p class="last">It may sound simple. However, one would realize that a good approximation requires a huge amount of sample points.</p>
 </div>
 <p>For our Ising model, randomly sampling the states means we are have a very high temperature that the probability of all enegy states are of no difference. Instead of such random sampling, we could make use of our theoretical knowledge of the Boltzman distribution and sample according to the Boltzman distribution, which is importance sampling in statistics.</p>
 </div>
@@ -296,8 +295,8 @@ TeX: {
 <p>For a Ising model with <span class="math notranslate nohighlight">\(N\)</span> spins, we have <span class="math notranslate nohighlight">\(2^N\)</span> possible configurations for the spins. It quickly becomes an impossible mission as the number of spins increases.</p>
 <p>In statistics, we could estimate the average of quantities using sampling methods. There is no need to exhaust the whole population. W randomly choose some configurations, <span class="math notranslate nohighlight">\(\{\mathscr M_i\}\)</span> and calculate the observables using this sample.</p>
 <div class="warning admonition">
-<p class="admonition-title">Importance Sampling</p>
-<p>There is always a catch. We also have the curse of high dimensions. Random sampling becomes inefficient in high dimensions. To achive a reasonably good result, we have to sample a huge amount of configurations. To solve this problem, the glory importance sampling was invented.</p>
+<p class="first admonition-title">Importance Sampling</p>
+<p class="last">There is always a catch. We also have the curse of high dimensions. Random sampling becomes inefficient in high dimensions. To achive a reasonably good result, we have to sample a huge amount of configurations. To solve this problem, the glory importance sampling was invented.</p>
 </div>
 <p>In Monte Carlo method, we will generate some configurations and use those configurations to calculate our ensemble average of observables.</p>
 <div class="section" id="state-transitions-and-markov-chain">
@@ -314,12 +313,12 @@ TeX: {
 <p>To demonstrate the algorithm, we use a 2D N by N lattice of magnetic spins.</p>
 <div class="figure align-center" id="id2">
 <img alt="Metropolis algorithm" src="../_images/metropolis-algorithm-flowchart.png" />
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Metropolis algorithm</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">Metropolis algorithm</span></p>
 </div>
 <div class="toggle admonition">
-<p class="admonition-title">Flowchart Code</p>
+<p class="first admonition-title">Flowchart Code</p>
 <p><a class="reference external" href="https://mermaidjs.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ">Here</a> <a class="reference external" href="https://mermaidjs.github.io/mermaid-live-editor/#/view/eyJjb2RlIjoiZ3JhcGggVERcbkFbSW5pdGlhbGl6ZSBsYXR0aWNlIHNwaW5zIHJhbmRvbWx5XSAtLT4gQihyYW5kb21seSBmbGlwIGEgc3BpbilcbkIgLS0-IEN7XCJJcyDiiIZFIDwgMCA8YnI-IG9yIDxicj4gZXhwKC3iiIZFL2JldGEpID4gcmFuZG9tIG51bWJlciBbMCwxXVwiIH1cbkMgLS0-fFRydWV8IEQoQWNjZXB0IGZsaXApXG5DIC0tPnxGYWxzZXwgRihSZWplY3QgZmxpcClcbkQgLS0-IEp7XCJJcyBlcXVpbGlicml1bVwifVxuRiAtLT4gSntcIklzIGVxdWlsaWJyaXVtXCJ9XG5KIC0tPiB8RmFsc2V8IEJcbkogLS0-IHxUcnVlfCBLW1wiQ29sbGVjdGVkIGRhdGEgYW5kIGNhbGN1bGF0ZSBvYnNlcnZhYmxlc1wiXVxuXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9fQ">is</a> the mermainjs link.</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>graph TD
+<div class="last highlight-text notranslate"><div class="highlight"><pre><span></span>graph TD
 A[Initialize lattice spins randomly] --&gt; B(randomly flip a spin)
 B --&gt; C{&quot;Is ∆E &lt; 0 &lt;br&gt; or &lt;br&gt; exp(-∆E/beta) &gt; random number [0,1]&quot; }
 C --&gt;|True| D(Accept flip)
@@ -337,7 +336,7 @@ J --&gt; |True| K[&quot;Collected data and calculate observables&quot;]
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2013odca.book...93J/abstract">Monte Carlo Simulations in Statistical Physics – From Basic Principles to Advanced Applications by Janke, Wolfhard.</a></p></li>
+<li><a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2013odca.book...93J/abstract">Monte Carlo Simulations in Statistical Physics – From Basic Principles to Advanced Applications by Janke, Wolfhard.</a></li>
 </ol>
 </div>
 </div>
@@ -393,9 +392,6 @@ J --&gt; |True| K[&quot;Collected data and calculate observables&quot;]
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Smoluchowski Equation &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/nonequilibrium/smoluchowski-eqn.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Effect of Defects" href="effect-of-defects.html" />
@@ -269,7 +268,7 @@ TeX: {
 <span id="id2"></span><h2>Smoluchowski Equation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="../_images/smoluchowski.png"><img alt="Probability distribution with an attraction point." src="../_images/smoluchowski.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Probability distribution with an attraction point.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">Probability distribution with an attraction point.</span></p>
 </div>
 <p>Smoluchowski equation describes the probability distribution of particles in a attractive potential. Given a potential <span class="math notranslate nohighlight">\(U(x)\)</span>, the master equation is,</p>
 <div class="math notranslate nohighlight">
@@ -279,8 +278,8 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t} P(x,t) = \gamma \frac{\partial}{\partial x}\left(x P(x,t)  \right) + D \frac{\partial^2}{\partial x^2} P(x,t) .\]</div>
 <div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>The Smoluchowski equation is solved by the <span class="highlit">methods of characteristics</span>.</p>
+<p class="first admonition-title">Hint</p>
+<p class="last">The Smoluchowski equation is solved by the <span class="highlit">methods of characteristics</span>.</p>
 </div>
 <p>Apply Fourier transform to the Smoluchowski equation, we get</p>
 <div class="math notranslate nohighlight">
@@ -291,13 +290,14 @@ TeX: {
 <p>where <span class="math notranslate nohighlight">\(\mathscr T(t) = \frac{1-e^{-2\gamma t}}{2\gamma}\)</span>.</p>
 <div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="../_images/smoluTime.png"><img alt="../_images/smoluTime.png" src="../_images/smoluTime.png" style="width: 90%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Examples of the normalized time parameter in the solution of Smoluchowski equation.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">Examples of the normalized time parameter in the solution of Smoluchowski equation.</span></p>
 </div>
-<dl class="footnote brackets">
-<dt class="label" id="id3"><span class="brackets">1</span></dt>
-<dd><p>This is <span class="highlit">Riccati’s equation</span>. More information <a class="reference external" href="http://www.wolframalpha.com/input/?i=solve%5Bdf%2Fdx%3D%3D-2f%5E2%5D">here</a>.</p>
-</dd>
-</dl>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td>This is <span class="highlit">Riccati’s equation</span>. More information <a class="reference external" href="http://www.wolframalpha.com/input/?i=solve%5Bdf%2Fdx%3D%3D-2f%5E2%5D">here</a>.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -352,9 +352,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

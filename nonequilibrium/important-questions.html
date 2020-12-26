@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Important Questions of Statistical Mechanics &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/nonequilibrium/important-questions.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Master Equation" href="master-eqn.html" />
@@ -299,11 +298,11 @@ TeX: {
 <p>For systems without self-interactions, the solution of Liouville equation is straight forward. <span class="math notranslate nohighlight">\(\Gamma\)</span> space can actually be reduced to <span class="math notranslate nohighlight">\(\mu\)</span> space which is spanned by the freedoms of only one particle. Here we need to address the fact that we are dealing with <strong>identical particles</strong>.</p>
 <p>We reduce the complicity of the interactions while keeping the salient features. Dimension reduction is key to this idea. First of all, we will introduce some reduced densities.</p>
 <ol class="arabic">
-<li><p>The probability density of particles describes the average density of some particles inside a system of particles.</p>
+<li><p class="first">The probability density of particles describes the average density of some particles inside a system of particles.</p>
 <p>For one particle, the probability density requires us to integrate over all other particles,</p>
 <div class="math notranslate nohighlight">
 \[\rho_1(\vec X_1, t) := \int \cdots\int d\vec X_2 \cdots d \vec X_N \rho^N(\vec X_1, \cdots, \vec X_N, t)\]</div>
-<p>Similarly, we can define <span class="math notranslate nohighlight">\(s\)</span> particles probability density, <a class="reference internal" href="#reichl" id="id1"><span>[Reichl]</span></a></p>
+<p>Similarly, we can define <span class="math notranslate nohighlight">\(s\)</span> particles probability density, <a class="reference internal" href="#reichl" id="id1">[Reichl]</a></p>
 <div class="math notranslate nohighlight">
 \[\rho_s(\vec X_s, \cdots, \vec X_N, t) := \int \cdots \int d \vec X_{s+1}\cdots d\vec X_N \rho^N(\vec X_1, \cdots, \vec X_N, t) .\]</div>
 </li>
@@ -312,9 +311,9 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[F_s(\vec X_1, \cdots,\vec X_s,t) := V^s \int\cdots \int \rho^N(\vec X_{1}, \cdots, \vec X_N, t) d\vec X_{s+1}\cdots d\vec X_N   .\]</div>
 <div class="toggle admonition">
-<p class="admonition-title">About <span class="math notranslate nohighlight">\(V\)</span></p>
+<p class="first admonition-title">About <span class="math notranslate nohighlight">\(V\)</span></p>
 <p>Setting <span class="math notranslate nohighlight">\(s=N\)</span> leads to</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[F_N(t) = V^N \rho^N(t) .\]</div>
 </div>
 <p>We can write down the Hamiltonian of the system for any two-body spherically symmetric interaction,</p>
@@ -368,10 +367,10 @@ TeX: {
 <h3>A Review of Boltzmann Equation &amp; H Theorem<a class="headerlink" href="#a-review-of-boltzmann-equation-h-theorem" title="Permalink to this headline">¶</a></h3>
 <p>We will</p>
 <ol class="arabic simple">
-<li><p>Derive Boltzmann equation from classical scattering theory of rigid balls.</p></li>
-<li><p>Derive continuity equation from Boltzmann equation.</p></li>
-<li><p>Prove H theorem.</p></li>
-<li><p>Understand H theorem.</p></li>
+<li>Derive Boltzmann equation from classical scattering theory of rigid balls.</li>
+<li>Derive continuity equation from Boltzmann equation.</li>
+<li>Prove H theorem.</li>
+<li>Understand H theorem.</li>
 </ol>
 <div class="section" id="boltzmann-equation-derivation">
 <span id="index-2"></span><h4>Boltzmann equation derivation<a class="headerlink" href="#boltzmann-equation-derivation" title="Permalink to this headline">¶</a></h4>
@@ -384,8 +383,8 @@ TeX: {
 \[\frac{\partial f_j}{\partial t} + \vec v_j\cdot \nabla _ {\vec r}f_j + \frac{\vec X _ j}{m_j} \cdot \nabla_{\vec v_j} f_j = 2\pi \sum_i \iint \left(f _ i'f _ j' - f _ i f _ j\right) g _ {ij} b \mathrm db  \mathrm d \vec v_i\]</div>
 <p>where <span class="math notranslate nohighlight">\(\vec X\)</span> is the external force on the particle, the prime <span class="math notranslate nohighlight">\({}'\)</span> denotes the quantity after collision, and <span class="math notranslate nohighlight">\(b\)</span> is the impact parameter.</p>
 <div class="hint admonition">
-<p class="admonition-title">Derivation</p>
-<p>In the derivation, the most important part is to identify the number of particles into and out of this state due to collisions.</p>
+<p class="first admonition-title">Derivation</p>
+<p class="last">In the derivation, the most important part is to identify the number of particles into and out of this state due to collisions.</p>
 </div>
 </div>
 <div class="section" id="boltzmann-equation-continuity-equation">
@@ -409,8 +408,8 @@ TeX: {
 <h4>H Theorem Discussions<a class="headerlink" href="#h-theorem-discussions" title="Permalink to this headline">¶</a></h4>
 <p>There were two objections on H theorem:</p>
 <ol class="arabic simple">
-<li><p>Loschmidt: All collisions can be reversed in the view of classical mechanics;</p></li>
-<li><p>Zermelo: Poincare recursion theorem says an equilibrium system can go back to inequilibrium.</p></li>
+<li>Loschmidt: All collisions can be reversed in the view of classical mechanics;</li>
+<li>Zermelo: Poincare recursion theorem says an equilibrium system can go back to inequilibrium.</li>
 </ol>
 <p>To Loschmidt’s questioning, Boltzmann pointed out that H theorem is a statistical theorem rather than mechanics theorem. Quantities in this theorem like <span class="math notranslate nohighlight">\(f\)</span> are statistical averages, not the quantity of a specific particle.</p>
 <p>Zermelo’s objection is not a serious problem because the recursion time is extremely long.</p>
@@ -419,16 +418,18 @@ TeX: {
 </div>
 <div class="section" id="footnotes">
 <h2>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
-<dl class="citation">
-<dt class="label" id="reichl"><span class="brackets"><a class="fn-backref" href="#id1">Reichl</a></span></dt>
-<dd><ol class="upperalpha simple" start="12">
-<li><ol class="upperalpha simple" start="5">
-<li><p>Reichl, A Modern Course in Statistical Physics</p></li>
+<table class="docutils citation" frame="void" id="reichl" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Reichl]</a></td><td><ol class="first last upperalpha simple" start="12">
+<li><ol class="first upperalpha" start="5">
+<li>Reichl, A Modern Course in Statistical Physics</li>
 </ol>
 </li>
 </ol>
-</dd>
-</dl>
+</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -483,9 +484,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

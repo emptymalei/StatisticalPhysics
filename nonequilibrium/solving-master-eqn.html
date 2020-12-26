@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Solving Master Equations &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/nonequilibrium/solving-master-eqn.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Examples of Master Equations" href="master-eqn-examples.html" />
@@ -277,11 +276,11 @@ TeX: {
 <span id="id1"></span><h2>Solving Master Equations<a class="headerlink" href="#index-0" title="Permalink to this headline">¶</a></h2>
 <p>A master equation</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-eqn-raw">
-<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-master-eqn-raw" title="Permalink to this equation">¶</a></span>\[\frac{d P_m}{dt} = \sum_n R_{mn} P_n - \sum_n R_{nm} P_m\]</div>
+<span class="eqno">(20)<a class="headerlink" href="#equation-eqn-master-eqn-raw" title="Permalink to this equation">¶</a></span>\[\frac{d P_m}{dt} = \sum_n R_{mn} P_n - \sum_n R_{nm} P_m\]</div>
 <p>can be simplified into</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-eqn-comb">
-<span class="eqno">(20)<a class="headerlink" href="#equation-eqn-master-eqn-comb" title="Permalink to this equation">¶</a></span>\[\frac{d P_m}{dt} + \sum_n A_{mn}P_n = 0 .\]</div>
-<p>To figure out the elements of this new matrix <span class="math notranslate nohighlight">\(A\)</span>, we need to understand how to combine the RHS of master equation. The matrix form of the master equation <a class="reference internal" href="#equation-eqn-master-eqn-raw">(19)</a> is</p>
+<span class="eqno">(21)<a class="headerlink" href="#equation-eqn-master-eqn-comb" title="Permalink to this equation">¶</a></span>\[\frac{d P_m}{dt} + \sum_n A_{mn}P_n = 0 .\]</div>
+<p>To figure out the elements of this new matrix <span class="math notranslate nohighlight">\(A\)</span>, we need to understand how to combine the RHS of master equation. The matrix form of the master equation <a class="reference internal" href="#equation-eqn-master-eqn-raw">(20)</a> is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\partial_t \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix} = \begin{pmatrix} 0  &amp; R_{12} &amp; \cdots &amp; R_{1N} \\ R_{21}  &amp; 0 &amp; \cdots &amp; R_{2N} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ R_{N1} &amp; R_{N2} &amp; \cdots &amp; 0   \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix}   - \sum_{n}R_{nm} \begin{pmatrix}  1 &amp; 0 &amp; \cdots &amp; 0 \\  0 &amp; 1 &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \ddots &amp;  0  \\ 0 &amp; 0 &amp; \cdots &amp; 1  \end{pmatrix}  \begin{pmatrix} P_1 \\ P_2 \\ \vdots \\ P_N \end{pmatrix}\end{split}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(A_{mm} = \sum_n R_{nm}\)</span> is just a real number, we can combine the two matrices on the RHS,</p>
@@ -290,9 +289,9 @@ TeX: {
 <p>The <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix is then defined as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}A_{mn} = \begin{cases} -R_{mn} &amp;\quad  n \neq m \\ \sum_{n} R_{nm} &amp; \quad n=m  \end{cases}\end{split}\]</div>
-<p>The abstract form of the master equation <a class="reference internal" href="#equation-eqn-master-eqn-comb">(20)</a> is</p>
+<p>The abstract form of the master equation <a class="reference internal" href="#equation-eqn-master-eqn-comb">(21)</a> is</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-eqn-comb-abstract">
-<span class="eqno">(21)<a class="headerlink" href="#equation-eqn-master-eqn-comb-abstract" title="Permalink to this equation">¶</a></span>\[\partial_t \mathbf P + \mathbf A \mathbf P = 0 .\]</div>
+<span class="eqno">(22)<a class="headerlink" href="#equation-eqn-master-eqn-comb-abstract" title="Permalink to this equation">¶</a></span>\[\partial_t \mathbf P + \mathbf A \mathbf P = 0 .\]</div>
 <p>To solve it, we need to diagonalize <span class="math notranslate nohighlight">\(\mathbf A\)</span> so that the solution can be written down as</p>
 <div class="math notranslate nohighlight">
 \[\mathbf P_{\text{diag}} = e^{- \mathbf A_{\text{diag}} t} .\]</div>
@@ -301,16 +300,16 @@ TeX: {
 \[\partial_t \bf S^{-1} P + S^{-1}AS S^{-1} P = 0\]</div>
 <p>in which <span class="math notranslate nohighlight">\(\mathbf A_{\text{diag}} = \bf S^{-1} P S\)</span> and <span class="math notranslate nohighlight">\(\mathbf P_{\text{diag}} = \bf S^{-1} P\)</span>.</p>
 <div class="warning admonition">
-<p class="admonition-title">Food for Thought</p>
-<p>Is there a mechanism that ensures the <span class="math notranslate nohighlight">\(\mathbf A\)</span> is <span class="highlit">invertible</span> ? If <span class="math notranslate nohighlight">\(\mathbf A\)</span> is <span class="highlit">defective</span> , none of these can be done. Do all physical systems have invertible <span class="math notranslate nohighlight">\(\mathbf A\)</span>?</p>
+<p class="first admonition-title">Food for Thought</p>
+<p class="last">Is there a mechanism that ensures the <span class="math notranslate nohighlight">\(\mathbf A\)</span> is <span class="highlit">invertible</span> ? If <span class="math notranslate nohighlight">\(\mathbf A\)</span> is <span class="highlit">defective</span> , none of these can be done. Do all physical systems have invertible <span class="math notranslate nohighlight">\(\mathbf A\)</span>?</p>
 </div>
 <div class="note admonition">
-<p class="admonition-title">Quantum Mechanics</p>
-<p>The master equation <a class="reference internal" href="#equation-eqn-master-eqn-comb-abstract">(21)</a> is similar to the Schrodinger equation quantum mechanics</p>
+<p class="first admonition-title">Quantum Mechanics</p>
+<p>The master equation <a class="reference internal" href="#equation-eqn-master-eqn-comb-abstract">(22)</a> is similar to the Schrodinger equation quantum mechanics</p>
 <div class="math notranslate nohighlight">
 \[i\hbar \frac{\partial }{\partial t} \ket{\psi} = \hat H \ket{\psi}.\]</div>
 <p>It is also quite similar to the Liouville equation,</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[i\partial_t \rho^N = \hat L^N \rho^N .\]</div>
 </div>
 </div>
@@ -322,11 +321,11 @@ TeX: {
 \[\partial_t P_m  + \sum_n A_{mn} P_n  = 0.\]</div>
 <p>For translational symmetric system, a discrete Fourier transform is applied to find out the normal modes. Define the kth mode as</p>
 <div class="math notranslate nohighlight" id="equation-eqn-fourier-transform-kth-mode">
-<span class="eqno">(22)<a class="headerlink" href="#equation-eqn-fourier-transform-kth-mode" title="Permalink to this equation">¶</a></span>\[P^k = P_m e^{ikm} .\]</div>
+<span class="eqno">(23)<a class="headerlink" href="#equation-eqn-fourier-transform-kth-mode" title="Permalink to this equation">¶</a></span>\[P^k = P_m e^{ikm} .\]</div>
 <p>Multiply <span class="math notranslate nohighlight">\(e^{ikm}\)</span> on both sides of the master equstion and sum over <span class="math notranslate nohighlight">\(m\)</span>, we get</p>
 <div class="math notranslate nohighlight">
 \[\sum_m \partial_t P_m e^{ikm} + \sum_m \sum_n e^{ikm}A_{m-n} P_n = 0.\]</div>
-<p>With the definition of the kth mode defined in <a class="reference internal" href="#equation-eqn-fourier-transform-kth-mode">(22)</a>, the master equation can be written as</p>
+<p>With the definition of the kth mode defined in <a class="reference internal" href="#equation-eqn-fourier-transform-kth-mode">(23)</a>, the master equation can be written as</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P^k + \sum_n\sum_m e^{ik(m-n)}A_{m-n} e^{ikn}P_n = 0,\]</div>
 <p>which “accidently” diagonalizes the matrix <span class="math notranslate nohighlight">\(\mathbf A\)</span>. Define the kth mode of <span class="math notranslate nohighlight">\(\mathbf A\)</span> as <span class="math notranslate nohighlight">\(A^k = \sum_{l=m-n} e^{ik(m-n)}A_{m-n}\)</span>. The master equation</p>
@@ -336,8 +335,8 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\partial_t P^k + A^k P^k = 0 \qquad\text{No summation over k!.}\]</div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Note that summation over n and m is equivalent to summation over n and m-n.</p>
+<p class="first admonition-title">Note</p>
+<p class="last">Note that summation over n and m is equivalent to summation over n and m-n.</p>
 </div>
 <p>Finally we have the solution for the normal modes,</p>
 <div class="math notranslate nohighlight">
@@ -346,7 +345,7 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[P_m(t) = \frac{1}{N} \sum_k P^k(t) e^{-ikm} .\]</div>
 <div class="admonition important">
-<p class="admonition-title">Important</p>
+<p class="first admonition-title">Important</p>
 <p>Due to the Born van Karman BC, we chose,</p>
 <div class="math notranslate nohighlight">
 \[e^{ikm} = e^{ik(m+N)}\]</div>
@@ -356,22 +355,22 @@ TeX: {
 <p>A discrete transform will become an integral if we are dealing with continous systems. It is achieved by using the following transformation,</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{N}\sum_k  \rightarrow \frac{1}{2\pi} \int dk.\]</div>
-<p>This transformation is important because the discrete transform has <span class="math notranslate nohighlight">\(\frac{1}{N}\sum_k\)</span> in it.</p>
+<p class="last">This transformation is important because the discrete transform has <span class="math notranslate nohighlight">\(\frac{1}{N}\sum_k\)</span> in it.</p>
 </div>
 </div>
 <div class="section" id="finite-chain-with-nearest-neighbor-interactions">
 <h2>Finite Chain with Nearest-Neighbor Interactions<a class="headerlink" href="#finite-chain-with-nearest-neighbor-interactions" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id2">
 <img alt="../_images/finite-chain-nearest-neighbour-interactions.png" src="../_images/finite-chain-nearest-neighbour-interactions.png" />
-<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Finite chain with nearest-neighbour interactions</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">Finite chain with nearest-neighbour interactions</span></p>
 </div>
 <p>On a 1D finite chain, the transfer rate is</p>
 <div class="math notranslate nohighlight">
 \[R_{mn} = F(\delta_{m,n-1}+ \delta_{m,n+1}).\]</div>
 <p>which leads to the following master equation,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-equation-1d-finite-chain-nn-interactions">
-<span class="eqno">(23)<a class="headerlink" href="#equation-eqn-master-equation-1d-finite-chain-nn-interactions" title="Permalink to this equation">¶</a></span>\[\partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .\]</div>
-<p>Perform a discrete Fourier transform on equation <a class="reference internal" href="#equation-eqn-master-equation-1d-finite-chain-nn-interactions">(23)</a>,</p>
+<span class="eqno">(24)<a class="headerlink" href="#equation-eqn-master-equation-1d-finite-chain-nn-interactions" title="Permalink to this equation">¶</a></span>\[\partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .\]</div>
+<p>Perform a discrete Fourier transform on equation <a class="reference internal" href="#equation-eqn-master-equation-1d-finite-chain-nn-interactions">(24)</a>,</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P^k  = F(e^{ikm} P_{m+1} + e^{ikm} P_{m-1} -2 P^k) .\]</div>
 <p>Collect terms, we get</p>
@@ -389,16 +388,16 @@ TeX: {
 <div class="section" id="matrix-form">
 <h3>Matrix Form<a class="headerlink" href="#matrix-form" title="Permalink to this headline">¶</a></h3>
 <p>The matrix form of the equations makes it easier to understand. Here we work out the 1D finite chain problem using the matrix form explicitly.</p>
-<p>First of all, citing the master equation <a class="reference internal" href="#equation-eqn-master-equation-1d-finite-chain-nn-interactions">(23)</a>, we have</p>
+<p>First of all, citing the master equation <a class="reference internal" href="#equation-eqn-master-equation-1d-finite-chain-nn-interactions">(24)</a>, we have</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_m = F(P_{n+1} + P_{n-1}) -2F P_m .\]</div>
 <p>We rewrite it in the matrix form</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\partial_t \begin{pmatrix} P_1 \\ P_2 \\ P_3 \\ P_4 \\ P_5 \\ P_6 \end{pmatrix} + F \begin{pmatrix}  2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 \\ -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 &amp; 0 \\0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 &amp; -1 \\ -1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 2 \end{pmatrix} \begin{pmatrix} P_1 \\ P_2 \\ P_3 \\ P_4 \\ P_5 \\ P_6 \end{pmatrix} = 0\end{split}\]</div>
 <div class="toggle admonition">
-<p class="admonition-title">Matrix Form Makes a Difference</p>
+<p class="first admonition-title">Matrix Form Makes a Difference</p>
 <p>An easy method to get the matrix form is to write down the <span class="math notranslate nohighlight">\(\mathbf R\)</span> matrix whose diagonal elements are all 0s. We construct the <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix by adding a minus sign to all elements and use the sum of the original elements at the diagonal in the corresponding line. One should pay attention to the signs.</p>
-<p>The <span class="highlit">additive of the matrices</span> makes it possible to <span class="highlit">decomposed a complicated matrix into several simple matrices.</span></p>
+<p class="last">The <span class="highlit">additive of the matrices</span> makes it possible to <span class="highlit">decomposed a complicated matrix into several simple matrices.</span></p>
 </div>
 <p>To solve this equation, we diagonalize the 6 times 6 matrix. Similar to the discrete Fourier transform we used in the previous method, we have</p>
 <div class="math notranslate nohighlight">
@@ -407,8 +406,8 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[P^k(t) = P^k(0) e^{-4F\sin^2(k/2) t} .\]</div>
 <div class="hint admonition">
-<p class="admonition-title">Eigenvalue Problem</p>
-<p>Note that the elements of the diagonailized <span class="math notranslate nohighlight">\(\mathbf A_{\text{diag}}\)</span> matrix are just the eigenvalues of <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix with their corresponding eigenvectors. The descrete master equations is equivalent to the eigenvalue problem of <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix.</p>
+<p class="first admonition-title">Eigenvalue Problem</p>
+<p class="last">Note that the elements of the diagonailized <span class="math notranslate nohighlight">\(\mathbf A_{\text{diag}}\)</span> matrix are just the eigenvalues of <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix with their corresponding eigenvectors. The descrete master equations is equivalent to the eigenvalue problem of <span class="math notranslate nohighlight">\(\mathbf A\)</span> matrix.</p>
 </div>
 </div>
 </div>
@@ -418,9 +417,9 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\frac{1}{N}\sum_k \rightarrow \frac{1}{2\pi}\int dk .\]</div>
 <div class="hint admonition">
-<p class="admonition-title">Validate the Relation</p>
+<p class="first admonition-title">Validate the Relation</p>
 <p>The way to check this result is to check the sum. Apply the operators on unity, both sides should converge to 1,</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[\frac{1}{N}\sum_{k=1}^{N} 1 = 1 \Leftrightarrow \frac{1}{2\pi}\int_{-\pi}^{\pi} 1 dk = 1\]</div>
 </div>
 <p>The solutions are</p>
@@ -432,14 +431,14 @@ TeX: {
 \[P_m(t) = P_m(0)I_m(2Ft)e^{-2Ft}\]</div>
 <p>where <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span> is the <span class="highlit">propagator</span>.</p>
 <div class="important admonition" id="index-1">
-<p class="admonition-title">Modified Bessel Function</p>
+<p class="first admonition-title">Modified Bessel Function</p>
 <p><strong>Vocabulary</strong>: The <span class="highlit">modified Bessel function</span> is defined as</p>
 <div class="math notranslate nohighlight">
 \[\mathrm{I_m} (z) = \frac{1}{2\pi}\int_{-\pi}^{\pi} e^{-ikm} e^{z\cos{k}} dk  .\]</div>
 <p>Since the argument has imaginary part in it, it is also called the Bessel function of imaginary argument.</p>
-<div class="figure align-center" id="id3">
+<div class="last figure align-center" id="id3">
 <a class="reference internal image-reference" href="../_images/besselIFunctions1stKind.png"><img alt="../_images/besselIFunctions1stKind.png" src="../_images/besselIFunctions1stKind.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Source: <a class="reference external" href="https://en.wikipedia.org/wiki/File:BesselI_Functions_(1st_Kind,_n%3D0,1,2,3).svg">BesselI_Functions_(1st_Kind) &#64; Wikipedia</a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Source: <a class="reference external" href="https://en.wikipedia.org/wiki/File:BesselI_Functions_(1st_Kind,_n%3D0,1,2,3).svg">BesselI_Functions_(1st_Kind) &#64; Wikipedia</a></span></p>
 </div>
 </div>
 </div>
@@ -448,7 +447,7 @@ TeX: {
 <p>A 2D lattice is shown in <a class="reference internal" href="#fig-master-eqn-2d-lattice-illustration"><span class="std std-numref">Fig. 24</span></a>.</p>
 <div class="figure align-center" id="id4">
 <span id="fig-master-eqn-2d-lattice-illustration"></span><img alt="equilateral Triangle Lattice" src="../_images/equilateralTriangleLattice.png" />
-<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">An equilateral triangle lattice. Source: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Equilateral_Triangle_Lattice.svg">Equilateral Triangle Lattice by Jim Belk &#64; Wikipedia</a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">An equilateral triangle lattice. Source: <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Equilateral_Triangle_Lattice.svg">Equilateral Triangle Lattice by Jim Belk &#64; Wikipedia</a></span></p>
 </div>
 <p>We require it to have translational symmetry in both x and y directions. The solution is the product of solutions to x and y directions,</p>
 <div class="math notranslate nohighlight">
@@ -522,9 +521,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

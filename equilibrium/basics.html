@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Basics of Statistical Mechanics &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/equilibrium/basics.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="\(\Gamma\) Space and \(\mu\) Space" href="gamma-space-mu-space.html" />
@@ -276,13 +275,13 @@ TeX: {
 <p>Why are statistics important? In statistical physics, we are in fact dealing with DoFs in the order of Avogadro’s number, most of the time. If we are going to calculate the dynamics of these systems by combining all the dynamics of each particles, it becomes rather difficult. It already takes a huge amount of storage to store one screenshot of the system. Assuming each DoF take only 8 bits, we need <span class="math notranslate nohighlight">\(10^23\)</span> bytes that is <span class="math notranslate nohighlight">\(10^17\)</span> GB. It seems to be impossible to store this one snapshot of the system. It is time to steer away from this Newtonian approach.</p>
 <div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../_images/newtonian-dream.svg"><img alt="Newton's Dream" src="../_images/newtonian-dream.svg" width="60%" /></a>
-<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Newton’s plan of mechanics. Mechanics was in the center of all physics.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Newton’s plan of mechanics. Mechanics was in the center of all physics.</span></p>
 </div>
 <p>What is mechanics? Mechanics is the thinking that deals with dynamics of object in the following way:</p>
 <ul class="simple">
-<li><p>Description of initial state;</p></li>
-<li><p>Time evolution of the system;</p></li>
-<li><p>Extraction of observables.</p></li>
+<li>Description of initial state;</li>
+<li>Time evolution of the system;</li>
+<li>Extraction of observables.</li>
 </ul>
 <p>The initial state of an object is exactly what the name indicates. In a coordinate system approach, the initial state should include the coordinates and the time derivative of the coordinates since we are interested in dynamics. In fact, the coordinates and time derivative of them form a phase space. In general, a vector in phase space is a complete description of the state of an object. Thus time evolution of the object is simply the motion of state vector in phase space. Finally, we will do whatever is needed to extract observables. For example, we could trivially use the projection of points in phase space to get the position or velocity.</p>
 <p>The problem arise when it comes to a system with a large amount of particles. As mentioned previously, it’s in general not possible to record all these DoFs. We need a completely new scheme.</p>
@@ -293,7 +292,7 @@ TeX: {
 \[\text{probability of a point in phase space} = \exp(-\frac{E}{k_B T})\]</div>
 <p>Boltzmann factor gives us the (not normalized) probability of the system staying on a phase space state with energy <span class="math notranslate nohighlight">\(E\)</span>.</p>
 <div class="note admonition">
-<p class="admonition-title">Why Boltzmann Factor</p>
+<p class="first admonition-title">Why Boltzmann Factor</p>
 <p>Why does Boltzmann factor appear a lot in equilibrium statistical mechanics? Equilibrium of the system means when we add infinitesimal amount of energy to the whole thing including system and reservoir, a characteristic quantity <span class="math notranslate nohighlight">\(C(E) = C_S C_R\)</span> won’t change. That is the system and the reservoir will have the same changing rate of the characteristic quantity when energy is changed, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[\frac{\partial \ln C_S}{\partial E_S} = - \frac{\partial \ln C_R}{\partial E_R} .\]</div>
@@ -301,7 +300,7 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\frac{\partial \ln C_S}{\partial E_S} = \beta\]</div>
 <p>which will give us a Boltzmann factor there.</p>
-<p>This is just a very simple procedure to show that Boltzmann factor is kind of a natural factor in equilibrium system.</p>
+<p class="last">This is just a very simple procedure to show that Boltzmann factor is kind of a natural factor in equilibrium system.</p>
 </div>
 </div>
 <div class="section" id="partition-function">
@@ -329,8 +328,8 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[C = k_B\]</div>
 <div class="toggle admonition">
-<p class="admonition-title">Does This Result Depend on SHO</p>
-<p>This result has nothing to do with the detail of the SHO, no matter what mass they have, no matter what potential constant <span class="math notranslate nohighlight">\(q\)</span> they have, no matter what kind of initial state they have. All the characteristic quantities of SHO are irrelevant. Why? Mathematically, it’s because we have Gaussian integral here. <strong>But what is the physics behind this?</strong> Basicly this classical limit is a high temperature limit.</p>
+<p class="first admonition-title">Does This Result Depend on SHO</p>
+<p class="last">This result has nothing to do with the detail of the SHO, no matter what mass they have, no matter what potential constant <span class="math notranslate nohighlight">\(q\)</span> they have, no matter what kind of initial state they have. All the characteristic quantities of SHO are irrelevant. Why? Mathematically, it’s because we have Gaussian integral here. <strong>But what is the physics behind this?</strong> Basicly this classical limit is a high temperature limit.</p>
 </div>
 </div>
 <div class="section" id="magnetization">
@@ -345,20 +344,20 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[M = (\mu N e^{\beta \mu B} - \mu N e^{-\beta \mu B})/(\exp(\beta \mu B) + \exp(-\beta \mu B)) = \mu N \tanh (\beta \mu B)\]</div>
 <div class="toggle admonition">
-<p class="admonition-title">Python Code</p>
+<p class="first admonition-title">Python Code</p>
 <p>Use ipython notebook to display this result. The original notebook can be downloaded from <a class="reference external" href="http://emptymalei.github.io/StatisticalPhysics/equilibrium/display.ipynb">here</a>. (Just put the link to <a class="reference external" href="http://nbviewer.ipython.org">nbviewer</a> and everyone can view online.)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pylab</span> <span class="n">inline</span>
 <span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Populating</span> <span class="n">the</span> <span class="n">interactive</span> <span class="n">namespace</span> <span class="kn">from</span> <span class="nn">numpy</span> <span class="ow">and</span> <span class="n">matplotlib</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">y</span><span class="o">=</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">()</span>
+<div class="code python last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">figure</span><span class="p">()</span>
 <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;External Magnetic Field&#39;</span><span class="p">)</span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">)</span>
@@ -371,8 +370,8 @@ TeX: {
 <p>This is exactly the thing we saw in the experiment.</p>
 <p>This can be classified as a category of problems. In this specific example we see saturation of magnetization. However this is not alway true.</p>
 <div class="note admonition">
-<p class="admonition-title">Examples</p>
-<p>Examples can be shown here.</p>
+<p class="first admonition-title">Examples</p>
+<p class="last">Examples can be shown here.</p>
 </div>
 </div>
 <div class="section" id="heat-capacity">
@@ -389,10 +388,10 @@ TeX: {
 \[C = \frac{d}{T}\langle E \rangle\]</div>
 <p>Check the behavior of specific heat,</p>
 <ol class="arabic simple">
-<li><p>Is there a Discontinuity?</p></li>
-<li><p>Constant?</p></li>
-<li><p>Blow up?</p></li>
-<li><p>Converge?</p></li>
+<li>Is there a Discontinuity?</li>
+<li>Constant?</li>
+<li>Blow up?</li>
+<li>Converge?</li>
 </ol>
 <p>Specific heat can be used for second order phase transition. An simple example of this is Landau theory.</p>
 </div>
@@ -453,9 +452,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

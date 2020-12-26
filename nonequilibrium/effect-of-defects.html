@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Effect of Defects &#8212; Statistical Physics Notes</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootswatch-3.3.4/readable/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="../_static/modify.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script src="../_static/js/jquery-1.11.0.min.js"></script>
-    <script src="../_static/js/jquery-fix.js"></script>
-    <script src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-    <script src="../_static/bootstrap-sphinx.js"></script>
-    <link rel="canonical" href="https://statisticalphysics.leima.is/nonequilibrium/effect-of-defects.html" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Brownian Motion" href="brownian-motion.html" />
@@ -272,14 +271,14 @@ TeX: {
 <span id="index-0"></span><h2>Defects<a class="headerlink" href="#defects" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id1">
 <span id="fig-effects-of-defects-1d-chain"></span><img alt="../_images/effectsofDefects.png" src="../_images/effectsofDefects.png" />
-<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Defects on a 1D chain</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">Defects on a 1D chain</span></p>
 </div>
 <p>The <a class="reference internal" href="smoluchowski-eqn.html#id1"><span class="std std-ref">Smoluchowski Equation</span></a> describes the distribution of particles in a continuous potential. Here we discuss the distribution of particles in on a chain with defects.</p>
 <p>A defect on a chain is a site that captures the walker with a certain probability, as shown in <a class="reference internal" href="#fig-effects-of-defects-1d-chain"><span class="std std-numref">Fig. 29</span></a>. The master equation that describes the distribution is</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-eqn-effect-of-defects">
-<span class="eqno">(25)<a class="headerlink" href="#equation-eqn-master-eqn-effect-of-defects" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt}P_m = F(P_{m+1}+P_{m-1}-2P_m) - C \delta_{m,r} P_m,\]</div>
+<span class="eqno">(26)<a class="headerlink" href="#equation-eqn-master-eqn-effect-of-defects" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt}P_m = F(P_{m+1}+P_{m-1}-2P_m) - C \delta_{m,r} P_m,\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is the capture rate at the site of defect.</p>
-<p>Similar to any other master equations, the <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(25)</a> is a set of coupled first order differential equations. To solve <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(25)</a>, we consider the following equation</p>
+<p>Similar to any other master equations, the <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(26)</a> is a set of coupled first order differential equations. To solve <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(26)</a>, we consider the following equation</p>
 <div class="math notranslate nohighlight">
 \[\frac{d}{dt}y+\alpha y = f(t).\]</div>
 <p>The solution to the above equation when <span class="math notranslate nohighlight">\(\alpha\)</span> is constant, which is</p>
@@ -287,7 +286,7 @@ TeX: {
 \[y(t)  = e^{-\alpha t} y(0) + \int_0^t dt' e^{-\alpha (t - t')} f(t').\]</div>
 <p>If we introduce time dependencies for <span class="math notranslate nohighlight">\(\alpha\)</span>, we get an extra term <span class="math notranslate nohighlight">\(e^{-\int_{t'}^t ds \alpha(s)}\)</span>.</p>
 <div class="hint admonition">
-<p class="admonition-title">Green’s function</p>
+<p class="first admonition-title">Green’s function</p>
 <p>The general solution to any first order differential equation is</p>
 <div class="math notranslate nohighlight">
 \[y(t) = G(t,t_0) y(t_0) + \int_{t_0}^{t} df' G(t,t') f(t').\]</div>
@@ -310,7 +309,7 @@ TeX: {
 \[y(t) = \frac{\int\mu(t) f(t) dt + C}{\mu(t)},\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu(t) := e^{\int \alpha(t') dt'}\)</span>.</p>
 <p>However, when dealing with more complicate differential equations, the Green’s function method becomes more useful and intuitive. Green’s function represents the impulse response of the dynamical system.</p>
-<p>More about Green’s function, for example, the solution to second order inhomogeneous equation, is found in <span class="xref std std-ref">greens-function</span>.</p>
+<p class="last">More about Green’s function, for example, the solution to second order inhomogeneous equation, is found in <span class="xref std std-ref">greens-function</span>.</p>
 </div>
 <p>A more general problem is a time dependent source <span class="math notranslate nohighlight">\(g_m(t)\)</span> in the master equation,</p>
 <div class="math notranslate nohighlight">
@@ -325,68 +324,68 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\tilde P^k  = \tilde \eta^k + \tilde \Pi^k \tilde g^k  .\]</div>
 <div class="hint admonition">
-<p class="admonition-title">Laplace Transform</p>
+<p class="first admonition-title">Laplace Transform</p>
 <p>Laplace transform is a transform of a function <span class="math notranslate nohighlight">\(f(t)\)</span> to a function of <span class="math notranslate nohighlight">\(s\)</span> through</p>
 <div class="math notranslate nohighlight">
 \[L[f(t)] = \int_0^\infty f(t) e^{ - s t} dt .\]</div>
 <p>Some useful properties of Laplace transform are listed below.</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(L[\frac{d}{dt}f(t)] = s L[f(t)] - f(0)\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[\frac{d^2}{dt^2}f(t) = s^2 L[f(t)] - s f(0) - \frac{d f(0)}{dt}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[\int_0^t g(\tau) d\tau ] = \frac{L[f(t)]}{s}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[\alpha t] = \frac{1}{\alpha} L[s/\alpha]\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[e^{at}f(t)] = L[f(s-a)]\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[tf(t)] = - \frac{d}{ds} L[f(t)]\)</span>.</p></li>
+<li><span class="math notranslate nohighlight">\(L[\frac{d}{dt}f(t)] = s L[f(t)] - f(0)\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\frac{d^2}{dt^2}f(t) = s^2 L[f(t)] - s f(0) - \frac{d f(0)}{dt}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\int_0^t g(\tau) d\tau ] = \frac{L[f(t)]}{s}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\alpha t] = \frac{1}{\alpha} L[s/\alpha]\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[e^{at}f(t)] = L[f(s-a)]\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[tf(t)] = - \frac{d}{ds} L[f(t)]\)</span>.</li>
 </ol>
 <p>Some useful results of Laplace transform on some simple functions are calculated.</p>
 <ol class="arabic simple">
-<li><p><span class="math notranslate nohighlight">\(L[1] = \frac{1}{s}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[\delta] = 1\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[\delta^k] = s^k\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[t] = \frac{1}{s^2}\)</span>;</p></li>
-<li><p><span class="math notranslate nohighlight">\(L[e^{at}]= \frac{1}[s-a]\)</span>.</p></li>
+<li><span class="math notranslate nohighlight">\(L[1] = \frac{1}{s}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\delta] = 1\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[\delta^k] = s^k\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[t] = \frac{1}{s^2}\)</span>;</li>
+<li><span class="math notranslate nohighlight">\(L[e^{at}]= \frac{1}[s-a]\)</span>.</li>
 </ol>
-<p>More on Laplace transform is in <a class="reference internal" href="../vocabulary/transforms.html#laplace-transform"><span class="std std-ref">Laplace Transform</span></a>.</p>
+<p class="last">More on Laplace transform is in <a class="reference internal" href="../vocabulary/transforms.html#laplace-transform"><span class="std std-ref">Laplace Transform</span></a>.</p>
 </div>
 <p>Transform back into real space,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-equation-1d-chain-defects-g-f-l">
-<span class="eqno">(26)<a class="headerlink" href="#equation-eqn-master-equation-1d-chain-defects-g-f-l" title="Permalink to this equation">¶</a></span>\[\tilde P_m(\epsilon) = \tilde \eta_m(\epsilon)  + \sum_n \tilde \Pi_{m-n}(\epsilon) \tilde g_n(\epsilon).\]</div>
-<p>To get the solution to <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(25)</a>, we simply define</p>
+<span class="eqno">(27)<a class="headerlink" href="#equation-eqn-master-equation-1d-chain-defects-g-f-l" title="Permalink to this equation">¶</a></span>\[\tilde P_m(\epsilon) = \tilde \eta_m(\epsilon)  + \sum_n \tilde \Pi_{m-n}(\epsilon) \tilde g_n(\epsilon).\]</div>
+<p>To get the solution to <a class="reference internal" href="#equation-eqn-master-eqn-effect-of-defects">(26)</a>, we simply define</p>
 <div class="math notranslate nohighlight">
 \[\tilde g_n = - C\delta _{n,r} \tilde P_n\]</div>
-<p>and plugin it back into <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-g-f-l">(26)</a>, we get</p>
+<p>and plugin it back into <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-g-f-l">(27)</a>, we get</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-equation-1d-chain-defects-formal-solution">
-<span class="eqno">(27)<a class="headerlink" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution" title="Permalink to this equation">¶</a></span>\[\tilde P_m = \tilde \eta _m - C \tilde \Pi_{m-r} \tilde P_r .\]</div>
-<p>In fact, we haven’t solved the equation. The solution <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution">(27)</a> is merely a formal solution. The right hand side still depends on the probabillity.</p>
+<span class="eqno">(28)<a class="headerlink" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution" title="Permalink to this equation">¶</a></span>\[\tilde P_m = \tilde \eta _m - C \tilde \Pi_{m-r} \tilde P_r .\]</div>
+<p>In fact, we haven’t solved the equation. The solution <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution">(28)</a> is merely a formal solution. The right hand side still depends on the probabillity.</p>
 <p>If we set <span class="math notranslate nohighlight">\(m=r\)</span>, we get remove the dependencis of the mth mode,</p>
 <div class="math notranslate nohighlight">
 \[\tilde P_r  = \tilde \eta_r - C\tilde \Pi_0 \tilde P_r .\]</div>
 <p>From which, we fine the solution to the rth component is,</p>
 <div class="math notranslate nohighlight">
 \[\tilde P_r = \frac{\tilde \eta_r}{1+C\tilde \Pi_0}  .\]</div>
-<p>The rth mode is then combined with <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution">(27)</a>,</p>
+<p>The rth mode is then combined with <a class="reference internal" href="#equation-eqn-master-equation-1d-chain-defects-formal-solution">(28)</a>,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\tilde P_m &amp;= \eta_m - C\tilde \Pi_{m-r}  \frac{\tilde \eta_r}{1+C\tilde \Pi_0} \\
 &amp; = \eta_m - \frac{\tilde \Pi_{m-r} \eta_r}{1/C + \tilde \Pi_0}\end{split}\]</div>
 <p>Take the limits to check the properties.</p>
 <ol class="arabic">
-<li><p>Motion limit is given by</p>
+<li><p class="first">Motion limit is given by</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{C} \ll \tilde \Pi_0 .\]</div>
 <p>In this case, <span class="math notranslate nohighlight">\(\tilde P_m \to \tilde \eta_m - \frac{\tilde \Pi_{m-r} \tilde \eta_r}{\tilde \Pi_0}\)</span>. In this limit, the propagator decreases with time so fast that it becomes small enough to be neglected. The survival probability is dominated by motion not the capture.</p>
 </li>
-<li><p>Capture limit is given by</p>
+<li><p class="first">Capture limit is given by</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{C} \gg \tilde \Pi_0 .\]</div>
 <p>In this limit, the survival probability is dominated by capture, <span class="math notranslate nohighlight">\(\tilde P_m \to \tilde \eta_m\)</span>.</p>
 </li>
 </ol>
 <div class="note admonition">
-<p class="admonition-title">Numerical Solution</p>
-<p>Numerical solution to this is straight forward.</p>
+<p class="first admonition-title">Numerical Solution</p>
+<p class="last">Numerical solution to this is straight forward.</p>
 </div>
 <div class="toggle admonition">
-<p class="admonition-title">A Brief Summary of the Effect of Defect</p>
+<p class="first admonition-title">A Brief Summary of the Effect of Defect</p>
 <p>The master equation is</p>
 <div class="math notranslate nohighlight">
 \[\frac{d}{dt} P_m = \text{Without Defect} - C \delta_{m,r} P_m.\]</div>
@@ -403,7 +402,7 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[Q(t) = \sum_m P_m .\]</div>
 <p>Then we can find out its Laplace transform, which is</p>
-<div class="math notranslate nohighlight">
+<div class="last math notranslate nohighlight">
 \[\tilde Q(t) = \frac{1}{\epsilon} \left[ 1 - \frac{\tilde \eta_r(\epsilon)}{1/C + \tilde \Pi_0} \right]\]</div>
 </div>
 </div>
@@ -425,18 +424,18 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\mathscr M(t-t') = \frac{1}{1/C + \tilde \Pi_0} .\]</div>
 <div class="admonition hint">
-<p class="admonition-title">Hint</p>
+<p class="first admonition-title">Hint</p>
 <p>The Laplace transform of propagator is</p>
 <div class="math notranslate nohighlight">
 \[\tilde \Pi_0 = \int_0^\infty e^{-\epsilon t} \Pi_0 dt,\]</div>
-<p>which is actually decreasing when <span class="math notranslate nohighlight">\(\Pi_0\)</span> is a constant.</p>
+<p class="last">which is actually decreasing when <span class="math notranslate nohighlight">\(\Pi_0\)</span> is a constant.</p>
 </div>
 </div>
 <div class="section" id="photosynthesis">
 <h2>Photosynthesis<a class="headerlink" href="#photosynthesis" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-center" id="id2">
 <img alt="chloroplast" src="../_images/chloroplast.png" />
-<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Captions are <a class="reference external" href="https://en.wikipedia.org/wiki/Photosynthesis#mediaviewer/File:Chloroplast.svg">here on wikipedia</a>. Chloroplast ultrastructure: 1. outer membrane 2. intermembrane space 3. inner membrane (1+2+3: envelope) 4. stroma (aqueous fluid) 5. thylakoid lumen (inside of thylakoid) 6. thylakoid membrane 7. granum (stack of thylakoids) 8. thylakoid (lamella) 9. starch 10. ribosome 11. plastidial DNA 12. plastoglobule (drop of lipids)</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">Captions are <a class="reference external" href="https://en.wikipedia.org/wiki/Photosynthesis#mediaviewer/File:Chloroplast.svg">here on wikipedia</a>. Chloroplast ultrastructure: 1. outer membrane 2. intermembrane space 3. inner membrane (1+2+3: envelope) 4. stroma (aqueous fluid) 5. thylakoid lumen (inside of thylakoid) 6. thylakoid membrane 7. granum (stack of thylakoids) 8. thylakoid (lamella) 9. starch 10. ribosome 11. plastidial DNA 12. plastoglobule (drop of lipids)</span></p>
 </div>
 <p>The obsorbed energy of photons follows a random walk in the chloroplast until it hits on a reaction center. On the other hand, the photons can also be emited after some time. The whole process is a master equation of the form</p>
 <div class="math notranslate nohighlight">
@@ -448,11 +447,11 @@ TeX: {
 &amp; = \frac{\text{Integration of survival probability with the reaction center}}{\text{Integration of survival probability without the raction center}} .\end{split}\]</div>
 <p>Without the reaction,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-survival-probability-2">
-<span class="eqno">(28)<a class="headerlink" href="#equation-eqn-survival-probability-2" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt}Q + \frac{Q}{\tau} = 0,\]</div>
+<span class="eqno">(29)<a class="headerlink" href="#equation-eqn-survival-probability-2" title="Permalink to this equation">¶</a></span>\[\frac{d}{dt}Q + \frac{Q}{\tau} = 0,\]</div>
 <p>Assume the survival probability to have the following form</p>
 <div class="math notranslate nohighlight">
 \[Q(t) = Q(0) e^{-t/\tau}.\]</div>
-<p><a class="reference internal" href="#equation-eqn-survival-probability-2">(28)</a> becomes,</p>
+<p><a class="reference internal" href="#equation-eqn-survival-probability-2">(29)</a> becomes,</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{\tau} \int_0^\infty Q(t) dt = 1 .\]</div>
 <p>The quantum yield is</p>
@@ -547,9 +546,6 @@ TeX: {
       rel="nofollow">Page Source</a>
       </span>
 
-        <span><script data-gittip-username="emptymalei"
-        data-gittip-widget="button"
-        src="//gttp.co/v1.js"></script></span>
     </p>
 
     <hr>

@@ -115,12 +115,7 @@ This open source project is hosted on GitHub: `Statistical Physics <https://gith
 
 Read online: `Statistical Physics Notes <http://statisticalphysics.leima.is>`_ .
 
-Download the `Latest PDF Version <https://media.readthedocs.org/pdf/statisticalphysics/latest/statisticalphysics.pdf>`_ .
 
-
------
-
-The sitemap of the website can be downloaded from: :download:`sitemap.xml <_static/sitemap.xml>` or :download:`sitemap.xml.gz <_static/sitemap.xml.gz>` .
 
 
 
