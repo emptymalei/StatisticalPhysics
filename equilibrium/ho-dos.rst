@@ -238,7 +238,7 @@ In classical mechanics, the partition for a free particle function is
 
 .. math::
    Z = \int d^3 x \int d^3 p e^{-\beta p^2/2m} = V \left( \sqrt{\frac{ 2m \pi }{\beta} } \right)^3
-   :math: partition-function-free-particle-classical
+   :label: partition-function-free-particle-classical
 
 We can infer from this that the thermal wave length is :math:`1/\sqrt{\frac{ 2m \pi }{\beta}}` using :eq:`partition-function-and-thermal-wavelength` and :eq:`partition-function-and-thermal-wavelength-explained`. In quantum mechanics, the partition function is,
 

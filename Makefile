@@ -26,6 +26,7 @@ help:
 	@echo "  devhelp   to make HTML files and a Devhelp project"
 	@echo "  latex     to make LaTeX files, you can set PAPER=a4 or PAPER=letter"
 	@echo "  latexpdf  to make LaTeX files and run them through pdflatex"
+	@echo "  tectonic  to make LaTeX files and run them through pdflatex"
 	@echo "  changes   to make an overview of all changed/added/deprecated items"
 	@echo "  linkcheck to check all external links for integrity"
 	@echo "  doctest   to run all doctests embedded in the documentation (if enabled)"
@@ -92,6 +93,14 @@ latexpdf: latex
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) _build/latex
 	@echo "Running LaTeX files through pdflatex..."
 	make -C _build/latex all-pdf
+	@echo "pdflatex finished; the PDF files are in _build/latex."
+
+tectonic: tectonic
+	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) _build/latex
+	@echo "Running LaTeX files through pdflatex..."
+	cp _config/tex/* _build/latex/
+	# make -C _build/latex all-pdf
+	tectonic statisticalphysics.tex
 	@echo "pdflatex finished; the PDF files are in _build/latex."
 
 changes:

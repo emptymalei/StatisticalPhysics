@@ -28,7 +28,7 @@ Phase transitions only exists in systems with infinite particles.
 
    The idea is that we have several races scatter on a grid. Each individual is more satistifed if the individual can live nearby a predefined percentage of population of races. If the individual is not satistifed, then the individual will move to another place.
 
-   For better understanding, checkout this web app I wrote: `Schelling's segeration model <https://schelling.leima.is/>`_.
+   For better understanding, checkout this web app I wrote: `Schelling's segeration model <https://schelling-model.herokuapp.com/>`_.
 
    Just like the Ising model, domains might appear. But domains might not appear for some certain parameters. This change is drastic. There is a phase transition. To be precise, we have to define the order parameter in Schelling's model. For example, we define the average size of the communities as our order parameter.
 
@@ -39,12 +39,12 @@ Phase transitions only exists in systems with infinite particles.
    There are also other parameters to consider but a phase diagram can be calculated.
 
 
-   The following is an app for Schelling's model. It is better to click on the link `Schelling's segeration model <https://schelling.leima.is/>`_.
+   The following is an app for Schelling's model. It is better to click on the link `Schelling's segeration model <https://schelling-model.herokuapp.com/>`_.
 
    .. raw:: html
 
     <iframe width="100%" height="1500"
-    src="https://schelling.leima.is/"
+    src="https://schelling-model.herokuapp.com/"
     frameborder="0" allowfullscreen></iframe>
 
 
@@ -52,8 +52,9 @@ Phase transitions only exists in systems with infinite particles.
 
    1. `Schelling’s Segregation Model, I <https://medium.com/@jxxcarlson/schellings-segregation-model-i-43e612241b62>`_
    2. `Schelling's Segregation Model | Model Thinking <https://www.coursera.org/lecture/model-thinking/schellings-segregation-model-1qEBU>`_
-   2. `DT&SC 7-11: Schelling's Segregation Model @ YouTube <https://www.youtube.com/watch?v=AZlWOykGzYg>`_
-   3. `Gauvin, L., Vannimenus, J., & Nadal, J. P. (2009). Phase diagram of a Schelling segregation model. European Physical Journal B, 70(2), 293–304. <https://doi.org/10.1140/epjb/e2009-00234-0>`_
+   3. `DT&SC 7-11: Schelling's Segregation Model @ YouTube <https://www.youtube.com/watch?v=AZlWOykGzYg>`_
+   4. `Gauvin, L., Vannimenus, J., & Nadal, J. P. (2009). Phase diagram of a Schelling segregation model. European Physical Journal B, 70(2), 293–304. <https://doi.org/10.1140/epjb/e2009-00234-0>`_
+
 
 .. _mean-field-theory:
 

@@ -543,7 +543,7 @@ latex_docclass = {
 
 latex_additional_files = [
     '_config/tex/puthesis.cls',
-#    '_config/tex/preamble._tex',
+    '_config/tex/preamble._tex',
 #    '_config/tex/footer._tex',
     '_config/tex/sphinx.sty',
     '_config/tex/Makefile',
