@@ -86,7 +86,7 @@ The equal a-priori principle can be illustrated using a two-magnet system. For s
 With an external magnetic field, the energy of the system is determined by
 
 .. math::
-   (s_1  + s_2) B,
+   (s_1  + s_2) \mu B,
 
 where :math:`s_i=\pm 1`.
 
@@ -139,10 +139,10 @@ The Magic of Equal a Priori Probabilities
 ---------------------------------------------
 
 
-Though assuming least knowledge of the distribution of the microstates, we are still able to predict the observables. There exists several magical processes in this theory.
+Though assuming the least knowledge of the distribution of the microstates, we are still able to predict the observables. There exist several magical processes in this theory.
 
 
-The first magics is the so called more is different. Given thorough knowledge of a single particle, we still find phenomena unexplained by the single particle property.
+The first magic is the so-called more is different. Given thorough knowledge of a single particle, we still find phenomena unexplained by the single-particle property.
 
 .. admonition:: How could Equal a Priori help?
    :class: warning
