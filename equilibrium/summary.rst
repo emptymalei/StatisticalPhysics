@@ -59,12 +59,22 @@ However, this approach requires a first principle that we could use to figure ou
    In Bayesian statistics,
 
    .. math::
-      p(\{\mathscr O_i\} \vert t, \{m_i, r_i\}) p(t \vert \{m_i, r_i\} ) = p(t \vert \{\mathscr O_i\} , \{m_i, r_i\} ) p(\{\mathscr O_i\}).
+      p(\{\mathscr O_i\}, \{m_i, r_i\})  = p(\{\mathscr O_i\} \mid \{m_i, r_i\}) p(\{m_i, r_i\} ) = p(\{m_i, r_i\}\mid \{\mathscr O_i\}   ) p(\{\mathscr O_i\}).
 
    :math:`p(\{\mathscr O_i\})` is the prior distribution and is observed in experiments.
 
-   This formalism brings in the question of how our statistical theory of matter is validated. A statistical theory predict the most prominent values of the observables as well as the confidence of the predicted value. On the other hand, our experiments tell us the probability distributions of the observables from our sampling methods in experiments. To validate the statistical theory being developed, a hypothesis test should be carried out.
+   Ideally, it would be a perfect model if we determine the joint distribution :math:`p(\{\mathscr O_i\}, \{m_i, r_i\})`. The marginalized distribution $p(\{\mathscr O_i\}) = \int p(\{\mathscr O_i\}, \{m_i, r_i\}) \mathrm d\{m_i, r_i\}$ corresponds to our observations. This joint distribution connects the microscopic view and the macroscopic view. However, it is utterly impossible to calculate the details of the probabilities for areal-world statistical system. First, we have no information of the initial state. We have to introduce the stochastic processes to describe the states. Secondly, this joint probability often becomes very hard to compute when we introduce interactions between the particles.
 
+   Nevertheless, we can still perform some analysis using approximations. If we ask for the probability of the microscopic states for given macroscopic observables, we have the inference
+
+   .. math::
+      p(\{m_i, r_i\}\mid \{\mathscr O_i\}   ) = \frac{p(\{\mathscr O_i\} \mid \{m_i, r_i\}) p(\{m_i, r_i\} ) }{ p(\{\mathscr O_i\}) },
+
+   where :math:`p(\{\mathscr O_i\} \mid \{m_i, r_i\})` is given by a physics model such as momentum transfer as pressure of ideal gas, :math:`p(\{m_i, r_i\}` is given by some prior knowledge such as Boltzmann's equal a priori probability, :math:`p(\{\mathscr O_i\})` is from observation.
+
+   Computation aside, this formalism brings in the question of how our statistical theory of matter can be validated. There are two sides in the theory: A statistical model that predicts the most prominent values of the observables as well as the confidence, and the sampled probability distributions of observables from our experiments. To validate the statistical model, we perform some kind of hypothesis test.
+
+   On the other hand, real-world statistical physics deals with a huge amount of particles which leads to an extremely narrow confidence interval. We can simply match the results without considering the fluctuations.
 
 
 For example, the Boltzmann theory assume equal a priori probabilities for the microstates. In Boltzmann theory, we need two aspects of knowledge to understand the statistical system.
