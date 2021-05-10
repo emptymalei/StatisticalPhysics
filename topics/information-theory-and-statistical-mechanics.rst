@@ -52,7 +52,7 @@ The max entropy principle states that the distribution we choose for our model i
 We could have multiple constraints,
 
 .. math::
-   \langle f_i \rangle_{t} = \langle f_ \rangle_o,
+   \langle f_i \rangle_{t} = \langle f_i \rangle_o,
 
 if we have multiple observables.
 
@@ -85,7 +85,7 @@ The variation of the Shannon entropy is
 The variation of the theoretical expectation of the observable is
 
 .. math::
-   \frac{\delta \langle f_i \rangel_t}{\delta p} = \frac{ \delta \int \mathrm d s p(s) f_i(s) }{\delta p} = \f_i(s).
+   \frac{\delta \langle f_i \rangle_t}{\delta p} = \frac{ \delta \int \mathrm d s p(s) f_i(s) }{\delta p} = \f_i(s).
 
 The variation of the total cost becomes
 
