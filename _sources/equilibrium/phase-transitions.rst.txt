@@ -179,3 +179,6 @@ References
 1. `Kochmański, M., Paszkiewicz, T., & Wolski, S. (2013). Curie-Weiss magnet - A simple model of phase transition. European Journal of Physics, 34(6), 1555–1573. <https://doi.org/10.1088/0143-0807/34/6/1555>`_
 
 .. _van-der-waals-gas:
+
+Van der Waals Gas
+~~~~~~~~~~~~~~~~~~~~~~~~~

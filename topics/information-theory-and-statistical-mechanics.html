@@ -218,6 +218,7 @@ TeX: {
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Information Theory and Statistical Mechanics</a><ul>
 <li><a class="reference internal" href="#line-of-reasoning">Line of Reasoning</a></li>
+<li><a class="reference internal" href="#the-max-entropy-principle">The Max Entropy Principle</a></li>
 <li><a class="reference internal" href="#is-this-related-to-mutual-information">Is this related to mutual information?</a></li>
 <li><a class="reference internal" href="#classical-balls-on-chessboard">Classical Balls on Chessboard</a></li>
 </ul>
@@ -267,14 +268,20 @@ TeX: {
 </div>
 <div class="section" id="line-of-reasoning">
 <h2>Line of Reasoning<a class="headerlink" href="#line-of-reasoning" title="Permalink to this headline">¶</a></h2>
-<p>Jaynes pointed out in this paper that we are solving an insufficient reason problem. What we could measure is some macroscopic quantity, from which we derive other macroscopic quantities. That being said, we know a system with a lot of possible microscopic states, <span class="math notranslate nohighlight">\(\{ s_i \}\)</span> while the probabilities of each microscopic state <span class="math notranslate nohighlight">\(\{p_i \}\)</span> is not known at all. We also know a macroscopic quantity <span class="math notranslate nohighlight">\(\langle f(s_i) \rangle\)</span> which is defined as</p>
+<p>Jaynes pointed out in this paper that we are solving an insufficient reasoning problem. What we could measure is some macroscopic quantity, from which we derive other macroscopic quantities. That being said, we know a system with a lot of possible microscopic states, <span class="math notranslate nohighlight">\(\{ s_i \}\)</span> while the probabilities of each microscopic state <span class="math notranslate nohighlight">\(\{p_i \}\)</span> is not known at all. We also know a macroscopic quantity <span class="math notranslate nohighlight">\(\langle f(s_i) \rangle\)</span> which is defined as</p>
 <div class="math notranslate nohighlight">
 \[\langle f \rangle = \sum_i p_i f(s_i).\]</div>
 <p>The question that Jaynes asked was the following.</p>
 <p><strong>How are we supposed to find another macroscopic quantity that also depends on the microscopic state of the system?</strong> Say <span class="math notranslate nohighlight">\(g(s_i)\)</span>.</p>
-<p>It is a quite interesting question for stat mech. In my opinion, it can be generalized. To visualize this problem, we know think of this landscape of the states. Instead of using the state as the dimensions, we use the probabilities as the dimensions since they are unknown. In the end, we have a coordinate system with each dimension as the value of the probabilities <span class="math notranslate nohighlight">\(\{p_i\}\)</span> and the one dimension for the value of <span class="math notranslate nohighlight">\(\langle g \rangle (p_i)\)</span> which depends on <span class="math notranslate nohighlight">\(\{p_i\}\)</span>. Now we constructed a landscape of <span class="math notranslate nohighlight">\(\langle g \rangle (p_i)\)</span>. The question is, how does our universe arrange the landscape? Where are we in this landscape if we are at equilibrium?</p>
+<p>To visualize this problem, we know think of this landscape of the states. Instead of using the state as the dimensions, we use the probabilities as the dimensions since they are unknown. In the end, we have a coordinate system with each dimension as the value of the probabilities <span class="math notranslate nohighlight">\(\{p_i\}\)</span> and the one dimension for the value of <span class="math notranslate nohighlight">\(\langle g \rangle (p_i)\)</span> which depends on <span class="math notranslate nohighlight">\(\{p_i\}\)</span>. Now we constructed a landscape of <span class="math notranslate nohighlight">\(\langle g \rangle (p_i)\)</span>. The question is, how does our universe arrange the landscape? Where are we in this landscape if we are at equilibrium?</p>
+<div class="figure align-center" id="id1">
+<img alt="../_images/probability-landscape.png" src="../_images/probability-landscape.png" />
+<p class="caption"><span class="caption-number">Fig. 39 </span><span class="caption-text">Illustions.</span></p>
+</div>
+<div class="toggle admonition">
+<p class="first admonition-title">Crucial Problems</p>
 <p>In Jaynes’ paper, he mentioned several crucial problems.</p>
-<ol class="arabic simple">
+<ol class="last arabic simple">
 <li>Do we need to know the landscape formed by <span class="math notranslate nohighlight">\(\{p_i\}\)</span> and <span class="math notranslate nohighlight">\(\langle f(x_i)\rangle\)</span>? No.</li>
 <li>Do we need to find the exact location of our system? We have to.</li>
 <li>How? Using the max entropy principle.</li>
@@ -284,10 +291,53 @@ TeX: {
 <li>With the generality of the formalism, what else can we do with it to improve our statistical mechanics power? Based on the information we know, we have different formalism of statistical physics.</li>
 </ol>
 </div>
+</div>
+<div class="section" id="the-max-entropy-principle">
+<h2>The Max Entropy Principle<a class="headerlink" href="#the-max-entropy-principle" title="Permalink to this headline">¶</a></h2>
+<p>The max entropy principle states that the distribution we choose for our model is based on the least information principle, i.e., largest Shannon entropy <span class="math notranslate nohighlight">\(S_p\)</span>, or the distribution <span class="math notranslate nohighlight">\(p(s)\)</span> should have the largest uncertainty, subject to the constraint that the theory should match the observations, i.e., <span class="math notranslate nohighlight">\(\langle f\rangle_{t} = \langle f \rangle_o\)</span> where <span class="math notranslate nohighlight">\(\langle f\rangle_{t}\)</span> denotes for theoretical result and <span class="math notranslate nohighlight">\(\langle f \rangle_o\)</span> is the observation,</p>
+<div class="math notranslate nohighlight">
+\[\langle f\rangle_{t} = \int \mathrm d s f(s) p(s).\]</div>
+<p>We could have multiple constraints,</p>
+<div class="math notranslate nohighlight">
+\[\langle f_i \rangle_{t} = \langle f_ \rangle_o,\]</div>
+<p>if we have multiple observables.</p>
+<div class="toggle admonition">
+<p class="first admonition-title">Shannon Entropy</p>
+<p>The Shannon entropy is</p>
+<div class="last math notranslate nohighlight">
+\[S_p = -\mathrm{Tr}_s p(s) \log p(s).\]</div>
+</div>
+<p>The principle is an optimization problem with constraints. The constraint can be translated into the Lagrange multipliers. The cost function becomes</p>
+<div class="math notranslate nohighlight">
+\[\mathcal L[p]  = - S_p + \sum_i \lambda_i \left( \langle f_i \rangle_o - \int \mathrm d s f_i(s) p(s) \right) + \gamma ( 1 - \int \mathrm d s p(s)),\]</div>
+<p>where the last constraint accounts for the fact that <span class="math notranslate nohighlight">\(p(s)\)</span> has to be a probability density.</p>
+<p>Using variational method, we require <span class="math notranslate nohighlight">\(\delta \mathcal L /\delta p = 0\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[\frac{\delta \mathcal L[p]}{\delta p} = \frac{-\delta S_p}{\delta p} - \sum_i \frac{\lambda_i \delta \langle f_i \rangle_t}{\delta p} - \frac{\gamma \delta \int \mathrm d s p(s)}{\delta p}.\]</div>
+<p>The variation of the Shannon entropy is</p>
+<div class="math notranslate nohighlight">
+\[\frac{-\delta S_p}{\delta p} = - \log p(s) - 1.\]</div>
+<p>The variation of the theoretical expectation of the observable is</p>
+<div class="math notranslate nohighlight">
+\[\frac{\delta \langle f_i \rangel_t}{\delta p} = \frac{ \delta \int \mathrm d s p(s) f_i(s) }{\delta p} = \f_i(s).\]</div>
+<p>The variation of the total cost becomes</p>
+<div class="math notranslate nohighlight">
+\[\frac{\delta \mathcal L}{\delta p} = \log p(s) + 1 - \lambda_i f_i(s) - \gamma =0.\]</div>
+<p>The solution to this is</p>
+<div class="math notranslate nohighlight">
+\[p \propto e^{\lambda_i f_i(s)}.\]</div>
+<p>By normalizing it, we have the the Boltzmann distribution,</p>
+<div class="math notranslate nohighlight">
+\[p = \frac{1}{Z}e^{\lambda_i f_i(s)},\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[Z = \int \mathrm d s e^{\lambda_i f_i(s)} = e^{\gamma -1}.\]</div>
+<p>This leads to the</p>
+</div>
 <div class="section" id="is-this-related-to-mutual-information">
 <h2>Is this related to mutual information?<a class="headerlink" href="#is-this-related-to-mutual-information" title="Permalink to this headline">¶</a></h2>
-<p>The idea is great.</p>
-<p>However, I think we have to consider another principle. I call this max mutual information principle. Suppose we do not have this max entropy principle. Somehow, we come up with an expression of the average of another quantity. What will happen from a landscape point of view?</p>
+<p>The idea is great. Let’s expand it a bit.</p>
+<p>Do we have a max mutual information principle instead of the max entropy principle? Somehow, we come up with an expression of the average of another quantity. What will happen from a landscape point of view?</p>
 <p>If we construct these these two landscapes:</p>
 <ol class="arabic simple">
 <li><span class="math notranslate nohighlight">\(\langle f(x_i)\rangle\)</span> as a function of <span class="math notranslate nohighlight">\(\{p_i\}\)</span>,</li>
@@ -297,7 +347,7 @@ TeX: {
 </div>
 <div class="section" id="classical-balls-on-chessboard">
 <h2>Classical Balls on Chessboard<a class="headerlink" href="#classical-balls-on-chessboard" title="Permalink to this headline">¶</a></h2>
-<p>We write down a function, which is the average of the balls.</p>
+<p>We can write down a function, which is the average of the balls.</p>
 </div>
 </div>
 
