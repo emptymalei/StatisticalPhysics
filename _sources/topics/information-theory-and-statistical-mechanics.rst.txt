@@ -85,7 +85,7 @@ The variation of the Shannon entropy is
 The variation of the theoretical expectation of the observable is
 
 .. math::
-   \frac{\delta \langle f_i \rangle_t}{\delta p} = \frac{ \delta \int \mathrm d s p(s) f_i(s) }{\delta p} = \f_i(s).
+   \frac{\delta \langle f_i \rangle_t}{\delta p} = \frac{ \delta \int \mathrm d s p(s) f_i(s) }{\delta p} = f_i(s).
 
 The variation of the total cost becomes
 
