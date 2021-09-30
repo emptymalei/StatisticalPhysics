@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use contents and softwares in this repo, please cite it as below."
+authors:
+- family-names: "Ma"
+  given-names: "Lei"
+  orcid: "https://orcid.org/0000-0002-9726-180X"
+title: "Statistical Physics and Related Topics"
+version: 0.1.0
+doi: 10.5281/zenodo.5541613
+date-released: 2021-05-25
+url: "https://github.com/emptymalei/statisticalphysics"
