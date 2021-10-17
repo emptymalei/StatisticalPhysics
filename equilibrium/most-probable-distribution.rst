@@ -57,7 +57,7 @@ As mentioned in :ref:`what-is-statistical-mechanics`, a theory of the distributi
 
    For systems with enormous number of particles, we observe their macroscopic properties such as energies, pressure in experiments. But we have very limited information about the internal structure. The principle proposed by Boltzmann is that all these different possible configurations of microstructure are equally distributed, a.k.a., principle of equal *a prior* probabilities.
 
-   **It should be noted that all the possible states to be used for the probabilities should produce the observables we already know.** For example,
+   **It should be noted that all the possible states to be used for the probabilities should produce the observables we already know.** For example, the total energy of the system, :math:`E`, and the volume of the gass, :math:`V` should be consistent for each of the microstates.
 
 
 An Example of Calculations
@@ -68,20 +68,13 @@ An Example of Calculations
 
    This example is not exactly an statistical physics problem since we do not have enough particles to make it statistically significant. For example, we use Sterling's approximation but this doesn't hold in this case.
 
-The equal a-priori principle can be illustrated using a two-magnet system. For simplicity, we will ignore the interactions between the magnets. In the example, we use :math:`a_i` to denote the number spins on the different states,
+The equal a-priori principle can be illustrated using a two-magnet system. For simplicity, we will ignore the interactions between the magnets. In the example, we use :math:`a_i` to denote the number spins on the different spin states (up or down),
 
 .. math::
    \begin{cases}
    a_1 \qquad \text{Number of spins pointing downward}, \\
    a_2 \qquad \text{Number of spins pointing upward}
    \end{cases}
-
-.. _equal-a-priori-probability:
-
-.. figure:: images/equal-a-prior-probability.png
-   :align: center
-
-   A simple system of 2 magnets in an external magnetic field. The external magnetic field is pointing upwards. The energy of the system is labelled as :math:`E` and the distributions are labelled on the right. *In principle, we could also have multiple possible distributions for the same energy of the whole system. In our case, it is simply a coincidence that we only have on distribution corresponding to each energy of the system.*
 
 With an external magnetic field, the energy of the system is determined by
 
@@ -90,33 +83,49 @@ With an external magnetic field, the energy of the system is determined by
 
 where :math:`s_i=\pm 1`.
 
-Each of the possible configuration of the the two magnets is considered as a **microstate**. That being said, the equal a-prior principle tells us that the probabilities of the different configurations are the same, **for each total energy**, if we our restricting observable is energy. This is an effort of least information assumption, a.k.a., the Bernoulli's principle of indifference.[Buck2015]_
 
-We have the following possible **energy distributions**.
+.. _equal-a-priori-probability:
 
-.. math::
-   \begin{cases}
-   a_1  = 0, & \qquad \text{particles at single particle energy state } \varepsilon_1 = -\mu B \\
-   a_2  = 2, & \qquad \text{particles at single particle energy state } \varepsilon_2 = \mu B
-   \end{cases}
+.. figure:: images/equal-a-prior-probability.png
+   :align: center
 
-which has total energy of :math:`2\mu B` and number of microstates :math:`\Omega = 1`.
+   A simple system of 2 magnets in an external magnetic field. The external magnetic field is pointing upwards. The energy of the system is labelled as :math:`E` and the distributions are labelled on the right. *In principle, we could also have multiple possible distributions for the same energy of the whole system. In our case, it is simply a coincidence that we only have on distribution corresponding to each energy of the system.*
 
-.. math::
-   \begin{cases}
-   a_1  = 1, & \qquad \text{particles at single particle energy state } \varepsilon_1 = -\mu B \\
-   a_2  = 1, & \qquad \text{particles at single particle energy state } \varepsilon_2 = \mu B
-   \end{cases}
 
-which has total energy of :math:`0` and number of microstates :math:`\Omega = 2`.
+.. admonition:: Extended Caption of :numref:`equal-a-priori-probability`
+   :class: warning
 
-.. math::
-   \begin{cases}
-   a_1  = 2, & \qquad \text{particles at single particle energy state } \varepsilon_1 = -\mu B \\
-   a_2  = 0, & \qquad \text{particles at single particle energy state } \varepsilon_2 = \mu B
-   \end{cases}
+   We have the following possible **energy distributions**.
 
-which has total energy of :math:`-2\mu B` and number of microstates :math:`\Omega = 1`.
+   .. math::
+      \begin{cases}
+      a_1  = 0, & \qquad \text{particles at single particle energy state } \varepsilon_1 = -\mu B \\
+      a_2  = 2, & \qquad \text{particles at single particle energy state } \varepsilon_2 = \mu B
+      \end{cases}
+
+   which has total energy of :math:`2\mu B` and number of microstates :math:`\Omega = 1`, and
+
+   .. math::
+      \begin{cases}
+      a_1  = 1, & \qquad \text{particles at single particle energy state } \varepsilon_1 = -\mu B \\
+      a_2  = 1, & \qquad \text{particles at single particle energy state } \varepsilon_2 = \mu B
+      \end{cases}
+
+   which has total energy of :math:`0` and number of microstates :math:`\Omega = 2`, and
+
+   .. math::
+      \begin{cases}
+      a_1  = 2, & \qquad \text{particles at single particle energy state } \varepsilon_1 = -\mu B \\
+      a_2  = 0, & \qquad \text{particles at single particle energy state } \varepsilon_2 = \mu B
+      \end{cases}
+
+   which has total energy of :math:`-2\mu B` and number of microstates :math:`\Omega = 1`.
+
+
+
+
+Each of the possible configuration of the the two magnets is considered as a **microstate**. That being said, the equal a-prior principle tells us that the probabilities of the different configurations are the same, **for each total energy**, if we our restricting observable is energy. For example, the two states for total energy :math:`E=0` are have the same probability. This is an effort of least information assumption, a.k.a., the **Bernoulli's principle of indifference** [Buck2015]_.
+
 
 In principle, we could calculate all observables of the system using this assumption. However, it will be extremely difficult to tranverse all the possible states (:ref:`numerical-calculations-to-iterate-through-all-microstates`).
 
@@ -170,11 +179,12 @@ How Expensive is it to Calculate the Distributions
 It is very expensive to iterate through all the possible microstates to simulate large systems. To demonstrate this, I use Python to iterate through all the possible states in an Ising model, without any observables constraints. All the results can be dervied theoretically. However we will only show the numerical results to help us building up some inutitions and to understand how expensive it is to iterate through all the possible states.
 
 
+
 Ising Model with Self-interactions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-For example, we could calculate all the configurations and energies of the configurations using brute force.
+For example, we could calculate all the configurations and energies of the configurations using brute force. A simple estimation of the number of microstates is :math:`\Omega = 2^N`, where :math:`N` is the number of spins. The number grows exponentially with the number of spins.
 
 .. figure:: assets/most-probable-distribution/distributions_on_different_grids.png
    :align: center
@@ -183,7 +193,7 @@ For example, we could calculate all the configurations and energies of the confi
 
 
 
-In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as :math:`2^N` where :math:`N` is the total number of particles, if we do not implement any parallel computations.
+In reality, these calculations becomes really hard when the number of particles gets large. For benchmark purpose, I did the calculations in serial on a MacBook Pro (15-inch, 2018) with 2.2 GHz Intel Core i7 and 16 GB 2400 MHz DDR4. It takes about 20min to work out the 5 by 5 grid. The calculation time is scaling up as :math:`2^N` where :math:`N` is the total number of particles, if we do not implement any parallel computations or other tricks.
 
 
 References
