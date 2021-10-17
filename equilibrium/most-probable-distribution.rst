@@ -124,7 +124,7 @@ where :math:`s_i=\pm 1`.
 
 
 
-Each of the possible configuration of the the two magnets is considered as a **microstate**. That being said, the equal a-prior principle tells us that the probabilities of the different configurations are the same, **for each total energy**, if we our restricting observable is energy. For example, the two states for total energy :math:`E=0` are have the same probability. This is an effort of least information assumption, a.k.a., the **Bernoulli's principle of indifference** [Buck2015]_.
+Each of the possible configuration of the the two magnets is considered as a **microstate**. That being said, the equal a-prior principle tells us that the probabilities of the different configurations are the same, **for each total energy**, if we our restricting observable is energy. For example, the two states for total energy :math:`E=0` are have the same probability. This is an effort of least information assumption, a.k.a., the **Bernoulli's principle of indifference** [Buck2015]_ [Yang2012]_.
 
 
 In principle, we could calculate all observables of the system using this assumption. However, it will be extremely difficult to tranverse all the possible states (:ref:`numerical-calculations-to-iterate-through-all-microstates`).
@@ -200,3 +200,5 @@ References
 --------------------------
 
 .. [Buck2015] `Buck, B., & Merchant, A. C. (2015). Probabilistic Foundations of Statistical Mechanics: A Bayesian Approach. <http://arxiv.org/abs/1512.01368>`_
+.. [Yang2012] Yang X. Yang Xian. In: Thermal and Statistical Physics (PHYS20352) [Internet]. [cited 17 Oct 2021]. Available: https://theory.physics.manchester.ac.uk/~xian/thermal/chap3.pdf
+
