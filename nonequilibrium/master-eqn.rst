@@ -30,7 +30,7 @@ Master Equation
 --------------------------
 
 
-Suppose the states of a system are denoted as :math:`\xi`, and the probability of the states at time :math:`t` are denoted as :math:`P_\xi(t)`. We assume the probability of the states at time :math:`t` only depend on the probability of the states a moment ago,
+Suppose the states of a system are denoted as :math:`\xi`, and the probability of the states at time :math:`t` are denoted as :math:`P_\xi(t)`. We assume the probability of the states at time :math:`t` only depends on the probability of the states a moment ago,
 
 .. math::
    P_\xi(t) = \sum_\mu Q_{\xi\mu} P_\mu(t-\tau) .
