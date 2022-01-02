@@ -218,7 +218,7 @@ TeX: {
       role="menu"
       aria-labelledby="dLabelLocalToc"><ul>
 <li><a class="reference internal" href="#">Quantum Master Equation</a><ul>
-<li><a class="reference internal" href="#id1">Quantum Master Equation</a><ul>
+<li><a class="reference internal" href="#quantum-master-equation-1">Quantum Master Equation</a><ul>
 <li><a class="reference internal" href="#pauli-s-mistake">Pauli’s Mistake</a></li>
 <li><a class="reference internal" href="#better-quantum-master-equations">Better Quantum Master Equations</a></li>
 </ul>
@@ -275,8 +275,8 @@ TeX: {
   <div class="section" id="quantum-master-equation">
 <h1>Quantum Master Equation<a class="headerlink" href="#quantum-master-equation" title="Permalink to this headline">¶</a></h1>
 <p id="index-0">.._Quantum Master Equation:</p>
-<div class="section" id="id1">
-<h2>Quantum Master Equation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="quantum-master-equation-1">
+<h2>Quantum Master Equation<a class="headerlink" href="#quantum-master-equation-1" title="Permalink to this headline">¶</a></h2>
 <div class="important admonition">
 <p class="first admonition-title">Density Matrix</p>
 <p class="last">In quantum mechanics, the probability doesn’t deliver all the information available. The density matrix is a better choice to construct a master equation for quantum systems.</p>
@@ -425,7 +425,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 <img alt="../_images/quantum2states.png" class="align-center" src="../_images/quantum2states.png" />
 <p class="last">However, we can always choose a combination of the current basis to diagonalize the density matrix.</p>
 </div>
-<p>The projection technique can also be applied on the flavor transformations of neutrinos. <a class="footnote-reference" href="#id7" id="id2">[3]</a></p>
+<p>The projection technique can also be applied on the flavor transformations of neutrinos. <a class="footnote-reference" href="#footnote-3" id="footnote-reference-1">[3]</a></p>
 </div>
 <div class="section" id="simplify-the-quantum-master-equation">
 <h2>Simplify the Quantum Master Equation<a class="headerlink" href="#simplify-the-quantum-master-equation" title="Permalink to this headline">¶</a></h2>
@@ -466,7 +466,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 \phantom{\mathscr K(t-t')} &amp; \phantom{{} = } + \lambda \hat D  \hat L_W  e^{-i(1-\hat D)  \hat L_0 (t-t')} \hat L_0  + \lambda^2 \hat D   \hat L_W  e^{-i(1-\hat D)  \hat L_0 (t-t')}  \hat L_W  \\
 &amp;=  \lambda^2 \hat D   \hat L_W  e^{-i(1-\hat D)  \hat L_0 (t-t')}  \hat L_W  \\
 &amp;=  \lambda^2 \hat D   \hat L_W  e^{-i\hat L_0 (t-t')}  \hat L_W .\end{split}\]</div>
-<p>Several terms of <span class="math notranslate nohighlight">\(\lambda\)</span> are dropped. <a class="footnote-reference" href="#id5" id="id3">[1]</a></p>
+<p>Several terms of <span class="math notranslate nohighlight">\(\lambda\)</span> are dropped. <a class="footnote-reference" href="#footnote-1" id="footnote-reference-2">[1]</a></p>
 <p>We will derive the Fermi’s golden rule. First, we have</p>
 <div class="math notranslate nohighlight" id="equation-eqn-qme-d-avg-eqn-1">
 <span class="eqno">(42)<a class="headerlink" href="#equation-eqn-qme-d-avg-eqn-1" title="Permalink to this equation">¶</a></span>\[\bra{m} \partial_t \rho_d \ket{m} = -\lambda^2 \bra{m} \int_0^t dt' \hat L_W e^{-i(t-t')\hat L_0} \hat L_W \rho_d(t') \ket{m}.\]</div>
@@ -546,7 +546,7 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 <p class="first admonition-title"><span class="math notranslate nohighlight">\(\hbar=1\)</span></p>
 <p class="last">We use the natural unit system.</p>
 </div>
-<p>Here is a second Markovian approach to derive the Fermi’s golden rule from quantum master equation. <a class="footnote-reference" href="#id6" id="id4">[2]</a></p>
+<p>Here is a second Markovian approach to derive the Fermi’s golden rule from quantum master equation. <a class="footnote-reference" href="#footnote-2" id="footnote-reference-3">[2]</a></p>
 <p>The quantum master equationin the interaction picture is</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\partial_t P_m &amp; =  -\lambda^2/\hbar^2 \int_0^t dt' \sum_n \left[ ( W_{mn} e^{-i(t-t')(\epsilon_n - \epsilon_m ) /\hbar }  W_{nm} (P_{m} - P_{n}) - (e^{-i(t-t')\epsilon_m/\hbar} ( W_{mn}P_{n} - P_{m}W_{m n} ) e^{i(t-t')\epsilon_n/\hbar} )W_{nm}  \right] \\
@@ -588,22 +588,22 @@ P_m(t-\tau) &amp; = \sum_n Q_{mn}(-\tau) P_n(t) .\end{split}\]</div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<table class="docutils footnote" frame="void" id="footnote-1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id3">[1]</a></td><td>Refer to <em>Quantum Noise</em> by Gardiner and Zoller, Chapter 5, Section 1.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#footnote-reference-2">[1]</a></td><td>Refer to <em>Quantum Noise</em> by Gardiner and Zoller, Chapter 5, Section 1.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id6" rules="none">
+<table class="docutils footnote" frame="void" id="footnote-2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td><a class="reference external" href="http://www.quantiki.org/wiki/">Quantiki</a> is a website of quantum information etc. The item about master equation is <a class="reference external" href="http://www.quantiki.org/wiki/Master_equation">here</a> .</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#footnote-reference-3">[2]</a></td><td><a class="reference external" href="http://www.quantiki.org/wiki/">Quantiki</a> is a website of quantum information etc. The item about master equation is <a class="reference external" href="http://www.quantiki.org/wiki/Master_equation">here</a> .</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id7" rules="none">
+<table class="docutils footnote" frame="void" id="footnote-3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[3]</a></td><td><a class="reference external" href="http://docs.neutrino.xyz/statistical-physics/master-eqn.html">Master equation for neutrinos</a>.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#footnote-reference-1">[3]</a></td><td><a class="reference external" href="http://docs.neutrino.xyz/statistical-physics/master-eqn.html">Master equation for neutrinos</a>.</td></tr>
 </tbody>
 </table>
 </div>

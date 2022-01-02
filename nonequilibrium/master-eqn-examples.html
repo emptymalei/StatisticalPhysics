@@ -225,7 +225,7 @@ TeX: {
 </ul>
 </li>
 <li><a class="reference internal" href="#d-discrete-master-equation">1-D Discrete Master Equation</a></li>
-<li><a class="reference internal" href="#id1">Continuum Limit</a></li>
+<li><a class="reference internal" href="#continuum-limit-1">Continuum Limit</a></li>
 <li><a class="reference internal" href="#propagator">Propagator</a></li>
 <li><a class="reference internal" href="#bias-in-master-equation">Bias in Master Equation</a></li>
 </ul>
@@ -370,8 +370,8 @@ TeX: {
 <p class="last">has a propagator of <span class="math notranslate nohighlight">\(\Pi_{m,n}(t)\)</span> which depends on both m and n.</p>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Continuum Limit<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="continuum-limit-1">
+<h2>Continuum Limit<a class="headerlink" href="#continuum-limit-1" title="Permalink to this headline">¶</a></h2>
 <div class="math notranslate nohighlight">
 \[\frac{\partial}{\partial t}P(x,t) = D\frac{\partial^2}{\partial x^2} P(x,t)\]</div>
 <div class="math notranslate nohighlight">
@@ -389,7 +389,7 @@ TeX: {
 <div class="section" id="propagator">
 <span id="index-1"></span><h2>Propagator<a class="headerlink" href="#propagator" title="Permalink to this headline">¶</a></h2>
 <p>To solve the master equation, the propagator <span class="math notranslate nohighlight">\(\Pi(x-x',t)\)</span> is very helpful. For simple discrete master equations, the propagator becomes <span class="math notranslate nohighlight">\(I_m(2Ft)e^{-2Ft}\)</span>.</p>
-<div class="figure" id="id3">
+<div class="figure" id="figure-1">
 <a class="reference internal image-reference" href="../_images/distInit.png"><img alt="initial distribution" src="../_images/distInit.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 25 </span><span class="caption-text">Initial distribution</span></p>
 </div>
@@ -398,7 +398,7 @@ TeX: {
 \[\frac{\partial}{\partial t} P(x,t) = \zeta \frac{\partial}{\partial x} P(x,t) + D \frac{\partial^2}{\partial x^2} P(x,t),\]</div>
 <p>given the initial distribution.</p>
 <p>In infinite time, the system reach equilibrium.</p>
-<div class="figure" id="id4">
+<div class="figure" id="figure-2">
 <a class="reference internal image-reference" href="../_images/distFinal.png"><img alt="final distribution" src="../_images/distFinal.png" style="width: 90%;" /></a>
 <p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">Final distribution</span></p>
 </div>
@@ -452,7 +452,7 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\begin{split}&amp; \frac{\partial}{\partial t} P(x,t) = D\frac{\partial^2}{\partial x^2} P(x,t) \\
 \to &amp; \frac{\partial}{\partial t} P(x,t) = D \left(\frac{\partial^2}{\partial x^2} P(x,t) + 2\Gamma\frac{\partial}{\partial x}P(x,t) \right) + D\left( P\left( 2\Gamma^2 + \frac{\partial}{\partial x} \Gamma \right) \right)\end{split}\]</div>
-<p class="last">Define <span class="math notranslate nohighlight">\(\zeta := 2\Gamma\)</span>, and let <span class="math notranslate nohighlight">\(2\Gamma^2 + \frac{\partial}{\partial x} \Gamma\)</span>. <a href="#id5"><span class="problematic" id="id2">[1]_</span></a>  The diffusion equation under this kind of transformation becomes the one we need.</p>
+<p class="last">Define <span class="math notranslate nohighlight">\(\zeta := 2\Gamma\)</span>, and let <span class="math notranslate nohighlight">\(2\Gamma^2 + \frac{\partial}{\partial x} \Gamma\)</span>. <a href="#system-message-1"><span class="problematic" id="footnote-reference-1">[1]_</span></a>  The diffusion equation under this kind of transformation becomes the one we need.</p>
 </div>
 </div>
 </div>

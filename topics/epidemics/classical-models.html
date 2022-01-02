@@ -275,7 +275,7 @@ TeX: {
 <p>The classical models in epidemics are compartment models. In such models, the hosts are arranged into different populations such as susceptible populations, infected populations, and recovered populations.</p>
 <div class="section" id="sir">
 <h2>SIR<a class="headerlink" href="#sir" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-center" id="id7">
+<div class="figure align-center" id="figure-1">
 <img alt="../../_images/sir.png" src="../../_images/sir.png" />
 <p class="caption"><span class="caption-number">Fig. 31 </span><span class="caption-text">SIR model</span></p>
 </div>
@@ -286,7 +286,7 @@ TeX: {
 <p>with the constraint</p>
 <div class="math notranslate nohighlight">
 \[S(t) + I(t) + R(t) = N,\]</div>
-<p>where <span class="math notranslate nohighlight">\(N\)</span> is the total population. <a class="reference internal" href="#martcheva2015" id="id1">[Martcheva2015]</a></p>
+<p>where <span class="math notranslate nohighlight">\(N\)</span> is the total population. <a class="reference internal" href="#martcheva2015" id="citation-reference-1">[Martcheva2015]</a></p>
 <p>The limiting behavior of the system is also intuitive. If the infected population is quarantined, i.e., <span class="math notranslate nohighlight">\(\beta=0\)</span>, the infected population decays exponentially with a half-life <span class="math notranslate nohighlight">\(1/\alpha\)</span>. Notice that the populations can only be integers. When <span class="math notranslate nohighlight">\(S(t)&lt;1\)</span>, the infected population moves to the exponential decay phase.</p>
 <p>At a specific time <span class="math notranslate nohighlight">\(t=t_t\)</span>, we might reach the threshold that</p>
 <div class="math notranslate nohighlight">
@@ -328,7 +328,7 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[Y_{I\to R}\left( \int_0^t \alpha I(t') dt' \right).\]</div>
 <p>Whenever an event is triggered in the process <span class="math notranslate nohighlight">\(Y_{S\to I}\)</span>, we will have one more infected person and one less susceptible person.</p>
-<p>In fact, <span class="math notranslate nohighlight">\(1/\alpha\)</span> is the mean days an infected person remains in the infectd status. This is used to estimate the <span class="math notranslate nohighlight">\(\alpha\)</span> using data. The value of <span class="math notranslate nohighlight">\(\beta\)</span> is estimated using the relation <a class="reference internal" href="#martcheva2015" id="id2">[Martcheva2015]</a></p>
+<p>In fact, <span class="math notranslate nohighlight">\(1/\alpha\)</span> is the mean days an infected person remains in the infectd status. This is used to estimate the <span class="math notranslate nohighlight">\(\alpha\)</span> using data. The value of <span class="math notranslate nohighlight">\(\beta\)</span> is estimated using the relation <a class="reference internal" href="#martcheva2015" id="citation-reference-2">[Martcheva2015]</a></p>
 <div class="math notranslate nohighlight">
 \[\frac{\beta}{\alpha} = \frac{\ln (S(t_0)/S(t\to\infty))}{S(t_0) + I(t_0) - S(t\to\infty) }\]</div>
 </div>
@@ -336,7 +336,7 @@ TeX: {
 <div class="section" id="sis">
 <h2>SIS<a class="headerlink" href="#sis" title="Permalink to this headline">¶</a></h2>
 <p>Some epidemics such as influenza infect us repeatedly. One simple model for them is the SIS model shown in figure <a class="reference internal" href="#epidemic-compartment-sis-scheme"><span class="std std-ref">SIS model.</span></a>,</p>
-<div class="figure align-center" id="id8">
+<div class="figure align-center" id="figure-2">
 <span id="epidemic-compartment-sis-scheme"></span><img alt="../../_images/sis.png" src="../../_images/sis.png" />
 <p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">SIS model.</span></p>
 </div>
@@ -361,7 +361,7 @@ TeX: {
 <p>If <span class="math notranslate nohighlight">\(\mathscr R_0 &gt; 1\)</span>, we get a positive growth grate for <span class="math notranslate nohighlight">\(I(t)\)</span>. Otherwise, the infected population will decrease.</p>
 <div class="note admonition">
 <p class="first admonition-title">Basic Reproduction Rate</p>
-<p>A quote from the Martcheva <a class="reference internal" href="#martcheva2015" id="id3">[Martcheva2015]</a></p>
+<p>A quote from the Martcheva <a class="reference internal" href="#martcheva2015" id="citation-reference-3">[Martcheva2015]</a></p>
 <blockquote class="last">
 <div>Epidemiologically, the reproduction number gives the number of secondary cases one infectious individual will produce in a population consisting only of susceptible individuals.</div></blockquote>
 </div>
@@ -373,7 +373,7 @@ TeX: {
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{S_v(t)}{dt} &amp;= \Lambda_v - p a S_v(t) I(t) -\mu S_v(t) \\
 \frac{I_v(t)}{dt} &amp;= p a S_v(t) I(t) - \mu I_v,\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(a\)</span> is the rate of a vector biting a host, <span class="math notranslate nohighlight">\(p\)</span> is the rate of a vector being infected when biting an infected host. The product <span class="math notranslate nohighlight">\(pa\)</span> is the rate of a vector being infected. <a class="reference internal" href="#martcheva2015" id="id4">[Martcheva2015]</a></p>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the rate of a vector biting a host, <span class="math notranslate nohighlight">\(p\)</span> is the rate of a vector being infected when biting an infected host. The product <span class="math notranslate nohighlight">\(pa\)</span> is the rate of a vector being infected. <a class="reference internal" href="#martcheva2015" id="citation-reference-4">[Martcheva2015]</a></p>
 <p>Because most vector-borne diseases are repeatative, we combine the dynamics of the vectors with the SIS model with the constraint <span class="math notranslate nohighlight">\(S(t) + I(t) = N\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[\frac{I(t)}{dt} = qa S(t) I_v(t) -\alpha I(t),\]</div>
@@ -382,22 +382,22 @@ TeX: {
 <div class="section" id="generalization">
 <h2>Generalization<a class="headerlink" href="#generalization" title="Permalink to this headline">¶</a></h2>
 <p>A general compartment model is a model may include other stages of the disease. The differential equations are easily translated from the flowcharts.</p>
-<p>In the disease progression, four stages are relevant. <a class="reference internal" href="#martcheva2015" id="id5">[Martcheva2015]</a></p>
+<p>In the disease progression, four stages are relevant. <a class="reference internal" href="#martcheva2015" id="citation-reference-5">[Martcheva2015]</a></p>
 <ol class="arabic simple">
 <li>Exposed stage <span class="highlit">E</span> or latent stage <span class="highlit">L</span>: infected but not infectious;</li>
 <li>Asymptomatic stage <span class="highlit">A</span>: the asymptomatic stage describes the asymptomatic infection or subclinical infection where the host is infected by no symptoms are shown;</li>
 <li>Carrier stage <span class="highlit">C</span>: infected but not sick;</li>
 <li>Passive immunity stage <span class="highlit">M</span>: antibodies are transferred between hosts.</li>
 </ol>
-<div class="figure align-center" id="id9">
+<div class="figure align-center" id="figure-3">
 <img alt="../../_images/seir.png" src="../../_images/seir.png" />
 <p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">SEIR model</span></p>
 </div>
-<div class="figure align-center" id="id10">
+<div class="figure align-center" id="figure-4">
 <img alt="../../_images/seir-a.png" src="../../_images/seir-a.png" />
 <p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">SEIR model with an asymptomatic stage</span></p>
 </div>
-<div class="figure align-center" id="id11">
+<div class="figure align-center" id="figure-5">
 <img alt="../../_images/scirs.png" src="../../_images/scirs.png" />
 <p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">SCIRS model</span></p>
 </div>
@@ -407,16 +407,16 @@ TeX: {
 <li>Treatment T</li>
 <li>Vaccination V</li>
 </ol>
-<div class="figure align-center" id="id12">
+<div class="figure align-center" id="figure-6">
 <img alt="../../_images/siqr.png" src="../../_images/siqr.png" />
 <p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">SIQR model</span></p>
 </div>
-<div class="figure align-center" id="id13">
+<div class="figure align-center" id="figure-7">
 <img alt="../../_images/seit.png" src="../../_images/seit.png" />
 <p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">SEIT model</span></p>
 </div>
-<p>Each compartment is also subject to variants based on the demographics of the populations, heterogeneities of the pathogens and hosts. <a class="reference internal" href="#martcheva2015" id="id6">[Martcheva2015]</a></p>
-<div class="figure align-center" id="id14">
+<p>Each compartment is also subject to variants based on the demographics of the populations, heterogeneities of the pathogens and hosts. <a class="reference internal" href="#martcheva2015" id="citation-reference-6">[Martcheva2015]</a></p>
+<div class="figure align-center" id="figure-8">
 <img alt="../../_images/sis-two-strain.png" src="../../_images/sis-two-strain.png" />
 <p class="caption"><span class="caption-number">Fig. 38 </span><span class="caption-text">SIS with two strains</span></p>
 </div>
@@ -441,7 +441,7 @@ TeX: {
 <table class="docutils citation" frame="void" id="martcheva2015" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[Martcheva2015]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>, <a class="fn-backref" href="#id3">3</a>, <a class="fn-backref" href="#id4">4</a>, <a class="fn-backref" href="#id5">5</a>, <a class="fn-backref" href="#id6">6</a>)</em> <a class="reference external" href="https://doi.org/10.1007/978-1-4899-7612-3_2">Martcheva, M. (2015). Introduction to Epidemic Modeling, 9–31.</a></td></tr>
+<tr><td class="label">[Martcheva2015]</td><td><em>(<a class="fn-backref" href="#citation-reference-1">1</a>, <a class="fn-backref" href="#citation-reference-2">2</a>, <a class="fn-backref" href="#citation-reference-3">3</a>, <a class="fn-backref" href="#citation-reference-4">4</a>, <a class="fn-backref" href="#citation-reference-5">5</a>, <a class="fn-backref" href="#citation-reference-6">6</a>)</em> <a class="reference external" href="https://doi.org/10.1007/978-1-4899-7612-3_2">Martcheva, M. (2015). Introduction to Epidemic Modeling, 9–31.</a></td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="hill2016" rules="none">
