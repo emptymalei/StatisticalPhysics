@@ -262,7 +262,7 @@ Non Degenerate Two State System
 In a non-degenerate two-state system, the transfer matrix is
 
 .. math::
-   \mathbf A = \begin{pmatrix}A_{11}, A{12} \\ A_{21}, A_{22}\end{pmatrix}
+   \mathbf A = \begin{pmatrix}A_{11}, A_{12} \\ A_{21}, A_{22}\end{pmatrix}
 
 
 The master equation is
