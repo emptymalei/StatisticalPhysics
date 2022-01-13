@@ -31,7 +31,7 @@ We plot out some most used functions in statistical physics.
 
       The nth order derivative of this function is always 0 at x=0, for all finite n. Then the question is, how could this function even grow to non-zero values? The reason is that we are actually dealing with infinite nth order derivatives.
 
-      Quoter from Professor Kenkre: sleeping lion!
+      Quote from Professor Kenkre: sleeping lion!
 
 
 1. Tanh(x)
