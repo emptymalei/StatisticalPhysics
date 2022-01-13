@@ -48,7 +48,7 @@ The equation :eq:`eqn-sa-2-d-1ode` becomes
    \frac{d\delta x_2(t)}{dt} &= f_2(x_{1,0} + \delta x_1(t), x_{2,0} + \delta x_2(t)).
    :label: eqn-sa-2-d-1ode-perturbation
 
-We apply Talor series to :math:`f_1(x_{1,0} + \delta x_1(t), x_{2,0} + \delta x_2(t))`,
+We apply Taylor series expansion to :math:`f_1(x_{1,0} + \delta x_1(t), x_{2,0} + \delta x_2(t))`,
 
 .. math::
    &f_1(x_{1,0} + \delta x_1(t), x_{2,0} + \delta x_2(t)) \\
