@@ -15,13 +15,44 @@ Master Equation
 
 .. math::
    \frac{dP_\xi}{d t} = \sum_{\mu} \left( T_{\xi\mu} P_\mu - T_{\mu\xi} P_\xi \right).
+   :label: eq-master-eq-component-form
 
 
-.. admonition:: What's the problem of this master equation?
+.. admonition:: Food for thought
    :class: warning
 
    1. It's linear and first order. High order effects are ignored.
-   2. It comes from nowhere. To prove and interprate the transfer rates is required.
+   2. It comes from nowhere. Proof and interpretation the transfer rates are required.
+
+
+
+.. admonition:: Matrix Form
+   :class: info
+
+   It is obvious that the above formulation can be rewritten as a matrix equation,
+
+   .. math::
+      \partial_t \mathbf P = \hat{\mathbf T} \mathbf P.
+      :label: eq-master-eqn-matrix-orign
+
+   But what is :math:`\hat{\mathbf T}`? We rewrite :eq:`eq-master-eqn-matrix-orign` using the indices,
+
+   .. math::
+      \begin{align}
+      \partial_t P_\xi &= \sum_{\mu}\hat{T}_{\xi\mu} P_\mu \\
+      &= \sum_{\mu \neq \xi}\hat{T}_{\xi\mu} P_\mu + \hat{T}_{\xi\xi} P_\xi.
+      \end{align}
+
+   Comparing the above compoment form with :eq:`eq-master-eq-component-form`, we can define :math:`\hat{\mathbf T}` as
+
+   .. math::
+      \hat{T}_{\xi\mu} =\begin{cases}
+      T_{\xi\mu} & \text{if } \xi \neq \mu, \\
+      - \sum_\mu T_{\mu\xi} & \text{if } \xi = \mu.
+      \end{cases}
+
+   To summarize, if we force the sum of each column (i.e., second index) to be zero by redefining the diagonal elements, we get a nice matrix form of the master equation.
+
 
 
 .. index:: Chapman-Kolmogorov equation
