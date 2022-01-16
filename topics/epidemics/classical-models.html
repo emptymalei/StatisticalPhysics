@@ -281,7 +281,7 @@ TeX: {
 </div>
 <p>The Kermack-McKendrick deterministic model describes the transitions between the different populations. The susceptible population <span class="math notranslate nohighlight">\(S(t)\)</span> decrease at a rate <span class="math notranslate nohighlight">\(-\alpha I(t) S(t)\)</span>, where <span class="math notranslate nohighlight">\(\beta\)</span> is the average probability of getting infected by the infected population. The recovery rate of the infected population is <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
 <div class="math notranslate nohighlight" id="equation-eqn-kermack-mckendrick-eqn-n">
-<span class="eqno">(46)<a class="headerlink" href="#equation-eqn-kermack-mckendrick-eqn-n" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{dS(t)}{dt} &amp;= -\beta I(t) S(t) \\
+<span class="eqno">(48)<a class="headerlink" href="#equation-eqn-kermack-mckendrick-eqn-n" title="Permalink to this equation">¶</a></span>\[\begin{split}\frac{dS(t)}{dt} &amp;= -\beta I(t) S(t) \\
 \frac{dI(t)}{dt} &amp;= \beta S(t) I(t) - \alpha I(t),\end{split}\]</div>
 <p>with the constraint</p>
 <div class="math notranslate nohighlight">
@@ -298,7 +298,7 @@ TeX: {
 <p>When <span class="math notranslate nohighlight">\(\frac{\beta S(t_t)}{\alpha}&gt;1\)</span>, the infected population is growing. It is convinient to define</p>
 <div class="math notranslate nohighlight">
 \[\tau(t) = \frac{\beta S(t)}{\alpha},\]</div>
-<p>with which equations <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(46)</a> becomes</p>
+<p>with which equations <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(48)</a> becomes</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{dS(t)}{dt} &amp;= - \alpha \tau(t) I(t)  \\
 \frac{dI(t)}{dt} &amp;= \alpha (\tau(t) - 1) I(t),\end{split}\]</div>
@@ -321,7 +321,7 @@ TeX: {
 <div class="section" id="simulate-sir-using-poisson-process">
 <h3>Simulate SIR Using Poisson Process<a class="headerlink" href="#simulate-sir-using-poisson-process" title="Permalink to this headline">¶</a></h3>
 <p>The transition events of a susceptible person being infected (<span class="math notranslate nohighlight">\(S\to I\)</span>) and an infected person being recovered (<span class="math notranslate nohighlight">\(I\to R\)</span>).</p>
-<p>The rates are determined by the equation <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(46)</a>,</p>
+<p>The rates are determined by the equation <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(48)</a>,</p>
 <div class="math notranslate nohighlight">
 \[Y_{S\to I}\left(\int_0^t \beta I(t') S(t') dt' \right)\]</div>
 <p>and</p>
@@ -423,7 +423,7 @@ TeX: {
 </div>
 <div class="section" id="basic-reproduction-number-and-stability-analysis">
 <h2>Basic Reproduction Number and Stability Analysis<a class="headerlink" href="#basic-reproduction-number-and-stability-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Consider the SIR model <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(46)</a> and add birth rate <span class="math notranslate nohighlight">\(\Lambda\)</span> and death rate <span class="math notranslate nohighlight">\(\mu\)</span> to the model,</p>
+<p>Consider the SIR model <a class="reference internal" href="#equation-eqn-kermack-mckendrick-eqn-n">(48)</a> and add birth rate <span class="math notranslate nohighlight">\(\Lambda\)</span> and death rate <span class="math notranslate nohighlight">\(\mu\)</span> to the model,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{dS(t)}{dt} &amp;= \Lambda - \beta I(t) S(t) - \mu S(t)\\
 \frac{dI(t)}{dt} &amp; = \beta I(t) S(t) - \alpha I(t) - \mu I(t) \\

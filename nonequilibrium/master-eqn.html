@@ -274,44 +274,63 @@ TeX: {
 <div class="section" id="master-equation-1">
 <span id="index-0"></span><h2>Master Equation<a class="headerlink" href="#master-equation-1" title="Permalink to this headline">¶</a></h2>
 <p><strong>Master equation</strong> method allows us to ignore the details of the microscopic equations yet capturing the properties of the system. The master equations describes the probability of states <span class="math notranslate nohighlight">\(P_\xi(t)\)</span> by looking into the gains and losses,</p>
-<div class="math notranslate nohighlight">
-\[\frac{dP_\xi}{d t} = \sum_{\mu} \left( T_{\xi\mu} P_\mu - T_{\mu\xi} P_\xi \right).\]</div>
+<div class="math notranslate nohighlight" id="equation-eq-master-eq-component-form">
+<span class="eqno">(16)<a class="headerlink" href="#equation-eq-master-eq-component-form" title="Permalink to this equation">¶</a></span>\[\frac{dP_\xi}{d t} = \sum_{\mu} \left( T_{\xi\mu} P_\mu - T_{\mu\xi} P_\xi \right).\]</div>
 <div class="warning admonition">
-<p class="first admonition-title">What’s the problem of this master equation?</p>
+<p class="first admonition-title">Food for thought</p>
 <ol class="last arabic simple">
 <li>It’s linear and first order. High order effects are ignored.</li>
-<li>It comes from nowhere. To prove and interprate the transfer rates is required.</li>
+<li>It comes from nowhere. Proof and interpretation the transfer rates are required.</li>
 </ol>
+</div>
+<div class="info admonition">
+<p class="first admonition-title">Matrix Form</p>
+<p>It is obvious that the above formulation can be rewritten as a matrix equation,</p>
+<div class="math notranslate nohighlight" id="equation-eq-master-eqn-matrix-orign">
+<span class="eqno">(17)<a class="headerlink" href="#equation-eq-master-eqn-matrix-orign" title="Permalink to this equation">¶</a></span>\[\partial_t \mathbf P = \hat{\mathbf T} \mathbf P.\]</div>
+<p>But what is <span class="math notranslate nohighlight">\(\hat{\mathbf T}\)</span>? We rewrite <a class="reference internal" href="#equation-eq-master-eqn-matrix-orign">(17)</a> using the indices,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\partial_t P_\xi &amp;= \sum_{\mu}\hat{T}_{\xi\mu} P_\mu \\
+&amp;= \sum_{\mu \neq \xi}\hat{T}_{\xi\mu} P_\mu + \hat{T}_{\xi\xi} P_\xi.
+\end{align}\end{split}\]</div>
+<p>Comparing the above compoment form with <a class="reference internal" href="#equation-eq-master-eq-component-form">(16)</a>, we can define <span class="math notranslate nohighlight">\(\hat{\mathbf T}\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\hat{T}_{\xi\mu} =\begin{cases}
+T_{\xi\mu} &amp; \text{if } \xi \neq \mu, \\
+- \sum_\mu T_{\mu\xi} &amp; \text{if } \xi = \mu.
+\end{cases}\end{split}\]</div>
+<p class="last">To summarize, if we force the sum of each column (i.e., second index) to be zero by redefining the diagonal elements, we get a nice matrix form of the master equation.</p>
 </div>
 </div>
 <div class="section" id="derive-master-equation">
 <span id="index-1"></span><h2>“Derive” Master Equation<a class="headerlink" href="#derive-master-equation" title="Permalink to this headline">¶</a></h2>
 <p>Suppose the states of a system are denoted as <span class="math notranslate nohighlight">\(\xi\)</span>, and the probability of the states at time <span class="math notranslate nohighlight">\(t\)</span> are denoted as <span class="math notranslate nohighlight">\(P_\xi(t)\)</span>. We assume the probability of the states at time <span class="math notranslate nohighlight">\(t\)</span> only depends on the probability of the states a moment ago,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn">
-<span class="eqno">(16)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn" title="Permalink to this equation">¶</a></span>\[P_\xi(t) = \sum_\mu Q_{\xi\mu} P_\mu(t-\tau) .\]</div>
+<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn" title="Permalink to this equation">¶</a></span>\[P_\xi(t) = \sum_\mu Q_{\xi\mu} P_\mu(t-\tau) .\]</div>
 <p>This is the <span class="highlit">Chapman-Kolmogorov equation</span>. The equation describes a randomwalk process, a.k.a. Markov process.</p>
 <div class="note admonition">
 <p class="first admonition-title">Markov Process and State Machine</p>
 <p>The assumption that the current states doesn’t depend on the full history indicates that the system follows a fixed state diagram. In other words, we are using a state machine to approximate a statistical system, except that our physical system has an enormous amount of possible states.</p>
 <p class="last">It may sound weird that we only need the most recent history. However, a Markov process allows us to reach an desired equilibrium quickly.</p>
 </div>
-<p>The formalism of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn">(16)</a> reminds us of the time derivative,</p>
+<p>The formalism of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn">(18)</a> reminds us of the time derivative,</p>
 <div class="math notranslate nohighlight">
 \[\partial_t P_\xi(t) = \lim \frac{P_\xi(t) - P_\xi(t-\tau)}{\tau} .\]</div>
 <p>Notice that</p>
 <div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn-normalization-relation">
-<span class="eqno">(17)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation" title="Permalink to this equation">¶</a></span>\[\sum_\mu Q_{\mu\xi} = 1.\]</div>
+<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation" title="Permalink to this equation">¶</a></span>\[\sum_\mu Q_{\mu\xi} = 1.\]</div>
 <div class="note admonition">
 <p class="first admonition-title">Why the normalization?</p>
 <p class="last">It is required that the probability of all the states at time <span class="math notranslate nohighlight">\(t\)</span> to be 1, <span class="math notranslate nohighlight">\(\sum_\xi P_\xi(t) = 1\)</span>.</p>
 </div>
 <p>Substract from the Chapman-Kolmogorov equation a term <span class="math notranslate nohighlight">\(P_\xi(t-\tau)\)</span>, we get</p>
 <div class="math notranslate nohighlight" id="equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel" title="Permalink to this equation">¶</a></span>\[P_\xi(t) - P_\xi(t-\tau) = \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
-<p>in which we have applied a variation of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation">(17)</a>, i.e.,</p>
+<span class="eqno">(20)<a class="headerlink" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel" title="Permalink to this equation">¶</a></span>\[P_\xi(t) - P_\xi(t-\tau) = \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
+<p>in which we have applied a variation of equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-normalization-relation">(19)</a>, i.e.,</p>
 <div class="math notranslate nohighlight">
 \[P_\xi(t-\tau) = \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) .\]</div>
-<p>We divide equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">(18)</a> by <span class="math notranslate nohighlight">\(\tau\)</span> on both sides and the limit of <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span> is applied,</p>
+<p>We divide equation <a class="reference internal" href="#equation-eqn-chapman-kolmogorov-eqn-sub-norm-rel">(20)</a> by <span class="math notranslate nohighlight">\(\tau\)</span> on both sides and the limit of <span class="math notranslate nohighlight">\(\tau\rightarrow 0\)</span> is applied,</p>
 <div class="math notranslate nohighlight">
 \[\lim_{\tau\rightarrow} \frac{P_\xi(t) - P_\xi(t-\tau)}{\tau} = \lim_{\tau\rightarrow 0} \frac{ \sum_\mu Q_{\xi\mu}P_\mu(t-\tau) - \sum_\mu Q_{\mu\xi} P_\xi(t-\tau) }{\tau}\]</div>
 <p>At first glance, the right hand side of the above equation goes to infinity. However, <strong>we do not expect the time derivative of a probability distribution to be infinite.</strong> That being said, there should be a specific relation between the two terms in the denominator. If we assume that</p>
@@ -352,8 +371,8 @@ TeX: {
 \[\partial_{t_1} P_1(y_2,t_1) = \int \lim_{\tau\rightarrow 0} \frac{\int P_1(y_1,t_1) P _ {1|1}(y_1,t_1|y_2,t_1+\tau) - P_1(y_1,t_1) P _ {1|1}(y_1,t_1|y_2,t_1) }{\tau} dy_1\]</div>
 <p>We expand the right hand side using Taylor series, the details of which can be found in Reichl’s book <a class="footnote-reference" href="#footnote-1" id="footnote-reference-3">[1]</a> , then we get a time derivative,</p>
 <div class="math notranslate nohighlight" id="equation-eqn-master-equation-rigorous">
-<span class="eqno">(19)<a class="headerlink" href="#equation-eqn-master-equation-rigorous" title="Permalink to this equation">¶</a></span>\[\partial_{t} P_1(y_2,t) = \int dy_1 \left( W(y_1,y_2)P_1(y_1,t) - W(y_2,y_1)P_1(y_2,t) \right) .\]</div>
-<p>Equation <a class="reference internal" href="#equation-eqn-master-equation-rigorous">(19)</a> is the <span class="highlit">master equation</span>.</p>
+<span class="eqno">(21)<a class="headerlink" href="#equation-eqn-master-equation-rigorous" title="Permalink to this equation">¶</a></span>\[\partial_{t} P_1(y_2,t) = \int dy_1 \left( W(y_1,y_2)P_1(y_1,t) - W(y_2,y_1)P_1(y_2,t) \right) .\]</div>
+<p>Equation <a class="reference internal" href="#equation-eqn-master-equation-rigorous">(21)</a> is the <span class="highlit">master equation</span>.</p>
 <p class="last">The reason that <span class="math notranslate nohighlight">\(W(y_1,y_2)\)</span> is a transition rate is that it represents “the probability per unit time that the system changes from state <span class="math notranslate nohighlight">\(y_1\)</span> to <span class="math notranslate nohighlight">\(y_2\)</span> in the time interval <span class="math notranslate nohighlight">\(t_1\rightarrow t_1 +\tau\)</span> “. <a class="footnote-reference" href="#footnote-1" id="footnote-reference-4">[1]</a></p>
 </div>
 <div class="important admonition">
