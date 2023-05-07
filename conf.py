@@ -56,7 +56,7 @@ html_theme_options = {
    'github_user': 'NeuPhysics',
    'github_repo': 'statisticalphysics',
    'gratipay_user': 'emptymalei',
-   'analytics_id': 'UA-44466929-2',
+   'analytics_id': 'G-B0WKN82ZGD',
    'description': 'Statistical Physics',
 }
 
